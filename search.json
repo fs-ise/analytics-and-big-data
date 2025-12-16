@@ -1,1165 +1,1193 @@
 [
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation",
+    "objectID": "notes/lecture_3_descriptive_analysis_1.html",
+    "href": "notes/lecture_3_descriptive_analysis_1.html",
+    "title": "Notes: Session 3: Descriptive analysis I",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_8_exploratory_analysis.html",
+    "href": "notes/lecture_8_exploratory_analysis.html",
+    "title": "Notes: Session 8: Exploratory analysis",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_9_predictive_analysis.html",
+    "href": "notes/lecture_9_predictive_analysis.html",
+    "title": "Notes: Session 9: Predictive analysis",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_2_structuring_preparing_data.html",
+    "href": "notes/lecture_2_structuring_preparing_data.html",
+    "title": "Notes: Session 2: Structuring and preparing data",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_1_foundations_of_data_analytics.html",
+    "href": "notes/lecture_1_foundations_of_data_analytics.html",
+    "title": "Notes: Session 1: Foundations of data analytics",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html",
+    "href": "notes/lecture_0_orga.html",
+    "title": "Notes: Orga",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#first-application-of-data-analytics",
-    "href": "slides/lecture_4_predictive_analytics.html#first-application-of-data-analytics",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#first-application-of-data-analytics",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#first-application-of-data-analytics",
     "title": "Big Data and Analytics",
     "section": "First Application of Data Analytics",
     "text": "First Application of Data Analytics\n\nDr. John Snow’s Map of the 1854 London Cholera Outbreak\n\n\n\n\n\nSource: http://www.udel.edu/johnmack/frec480/cholera"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#use-cases-of-data-analytics---examples",
-    "href": "slides/lecture_4_predictive_analytics.html#use-cases-of-data-analytics---examples",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#use-cases-of-data-analytics---examples",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#use-cases-of-data-analytics---examples",
     "title": "Big Data and Analytics",
     "section": "Use Cases of Data Analytics - Examples",
     "text": "Use Cases of Data Analytics - Examples"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#fundamental-skills-of-data-analytics",
-    "href": "slides/lecture_4_predictive_analytics.html#fundamental-skills-of-data-analytics",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#fundamental-skills-of-data-analytics",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#fundamental-skills-of-data-analytics",
     "title": "Big Data and Analytics",
     "section": "Fundamental Skills of Data Analytics",
     "text": "Fundamental Skills of Data Analytics"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#the-data-analytics-process",
-    "href": "slides/lecture_4_predictive_analytics.html#the-data-analytics-process",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#the-data-analytics-process",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#the-data-analytics-process",
     "title": "Big Data and Analytics",
     "section": "The Data Analytics Process",
     "text": "The Data Analytics Process\n\n\n\nSource : http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#need-for-knowledge-about-the-algorithms",
-    "href": "slides/lecture_4_predictive_analytics.html#need-for-knowledge-about-the-algorithms",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#need-for-knowledge-about-the-algorithms",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#need-for-knowledge-about-the-algorithms",
     "title": "Big Data and Analytics",
     "section": "Need for Knowledge about the Algorithms",
     "text": "Need for Knowledge about the Algorithms\n\nThe distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.\n\nSource: Dataiku - Data Science for Banking and Insurance"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#statistics-vs.-machine-learning",
-    "href": "slides/lecture_4_predictive_analytics.html#statistics-vs.-machine-learning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#statistics-vs.-machine-learning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#statistics-vs.-machine-learning",
     "title": "Big Data and Analytics",
     "section": "Statistics vs. Machine Learning",
     "text": "Statistics vs. Machine Learning\nStatistics about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.\nMachine Learning (ML) aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#statistical-regression-vs.-machine-learning-algorithms",
-    "href": "slides/lecture_4_predictive_analytics.html#statistical-regression-vs.-machine-learning-algorithms",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#statistical-regression-vs.-machine-learning-algorithms",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#statistical-regression-vs.-machine-learning-algorithms",
     "title": "Big Data and Analytics",
     "section": "Statistical Regression vs. Machine Learning Algorithms",
     "text": "Statistical Regression vs. Machine Learning Algorithms"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#explanation-vs.-prediction-i",
-    "href": "slides/lecture_4_predictive_analytics.html#explanation-vs.-prediction-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#explanation-vs.-prediction-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#explanation-vs.-prediction-i",
     "title": "Big Data and Analytics",
     "section": "Explanation vs. Prediction (I)",
     "text": "Explanation vs. Prediction (I)\nQuestion 1: I have a headache. If I take an aspirin now, will it go away?\nQuestion 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?\n\nThe first case is a typical “predictive” question. You are calculating the effect of a hypothetical intervention.\n\n\nThe second case is a typical “explanatory” question. You are calculating the effect of a counterfactual intervention.\n\n\nWhich one is Explanation, which Prediction?\ncounterfactual : den Tatsachen widersprechend"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#explanation-vs.-prediction-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#explanation-vs.-prediction-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#explanation-vs.-prediction-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#explanation-vs.-prediction-ii",
     "title": "Big Data and Analytics",
     "section": "Explanation vs. Prediction (II)",
     "text": "Explanation vs. Prediction (II)\n\n\nExplanation :\n\n\n\nExplanation is about understanding relationships and why certain things happen.\n\n\nIt requires an understanding of cause and effect.\n\n\nTests of causal hypotheses are fundamental.\n\n\nMeasures of significance are central.\n\n\nA good explanatory model may also have predictive power.\n\n\n\nPrediction :\n\n\n\nPrediction is about anticipating and forecasting what may happen in the future.\n\n\nCorrelations are important in this context (but correlation does not imply causation).\n\n\nTherefore, predictive models may have no real explanatory power.\n\n\nFor robust prediction, knowledge of causality is preferable.\n\n\nThe main task is to find a model that optimally approximates reality and minimizes overfitting.\n\n\nAccuracy is measured using out-of-sample data."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#correlation",
-    "href": "slides/lecture_4_predictive_analytics.html#correlation",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#correlation",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#correlation",
     "title": "Big Data and Analytics",
     "section": "Correlation",
     "text": "Correlation\n\n\n\n\nSource: Organic Trade Association, 2011 Organic lndustry Survey, U.p. Department of Education, Ofﬁce of Special Education Programs, Data Analysis System (DANS)\n\n\nOrganic food sales and the rate of autism seem to have a very strong correlation‚ but no one is suggesting that one causes the other!"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#correlation-vs.-causality-i",
-    "href": "slides/lecture_4_predictive_analytics.html#correlation-vs.-causality-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#correlation-vs.-causality-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#correlation-vs.-causality-i",
     "title": "Big Data and Analytics",
     "section": "Correlation vs. Causality (I)",
     "text": "Correlation vs. Causality (I)\n\n\n\n\n\nCorrelation: Two data series behave “similar”\n\n\nCausality: Principle of Cause and Effect"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#correlation-vs.-causality-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#correlation-vs.-causality-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#correlation-vs.-causality-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#correlation-vs.-causality-ii",
     "title": "Big Data and Analytics",
     "section": "Correlation vs. Causality (II)",
     "text": "Correlation vs. Causality (II)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#correlation-vs.-causality-iii",
-    "href": "slides/lecture_4_predictive_analytics.html#correlation-vs.-causality-iii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#correlation-vs.-causality-iii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#correlation-vs.-causality-iii",
     "title": "Big Data and Analytics",
     "section": "Correlation vs. Causality (III)",
     "text": "Correlation vs. Causality (III)\n\n\nBut:\n\n\nSometimes it is better to know/predict something even if we can not explain it instead of doing nothing!"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#statistical-estimation",
-    "href": "slides/lecture_4_predictive_analytics.html#statistical-estimation",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#statistical-estimation",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#statistical-estimation",
     "title": "Big Data and Analytics",
     "section": "Statistical Estimation",
     "text": "Statistical Estimation\n\n\n\nSource: http://www.dxbydt.com/the-size-of-your-sample"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation-1",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation-1",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation-1",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation-1",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#definitions",
-    "href": "slides/lecture_4_predictive_analytics.html#definitions",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#definitions",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#definitions",
     "title": "Big Data and Analytics",
     "section": "Definitions",
     "text": "Definitions\n\nA method is a composition of formalized principles that form the basis for a stringent calculation process.\nAn algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.\nIn the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.\nFitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.\nOverfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.\n\nSource:  Schutt /O’Neil (2013): Doing Data Science."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#traditional-analytics-process",
-    "href": "slides/lecture_4_predictive_analytics.html#traditional-analytics-process",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#traditional-analytics-process",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#traditional-analytics-process",
     "title": "Big Data and Analytics",
     "section": "Traditional Analytics Process",
     "text": "Traditional Analytics Process"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-regression---fitting-the-model",
-    "href": "slides/lecture_4_predictive_analytics.html#example-regression---fitting-the-model",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-regression---fitting-the-model",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-regression---fitting-the-model",
     "title": "Big Data and Analytics",
     "section": "Example Regression - Fitting the model",
     "text": "Example Regression - Fitting the model"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-regression---testing-the-model",
-    "href": "slides/lecture_4_predictive_analytics.html#example-regression---testing-the-model",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-regression---testing-the-model",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-regression---testing-the-model",
     "title": "Big Data and Analytics",
     "section": "Example Regression - Testing the model",
     "text": "Example Regression - Testing the model"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#data-errors-and-their-consequences",
-    "href": "slides/lecture_4_predictive_analytics.html#data-errors-and-their-consequences",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#data-errors-and-their-consequences",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#data-errors-and-their-consequences",
     "title": "Big Data and Analytics",
     "section": "Data Errors and their Consequences",
     "text": "Data Errors and their Consequences"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#modern-analytics-process",
-    "href": "slides/lecture_4_predictive_analytics.html#modern-analytics-process",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#modern-analytics-process",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#modern-analytics-process",
     "title": "Big Data and Analytics",
     "section": "Modern Analytics Process",
     "text": "Modern Analytics Process"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#best-fit-vs.-best-generalization",
-    "href": "slides/lecture_4_predictive_analytics.html#best-fit-vs.-best-generalization",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#best-fit-vs.-best-generalization",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#best-fit-vs.-best-generalization",
     "title": "Big Data and Analytics",
     "section": "Best Fit vs. Best Generalization",
     "text": "Best Fit vs. Best Generalization"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#over--and-underfitting",
-    "href": "slides/lecture_4_predictive_analytics.html#over--and-underfitting",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#over--and-underfitting",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#over--and-underfitting",
     "title": "Big Data and Analytics",
     "section": "Over- and Underfitting",
     "text": "Over- and Underfitting\n\n\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#the-bias-variance-tradeoff",
-    "href": "slides/lecture_4_predictive_analytics.html#the-bias-variance-tradeoff",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#the-bias-variance-tradeoff",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#the-bias-variance-tradeoff",
     "title": "Big Data and Analytics",
     "section": "The Bias-Variance Tradeoff",
     "text": "The Bias-Variance Tradeoff\n\n\nThe prediction error is influenced by three components:\n\nError = Bias + Variance + Noise\n\nBias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.\nVariance is represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.\nTypically, there is a tradeoff between bias and variance.\nNoise is everything that arises from random variations in the data. It cannot be controlled."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#summarizing-statistics-vs.-data-analytics",
-    "href": "slides/lecture_4_predictive_analytics.html#summarizing-statistics-vs.-data-analytics",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#summarizing-statistics-vs.-data-analytics",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#summarizing-statistics-vs.-data-analytics",
     "title": "Big Data and Analytics",
     "section": "Summarizing: Statistics vs. Data Analytics",
     "text": "Summarizing: Statistics vs. Data Analytics"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#which-method-should-i-choose",
-    "href": "slides/lecture_4_predictive_analytics.html#which-method-should-i-choose",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#which-method-should-i-choose",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#which-method-should-i-choose",
     "title": "Big Data and Analytics",
     "section": "Which Method should I choose?",
     "text": "Which Method should I choose?\n\nThe choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.\nIn the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.\nFor this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#linear-world",
-    "href": "slides/lecture_4_predictive_analytics.html#linear-world",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#linear-world",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#linear-world",
     "title": "Big Data and Analytics",
     "section": "Linear World",
     "text": "Linear World"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#quadratic-world",
-    "href": "slides/lecture_4_predictive_analytics.html#quadratic-world",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#quadratic-world",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#quadratic-world",
     "title": "Big Data and Analytics",
     "section": "Quadratic World",
     "text": "Quadratic World"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-1",
-    "href": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-1",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-1",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-1",
     "title": "Big Data and Analytics",
     "section": "Nonlinear World (Type 1)",
     "text": "Nonlinear World (Type 1)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-2",
-    "href": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-2",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-2",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-2",
     "title": "Big Data and Analytics",
     "section": "Nonlinear World (Type 2)",
     "text": "Nonlinear World (Type 2)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-3",
-    "href": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-3",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-3",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-3",
     "title": "Big Data and Analytics",
     "section": "Nonlinear World (Type 3)",
     "text": "Nonlinear World (Type 3)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-4",
-    "href": "slides/lecture_4_predictive_analytics.html#nonlinear-world-type-4",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-4",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#nonlinear-world-type-4",
     "title": "Big Data and Analytics",
     "section": "Nonlinear World (Type 4)",
     "text": "Nonlinear World (Type 4)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#the-data-analytics-process---technical-view",
-    "href": "slides/lecture_4_predictive_analytics.html#the-data-analytics-process---technical-view",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#the-data-analytics-process---technical-view",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#the-data-analytics-process---technical-view",
     "title": "Big Data and Analytics",
     "section": "The Data Analytics Process - Technical View",
     "text": "The Data Analytics Process - Technical View\n\n\n\nSource: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation-2",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation-2",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation-2",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation-2",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#data-preparation-and-enrichment",
-    "href": "slides/lecture_4_predictive_analytics.html#data-preparation-and-enrichment",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#data-preparation-and-enrichment",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#data-preparation-and-enrichment",
     "title": "Big Data and Analytics",
     "section": "Data Preparation and Enrichment",
     "text": "Data Preparation and Enrichment\n\nThe data collection and preparation phase is the most labor-intensive one, consuming on average between 60-80% of a data scientist’s time. It’s critical therefore to select a tool that can automate or at least speed the workflows associated with data preparation.\n\n\n\n\n\n2016 Dataiku, Inc."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#data-cleaning",
-    "href": "slides/lecture_4_predictive_analytics.html#data-cleaning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#data-cleaning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#data-cleaning",
     "title": "Big Data and Analytics",
     "section": "Data Cleaning",
     "text": "Data Cleaning\n\n\n\n1. Proof of correctness of the data\n\n\n\nexamine for irregular outliers (e.g. Age=236)\n\n\nexamine for typographical errors (e.g. Frankfrut)\n\n\nexamine for different writing styles (e.g. behavior/behaviour)\n\n\n—\n\n\n\n\n\n2. Handling missing values"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#missing-values-strategies",
-    "href": "slides/lecture_4_predictive_analytics.html#missing-values-strategies",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#missing-values-strategies",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#missing-values-strategies",
     "title": "Big Data and Analytics",
     "section": "Missing Values Strategies",
     "text": "Missing Values Strategies"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#sampling",
-    "href": "slides/lecture_4_predictive_analytics.html#sampling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#sampling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#sampling",
     "title": "Big Data and Analytics",
     "section": "Sampling",
     "text": "Sampling\n\nA population can be defined as including all people or items with the characteristic one wishes to understand.\nSampling is about to find a representative subset of that population.\nData represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.\nThere are two sources of randomness and uncertainty:\n\n\nthe randomness and uncertainty underlying the process itself, and\n\n\nthe uncertainty associated with the underlying sampling method."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#sampling-in-times-of-big-data",
-    "href": "slides/lecture_4_predictive_analytics.html#sampling-in-times-of-big-data",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#sampling-in-times-of-big-data",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#sampling-in-times-of-big-data",
     "title": "Big Data and Analytics",
     "section": "Sampling in Times of Big Data",
     "text": "Sampling in Times of Big Data\n\nQuestion:\nIs there any need for sampling in times of Big Data? Why not “N=ALL”?\nAnswer:\nData is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.\nExamples:\n\n\nWhen analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.\n\n\nWhen analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#reasons-for-sampling",
-    "href": "slides/lecture_4_predictive_analytics.html#reasons-for-sampling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#reasons-for-sampling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#reasons-for-sampling",
     "title": "Big Data and Analytics",
     "section": "Reasons for Sampling",
     "text": "Reasons for Sampling\n\n\nThe volume of data is too large to capture and process\n\n\nDesign the analytics process using a subset of the data for performance reasons. Later use the complete data set.\n\n\nThe data set doesn’t perfectly represent the target population.\n\n\nThe data set is imbalanced.\n\n\nUse sampling to partition into training and test data.\n\n\n..."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#popular-methods-of-sampling-i",
-    "href": "slides/lecture_4_predictive_analytics.html#popular-methods-of-sampling-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#popular-methods-of-sampling-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#popular-methods-of-sampling-i",
     "title": "Big Data and Analytics",
     "section": "Popular Methods of Sampling (I)",
     "text": "Popular Methods of Sampling (I)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#popular-methods-of-sampling-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#popular-methods-of-sampling-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#popular-methods-of-sampling-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#popular-methods-of-sampling-ii",
     "title": "Big Data and Analytics",
     "section": "Popular Methods of Sampling (II)",
     "text": "Popular Methods of Sampling (II)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#systematic-sampling",
-    "href": "slides/lecture_4_predictive_analytics.html#systematic-sampling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#systematic-sampling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#systematic-sampling",
     "title": "Big Data and Analytics",
     "section": "Systematic Sampling",
     "text": "Systematic Sampling"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#random-sampling",
-    "href": "slides/lecture_4_predictive_analytics.html#random-sampling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#random-sampling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#random-sampling",
     "title": "Big Data and Analytics",
     "section": "Random Sampling",
     "text": "Random Sampling"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#proportional-sampling",
-    "href": "slides/lecture_4_predictive_analytics.html#proportional-sampling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#proportional-sampling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#proportional-sampling",
     "title": "Big Data and Analytics",
     "section": "Proportional Sampling",
     "text": "Proportional Sampling"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#downsampling",
-    "href": "slides/lecture_4_predictive_analytics.html#downsampling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#downsampling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#downsampling",
     "title": "Big Data and Analytics",
     "section": "Downsampling",
     "text": "Downsampling"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#smote",
-    "href": "slides/lecture_4_predictive_analytics.html#smote",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#smote",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#smote",
     "title": "Big Data and Analytics",
     "section": "SMOTE",
     "text": "SMOTE\n\n\n\nSMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class.\n\n\nAt first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1.Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.\n\n\n\n\n\n\n\nSource: https://github.com/minoue-xx/Oversampling-Imbalanced-Data"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#feature-engineering",
-    "href": "slides/lecture_4_predictive_analytics.html#feature-engineering",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#feature-engineering",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#feature-engineering",
     "title": "Big Data and Analytics",
     "section": "Feature Engineering",
     "text": "Feature Engineering\n\nFeature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process. \nA feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:\n\n\n\nFeatures can be of two major types.  Raw features  are obtained directly from the dataset with no extra data manipulation or engineering.  Derived features  are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.\n\nSources: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#variants-of-feature-engineering",
-    "href": "slides/lecture_4_predictive_analytics.html#variants-of-feature-engineering",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#variants-of-feature-engineering",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#variants-of-feature-engineering",
     "title": "Big Data and Analytics",
     "section": "Variants of Feature Engineering",
     "text": "Variants of Feature Engineering\n\n\n1. Transformation\n\n\n\nconvert features (e.g., birth date → age)\n\n\nbuild lag structures (e.g., time-lags)\n\n\nnormalization / standardization / scaling\n\n\n\n2. Type Conversion\n\n\n\nif numerical type is needed, transform categorical into numerical data using dummy features\n\n\nif categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)\n\n\n\n3. Feature Combination\n\n\n\ncreate interaction features (e.g., school_score = num_schools × median_school\nwith num_schools = number of schools within 5 miles of a property and\nmedian_school = median quality score of those schools)\n\n\ncombine categories (e.g., when there are very few observations or too many dummy features)\n\n\n\n4. Feature Composition\n\n\n\nbuild ratios (e.g., returns from prices)\n\n\nPrincipal Component Analysis (Dimensionality Reduction)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#scaling",
-    "href": "slides/lecture_4_predictive_analytics.html#scaling",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#scaling",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#scaling",
     "title": "Big Data and Analytics",
     "section": "Scaling",
     "text": "Scaling\n\n\nMost datasets contain features highly varying in magnitudes, units and range.\n\n\nMost machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.\n\n\nTo overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#type-conversion-encoding",
-    "href": "slides/lecture_4_predictive_analytics.html#type-conversion-encoding",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#type-conversion-encoding",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#type-conversion-encoding",
     "title": "Big Data and Analytics",
     "section": "Type Conversion (Encoding)",
     "text": "Type Conversion (Encoding)\n\nMany machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:\nLabel encoding  refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g. young -&gt; 1,  middle_age  -&gt; 2, old -&gt; 3. This only works in specific situations where you have somewhat continuous-like data, e.g. if the categorical feature is ordinal.\nOne hot encoding  is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g. \n\n\n\nIt is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap)."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-of-feature-engineering-i",
-    "href": "slides/lecture_4_predictive_analytics.html#example-of-feature-engineering-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-of-feature-engineering-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-of-feature-engineering-i",
     "title": "Big Data and Analytics",
     "section": "Example of Feature Engineering (I)",
     "text": "Example of Feature Engineering (I)\n\n\nData sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data “flight date time vs status”. Then, given the date-time data, we have to predict the status of the flight.\n\n\n\n\n\nBut the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature ” Hour_Of_Day”. Using the “Hour_Of_Day” feature, the machine will learn better as this feature is directly related to the status of the flight.\n\n\n\nSource: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-of-feature-engineering-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#example-of-feature-engineering-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-of-feature-engineering-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-of-feature-engineering-ii",
     "title": "Big Data and Analytics",
     "section": "Example of Feature Engineering (II)",
     "text": "Example of Feature Engineering (II)\n\nSuppose we are given the latitude, longitude and other data with the objective to predict the target feature “ Price_Of_House “. Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature. \nIn other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-of-feature-engineering-iii",
-    "href": "slides/lecture_4_predictive_analytics.html#example-of-feature-engineering-iii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-of-feature-engineering-iii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-of-feature-engineering-iii",
     "title": "Big Data and Analytics",
     "section": "Example of Feature Engineering (III)",
     "text": "Example of Feature Engineering (III)\n\nSuppose we are given a feature “ Marital_Status ” and other data with the objective to classify customers into “Creditworthy” and “ Not_Creditworthy “. In the data set the martial status has many different values, for example \n● single living alone\n● single living with his parents\n● married living together\n● married living separately\n● divorced\n● divorced but living together\n● registered partnerships\n● living in marriage-like community\n● widowed\n● ...\nTo avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.\nIf there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single “other” class."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#partitioning-the-data",
-    "href": "slides/lecture_4_predictive_analytics.html#partitioning-the-data",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#partitioning-the-data",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#partitioning-the-data",
     "title": "Big Data and Analytics",
     "section": "Partitioning the Data",
     "text": "Partitioning the Data\n\n\nThe partitioning of the data in Training and Test Data has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.\n\n\n\n\n\nThe partitioning of the data in training and test data can be carried out in the following ways:\n\n\nBy random/stratified/… sampling (problem with the repeatability)\n\n\naccording to a list\n\n\naccording to rules (e.g. the first/last 50 records or every twelfth)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#applying-training-and-test-data",
-    "href": "slides/lecture_4_predictive_analytics.html#applying-training-and-test-data",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#applying-training-and-test-data",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#applying-training-and-test-data",
     "title": "Big Data and Analytics",
     "section": "Applying Training and Test Data",
     "text": "Applying Training and Test Data\n\n\n\n\nSource: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#partitioning",
-    "href": "slides/lecture_4_predictive_analytics.html#partitioning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#partitioning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#partitioning",
     "title": "Big Data and Analytics",
     "section": "Partitioning",
     "text": "Partitioning"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#exploratory-data-analysis",
-    "href": "slides/lecture_4_predictive_analytics.html#exploratory-data-analysis",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#exploratory-data-analysis",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#exploratory-data-analysis",
     "title": "Big Data and Analytics",
     "section": "Exploratory Data Analysis",
     "text": "Exploratory Data Analysis\n\nIn Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.\nPeople are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.\nReasons for EDA:\n● gain intuition about the data\n● make comparisons between distributions\n● sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)\n● find out where data is missing or if there are outliers\n● summarize the data\nExploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#univariate-non-graphical-eda",
-    "href": "slides/lecture_4_predictive_analytics.html#univariate-non-graphical-eda",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#univariate-non-graphical-eda",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#univariate-non-graphical-eda",
     "title": "Big Data and Analytics",
     "section": "Univariate Non-Graphical EDA",
     "text": "Univariate Non-Graphical EDA\n\nNon-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:\n● measures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.\n● measures of spread, i.e. variance, standard deviation, and interquartile range\n● the shape of the distribution\n● the existence of outliers\nThe characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#tests-on-outliers",
-    "href": "slides/lecture_4_predictive_analytics.html#tests-on-outliers",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#tests-on-outliers",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#tests-on-outliers",
     "title": "Big Data and Analytics",
     "section": "Tests on Outliers",
     "text": "Tests on Outliers\n\nOutlier are data objects, which are clearly different from the others.\nUsually, the detection of outliers is an unsupervised process, because they are not known before analyses.\nIn the case of numerical attributes the Interquartil Range can be used. Here, an outlier is defined if the attribute lies outside the interval\n\n\n\nUsually, k has a value between 1.5 and 3. The bigger k, the more different the values must be to be classified as outliers.\nCan be visualized by a Box-and-Whisker Plot:"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#handling-outliers",
-    "href": "slides/lecture_4_predictive_analytics.html#handling-outliers",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#handling-outliers",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#handling-outliers",
     "title": "Big Data and Analytics",
     "section": "Handling Outliers",
     "text": "Handling Outliers\n\n\nOutlier have to be eliminated if they\n\n1. would bias the analysis, e.g. if 9 persons have an age between 20 and 30 and the 10th person is 80 years old.\n2. are erogenous data, e.g. as a result of input errors or a defect sensor.\n\nIt is not always acceptable to drop an observation just because it is an outlier. They can be legitimate observations and are sometimes interesting ones. It’s important to investigate the nature of the outlier before deciding.\nIn those cases where you shouldn’t drop the outlier, one option is to try a transformation. Log transformations  pull in high numbers. This can reduce the impact of a single point if the outlier is an independent variable."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#univariate-graphical-eda",
-    "href": "slides/lecture_4_predictive_analytics.html#univariate-graphical-eda",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#univariate-graphical-eda",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#univariate-graphical-eda",
     "title": "Big Data and Analytics",
     "section": "Univariate Graphical EDA",
     "text": "Univariate Graphical EDA\n\nNon-graphical and graphical EDA methods complement each other, they have the same focus. While the non-graphical methods are quantitative and objective, they do not give a full picture of the data. The distribution of a variable tells us what values the variable takes and how often each value occurs.\nTypes of displays:\nfor numerical variables: Histograms, Boxplots, Quantile-normal plots, …\nfor categorical variables: Pie charts, Bar graphs, …"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#multivariate-non-graphical-eda",
-    "href": "slides/lecture_4_predictive_analytics.html#multivariate-non-graphical-eda",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#multivariate-non-graphical-eda",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#multivariate-non-graphical-eda",
     "title": "Big Data and Analytics",
     "section": "Multivariate Non-Graphical EDA",
     "text": "Multivariate Non-Graphical EDA\n\nMultivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#multivariate-graphical-eda",
-    "href": "slides/lecture_4_predictive_analytics.html#multivariate-graphical-eda",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#multivariate-graphical-eda",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#multivariate-graphical-eda",
     "title": "Big Data and Analytics",
     "section": "Multivariate Graphical EDA",
     "text": "Multivariate Graphical EDA\n\nMultivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#touring-diagram",
-    "href": "slides/lecture_4_predictive_analytics.html#touring-diagram",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#touring-diagram",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#touring-diagram",
     "title": "Big Data and Analytics",
     "section": "Touring Diagram",
     "text": "Touring Diagram"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation-3",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation-3",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation-3",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation-3",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#categories-in-machine-learning",
-    "href": "slides/lecture_4_predictive_analytics.html#categories-in-machine-learning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#categories-in-machine-learning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#categories-in-machine-learning",
     "title": "Big Data and Analytics",
     "section": "Categories in Machine Learning",
     "text": "Categories in Machine Learning"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#supervised-learning",
-    "href": "slides/lecture_4_predictive_analytics.html#supervised-learning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#supervised-learning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#supervised-learning",
     "title": "Big Data and Analytics",
     "section": "Supervised Learning",
     "text": "Supervised Learning"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#unsupervised-learning",
-    "href": "slides/lecture_4_predictive_analytics.html#unsupervised-learning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#unsupervised-learning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#unsupervised-learning",
     "title": "Big Data and Analytics",
     "section": "Unsupervised Learning",
     "text": "Unsupervised Learning"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#supervised-and-unsupervised-learning",
-    "href": "slides/lecture_4_predictive_analytics.html#supervised-and-unsupervised-learning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#supervised-and-unsupervised-learning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#supervised-and-unsupervised-learning",
     "title": "Big Data and Analytics",
     "section": "Supervised and Unsupervised Learning",
     "text": "Supervised and Unsupervised Learning"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#use-cases-quiz",
-    "href": "slides/lecture_4_predictive_analytics.html#use-cases-quiz",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#use-cases-quiz",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#use-cases-quiz",
     "title": "Big Data and Analytics",
     "section": "Use Cases Quiz",
     "text": "Use Cases Quiz"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#reinforcement-learning",
-    "href": "slides/lecture_4_predictive_analytics.html#reinforcement-learning",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#reinforcement-learning",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#reinforcement-learning",
     "title": "Big Data and Analytics",
     "section": "Reinforcement Learning",
     "text": "Reinforcement Learning\n\nThe solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.\nSupervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.\nFor example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.\nUnfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.\nFor these cases there exist a different approach known as reinforcement learning."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#reinforcement-learning-1",
-    "href": "slides/lecture_4_predictive_analytics.html#reinforcement-learning-1",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#reinforcement-learning-1",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#reinforcement-learning-1",
     "title": "Big Data and Analytics",
     "section": "Reinforcement Learning",
     "text": "Reinforcement Learning\n\n\n\n\nThe agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#alphago",
-    "href": "slides/lecture_4_predictive_analytics.html#alphago",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#alphago",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#alphago",
     "title": "Big Data and Analytics",
     "section": "AlphaGo",
     "text": "AlphaGo\n\nGo is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.\n\n\nThe core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.\nA newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.\n\n\n\n\n\n\n\nChess 2^64 legal positions, Go 2^120!!!"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#libratus",
-    "href": "slides/lecture_4_predictive_analytics.html#libratus",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#libratus",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#libratus",
     "title": "Big Data and Analytics",
     "section": "Libratus",
     "text": "Libratus\n\nAn artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.\nPoker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.\n“We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#types-of-artificial-intelligence",
-    "href": "slides/lecture_4_predictive_analytics.html#types-of-artificial-intelligence",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#types-of-artificial-intelligence",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#types-of-artificial-intelligence",
     "title": "Big Data and Analytics",
     "section": "Types of Artificial Intelligence",
     "text": "Types of Artificial Intelligence\n\nDiscriminative AI is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.\nGenerative AI is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.\nWell-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#chatgpt",
-    "href": "slides/lecture_4_predictive_analytics.html#chatgpt",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#chatgpt",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#chatgpt",
     "title": "Big Data and Analytics",
     "section": "ChatGPT",
     "text": "ChatGPT\n\nChatGPT is a generative AI that produces human-like text and communicates with humans.\nThe “GPT” in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.\nGPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#chatgpt---approach",
-    "href": "slides/lecture_4_predictive_analytics.html#chatgpt---approach",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---approach",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---approach",
     "title": "Big Data and Analytics",
     "section": "ChatGPT - Approach",
     "text": "ChatGPT - Approach\n\nChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.\n\n\n\nThe most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-i",
-    "href": "slides/lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-i",
     "title": "Big Data and Analytics",
     "section": "ChatGPT - Semantic Spaces (I)",
     "text": "ChatGPT - Semantic Spaces (I)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---semantic-spaces-ii",
     "title": "Big Data and Analytics",
     "section": "ChatGPT - Semantic Spaces (II)",
     "text": "ChatGPT - Semantic Spaces (II)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#chatgpt---evaluation-component",
-    "href": "slides/lecture_4_predictive_analytics.html#chatgpt---evaluation-component",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---evaluation-component",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#chatgpt---evaluation-component",
     "title": "Big Data and Analytics",
     "section": "ChatGPT - Evaluation Component",
     "text": "ChatGPT - Evaluation Component"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation-4",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation-4",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation-4",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation-4",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.1.1  K-Nearest Neighbors\n\n\n4.4.1.2  Evaluating the Quality of Classification\n\n\n4.4.1.3  Decision Tree Approaches\n\n\n4.4.1.4  Logistic Regression\n\n\n4.4.1.5  Neural Networks\n\n\n4.4.1.6  Resampling\n\n\n4.4.1.7  Ensemble Learning\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#introductory-example",
-    "href": "slides/lecture_4_predictive_analytics.html#introductory-example",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#introductory-example",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#introductory-example",
     "title": "Big Data and Analytics",
     "section": "Introductory Example",
     "text": "Introductory Example\n\nCredit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.\n\nAssume you have the age, income, and a creditworthiness category of “yes” or “no” for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.\nYou can plot people as points on the plane and label people with an empty circle if they have low credit ratings.\nWhat if a new guy comes in who is 49years old and who makes 53,000 Euro? What is his likely credit rating label?"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#k-nearest-neighbors",
-    "href": "slides/lecture_4_predictive_analytics.html#k-nearest-neighbors",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#k-nearest-neighbors",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#k-nearest-neighbors",
     "title": "Big Data and Analytics",
     "section": "k-Nearest Neighbors",
     "text": "k-Nearest Neighbors\n\n\nk-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.\nThe intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.\nProcedure of k-NN:\n\n1. Determine parameter k (= number of nearest neighbors)\n2. Calculate the distances between the new object and all known labeled objects.\n3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.\n4. Count the frequencies of the classes of the nearest neighbors.\n5. Assign the new object to the most frequent class."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#measuring-similarity",
-    "href": "slides/lecture_4_predictive_analytics.html#measuring-similarity",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#measuring-similarity",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#measuring-similarity",
     "title": "Big Data and Analytics",
     "section": "Measuring Similarity",
     "text": "Measuring Similarity"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#unnormalized-vs.-normalized",
-    "href": "slides/lecture_4_predictive_analytics.html#unnormalized-vs.-normalized",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#unnormalized-vs.-normalized",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#unnormalized-vs.-normalized",
     "title": "Big Data and Analytics",
     "section": "Unnormalized vs. Normalized",
     "text": "Unnormalized vs. Normalized"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-i",
-    "href": "slides/lecture_4_predictive_analytics.html#example-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-i",
     "title": "Big Data and Analytics",
     "section": "Example (I)",
     "text": "Example (I)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#example-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-ii",
     "title": "Big Data and Analytics",
     "section": "Example (II)",
     "text": "Example (II)"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#example-iii",
-    "href": "slides/lecture_4_predictive_analytics.html#example-iii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#example-iii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#example-iii",
     "title": "Big Data and Analytics",
     "section": "Example (III)",
     "text": "Example (III)\n\n3. Choose the k nearest neighbors\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer\nAge\nMonthly Income\nMonthly Costs\nCreditworthy\nDistance\n\n\n\n\nA\n0.0000\n0.0303\n0.0400\nyes\n0.4347\n\n\nC\n0.1714\n0.3333\n0.3600\nyes\n0.1726\n\n\nE\n0.3143\n0.1818\n0.2000\nno\n0.2010\n\n\nF\n0.4286\n0.3939\n0.6000\nno\n0.4482\n\n\nG\n0.4857\n0.2121\n0.1200\nyes\n0.3090\n\n\nX\n0.2286\n0.3636\n0.2000\n?\n \n\n\n\n\n4. Count the numbers of class members\n3 x yes ; 2 x no\n5. Assign object to most frequent class\nCustomer is creditworthy!"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#creation-and-use-of-models",
-    "href": "slides/lecture_4_predictive_analytics.html#creation-and-use-of-models",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#creation-and-use-of-models",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#creation-and-use-of-models",
     "title": "Big Data and Analytics",
     "section": "Creation and Use of Models",
     "text": "Creation and Use of Models"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#calculating-accuracies",
-    "href": "slides/lecture_4_predictive_analytics.html#calculating-accuracies",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#calculating-accuracies",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#calculating-accuracies",
     "title": "Big Data and Analytics",
     "section": "Calculating Accuracies",
     "text": "Calculating Accuracies"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#determining-parameter-k",
-    "href": "slides/lecture_4_predictive_analytics.html#determining-parameter-k",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#determining-parameter-k",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#determining-parameter-k",
     "title": "Big Data and Analytics",
     "section": "Determining Parameter k",
     "text": "Determining Parameter k\n\n1. Split the original labeled dataset into training and test data.\n2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.\n3. Run k-NN a few times, changing k and checking the evaluation measure.\n4. Optimize k by picking the one with the best evaluation measure.\n\n\n\n\n\n\n\n\n\nk\nAccuracy  \n\n\n\n\n1\n0.720\n\n\n2\n0.685\n\n\n3\n0.740\n\n\n4\n0.745\n\n\n5\n0.770\n\n\n6\n0.740\n\n\n7\n0.750\n\n\n8\n0.750\n\n\n9\n0.765\n\n\n10\n0.760"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation-5",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation-5",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation-5",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation-5",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.1.1  K-Nearest Neighbors\n\n\n4.4.1.2  Evaluating the Quality of Classification\n\n\n4.4.1.3  Decision Tree Approaches\n\n\n4.4.1.4  Logistic Regression\n\n\n4.4.1.5  Neural Networks\n\n\n4.4.1.6  Resampling\n\n\n4.4.1.7  Ensemble Learning\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-i",
-    "href": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-i",
     "title": "Big Data and Analytics",
     "section": "Evaluating the quality of Classification (I)",
     "text": "Evaluating the quality of Classification (I)\n\nTrue positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as “yes”, when it is in fact “no”. A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-ii",
     "title": "Big Data and Analytics",
     "section": "Evaluating the quality of Classification (II)",
     "text": "Evaluating the quality of Classification (II)\n\nTest metrics are used to assess how accurately the model predicts the known values:\n\n\n\nMost classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iii",
-    "href": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iii",
     "title": "Big Data and Analytics",
     "section": "Evaluating the quality of Classification (III)",
     "text": "Evaluating the quality of Classification (III)\n\nMisclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:\n\n\n\nFor problems like, this additional measures are required to evaluate a classifier.\nSensitivity (true positive rate, recall) measures the proportion of positives that are correctly identified as such. Specificity (true negative rate) measures the proportion of negatives that are correctly identified as such.\n\n\n\nUsing both measures, we can compute the Balanced Accuracy"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#problem-of-imbalancing-and-accuracy",
-    "href": "slides/lecture_4_predictive_analytics.html#problem-of-imbalancing-and-accuracy",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#problem-of-imbalancing-and-accuracy",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#problem-of-imbalancing-and-accuracy",
     "title": "Big Data and Analytics",
     "section": "Problem of Imbalancing and Accuracy",
     "text": "Problem of Imbalancing and Accuracy\n\nAssume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be “Accept” (Y) and “Reject” (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.\nBecause of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.\nThe results of the test of the model is consequently:\n\n\n\nThus, the model is blind for the N cases. But these are the ones of primary interest for the company."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iv",
-    "href": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iv",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iv",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-iv",
     "title": "Big Data and Analytics",
     "section": "Evaluating the quality of Classification (IV)",
     "text": "Evaluating the quality of Classification (IV)\n\n\nPrecision measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive.The higher the precision the smaller the number of false positives.\n\n\n\nRecall measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.\n\n\n\n\n\n\nSource: Wikipedia"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-v",
-    "href": "slides/lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-v",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-v",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#evaluating-the-quality-of-classification-v",
     "title": "Big Data and Analytics",
     "section": "Evaluating the quality of Classification (V)",
     "text": "Evaluating the quality of Classification (V)\n\nThe F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.\n\n\n\nA F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.\nIt is commonly used in cases of high class imbalance."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#creation-and-use-of-models-1",
-    "href": "slides/lecture_4_predictive_analytics.html#creation-and-use-of-models-1",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#creation-and-use-of-models-1",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#creation-and-use-of-models-1",
     "title": "Big Data and Analytics",
     "section": "Creation and Use of Models",
     "text": "Creation and Use of Models"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#navigation-6",
-    "href": "slides/lecture_4_predictive_analytics.html#navigation-6",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#navigation-6",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#navigation-6",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n4  Predictive Analytics\n\n\n4.1  Subject of Predictive Analytics\n\n\n4.2  The Analytics Process\n\n\n4.3  Data Preparation\n\n\n4.4  Methods, Algorithms and Applications\n\n\n4.4.1  Classification\n\n\n4.4.1.1  K-Nearest Neighbors\n\n\n4.4.1.2  Evaluating the Quality of Classification\n\n\n4.4.1.3  Decision Tree Approaches\n\n\n4.4.1.4  Logistic Regression\n\n\n4.4.1.5  Neural Networks\n\n\n4.4.1.6  Resampling\n\n\n4.4.1.7  Ensemble Learning\n\n\n4.4.2  Regression"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#which-one-is-better",
-    "href": "slides/lecture_4_predictive_analytics.html#which-one-is-better",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#which-one-is-better",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#which-one-is-better",
     "title": "Big Data and Analytics",
     "section": "Which one is better?",
     "text": "Which one is better?"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#introductory-example-1",
-    "href": "slides/lecture_4_predictive_analytics.html#introductory-example-1",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#introductory-example-1",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#introductory-example-1",
     "title": "Big Data and Analytics",
     "section": "Introductory Example",
     "text": "Introductory Example\n\n\n\n\nTo choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.\nProportions in the leafs can be interpreted as probabilities."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#decision-trees-i",
-    "href": "slides/lecture_4_predictive_analytics.html#decision-trees-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#decision-trees-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#decision-trees-i",
     "title": "Big Data and Analytics",
     "section": "Decision Trees (I)",
     "text": "Decision Trees (I)\n\nDecision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).\nA decision tree consists of nodes and borders. The topmost node (without any parent node) is called “root”. A node without a child node is called “leaf”. Nodes that have parent and child nodes are called “interior nodes”. The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a “binary tree”.\nA decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets)."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#decision-trees-ii",
-    "href": "slides/lecture_4_predictive_analytics.html#decision-trees-ii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#decision-trees-ii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#decision-trees-ii",
     "title": "Big Data and Analytics",
     "section": "Decision Trees (II)",
     "text": "Decision Trees (II)\n\n\nGraphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.\n\n\nThe decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#decision-trees-iii",
-    "href": "slides/lecture_4_predictive_analytics.html#decision-trees-iii",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#decision-trees-iii",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#decision-trees-iii",
     "title": "Big Data and Analytics",
     "section": "Decision Trees (III)",
     "text": "Decision Trees (III)\n\n\n\n\nSource: http://iopscience.iop.org/article/10.1088/1749-4699/5/1/015004"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#overview-of-important-decision-tree-methods",
-    "href": "slides/lecture_4_predictive_analytics.html#overview-of-important-decision-tree-methods",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#overview-of-important-decision-tree-methods",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#overview-of-important-decision-tree-methods",
     "title": "Big Data and Analytics",
     "section": "Overview of important Decision Tree Methods",
     "text": "Overview of important Decision Tree Methods\n\n\n\nName\n\n\nCART\n\n\nID3\n\n\nC5.0\n\n\nCHAID\n\n\nRandom Forests\n\n\n\n\nIdea\n\n\nChoose the attribute with the highest information content\n\n\nOne of the first methods from Quinlan; uses the concept of information gain\n\n\nLike ID3 based on the concept of information gain\n\n\nChoose the attribute that is most dependent on the target variable\n\n\nConstruct many trees with different sets of features and samples (randomly). Result by voting.\n\n\n\n\nMeasure used\n\n\nGini-Index\n\n\nInformation gain (entropy)\n\n\nRatio of information gain\n\n\nChi-square split\n\n\nOptional, mostly Gini-Index\n\n\n\n\nType of Splitting\n\n\nBinary\n\n\nComplete, pruning\n\n\nComplete, pruning\n\n\nComplete, pruning\n\n\nComplete"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#introductory-example-2",
-    "href": "slides/lecture_4_predictive_analytics.html#introductory-example-2",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#introductory-example-2",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#introductory-example-2",
     "title": "Big Data and Analytics",
     "section": "Introductory Example",
     "text": "Introductory Example"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#splitting-with-entropy-in-id3",
-    "href": "slides/lecture_4_predictive_analytics.html#splitting-with-entropy-in-id3",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#splitting-with-entropy-in-id3",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#splitting-with-entropy-in-id3",
     "title": "Big Data and Analytics",
     "section": "Splitting with Entropy in ID3",
     "text": "Splitting with Entropy in ID3"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#calculating-the-information-gain",
-    "href": "slides/lecture_4_predictive_analytics.html#calculating-the-information-gain",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#calculating-the-information-gain",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#calculating-the-information-gain",
     "title": "Big Data and Analytics",
     "section": "Calculating the Information Gain",
     "text": "Calculating the Information Gain\n\nThe information gain is a measure, that shows (by combination of the entropies) the appropriateness of an attribute for splitting:\n\n\n\nwhere m = number of values (here two: light, strong), ti = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#decision-using-id3",
-    "href": "slides/lecture_4_predictive_analytics.html#decision-using-id3",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#decision-using-id3",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#decision-using-id3",
     "title": "Big Data and Analytics",
     "section": "Decision using ID3",
     "text": "Decision using ID3\n\nInformation gain (outlook) = 0.246\nInformation gain (humidity) = 0.151\nInformation gain (wind) = 0.048\nInformation gain (temperature) = 0.029\nWe choose the attribute with the largest information gain (here: outlook) for the first splitting.\nAs solution we obtain the following tree:"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#decision-using-c5.0",
-    "href": "slides/lecture_4_predictive_analytics.html#decision-using-c5.0",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#decision-using-c5.0",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#decision-using-c5.0",
     "title": "Big Data and Analytics",
     "section": "Decision using C5.0",
     "text": "Decision using C5.0\n\n\nID3 tends to favor attributes that have a large number of values, resulting in larger trees. For example, if we have an attribute that has a distinct value for each record, then the entropy is 0, thus the information gain is maximal.\n\n\nTo compensate for this, C5.0 is a further development that uses the information gain ratio as a splitting criterion:\n\n\n\n\n\nIn the case of our example the GainRatio of Windy is\n\n\n\n\n\nand the GainRatio of Outlook is"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#handling-numerical-attributes",
-    "href": "slides/lecture_4_predictive_analytics.html#handling-numerical-attributes",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#handling-numerical-attributes",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#handling-numerical-attributes",
     "title": "Big Data and Analytics",
     "section": "Handling Numerical Attributes",
     "text": "Handling Numerical Attributes\n\n\nNumerical attributes are usually splitted binary. In contrast to categorical attributes many possible splitting points exist .\n\n\nThe splitting point with the highest information gain is looked for. For this, the potential attribute is sorted according to its values first and then all possible splitting point and the corresponding information gains are calculated. In extreme cases there exists n-1 possibilities."
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#the-cart-algorithm",
-    "href": "slides/lecture_4_predictive_analytics.html#the-cart-algorithm",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#the-cart-algorithm",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#the-cart-algorithm",
     "title": "Big Data and Analytics",
     "section": "The CART Algorithm",
     "text": "The CART Algorithm\n\n\nThe CART algorithm (Classification And Regression Trees) constructs trees that have only binary splits. Like C5.0, it is able to handle categorical and numerical attributes.\n\n\nAs a measure for the impurity of a node t, CART uses the Gini Index. In the case of two classes the Gini Index is defined as:"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#splitting-in-cart",
-    "href": "slides/lecture_4_predictive_analytics.html#splitting-in-cart",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#splitting-in-cart",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#splitting-in-cart",
     "title": "Big Data and Analytics",
     "section": "Splitting in CART",
     "text": "Splitting in CART"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#coherence-between-entropy-and-gini-index",
-    "href": "slides/lecture_4_predictive_analytics.html#coherence-between-entropy-and-gini-index",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#coherence-between-entropy-and-gini-index",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#coherence-between-entropy-and-gini-index",
     "title": "Big Data and Analytics",
     "section": "Coherence between Entropy and Gini Index",
     "text": "Coherence between Entropy and Gini Index\n\n\n\nRemark: Entropy has been scaled from (0, 1) to (0, 0.5)!"
   },
   {
-    "objectID": "slides/lecture_4_predictive_analytics.html#overfitting-i",
-    "href": "slides/lecture_4_predictive_analytics.html#overfitting-i",
+    "objectID": "slides/materials_lecture_4_predictive_analytics.html#overfitting-i",
+    "href": "slides/materials_lecture_4_predictive_analytics.html#overfitting-i",
     "title": "Big Data and Analytics",
     "section": "Overfitting (I)",
     "text": "Overfitting (I)\n\n\n\nMost decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes. If there are no such conflicting objects, the decision tree will correctly classify all training objects.\n\n\n\n\nIf tree performance is measured from the number of correctly classified cases it is com-mon to find that the training data gives an over-optimistic guide to future performance,i.e. with new data. A tree should exhibit generalization, i.e. work well with data other than those used to generate it. When the tree grows during training it often shows a decrease in generalization. This is because the deeper nodes are fitting noise in the training data not representative over the entire universe from which the training set was sampled. This is called ‘overfitting’."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#navigation",
-    "href": "slides/lecture_2_descriptive_analytics.html#navigation",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#navigation",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#navigation",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n2 Descriptive Analytics\n\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#application-systems-pyramid",
-    "href": "slides/lecture_2_descriptive_analytics.html#application-systems-pyramid",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#application-systems-pyramid",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#application-systems-pyramid",
     "title": "Big Data and Analytics",
     "section": "Application Systems Pyramid",
     "text": "Application Systems Pyramid"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#typical-descriptive-questions",
-    "href": "slides/lecture_2_descriptive_analytics.html#typical-descriptive-questions",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#typical-descriptive-questions",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#typical-descriptive-questions",
     "title": "Big Data and Analytics",
     "section": "Typical Descriptive Questions",
     "text": "Typical Descriptive Questions\n\n\n\n\nSource: Alfred Schlaucher, Oracle, p. 15"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#characteristics-of-operational-and-analytical-databases",
-    "href": "slides/lecture_2_descriptive_analytics.html#characteristics-of-operational-and-analytical-databases",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#characteristics-of-operational-and-analytical-databases",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#characteristics-of-operational-and-analytical-databases",
     "title": "Big Data and Analytics",
     "section": "Characteristics of Operational and Analytical Databases",
     "text": "Characteristics of Operational and Analytical Databases\n\n\n\n\nCharacteristics\n\n\nOperational Data\n\n\nAnalytical Data\n\n\n\n\n\n\nTarget group\n\n\nOperational employees\n\n\nManagement, Analysts, Divisional manager\n\n\n\n\nAccess frequency\n\n\nhigh\n\n\nslow to medium\n\n\n\n\nData volume per access\n\n\nlow to medium volume\n\n\nhigh volume\n\n\n\n\nRequired response time\n\n\nvery short\n\n\nshort to medium\n\n\n\n\nLevel of data\n\n\ndetailed\n\n\naggregated, processed\n\n\n\n\nQueries\n\n\npredictable, periodic\n\n\nunpredictable, ad hoc\n\n\n\n\nGiven period\n\n\ncurrent\n\n\npast to future\n\n\n\n\nTime horizon\n\n\n1–3 months\n\n\nseveral years up to decades"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
-    "href": "slides/lecture_2_descriptive_analytics.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
     "title": "Big Data and Analytics",
     "section": "Contradiction between Operational Data Architecture and Analytical Information Needs",
     "text": "Contradiction between Operational Data Architecture and Analytical Information Needs\n\n\n\nSource: Jung/Winter (2000): Data Warehousing Strategie: Erfahrungen, Methoden, Visionen, Berlin, p. 7."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#different-intensities-of-use",
-    "href": "slides/lecture_2_descriptive_analytics.html#different-intensities-of-use",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#different-intensities-of-use",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#different-intensities-of-use",
     "title": "Big Data and Analytics",
     "section": "Different Intensities of Use",
     "text": "Different Intensities of Use\n\n\nThe hardware load differs in operational application systems and data warehouse systems over time\n\n\n\n\n\n=&gt; A data warehouse relieves the operational systems\n\n\nSource: Inmon: Building the Data Warehouse, 2002, p. 23."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#definition-data-warehouse",
-    "href": "slides/lecture_2_descriptive_analytics.html#definition-data-warehouse",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#definition-data-warehouse",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#definition-data-warehouse",
     "title": "Big Data and Analytics",
     "section": "Definition: Data Warehouse",
     "text": "Definition: Data Warehouse\n\nThe term Data Warehouse was coined by Bill Inmon in 1990, which he defined in the following way:\n\n\n“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision making process.”\n\n\nHe defined the terms in the sentence as follows:\n\n\nSubject Oriented:  Data that gives information about a particular subject instead of about a company’s ongoing operations.\n\n\nIntegrated:  Data that is gathered into the data warehouse from a variety of sources and merged into a coherent whole.\n\n\nTime-variant:  All data in the data warehouse is identified with a particular time period.\n\n\nNon-volatile:  Data is stable in a data warehouse. More data is added but data is never removed. This enables management to gain a consistent picture of the business\n\nSource: “What is a Data Warehouse?” W.H. Inmon, Prism, Volume 1, Number 1, 1995"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#the-data-warehouse-concept",
-    "href": "slides/lecture_2_descriptive_analytics.html#the-data-warehouse-concept",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#the-data-warehouse-concept",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#the-data-warehouse-concept",
     "title": "Big Data and Analytics",
     "section": "The Data Warehouse Concept",
     "text": "The Data Warehouse Concept"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#layers-of-a-data-warehouse-system",
-    "href": "slides/lecture_2_descriptive_analytics.html#layers-of-a-data-warehouse-system",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#layers-of-a-data-warehouse-system",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#layers-of-a-data-warehouse-system",
     "title": "Big Data and Analytics",
     "section": "Layers of a Data Warehouse System",
     "text": "Layers of a Data Warehouse System"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#components-of-a-data-warehouse",
-    "href": "slides/lecture_2_descriptive_analytics.html#components-of-a-data-warehouse",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#components-of-a-data-warehouse",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#components-of-a-data-warehouse",
     "title": "Big Data and Analytics",
     "section": "Components of a Data Warehouse",
     "text": "Components of a Data Warehouse"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#structure-of-the-database",
-    "href": "slides/lecture_2_descriptive_analytics.html#structure-of-the-database",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#structure-of-the-database",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#structure-of-the-database",
     "title": "Big Data and Analytics",
     "section": "Structure of the Database",
     "text": "Structure of the Database\n\n\nThe database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company. In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company. They are organized in such a way that they can be viewed from different dimensions.\n\n\nFrequently used dimensions are:\n\n\n\nCompany structure (e.g., business units, organizational structure, legal entities)\n\n\nProduct structure (e.g., product groups and individual products)\n\n\nRegional structure (e.g., region, country, continent)\n\n\nCustomer structure (e.g., customer groups or segments, and individual customers)\n\n\nTime structure (e.g., month, quarter, year)\n\n\nBusiness parameters (e.g., sales, contribution margin, profit)\n\n\nCharacteristics (e.g., target, actual, deviations)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#examples-of-aggregation-levels-in-a-data-warehouse",
-    "href": "slides/lecture_2_descriptive_analytics.html#examples-of-aggregation-levels-in-a-data-warehouse",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#examples-of-aggregation-levels-in-a-data-warehouse",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#examples-of-aggregation-levels-in-a-data-warehouse",
     "title": "Big Data and Analytics",
     "section": "Examples of Aggregation Levels in a Data Warehouse",
     "text": "Examples of Aggregation Levels in a Data Warehouse"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#etl-tools",
-    "href": "slides/lecture_2_descriptive_analytics.html#etl-tools",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#etl-tools",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#etl-tools",
     "title": "Big Data and Analytics",
     "section": "ETL-Tools",
     "text": "ETL-Tools\n\n\nThe data in the data warehouse can normally only be accessed in a read-only manner. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.\n\n\nThe timeliness with which the transfer to the database is performed can be defined flexibly, e.g., within defined time intervals, immediately after each change, or at the explicit request of the user.\n\n\nETL programs include:\n\n\nMonitors: Detect and report changes in individual sources that are relevant to the data warehouse.\n\n\nExtractors: Select and transport data from the data sources into the workspace.\n\n\nTransformers: Unify, clean, integrate, consolidate, aggregate, and augment extracted data in the workspace.\n\n\nLoaders: Load transformed data from the workspace into the data warehouse after the data retrieval process is complete."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#staging-area",
-    "href": "slides/lecture_2_descriptive_analytics.html#staging-area",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#staging-area",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#staging-area",
     "title": "Big Data and Analytics",
     "section": "Staging Area",
     "text": "Staging Area\n\n\nThe staging area is a temporary cache that performs the ETL process. It includes the extraction, transformation and loading of the data into the data warehouse.\n\n\nNeither the operational systems nor the data warehouse are affected by the process. The data can be transferred incrementally from the operational systems without having to have a permanent connection to them. It is stored temporarily and only transformed when it is sufficiently complete.\n\n\nIt is then loaded en bloc into the data warehouse, so that no inconsistencies can occur here either.\n\n\nIf the ETL process is successful, the data is deleted from the staging area."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#the-metadata-repository",
-    "href": "slides/lecture_2_descriptive_analytics.html#the-metadata-repository",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#the-metadata-repository",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#the-metadata-repository",
     "title": "Big Data and Analytics",
     "section": "The Metadata Repository",
     "text": "The Metadata Repository\n\n\nMetadata supports data management and serves as a descriptor for an object that holds some data or information. In data warehouses, it is collectively organized in a catalog called the metadata repository.\n\n\nMetadata is classified into three types:\n\n\n\n\nTechnical metadata: Provides information about the structure of data, where it resides, and other technical details related to locating data in its native database.\n\n\n\n\nBusiness metadata: Describes the actual data in business-understandable terms. It can provide insights into the type of data, its origin, definition, quality, and relationships with other entities in the data warehouse.\n\n\n\n\nProcess metadata: Stores information about the occurrence and outcomes of operations taking place in the data warehouse."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#data-warehouse-and-data-mart",
-    "href": "slides/lecture_2_descriptive_analytics.html#data-warehouse-and-data-mart",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#data-warehouse-and-data-mart",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#data-warehouse-and-data-mart",
     "title": "Big Data and Analytics",
     "section": "Data Warehouse and Data Mart",
     "text": "Data Warehouse and Data Mart\n\n\nA single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.\n\n\nComparison: Data Warehouse and Data Mart\n\n\n\n\n\n\n\n\nData Mart\n\n\nData Warehouse\n\n\n\n\n\n\nApplication\n\n\nDivision/Department\n\n\nCompany\n\n\n\n\nData design\n\n\nOptimized\n\n\nGeneralistic\n\n\n\n\nData volume\n\n\nFrom gigabyte range\n\n\nFrom terabyte range\n\n\n\n\nOrigin\n\n\nTask oriented\n\n\nData model oriented\n\n\n\n\nRequirements\n\n\nSpecific\n\n\nVersatile"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#architectural-variants-of-data-warehouses-in-practice",
-    "href": "slides/lecture_2_descriptive_analytics.html#architectural-variants-of-data-warehouses-in-practice",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#architectural-variants-of-data-warehouses-in-practice",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#architectural-variants-of-data-warehouses-in-practice",
     "title": "Big Data and Analytics",
     "section": "Architectural Variants of Data Warehouses in Practice",
     "text": "Architectural Variants of Data Warehouses in Practice"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#from-transactions-to-reports",
-    "href": "slides/lecture_2_descriptive_analytics.html#from-transactions-to-reports",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#from-transactions-to-reports",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#from-transactions-to-reports",
     "title": "Big Data and Analytics",
     "section": "From Transactions to Reports",
     "text": "From Transactions to Reports"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#example-of-a-dashboard",
-    "href": "slides/lecture_2_descriptive_analytics.html#example-of-a-dashboard",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#example-of-a-dashboard",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#example-of-a-dashboard",
     "title": "Big Data and Analytics",
     "section": "Example of a Dashboard",
     "text": "Example of a Dashboard\n\n\n\nSource: https://www.bluemargin.com/power-bi-full-blog/topic/private-equity-data-intelligence"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-i",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-i",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-i",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-i",
     "title": "Big Data and Analytics",
     "section": "Star Schema (I)",
     "text": "Star Schema (I)\n\nThe Star schema has a central fact table and exactly one dimension table for each dimension.\n\n\n\n\n\nSource: Müller Lenz (2013), p. 60f\n\n\nThe cardinality between the fact table and a dimension table is n∶1, i.e. a fact (e.g. sales: 67,000 euros) is described by one dimension expression for each dimension (e.g. time: 1st quarter=, region: Hesse, product group: books). A dimension characteristic (e.g. product group: books) is associated with 0, 1 or n facts."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-ii",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-ii",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-ii",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-ii",
     "title": "Big Data and Analytics",
     "section": "Star Schema (II)",
     "text": "Star Schema (II)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-iii",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-iii",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-iii",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-iii",
     "title": "Big Data and Analytics",
     "section": "Star Schema (III)",
     "text": "Star Schema (III)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-table-design-i",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-table-design-i",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-table-design-i",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-table-design-i",
     "title": "Big Data and Analytics",
     "section": "Star Schema Table Design (I)",
     "text": "Star Schema Table Design (I)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-table-design-ii",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-table-design-ii",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-table-design-ii",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-table-design-ii",
     "title": "Big Data and Analytics",
     "section": "Star Schema Table Design (II)",
     "text": "Star Schema Table Design (II)\n\n\n\n\nSource: https://www.guru99.com/star-snowflake-data-warehousing.html"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-example",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-example",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-example",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-example",
     "title": "Big Data and Analytics",
     "section": "Star Schema Example",
     "text": "Star Schema Example"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#exercise-1",
-    "href": "slides/lecture_2_descriptive_analytics.html#exercise-1",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#exercise-1",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#exercise-1",
     "title": "Big Data and Analytics",
     "section": "Exercise 1",
     "text": "Exercise 1\n\n\nAn online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:\n\n\n\nCUSTOMER (ID, name, address, telephone, birthday, gender)\n\n\nWINE (ID, name, type, year, bottle_price, class)\n\n\nCLASS (ID, name, region)\n\n\nTIME (timestamp, date, year)\n\n\nORDER (customer, wine, time, bottles)\n\n\n\nCreate the star schema for the data warehouse."
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#queries-on-the-star-schema",
-    "href": "slides/lecture_2_descriptive_analytics.html#queries-on-the-star-schema",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#queries-on-the-star-schema",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#queries-on-the-star-schema",
     "title": "Big Data and Analytics",
     "section": "Queries on the Star Schema",
     "text": "Queries on the Star Schema\n\n\nExample:\n\n\nIn which years were the most cars purchased by female customers in Hesse in the 1st quarter?\n\nselect z.Year as Year, sum(v.Amount) as Total_Amount\nfrom Branch f, Product p, Time z, Customer k, Sales v\nwhere z.Quarter = 1 and k.gender = ‘f’ and p.Product_type = ‘Car’ and f.state = ‘Hesse’ and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID\ngroup by z.Year\norder by Total_Amount Descending;\n\n\n\n\nYear\n\n\nTotal Amount\n\n\n\n\n\n\n2004\n\n\n745\n\n\n\n\n2005\n\n\n710\n\n\n\n\n2003\n\n\n650\n\n\n\n\n\nSource: Hartung (2011), p. 37"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#snowflake-schema",
-    "href": "slides/lecture_2_descriptive_analytics.html#snowflake-schema",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#snowflake-schema",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#snowflake-schema",
     "title": "Big Data and Analytics",
     "section": "Snowflake Schema",
     "text": "Snowflake Schema\n\nIn the Snowflake schema, the redundancies in the Star schema are resolved in the dimension tables and the hierarchy levels are each modeled with their own tables:\n\n\n\n\n\nSource: https://www.guru99.com/star-snowflake-data-warehousing.html"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#star-schema-vs.-snowflake-schema",
-    "href": "slides/lecture_2_descriptive_analytics.html#star-schema-vs.-snowflake-schema",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-vs.-snowflake-schema",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#star-schema-vs.-snowflake-schema",
     "title": "Big Data and Analytics",
     "section": "Star Schema vs. Snowflake Schema",
     "text": "Star Schema vs. Snowflake Schema\n\n\n– Speed of query processing is in favor of Star scheme\n\n\n– Data volume tends to be lower with Snowflake schema\n\n\n– Snowflake schema is easier to change (maintenance)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#galaxy-schema",
-    "href": "slides/lecture_2_descriptive_analytics.html#galaxy-schema",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#galaxy-schema",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#galaxy-schema",
     "title": "Big Data and Analytics",
     "section": "Galaxy Schema",
     "text": "Galaxy Schema\n\n\nThe Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions. The Galaxy schema thus represents more than one data cube (multi-cubes)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#table-structure-of-the-galaxy-schema",
-    "href": "slides/lecture_2_descriptive_analytics.html#table-structure-of-the-galaxy-schema",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#table-structure-of-the-galaxy-schema",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#table-structure-of-the-galaxy-schema",
     "title": "Big Data and Analytics",
     "section": "Table Structure of the Galaxy Schema",
     "text": "Table Structure of the Galaxy Schema"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#dw-planning-user-questions-i",
-    "href": "slides/lecture_2_descriptive_analytics.html#dw-planning-user-questions-i",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#dw-planning-user-questions-i",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#dw-planning-user-questions-i",
     "title": "Big Data and Analytics",
     "section": "DW Planning – User Questions (I)",
     "text": "DW Planning – User Questions (I)\n\n\nWhat is the ratio of private to corporate customers?\n\n\nDoes this quantity ratio correspond to the turnover ratio?\n\n\nDo customer characteristics such as occupational group, living situation, education, etc. play a role in turnover?\n\n\nWhat are the customers with the highest sales?\n\n\nWhat is the development of sales over time? Are there any shifts in relation to customer characteristics?\n\n\nCan additional customer segments be formed, e.g. if customer characteristics are combined?\n\n\nAre there regional focal points in relation to customer characteristics?\n\n\nAre there regional focuses related to products / product groups?\n\n\nAre there correlations between customer characteristics and products?\n\n\nWhat are the top-selling products? Top sellers/bottom sellers lists?\n\n\nAre there seasonal influences on the sales development depending on product or customer characteristics?"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#dw-planning-user-questions-ii",
-    "href": "slides/lecture_2_descriptive_analytics.html#dw-planning-user-questions-ii",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#dw-planning-user-questions-ii",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#dw-planning-user-questions-ii",
     "title": "Big Data and Analytics",
     "section": "DW Planning – User Questions (II)",
     "text": "DW Planning – User Questions (II)\n\n\n\n\nSource: Alfred Schlaucher, Oracle, p. 28"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#result-star-schema",
-    "href": "slides/lecture_2_descriptive_analytics.html#result-star-schema",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#result-star-schema",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#result-star-schema",
     "title": "Big Data and Analytics",
     "section": "Result: Star Schema",
     "text": "Result: Star Schema\n\n\n\n\nSource: Alfred Schlaucher, Oracle, p. 40"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#exercise-2",
-    "href": "slides/lecture_2_descriptive_analytics.html#exercise-2",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#exercise-2",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#exercise-2",
     "title": "Big Data and Analytics",
     "section": "Exercise 2",
     "text": "Exercise 2\n\n\nA restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation.\n\n\nThe company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status.\n\n\nThe menu items of the restaurants are divided into the classes “Starters”, “Main courses”, “Desserts”, “Beverages” and “Other”. Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.\n\n\nCreate the logical data warehouse schema!"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#exercise-3",
-    "href": "slides/lecture_2_descriptive_analytics.html#exercise-3",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#exercise-3",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#exercise-3",
     "title": "Big Data and Analytics",
     "section": "Exercise 3",
     "text": "Exercise 3\n\n\nAs an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.\n\n\nFlowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available.\n\n\nThe DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.\n\n\nThe key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.\n\n\nEmployees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.\n\n\nCreate the logical data warehouse schema!"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#navigation-1",
-    "href": "slides/lecture_2_descriptive_analytics.html#navigation-1",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#navigation-1",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#navigation-1",
     "title": "Big Data and Analytics",
     "section": "Navigation",
     "text": "Navigation\n\n\n\n2 Descriptive Analytics\n\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#subject-of-olap",
-    "href": "slides/lecture_2_descriptive_analytics.html#subject-of-olap",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#subject-of-olap",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#subject-of-olap",
     "title": "Big Data and Analytics",
     "section": "Subject of OLAP",
     "text": "Subject of OLAP\n\n\nOnline Analytical Processing (OLAP) is software technology focused on the analysis of dynamic, multidimensional data.\n\n\nThe goal is to provide executives with the information they need quickly, flexibly and interactively.\n\n\nOLAP functionality can be characterized as dynamic, multidimensional analysis of consolidated enterprise data, which includes the following components:\n\n\n\nCalculations of key figures over different dimensions and aggregation levels\n\n\nTrend analysis over definable time intervals\n\n\n“What if” analyses\n\n\nMultidimensional visualization methods"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#facts-and-dimensions",
-    "href": "slides/lecture_2_descriptive_analytics.html#facts-and-dimensions",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#facts-and-dimensions",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#facts-and-dimensions",
     "title": "Big Data and Analytics",
     "section": "Facts and Dimensions",
     "text": "Facts and Dimensions"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#organizing-data-as-hypercube",
-    "href": "slides/lecture_2_descriptive_analytics.html#organizing-data-as-hypercube",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#organizing-data-as-hypercube",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#organizing-data-as-hypercube",
     "title": "Big Data and Analytics",
     "section": "Organizing Data as Hypercube",
     "text": "Organizing Data as Hypercube"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#olap-operations-slicing-and-dicing",
-    "href": "slides/lecture_2_descriptive_analytics.html#olap-operations-slicing-and-dicing",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-slicing-and-dicing",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-slicing-and-dicing",
     "title": "Big Data and Analytics",
     "section": "OLAP Operations: Slicing and Dicing",
     "text": "OLAP Operations: Slicing and Dicing"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#olap-operations-rotate",
-    "href": "slides/lecture_2_descriptive_analytics.html#olap-operations-rotate",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-rotate",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-rotate",
     "title": "Big Data and Analytics",
     "section": "OLAP Operations: Rotate",
     "text": "OLAP Operations: Rotate"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#olap-operations-drill-down-and-roll-up",
-    "href": "slides/lecture_2_descriptive_analytics.html#olap-operations-drill-down-and-roll-up",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-drill-down-and-roll-up",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-drill-down-and-roll-up",
     "title": "Big Data and Analytics",
     "section": "OLAP Operations: Drill Down and Roll Up",
     "text": "OLAP Operations: Drill Down and Roll Up"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#olap-operations-nest",
-    "href": "slides/lecture_2_descriptive_analytics.html#olap-operations-nest",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-nest",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#olap-operations-nest",
     "title": "Big Data and Analytics",
     "section": "OLAP Operations: Nest",
     "text": "OLAP Operations: Nest\n\nThe result of a nest operation physically represents a two-dimensional matrix. It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form. In the following example, three dimensions are displayed:"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#olap-as-excel-plug-in",
-    "href": "slides/lecture_2_descriptive_analytics.html#olap-as-excel-plug-in",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#olap-as-excel-plug-in",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#olap-as-excel-plug-in",
     "title": "Big Data and Analytics",
     "section": "OLAP as Excel plug-in",
     "text": "OLAP as Excel plug-in"
   },
   {
-    "objectID": "slides/lecture_2_descriptive_analytics.html#architecture-of-an-olap-system",
-    "href": "slides/lecture_2_descriptive_analytics.html#architecture-of-an-olap-system",
+    "objectID": "slides/materials_lecture_2_descriptive_analytics.html#architecture-of-an-olap-system",
+    "href": "slides/materials_lecture_2_descriptive_analytics.html#architecture-of-an-olap-system",
     "title": "Big Data and Analytics",
     "section": "Architecture of an OLAP System",
     "text": "Architecture of an OLAP System"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#agenda",
-    "href": "slides/lecture_0_orga.html#agenda",
-    "title": "Orga",
-    "section": "Agenda",
-    "text": "Agenda\n\nIntroduction to Analytics\nDescriptive Analytics\n\nData Warehouse Systems\nOnline Analytical Processing (OLAP)\n\nPredictive Analytics\n\nSubject of Predictive Analytics\nThe Analytics Process\nData Preparation\nMethods, Algorithms and Applications\n\nBig Data"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#literature",
-    "href": "slides/lecture_0_orga.html#literature",
-    "title": "Orga",
-    "section": "Literature",
-    "text": "Literature\nPart 1:\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective.\nMartínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048-3061.\nChen, H., Chiang, R. H., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly 36(4), 1165-1188.\n\nPart 2:\n\nVaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer.\nSchutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media.\nRaschka, Sebastian (2015): Python Machine Learning, Packt Publishing.\n\nPart 3:\n\nSchmarzo, B. (2016): Big Data MBA, Wiley.\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media, Inc. \n\nPart 4:\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98.\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626-639."
   },
   {
     "objectID": "index.html",
@@ -1173,14 +1201,14 @@
     "href": "index.html#learning-objectives",
     "title": "Big Data & Analytics",
     "section": "Learning objectives",
-    "text": "Learning objectives\nKnowledge After completing the module, students will be able to:\n\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills Students will be able to:\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence Upon successful completion, students will be able to:\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
+    "text": "Learning objectives\nKnowledge After completing the module, students will be able to:\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches. 🟢 l1\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 l2\nExplain fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 l10\n\nSkills Students will be able to:\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence Upon successful completion, students will be able to:\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations. 🟢 l10"
   },
   {
     "objectID": "index.html#lectures-and-exercises",
     "href": "index.html#lectures-and-exercises",
     "title": "Big Data & Analytics",
     "section": "Lectures and exercises",
-    "text": "Lectures and exercises\n\n\n\n\n\n\nNote\n\n\n\nLectures to be polished before “slicing”\n\nlecture 0 - orga\nlecture 1 - introduction to analytics (see pdf)\nlecture 2 - descriptive analytics (see pdf)\nlecture 3 - big data (see pdf)\nlecture 4 - prescriptive analytics (see pdf)\n\n\n\n\nPart 1: Foundations\n\nSession 1: Foundations of data analytics\n\n\n\nPart 2: Analytics for structured data\n\nSession 2: Structuring and preparing data\nSession 3: Descriptive analysis I\nSession 4: Descriptive analysis II\nSession 5: Predictive analysis\nSession 6: Prescriptive analysis\n\n\n\nPart 3: Analytics for big data\n\nSession 7: Structuring and preparing big and unstructured data\nSession 8: Exploratory analysis\nSession 9: Predictive analysis\n\n\n\nPart 4 – Analytics in organizations\n\nSession 10: Governance of data analytics\nSession 11: Recap, exam preparation, Q&A\n\n\n\n\n\n\n\nNote\n\n\n\nWe may prepare the handout generated based on all slides."
+    "text": "Lectures and exercises\n\n\n\n\n\n\nNote\n\n\n\nLectures to be polished before “slicing”\n\nlecture 1 - introduction to analytics (see pdf)\nlecture 2 - descriptive analytics (see pdf)\nlecture 3 - big data (see pdf)\nlecture 4 - prescriptive analytics (see pdf)\n\n\n\n\nPart 1: Foundations\n\nCourse Logistics (slides and notes)\nSession 1: Foundations of data analytics (slides and notes)\n\n\n\nPart 2: Analytics for structured data\n\nSession 2: Structuring and preparing data (slides and notes)\nSession 3: Descriptive analysis I (slides and notes)\nSession 4: Descriptive analysis II (slides and notes)\nSession 5: Predictive analysis (slides and notes)\nSession 6: Prescriptive analysis (slides and notes)\n\n\n\nPart 3: Analytics for big data\n\nSession 7: Big data (slides and notes)\nSession 8: Exploratory analysis (slides and notes)\nSession 9: Predictive analysis (slides and notes)\n\n\n\nPart 4 – Analytics in organizations\n\nSession 10: Governance of data analytics (slides and notes)\nSession 11: Recap, exam preparation, Q&A (slides and notes)\n\n\n\n\n\n\n\nNote\n\n\n\nWe may prepare the handout generated based on all slides."
   },
   {
     "objectID": "index.html#group-work",
@@ -1211,319 +1239,333 @@
     "text": "Recommended literature\nPart 1:\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective. link\nMartínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048-3061. link\nChen, H., Chiang, R. H., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly 36(4), 1165-1188. link\n\nPart 2:\n\nVaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer. link\nSchutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media. link\nRaschka, Sebastian (2015): Python Machine Learning, Packt Publishing. link\n\nPart 3:\n\nSchmarzo, B. (2016): Big Data MBA, Wiley. link\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media, Inc. link\n\nPart 4:\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98. link\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626-639. link"
   },
   {
-    "objectID": "slides/lecture_3_big_data.html#navigation",
-    "href": "slides/lecture_3_big_data.html#navigation",
-    "title": "Big Data and Analytics",
-    "section": "Navigation",
-    "text": "Navigation\n\n\n3 Big Data"
+    "objectID": "slides/lecture_0_orga.html#agenda",
+    "href": "slides/lecture_0_orga.html#agenda",
+    "title": "Analytics and Big Data",
+    "section": "Agenda",
+    "text": "Agenda\n\nIntroduction to Analytics\nDescriptive Analytics\n\nData Warehouse Systems\nOnline Analytical Processing (OLAP)\n\nPredictive Analytics\n\nSubject of Predictive Analytics\nThe Analytics Process\nData Preparation\nMethods, Algorithms and Applications\n\nBig Data"
   },
   {
-    "objectID": "slides/lecture_3_big_data.html#limitations-of-the-data-warehouse-approach",
-    "href": "slides/lecture_3_big_data.html#limitations-of-the-data-warehouse-approach",
-    "title": "Big Data and Analytics",
-    "section": "Limitations of the Data Warehouse Approach",
-    "text": "Limitations of the Data Warehouse Approach\n\n\nTraditional DWH solutions are designed to provide a single point of truth. Important aspects are:\n\n\n\nMerge and unify data from multiple data sources\n\n\nHigh data quality\n\n\nProper historization of the data\n\n\nData Governance and Compliance\n\n\n\nThis results in the following problem areas in today’s world:\n\n\n\nLack of flexibility due to high effort for changes\n\n\nTime expenditure due to transfer from the operational sources and the aggregations\n\n\nPast orientation of data (snapshot of the past); there is an increasing need for ad hoc and real-time analyses\n\n\nPartial knowledge, as only structured data is stored, with increasing need for social media data, etc.\n\n\nPatchwork: due to gradual introduction of data warehouses, many isolated solutions exist and are operated separately both technically and methodologically"
+    "objectID": "slides/lecture_0_orga.html#literature",
+    "href": "slides/lecture_0_orga.html#literature",
+    "title": "Analytics and Big Data",
+    "section": "Literature",
+    "text": "Literature\nPart 1:\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective.\nMartínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048-3061.\nChen, H., Chiang, R. H., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly 36(4), 1165-1188.\n\nPart 2:\n\nVaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer.\nSchutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media.\nRaschka, Sebastian (2015): Python Machine Learning, Packt Publishing.\n\nPart 3:\n\nSchmarzo, B. (2016): Big Data MBA, Wiley.\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media, Inc. \n\nPart 4:\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98.\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626-639."
   },
   {
-    "objectID": "slides/lecture_3_big_data.html#what-is-big-data",
-    "href": "slides/lecture_3_big_data.html#what-is-big-data",
-    "title": "Big Data and Analytics",
-    "section": "What is Big Data?",
-    "text": "What is Big Data?\n\n\nThe basic idea behind the phrase ‘Big Data’ is that everything we do is increasingly leaving a digital trace (or data), which we (and others) can use and analyze.\n\n\n– Bernard Marr\n\n\n\nBig Data is the frontier of a ﬁrm’s ability to store, process, and access (SPA) all the data it needs to operate effectively, make decisions‚ reduce risks, and serve customers.\n\n\n– Forrester\n\n\n\nBig Data is not about the size of the data, it’s about the value within the data.\n\n– David Wellman"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#vs-of-big-data",
-    "href": "slides/lecture_3_big_data.html#vs-of-big-data",
-    "title": "Big Data and Analytics",
-    "section": "4V’s of Big Data",
-    "text": "4V’s of Big Data\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#volume-scale",
-    "href": "slides/lecture_3_big_data.html#volume-scale",
-    "title": "Big Data and Analytics",
-    "section": "Volume (Scale)",
-    "text": "Volume (Scale)"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#the-model-of-generating-and-consuming-data-has-changed",
-    "href": "slides/lecture_3_big_data.html#the-model-of-generating-and-consuming-data-has-changed",
-    "title": "Big Data and Analytics",
-    "section": "The Model of Generating and Consuming Data has Changed",
-    "text": "The Model of Generating and Consuming Data has Changed"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#collecting-data",
-    "href": "slides/lecture_3_big_data.html#collecting-data",
-    "title": "Big Data and Analytics",
-    "section": "Collecting Data",
-    "text": "Collecting Data\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#types-of-data-people-are-creating-i",
-    "href": "slides/lecture_3_big_data.html#types-of-data-people-are-creating-i",
-    "title": "Big Data and Analytics",
-    "section": "Types of Data People are Creating (I)",
-    "text": "Types of Data People are Creating (I)\n\n\nActivity Data\n\n\nSimple activities like listening to music or reading a book are now generating data. Digital music players and eBooks collect data on our activities. Your smartphone collects data on how you use it and your web browser collects information on what you are searching for. Your credit card company collects data on where you shop and the shops collect data on what you buy. It is hard to imagine any activity that does not generate data.\n\n\nConversation Data\n\n\nOur conversations are now digitally recorded. It all started with emails, but nowadays most of our conversations leave a digital trail. Consider all the conversations we have on social media sites like Facebook or Twitter. Even many of our phone conversations are now digitally recorded.\n\n\nPhoto and Video Image Data\n\n\nThink about all the pictures we take on our smartphones or digital cameras. We upload and share hundreds of thousands of them on social media sites every second. An increasing number of cameras record video images, and we upload hundreds of hours of video to YouTube and other platforms every minute.\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#types-of-data-people-are-creating-ii",
-    "href": "slides/lecture_3_big_data.html#types-of-data-people-are-creating-ii",
-    "title": "Big Data and Analytics",
-    "section": "Types of Data People are Creating (II)",
-    "text": "Types of Data People are Creating (II)\n\n\nSensor Data\n\n\nWe are increasingly surrounded by sensors that collect and share data. Take your smart phone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.\n\n\nThe Internet of Things Data\n\n\nWe now have smart TVs that are able to collect and process data, we have smart watches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#variety-complexity",
-    "href": "slides/lecture_3_big_data.html#variety-complexity",
-    "title": "Big Data and Analytics",
-    "section": "Variety (Complexity)",
-    "text": "Variety (Complexity)\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#a-single-view-to-the-customer",
-    "href": "slides/lecture_3_big_data.html#a-single-view-to-the-customer",
-    "title": "Big Data and Analytics",
-    "section": "A Single View to the Customer",
-    "text": "A Single View to the Customer\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#velocity-speed",
-    "href": "slides/lecture_3_big_data.html#velocity-speed",
-    "title": "Big Data and Analytics",
-    "section": "Velocity (Speed)",
-    "text": "Velocity (Speed)\n\n\n\n\n\nData is being generated fast and needs to be processed fast\n\n\nLate decisions result in missing opportunities\n\n\nExamples\n\n\nE-Promotions: Based on your current location, your purchase history, and your interests → send promotions immediately for the store next to you.\n\n\nHealthcare monitoring: Sensors track your activities and health → any abnormal measurements require immediate reaction.\n\n\nProduction and Logistics: With real-time POS data, Langnese can adjust production and delivery instantly → saving millions of euros monthly.\n\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#real-time-analytics",
-    "href": "slides/lecture_3_big_data.html#real-time-analytics",
-    "title": "Big Data and Analytics",
-    "section": "Real-Time Analytics",
-    "text": "Real-Time Analytics\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#veracity-uncertainty",
-    "href": "slides/lecture_3_big_data.html#veracity-uncertainty",
-    "title": "Big Data and Analytics",
-    "section": "Veracity (Uncertainty)",
-    "text": "Veracity (Uncertainty)\n\n\n\nOrganizations must now analyze both structured and unstructured data that is uncertain and imprecise.\nIn many cases, it is not known whether the data is correct (e. g. fake news) or representative (e. g. biased expressions of opinion in forums).\nIt may be prudent to assign a Data Veracity score and ranking for specific data sets to avoid making decisions based on analysis of uncertain and imprecise data."
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#how-is-big-data-actually-used",
-    "href": "slides/lecture_3_big_data.html#how-is-big-data-actually-used",
-    "title": "Big Data and Analytics",
-    "section": "How is Big Data actually used?",
-    "text": "How is Big Data actually used?\n\n\n\n● Better understand and target customers\n\n\nCompanies expand their traditional data with social media data, browser, text analytics or sensor data to get a more complete picture of their customers.\n\n\n\n\n● Understand and Optimize Business Processes\n\n\nRetailers are able to optimize their stock based on predictive models generated from social media data, web search trends, weather forecasts…\n\n\n\n\n● Improving Health\n\n\nUse the data from smart watches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …\n\n\n\n\n● Improving Security and Law Enforcement\n\n\nUse big data analytics to predict criminal activity, foil terrorist plots, detect cyber attacks, and detect fraudulent credit card transactions.\n\n\n\n\n● Improving and Optimizing Cities and Countries (Smart Cities)\n\n\nOptimize traffic flows based on real time traffic information, social media and weather data. A bus would wait for a delayed train and traffic signals predict traffic volumes.\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#turning-big-data-into-value",
-    "href": "slides/lecture_3_big_data.html#turning-big-data-into-value",
-    "title": "Big Data and Analytics",
-    "section": "Turning Big Data into Value",
-    "text": "Turning Big Data into Value\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-i",
-    "href": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-i",
-    "title": "Big Data and Analytics",
-    "section": "The Four Layers of Big Data (I)",
-    "text": "The Four Layers of Big Data (I)\n\n\n\nData Source Layer\n\n\nThis is where the data arrives at the organization. It includes everything from sales records, customer database, feedback‚ social media channels, marketing list, email archives etc.\n\n\n\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#identify-and-prioritize-data-sources",
-    "href": "slides/lecture_3_big_data.html#identify-and-prioritize-data-sources",
-    "title": "Big Data and Analytics",
-    "section": "Identify and Prioritize Data Sources",
-    "text": "Identify and Prioritize Data Sources\n\n\n\nSource: Schmarzo (2016): Big Data MBA, p. 49"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-ii",
-    "href": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-ii",
-    "title": "Big Data and Analytics",
-    "section": "The Four Layers of Big Data (II)",
-    "text": "The Four Layers of Big Data (II)\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-iii",
-    "href": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-iii",
-    "title": "Big Data and Analytics",
-    "section": "The Four Layers of Big Data (III)",
-    "text": "The Four Layers of Big Data (III)\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-iv",
-    "href": "slides/lecture_3_big_data.html#the-four-layers-of-big-data-iv",
-    "title": "Big Data and Analytics",
-    "section": "The Four Layers of Big Data (IV)",
-    "text": "The Four Layers of Big Data (IV)\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#from-data-warehouse-to-data-lake",
-    "href": "slides/lecture_3_big_data.html#from-data-warehouse-to-data-lake",
-    "title": "Big Data and Analytics",
-    "section": "From Data Warehouse to Data Lake",
-    "text": "From Data Warehouse to Data Lake\n\n\nInstead of recording millions of transactions, todays organizations are recording billions of interactions. Companies are capturing more and more data that can open business opportunities and unlock new sources of value for organizations.\n\n\nCompanies are not able to store this data in data warehouses because it is of high volume, mostly raw and often not structured. As consequence, data lakes have emerged as an alternative approach. The intent is to capture enterprise data and load it in its raw form into a centralized, large, and inexpensive storage system.\n\n\nIn shifting from data warehouses to data lakes, it became important to decouple data movement from data transformation. Data movement (the “E” and “L” of ETL) is an operational task. Data transformation (the “T” of ETL) is a content-based, analytic-facing task that requires an understanding both of the data and how it’s to be used.\n\n\nA clean separation between data movement and data transformation has the benefits of less friction because the instance loading the data isn’t responsible for transforming it.\n\n\n\nSource: Trifacta: EOL for"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#the-data-lake",
-    "href": "slides/lecture_3_big_data.html#the-data-lake",
-    "title": "Big Data and Analytics",
-    "section": "The Data Lake",
-    "text": "The Data Lake\n\n\nA data lake is a method of storing data within a system in its natural format, that facilitates the collocation of data in various schemata and structural forms. The idea of data lake is to have a single store of all data in the enterprise ranging from raw data to transformed data which is used for various tasks including reporting, visualization, analytics and machine learning. [Wikipedia]\n\n\n\n\n\nSource: https://www.pmone.com/fileadmin/user_upload/pics/other/Data_lake.jpg"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#modern-data-analytics-architecture",
-    "href": "slides/lecture_3_big_data.html#modern-data-analytics-architecture",
-    "title": "Big Data and Analytics",
-    "section": "Modern Data Analytics Architecture",
-    "text": "Modern Data Analytics Architecture"
-  },
-  {
-    "objectID": "slides/lecture_3_big_data.html#logical-data-warehouse",
-    "href": "slides/lecture_3_big_data.html#logical-data-warehouse",
-    "title": "Big Data and Analytics",
-    "section": "Logical Data Warehouse",
-    "text": "Logical Data Warehouse\n\n\nA “logical data warehouse” provides analytical company data without first physically moving it to a physical data warehouse.\n\n\n\n\nAs in a classic data warehouse, uniform views are provided for analysis purposes.\n\nWhile the data in the classic data warehouse comes from a “well-defined” physically uniform database, the “logical data warehouse” pulls data together from the data lake at the time of the query.\n\n\nAggregation is done in just in time. Thus, the schema of the data warehouse is just virtual.\n\n\n\n\n\n\n\n\nSource: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/"
-  },
-  {
-    "objectID": "slides/lecture_1_introduction_analytics.html#why-is-modern-analytics-so-successful",
-    "href": "slides/lecture_1_introduction_analytics.html#why-is-modern-analytics-so-successful",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#why-is-modern-analytics-so-successful",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#why-is-modern-analytics-so-successful",
     "title": "Analytics and Big Data",
     "section": "Why is Modern Analytics so Successful?",
     "text": "Why is Modern Analytics so Successful?\n\nMore Data for the Analysis\nMore Computing Power\nNew Methods and Algorithms\nNew Analytics Processes"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#internet-of-things-as-a-driver-of-data",
-    "href": "slides/lecture_1_introduction_analytics.html#internet-of-things-as-a-driver-of-data",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#internet-of-things-as-a-driver-of-data",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#internet-of-things-as-a-driver-of-data",
     "title": "Analytics and Big Data",
     "section": "Internet of Things as a driver of data",
     "text": "Internet of Things as a driver of data\n\n\n\n\n\n\n\n\nSource: Bernard Marr; Source: Ruoming Jin"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#social-media-as-a-driver-of-data",
-    "href": "slides/lecture_1_introduction_analytics.html#social-media-as-a-driver-of-data",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#social-media-as-a-driver-of-data",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#social-media-as-a-driver-of-data",
     "title": "Analytics and Big Data",
     "section": "Social media as a driver of data",
     "text": "Social media as a driver of data"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#worldwide-corporate-data-growth",
-    "href": "slides/lecture_1_introduction_analytics.html#worldwide-corporate-data-growth",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#worldwide-corporate-data-growth",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#worldwide-corporate-data-growth",
     "title": "Analytics and Big Data",
     "section": "Worldwide Corporate Data Growth",
     "text": "Worldwide Corporate Data Growth"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#growth-of-computing-power",
-    "href": "slides/lecture_1_introduction_analytics.html#growth-of-computing-power",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#growth-of-computing-power",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#growth-of-computing-power",
     "title": "Analytics and Big Data",
     "section": "Growth of Computing Power",
     "text": "Growth of Computing Power\nThe rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets."
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#old-vs.-new-methods",
-    "href": "slides/lecture_1_introduction_analytics.html#old-vs.-new-methods",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#old-vs.-new-methods",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#old-vs.-new-methods",
     "title": "Analytics and Big Data",
     "section": "Old vs. New Methods",
     "text": "Old vs. New Methods\n\n\n Traditional Regression\n\n Decision Tree\n Neural Network\n\n\n\n\nSource: Lalit Sachan"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#imagenet",
-    "href": "slides/lecture_1_introduction_analytics.html#imagenet",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#imagenet",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#imagenet",
     "title": "Analytics and Big Data",
     "section": "ImageNet",
     "text": "ImageNet\nImageNet is a large-scale image recognition competition where models compete to classify millions of images across thousands of categories. Breakthrough models have historically demonstrated major advances in deep learning.: Models vs Human Baseline"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#traditional-vs.-modern-analytics-process",
-    "href": "slides/lecture_1_introduction_analytics.html#traditional-vs.-modern-analytics-process",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#traditional-vs.-modern-analytics-process",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#traditional-vs.-modern-analytics-process",
     "title": "Analytics and Big Data",
     "section": "Traditional vs. Modern Analytics Process",
     "text": "Traditional vs. Modern Analytics Process\nTraditional Analytics Process:\n\n\n\n\n\nModern Analytics Process:"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#from-the-past-to-the-present",
-    "href": "slides/lecture_1_introduction_analytics.html#from-the-past-to-the-present",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#from-the-past-to-the-present",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#from-the-past-to-the-present",
     "title": "Analytics and Big Data",
     "section": "From the Past to the Present",
     "text": "From the Past to the Present"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#evolution-of-analytics",
-    "href": "slides/lecture_1_introduction_analytics.html#evolution-of-analytics",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#evolution-of-analytics",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#evolution-of-analytics",
     "title": "Analytics and Big Data",
     "section": "Evolution of Analytics",
     "text": "Evolution of Analytics\n\n\n\n\n\n\n\nSource: http://juxt.pro/blog/posts/machine-learning-with-clojure.html"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#types-of-analytics-i",
-    "href": "slides/lecture_1_introduction_analytics.html#types-of-analytics-i",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#types-of-analytics-i",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#types-of-analytics-i",
     "title": "Analytics and Big Data",
     "section": "Types of Analytics (I)",
     "text": "Types of Analytics (I)\n\n\n\n\n\n\n\nSource: Schmarzo, p. 88"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#types-of-analytics-ii",
-    "href": "slides/lecture_1_introduction_analytics.html#types-of-analytics-ii",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#types-of-analytics-ii",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#types-of-analytics-ii",
     "title": "Analytics and Big Data",
     "section": "Types of Analytics (II)",
     "text": "Types of Analytics (II)\nDescriptive\n\nWhat happened in the past?\n\nExample: Report the profits of the last years.\n\nPredictive\n\nFind patterns and relationships in data and use them for prediction.\n\nExample: Find the functional relationship between price and demand.\n\nPrescriptive\n\nUse the predictions to make decisions.\n\nExample: Set the best price to optimize the profit."
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#types-of-analytics-iii",
-    "href": "slides/lecture_1_introduction_analytics.html#types-of-analytics-iii",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#types-of-analytics-iii",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#types-of-analytics-iii",
     "title": "Analytics and Big Data",
     "section": "Types of Analytics (III)",
     "text": "Types of Analytics (III)\n\n\n\n\n\n\n\n\n\nWhat happened? (descriptive / BI)\nWhat will happen? (predictive analytics)\nWhat should I do? (prescriptive analytics)\n\n\n\n\nHow many widgets did I sell last month?\nHow many widgets will I sell next month?\nOrder 5,000 units of Component Z to support widget sales for next month.\n\n\nWhat were sales by zip code for Christmas last year?\nWhat will be sales by zip code over this Christmas season?\nHire Y new sales reps by these zip codes to handle projected Christmas sales.\n\n\nHow many of Product X were returned last month?\nHow many of Product X will be returned next month?\nSet aside $125K in financial reserve to cover Product X returns.\n\n\nWhat were company revenues and profits for the past quarter?\nWhat are projected company revenues and profits for next quarter?\nSell the following product mix to achieve quarterly revenue and margin goals.\n\n\nHow many employees did I hire last year?\nHow many employees will I need to hire next year?\nIncrease hiring pipeline by 35% to achieve hiring goals.\n\n\n\n\n\n\nSource: Schmarzo, p. 13"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#descriptive-analytics-process",
-    "href": "slides/lecture_1_introduction_analytics.html#descriptive-analytics-process",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#descriptive-analytics-process",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#descriptive-analytics-process",
     "title": "Analytics and Big Data",
     "section": "Descriptive Analytics Process",
     "text": "Descriptive Analytics Process"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#predictive-analytics-process",
-    "href": "slides/lecture_1_introduction_analytics.html#predictive-analytics-process",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#predictive-analytics-process",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#predictive-analytics-process",
     "title": "Analytics and Big Data",
     "section": "Predictive Analytics Process",
     "text": "Predictive Analytics Process"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#example-inventory-planning",
-    "href": "slides/lecture_1_introduction_analytics.html#example-inventory-planning",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#example-inventory-planning",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#example-inventory-planning",
     "title": "Analytics and Big Data",
     "section": "Example Inventory Planning",
     "text": "Example Inventory Planning\n\n\n\n\n\n\nOn the basis of more than 300 million data records per week, Otto makes more than one billion forecasts per year on the sales development of individual articles for the next days and weeks. Such forecasts allow Otto to reduce its own inventories by up to 30% on average.\n\n\n\nSource: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/files/441/442/777/1015/DLK12_C3-3_Praesentation_Stueben.pdf"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#classical-corporate-planning",
-    "href": "slides/lecture_1_introduction_analytics.html#classical-corporate-planning",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#classical-corporate-planning",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#classical-corporate-planning",
     "title": "Analytics and Big Data",
     "section": "Classical Corporate Planning",
     "text": "Classical Corporate Planning"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#example-driver-based-planing-i",
-    "href": "slides/lecture_1_introduction_analytics.html#example-driver-based-planing-i",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#example-driver-based-planing-i",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#example-driver-based-planing-i",
     "title": "Analytics and Big Data",
     "section": "Example Driver-based Planing (I)",
     "text": "Example Driver-based Planing (I)"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#example-driver-based-planing-ii",
-    "href": "slides/lecture_1_introduction_analytics.html#example-driver-based-planing-ii",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#example-driver-based-planing-ii",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#example-driver-based-planing-ii",
     "title": "Analytics and Big Data",
     "section": "Example Driver-based Planing (II)",
     "text": "Example Driver-based Planing (II)\n\n\n\n\n\n\nSales forecasts based on market and social media data\nAutomated pricing based on market and competitor analyses\nEarly detection of price changes and adjustment of purchasing behavior\nOptimization of inventory management based on customers’ current purchasing preferences"
   },
   {
-    "objectID": "slides/lecture_1_introduction_analytics.html#summary",
-    "href": "slides/lecture_1_introduction_analytics.html#summary",
+    "objectID": "slides/lecture_1_foundations_of_data_analytics.html#summary",
+    "href": "slides/lecture_1_foundations_of_data_analytics.html#summary",
     "title": "Analytics and Big Data",
     "section": "Summary",
     "text": "Summary\n\nModern analytics is driven by data availability, computing power, and new methods.\nAnalytics evolves from descriptive to predictive and prescriptive insights.\nModern processes rely on automation, scalability, and data-driven decision making."
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#navigation",
+    "href": "slides/materials_lecture_3_big_data.html#navigation",
+    "title": "Big Data and Analytics",
+    "section": "Navigation",
+    "text": "Navigation\n\n\n3 Big Data"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#limitations-of-the-data-warehouse-approach",
+    "href": "slides/materials_lecture_3_big_data.html#limitations-of-the-data-warehouse-approach",
+    "title": "Big Data and Analytics",
+    "section": "Limitations of the Data Warehouse Approach",
+    "text": "Limitations of the Data Warehouse Approach\n\n\nTraditional DWH solutions are designed to provide a single point of truth. Important aspects are:\n\n\n\nMerge and unify data from multiple data sources\n\n\nHigh data quality\n\n\nProper historization of the data\n\n\nData Governance and Compliance\n\n\n\nThis results in the following problem areas in today’s world:\n\n\n\nLack of flexibility due to high effort for changes\n\n\nTime expenditure due to transfer from the operational sources and the aggregations\n\n\nPast orientation of data (snapshot of the past); there is an increasing need for ad hoc and real-time analyses\n\n\nPartial knowledge, as only structured data is stored, with increasing need for social media data, etc.\n\n\nPatchwork: due to gradual introduction of data warehouses, many isolated solutions exist and are operated separately both technically and methodologically"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#what-is-big-data",
+    "href": "slides/materials_lecture_3_big_data.html#what-is-big-data",
+    "title": "Big Data and Analytics",
+    "section": "What is Big Data?",
+    "text": "What is Big Data?\n\n\nThe basic idea behind the phrase ‘Big Data’ is that everything we do is increasingly leaving a digital trace (or data), which we (and others) can use and analyze.\n\n\n– Bernard Marr\n\n\n\nBig Data is the frontier of a ﬁrm’s ability to store, process, and access (SPA) all the data it needs to operate effectively, make decisions‚ reduce risks, and serve customers.\n\n\n– Forrester\n\n\n\nBig Data is not about the size of the data, it’s about the value within the data.\n\n– David Wellman"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#vs-of-big-data",
+    "href": "slides/materials_lecture_3_big_data.html#vs-of-big-data",
+    "title": "Big Data and Analytics",
+    "section": "4V’s of Big Data",
+    "text": "4V’s of Big Data\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#volume-scale",
+    "href": "slides/materials_lecture_3_big_data.html#volume-scale",
+    "title": "Big Data and Analytics",
+    "section": "Volume (Scale)",
+    "text": "Volume (Scale)"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#the-model-of-generating-and-consuming-data-has-changed",
+    "href": "slides/materials_lecture_3_big_data.html#the-model-of-generating-and-consuming-data-has-changed",
+    "title": "Big Data and Analytics",
+    "section": "The Model of Generating and Consuming Data has Changed",
+    "text": "The Model of Generating and Consuming Data has Changed"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#collecting-data",
+    "href": "slides/materials_lecture_3_big_data.html#collecting-data",
+    "title": "Big Data and Analytics",
+    "section": "Collecting Data",
+    "text": "Collecting Data\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#types-of-data-people-are-creating-i",
+    "href": "slides/materials_lecture_3_big_data.html#types-of-data-people-are-creating-i",
+    "title": "Big Data and Analytics",
+    "section": "Types of Data People are Creating (I)",
+    "text": "Types of Data People are Creating (I)\n\n\nActivity Data\n\n\nSimple activities like listening to music or reading a book are now generating data. Digital music players and eBooks collect data on our activities. Your smartphone collects data on how you use it and your web browser collects information on what you are searching for. Your credit card company collects data on where you shop and the shops collect data on what you buy. It is hard to imagine any activity that does not generate data.\n\n\nConversation Data\n\n\nOur conversations are now digitally recorded. It all started with emails, but nowadays most of our conversations leave a digital trail. Consider all the conversations we have on social media sites like Facebook or Twitter. Even many of our phone conversations are now digitally recorded.\n\n\nPhoto and Video Image Data\n\n\nThink about all the pictures we take on our smartphones or digital cameras. We upload and share hundreds of thousands of them on social media sites every second. An increasing number of cameras record video images, and we upload hundreds of hours of video to YouTube and other platforms every minute.\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#types-of-data-people-are-creating-ii",
+    "href": "slides/materials_lecture_3_big_data.html#types-of-data-people-are-creating-ii",
+    "title": "Big Data and Analytics",
+    "section": "Types of Data People are Creating (II)",
+    "text": "Types of Data People are Creating (II)\n\n\nSensor Data\n\n\nWe are increasingly surrounded by sensors that collect and share data. Take your smart phone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.\n\n\nThe Internet of Things Data\n\n\nWe now have smart TVs that are able to collect and process data, we have smart watches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#variety-complexity",
+    "href": "slides/materials_lecture_3_big_data.html#variety-complexity",
+    "title": "Big Data and Analytics",
+    "section": "Variety (Complexity)",
+    "text": "Variety (Complexity)\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#a-single-view-to-the-customer",
+    "href": "slides/materials_lecture_3_big_data.html#a-single-view-to-the-customer",
+    "title": "Big Data and Analytics",
+    "section": "A Single View to the Customer",
+    "text": "A Single View to the Customer\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#velocity-speed",
+    "href": "slides/materials_lecture_3_big_data.html#velocity-speed",
+    "title": "Big Data and Analytics",
+    "section": "Velocity (Speed)",
+    "text": "Velocity (Speed)\n\n\n\n\n\nData is being generated fast and needs to be processed fast\n\n\nLate decisions result in missing opportunities\n\n\nExamples\n\n\nE-Promotions: Based on your current location, your purchase history, and your interests → send promotions immediately for the store next to you.\n\n\nHealthcare monitoring: Sensors track your activities and health → any abnormal measurements require immediate reaction.\n\n\nProduction and Logistics: With real-time POS data, Langnese can adjust production and delivery instantly → saving millions of euros monthly.\n\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#real-time-analytics",
+    "href": "slides/materials_lecture_3_big_data.html#real-time-analytics",
+    "title": "Big Data and Analytics",
+    "section": "Real-Time Analytics",
+    "text": "Real-Time Analytics\n\n\n\nSource: www.cs.kent.edu/~jin/BigData/Lecture1.pptx"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#veracity-uncertainty",
+    "href": "slides/materials_lecture_3_big_data.html#veracity-uncertainty",
+    "title": "Big Data and Analytics",
+    "section": "Veracity (Uncertainty)",
+    "text": "Veracity (Uncertainty)\n\n\n\nOrganizations must now analyze both structured and unstructured data that is uncertain and imprecise.\nIn many cases, it is not known whether the data is correct (e. g. fake news) or representative (e. g. biased expressions of opinion in forums).\nIt may be prudent to assign a Data Veracity score and ranking for specific data sets to avoid making decisions based on analysis of uncertain and imprecise data."
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#how-is-big-data-actually-used",
+    "href": "slides/materials_lecture_3_big_data.html#how-is-big-data-actually-used",
+    "title": "Big Data and Analytics",
+    "section": "How is Big Data actually used?",
+    "text": "How is Big Data actually used?\n\n\n\n● Better understand and target customers\n\n\nCompanies expand their traditional data with social media data, browser, text analytics or sensor data to get a more complete picture of their customers.\n\n\n\n\n● Understand and Optimize Business Processes\n\n\nRetailers are able to optimize their stock based on predictive models generated from social media data, web search trends, weather forecasts…\n\n\n\n\n● Improving Health\n\n\nUse the data from smart watches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …\n\n\n\n\n● Improving Security and Law Enforcement\n\n\nUse big data analytics to predict criminal activity, foil terrorist plots, detect cyber attacks, and detect fraudulent credit card transactions.\n\n\n\n\n● Improving and Optimizing Cities and Countries (Smart Cities)\n\n\nOptimize traffic flows based on real time traffic information, social media and weather data. A bus would wait for a delayed train and traffic signals predict traffic volumes.\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#turning-big-data-into-value",
+    "href": "slides/materials_lecture_3_big_data.html#turning-big-data-into-value",
+    "title": "Big Data and Analytics",
+    "section": "Turning Big Data into Value",
+    "text": "Turning Big Data into Value\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-i",
+    "href": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-i",
+    "title": "Big Data and Analytics",
+    "section": "The Four Layers of Big Data (I)",
+    "text": "The Four Layers of Big Data (I)\n\n\n\nData Source Layer\n\n\nThis is where the data arrives at the organization. It includes everything from sales records, customer database, feedback‚ social media channels, marketing list, email archives etc.\n\n\n\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#identify-and-prioritize-data-sources",
+    "href": "slides/materials_lecture_3_big_data.html#identify-and-prioritize-data-sources",
+    "title": "Big Data and Analytics",
+    "section": "Identify and Prioritize Data Sources",
+    "text": "Identify and Prioritize Data Sources\n\n\n\nSource: Schmarzo (2016): Big Data MBA, p. 49"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-ii",
+    "href": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-ii",
+    "title": "Big Data and Analytics",
+    "section": "The Four Layers of Big Data (II)",
+    "text": "The Four Layers of Big Data (II)\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-iii",
+    "href": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-iii",
+    "title": "Big Data and Analytics",
+    "section": "The Four Layers of Big Data (III)",
+    "text": "The Four Layers of Big Data (III)\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-iv",
+    "href": "slides/materials_lecture_3_big_data.html#the-four-layers-of-big-data-iv",
+    "title": "Big Data and Analytics",
+    "section": "The Four Layers of Big Data (IV)",
+    "text": "The Four Layers of Big Data (IV)\n\n\n\nSource: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#from-data-warehouse-to-data-lake",
+    "href": "slides/materials_lecture_3_big_data.html#from-data-warehouse-to-data-lake",
+    "title": "Big Data and Analytics",
+    "section": "From Data Warehouse to Data Lake",
+    "text": "From Data Warehouse to Data Lake\n\n\nInstead of recording millions of transactions, todays organizations are recording billions of interactions. Companies are capturing more and more data that can open business opportunities and unlock new sources of value for organizations.\n\n\nCompanies are not able to store this data in data warehouses because it is of high volume, mostly raw and often not structured. As consequence, data lakes have emerged as an alternative approach. The intent is to capture enterprise data and load it in its raw form into a centralized, large, and inexpensive storage system.\n\n\nIn shifting from data warehouses to data lakes, it became important to decouple data movement from data transformation. Data movement (the “E” and “L” of ETL) is an operational task. Data transformation (the “T” of ETL) is a content-based, analytic-facing task that requires an understanding both of the data and how it’s to be used.\n\n\nA clean separation between data movement and data transformation has the benefits of less friction because the instance loading the data isn’t responsible for transforming it.\n\n\n\nSource: Trifacta: EOL for"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#the-data-lake",
+    "href": "slides/materials_lecture_3_big_data.html#the-data-lake",
+    "title": "Big Data and Analytics",
+    "section": "The Data Lake",
+    "text": "The Data Lake\n\n\nA data lake is a method of storing data within a system in its natural format, that facilitates the collocation of data in various schemata and structural forms. The idea of data lake is to have a single store of all data in the enterprise ranging from raw data to transformed data which is used for various tasks including reporting, visualization, analytics and machine learning. [Wikipedia]\n\n\n\n\n\nSource: https://www.pmone.com/fileadmin/user_upload/pics/other/Data_lake.jpg"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#modern-data-analytics-architecture",
+    "href": "slides/materials_lecture_3_big_data.html#modern-data-analytics-architecture",
+    "title": "Big Data and Analytics",
+    "section": "Modern Data Analytics Architecture",
+    "text": "Modern Data Analytics Architecture"
+  },
+  {
+    "objectID": "slides/materials_lecture_3_big_data.html#logical-data-warehouse",
+    "href": "slides/materials_lecture_3_big_data.html#logical-data-warehouse",
+    "title": "Big Data and Analytics",
+    "section": "Logical Data Warehouse",
+    "text": "Logical Data Warehouse\n\n\nA “logical data warehouse” provides analytical company data without first physically moving it to a physical data warehouse.\n\n\n\n\nAs in a classic data warehouse, uniform views are provided for analysis purposes.\n\nWhile the data in the classic data warehouse comes from a “well-defined” physically uniform database, the “logical data warehouse” pulls data together from the data lake at the time of the query.\n\n\nAggregation is done in just in time. Thus, the schema of the data warehouse is just virtual.\n\n\n\n\n\n\n\n\nSource: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/"
   },
   {
     "objectID": "syllabus.html",
@@ -1531,5 +1573,47 @@
     "title": "Syllabus",
     "section": "",
     "text": "TODO"
+  },
+  {
+    "objectID": "notes/lecture_10_data_governance.html",
+    "href": "notes/lecture_10_data_governance.html",
+    "title": "Notes: Session 10: Governance of data analytics",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_7_big_data.html",
+    "href": "notes/lecture_7_big_data.html",
+    "title": "Notes: Session 7: Big data",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_5_predictive_analysis.html",
+    "href": "notes/lecture_5_predictive_analysis.html",
+    "title": "Notes: Session 5: Predictive analysis",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_11_recap.html",
+    "href": "notes/lecture_11_recap.html",
+    "title": "Notes: Session 11: Recap, exam preparation, Q&A",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_6_prescriptive_analysis.html",
+    "href": "notes/lecture_6_prescriptive_analysis.html",
+    "title": "Notes: Session 6: Prescriptive analysis",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "notes/lecture_4_descriptive_analysis_2.html",
+    "href": "notes/lecture_4_descriptive_analysis_2.html",
+    "title": "Notes: Session 4: Descriptive analysis II",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
   }
 ]

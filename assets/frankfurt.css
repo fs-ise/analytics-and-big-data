@@ -137,3 +137,21 @@ body,
 .reveal .slide-menu-button {
   margin-bottom: 10px;
 }
+
+/* Quarto revealjs title slide */
+.reveal section#title-slide h1.title {
+  font-size: 2.2em;   /* shrink title */
+  line-height: 1.1;
+  margin-bottom: 0.35em;
+}
+
+.reveal section#title-slide p.subtitle {
+  font-size: 1.25em;  /* grow subtitle */
+  font-weight: 500;
+  margin: 0 0 1.2em 0;
+}
+
+.reveal section#title-slide .quarto-title-authors .quarto-title-author-name {
+  font-size: 1.05em;  /* slightly larger author */
+  margin-top: 0.2em;
+}
