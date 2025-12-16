@@ -3,4 +3,50 @@ title: "Syllabus"
 format: html
 ---
 
-TODO
+
+## Course Design and Pedagogical Approach
+
+This course intentionally combines **two complementary pedagogical perspectives** to prepare students for both the *technical foundations* and the *practical realities* of Big Data and Business Analytics.
+
+### 1. Essentialist Perspective: Core Concepts and Analytical Skills
+- Focuses on **stable, foundational concepts and methods** in Big Data and Business Analytics
+- Emphasizes **hard analytical skills**, models, and terminology that every graduate in the field is expected to master
+- Knowledge is treated as **structured and cumulative**, building from basic principles to more advanced applications
+- Learning activities include:
+  - Structured lectures
+  - Worked examples and problem-solving exercises
+- Assessment:
+  - Formal examinations and graded assignments
+  - Evaluation of students’ ability to **apply core concepts correctly and rigorously**
+- Learning goal:
+  - Ensure a **shared analytical foundation** and methodological competence across all students
+
+### 2. Experiential and Connectivist Perspective: Engaging with Practice
+- Recognizes that Big Data and Analytics are **rapidly evolving fields** shaped by practice, tools, and professional discourse
+- Treats knowledge as **distributed across networks**, including practitioners, platforms, and media
+- Emphasizes **learning through experience, reflection, and sensemaking**
+- Learning activities include:
+  - Engagement with podcasts, practitioner articles, and business magazines
+  - Short written or oral summaries connecting practice-based insights to course concepts
+  - In-class discussion and collective reflection
+- Assessment:
+  - Low-stakes or formative evaluation focused on engagement, synthesis, and reflection
+- Learning goal:
+  - Develop students’ ability to **interpret real-world analytics practices**, critically relate them to theory, and stay current beyond the classroom
+
+::: {.callout-note title="Idea"}
+For the second part, one motivation could be to help everyone be better prepared for the exam.
+:::
+
+### Integrating Both Perspectives
+- The essentialist component provides **conceptual clarity and analytical rigor**
+- The experiential–connectivist component provides **context, relevance, and adaptability**
+- Together, they support:
+  - Deep understanding of Big Data concepts
+  - Practical judgment in applying analytics in organizational contexts
+  - Lifelong learning skills in a dynamic digital environment
+
+
+
+
+TBD: also cover group-work (third part??)

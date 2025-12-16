@@ -2,7 +2,7 @@ project:
   type: website
   title: "Big Data and Analytics"
   output-dir: _site 
-  post-render: "bash scripts/decktape.sh"
+  # post-render: "bash scripts/decktape.sh"
 format:
   revealjs:
     author: "Prof. Dr. Gerit Wagner"
