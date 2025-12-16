@@ -14,21 +14,21 @@ The module combines conceptual foundations and hands-on analytical practice usin
 
 **Knowledge** After completing the module, students will be able to:
 
-- Describe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
-- Differentiate between descriptive, predictive, and prescriptive analytics approaches.
-- Explain fundamental concepts of data analytics, and its role in data-driven organizations.
+- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches. 🟢 [l1](slides/lecture_1_foundations_of_data_analytics.html)
+- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 [l2](slides/lecture_2_descriptive_analytics.html)
+- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 [l10](slides/lecture_10_data_governance.html)
 
 **Skills** Students will be able to:
 
-- Select appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
-- Apply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
-- Implement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
+- **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
+- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
+- **Implement** analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
 
 **Competence** Upon successful completion, students will be able to:
 
-- Design analytics solutions aligned with business goals and governance principles.
-- Integrate analytical technologies into organizational decision-making processes
-- Assess the operational and strategic implications of data analytics in organizations.
+- **Design** analytics solutions aligned with business goals and governance principles.
+- **Integrate** analytical technologies into organizational decision-making processes
+- **Assess** the operational and strategic implications of data analytics in organizations. 🟢 [l10](slides/lecture_10_data_governance)
 
 ## Lectures and exercises
 
@@ -36,42 +36,40 @@ The module combines conceptual foundations and hands-on analytical practice usin
 
 **Lectures to be polished before "slicing"**
 
-- [lecture 0 - orga](slides/lecture_0_orga.html)
 
-- [lecture 1 - introduction to analytics](slides/lecture_1_introduction_analytics.html) (see [pdf](slides/lecture_1_introduction_analytics.pdf))
-- [lecture 2 - descriptive analytics](slides/lecture_2_descriptive_analytics.html) (see [pdf](slides/lecture_2_descriptive_analytics.pdf))
-- [lecture 3 - big data](slides/lecture_3_big_data.html) (see [pdf](slides/lecture_3_big_data.pdf))
-- [lecture 4 - prescriptive analytics](slides/lecture_4_predictive_analytics.html) (see [pdf](slides/lecture_4_predictive_analytics.pdf))
+- [lecture 1 - introduction to analytics](slides/lecture_1_foundations_of_data_analytics.html) (see [pdf](slides/lecture_1_foundations_of_data_analytics.pdf))
+- [lecture 2 - descriptive analytics](slides/materials_lecture_2_descriptive_analytics.html) (see [pdf](slides/materials_lecture_2_descriptive_analytics.pdf))
+- [lecture 3 - big data](slides/materials_lecture_3_big_data.html) (see [pdf](slides/materials_lecture_3_big_data.pdf))
+- [lecture 4 - prescriptive analytics](slides/materials_lecture_4_predictive_analytics.html) (see [pdf](slides/materials_lecture_4_predictive_analytics.pdf))
 
 :::
 
 ### Part 1: Foundations
 
-- Session 1: Foundations of data analytics
+- Course Logistics ([slides](slides/lecture_0_orga.html) and [notes](notes/lecture_0_orga.html))
+- Session 1: Foundations of data analytics ([slides](slides/lecture_1_foundations_of_data_analytics.html) and [notes](notes/lecture_1_foundations_of_data_analytics.html))
 
 ### Part 2: Analytics for structured data
 
-- Session 2: Structuring and preparing data
-- Session 3: Descriptive analysis I
-- Session 4: Descriptive analysis II
-- Session 5: Predictive analysis
-- Session 6: Prescriptive analysis
+- Session 2: Structuring and preparing data ([slides](slides/lecture_2_structuring_preparing_data.html) and [notes](notes/lecture_2_structuring_preparing_data.html))
+- Session 3: Descriptive analysis I ([slides](slides/lecture_3_descriptive_analysis_1.html) and [notes](notes/lecture_3_descriptive_analysis_1.html))
+- Session 4: Descriptive analysis II ([slides](slides/lecture_4_descriptive_analysis_2.html) and [notes](notes/lecture_4_descriptive_analysis_2.html))
+- Session 5: Predictive analysis ([slides](slides/lecture_5_predictive_analysis.html) and [notes](notes/lecture_5_predictive_analysis.html))
+- Session 6: Prescriptive analysis ([slides](slides/lecture_6_prescriptive_analysis.html) and [notes](notes/lecture_6_prescriptive_analysis.html))
 
 ### Part 3: Analytics for big data
 
-- Session 7: Structuring and preparing big and unstructured data
-- Session 8: Exploratory analysis
-- Session 9: Predictive analysis
+- Session 7: Big data ([slides](slides/lecture_7_big_data.html) and [notes](notes/lecture_7_big_data.html))
+- Session 8: Exploratory analysis ([slides](slides/lecture_8_exploratory_analysis.html) and [notes](notes/lecture_8_exploratory_analysis.html))
+- Session 9: Predictive analysis ([slides](slides/lecture_9_predictive_analysis.html) and [notes](notes/lecture_9_predictive_analysis.html))
 
 ### Part 4 – Analytics in organizations
 
-- Session 10: Governance of data analytics
-- Session 11: Recap, exam preparation, Q&A
+- Session 10: Governance of data analytics ([slides](slides/lecture_10_data_governance.html) and [notes](notes/lecture_10_data_governance.html))
+- Session 11: Recap, exam preparation, Q&A ([slides](slides/lecture_11_recap.html) and [notes](notes/lecture_11_recap.html))
 
 ::: callout-note
-
 We may prepare the [handout](all_lectures.pdf) generated based on all slides.
-
 :::
 
 ## Group work

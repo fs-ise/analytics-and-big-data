@@ -1,19 +1,6 @@
 ---
 title: "Analytics and Big Data"
-author: "Prof. Dr. Gerit Wagner"
-format:
-  revealjs:
-    title-slide-attributes:
-      data-state: "hide-menubar"
-    center: false
-    section-divs: true
-    simplemenu:
-      barhtml:
-        header: ""
-        footer: "<div class='menubar'><ul class='menu'></ul><div class='slide-number'></div></div>"
-      scale: 0.67
-revealjs-plugins:
-  - simplemenu
+subtitle: "Session 1: Foundations of data analytics"
 ---
 
 ## Why is Modern Analytics so Successful?
