@@ -32,41 +32,29 @@ The module combines conceptual foundations and hands-on analytical practice usin
 
 ## Lectures and exercises
 
-::: callout-note
+| Date  | Part | Session | Topic | Materials |
+|------|------|---------|-------|-----------|
+|  | – | – | Course Logistics | [slides](slides/lecture_0_orga.html), [notes](notes/lecture_0_orga.html) |
+| 2026-03-23 | Foundations | Session 1 | Foundations of data analytics | [slides](slides/lecture_1_foundations_of_data_analytics.html), [notes](notes/lecture_1_foundations_of_data_analytics.html) |
+| 2026-03-23 | Structured Data | Session 2 | Structuring and preparing data | [slides](slides/lecture_2_structuring_preparing_data.html), [notes](notes/lecture_2_structuring_preparing_data.html) |
+| 2026-03-30 | Structured Data | Session 3 | Descriptive analysis I | [slides](slides/lecture_3_descriptive_analysis_1.html), [notes](notes/lecture_3_descriptive_analysis_1.html) |
+| 2026-03-30 | Structured Data | Session 4 | Descriptive analysis II | [slides](slides/lecture_4_descriptive_analysis_2.html), [notes](notes/lecture_4_descriptive_analysis_2.html) |
+| | | Break | | |
+| 2026-04-14 | Structured Data | Session 5 | Predictive analysis | [slides](slides/lecture_5_predictive_analysis.html), [notes](notes/lecture_5_predictive_analysis.html) |
+| 2026-04-20 | Structured Data | Session 6 | Prescriptive analysis | [slides](slides/lecture_6_prescriptive_analysis.html), [notes](notes/lecture_6_prescriptive_analysis.html) |
+| 2026-04-20 | Big Data | Session 7 | Big data | [slides](slides/lecture_7_big_data.html), [notes](notes/lecture_7_big_data.html) |
+| | | Break | | |
+| 2026-04-04 | Big Data | Session 8 | Exploratory analysis | [slides](slides/lecture_8_exploratory_analysis.html), [notes](notes/lecture_8_exploratory_analysis.html) |
+| 2026-04-04 | Big Data | Session 9 | Predictive analysis | [slides](slides/lecture_9_predictive_analysis.html), [notes](notes/lecture_9_predictive_analysis.html) |
+| 2026-04-11 | Organizations | Session 10 | Governance of data analytics | [slides](slides/lecture_10_data_governance.html), [notes](notes/lecture_10_data_governance.html) |
+| 2026-04-11 | Organizations | Session 11 | Recap, exam preparation, Q&A | [slides](slides/lecture_11_recap.html), [notes](notes/lecture_11_recap.html) |
 
-**Lectures to be polished before "slicing"**
-
-
-- [lecture 1 - introduction to analytics](slides/lecture_1_foundations_of_data_analytics.html) (see [pdf](slides/lecture_1_foundations_of_data_analytics.pdf))
-- [lecture 2 - descriptive analytics](slides/materials_lecture_2_descriptive_analytics.html) (see [pdf](slides/materials_lecture_2_descriptive_analytics.pdf))
-- [lecture 3 - big data](slides/materials_lecture_3_big_data.html) (see [pdf](slides/materials_lecture_3_big_data.pdf))
-- [lecture 4 - prescriptive analytics](slides/materials_lecture_4_predictive_analytics.html) (see [pdf](slides/materials_lecture_4_predictive_analytics.pdf))
-
-:::
-
+<!--
 ### Part 1: Foundations
-
-- Course Logistics ([slides](slides/lecture_0_orga.html) and [notes](notes/lecture_0_orga.html))
-- Session 1: Foundations of data analytics ([slides](slides/lecture_1_foundations_of_data_analytics.html) and [notes](notes/lecture_1_foundations_of_data_analytics.html))
-
 ### Part 2: Analytics for structured data
-
-- Session 2: Structuring and preparing data ([slides](slides/lecture_2_structuring_preparing_data.html) and [notes](notes/lecture_2_structuring_preparing_data.html))
-- Session 3: Descriptive analysis I ([slides](slides/lecture_3_descriptive_analysis_1.html) and [notes](notes/lecture_3_descriptive_analysis_1.html))
-- Session 4: Descriptive analysis II ([slides](slides/lecture_4_descriptive_analysis_2.html) and [notes](notes/lecture_4_descriptive_analysis_2.html))
-- Session 5: Predictive analysis ([slides](slides/lecture_5_predictive_analysis.html) and [notes](notes/lecture_5_predictive_analysis.html))
-- Session 6: Prescriptive analysis ([slides](slides/lecture_6_prescriptive_analysis.html) and [notes](notes/lecture_6_prescriptive_analysis.html))
-
 ### Part 3: Analytics for big data
-
-- Session 7: Big data ([slides](slides/lecture_7_big_data.html) and [notes](notes/lecture_7_big_data.html))
-- Session 8: Exploratory analysis ([slides](slides/lecture_8_exploratory_analysis.html) and [notes](notes/lecture_8_exploratory_analysis.html))
-- Session 9: Predictive analysis ([slides](slides/lecture_9_predictive_analysis.html) and [notes](notes/lecture_9_predictive_analysis.html))
-
 ### Part 4 – Analytics in organizations
-
-- Session 10: Governance of data analytics ([slides](slides/lecture_10_data_governance.html) and [notes](notes/lecture_10_data_governance.html))
-- Session 11: Recap, exam preparation, Q&A ([slides](slides/lecture_11_recap.html) and [notes](notes/lecture_11_recap.html))
+-->
 
 ::: callout-note
 We may prepare the [handout](all_lectures.pdf) generated based on all slides.

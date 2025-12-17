@@ -3,7 +3,42 @@ title: "Analytics and Big Data"
 subtitle: "Course Logistics"
 ---
 
-## Agenda
+## Your Instructor
+
+::: {.columns}
+::: {.column width="70%"}
+
+**Prof. Dr. Gerit Wagner**  
+
+- Ph.D.: Universität Regensburg
+- Postdoctoral Fellowship: HEC Montréal
+- Assistant Professor: Otto-Friedrich-Universität Bamberg
+- Full Professor: Frankfurt School of Finance & Management
+
+<!--
+I am excited study the evolving landscape of **digital work practices** and the technologies shaping the future of work.
+-->
+:::
+
+::: {.column width="30%"}
+![](../images/gerit_wagner.jpg)
+:::
+:::
+
+## Your expectations for *Big Data & Analytics*
+
+<!-- - Your background and perspective on digital work 
+- Topics you are interested in
+- Challenges you grapple with
+- Work technologies that are exciting
+
+![bg right:45% width:550px](../material/00_unsplash_office_space.jpeg)
+
+-->
+
+## Contents
+
+This course covers the following contents:
 
 1. Introduction to Analytics
 2. Descriptive Analytics
@@ -41,22 +76,175 @@ Part 4:
 - Vidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626-639.
 
 <!--
+- **Drivers of change** in digital work and its impact on modern organizations
+- **Personal information management** and strategies for individual work excellence
+- Best practices for **remote teams** and effective communication
+- **Collaborative content creation** and the role of open source in work environments
+- The impact of **platformization** on work structures
+- Understanding **knowledge-intensive services** and how they drive innovation
+- Exploring **future scenarios** for work, including fully **digital and distributed organizing**
+- Addressing important **ethical questions**, including the role of **generative AI** in shaping the future of work
+
+**Note**: The session on **Teaming with (AI) Agents** is our most recent addition.
+-->
+
+<!-- 
+## What This Course Does *Not* Cover
+
+While **digital work** and the **future of work** are broad topics, this course focuses selectively.  
+The following areas are **out of scope**:
+
+- Managing **digital stress** and burnout
+- **Holacracy** and alternative organizational models
+- **Gig-work platforms** (e.g., micro-tasking, delivery work)
+- **Augmented reality** applications
+- **Production and industrial** sectors (manufacturing, logistics)
+-->
 
 
-<div id="references-list">
-<h3>Data Warehouse / OLAP / Descriptive Analytics:</h3>
-<div>
-  <p>Vaisman, A.; Zimányi, E. (2016): <em>Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications)</em>, Springer.</p>
-</div>
+## Learning objectives
 
-<h3>Data Science / Predictive Analytics / Machine Learning:</h3>
-<div>
-  <p>Alpaydin, E. (2016): <em>Machine Learning: The New AI</em>, MIT Press Essential Knowledge.</p>
-  <p>Alpaydin, E. (2016): <em>Introduction to Machine Learning</em>, Third Edition, MIT Press.</p>
-  <p>Raschka, S. (2015): <em>Python Machine Learning</em>, Packt Pubpshing.</p>
-  <p>Schmarzo, B. (2016): <em>Big Data MBA</em>, Wiley.</p>
-  <p>Schutt, R.; O’Neil, C. (2014): <em>Doing Data Science</em>, O’Reilly Media.</p>
-</div>
-</div>
+
+**Knowledge**
+
+- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches.
+- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
+- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations.
+
+**Skills**
+
+- **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
+- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
+- **Implement** analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
+
+**Competence**
+
+- **Design** analytics solutions aligned with business goals and governance principles.
+- **Integrate** analytical technologies into organizational decision-making processes
+- **Assess** the operational and strategic implications of data analytics in organizations.
+
+<!-- 
+- Describe the historical, organizational, and societal drivers of change in digital work.
+- Understand how digitalization changes work for individuals, teams, and crowds.
+- Build you repertoire of practices, methods, and tools for effective digital work.
+- Explain corresponding theories of personal information management, media synchronicity, and virtual teams.
+- Appreciate different forms of scientific knowledge, theories, and methods prevalent in research on digital work.
+- Critically evaluate ethical outcomes and recommend policy measures.
+
+technology choice, effective (situational) use
+
+- Familiarize with a repertoire of techniques, methods, and policies for effective digital work at the levels of individuals, teams, and crowds.
+- Apply, adapt, and critically discuss these methods in different practical contexts.
+
+critically discuss: understand where they come from/how they were developed (based on what evidence/theories)
+Critically discuss ethical challenges associated with the future of work.
+
+Modulkatalog:
+Nach Abschluss des Kurses haben die Studierenden ein Verständnis über die Veränderungen, Gestaltungsbereiche und Auswirkungen digitaler Arbeit. Insbesondere können sie ein Repertoire ausgewählter Methoden, Designprinzipien und organisationelle Policies erklären und situativ anwenden. Zudem können sie die Evaluation einzelner Maßnahmen diskutieren und sie mit diesem Hintergrundwissen  effektiv und verantwortungsvoll in der Praxis einsetzen.
+-->
+
+
+## How this lecture approaches *Big Data & Analytics*
+
+<!-- The "philosophical foundations" 
+
+- Science and practice inform each other.
+	- Scientists are not the only producers of knowledge in this field (unlike in medicine, for example).
+	- It is valid to study how practitioners commonly work or how outstanding performers work, especially when there is limited scientific evidence. 
+	- To do that, it is important to appreciate differences in scientific knowledge, including theories, methods, and evidence.
+
+- We focus on **understanding** changes as well as underlying theory and evidence to shape digital work, and on **applying** repertoire of techniques and methods.
+
+- The course is an opportunity to adapt, test, and refine the methods that work best for you.
 
 -->
+
+## Materials
+
+Slides
+
+- Presentation slides will be made available for download.
+- You are expected to take complementary notes and read the recommended literature.
+- We invite you to contribute directly to our teaching materials by submitting an issue ♻️ or suggesting edits 🛠️.
+
+Literature
+
+- Literature and complementary materials will be listed at the end of each lecture.
+- Materials will be made available via VC whenever possible.
+- Reading of complementary materials depends on your interest and ambition.
+
+
+## Grades
+
+<!-- 
+- Exam: 90 points (minimum required: 45 points)
+- Summaries for the exams
+	- You can submit summaries at lectures 4, 7, and 10.
+	- Each summary can be one page (A5).
+	- Contents have to be summarized.
+	- The summaries will be available during the exams.
+
+If contents are not summarized, we may return them (with one opportunity to revise)
+
+- Assignments: 12 points (in 3 parts)
+
+bis zu 12 Punkte können vorher als Studienleistung eingebracht werden
+über die 90 Punkte der Klausur hinaus
+nach 45 Punkten in der Klausur werden die Bonuspunkte zugerechnet (cut bei 90 Punkten)
+ggf. 6 Bonuspunkte (zB. auf Kurzvortrag zu Paper - Kurzvortrag skaliert nicht bei größeren Kursen)
+Ggf. Übungsaufgaben mit Quiz
+
+
+## We value your feedback and suggestions
+
+We encourage you to share your feedback and suggestions on our teaching materials. You can find the following links in the footer of each slide:
+
+<br>
+
+<a href="https://github.com/digital-work-lab/literature-review-seminar/issues/new" target="_blank"> ♻️ </a> Provide feedback by submitting an issue
+<a href="https://github.com/digital-work-lab/literature-review-seminar/edit/main/slides/00-orga.md" target="_blank"> 🛠️ </a> Suggest specific changes by directly modifying the content
+
+<br>
+
+Your feedback plays a crucial role in helping us align with our core goals of **impact in research, teaching, and practice**. By contributing your suggestions, you help us further our commitment to **rigor**, **openness** and **participation**. Together, we can continuously enhance our work by contributing to **continuous learning** and collaboration across our community.
+
+Visit this <a href="https://digital-work-lab.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ . 
+-->
+
+
+## Administration
+
+<!-- 
+Contact: **TODO**
+
+Sessions: Monday, 8.15-11.45, April 28 - July 21
+Location: WE5/04.003
+
+Consultation hours: [by appointment](https://calendly.com/gerit-wagner/30min) (individually or in small groups)
+Web: https://www.uni-bamberg.de/digital-work
+
+Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 (password: IdW2526#stud)
+-->
+
+
+<!--
+## You may also be interested in ...
+
+![bg right:35% width:400px vertical](../assets/images/logo)
+![bg right:35% width:400px vertical](../assets/images/logo-project.png)
+![bg right:35% width:400px](../assets/images/logo-theses.png)
+![bg right:35% width:400px](../assets/images/logo)
+
+## The open-source project (WI-Projekt)
+
+- Learn to code in Python and contribute to the CoLRev package
+- Practice the use of Git in a small-team setting
+
+<!-- First session: Thursday, 17. April, 12.15-13.45 (WE5 3.004) -->
+
+## You may also be interested in ...
+
+Bachelor's theses
+
+- See information on the [process](https://digital-work-lab.github.io/theses/) and [open topics](https://digital-work-lab.github.io/theses/docs/topics.html)
+

@@ -3,9 +3,473 @@ title: "Analytics and Big Data"
 subtitle: "Session 2: Structuring and preparing data"
 ---
 
-Structuring and preparing data
-
 Learning objectives:
 
-- Data structures
+- Data structures (OLAP)
 - Data quality dimensions
+
+
+
+
+## Navigation 
+
+## 2 Descriptive Analytics
+
+> 2.1 Data Warehouse Systems
+
+> 2.2 Online Analytical Processing (OLAP)
+
+
+## Application Systems Pyramid
+
+![](../images/slides_27.png){fig-align="center" width="50%"}
+
+
+## Typical Descriptive Questions
+
+![](../images/slides_28.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: Alfred Schlaucher, Oracle, p. 15
+:::
+
+
+## Characteristics of Operational and Analytical Databases
+
+- Characteristics
+- Operational Data
+- Analytical Data
+
+- Target group
+- Operational employees
+- Management, Analysts, Divisional manager
+
+- Access frequency
+- high
+- slow to medium
+
+- Data volume per access
+- low to medium volume
+- high volume
+
+- Required response time
+- very short
+- short to medium
+
+- Level of data
+- detailed
+- aggregated, processed
+
+- Queries
+- predictable, periodic
+- unpredictable, ad hoc
+
+- Given period
+- current
+- past to future
+
+- Time horizon
+- 1–3 months
+- several years up to decades
+
+
+## Contradiction between Operational Data Architecture and Analytical Information Needs
+
+![](../images/slides_29_new.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: Jung/Winter (2000): Data Warehousing Strategie: Erfahrungen, Methoden, Visionen, Berlin, p. 7.
+:::
+
+
+## Different Intensities of Use
+
+# The hardware load differs in operational application systems and data warehouse systems over time
+
+![](../images/slides_30.png){fig-align="center" width="50%"}
+
+# => A data warehouse relieves the operational systems
+
+::: aside
+— Source: Inmon: Building the Data Warehouse, 2002, p. 23.
+:::
+
+
+## Definition: Data Warehouse
+
+# The term Data Warehouse was coined by Bill Inmon in 1990, which he defined in the following way:  
+
+# "A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision making process."
+
+# He defined the terms in the sentence as follows:
+
+> **Subject Oriented:** Data that gives information about a particular subject instead of about a company's ongoing operations.
+
+> **Integrated:** Data that is gathered into the data warehouse from a variety of sources and merged into a coherent whole.
+
+> **Time-variant:** All data in the data warehouse is identified with a particular time period.
+
+> **Non-volatile:** Data is stable in a data warehouse. More data is added but data is never removed. This enables management to gain a consistent picture of the business.
+
+::: aside
+— Source: "What is a Data Warehouse?" W. H. Inmon, Prism, Volume 1, Number 1, 1995
+:::
+
+
+## The Data Warehouse Concept
+
+![](../images/slides_31_new.png){fig-align="center" width="50%"}
+
+
+## Layers of a Data Warehouse System
+
+![](../images/slides_35_new.png){fig-align="center" width="50%"}
+
+
+## Components of a Data Warehouse
+
+![](../images/slides_36_new.png){fig-align="center" width="50%"}
+
+
+## Structure of the Database
+
+The database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company. In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company. They are organized in such a way that they can be viewed from different dimensions.
+
+Frequently used dimensions are:
+
+- Company structure (e.g., business units, organizational structure, legal entities)
+- Product structure (e.g., product groups and individual products)
+- Regional structure (e.g., region, country, continent)
+- Customer structure (e.g., customer groups or segments, and individual customers)
+- Time structure (e.g., month, quarter, year)
+- Business parameters (e.g., sales, contribution margin, profit)
+- Characteristics (e.g., target, actual, deviations)
+
+
+## Examples of Aggregation Levels in a Data Warehouse
+
+![](../images/slides_37_new.png){fig-align="center" width="50%"}
+
+
+## ETL-Tools
+
+The data in the data warehouse can normally only be accessed in a read-only manner. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.
+
+The timeliness with which the transfer to the database is performed can be defined flexibly, e.g., within defined time intervals, immediately after each change, or at the explicit request of the user.
+
+ETL programs include:
+
+- **Monitors:** Detect and report changes in individual sources that are relevant to the data warehouse.
+
+- **Extractors:** Select and transport data from the data sources into the workspace.
+
+- **Transformers:** Unify, clean, integrate, consolidate, aggregate, and augment extracted data in the workspace.
+
+- **Loaders:** Load transformed data from the workspace into the data warehouse after the data retrieval process is complete.
+
+
+## Staging Area
+
+The staging area is a temporary cache that performs the ETL process. It includes the extraction, transformation and loading of the data into the data warehouse.
+
+Neither the operational systems nor the data warehouse are affected by the process. The data can be transferred incrementally from the operational systems without having to have a permanent connection to them. It is stored temporarily and only transformed when it is sufficiently complete.
+
+It is then loaded en bloc into the data warehouse, so that no inconsistencies can occur here either.
+
+If the ETL process is successful, the data is deleted from the staging area.
+
+
+## The Metadata Repository
+
+Metadata supports data management and serves as a descriptor for an object that holds some data or information. In data warehouses, it is collectively organized in a catalog called the metadata repository.
+
+Metadata is classified into three types:
+
+- **Technical metadata:** Provides information about the structure of data, where it resides, and other technical details related to locating data in its native database.
+
+- **Business metadata:** Describes the actual data in business-understandable terms. It can provide insights into the type of data, its origin, definition, quality, and relationships with other entities in the data warehouse.
+
+- **Process metadata:** Stores information about the occurrence and outcomes of operations taking place in the data warehouse.
+
+
+## Data Warehouse and Data Mart
+
+A single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.
+
+Comparison: Data Warehouse and Data Mart
+
+- Application
+- Division/Department
+- Company
+
+- Data design
+- Optimized
+- Generalistic
+
+- Data volume
+- From gigabyte range
+- From terabyte range
+
+- Origin
+- Task oriented
+- Data model oriented
+
+- Requirements
+- Specific
+- Versatile
+
+
+## Architectural Variants of Data Warehouses in Practice
+
+![](../images/slides_41_new.png){fig-align="center" width="50%"}
+
+
+## From Transactions to Reports
+
+![](../images/slides_42_new.png){fig-align="center" width="50%"}
+
+
+## Example of a Dashboard
+
+![](../images/slides_43_new.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: https://www.bluemargin.com/power-bi-full-blog/topic/private-equity-data-intelligence
+:::
+
+
+## Star Schema (I)
+
+The Star schema has a central fact table and exactly one dimension table for each dimension.
+
+![](../images/slides_38.png){fig-align="center" width="50%"}
+
+The cardinality between the fact table and a dimension table is n∶1, i.e. a fact (e.g. sales: 67,000 euros) is described by one dimension expression for each dimension (e.g. time: 1st quarter, region: Hesse, product group: books). A dimension characteristic (e.g. product group: books) is associated with 0, 1 or n facts.
+
+
+## Star Schema (II)
+
+![](../images/slides_45_new.png){fig-align="center" width="50%"}
+
+
+## Star Schema (III)
+
+::: columns
+::: column
+![](../images/slides_40.png)
+:::
+::: column
+![](../images/slides_41.png)
+:::
+:::
+
+
+## Star Schema Table Design (I)
+
+![](../images/slides_47_new.png){fig-align="center" width="50%"}
+
+
+## Star Schema Table Design (II)
+
+![](../images/slides_43.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: https://www.guru99.com/star-snowflake-data-warehousing.html
+:::
+
+
+## Star Schema Example
+
+![](../images/slides_44.png){fig-align="center" width="50%"}
+
+
+## Exercise 1
+
+An online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:
+
+- **CUSTOMER** (ID, name, address, telephone, birthday, gender)
+- **WINE** (ID, name, type, year, bottle_price, class)
+- **CLASS** (ID, name, region)
+- **TIME** (timestamp, date, year)
+- **ORDER** (customer, wine, time, bottles)
+
+**Create the star schema for the data warehouse.**
+
+
+## Queries on the Star Schema
+
+**Example:**
+
+**In which years were the most cars purchased by female customers in Hesse in the 1st quarter?**
+
+```sql
+select z.Year as Year, sum(v.Amount) as Total_Amount  
+from Branch f, Product p, Time z, Customer k, Sales v  
+where z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID  
+group by z.Year  
+order by Total_Amount Descending;
+```
+
+| Year | Total Amount |
+|------|--------------|
+| 2004 | 745          |
+| 2005 | 710          |
+| 2003 | 650          |
+
+::: aside
+— Source: Hartung (2011), p. 37
+:::
+
+
+## Snowflake Schema
+
+In the Snowflake schema, the redundancies in the Star schema are resolved in the dimension tables and the hierarchy levels are each modeled with their own tables:
+
+![](../images/slides_45.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: https://www.guru99.com/star-snowflake-data-warehousing.html
+:::
+
+
+## Star Schema vs. Snowflake Schema
+
+- Speed of query processing is in favor of Star scheme
+- Data volume tends to be lower with Snowflake schema
+- Snowflake schema is easier to change (maintenance)
+
+
+## Galaxy Schema
+
+The Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions. The Galaxy schema thus represents more than one data cube (multi-cubes).
+
+![](../images/slides_54_new.png){fig-align="center" width="50%"}
+
+
+## Table Structure of the Galaxy Schema 
+
+![](../images/slides_55_new.png){fig-align="center" width="50%"}
+
+
+## DW Planning – User Questions (I)
+
+- What is the ratio of private to corporate customers?
+- Does this quantity ratio correspond to the turnover ratio?
+- Do customer characteristics such as occupational group, living situation, education, etc. play a role in turnover?
+- What are the customers with the highest sales?
+- What is the development of sales over time? Are there any shifts in relation to customer characteristics?
+- Can additional customer segments be formed, e.g. if customer characteristics are combined?
+- Are there regional focal points in relation to customer characteristics?
+- Are there regional focuses related to products / product groups?
+- Are there correlations between customer characteristics and products?
+- What are the top-selling products? Top sellers/bottom sellers lists?
+- Are there seasonal influences on the sales development depending on product or customer characteristics?
+
+
+## DW Planning – User Questions (II)
+
+![](../images/slides_57_new.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: Alfred Schlaucher, Oracle, p. 28
+:::
+
+
+## Result: Star Schema
+
+![](../images/slides_58_new.png){fig-align="center" width="50%"}
+
+::: aside
+— Source: Alfred Schlaucher, Oracle, p. 40
+:::
+
+
+## Exercise 2
+
+A restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation.
+
+The company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status. 
+
+The menu items of the restaurants are divided into the classes "Starters", "Main courses", "Desserts", "Beverages" and "Other". Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.
+
+**Create the logical data warehouse schema!**
+
+
+## Exercise 3
+
+As an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.
+
+Flowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available. 
+
+The DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.
+
+The key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.
+
+Employees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.
+
+**Create the logical data warehouse schema!**
+
+
+## Navigation 
+
+## 2 Descriptive Analytics
+
+> 2.1 Data Warehouse Systems
+
+> 2.2 Online Analytical Processing (OLAP)
+
+
+## Subject of OLAP
+
+Online Analytical Processing (OLAP) is software technology focused on the analysis of dynamic, multidimensional data.
+
+The goal is to provide executives with the information they need quickly, flexibly and interactively.
+
+OLAP functionality can be characterized as dynamic, multidimensional analysis of consolidated enterprise data, which includes the following components:
+
+- Calculations of key figures over different dimensions and aggregation levels
+- Trend analysis over definable time intervals
+- "What if" analyses
+- Multidimensional visualization methods
+
+
+## Facts and Dimensions
+
+![](../images/slides_63_new.png){fig-align="center" width="50%"}
+
+
+## Organizing Data as Hypercube
+
+![](../images/slides_64_new.png){fig-align="center" width="50%"}
+
+
+## OLAP Operations: Slicing and Dicing
+
+![](../images/slides_65_new.png){fig-align="center" width="50%"}
+
+
+## OLAP Operations: Rotate
+
+![](../images/slides_66_new.png){fig-align="center" width="50%"}
+
+
+## OLAP Operations: Drill Down and Roll Up
+
+![](../images/slides_67_new.png){fig-align="center" width="50%"}
+
+
+## OLAP Operations: Nest
+
+The result of a nest operation physically represents a two-dimensional matrix. It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form. In the following example, three dimensions are displayed:
+
+![](../images/slides_68_new.png){fig-align="center" width="50%"}
+
+
+## OLAP as Excel plug-in
+
+![](../images/slides_69_new.png){fig-align="center" width="50%"}
+
+
+## Architecture of an OLAP System
+
+![](../images/slides_70_new.png){fig-align="center" width="50%}
