@@ -1,7 +1,10 @@
 ---
 title: "Big Data & Analytics"
 format: html
+bibliography: assets/references.bib
+csl: assets/apa.csl
 ---
+
 
 ::: callout-note
 Some of the following will be moved to the [syllabus](syllabus.html).
@@ -30,67 +33,50 @@ The module combines conceptual foundations and hands-on analytical practice usin
 - **Integrate** analytical technologies into organizational decision-making processes
 - **Assess** the operational and strategic implications of data analytics in organizations. 🟢 [l10](slides/lecture_10_data_governance)
 
-## Lectures and exercises
+## Sessions
 
-| Date  | Part | Session | Topic | Materials |
-|------|------|---------|-------|-----------|
-|  | – | – | Course Logistics | [slides](slides/lecture_0_orga.html), [notes](notes/lecture_0_orga.html) |
-| 2026-03-23 | Foundations | Session 1 | Foundations of data analytics | [slides](slides/lecture_1_foundations_of_data_analytics.html), [notes](notes/lecture_1_foundations_of_data_analytics.html) |
-| 2026-03-23 | Structured Data | Session 2 | Structuring and preparing data | [slides](slides/lecture_2_structuring_preparing_data.html), [notes](notes/lecture_2_structuring_preparing_data.html) |
-| 2026-03-30 | Structured Data | Session 3 | Descriptive analysis I | [slides](slides/lecture_3_descriptive_analysis_1.html), [notes](notes/lecture_3_descriptive_analysis_1.html) |
-| 2026-03-30 | Structured Data | Session 4 | Descriptive analysis II | [slides](slides/lecture_4_descriptive_analysis_2.html), [notes](notes/lecture_4_descriptive_analysis_2.html) |
-| | | Break | | |
-| 2026-04-14 | Structured Data | Session 5 | Predictive analysis | [slides](slides/lecture_5_predictive_analysis.html), [notes](notes/lecture_5_predictive_analysis.html) |
-| 2026-04-20 | Structured Data | Session 6 | Prescriptive analysis | [slides](slides/lecture_6_prescriptive_analysis.html), [notes](notes/lecture_6_prescriptive_analysis.html) |
-| 2026-04-20 | Big Data | Session 7 | Big data | [slides](slides/lecture_7_big_data.html), [notes](notes/lecture_7_big_data.html) |
-| | | Break | | |
-| 2026-04-04 | Big Data | Session 8 | Exploratory analysis | [slides](slides/lecture_8_exploratory_analysis.html), [notes](notes/lecture_8_exploratory_analysis.html) |
-| 2026-04-04 | Big Data | Session 9 | Predictive analysis | [slides](slides/lecture_9_predictive_analysis.html), [notes](notes/lecture_9_predictive_analysis.html) |
-| 2026-04-11 | Organizations | Session 10 | Governance of data analytics | [slides](slides/lecture_10_data_governance.html), [notes](notes/lecture_10_data_governance.html) |
-| 2026-04-11 | Organizations | Session 11 | Recap, exam preparation, Q&A | [slides](slides/lecture_11_recap.html), [notes](notes/lecture_11_recap.html) |
+| Date       | Part            | Session    | Topic                            | Lecture                                                                                                                    | Exercise |
+|------------|-----------------|------------|----------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
+|            | –               | –          | Course Logistics                 | [slides](slides/lecture_0_orga.html), [notes](notes/lecture_0_orga.html)                                                   |  |
+| 2026-03-23 | Foundations     | Session  1 | Foundations of data analytics    | [slides](slides/lecture_1_foundations_of_data_analytics.html), [notes](notes/lecture_1_foundations_of_data_analytics.html) | [exercise](exercises/exercise_1.html) |
+| 2026-03-23 | Structured Data | Session  2 | Structuring and preparing data   | [slides](slides/lecture_2_structuring_preparing_data.html), [notes](notes/lecture_2_structuring_preparing_data.html)       | [exercise](exercises/exercise_2.html) |
+| 2026-03-30 | Structured Data | Session  3 | Descriptive analysis I           | [slides](slides/lecture_3_descriptive_analysis_1.html), [notes](notes/lecture_3_descriptive_analysis_1.html)               | [exercise](exercises/exercise_3.html) |
+| 2026-03-30 | Structured Data | Session  4 | Descriptive analysis II          | [slides](slides/lecture_4_descriptive_analysis_2.html), [notes](notes/lecture_4_descriptive_analysis_2.html)               | [exercise](exercises/exercise_4.html) |
+| | | Break | | | |
+| 2026-04-14 | Structured Data | Session  5 | Predictive analysis              | [slides](slides/lecture_5_predictive_analysis.html), [notes](notes/lecture_5_predictive_analysis.html)                     | [exercise](exercises/exercise_5.html) |
+| 2026-04-20 | Structured Data | Session  6 | Prescriptive analysis            | [slides](slides/lecture_6_prescriptive_analysis.html), [notes](notes/lecture_6_prescriptive_analysis.html)                 | [exercise](exercises/exercise_6.html) |
+| 2026-04-20 | Big Data        | Session  7 | Big data                         | [slides](slides/lecture_7_big_data.html), [notes](notes/lecture_7_big_data.html)                                           | [exercise](exercises/exercise_7.html) |
+| | | Break | | | |
+| 2026-04-04 | Big Data        | Session  8 | Exploratory analysis             | [slides](slides/lecture_8_exploratory_analysis.html), [notes](notes/lecture_8_exploratory_analysis.html)                   | [exercise](exercises/exercise_8.html) |
+| 2026-04-04 | Big Data        | Session  9 | Predictive analysis              | [slides](slides/lecture_9_predictive_analysis.html), [notes](notes/lecture_9_predictive_analysis.html)                     | [exercise](exercises/exercise_9.html) |
+| 2026-04-11 | Organizations   | Session 10 | Governance of data analytics     | [slides](slides/lecture_10_data_governance.html), [notes](notes/lecture_10_data_governance.html)                           | [exercise](exercises/exercise_10.html) |
+| 2026-04-11 | Organizations   | Session 11 | Recap, exam preparation, Q&A     | [slides](slides/lecture_11_recap.html), [notes](notes/lecture_11_recap.html)                                               | [exercise](exercises/exercise_11.html) |
 
 <!--
-### Part 1: Foundations
-### Part 2: Analytics for structured data
-### Part 3: Analytics for big data
-### Part 4 – Analytics in organizations
--->
-
 ::: callout-note
 We may prepare the [handout](all_lectures.pdf) generated based on all slides.
 :::
+-->
 
 ## Group work
 
--  To come
+-  To come, see `group-projects`.
 
-## Teaching notes
 
-- To come (adding link to confidential exam repository)
+## Exam
 
+[fs-ise/big-data-analytics-exams](https://github.com/fs-ise/big-data-analytics-exams)
+
+<!--
 ## License, code of conduct, contributing, ...
+-->
 
 ## Recommended literature
 
+Part 1: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
 
-Part 1:
+Part 2: @Raschka2015, @SchuttONeil2014, @Vaisman2016
 
-- Sharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective. [link](https://elibrary.pearson.de/book/99.150005/9781292727530)
-- Martínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. _IEEE Transactions on Knowledge and Data Engineering_, _33_(8), 3048-3061. [link](https://ieeexplore.ieee.org/abstract/document/8943998)
-- Chen, H., Chiang, R. H., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. _MIS Quarterly_ 36(4), 1165-1188. [link](https://www.jstor.org/stable/41703503)
+Part 3: @BengfortEtAl2018. @Schmarzo2016
 
-Part 2:
-
-- Vaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer. [link](https://link.springer.com/book/10.1007/978-3-662-65167-4)
-- Schutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media. [link](https://www.oreilly.com/library/view/doing-data-science/9781449363871/)
-- Raschka, Sebastian (2015): Python Machine Learning, Packt Publishing. [link](https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130)
-
-Part 3:
-
-- Schmarzo, B. (2016): Big Data MBA, Wiley. [link](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119238881)
-- Bengfort, B., Bilbro, R., & Ojeda, T. (2018). _Applied text analysis with python: Enabling language-aware data products with machine learning_. O'Reilly Media, Inc. [link](https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/)
-
-Part 4:
-
-- Davenport, T. H. (2006). Competing on analytics. _Harvard Business Review_, _84_(1), 98. [link](https://cs.brown.edu/courses/cs295-11/competing.pdf)
-- Vidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. _European Journal of Operational Research_, _261_(2), 626-639. [link](https://www.sciencedirect.com/science/article/pii/S0377221717301455)
+Part 4: @Davenport2006, @VidgenEtAl2017

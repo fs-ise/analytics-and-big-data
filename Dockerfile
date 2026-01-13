@@ -31,7 +31,11 @@ RUN apt-get update && \
         ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir jupyter ipykernel matplotlib plotly scikit-learn
+RUN pip3 install --no-cache-dir \
+    jupyter ipykernel \
+    numpy pandas \
+    matplotlib plotly \
+    scikit-learn
 RUN python3 -m ipykernel install --name=python3 --display-name "Python 3"
 
 # --- Install recent Node.js (NodeSource) ---
