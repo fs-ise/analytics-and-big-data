@@ -1,8 +1,16 @@
 # ---- Config ----
 DOCKER_IMAGE ?= big-data-analytics-decktape
 
-# Find all rendered slide HTML files on the host
-SLIDES_HTML := $(shell find _site/slides -type f -name '*.html')
+SRC_SLIDES_DIR := slides
+OUT_DIR        := _site
+SLIDES_DIR     := $(OUT_DIR)/slides
+
+# All slide sources (qmd)
+SLIDES_QMD  := $(shell find $(SRC_SLIDES_DIR) -type f -name '*.qmd' 2>/dev/null)
+
+# Expected rendered outputs in _site/slides
+SLIDES_HTML := $(patsubst $(SRC_SLIDES_DIR)/%.qmd,$(SLIDES_DIR)/%.html,$(SLIDES_QMD))
+SLIDES_PDF  := $(SLIDES_HTML:.html=.pdf)
 
 # ---- Targets ----
 
@@ -10,14 +18,35 @@ SLIDES_HTML := $(shell find _site/slides -type f -name '*.html')
 docker-image:
 	docker build -t $(DOCKER_IMAGE) .
 
-
-.PHONY: decktape
-decktape: docker-image
-	@if [ -z "$(SLIDES_HTML)" ]; then \
-	  echo "No slide HTML files found in _site/slides/*.html"; \
-	  echo "Did you run 'quarto render'? Or is the output path different?"; \
-	  exit 1; \
+.PHONY: decktape-warning
+decktape-warning:
+	@if [ ! -d "$(SLIDES_DIR)" ]; then \
+	  echo "Warning: $(SLIDES_DIR) does not exist yet. It will be created by Quarto."; \
+	elif [ -z "$(SLIDES_HTML)" ]; then \
+	  echo "Warning: No slide HTML files found/expected in $(SLIDES_DIR)."; \
 	fi
+
+# Convenience target: build everything (HTML first, then PDF)
+.PHONY: slides
+slides: $(SLIDES_PDF)
+
+# --- Quarto rendering ---
+# Render one qmd -> expected html in _site/slides
+# (Make sure your _quarto.yml output-dir is _site, which it is.)
+$(SLIDES_DIR)/%.html: $(SRC_SLIDES_DIR)/%.qmd _quarto.yml
+	@echo "Quarto: rendering $<"
+	quarto render $<
+
+# If you have shared dependencies that should also trigger rebuilds, add them above, e.g.:
+#   assets/frankfurt.css assets/header.html
+
+# --- Decktape PDF generation ---
+.PHONY: decktape
+pdfs: decktape-warning $(SLIDES_PDF)
+
+# Pattern rule: one PDF depends on its HTML (which depends on the QMD)
+$(SLIDES_DIR)/%.pdf: $(SLIDES_DIR)/%.html scripts/decktape.sh | docker-image
+	@echo "Rendering $@ (from $<)"
 	docker run --rm \
 	  -e HOST_UID=$$(id -u) \
 	  -e HOST_GID=$$(id -g) \
@@ -25,20 +54,14 @@ decktape: docker-image
 	  -w /project \
 	  $(DOCKER_IMAGE) \
 	  bash -lc '\
-	    QUARTO_PROJECT_OUTPUT_FILES="$$(printf "%s\n" $(SLIDES_HTML))" ./scripts/decktape.sh && \
-	    chown $$HOST_UID:$$HOST_GID _site/slides/*.pdf \
+	    ./scripts/decktape.sh "$<" "$@" && \
+	    chown $$HOST_UID:$$HOST_GID "$@" \
 	  '
 
-# .PHONY: decktape
-# decktape: docker-image
-# 	@if [ -z "$(SLIDES_HTML)" ]; then \
-# 	  echo "No slide HTML files found in _site/slides/*.html"; \
-# 	  echo "Did you run 'quarto render'? Or is the output path different?"; \
-# 	  exit 1; \
-# 	fi
-# 	docker run --rm \
-# 	  -v "$(PWD)":/project \
-# 	  -w /project \
-# 	  $(DOCKER_IMAGE) \
-# 	  bash -lc 'QUARTO_PROJECT_OUTPUT_FILES="$$(printf "%s\n" $(SLIDES_HTML))" ./scripts/decktape.sh'
-# 	chown $$(id -u):$$(id -g) _site/slides/*.pdf
+.PHONY: decktape-clean
+decktape-clean:
+	rm -f $(SLIDES_DIR)/*.pdf
+
+.PHONY: slides-clean
+slides-clean:
+	rm -rf $(OUT_DIR)
