@@ -3,8 +3,200 @@ title: "Analytics and Big Data"
 subtitle: "Session 4: Regression I"
 ---
 
-Learning objectives:
+# Learning objectives {data-state="hide-menubar"}
+
 
 - A
 - B
 - C
+
+
+# TODO {data-stack-name="TODO"}
+
+
+
+## Navigation
+
+4 Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.2 Regression
+
+
+
+
+## Definitions
+
+A method is a composition of formalized principles that form the basis for a stringent calculation process.
+
+An algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.
+
+In the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.
+
+Fitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.
+
+Overfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.
+
+::: aside
+— Source: Schutt/O’Neil (2013): Doing Data Science.
+:::
+
+
+
+
+## Traditional Analytics Process
+
+![](../images/slides_117.png)
+
+
+
+
+## Example Regression - Fitting the model
+
+![](../images/slides_121.png)
+
+
+
+
+## Example Regression - Testing the model
+
+![](../images/slides_123.png)
+
+
+
+
+## Data Errors and their Consequences
+
+![](../images/slides_125_new.png)
+
+
+
+
+## Modern Analytics Process
+
+![](../images/slides_126_new.png)
+
+
+
+
+## Best Fit vs. Best Generalization
+
+![](../images/slides_129.png)
+
+
+
+
+## Over- and Underfitting
+
+![](../images/slides_131.png)
+
+> Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
+
+::: {.notes}
+
+Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55
+
+:::
+
+
+
+
+## The Bias-Variance Tradeoff
+
+The prediction error is influenced by three components:
+
+> Error = Bias + Variance + Noise
+
+- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
+
+- Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
+
+- Typically, there is a tradeoff between bias and variance.
+
+- Noise is everything that arises from random variations in the data. It cannot be controlled.
+
+![](../images/slides_132_new.png)
+
+
+
+
+<!--
+## Summarizing: Statistics vs. Data Analytics
+
+![](../images/slides_133_new.png)
+
+-->
+
+
+
+## Which Method should I choose?
+
+The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.
+
+In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.
+
+For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.
+
+
+
+
+## Linear World
+
+![](../images/slides_134_new.png)
+
+
+
+
+## Quadratic World
+
+![](../images/slides_135_new.png)
+
+
+
+
+## Nonlinear World (Type 1)
+
+![](../images/slides_136_new.png)
+
+
+
+
+## Nonlinear World (Type 2)
+
+![](../images/slides_137_new.png)
+
+
+
+
+## Nonlinear World (Type 3)
+
+![](../images/slides_138_new.png)
+
+
+
+
+## Nonlinear World (Type 4)
+
+![](../images/slides_139_new.png)
+
+
+
+
+## The Data Analytics Process - Technical View
+
+![](../images/slides_133.png)
+
+::: aside
+— Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/
+:::
+

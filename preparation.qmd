@@ -30,9 +30,14 @@ gantt
 
 ## Preparation overview
 
-- [ ] Select contents for each session
+- [x] Select contents for each session
 - [ ] Find contents: Exploratory data analysis
-- [ ] We may prepare the [handout](all_lectures.pdf) generated based on all slides.
+- [ ] Find contents: Regression I
+- [ ] Find contents: Regression II
+- [ ] Find contents: Machine learning I
+- [ ] Find contents: Machine learning II
+- [ ] Find contents: Analytics case examples
+
 
 ### Session 0 — Course logistics
 - [ ] Slides polished
@@ -62,7 +67,7 @@ gantt
 
 ---
 
-### Session 3 — Descriptive analysis I
+### Session 3 — Exploratory data analysis
 - [ ] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
@@ -73,7 +78,7 @@ gantt
 
 ---
 
-### Session 4 — Descriptive analysis II
+### Session 4 — Regression I
 - [ ] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
@@ -84,7 +89,7 @@ gantt
 
 ---
 
-### Session 5 — Predictive analysis
+### Session 5 — Regression II
 - [ ] Learning objectives set
 - [ ] Lecture contents selected (**slides available**)
 - [ ] Exercise contents selected
@@ -95,7 +100,7 @@ gantt
 
 ---
 
-### Session 6 — Prescriptive analysis
+### Session 6 — Machine learning I
 - [ ] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
@@ -106,7 +111,7 @@ gantt
 
 ---
 
-### Session 7 — Big data
+### Session 7 — Machine learning II
 - [ ] Learning objectives set
 - [ ] Lecture contents selected (**slides available**)
 - [ ] Exercise contents selected
@@ -117,7 +122,7 @@ gantt
 
 ---
 
-### Session 8 — Exploratory analysis
+### Session 8 — Big Data
 - [ ] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
@@ -128,7 +133,7 @@ gantt
 
 ---
 
-### Session 9 — Predictive analysis (big / unstructured)
+### Session 9 — Analytics case examples
 - [ ] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
@@ -162,9 +167,10 @@ gantt
 ## Cross-cutting tasks
 
 - [ ] Group work
+- [ ] We may prepare the [handout](all_lectures.pdf) generated based on all slides.
 - [ ] Exams: [fs-ise/big-data-analytics-exams](https://github.com/fs-ise/big-data-analytics-exams)
 - [ ] Create first-slide background illustrations for all sessions (consistent design)
-- [ ] Align learning objectives in individual sessions with the [overall overview](#learning-objectives) 
+- [ ] Align learning objectives in individual sessions with the [overall overview](#learning-objectives)
 - [ ] Link checker set up (slides / notes / exercises)
 - [ ] Exercises run end-to-end (Dataset availability verified)
 - [ ] Group exercises tested
@@ -197,14 +203,14 @@ Slides:
 - [ ] specify learning goals
 - [ ] Prepare and test-run
 
-Exercise sheets:  
+Exercise sheets:
 
 - [ ] Specify exercise goals and state typical exam questions
 - [ ] Identify suitable exercise materials (rossbach, hopf, prester)
 - [ ] Prepare and test-run
 - [ ] Setup teaching-notes
 
-- [ ] Split Data Analytics with Python.pdf and add 
+- [ ] Split Data Analytics with Python.pdf and add
 -> jnb (even if pdf must be uploaded)
 
 - [ ] Print exercise Sheets and ask for comments

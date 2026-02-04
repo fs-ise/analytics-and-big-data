@@ -3,7 +3,6 @@ title: "Analytics and Big Data"
 subtitle: "Session 1: Foundations of data analytics"
 ---
 
-
 ## Why is Modern Analytics so Successful?
 
 1. More Data for the Analysis
@@ -165,7 +164,7 @@ plt.show()
 ## Evolution of Analytics
 
 
-![](../images/slides_20.jpg){fig-align="center"  width="70%"} 
+![](../images/slides_20.jpg){fig-align="center"  width="70%"}
 
 
 ::: aside
@@ -190,17 +189,17 @@ Source: Schmarzo, p. 88
 
 **Descriptive**
 
-- What happened in the past?  
+- What happened in the past?
 - Example: Report the profits of the last years.
 
 **Predictive**
 
-- Find patterns and relationships in data and use them for prediction.  
+- Find patterns and relationships in data and use them for prediction.
 - Example: Find the functional relationship between price and demand.
 
 **Prescriptive**
 
-- Use the predictions to make decisions.  
+- Use the predictions to make decisions.
 - Example: Set the best price to optimize the profit.
 
 
@@ -229,12 +228,12 @@ Source: Schmarzo, p. 13
 
 ## Descriptive Analytics Process
 
-![](../images/slides_23.png){fig-align="center" width="45%"} 
+![](../images/slides_23.png){fig-align="center" width="45%"}
 
 
 ## Predictive Analytics Process
 
-![](../images/slides_24.png){fig-align="center" width="60%"} 
+![](../images/slides_24.png){fig-align="center" width="60%"}
 
 
 ## Example Inventory Planning
@@ -266,7 +265,7 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 3. Early detection of price changes and adjustment of purchasing behavior
 4. Optimization of inventory management based on customers' current purchasing preferences
 
-## Summary
+## Summary {data-state="hide-menubar"}
 
 
 🎯 **Learning Objective**:

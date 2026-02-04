@@ -3,8 +3,303 @@ title: "Analytics and Big Data"
 subtitle: "Session 7: Machine learning II"
 ---
 
-Learning objectives:
+# Learning objectives {data-state="hide-menubar"}
 
 - A
 - B
 - C
+
+
+# TODO {data-stack-name="TODO"}
+
+## Data Preparation and Enrichment
+
+> The data collection and preparation phase is the most labor-intensive one, consuming on average between 60-80% of a data scientist’s time. It’s critical therefore to select a tool that can automate or at least speed the workflows associated with data preparation.
+
+![](../images/slides_134.png)
+
+2016 Dataiku, Inc.
+
+
+
+
+## Data Cleaning
+
+1. Proof of correctness of the data
+
+- examine for irregular outliers (e.g. Age=236)
+- examine for typographical errors (e.g. Frankfrut)
+- examine for different writing styles (e.g. behavior/behaviour)
+-
+2. Handling missing values
+
+![](../images/slides_140_new.png)
+
+
+
+
+## Missing Values Strategies
+
+![](../images/slides_141_new.png)
+
+
+
+
+## Sampling
+
+A population can be defined as including all people or items with the characteristic one wishes to understand.
+
+Sampling is about to find a representative subset of that population.
+
+Data represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.
+
+There are two sources of randomness and uncertainty:
+
+- the randomness and uncertainty underlying the process itself, and
+- the uncertainty associated with the underlying sampling method.
+
+
+
+
+## Sampling in Times of Big Data
+
+**Question:**
+
+Is there any need for sampling in times of Big Data? Why not "N=ALL"?
+
+**Answer:**
+
+Data is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.
+
+**Examples:**
+
+- When analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.
+- When analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently.
+
+
+
+
+## Reasons for Sampling
+
+- The volume of data is too large to capture and process
+- Design the analytics process using a subset of the data for performance reasons. Later use the complete data set.
+- The data set doesn't perfectly represent the target population.
+- The data set is imbalanced.
+- Use sampling to partition into training and test data.
+- ...
+
+
+
+
+## Popular Methods of Sampling (I)
+
+![](../images/slides_135.png)
+
+
+
+
+## Popular Methods of Sampling (II)
+
+![](../images/slides_167.png)
+
+
+---
+
+
+## Systematic Sampling
+
+![](../images/slides_176.png)
+
+
+
+
+## Random Sampling
+
+![](../images/slides_177.png)
+
+
+
+
+## Proportional Sampling
+
+![](../images/slides_178.png)
+
+
+
+
+## Downsampling
+
+![](../images/slides_179.png)
+
+
+
+
+## SMOTE
+
+<div style="display:flex">
+<div style="width:60%">
+> SMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class. At first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1. Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.
+</div>
+
+<div style="float:right;width:40%">
+![](../images/slides_180.png)
+</div>
+</div>
+
+::: aside
+— Source: https://github.com/minoue-xx/Oversampling-Imbalanced-Data
+:::
+
+
+
+
+## Feature Engineering
+
+> Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
+
+> A feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:
+
+![](../images/slides_144_new.png)
+
+> Features can be of two major types. **Raw features** are obtained directly from the dataset with no extra data manipulation or engineering. **Derived features** are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing "Birthdate".
+
+::: aside
+— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.
+:::
+
+
+
+
+## Variants of Feature Engineering
+
+1. Transformation
+
+- convert features (e.g., birth date → age)
+- build lag structures (e.g., time-lags)
+- normalization / standardization / scaling
+
+2. Type Conversion
+
+- if numerical type is needed, transform categorical into numerical data using dummy features
+- if categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)
+
+3. Feature Combination
+
+- create interaction features (e.g., school_score = num_schools × median_school
+  with num_schools = number of schools within 5 miles of a property and
+  median_school = median quality score of those schools)
+- combine categories (e.g., when there are very few observations or too many dummy features)
+
+4. Feature Composition
+
+- build ratios (e.g., returns from prices)
+- Principal Component Analysis (Dimensionality Reduction)
+
+
+
+
+## Scaling
+
+> Most datasets contain features highly varying in magnitudes, units and range.
+
+> Most machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.
+
+> To overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization.
+
+![](../images/slides_146_new.png)
+
+
+
+
+## Type Conversion (Encoding)
+
+> Many machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:
+
+> **Label encoding** refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g. young → 1, middle_age → 2, old → 3. This only works in specific situations where you have somewhat continuous-like data, e.g. if the categorical feature is ordinal.
+
+> **One hot encoding** is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g.
+
+![](../images/slides_147_new.png)
+
+> It is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap).
+
+
+
+
+## Example of Feature Engineering (I)
+
+> Data sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data "flight date time vs status". Then, given the date-time data, we have to predict the status of the flight.
+
+> But the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature "Hour_Of_Day". Using the "Hour_Of_Day" feature, the machine will learn better as this feature is directly related to the status of the flight.
+
+![](../images/slides_183.png)
+
+::: aside
+— Source: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.
+:::
+
+
+
+
+## Example of Feature Engineering (II)
+
+> Suppose we are given the latitude, longitude and other data with the objective to predict the target feature "Price_Of_House". Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.
+
+> In other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example.
+
+![](../images/slides_185.png)
+
+
+
+
+## Example of Feature Engineering (III)
+
+> Suppose we are given a feature "Marital_Status" and other data with the objective to classify customers into "Creditworthy" and "Not_Creditworthy". In the data set the martial status has many different values, for example:
+
+- single living alone
+- single living with his parents
+- married living together
+- married living separately
+- divorced
+- divorced but living together
+- registered partnerships
+- living in marriage-like community
+- widowed
+- ...
+
+> To avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.
+
+> If there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single "other" class.
+
+
+
+
+## Partitioning the Data
+
+> The partitioning of the data in **Training and Test Data** has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.
+
+> The partitioning of the data in training and test data can be carried out in the following ways:
+
+- By random/stratified/... sampling (problem with the repeatability)
+- according to a list
+- according to rules (e.g. the first/last 50 records or every twelfth)
+
+
+
+
+## Applying Training and Test Data
+
+![](../images/slides_152_new.png)
+
+::: aside
+— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx
+:::
+
+
+
+
+## Partitioning
+
+![](../images/slides_187.png)
+
+

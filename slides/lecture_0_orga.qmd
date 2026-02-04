@@ -1,8 +1,6 @@
 ---
 title: "Analytics and Big Data"
 subtitle: "Course Logistics"
-bibliography: ../assets/references.bib
-csl: ../assets/apa.csl
 ---
 
 ## Your Instructor
@@ -10,7 +8,7 @@ csl: ../assets/apa.csl
 ::: {.columns}
 ::: {.column width="70%"}
 
-**Prof. Dr. Gerit Wagner**  
+**Prof. Dr. Gerit Wagner**
 
 Academic background
 
@@ -43,7 +41,7 @@ I am excited study the evolving landscape of **digital work practices** and the 
 <!--
 ## Your expectations for *Big Data & Analytics*
 
- - Your background and perspective on digital work 
+ - Your background and perspective on digital work
 - Topics you are interested in
 - Challenges you grapple with
 - Work technologies that are exciting
@@ -108,7 +106,7 @@ flowchart TB
 - Session 11: Recap, exam preparation, Q&A
 -->
 
-## Literature 
+## Literature
 
 Part 1: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
 
@@ -132,10 +130,10 @@ Part 4: @Davenport2006, @VidgenEtAl2017
 **Note**: The session on **Teaming with (AI) Agents** is our most recent addition.
 -->
 
-<!-- 
+<!--
 ## What This Course Does *Not* Cover
 
-While **digital work** and the **future of work** are broad topics, this course focuses selectively.  
+While **digital work** and the **future of work** are broad topics, this course focuses selectively.
 The following areas are **out of scope**:
 
 - Managing **digital stress** and burnout
@@ -166,7 +164,7 @@ The following areas are **out of scope**:
 - **Integrate** analytical technologies into organizational decision-making processes
 - **Assess** the operational and strategic implications of data analytics in organizations.
 
-<!-- 
+<!--
 - Describe the historical, organizational, and societal drivers of change in digital work.
 - Understand how digitalization changes work for individuals, teams, and crowds.
 - Build you repertoire of practices, methods, and tools for effective digital work.
@@ -187,11 +185,11 @@ Nach Abschluss des Kurses haben die Studierenden ein Verständnis über die Ver�
 
 ## How this lecture approaches *Big Data & Analytics*
 
- The "philosophical foundations" 
+ The "philosophical foundations"
 
 - Science and practice inform each other.
 	- Scientists are not the only producers of knowledge in this field (unlike in medicine, for example).
-	- It is valid to study how practitioners commonly work or how outstanding performers work, especially when there is limited scientific evidence. 
+	- It is valid to study how practitioners commonly work or how outstanding performers work, especially when there is limited scientific evidence.
 	- To do that, it is important to appreciate differences in scientific knowledge, including theories, methods, and evidence.
 
 - We focus on **understanding** changes as well as underlying theory and evidence to shape digital work, and on **applying** repertoire of techniques and methods.
@@ -224,7 +222,7 @@ Literature
 ::: {.callout-note title="TODO"}
 TODO: group sizes, how groups will form, ...
 
-Workload: 
+Workload:
 
 total: 150h
 in-class: 44
@@ -237,7 +235,7 @@ Prerequisite: Successful completion of the "Introduction to Programming" module
 TODO: link syllabus
 :::
 
-<!-- 
+<!--
 Contact: **TODO**
 
 Sessions: Monday, 8.15-11.45, April 28 - July 21
@@ -249,7 +247,7 @@ Web: https://www.uni-bamberg.de/digital-work
 Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 (password: IdW2526#stud)
 -->
 
-<!-- 
+<!--
 - Exam: 90 points (minimum required: 45 points)
 - Summaries for the exams
 	- You can submit summaries at lectures 4, 7, and 10.
@@ -284,7 +282,7 @@ We encourage you to share your feedback and suggestions on our teaching material
 
 Your feedback plays a crucial role in helping us align with our core goals of **impact in research, teaching, and practice**. By contributing your suggestions, you help us further our commitment to **rigor**, **openness** and **participation**. Together, we can continuously enhance our work by contributing to **continuous learning** and collaboration across our community.
 
-Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ . 
+Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ .
 -->
 
 

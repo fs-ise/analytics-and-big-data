@@ -3,19 +3,21 @@ title: "Analytics and Big Data"
 subtitle: "Session 2: Structuring and preparing data"
 ---
 
-Learning objectives:
+## Learning objectives {data-state="hide-menubar"}
 
 - **Describe** how data warehouses support descriptive analytics, including ETL/staging, metadata, and the separation from operational systems.
 - **Explain** dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).
 - **Model** analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data.
 
-## Navigation 
+## Navigation
 
 ## 2 Descriptive Analytics
 
 > 2.1 Data Warehouse Systems
 
 > 2.2 Online Analytical Processing (OLAP)
+
+# TODO {data-stack-name="TODO"}
 
 
 ## Application Systems Pyramid
@@ -95,7 +97,7 @@ Learning objectives:
 
 ## Definition: Data Warehouse
 
-# The term Data Warehouse was coined by Bill Inmon in 1990, which he defined in the following way:  
+# The term Data Warehouse was coined by Bill Inmon in 1990, which he defined in the following way:
 
 # "A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision making process."
 
@@ -301,10 +303,10 @@ An online wine retailer plans to design a data warehouse to collect key figures 
 **In which years were the most cars purchased by female customers in Hesse in the 1st quarter?**
 
 ```sql
-select z.Year as Year, sum(v.Amount) as Total_Amount  
-from Branch f, Product p, Time z, Customer k, Sales v  
-where z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID  
-group by z.Year  
+select z.Year as Year, sum(v.Amount) as Total_Amount
+from Branch f, Product p, Time z, Customer k, Sales v
+where z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID
+group by z.Year
 order by Total_Amount Descending;
 ```
 
@@ -344,7 +346,7 @@ The Galaxy schema contains more than one fact table. The fact tables share some 
 ![](../images/slides_54_new.png){fig-align="center" width="50%"}
 
 
-## Table Structure of the Galaxy Schema 
+## Table Structure of the Galaxy Schema
 
 ![](../images/slides_55_new.png){fig-align="center" width="50%"}
 
@@ -386,7 +388,7 @@ The Galaxy schema contains more than one fact table. The fact tables share some 
 
 A restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation.
 
-The company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status. 
+The company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status.
 
 The menu items of the restaurants are divided into the classes "Starters", "Main courses", "Desserts", "Beverages" and "Other". Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.
 
@@ -397,7 +399,7 @@ The menu items of the restaurants are divided into the classes "Starters", "Main
 
 As an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.
 
-Flowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available. 
+Flowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available.
 
 The DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.
 
@@ -408,7 +410,7 @@ Employees have been working in the different branches of the company for differe
 **Create the logical data warehouse schema!**
 
 
-## Navigation 
+## Navigation
 
 ## 2 Descriptive Analytics
 
