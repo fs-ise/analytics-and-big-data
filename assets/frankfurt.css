@@ -3,7 +3,7 @@
   --fs-header-h: 140px;              /* smaller now, just for logo/title block */
   --brand-color: #002EFF;   /* Frankfurt blue from the logo */
   --font-family: "Source Sans Pro", sans-serif;
-  --font-size: 26px;
+  --font-size: 28px;
 }
 
 /* Top-right floating header (title + logo) */
@@ -29,6 +29,7 @@ body,
 .reveal,
 .reveal .slides {
   font-family: var(--font-family);
+  font-size: var(--font-size);
 }
 
 /* slide title in the floating header */

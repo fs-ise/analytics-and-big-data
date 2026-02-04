@@ -5,4 +5,15 @@ format: html
 
 ::: callout-note
 TODO
+
+Learning objective: writing SQL queries!?
+
+Illustrate: OLAP as a "systems approach", notebooks as a more flexible data science approach
+
+Rotating hypercube: similar to rotating in tidy-data preparation?
+
+Drop the Excel OLAP plugin?
+
+Extract exercises?
+
 :::

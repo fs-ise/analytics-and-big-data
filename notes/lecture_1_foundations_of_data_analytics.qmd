@@ -3,6 +3,38 @@ title: "Notes: Session 1: Foundations of data analytics"
 format: html
 ---
 
-::: callout-note
-TODO
+## Lecture
+
+Note: Orga: 20 min
+
+| Time (min)  | Duration  | Topic                         | Additional materials                           |
+|-------------|-----------|-------------------------------|------------------------------------------------|
+| 20-35       | 15        | More data                     |                                                |
+| 35-50       | 15        | More computing power          |                                                |
+| 50-65       | 15        | New methods and algorithms    |                                                |
+| 65-80       | 15        | New analytics processes       |                                                |
+
+::: objective
+In this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.
+:::
+
+## Exercise
+
+| Time (min) | Duration  | Topic                              | Additional materials                           |
+|------------|-----------|------------------------------------|------------------------------------------------|
+| 0-30       | 30        | Introduction and setup             |                                                |
+| 30-90      | 60        | Data handling in Python            |                                                |
+
+::: objective
+Ask students to create a GitHub account (CHECK: free student packs?)
+
+TBD: typical exam questions corresponding to the lecture? - 
+
+Explain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im `Umgang mit Spyder.docx`).
+
+Start in groups of two (random?)
+
+Introduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite
+**check classrooms before! - can it be attached to the desks?**
+
 :::

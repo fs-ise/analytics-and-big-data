@@ -3,6 +3,23 @@ project:
   title: "Big Data and Analytics"
   output-dir: _site 
   # post-render: "bash scripts/decktape.sh"
+
+
+website:
+
+  site-url: https://fs-ise.github.io/big-data-analytics/
+  repo-url: https://github.com/fs-ise/big-data-analytics
+  repo-actions: [edit, issue]
+  navbar:
+    right:
+      - text: "Overview"
+        href: index.qmd
+      - text: "⚠️ Preparation"
+        href: preparation.qmd
+      - text: "Syllabus"
+        href: syllabus.qmd
+
+
 format:
   revealjs:
     author: "Prof. Dr. Gerit Wagner"
@@ -24,6 +41,38 @@ format:
         header: ""
         footer: "<div class='menubar'><ul class='menu'></ul><div class='slide-number'></div></div>"
       scale: 0.67
+    mermaid:
+      theme: default
+
+bibliography: assets/references.bib
+csl: assets/apa.csl
+
 
 revealjs-plugins:
   - simplemenu
+
+filters:
+  - custom-callout
+
+
+custom-callout:
+  resource:
+    title: "Resource"
+    icon: true
+    icon-symbol: "🔗"
+    color: "#0d6efd"
+  confidential:
+    title: "Confidential"
+    icon: true
+    icon-symbol: "🔒"
+    color: "#dc3545"
+  objective:
+    title: "Objective"
+    icon: true
+    icon-symbol: "🎯"
+    color: "#0d6efd"
+  self-service:
+    title: "Self-service"
+    icon: true
+    icon-symbol: "🛠️"
+    color: "#198754"

@@ -3,7 +3,48 @@ title: "Syllabus"
 format: html
 ---
 
+## Summary
 
+This module introduces students to the methods, technologies, and governance of modern data analytics across descriptive, predictive, and prescriptive approaches.
+It builds a comprehensive understanding of the data analytics process—from data structuring and preparation to exploratory data analysis, analytical modeling, and decision support.
+The module combines conceptual foundations and hands-on analytical practice using Python, pandas, and scikit-learn.
+It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming).
+Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations.
+
+## Learning objectives
+
+**Knowledge** After completing the module, students will be able to:
+
+- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches. 🟢 [l1](slides/lecture_1_foundations_of_data_analytics.html)
+- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 [l2](slides/lecture_2_descriptive_analytics.html)
+- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 [l10](slides/lecture_10_data_governance.html)
+
+**Skills** Students will be able to:
+
+- **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
+- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
+- **Implement** analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
+
+**Competence** Upon successful completion, students will be able to:
+
+- **Design** analytics solutions aligned with business goals and governance principles.
+- **Integrate** analytical technologies into organizational decision-making processes
+- **Assess** the operational and strategic implications of data analytics in organizations. 🟢 [l10](slides/lecture_10_data_governance)
+
+## Related courses
+
+- [Data Science for Business](https://harvardonline.harvard.edu/course/data-science-business) with [syllabus](https://us-west-2.graphassets.com/cmcu78gdx085p08n06vc58sxv/cmi3la9wm6k7v07lk3xx2ezza)
+
+
+## Recommended literature
+
+- **Part 1**: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
+- **Part 2**: @Raschka2015, @SchuttONeil2014, @Vaisman2016
+- **Part 3**: @BengfortEtAl2018. @Schmarzo2016
+- **Part 4**: @Davenport2006, @VidgenEtAl2017
+
+
+<!--
 ## Course Design and Pedagogical Approach
 
 This course intentionally combines **two complementary pedagogical perspectives** to prepare students for both the *technical foundations* and the *practical realities* of Big Data and Business Analytics.
@@ -46,7 +87,5 @@ For the second part, one motivation could be to help everyone be better prepared
   - Practical judgment in applying analytics in organizational contexts
   - Lifelong learning skills in a dynamic digital environment
 
-
-
-
 TBD: also cover group-work (third part??)
+-->

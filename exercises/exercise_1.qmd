@@ -1,18 +1,6 @@
 ---
 title: "Exercise 1: Foundations of data analytics"
-format:
-  html:
-    toc: true
-    number-sections: true
-jupyter: python3
 ---
-
-::: callout-note
-TODO
-
-see Tipps im `Umgang mit Spyder.docx`
-
-:::
 
 ## Preface
 
@@ -75,9 +63,9 @@ class ModelEstimator(object):
 ```
 
 
-## 1 DataFrames with Pandas
+## DataFrames with Pandas
 
-### 1.1 DataFrames
+### DataFrames
 
 While a matrix is of simple structure intended for mathematical operations, a DataFrame is
 more suited to representing a table of data. It is a list of vectors of equal length. The top line
@@ -114,7 +102,7 @@ df.loc[len(df)] = ["Mike Tyson", 19400, "2018-6-27"]
 df
 ```
 
-### 1.2 Import and Export
+### Import and Export
 
 ```{python}
 # data = pd.read_csv("filename.csv")
@@ -122,7 +110,7 @@ df
 # data.to_csv("output.csv", index=False)
 ```
 
-### 1.3 Basic Statistical Functions for DataFrames
+### Basic Statistical Functions for DataFrames
 
 A large number of methods compute basic statistical measures on a DataFrame.
 Most of them are aggregations such as `sum` and `mean`.
@@ -137,17 +125,32 @@ Most of them are aggregations such as `sum` and `mean`.
 
 ### Common statistical functions in Pandas
 
-| Function     | Description                              |
+| Function     | Description                             |
 |-------------|------------------------------------------|
-| `count()`   | Number of non-null observations           |
-| `sum()`     | Sum of values                             |
-| `mean()`    | Mean of values                            |
-| `median()`  | Median of values                          |
-| `mode()`    | Mode of values                            |
+| `count()`   | Number of non-null observations          |
+| `sum()`     | Sum of values                            |
+| `mean()`    | Mean of values                           |
+| `median()`  | Median of values                         |
+| `mode()`    | Mode of values                           |
 | `std()`     | Standard deviation of the values         |
-| `min()`     | Minimum value                             |
-| `max()`     | Maximum value                             |
-| `abs()`     | Absolute value                            |
-| `prod()`    | Product of values                         |
-| `cumsum()`  | Cumulative sum                            |
+| `min()`     | Minimum value                            |
+| `max()`     | Maximum value                            |
+| `abs()`     | Absolute value                           |
+| `prod()`    | Product of values                        |
+| `cumsum()`  | Cumulative sum                           |
 | `cumprod()` | Cumulative product                       |
+
+
+## Example case
+
+- Get a dataset (nice datasource)
+- Import and prepare
+- Produce a notebook
+
+::: {.callout-note title="TODO"}
+**TODO: add a setup explanation + tests for available python version and packages**
+
+**TODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)**
+
+**TODO : add a summary**
+:::

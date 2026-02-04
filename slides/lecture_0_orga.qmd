@@ -1,6 +1,8 @@
 ---
 title: "Analytics and Big Data"
 subtitle: "Course Logistics"
+bibliography: ../assets/references.bib
+csl: ../assets/apa.csl
 ---
 
 ## Your Instructor
@@ -10,10 +12,23 @@ subtitle: "Course Logistics"
 
 **Prof. Dr. Gerit Wagner**  
 
-- Ph.D.: Universität Regensburg
-- Postdoctoral Fellowship: HEC Montréal
+Academic background
+
+- Doctorate: Universität Regensburg
+- Postdoctoral Fellow: HEC Montréal
 - Assistant Professor: Otto-Friedrich-Universität Bamberg
 - Full Professor: Frankfurt School of Finance & Management
+
+
+::: {.callout-note title="TODO"}
+Research interests
+
+- TODO
+
+Teaching interests
+
+- TODO
+:::
 
 <!--
 I am excited study the evolving landscape of **digital work practices** and the technologies shaping the future of work.
@@ -25,9 +40,10 @@ I am excited study the evolving landscape of **digital work practices** and the 
 :::
 :::
 
+<!--
 ## Your expectations for *Big Data & Analytics*
 
-<!-- - Your background and perspective on digital work 
+ - Your background and perspective on digital work 
 - Topics you are interested in
 - Challenges you grapple with
 - Work technologies that are exciting
@@ -38,42 +54,70 @@ I am excited study the evolving landscape of **digital work practices** and the 
 
 ## Contents
 
-This course covers the following contents:
+```{mermaid}
+flowchart TB
+  subgraph Foundations
+    F1[Session 1: Foundations]
+  end
 
-1. Introduction to Analytics
-2. Descriptive Analytics
-   - Data Warehouse Systems
-   - Online Analytical Processing (OLAP)
-3. Predictive Analytics
-   - Subject of Predictive Analytics
-   - The Analytics Process
-   - Data Preparation
-   - Methods, Algorithms and Applications
-4. Big Data
+  subgraph da[" "]
+
+  subgraph bd["Big Data"]
+    BD7[Session 7: Big data]
+    BD8[Session 8: Exploratory analysis]
+    BD9[Session 9: Predictive analysis]
+  end
+  subgraph sd["Structured Data"]
+    SD2[Session 2: Structuring and<br>preparing data]
+    SD34[Session 3/4: Descriptive analysis]
+    SD5[Session 5: Predictive analysis]
+    SD6[Session 6: Prescriptive analysis]
+  end
+
+  end
+
+  subgraph Organizations
+    O10[Session 10: Governance]
+  end
+
+  Foundations --> da  --> Organizations
+```
+
+<!--
+
+**Foundations**
+
+- Session 1: Foundations of data analytics
+
+**Structured Data**
+
+- Session 2: Structuring and preparing data
+- Session 3/4: Descriptive analysis
+- Session 5: Predictive analysis
+- Session 6: Prescriptive analysis
+
+**Big Data**
+
+- Session 7: Big data
+- Session 8: Exploratory analysis
+- Session 9: Predictive analysis
+
+**Organizations**
+
+- Session 10: Governance of data analytics
+- Session 11: Recap, exam preparation, Q&A
+-->
 
 ## Literature 
 
-Part 1:
+Part 1: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
 
-- Sharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective.
-- Martínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048-3061. 
-- Chen, H., Chiang, R. H., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly 36(4), 1165-1188.
+Part 2: @Raschka2015, @SchuttONeil2014, @Vaisman2016
 
-Part 2:
+Part 3: @BengfortEtAl2018. @Schmarzo2016
 
-- Vaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer.
-- Schutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media.
-- Raschka, Sebastian (2015): Python Machine Learning, Packt Publishing.
+Part 4: @Davenport2006, @VidgenEtAl2017
 
-Part 3:
-
-- Schmarzo, B. (2016): Big Data MBA, Wiley.
-- Bengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media, Inc. 
-
-Part 4:
-
-- Davenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98.
-- Vidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626-639.
 
 <!--
 - **Drivers of change** in digital work and its impact on modern organizations
@@ -103,7 +147,6 @@ The following areas are **out of scope**:
 
 
 ## Learning objectives
-
 
 **Knowledge**
 
@@ -141,12 +184,10 @@ Critically discuss ethical challenges associated with the future of work.
 
 Modulkatalog:
 Nach Abschluss des Kurses haben die Studierenden ein Verständnis über die Veränderungen, Gestaltungsbereiche und Auswirkungen digitaler Arbeit. Insbesondere können sie ein Repertoire ausgewählter Methoden, Designprinzipien und organisationelle Policies erklären und situativ anwenden. Zudem können sie die Evaluation einzelner Maßnahmen diskutieren und sie mit diesem Hintergrundwissen  effektiv und verantwortungsvoll in der Praxis einsetzen.
--->
-
 
 ## How this lecture approaches *Big Data & Analytics*
 
-<!-- The "philosophical foundations" 
+ The "philosophical foundations" 
 
 - Science and practice inform each other.
 	- Scientists are not the only producers of knowledge in this field (unlike in medicine, for example).
@@ -170,11 +211,43 @@ Slides
 Literature
 
 - Literature and complementary materials will be listed at the end of each lecture.
-- Materials will be made available via VC whenever possible.
+- Materials will be made available whenever possible.
 - Reading of complementary materials depends on your interest and ambition.
 
 
-## Grades
+## Course organization
+
+
+- Exam: 60 minutes, 60 points (date: TBA/exam week)
+- Group project: written paper (40 pages), 60 points (end of module)
+
+::: {.callout-note title="TODO"}
+TODO: group sizes, how groups will form, ...
+
+Workload: 
+
+total: 150h
+in-class: 44
+remaining: self-study + group project
+
+Administration
+
+Prerequisite: Successful completion of the "Introduction to Programming" module
+
+TODO: link syllabus
+:::
+
+<!-- 
+Contact: **TODO**
+
+Sessions: Monday, 8.15-11.45, April 28 - July 21
+Location: WE5/04.003
+
+Consultation hours: [by appointment](https://calendly.com/gerit-wagner/30min) (individually or in small groups)
+Web: https://www.uni-bamberg.de/digital-work
+
+Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 (password: IdW2526#stud)
+-->
 
 <!-- 
 - Exam: 90 points (minimum required: 45 points)
@@ -195,36 +268,25 @@ ggf. 6 Bonuspunkte (zB. auf Kurzvortrag zu Paper - Kurzvortrag skaliert nicht be
 Ggf. Übungsaufgaben mit Quiz
 
 
+TODO: `group-projects/Guidelines for the GroupProjects.pdf`
+
+
 ## We value your feedback and suggestions
 
 We encourage you to share your feedback and suggestions on our teaching materials. You can find the following links in the footer of each slide:
 
 <br>
 
-<a href="https://github.com/digital-work-lab/literature-review-seminar/issues/new" target="_blank"> ♻️ </a> Provide feedback by submitting an issue
-<a href="https://github.com/digital-work-lab/literature-review-seminar/edit/main/slides/00-orga.md" target="_blank"> 🛠️ </a> Suggest specific changes by directly modifying the content
+<a href="https://github.com/fs-ise/literature-review-seminar/issues/new" target="_blank"> ♻️ </a> Provide feedback by submitting an issue
+<a href="https://github.com/fs-ise/literature-review-seminar/edit/main/slides/00-orga.md" target="_blank"> 🛠️ </a> Suggest specific changes by directly modifying the content
 
 <br>
 
 Your feedback plays a crucial role in helping us align with our core goals of **impact in research, teaching, and practice**. By contributing your suggestions, you help us further our commitment to **rigor**, **openness** and **participation**. Together, we can continuously enhance our work by contributing to **continuous learning** and collaboration across our community.
 
-Visit this <a href="https://digital-work-lab.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ . 
+Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ . 
 -->
 
-
-## Administration
-
-<!-- 
-Contact: **TODO**
-
-Sessions: Monday, 8.15-11.45, April 28 - July 21
-Location: WE5/04.003
-
-Consultation hours: [by appointment](https://calendly.com/gerit-wagner/30min) (individually or in small groups)
-Web: https://www.uni-bamberg.de/digital-work
-
-Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 (password: IdW2526#stud)
--->
 
 
 <!--
@@ -246,5 +308,7 @@ Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 
 
 Bachelor's theses
 
-- See information on the [process](https://digital-work-lab.github.io/theses/) and [open topics](https://digital-work-lab.github.io/theses/docs/topics.html)
+- See information on the [process](https://fs-ise.github.io/theses/) and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
 
+
+## References

@@ -1,8 +1,14 @@
 # Quarto slides (template)
 
-Serve:
+Serve preview:
 
-```
+```sh
 docker compose up
 docker compose down
+```
+
+Build pdfs:
+
+```sh
+make decktape
 ```

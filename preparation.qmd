@@ -1,0 +1,214 @@
+---
+title: "Preparation"
+format: html
+---
+
+::: {.column-page}
+
+```{mermaid}
+%%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%
+gantt
+
+    title Big Data & Analytics — Prep plan (everything done by 2026-03-09)
+    dateFormat YYYY-MM-DD
+    axisFormat %Y-%m-%d
+    excludes weekends, 2026-02-16, 2026-02-17, 2026-02-18, 2026-02-19, 2026-02-20
+
+    section Constraints
+    Vacation :vac, 2026-02-16, 2026-02-20
+    Prep complete (T-2 weeks) :milestone, dl, 2026-03-09, 0d
+    First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d
+
+    section Preparation by area
+    Foundations (Session 1) :found, 2026-01-13, 3d
+    Structured Data (Sessions 2–6) :struct, after found, 10d
+    Big Data (Sessions 7–9) :big, after struct, 6d
+    Organizations (Sessions 10–11) :org, after big, 4d
+    Integration & polish (all links) :buf, after org, 3d
+```
+:::
+
+## Preparation overview
+
+- [ ] Select contents for each session
+- [ ] Find contents: Exploratory data analysis
+- [ ] We may prepare the [handout](all_lectures.pdf) generated based on all slides.
+
+### Session 0 — Course logistics
+- [ ] Slides polished
+- [ ] Teaching notes prepared
+
+---
+
+### Session 1 — Foundations of data analytics
+- [x] Learning objectives set
+- [x] Lecture contents selected
+- [x] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 2 — Structuring and preparing data
+- [x] Learning objectives set
+- [x] Lecture contents selected
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 3 — Descriptive analysis I
+- [ ] Learning objectives set
+- [ ] Lecture contents selected ⚠️
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 4 — Descriptive analysis II
+- [ ] Learning objectives set
+- [ ] Lecture contents selected ⚠️
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 5 — Predictive analysis
+- [ ] Learning objectives set
+- [ ] Lecture contents selected (**slides available**)
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 6 — Prescriptive analysis
+- [ ] Learning objectives set
+- [ ] Lecture contents selected ⚠️
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 7 — Big data
+- [ ] Learning objectives set
+- [ ] Lecture contents selected (**slides available**)
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 8 — Exploratory analysis
+- [ ] Learning objectives set
+- [ ] Lecture contents selected ⚠️
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 9 — Predictive analysis (big / unstructured)
+- [ ] Learning objectives set
+- [ ] Lecture contents selected ⚠️
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 10 — Governance of data analytics
+- [ ] Learning objectives set
+- [ ] Lecture contents selected ⚠️
+- [ ] Exercise contents selected
+- [ ] Lecture polished
+- [ ] Exercise polished
+- [ ] Exercise tested
+- [ ] Teaching notes prepared
+
+---
+
+### Session 11 — Recap, exam preparation, Q&A
+- [ ] Learning objectives set
+- [ ] Recap structure defined
+- [ ] Exam-relevant topics consolidated
+- [ ] Slides polished
+- [ ] Teaching notes prepared
+
+---
+
+## Cross-cutting tasks
+
+- [ ] Group work
+- [ ] Exams: [fs-ise/big-data-analytics-exams](https://github.com/fs-ise/big-data-analytics-exams)
+- [ ] Create first-slide background illustrations for all sessions (consistent design)
+- [ ] Align learning objectives in individual sessions with the [overall overview](#learning-objectives) 
+- [ ] Link checker set up (slides / notes / exercises)
+- [ ] Exercises run end-to-end (Dataset availability verified)
+- [ ] Group exercises tested
+- [ ] Test exam prepared
+- [ ] Consistency of terminology across sessions
+- [ ] Learning objectives aligned with exam scope
+- [ ] Optional: handout / combined PDF prepared
+- [ ] Syllabus updated
+- [ ] License, code of conduct, contributing, ...
+
+
+## TBD:
+
+- [ ] Test exercise sheets: [GitHub jupyterlab](https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning?utm_source=chatgpt.com#opening-your-codespace-in-jupyterlab) with pre-installation of pandas etc. and PDF generation
+TBD: exercise sheets in a separate repository?
+- [ ] Excerpts for teaching hub
+- [ ] Exercise sheets: solutions?!
+
+- [ ] Update requirements (exam):
+    - show and read code for the analysis
+    - include code reading and interpretation, maybe even pseudo-code writing in the exam (and exercises)
+    - surveys during the lecture: vote for "additional exercise/more difficult exercise"
+
+Work through the different parts (easier to identify materials for a part instead of comparing multiple lectures for multiple topics)
+
+Slides:
+
+- [ ] start with teaching notes and schedule. Setup teaching-notes
+- [ ] screen and include relevant materials (e.g., Hopf, Prester; identify gaps)
+- [ ] specify learning goals
+- [ ] Prepare and test-run
+
+Exercise sheets:  
+
+- [ ] Specify exercise goals and state typical exam questions
+- [ ] Identify suitable exercise materials (rossbach, hopf, prester)
+- [ ] Prepare and test-run
+- [ ] Setup teaching-notes
+
+- [ ] Split Data Analytics with Python.pdf and add 
+-> jnb (even if pdf must be uploaded)
+
+- [ ] Print exercise Sheets and ask for comments
+
+https://www.coursera.org/learn/data-analysis-with-python
+- python, exploratory data analysis
+-> accessible (good examples?!)

@@ -3,7 +3,6 @@ title: "Analytics and Big Data"
 subtitle: "Session 1: Foundations of data analytics"
 ---
 
-TODO: LO: Differentiate between descriptive, predictive, and prescriptive analytics approaches.
 
 ## Why is Modern Analytics so Successful?
 
@@ -48,6 +47,8 @@ The rapid acceleration of computing power—driven by advances in hardware, clou
 
 ![](../images/slides_3.png){fig-align="center" width="50%"}
 
+TODO: mention DEA automata. Von Neuman architecture, possible addition of Quantum computing
+TODO: mention chip miniaturization and pushing pysical limits https://www.youtube.com/watch?v=MiUHjLxm3V0
 
 # Algorithms {data-stack-name="Algorithms"}
 
@@ -73,6 +74,7 @@ Source: Lalit Sachan
 :::
 </p>
 
+TODO: Alpha fold: deep mind on Protein folding: deep learning for small datasets (Algorithm selection)
 
 ## ImageNet
 
@@ -265,6 +267,11 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 4. Optimization of inventory management based on customers' current purchasing preferences
 
 ## Summary
+
+
+🎯 **Learning Objective**:
+Explain how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.
+
 
 - Modern analytics is driven by data availability, computing power, and new methods.
 - Analytics evolves from descriptive to predictive and prescriptive insights.

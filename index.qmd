@@ -1,82 +1,47 @@
 ---
 title: "Big Data & Analytics"
 format: html
-bibliography: assets/references.bib
-csl: assets/apa.csl
 ---
 
-
-::: callout-note
-Some of the following will be moved to the [syllabus](syllabus.html).
+:::  {.callout-important title="Preparation"}
+See [preparation notes](preparation.html).
 :::
-
-This module introduces students to the methods, technologies, and governance of modern data analytics across descriptive, predictive, and prescriptive approaches. It builds a comprehensive understanding of the data analytics process—from data structuring and preparation to exploratory data analysis, analytical modeling, and decision support.
-The module combines conceptual foundations and hands-on analytical practice using Python, pandas, and scikit-learn. It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming). Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations.
-
-## Learning objectives
-
-**Knowledge** After completing the module, students will be able to:
-
-- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches. 🟢 [l1](slides/lecture_1_foundations_of_data_analytics.html)
-- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 [l2](slides/lecture_2_descriptive_analytics.html)
-- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 [l10](slides/lecture_10_data_governance.html)
-
-**Skills** Students will be able to:
-
-- **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
-- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
-- **Implement** analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
-
-**Competence** Upon successful completion, students will be able to:
-
-- **Design** analytics solutions aligned with business goals and governance principles.
-- **Integrate** analytical technologies into organizational decision-making processes
-- **Assess** the operational and strategic implications of data analytics in organizations. 🟢 [l10](slides/lecture_10_data_governance)
 
 ## Sessions
 
-| Date       | Part            | Session    | Topic                            | Lecture                                                                                                                    | Exercise |
-|------------|-----------------|------------|----------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
-|            | –               | –          | Course Logistics                 | [slides](slides/lecture_0_orga.html), [notes](notes/lecture_0_orga.html)                                                   |  |
-| 2026-03-23 | Foundations     | Session  1 | Foundations of data analytics    | [slides](slides/lecture_1_foundations_of_data_analytics.html), [notes](notes/lecture_1_foundations_of_data_analytics.html) | [exercise](exercises/exercise_1.html) |
-| 2026-03-23 | Structured Data | Session  2 | Structuring and preparing data   | [slides](slides/lecture_2_structuring_preparing_data.html), [notes](notes/lecture_2_structuring_preparing_data.html)       | [exercise](exercises/exercise_2.html) |
-| 2026-03-30 | Structured Data | Session  3 | Descriptive analysis I           | [slides](slides/lecture_3_descriptive_analysis_1.html), [notes](notes/lecture_3_descriptive_analysis_1.html)               | [exercise](exercises/exercise_3.html) |
-| 2026-03-30 | Structured Data | Session  4 | Descriptive analysis II          | [slides](slides/lecture_4_descriptive_analysis_2.html), [notes](notes/lecture_4_descriptive_analysis_2.html)               | [exercise](exercises/exercise_4.html) |
-| | | Break | | | |
-| 2026-04-14 | Structured Data | Session  5 | Predictive analysis              | [slides](slides/lecture_5_predictive_analysis.html), [notes](notes/lecture_5_predictive_analysis.html)                     | [exercise](exercises/exercise_5.html) |
-| 2026-04-20 | Structured Data | Session  6 | Prescriptive analysis            | [slides](slides/lecture_6_prescriptive_analysis.html), [notes](notes/lecture_6_prescriptive_analysis.html)                 | [exercise](exercises/exercise_6.html) |
-| 2026-04-20 | Big Data        | Session  7 | Big data                         | [slides](slides/lecture_7_big_data.html), [notes](notes/lecture_7_big_data.html)                                           | [exercise](exercises/exercise_7.html) |
-| | | Break | | | |
-| 2026-04-04 | Big Data        | Session  8 | Exploratory analysis             | [slides](slides/lecture_8_exploratory_analysis.html), [notes](notes/lecture_8_exploratory_analysis.html)                   | [exercise](exercises/exercise_8.html) |
-| 2026-04-04 | Big Data        | Session  9 | Predictive analysis              | [slides](slides/lecture_9_predictive_analysis.html), [notes](notes/lecture_9_predictive_analysis.html)                     | [exercise](exercises/exercise_9.html) |
-| 2026-04-11 | Organizations   | Session 10 | Governance of data analytics     | [slides](slides/lecture_10_data_governance.html), [notes](notes/lecture_10_data_governance.html)                           | [exercise](exercises/exercise_10.html) |
-| 2026-04-11 | Organizations   | Session 11 | Recap, exam preparation, Q&A     | [slides](slides/lecture_11_recap.html), [notes](notes/lecture_11_recap.html)                                               | [exercise](exercises/exercise_11.html) |
+### Introductory
 
-<!--
-::: callout-note
-We may prepare the [handout](all_lectures.pdf) generated based on all slides.
-:::
--->
+| Date       | Session   | Topic                         | Lecture                                                                                                                    | Exercise |
+|------------|-----------|-------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
+|            | –         | Course Logistics              | [slides](slides/lecture_0_orga.html), [notes](notes/lecture_0_orga.html)                                                     |          |
+| 2026-03-23 | Session 1 | Foundations of data analytics | [slides](slides/lecture_1_foundations_of_data_analytics.html), [notes](notes/lecture_1_foundations_of_data_analytics.html) | [exercise](exercises/exercise_1.html) |
+
+### Structured Data
+
+| Date       | Session   | Topic                          | Lecture                                                                                                                      | Exercise |
+|------------|-----------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
+| 2026-03-23 | Session 2 | Structuring and preparing data | [slides](slides/lecture_2_structuring_preparing_data.html), [notes](notes/lecture_2_structuring_preparing_data.html)         | [exercise](exercises/exercise_2.html) |
+| 2026-03-30 | Session 3 | Exploratory data analysis      | [slides](slides/lecture_3_exploratory_data_analysis.html), [notes](notes/lecture_3_exploratory_data_analysis.html)                 | [exercise](exercises/exercise_3.html) |
+| 2026-03-30 | Session 4 | Regression I                   | [slides](slides/lecture_4_regression_1.html), [notes](notes/lecture_4_regression_1.html)                 | [exercise](exercises/exercise_4.html) |
+| 2026-04-14 | Session 5 | Regression II                  | [slides](slides/lecture_5_regression_2.html), [notes](notes/lecture_5_regression_2.html)                       | [exercise](exercises/exercise_5.html) |
+| 2026-04-20 | Session 6 | Machine learning I             | [slides](slides/lecture_6_machine_learning_1.html), [notes](notes/lecture_6_machine_learning_1.html)                   | [exercise](exercises/exercise_6.html) |
+| 2026-04-20 | Session 7 | Machine learning II            | [slides](slides/lecture_7_machine_learning_2.html), [notes](notes/lecture_7_machine_learning_2.html)                                   | [exercise](exercises/exercise_7.html) |
+
+
+### Big Data
+
+| Date       | Session   | Topic                     | Lecture                                                                                                            | Exercise |
+|------------|-----------|---------------------------|--------------------------------------------------------------------------------------------------------------------|----------|
+| 2026-04-04 | Session 8 | Big data                  | [slides](slides/lecture_8_big_data.html), [notes](notes/lecture_8_big_data.html)           | [exercise](exercises/exercise_8.html) |
+| 2026-04-04 | Session 9 | Analytics case examples   | [slides](slides/lecture_9_analytics_case_examples.html), [notes](notes/lecture_9_analytics_case_examples.html)             | [exercise](exercises/exercise_9.html) |
+
+### Organizations
+
+| Date       | Session    | Topic                        | Lecture                                                                                                          | Exercise |
+|------------|------------|------------------------------|------------------------------------------------------------------------------------------------------------------|----------|
+| 2026-04-11 | Session 10 | Governance of data analytics | [slides](slides/lecture_10_data_governance.html), [notes](notes/lecture_10_data_governance.html)                 | [exercise](exercises/exercise_10.html) |
+| 2026-04-11 | Session 11 | Recap, exam preparation, Q&A | [slides](slides/lecture_11_recap.html), [notes](notes/lecture_11_recap.html)                                     | [exercise](exercises/exercise_11.html) |
 
 ## Group work
 
 -  To come, see `group-projects`.
-
-
-## Exam
-
-[fs-ise/big-data-analytics-exams](https://github.com/fs-ise/big-data-analytics-exams)
-
-<!--
-## License, code of conduct, contributing, ...
--->
-
-## Recommended literature
-
-Part 1: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
-
-Part 2: @Raschka2015, @SchuttONeil2014, @Vaisman2016
-
-Part 3: @BengfortEtAl2018. @Schmarzo2016
-
-Part 4: @Davenport2006, @VidgenEtAl2017
