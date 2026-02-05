@@ -4,6 +4,10 @@ instructor:
   name: Dr. Gerit Wagner
   name_no_title: Gerit Wagner
   url: https://www.frankfurt-school.de/en/research-and-faculty/faculty/faculty-directory/gerit-wagner
+  online_office_hours_url: https://us02web.zoom.us/j/81020783843
 
 university:
   name: Frankfurt School of Finance & Management
+
+course:
+  semester: "Summer 2026"

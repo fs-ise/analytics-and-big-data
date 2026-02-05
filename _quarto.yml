@@ -1,6 +1,6 @@
 project:
   type: website
-  title: "Big Data and Analytics"
+  title: "Analytics & Big Data"
   output-dir: _site
   # post-render: "bash scripts/decktape.sh"
 
@@ -14,10 +14,12 @@ website:
     right:
       - text: "Overview"
         href: index.qmd
-      - text: "⚠️ Preparation"
-        href: preparation.qmd
+      - text: "Group work"
+        href: group_work.qmd
       - text: "Syllabus"
         href: syllabus.qmd
+      - text: "⚠️ Preparation"
+        href: preparation.qmd
 
 
 format:

@@ -28,6 +28,10 @@ gantt
 ```
 :::
 
+::: {.callout-important title="Materials"}
+See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
+:::
+
 ## Preparation overview
 
 - [x] Select contents for each session
@@ -37,6 +41,8 @@ gantt
 - [ ] Find contents: Machine learning I
 - [ ] Find contents: Machine learning II
 - [ ] Find contents: Analytics case examples
+
+- [ ] Check: Jupyter Exercise setup ?? (GitHub?)
 
 
 ### Session 0 — Course logistics

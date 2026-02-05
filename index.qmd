@@ -1,9 +1,13 @@
 ---
-title: "Big Data and Analytics"
+title: "Analytics & Big Data"
 format: html
 ---
 
+{{< var course.semester >}}
+
 Instructor: [{{< var instructor.name >}}]({{< var instructor.url >}}), {{< var university.name >}}
+
+Online Office Hours zoom link: [{{< var instructor.online_office_hours_url >}}]({{< var instructor.online_office_hours_url >}})
 
 ## Sessions
 
@@ -175,8 +179,3 @@ for sec in ordered_sections:
 
 
 ```
-
-## Group work
-
--  To come, see `group-projects`.
-

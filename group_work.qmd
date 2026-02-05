@@ -1,0 +1,41 @@
+---
+title: "Group work"
+format: html
+---
+
+::: callout-note
+
+TODO:
+
+- schedule
+- topics
+- criteria
+
+See [CS109A: Introduction to Data Science projects](https://harvard-iacs.github.io/2018-CS109A/pages/projects.html)
+:::
+
+# Guidelines for the Group Projects
+
+## Group Size and Application
+
+- The group size depends on the difficulty level of the individual project (see project description).
+- Projects can be allocated multiple times.
+- Each participant applies by e-mail for the desired projects. Alternatively, you can already form groups and apply as a group.
+- In every case, please indicate three projects as:
+  - Preference 1
+  - Preference 2
+  - Preference 3
+- Based on the applications, the groups are arranged and projects are assigned.
+
+## Group Work and Delivery
+
+- Each group applies the methods and procedures covered in the teaching sessions.
+  Depending on the project, different focuses have to be set (e.g., for some projects more data preparation, for others more model optimization).
+- All necessary steps for the analysis should be performed in Python.
+- The group work should be documented, explained, and reasoned in a text document, including code fragments that are relevant for understanding (see the Python manual for an example).
+- Each group delivers:
+  - the text document, and
+  - the corresponding Python files
+  by the announced deadline.
+- The text document has a maximum of **40 pages**, including figures and code fragments.
+- The applied methodology is more important for the evaluation than the model results.
