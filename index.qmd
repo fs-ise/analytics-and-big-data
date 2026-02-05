@@ -1,47 +1,182 @@
 ---
-title: "Big Data & Analytics"
+title: "Big Data and Analytics"
 format: html
 ---
 
-:::  {.callout-important title="Preparation"}
-See [preparation notes](preparation.html).
-:::
+Instructor: [{{< var instructor.name >}}]({{< var instructor.url >}}), {{< var university.name >}}
 
 ## Sessions
 
-### Introductory
+```{python}
+#| echo: false
+#| output: asis
+#| warning: false
+#| message: false
 
-| Date       | Session   | Topic                         | Lecture                                                                                                                    | Exercise |
-|------------|-----------|-------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
-|            | –         | Course Logistics              | [slides](slides/lecture_0_orga.html), [notes](notes/lecture_0_orga.html)                                                     |          |
-| 2026-03-23 | Session 1 | Foundations of data analytics | [slides](slides/lecture_1_foundations_of_data_analytics.html), [notes](notes/lecture_1_foundations_of_data_analytics.html) | [exercise](exercises/exercise_1.html) |
+from __future__ import annotations
 
-### Structured Data
+from pathlib import Path
+from collections import defaultdict
+import re
+import yaml
+from datetime import datetime
 
-| Date       | Session   | Topic                          | Lecture                                                                                                                      | Exercise |
-|------------|-----------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
-| 2026-03-23 | Session 2 | Structuring and preparing data | [slides](slides/lecture_2_structuring_preparing_data.html), [notes](notes/lecture_2_structuring_preparing_data.html)         | [exercise](exercises/exercise_2.html) |
-| 2026-03-30 | Session 3 | Exploratory data analysis      | [slides](slides/lecture_3_exploratory_data_analysis.html), [notes](notes/lecture_3_exploratory_data_analysis.html)                 | [exercise](exercises/exercise_3.html) |
-| 2026-03-30 | Session 4 | Regression I                   | [slides](slides/lecture_4_regression_1.html), [notes](notes/lecture_4_regression_1.html)                 | [exercise](exercises/exercise_4.html) |
-| 2026-04-14 | Session 5 | Regression II                  | [slides](slides/lecture_5_regression_2.html), [notes](notes/lecture_5_regression_2.html)                       | [exercise](exercises/exercise_5.html) |
-| 2026-04-20 | Session 6 | Machine learning I             | [slides](slides/lecture_6_machine_learning_1.html), [notes](notes/lecture_6_machine_learning_1.html)                   | [exercise](exercises/exercise_6.html) |
-| 2026-04-20 | Session 7 | Machine learning II            | [slides](slides/lecture_7_machine_learning_2.html), [notes](notes/lecture_7_machine_learning_2.html)                                   | [exercise](exercises/exercise_7.html) |
+# --- config (adjust if your repo layout differs) ---
+SEARCH_ROOT = Path(".")
+QMD_GLOB = "**/*.qmd"
+
+# If your lecture QMDs live in a folder, set e.g. Path("slides-src") or Path("slides")
+LECTURE_ROOT = SEARCH_ROOT
+
+SLIDES_OUT_DIR = Path("slides")
+NOTES_OUT_DIR = Path("notes")
+EXERCISES_DIR = Path("exercises")
+
+SECTION_ORDER = [
+    "Introductory",
+    "Structured Data",
+    "Big Data",
+    "Organizations",
+]
+
+# --- helpers ---
+FM_RE = re.compile(r"(?s)\A---\s*\n(.*?)\n---\s*\n")  # YAML front matter at start of file
+SESSION_NUM_RE = re.compile(r"(\d+)")
+
+def md_link(label: str, href: str) -> str:
+    return f"[{label}]({href})" if href else ""
+
+def md_table(headers: list[str], rows: list[list[str]]) -> str:
+    out = []
+    out.append("| " + " | ".join(headers) + " |")
+    out.append("|" + "|".join(["---"] * len(headers)) + "|")
+    for r in rows:
+        out.append("| " + " | ".join(r) + " |")
+    return "\n".join(out)
+
+def parse_front_matter(qmd_path: Path) -> dict | None:
+    text = qmd_path.read_text(encoding="utf-8")
+    m = FM_RE.match(text)
+    if not m:
+        return None
+    fm_text = m.group(1)
+    try:
+        data = yaml.safe_load(fm_text) or {}
+        return data if isinstance(data, dict) else None
+    except Exception:
+        return None
+
+def safe_str(x) -> str:
+    return "" if x is None else str(x)
+
+def normalize_date(d: str) -> str:
+    d = safe_str(d).strip()
+    if d == "":
+        return ""
+    # Accept YYYY-MM-DD; if it isn't, keep as-is.
+    try:
+        return datetime.fromisoformat(d).date().isoformat()
+    except Exception:
+        return d
+
+def derive_links(qmd_path: Path) -> tuple[str, str]:
+    # same basename → slides/<basename>.html and notes/<basename>.html
+    stem = qmd_path.stem
+    slides = (SLIDES_OUT_DIR / f"{stem}.html").as_posix()
+    notes = (NOTES_OUT_DIR / f"{stem}.html").as_posix()
+    return slides, notes
+
+def session_number(session: str) -> int | None:
+    m = SESSION_NUM_RE.search(session or "")
+    return int(m.group(1)) if m else None
+
+def sort_key(e):
+    # sort by date (empty last), then by session number if possible, else session text
+    date = e["date"] or "9999-12-31"
+    sess_n = session_number(e["session"])
+    sess_n_sort = sess_n if sess_n is not None else 10**9
+    return (date, sess_n_sort, e["session"], e["topic"])
+
+# --- index exercises by session number (from filename) ---
+# expected: exercises/exercise_8.qmd -> session 8
+#           exercises/exercise_8.html (output) will be linked
+exercise_by_session: dict[int, str] = {}
+if EXERCISES_DIR.exists():
+    for ex_qmd in EXERCISES_DIR.glob("*.qmd"):
+        m = re.match(r"exercise[_-]?(\d+)$", ex_qmd.stem)
+        if not m:
+            continue
+        n = int(m.group(1))
+        exercise_by_session[n] = (EXERCISES_DIR / f"{ex_qmd.stem}.html").as_posix()
+
+# --- collect scheduled sessions (qmd files with 'date:' in front matter) ---
+events = []
+for qmd in sorted(LECTURE_ROOT.glob(QMD_GLOB)):
+    fm = parse_front_matter(qmd)
+    if not fm:
+        continue
+
+    if "date" not in fm:  # scheduled session marker
+        continue
+
+    section_label = safe_str(fm.get("section_label", "")).strip() or "Other"
+    session = safe_str(fm.get("session", "")).strip()
+    date = normalize_date(fm.get("date", ""))
+
+    # Topic: subtitle
+    topic = safe_str(fm.get("subtitle", "")).strip()
+
+    slides_href, notes_href = derive_links(qmd)
+    lecture_cell = ", ".join(filter(None, [
+        md_link("slides", slides_href),
+        md_link("notes", notes_href),
+    ]))
+
+    # Exercise: match by session number against exercises directory (no inference beyond matching)
+    ex_cell = ""
+    sess_n = session_number(session)
+    if sess_n is not None and sess_n in exercise_by_session:
+        ex_cell = md_link("exercise", exercise_by_session[sess_n])
+
+    events.append({
+        "section_label": section_label,
+        "date": date,
+        "session": session,
+        "topic": topic,
+        "lecture": lecture_cell,
+        "exercise": ex_cell,
+        "source": qmd.as_posix(),
+    })
+
+# --- group & sort by section_label ---
+grouped = defaultdict(list)
+for e in events:
+    grouped[e["section_label"]].append(e)
+
+for sec in grouped:
+    grouped[sec].sort(key=sort_key)
+
+ordered_sections = []
+for s in SECTION_ORDER:
+    if s in grouped:
+        ordered_sections.append(s)
+for s in sorted(grouped.keys()):
+    if s not in ordered_sections:
+        ordered_sections.append(s)
+
+# --- render markdown overview ---
+headers = ["Date", "Session", "Topic", "Lecture", "Exercise"]
+
+for sec in ordered_sections:
+    print(f"### {sec}\n")
+    rows = [[e["date"], e["session"], e["topic"], e["lecture"], e["exercise"]] for e in grouped[sec]]
+    print(md_table(headers, rows))
+    print()
 
 
-### Big Data
-
-| Date       | Session   | Topic                     | Lecture                                                                                                            | Exercise |
-|------------|-----------|---------------------------|--------------------------------------------------------------------------------------------------------------------|----------|
-| 2026-04-04 | Session 8 | Big data                  | [slides](slides/lecture_8_big_data.html), [notes](notes/lecture_8_big_data.html)           | [exercise](exercises/exercise_8.html) |
-| 2026-04-04 | Session 9 | Analytics case examples   | [slides](slides/lecture_9_analytics_case_examples.html), [notes](notes/lecture_9_analytics_case_examples.html)             | [exercise](exercises/exercise_9.html) |
-
-### Organizations
-
-| Date       | Session    | Topic                        | Lecture                                                                                                          | Exercise |
-|------------|------------|------------------------------|------------------------------------------------------------------------------------------------------------------|----------|
-| 2026-04-11 | Session 10 | Governance of data analytics | [slides](slides/lecture_10_data_governance.html), [notes](notes/lecture_10_data_governance.html)                 | [exercise](exercises/exercise_10.html) |
-| 2026-04-11 | Session 11 | Recap, exam preparation, Q&A | [slides](slides/lecture_11_recap.html), [notes](notes/lecture_11_recap.html)                                     | [exercise](exercises/exercise_11.html) |
+```
 
 ## Group work
 
 -  To come, see `group-projects`.
+

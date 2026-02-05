@@ -10,9 +10,9 @@ we will use additional libraries as mentioned in the text.
 
 The three main libraries are:
 
-1. NumPy  
-2. Pandas  
-3. Scikit-learn  
+1. NumPy
+2. Pandas
+3. Scikit-learn
 
 ## NumPy
 

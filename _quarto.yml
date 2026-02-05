@@ -29,6 +29,8 @@ format:
     lazy-load: true
     slide-number: true
     include-before-body: assets/header.html
+    template-partials:
+      - assets/title-slide.html
     css: [assets/frankfurt.css]
     auto-stretch: false
     slide-level: 2
