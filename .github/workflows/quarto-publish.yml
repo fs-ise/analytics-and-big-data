@@ -2,7 +2,7 @@ name: Quarto Publish
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -40,7 +40,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install Python deps
         run: |
           pip install jupyter ipykernel matplotlib plotly scikit-learn
@@ -48,7 +48,7 @@ jobs:
 
       - name: Render site
         run: |
-          quarto render
+          make site
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
