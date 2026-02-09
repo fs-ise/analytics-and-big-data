@@ -48,7 +48,7 @@ jobs:
 
       - name: Render site
         run: |
-          make site
+          make all
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
