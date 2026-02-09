@@ -4,7 +4,6 @@ project:
   output-dir: _site
   # post-render: "bash scripts/decktape.sh"
 
-
 website:
 
   site-url: https://fs-ise.github.io/big-data-analytics/

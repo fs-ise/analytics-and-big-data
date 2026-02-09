@@ -3,12 +3,16 @@
 Serve preview:
 
 ```sh
-docker compose up
-docker compose down
+quarto preview
+
+# preview solutions
+cd exercises
+quarto preview --profile solution
 ```
 
-Build pdfs:
+Render
 
 ```sh
-make decktape
+make site
+make all # includes pdfs
 ```

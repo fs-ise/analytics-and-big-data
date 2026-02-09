@@ -1,6 +1,8 @@
 # ---- Config ----
 DOCKER_IMAGE ?= big-data-analytics-decktape
 
+QUARTO ?= quarto
+
 SRC_SLIDES_DIR := slides
 OUT_DIR        := _site
 SLIDES_DIR     := $(OUT_DIR)/slides
@@ -26,22 +28,20 @@ decktape-warning:
 	  echo "Warning: No slide HTML files found/expected in $(SLIDES_DIR)."; \
 	fi
 
-# Convenience target: build everything (HTML first, then PDF)
-.PHONY: slides
-slides: $(SLIDES_PDF)
+# --- Slides (HTML -> PDF) ---
 
-# --- Quarto rendering ---
-# Render one qmd -> expected html in _site/slides
-# (Make sure your _quarto.yml output-dir is _site, which it is.)
+# Convenience target: build slide PDFs (HTML first, then PDF)
+.PHONY: slides
+slides: pdfs
+
+# Quarto rendering: one qmd -> expected html in _site/slides
+# (Make sure your root _quarto.yml output-dir is _site, which it is.)
 $(SLIDES_DIR)/%.html: $(SRC_SLIDES_DIR)/%.qmd _quarto.yml
 	@echo "Quarto: rendering $<"
-	quarto render $<
+	$(QUARTO) render $<
 
-# If you have shared dependencies that should also trigger rebuilds, add them above, e.g.:
-#   assets/frankfurt.css assets/header.html
-
-# --- Decktape PDF generation ---
-.PHONY: decktape
+# Decktape PDF generation
+.PHONY: pdfs
 pdfs: decktape-warning $(SLIDES_PDF)
 
 # Pattern rule: one PDF depends on its HTML (which depends on the QMD)
@@ -65,3 +65,28 @@ decktape-clean:
 .PHONY: slides-clean
 slides-clean:
 	rm -rf $(OUT_DIR)
+
+# --- Exercises (dual-build via profiles in exercises subproject) ---
+
+.PHONY: exercises-assign exercises-solution exercises
+
+# exercises-assign:
+#	$(QUARTO) render exercises --profile assign --no-clean
+
+exercises-solution:
+	$(QUARTO) render exercises --profile solution --no-clean
+
+exercises: exercises-solution # exercises-assign
+
+# --- Site build (main project renders once) ---
+
+.PHONY: site-fast site all
+
+site-fast:
+	$(QUARTO) render --no-clean
+
+# Full site build: exercises first (to _site/assignments + _site/solutions), then main site once
+site: exercises site-fast
+
+# One command to build everything (site + slide PDFs)
+all: site pdfs

@@ -5,3 +5,6 @@ format:
     number-sections: true
     toc-title: "Contents"
 jupyter: python3
+
+filters:
+  - assign

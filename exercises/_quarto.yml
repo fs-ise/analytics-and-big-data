@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: ../_site/exercises   # base (will be overridden by profiles)
+
+format:
+  html:
+    toc: true
+    toc-location: left
+    number-sections: true
+    toc-title: "Contents"
+
+filters:
+  - assign
+
+jupyter: python3
+
+website:
+  title: "Exercises"
+  navbar: false

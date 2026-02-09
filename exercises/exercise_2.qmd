@@ -6,3 +6,24 @@ format: html
 ::: callout-note
 TODO
 :::
+
+This text will appear across all versions of the document
+
+:::{.direction}
+
+Only display the directions content in the assignment document
+
+:::
+
+:::{.sol}
+
+Only display the answer in the solution or rubric documents
+
+:::
+
+
+:::{.rubric}
+
+Only display the grading notes in the rubric document.
+
+:::

@@ -46,7 +46,7 @@ so that they can be used in the same way. Example for the implementation of a su
 learning algorithm:
 
 ```{python}
-# This is a schematic example to illustrate a common estimator pattern.
+# Schematic example to illustrate a common estimator pattern.
 
 class ModelEstimator(object):
     def __init__(self, param1="pvalue1"):
@@ -85,21 +85,74 @@ df = pd.DataFrame(data)
 df
 ```
 
+The result of this is a dataframe named df. The numbers on the left side of the rows are labels
+and **not** the indexes. You can inspect the structure using the dtypes property
+
 ```{python}
 df.dtypes
 ```
 
-```{python}
-df.iloc[0,1]
-```
+To retrieve data Pandas provide various variants in order to get purely integer based indexing.
+Like python and numpy, these are 0-based indexing. The various access variants are an integer,
+a list of integers, and a range of values. Examples
 
 ```{python}
-df.loc[1:2, ["employee","salary"]]
+df.iloc[0,1] # element in first row, second column
+df.iloc[:,0] # all rows, first column
+df.iloc[1:3,1] # second to third row, second column
+df.iloc[:,-2] # all rows, second column from the end
+df.iloc[-1,:] # last row, all columns
+df.iloc[[0, 2], [1, 2]] # first and third row, second to third column
 ```
+
+Pandas provides too various methods of label based indexing. The loc function takes two
+single/list/range operators separated by a comma. The first one indicates the row and the
+second one indicates columns. Examples
+
+```{python}
+df.loc[1:2,:] # row with labels 1 and 2, all columns
+df.loc[1:2] # same as above
+df.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary
+df.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary
+df.loc[df.loc[:,'salary']>23000] # all rows where salary>23000, all columns
+# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset
+```
+
+The loc function can even be used to add a new row to a dataframe
 
 ```{python}
 df.loc[len(df)] = ["Mike Tyson", 19400, "2018-6-27"]
 df
+```
+
+A new column can be added via
+
+```{python}
+df['age'] = [35, 42, 19, 43]
+```
+
+A column can be deleted via the drop command
+
+```{python}
+df = df.drop('age', axis = 1)
+```
+
+Two dataframes can be combined using the concat function. Combining two dataframes row-wise
+
+```{python}
+df1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})
+df2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})
+df3 = pd.concat([df1, df2])
+print(df3)
+```
+
+Combining two dataframes column-wise
+
+```{python}
+dfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})
+dfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})
+dfc = pd.concat([dfa, dfb], axis=1)
+print(dfc)
 ```
 
 ### Import and Export
