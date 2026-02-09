@@ -43,7 +43,7 @@ jobs:
 
       - name: Install Python deps
         run: |
-          pip install jupyter ipykernel matplotlib plotly scikit-learn
+          pip install jupyter ipykernel matplotlib plotly scikit-learn pandas
       #     pip install -r requirements.txt
 
       - name: Render site
