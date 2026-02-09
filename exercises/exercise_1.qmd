@@ -2,6 +2,11 @@
 title: "Exercise 1: Foundations of data analytics"
 ---
 
+::: {.callout-note title="TODO"}
+TODO: test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)
+run individual lines with shift+ENTER ??
+:::
+
 ## Preface
 
 The purpose of this document is to give an introduction to data analytics with Python.
@@ -71,6 +76,10 @@ While a matrix is of simple structure intended for mathematical operations, a Da
 more suited to representing a table of data. It is a list of vectors of equal length. The top line
 of a DataFrame, called the header, contains the column names. Each horizontal line afterward
 denotes a data row.
+
+**TODO**: add illustration
+
+For example, the following variable df is a dataframe containing three vectors
 
 ```{python}
 import pandas as pd
