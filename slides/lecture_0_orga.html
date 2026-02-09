@@ -6,11 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
-  <title>Big Data and Analytics – Analytics and Big Data</title>
+  <meta name="dcterms.date" content="2026-03-23">
+  <title>Analytics &amp; Big Data – Analytics and Big Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,7 +29,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -123,6 +144,56 @@
       margin-right: 0; 
     }
   </style>
+  <meta name="mermaid-theme" content="default">
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <style>
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
+  </style>
 </head>
 <body class="quarto-light">
 <header id="fs-header">
@@ -132,84 +203,363 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-state="hide-menubar" class="quarto-title-block center">
-  <h1 class="title">Analytics and Big Data</h1>
-  <p class="subtitle">Course Logistics</p>
+<section id="title-slide" class="title-slide slide level1 center">
+  <h1>Analytics and Big Data</h1>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Prof.&nbsp;Dr.&nbsp;Gerit Wagner 
-</div>
-</div>
-</div>
+  <p></p> Session 0: Course Logistics <p></p>
+
+    <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
+    <p class="date">(2026-03-23)</p>
 
 </section>
-<section id="agenda" class="slide level2">
-<h2>Agenda</h2>
-<ol type="1">
-<li>Introduction to Analytics</li>
-<li>Descriptive Analytics
+<section id="your-instructor" class="slide level2">
+<h2>Your Instructor</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><strong>Prof.&nbsp;Dr.&nbsp;Gerit Wagner</strong></p>
+<p>Academic background</p>
 <ul>
-<li>Data Warehouse Systems</li>
-<li>Online Analytical Processing (OLAP)</li>
-</ul></li>
-<li>Predictive Analytics
+<li>Doctorate: Universität Regensburg</li>
+<li>Postdoctoral Fellow: HEC Montréal</li>
+<li>Assistant Professor: Otto-Friedrich-Universität Bamberg</li>
+<li>Full Professor: Frankfurt School of Finance &amp; Management</li>
+</ul>
+<div title="TODO">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>TODO</strong></p>
+</div>
+<div class="callout-content">
+<p>Research interests</p>
 <ul>
-<li>Subject of Predictive Analytics</li>
-<li>The Analytics Process</li>
-<li>Data Preparation</li>
-<li>Methods, Algorithms and Applications</li>
-</ul></li>
-<li>Big Data</li>
-</ol>
+<li>TODO</li>
+</ul>
+<p>Teaching interests</p>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!--
+I am excited study the evolving landscape of **digital work practices** and the technologies shaping the future of work.
+-->
+</div><div class="column" style="width:30%;">
+<p><img data-src="../images/gerit_wagner.jpg"></p>
+</div></div>
+<!--
+## Your expectations for *Big Data & Analytics*
+
+ - Your background and perspective on digital work
+- Topics you are interested in
+- Challenges you grapple with
+- Work technologies that are exciting
+
+![bg right:45% width:550px](../material/00_unsplash_office_space.jpeg)
+
+-->
+</section>
+<section id="contents" class="slide level2">
+<h2>Contents</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+  subgraph Foundations
+    F1[Session 1: Foundations]
+  end
+
+  subgraph da[" "]
+
+  subgraph bd["Big Data"]
+    BD7[Session 7: Big data]
+    BD8[Session 8: Exploratory analysis]
+    BD9[Session 9: Predictive analysis]
+  end
+  subgraph sd["Structured Data"]
+    SD2[Session 2: Structuring and&lt;br&gt;preparing data]
+    SD34[Session 3/4: Descriptive analysis]
+    SD5[Session 5: Predictive analysis]
+    SD6[Session 6: Prescriptive analysis]
+  end
+
+  end
+
+  subgraph Organizations
+    O10[Session 10: Governance]
+  end
+
+  Foundations --&gt; da  --&gt; Organizations
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<!--
+
+**Foundations**
+
+- Session 1: Foundations of data analytics
+
+**Structured Data**
+
+- Session 2: Structuring and preparing data
+- Session 3/4: Descriptive analysis
+- Session 5: Predictive analysis
+- Session 6: Prescriptive analysis
+
+**Big Data**
+
+- Session 7: Big data
+- Session 8: Exploratory analysis
+- Session 9: Predictive analysis
+
+**Organizations**
+
+- Session 10: Governance of data analytics
+- Session 11: Recap, exam preparation, Q&A
+-->
 </section>
 <section id="literature" class="slide level2">
 <h2>Literature</h2>
-<p>Part 1:</p>
+<p>Part 1: <span class="citation" data-cites="ChenEtAl2012">Chen et al. (<a href="#/references" role="doc-biblioref" onclick="">2012</a>)</span>, <span class="citation" data-cites="MartinezEtAl2019">Martı́nez-Plumed et al. (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>, <span class="citation" data-cites="ShardaEtAl2018">Sharda et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></p>
+<p>Part 2: <span class="citation" data-cites="Raschka2015">Raschka (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span>, <span class="citation" data-cites="SchuttONeil2014">Schutt &amp; O’Neil (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span>, <span class="citation" data-cites="Vaisman2016">Vaisman &amp; Zimányi (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p>
+<p>Part 3: <span class="citation" data-cites="BengfortEtAl2018">Bengfort et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>. <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p>
+<p>Part 4: <span class="citation" data-cites="Davenport2006">Davenport (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span>, <span class="citation" data-cites="VidgenEtAl2017">Vidgen et al. (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span></p>
+<!--
+- **Drivers of change** in digital work and its impact on modern organizations
+- **Personal information management** and strategies for individual work excellence
+- Best practices for **remote teams** and effective communication
+- **Collaborative content creation** and the role of open source in work environments
+- The impact of **platformization** on work structures
+- Understanding **knowledge-intensive services** and how they drive innovation
+- Exploring **future scenarios** for work, including fully **digital and distributed organizing**
+- Addressing important **ethical questions**, including the role of **generative AI** in shaping the future of work
+
+**Note**: The session on **Teaming with (AI) Agents** is our most recent addition.
+-->
+<!--
+## What This Course Does *Not* Cover
+
+While **digital work** and the **future of work** are broad topics, this course focuses selectively.
+The following areas are **out of scope**:
+
+- Managing **digital stress** and burnout
+- **Holacracy** and alternative organizational models
+- **Gig-work platforms** (e.g., micro-tasking, delivery work)
+- **Augmented reality** applications
+- **Production and industrial** sectors (manufacturing, logistics)
+-->
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning objectives</h2>
+<p><strong>Knowledge</strong></p>
 <ul>
-<li>Sharda, R., Delen, D., &amp; Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective.</li>
-<li>Martínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. &amp; Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories.&nbsp;IEEE Transactions on Knowledge and Data Engineering,&nbsp;33(8), 3048-3061.</li>
-<li>Chen, H., Chiang, R. H., &amp; Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact.&nbsp;MIS Quarterly 36(4), 1165-1188.</li>
+<li><strong>Differentiate</strong> between descriptive, predictive, and prescriptive analytics approaches.</li>
+<li><strong>Describe</strong> architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.</li>
+<li><strong>Explain</strong> fundamental concepts of data analytics, and its role in data-driven organizations.</li>
 </ul>
-<p>Part 2:</p>
+<p><strong>Skills</strong></p>
 <ul>
-<li>Vaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer.</li>
-<li>Schutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media.</li>
-<li>Raschka, Sebastian (2015): Python Machine Learning, Packt Publishing.</li>
+<li><strong>Select</strong> appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.</li>
+<li><strong>Apply</strong> analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.</li>
+<li><strong>Implement</strong> analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).</li>
 </ul>
-<p>Part 3:</p>
+<p><strong>Competence</strong></p>
 <ul>
-<li>Schmarzo, B. (2016): Big Data MBA, Wiley.</li>
-<li>Bengfort, B., Bilbro, R., &amp; Ojeda, T. (2018).&nbsp;Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media, Inc.&nbsp;</li>
-</ul>
-<p>Part 4:</p>
-<ul>
-<li>Davenport, T. H. (2006). Competing on analytics.&nbsp;Harvard Business Review,&nbsp;84(1), 98.</li>
-<li>Vidgen, R., Shaw, S., &amp; Grant, D. B. (2017). Management challenges in creating value from business analytics.&nbsp;European Journal of Operational Research,&nbsp;261(2), 626-639.</li>
+<li><strong>Design</strong> analytics solutions aligned with business goals and governance principles.</li>
+<li><strong>Integrate</strong> analytical technologies into organizational decision-making processes</li>
+<li><strong>Assess</strong> the operational and strategic implications of data analytics in organizations.</li>
 </ul>
 <!--
+- Describe the historical, organizational, and societal drivers of change in digital work.
+- Understand how digitalization changes work for individuals, teams, and crowds.
+- Build you repertoire of practices, methods, and tools for effective digital work.
+- Explain corresponding theories of personal information management, media synchronicity, and virtual teams.
+- Appreciate different forms of scientific knowledge, theories, and methods prevalent in research on digital work.
+- Critically evaluate ethical outcomes and recommend policy measures.
 
+technology choice, effective (situational) use
 
-<div id="references-list">
-<h3>Data Warehouse / OLAP / Descriptive Analytics:</h3>
-<div>
-  <p>Vaisman, A.; Zimányi, E. (2016): <em>Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications)</em>, Springer.</p>
-</div>
+- Familiarize with a repertoire of techniques, methods, and policies for effective digital work at the levels of individuals, teams, and crowds.
+- Apply, adapt, and critically discuss these methods in different practical contexts.
 
-<h3>Data Science / Predictive Analytics / Machine Learning:</h3>
-<div>
-  <p>Alpaydin, E. (2016): <em>Machine Learning: The New AI</em>, MIT Press Essential Knowledge.</p>
-  <p>Alpaydin, E. (2016): <em>Introduction to Machine Learning</em>, Third Edition, MIT Press.</p>
-  <p>Raschka, S. (2015): <em>Python Machine Learning</em>, Packt Pubpshing.</p>
-  <p>Schmarzo, B. (2016): <em>Big Data MBA</em>, Wiley.</p>
-  <p>Schutt, R.; O’Neil, C. (2014): <em>Doing Data Science</em>, O’Reilly Media.</p>
-</div>
-</div>
+critically discuss: understand where they come from/how they were developed (based on what evidence/theories)
+Critically discuss ethical challenges associated with the future of work.
+
+Modulkatalog:
+Nach Abschluss des Kurses haben die Studierenden ein Verständnis über die Veränderungen, Gestaltungsbereiche und Auswirkungen digitaler Arbeit. Insbesondere können sie ein Repertoire ausgewählter Methoden, Designprinzipien und organisationelle Policies erklären und situativ anwenden. Zudem können sie die Evaluation einzelner Maßnahmen diskutieren und sie mit diesem Hintergrundwissen  effektiv und verantwortungsvoll in der Praxis einsetzen.
+
+## How this lecture approaches *Big Data & Analytics*
+
+ The "philosophical foundations"
+
+- Science and practice inform each other.
+    - Scientists are not the only producers of knowledge in this field (unlike in medicine, for example).
+    - It is valid to study how practitioners commonly work or how outstanding performers work, especially when there is limited scientific evidence.
+    - To do that, it is important to appreciate differences in scientific knowledge, including theories, methods, and evidence.
+
+- We focus on **understanding** changes as well as underlying theory and evidence to shape digital work, and on **applying** repertoire of techniques and methods.
+
+- The course is an opportunity to adapt, test, and refine the methods that work best for you.
 
 -->
+</section>
+<section id="materials" class="slide level2">
+<h2>Materials</h2>
+<p>Slides</p>
+<ul>
+<li>Presentation slides will be made available for download.</li>
+<li>You are expected to take complementary notes and read the recommended literature.</li>
+<li>We invite you to contribute directly to our teaching materials by submitting an issue ♻️ or suggesting edits 🛠️.</li>
+</ul>
+<p>Literature</p>
+<ul>
+<li>Literature and complementary materials will be listed at the end of each lecture.</li>
+<li>Materials will be made available whenever possible.</li>
+<li>Reading of complementary materials depends on your interest and ambition.</li>
+</ul>
+</section>
+<section id="course-organization" class="slide level2">
+<h2>Course organization</h2>
+<ul>
+<li>Exam: 60 minutes, 60 points (date: TBA/exam week)</li>
+<li>Group project: written paper (40 pages), 60 points (end of module)</li>
+</ul>
+<div title="TODO">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>TODO</strong></p>
+</div>
+<div class="callout-content">
+<p>TODO: group sizes, how groups will form, …</p>
+<p>Workload:</p>
+<p>total: 150h in-class: 44 remaining: self-study + group project</p>
+<p>Administration</p>
+<p>Prerequisite: Successful completion of the “Introduction to Programming” module</p>
+<p>TODO: link syllabus</p>
+</div>
+</div>
+</div>
+</div>
+<!--
+Contact: **TODO**
+
+Sessions: Monday, 8.15-11.45, April 28 - July 21
+Location: WE5/04.003
+
+Consultation hours: [by appointment](https://calendly.com/gerit-wagner/30min) (individually or in small groups)
+Web: https://www.uni-bamberg.de/digital-work
+
+Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 (password: IdW2526#stud)
+-->
+<!--
+- Exam: 90 points (minimum required: 45 points)
+- Summaries for the exams
+    - You can submit summaries at lectures 4, 7, and 10.
+    - Each summary can be one page (A5).
+    - Contents have to be summarized.
+    - The summaries will be available during the exams.
+
+If contents are not summarized, we may return them (with one opportunity to revise)
+
+- Assignments: 12 points (in 3 parts)
+
+bis zu 12 Punkte können vorher als Studienleistung eingebracht werden
+über die 90 Punkte der Klausur hinaus
+nach 45 Punkten in der Klausur werden die Bonuspunkte zugerechnet (cut bei 90 Punkten)
+ggf. 6 Bonuspunkte (zB. auf Kurzvortrag zu Paper - Kurzvortrag skaliert nicht bei größeren Kursen)
+Ggf. Übungsaufgaben mit Quiz
 
 
+TODO: `group-projects/Guidelines for the GroupProjects.pdf`
+
+
+## We value your feedback and suggestions
+
+We encourage you to share your feedback and suggestions on our teaching materials. You can find the following links in the footer of each slide:
+
+<br>
+
+<a href="https://github.com/fs-ise/literature-review-seminar/issues/new" target="_blank"> ♻️ </a> Provide feedback by submitting an issue
+<a href="https://github.com/fs-ise/literature-review-seminar/edit/main/slides/00-orga.md" target="_blank"> 🛠️ </a> Suggest specific changes by directly modifying the content
+
+<br>
+
+Your feedback plays a crucial role in helping us align with our core goals of **impact in research, teaching, and practice**. By contributing your suggestions, you help us further our commitment to **rigor**, **openness** and **participation**. Together, we can continuously enhance our work by contributing to **continuous learning** and collaboration across our community.
+
+Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ .
+-->
+<!--
+## You may also be interested in ...
+
+![bg right:35% width:400px vertical](../assets/images/logo)
+![bg right:35% width:400px vertical](../assets/images/logo-project.png)
+![bg right:35% width:400px](../assets/images/logo-theses.png)
+![bg right:35% width:400px](../assets/images/logo)
+
+## The open-source project (WI-Projekt)
+
+- Learn to code in Python and contribute to the CoLRev package
+- Practice the use of Git in a small-team setting
+
+<!-- First session: Thursday, 17. April, 12.15-13.45 (WE5 3.004) -->
+</section>
+<section id="you-may-also-be-interested-in" class="slide level2">
+<h2>You may also be interested in …</h2>
+<p>Bachelor’s theses</p>
+<ul>
+<li>See information on the <a href="https://fs-ise.github.io/theses/">process</a> and <a href="https://fs-ise.github.io/theses/docs/topics.html">open topics</a></li>
+</ul>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-BengfortEtAl2018" class="csl-entry" role="listitem">
+Bengfort, B., Bilbro, R., &amp; Ojeda, T. (2018). <em>Applied text analysis with python: Enabling language-aware data products with machine learning</em>. O’Reilly Media. <a href="https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/">https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/</a>
+</div>
+<div id="ref-ChenEtAl2012" class="csl-entry" role="listitem">
+Chen, H., Chiang, R. H. L., &amp; Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. <em>MIS Quarterly</em>, <em>36</em>(4), 1165–1188. <a href="https://www.jstor.org/stable/41703503">https://www.jstor.org/stable/41703503</a>
+</div>
+<div id="ref-Davenport2006" class="csl-entry" role="listitem">
+Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
+</div>
+<div id="ref-MartinezEtAl2019" class="csl-entry" role="listitem">
+Martı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., &amp; Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. <em>IEEE Transactions on Knowledge and Data Engineering</em>, <em>33</em>(8), 3048–3061. <a href="https://ieeexplore.ieee.org/abstract/document/8943998">https://ieeexplore.ieee.org/abstract/document/8943998</a>
+</div>
+<div id="ref-Raschka2015" class="csl-entry" role="listitem">
+Raschka, S. (2015). <em>Python machine learning</em>. Packt Publishing. <a href="https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130">https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130</a>
+</div>
+<div id="ref-Schmarzo2016" class="csl-entry" role="listitem">
+Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1002/9781119238881">https://doi.org/10.1002/9781119238881</a>
+</div>
+<div id="ref-SchuttONeil2014" class="csl-entry" role="listitem">
+Schutt, R., &amp; O’Neil, C. (2014). <em>Doing data science</em>. O’Reilly Media. <a href="https://www.oreilly.com/library/view/doing-data-science/9781449363871/">https://www.oreilly.com/library/view/doing-data-science/9781449363871/</a>
+</div>
+<div id="ref-ShardaEtAl2018" class="csl-entry" role="listitem">
+Sharda, R., Delen, D., &amp; Turban, E. (2018). <em>Business intelligence, analytics, and data science: A managerial perspective</em>. Pearson. <a href="https://elibrary.pearson.de/book/99.150005/9781292727530">https://elibrary.pearson.de/book/99.150005/9781292727530</a>
+</div>
+<div id="ref-Vaisman2016" class="csl-entry" role="listitem">
+Vaisman, A., &amp; Zimányi, E. (2016). <em>Data warehouse systems: Design and implementation</em>. Springer. <a href="https://doi.org/10.1007/978-3-662-65167-4">https://doi.org/10.1007/978-3-662-65167-4</a>
+</div>
+<div id="ref-VidgenEtAl2017" class="csl-entry" role="listitem">
+Vidgen, R., Shaw, S., &amp; Grant, D. B. (2017). Management challenges in creating value from business analytics. <em>European Journal of Operational Research</em>, <em>261</em>(2), 626–639. <a href="https://www.sciencedirect.com/science/article/pii/S0377221717301455">https://www.sciencedirect.com/science/article/pii/S0377221717301455</a>
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

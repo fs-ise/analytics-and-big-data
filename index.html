@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Big Data &amp; Analytics – Big Data and Analytics</title>
+<title>Analytics &amp; Big Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -36,16 +37,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8fd1faf6fd93e4e6d207ae0f9db51d78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -67,15 +68,98 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
+</style>
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Analytics &amp; Big Data</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./group_work.html"> 
+<span class="menu-text">Group work</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./preparation.html"> 
+<span class="menu-text">⚠️ Preparation</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -84,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Big Data &amp; Analytics</h1>
+<h1 class="title">Analytics &amp; Big Data</h1>
 </div>
 
 
@@ -101,147 +185,161 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Some of the following will be moved to the <a href="syllabus.html">syllabus</a>.</p>
-</div>
-</div>
-<p>This module introduces students to the methods, technologies, and governance of modern data analytics across descriptive, predictive, and prescriptive approaches. It builds a comprehensive understanding of the data analytics process—from data structuring and preparation to exploratory data analysis, analytical modeling, and decision support. The module combines conceptual foundations and hands-on analytical practice using Python, pandas, and scikit-learn. It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming). Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations.</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p><strong>Knowledge</strong> After completing the module, students will be able to:</p>
-<ul>
-<li><strong>Differentiate</strong> between descriptive, predictive, and prescriptive analytics approaches. 🟢 <a href="slides/lecture_1_foundations_of_data_analytics.html">l1</a></li>
-<li><strong>Describe</strong> architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 <a href="slides/lecture_2_descriptive_analytics.html">l2</a></li>
-<li><strong>Explain</strong> fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 <a href="slides/lecture_10_data_governance.html">l10</a></li>
-</ul>
-<p><strong>Skills</strong> Students will be able to:</p>
-<ul>
-<li><strong>Select</strong> appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.</li>
-<li><strong>Apply</strong> analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.</li>
-<li><strong>Implement</strong> analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).</li>
-</ul>
-<p><strong>Competence</strong> Upon successful completion, students will be able to:</p>
-<ul>
-<li><strong>Design</strong> analytics solutions aligned with business goals and governance principles.</li>
-<li><strong>Integrate</strong> analytical technologies into organizational decision-making processes</li>
-<li><strong>Assess</strong> the operational and strategic implications of data analytics in organizations. 🟢 <a href="slides/lecture_10_data_governance">l10</a></li>
-</ul>
+<p>Summer 2026</p>
+<p>Instructor: <a href="https://www.frankfurt-school.de/en/research-and-faculty/faculty/faculty-directory/gerit-wagner">Dr.&nbsp;Gerit Wagner</a>, Frankfurt School of Finance &amp; Management</p>
+<p>Online Office Hours zoom link: <a href="https://us02web.zoom.us/j/81020783843">https://us02web.zoom.us/j/81020783843</a></p>
+<section id="sessions" class="level2">
+<h2 class="anchored" data-anchor-id="sessions">Sessions</h2>
+<div id="9a3a6754" class="cell" data-message="false" data-execution_count="1">
+<section id="introductory" class="level3">
+<h3 class="anchored" data-anchor-id="introductory">Introductory</h3>
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Session</th>
+<th>Topic</th>
+<th>Lecture</th>
+<th>Exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2026-03-23</td>
+<td>Session 0</td>
+<td>Course Logistics</td>
+<td><a href="slides/lecture_0_orga.html">slides</a>, <a href="notes/lecture_0_orga.html">notes</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-03-23</td>
+<td>Session 1</td>
+<td>Foundations of data analytics</td>
+<td><a href="slides/lecture_1_foundations_of_data_analytics.html">slides</a>, <a href="notes/lecture_1_foundations_of_data_analytics.html">notes</a></td>
+<td><a href="exercises/exercise_1.html">exercise</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="lectures-and-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="lectures-and-exercises">Lectures and exercises</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Lectures to be polished before “slicing”</strong></p>
-<ul>
-<li><a href="slides/lecture_1_foundations_of_data_analytics.html">lecture 1 - introduction to analytics</a> (see <a href="slides/lecture_1_foundations_of_data_analytics.pdf">pdf</a>)</li>
-<li><a href="slides/materials_lecture_2_descriptive_analytics.html">lecture 2 - descriptive analytics</a> (see <a href="slides/materials_lecture_2_descriptive_analytics.pdf">pdf</a>)</li>
-<li><a href="slides/materials_lecture_3_big_data.html">lecture 3 - big data</a> (see <a href="slides/materials_lecture_3_big_data.pdf">pdf</a>)</li>
-<li><a href="slides/materials_lecture_4_predictive_analytics.html">lecture 4 - prescriptive analytics</a> (see <a href="slides/materials_lecture_4_predictive_analytics.pdf">pdf</a>)</li>
-</ul>
-</div>
-</div>
-<section id="part-1-foundations" class="level3">
-<h3 class="anchored" data-anchor-id="part-1-foundations">Part 1: Foundations</h3>
-<ul>
-<li>Course Logistics (<a href="slides/lecture_0_orga.html">slides</a> and <a href="notes/lecture_0_orga.html">notes</a>)</li>
-<li>Session 1: Foundations of data analytics (<a href="slides/lecture_1_foundations_of_data_analytics.html">slides</a> and <a href="notes/lecture_1_foundations_of_data_analytics.html">notes</a>)</li>
-</ul>
+<section id="structured-data" class="level3">
+<h3 class="anchored" data-anchor-id="structured-data">Structured Data</h3>
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Session</th>
+<th>Topic</th>
+<th>Lecture</th>
+<th>Exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2026-03-23</td>
+<td>Session 2</td>
+<td>Structuring and preparing data</td>
+<td><a href="slides/lecture_2_structuring_preparing_data.html">slides</a>, <a href="notes/lecture_2_structuring_preparing_data.html">notes</a></td>
+<td><a href="exercises/exercise_2.html">exercise</a></td>
+</tr>
+<tr class="even">
+<td>2026-03-30</td>
+<td>Session 3</td>
+<td>Exploratory data analysis</td>
+<td><a href="slides/lecture_3_exploratory_data_analysis.html">slides</a>, <a href="notes/lecture_3_exploratory_data_analysis.html">notes</a></td>
+<td><a href="exercises/exercise_3.html">exercise</a></td>
+</tr>
+<tr class="odd">
+<td>2026-03-30</td>
+<td>Session 4</td>
+<td>Regression I</td>
+<td><a href="slides/lecture_4_regression_1.html">slides</a>, <a href="notes/lecture_4_regression_1.html">notes</a></td>
+<td><a href="exercises/exercise_4.html">exercise</a></td>
+</tr>
+<tr class="even">
+<td>2026-04-14</td>
+<td>Session 5</td>
+<td>Regression II</td>
+<td><a href="slides/lecture_5_regression_2.html">slides</a>, <a href="notes/lecture_5_regression_2.html">notes</a></td>
+<td><a href="exercises/exercise_5.html">exercise</a></td>
+</tr>
+<tr class="odd">
+<td>2026-04-20</td>
+<td>Session 6</td>
+<td>Machine learning I</td>
+<td><a href="slides/lecture_6_machine_learning_1.html">slides</a>, <a href="notes/lecture_6_machine_learning_1.html">notes</a></td>
+<td><a href="exercises/exercise_6.html">exercise</a></td>
+</tr>
+<tr class="even">
+<td>2026-04-20</td>
+<td>Session 7</td>
+<td>Machine learning II</td>
+<td><a href="slides/lecture_7_machine_learning_2.html">slides</a>, <a href="notes/lecture_7_machine_learning_2.html">notes</a></td>
+<td><a href="exercises/exercise_7.html">exercise</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="part-2-analytics-for-structured-data" class="level3">
-<h3 class="anchored" data-anchor-id="part-2-analytics-for-structured-data">Part 2: Analytics for structured data</h3>
-<ul>
-<li>Session 2: Structuring and preparing data (<a href="slides/lecture_2_structuring_preparing_data.html">slides</a> and <a href="notes/lecture_2_structuring_preparing_data.html">notes</a>)</li>
-<li>Session 3: Descriptive analysis I (<a href="slides/lecture_3_descriptive_analysis_1.html">slides</a> and <a href="notes/lecture_3_descriptive_analysis_1.html">notes</a>)</li>
-<li>Session 4: Descriptive analysis II (<a href="slides/lecture_4_descriptive_analysis_2.html">slides</a> and <a href="notes/lecture_4_descriptive_analysis_2.html">notes</a>)</li>
-<li>Session 5: Predictive analysis (<a href="slides/lecture_5_predictive_analysis.html">slides</a> and <a href="notes/lecture_5_predictive_analysis.html">notes</a>)</li>
-<li>Session 6: Prescriptive analysis (<a href="slides/lecture_6_prescriptive_analysis.html">slides</a> and <a href="notes/lecture_6_prescriptive_analysis.html">notes</a>)</li>
-</ul>
+<section id="big-data" class="level3">
+<h3 class="anchored" data-anchor-id="big-data">Big Data</h3>
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Session</th>
+<th>Topic</th>
+<th>Lecture</th>
+<th>Exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2026-05-04</td>
+<td>Session 8</td>
+<td>Big data</td>
+<td><a href="slides/lecture_8_big_data.html">slides</a>, <a href="notes/lecture_8_big_data.html">notes</a></td>
+<td><a href="exercises/exercise_8.html">exercise</a></td>
+</tr>
+<tr class="even">
+<td>2026-05-04</td>
+<td>Session 9</td>
+<td>Analytics case examples</td>
+<td><a href="slides/lecture_9_analytics_case_examples.html">slides</a>, <a href="notes/lecture_9_analytics_case_examples.html">notes</a></td>
+<td><a href="exercises/exercise_9.html">exercise</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="part-3-analytics-for-big-data" class="level3">
-<h3 class="anchored" data-anchor-id="part-3-analytics-for-big-data">Part 3: Analytics for big data</h3>
-<ul>
-<li>Session 7: Big data (<a href="slides/lecture_7_big_data.html">slides</a> and <a href="notes/lecture_7_big_data.html">notes</a>)</li>
-<li>Session 8: Exploratory analysis (<a href="slides/lecture_8_exploratory_analysis.html">slides</a> and <a href="notes/lecture_8_exploratory_analysis.html">notes</a>)</li>
-<li>Session 9: Predictive analysis (<a href="slides/lecture_9_predictive_analysis.html">slides</a> and <a href="notes/lecture_9_predictive_analysis.html">notes</a>)</li>
-</ul>
+<section id="organizations" class="level3">
+<h3 class="anchored" data-anchor-id="organizations">Organizations</h3>
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Session</th>
+<th>Topic</th>
+<th>Lecture</th>
+<th>Exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2026-05-11</td>
+<td>Session 10</td>
+<td>Governance of data analytics</td>
+<td><a href="slides/lecture_10_data_governance.html">slides</a>, <a href="notes/lecture_10_data_governance.html">notes</a></td>
+<td><a href="exercises/exercise_10.html">exercise</a></td>
+</tr>
+<tr class="even">
+<td>2026-05-11</td>
+<td>Session 11</td>
+<td>Recap, exam preparation, Q&amp;A</td>
+<td><a href="slides/lecture_11_recap.html">slides</a>, <a href="notes/lecture_11_recap.html">notes</a></td>
+<td><a href="exercises/exercise_11.html">exercise</a></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="part-4-analytics-in-organizations" class="level3">
-<h3 class="anchored" data-anchor-id="part-4-analytics-in-organizations">Part 4 – Analytics in organizations</h3>
-<ul>
-<li>Session 10: Governance of data analytics (<a href="slides/lecture_10_data_governance.html">slides</a> and <a href="notes/lecture_10_data_governance.html">notes</a>)</li>
-<li>Session 11: Recap, exam preparation, Q&amp;A (<a href="slides/lecture_11_recap.html">slides</a> and <a href="notes/lecture_11_recap.html">notes</a>)</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We may prepare the <a href="all_lectures.pdf">handout</a> generated based on all slides.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="group-work" class="level2">
-<h2 class="anchored" data-anchor-id="group-work">Group work</h2>
-<ul>
-<li>To come</li>
-</ul>
-</section>
-<section id="teaching-notes" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-notes">Teaching notes</h2>
-<ul>
-<li>To come (adding link to confidential exam repository)</li>
-</ul>
-</section>
-<section id="license-code-of-conduct-contributing" class="level2">
-<h2 class="anchored" data-anchor-id="license-code-of-conduct-contributing">License, code of conduct, contributing, …</h2>
-</section>
-<section id="recommended-literature" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-literature">Recommended literature</h2>
-<p>Part 1:</p>
-<ul>
-<li>Sharda, R., Delen, D., &amp; Turban, E. (2018). Business intelligence, analytics, and data science: a managerial perspective. <a href="https://elibrary.pearson.de/book/99.150005/9781292727530">link</a></li>
-<li>Martínez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramirez-Quintana, M. J. &amp; Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories.&nbsp;<em>IEEE Transactions on Knowledge and Data Engineering</em>,&nbsp;<em>33</em>(8), 3048-3061. <a href="https://ieeexplore.ieee.org/abstract/document/8943998">link</a></li>
-<li>Chen, H., Chiang, R. H., &amp; Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact.&nbsp;<em>MIS Quarterly</em> 36(4), 1165-1188. <a href="https://www.jstor.org/stable/41703503">link</a></li>
-</ul>
-<p>Part 2:</p>
-<ul>
-<li>Vaisman, A.; Zimányi, E. (2016): Data Warehouse Systems: Design and Implementation (Data-Centric Systems and Applications), Springer. <a href="https://link.springer.com/book/10.1007/978-3-662-65167-4">link</a></li>
-<li>Schutt, R.; O’Neil, C. (2014): Doing Data Science, O’Reilly Media. <a href="https://www.oreilly.com/library/view/doing-data-science/9781449363871/">link</a></li>
-<li>Raschka, Sebastian (2015): Python Machine Learning, Packt Publishing. <a href="https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130">link</a></li>
-</ul>
-<p>Part 3:</p>
-<ul>
-<li>Schmarzo, B. (2016): Big Data MBA, Wiley. <a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781119238881">link</a></li>
-<li>Bengfort, B., Bilbro, R., &amp; Ojeda, T. (2018).&nbsp;<em>Applied text analysis with python: Enabling language-aware data products with machine learning</em>. O’Reilly Media, Inc.&nbsp;<a href="https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/">link</a></li>
-</ul>
-<p>Part 4:</p>
-<ul>
-<li>Davenport, T. H. (2006). Competing on analytics.&nbsp;<em>Harvard Business Review</em>,&nbsp;<em>84</em>(1), 98. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">link</a></li>
-<li>Vidgen, R., Shaw, S., &amp; Grant, D. B. (2017). Management challenges in creating value from business analytics.&nbsp;<em>European Journal of Operational Research</em>,&nbsp;<em>261</em>(2), 626-639. <a href="https://www.sciencedirect.com/science/article/pii/S0377221717301455">link</a></li>
-</ul>
 
 
 </section>
@@ -652,4 +750,4 @@ Note
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

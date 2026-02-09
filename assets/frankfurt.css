@@ -1,9 +1,9 @@
 /* --- header sizing + spacing --- */
-:root { 
-  --fs-header-h: 140px;              /* smaller now, just for logo/title block */
+:root {
+  --fs-header-h: 120px;              /* smaller now, just for logo/title block */
   --brand-color: #002EFF;   /* Frankfurt blue from the logo */
   --font-family: "Source Sans Pro", sans-serif;
-  --font-size: 26px;
+  --font-size: 28px;
 }
 
 /* Top-right floating header (title + logo) */
@@ -29,6 +29,7 @@ body,
 .reveal,
 .reveal .slides {
   font-family: var(--font-family);
+  font-size: var(--font-size);
 }
 
 /* slide title in the floating header */
@@ -134,8 +135,25 @@ body,
   font-size: 0.6em;   /* 80% of normal */
 }
 
-.reveal .slide-menu-button {
-  margin-bottom: 10px;
+/* shrink the clickable area */
+.reveal .slide-menu-button,
+.reveal .slide-menu-button a{
+  width: 26px !important;
+  height: 26px !important;
+}
+
+/* Quarto/reveal-menu draws the icon via ::before (SVG background) */
+.reveal .slide-menu-button .fa-bars::before{
+  width: 24px !important;
+  height: 24px !important;
+  background-size: 24px 24px !important; /* key for SVG background icons */
+  display: inline-block !important;
+  content: "" !important;                /* ensure the pseudo-element exists */
+}
+
+/* avoid extra vertical spacing from the <i> */
+.reveal .slide-menu-button i{
+  line-height: 1 !important;
 }
 
 /* Quarto revealjs title slide */

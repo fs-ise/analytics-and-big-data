@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Syllabus – Big Data and Analytics</title>
+<title>Syllabus – Analytics &amp; Big Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,10 +20,31 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -36,16 +57,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8fd1faf6fd93e4e6d207ae0f9db51d78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -67,15 +88,98 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
+</style>
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Analytics &amp; Big Data</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./group_work.html"> 
+<span class="menu-text">Group work</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./syllabus.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./preparation.html"> 
+<span class="menu-text">⚠️ Preparation</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -101,11 +205,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Building on previous sessions:</p>
+<ul>
+<li>Regression I builds the basics, Regression II introduces model tuning (forward/backward variable selection in multiple regression, non-linear transformations, logistic regression)</li>
+<li>ML I builds the basics, ML II introduces feature engineering, ensemble models, …</li>
+</ul>
+</div>
+</div>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This module introduces students to the methods, technologies, and governance of modern data analytics across descriptive, predictive, and prescriptive approaches. It builds a comprehensive understanding of the data analytics process—from data structuring and preparation to exploratory data analysis, analytical modeling, and decision support. The module combines conceptual foundations and hands-on analytical practice using Python, pandas, and scikit-learn. It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming). Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p><strong>Knowledge</strong> After completing the module, students will be able to:</p>
+<ul>
+<li><strong>Differentiate</strong> between descriptive, predictive, and prescriptive analytics approaches. 🟢 <a href="slides/lecture_1_foundations_of_data_analytics.html">l1</a></li>
+<li><strong>Describe</strong> architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 <a href="slides/lecture_2_descriptive_analytics.html">l2</a></li>
+<li><strong>Explain</strong> fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 <a href="slides/lecture_10_data_governance.html">l10</a></li>
+</ul>
+<p><strong>Skills</strong> Students will be able to:</p>
+<ul>
+<li><strong>Select</strong> appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.</li>
+<li><strong>Apply</strong> analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.</li>
+<li><strong>Implement</strong> analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).</li>
+</ul>
+<p><strong>Competence</strong> Upon successful completion, students will be able to:</p>
+<ul>
+<li><strong>Design</strong> analytics solutions aligned with business goals and governance principles.</li>
+<li><strong>Integrate</strong> analytical technologies into organizational decision-making processes</li>
+<li><strong>Assess</strong> the operational and strategic implications of data analytics in organizations. 🟢 <a href="slides/lecture_10_data_governance">l10</a></li>
+</ul>
+</section>
+<section id="related-courses" class="level2">
+<h2 class="anchored" data-anchor-id="related-courses">Related courses</h2>
+<ul>
+<li><a href="https://harvard-iacs.github.io/2018-CS109A/">CS109A: Introduction to Data Science</a> and <a href="https://harvard-iacs.github.io/2018-CS109A/pages/materials.html">materials</a></li>
+<li><a href="https://harvardonline.harvard.edu/course/data-science-business">Data Science for Business</a> with <a href="https://us-west-2.graphassets.com/cmcu78gdx085p08n06vc58sxv/cmi3la9wm6k7v07lk3xx2ezza">syllabus</a></li>
+<li><a href="https://ds100.org/sp26/">UC Berkley: Data 100: Principles and Techniques of Data Science</a></li>
+</ul>
+</section>
+<section id="recommended-literature" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-literature">Recommended literature</h2>
+<ul>
+<li><strong>Part 1</strong>: <span class="citation" data-cites="ChenEtAl2012">Chen et al. (<a href="#ref-ChenEtAl2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="MartinezEtAl2019">Martı́nez-Plumed et al. (<a href="#ref-MartinezEtAl2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="ShardaEtAl2018">Sharda et al. (<a href="#ref-ShardaEtAl2018" role="doc-biblioref">2018</a>)</span></li>
+<li><strong>Part 2</strong>: <span class="citation" data-cites="Raschka2015">Raschka (<a href="#ref-Raschka2015" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="SchuttONeil2014">Schutt &amp; O’Neil (<a href="#ref-SchuttONeil2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="Vaisman2016">Vaisman &amp; Zimányi (<a href="#ref-Vaisman2016" role="doc-biblioref">2016</a>)</span></li>
+<li><strong>Part 3</strong>: <span class="citation" data-cites="BengfortEtAl2018">Bengfort et al. (<a href="#ref-BengfortEtAl2018" role="doc-biblioref">2018</a>)</span>. <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#ref-Schmarzo2016" role="doc-biblioref">2016</a>)</span></li>
+<li><strong>Part 4</strong>: <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span>, <span class="citation" data-cites="VidgenEtAl2017">Vidgen et al. (<a href="#ref-VidgenEtAl2017" role="doc-biblioref">2017</a>)</span></li>
+</ul>
+<!--
+## Course Design and Pedagogical Approach
+
+This course intentionally combines **two complementary pedagogical perspectives** to prepare students for both the *technical foundations* and the *practical realities* of Big Data and Business Analytics.
+
+### 1. Essentialist Perspective: Core Concepts and Analytical Skills
+- Focuses on **stable, foundational concepts and methods** in Big Data and Business Analytics
+- Emphasizes **hard analytical skills**, models, and terminology that every graduate in the field is expected to master
+- Knowledge is treated as **structured and cumulative**, building from basic principles to more advanced applications
+- Learning activities include:
+  - Structured lectures
+  - Worked examples and problem-solving exercises
+- Assessment:
+  - Formal examinations and graded assignments
+  - Evaluation of students’ ability to **apply core concepts correctly and rigorously**
+- Learning goal:
+  - Ensure a **shared analytical foundation** and methodological competence across all students
+
+### 2. Experiential and Connectivist Perspective: Engaging with Practice
+- Recognizes that Big Data and Analytics are **rapidly evolving fields** shaped by practice, tools, and professional discourse
+- Treats knowledge as **distributed across networks**, including practitioners, platforms, and media
+- Emphasizes **learning through experience, reflection, and sensemaking**
+- Learning activities include:
+  - Engagement with podcasts, practitioner articles, and business magazines
+  - Short written or oral summaries connecting practice-based insights to course concepts
+  - In-class discussion and collective reflection
+- Assessment:
+  - Low-stakes or formative evaluation focused on engagement, synthesis, and reflection
+- Learning goal:
+  - Develop students’ ability to **interpret real-world analytics practices**, critically relate them to theory, and stay current beyond the classroom
+
+::: {.callout-note title="Idea"}
+For the second part, one motivation could be to help everyone be better prepared for the exam.
+:::
+
+### Integrating Both Perspectives
+- The essentialist component provides **conceptual clarity and analytical rigor**
+- The experiential–connectivist component provides **context, relevance, and adaptability**
+- Together, they support:
+  - Deep understanding of Big Data concepts
+  - Practical judgment in applying analytics in organizational contexts
+  - Lifelong learning skills in a dynamic digital environment
+
+TBD: also cover group-work (third part??)
+-->
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-BengfortEtAl2018" class="csl-entry" role="listitem">
+Bengfort, B., Bilbro, R., &amp; Ojeda, T. (2018). <em>Applied text analysis with python: Enabling language-aware data products with machine learning</em>. O’Reilly Media. <a href="https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/">https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/</a>
+</div>
+<div id="ref-ChenEtAl2012" class="csl-entry" role="listitem">
+Chen, H., Chiang, R. H. L., &amp; Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. <em>MIS Quarterly</em>, <em>36</em>(4), 1165–1188. <a href="https://www.jstor.org/stable/41703503">https://www.jstor.org/stable/41703503</a>
+</div>
+<div id="ref-Davenport2006" class="csl-entry" role="listitem">
+Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
+</div>
+<div id="ref-MartinezEtAl2019" class="csl-entry" role="listitem">
+Martı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., &amp; Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. <em>IEEE Transactions on Knowledge and Data Engineering</em>, <em>33</em>(8), 3048–3061. <a href="https://ieeexplore.ieee.org/abstract/document/8943998">https://ieeexplore.ieee.org/abstract/document/8943998</a>
+</div>
+<div id="ref-Raschka2015" class="csl-entry" role="listitem">
+Raschka, S. (2015). <em>Python machine learning</em>. Packt Publishing. <a href="https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130">https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130</a>
+</div>
+<div id="ref-Schmarzo2016" class="csl-entry" role="listitem">
+Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1002/9781119238881">https://doi.org/10.1002/9781119238881</a>
+</div>
+<div id="ref-SchuttONeil2014" class="csl-entry" role="listitem">
+Schutt, R., &amp; O’Neil, C. (2014). <em>Doing data science</em>. O’Reilly Media. <a href="https://www.oreilly.com/library/view/doing-data-science/9781449363871/">https://www.oreilly.com/library/view/doing-data-science/9781449363871/</a>
+</div>
+<div id="ref-ShardaEtAl2018" class="csl-entry" role="listitem">
+Sharda, R., Delen, D., &amp; Turban, E. (2018). <em>Business intelligence, analytics, and data science: A managerial perspective</em>. Pearson. <a href="https://elibrary.pearson.de/book/99.150005/9781292727530">https://elibrary.pearson.de/book/99.150005/9781292727530</a>
+</div>
+<div id="ref-Vaisman2016" class="csl-entry" role="listitem">
+Vaisman, A., &amp; Zimányi, E. (2016). <em>Data warehouse systems: Design and implementation</em>. Springer. <a href="https://doi.org/10.1007/978-3-662-65167-4">https://doi.org/10.1007/978-3-662-65167-4</a>
+</div>
+<div id="ref-VidgenEtAl2017" class="csl-entry" role="listitem">
+Vidgen, R., Shaw, S., &amp; Grant, D. B. (2017). Management challenges in creating value from business analytics. <em>European Journal of Operational Research</em>, <em>261</em>(2), 626–639. <a href="https://www.sciencedirect.com/science/article/pii/S0377221717301455">https://www.sciencedirect.com/science/article/pii/S0377221717301455</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -511,4 +750,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/syllabus.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

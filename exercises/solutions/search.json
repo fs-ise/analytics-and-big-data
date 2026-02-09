@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "exercise_11.html",
+    "href": "exercise_11.html",
+    "title": "Exercise 11: Recap, exam preparation, Q&A",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_6.html",
+    "href": "exercise_6.html",
+    "title": "Exercise 6: Machine learning I",
+    "section": "",
+    "text": "Note\n\n\n\nTODO\n\n\nhttps://github.com/justmarkham/scikit-learn-videos"
+  },
+  {
+    "objectID": "exercise_3.html",
+    "href": "exercise_3.html",
+    "title": "Exercise 3: Exploratory data analysis",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_4.html",
+    "href": "exercise_4.html",
+    "title": "Exercise 4: Regression I",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_9.html",
+    "href": "exercise_9.html",
+    "title": "Exercise 9: Analytics case examples",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_1.html",
+    "href": "exercise_1.html",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "",
+    "text": "NoteTODO\n\n\n\nTODO: test workflow (github/local jupyter notebook - do not save as qmd / or convert?!) run individual lines with shift+ENTER ??"
+  },
+  {
+    "objectID": "exercise_1.html#preface",
+    "href": "exercise_1.html#preface",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "1 Preface",
+    "text": "1 Preface\nThe purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.\nThe three main libraries are:\n\nNumPy\nPandas\nScikit-learn"
+  },
+  {
+    "objectID": "exercise_1.html#numpy",
+    "href": "exercise_1.html#numpy",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "2 NumPy",
+    "text": "2 NumPy\nNumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.\nAn introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School)."
+  },
+  {
+    "objectID": "exercise_1.html#pandas",
+    "href": "exercise_1.html#pandas",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "3 Pandas",
+    "text": "3 Pandas\nPandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.\nIn Chapter 1, an introduction to using DataFrames with Pandas is given."
+  },
+  {
+    "objectID": "exercise_1.html#scikit-learn",
+    "href": "exercise_1.html#scikit-learn",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "4 Scikit-learn",
+    "text": "4 Scikit-learn\nScikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.\nThe structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:\n\n# Schematic example to illustrate a common estimator pattern.\n\nclass ModelEstimator(object):\n    def __init__(self, param1=\"pvalue1\"):\n        self.param1 = param1\n\n    def fit(self, X, y):\n        # X are input values, y are target values (supervised case)\n        # here the functionality for model estimation is implemented\n        return self\n\n    def predict(self, X):\n        # implementation of the predicting function\n        return X"
+  },
+  {
+    "objectID": "exercise_1.html#dataframes-with-pandas",
+    "href": "exercise_1.html#dataframes-with-pandas",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "5 DataFrames with Pandas",
+    "text": "5 DataFrames with Pandas\n\n5.1 DataFrames\nWhile a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.\nTODO: add illustration\nFor example, the following variable df is a dataframe containing three vectors\n\nimport pandas as pd\n\ndata = {\n    \"employee\": [\"John Doe\", \"Peter Gynn\", \"Jolie Hope\"],\n    \"salary\": [21000, 23400, 26800],\n    \"startdate\": [\"2010-11-1\", \"2008-3-25\", \"2007-3-14\"],\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe result of this is a dataframe named df. The numbers on the left side of the rows are labels and not the indexes. You can inspect the structure using the dtypes property\n\ndf.dtypes\n\nemployee       str\nsalary       int64\nstartdate      str\ndtype: object\n\n\nTo retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples\n\ndf.iloc[0,1] # element in first row, second column\ndf.iloc[:,0] # all rows, first column\ndf.iloc[1:3,1] # second to third row, second column\ndf.iloc[:,-2] # all rows, second column from the end\ndf.iloc[-1,:] # last row, all columns\ndf.iloc[[0, 2], [1, 2]] # first and third row, second to third column\n\n\n\n\n\n\n\n\nsalary\nstartdate\n\n\n\n\n0\n21000\n2010-11-1\n\n\n2\n26800\n2007-3-14\n\n\n\n\n\n\n\nPandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples\n\ndf.loc[1:2,:] # row with labels 1 and 2, all columns\ndf.loc[1:2] # same as above\ndf.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary\ndf.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary\ndf.loc[df.loc[:,'salary']&gt;23000] # all rows where salary&gt;23000, all columns\n# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe loc function can even be used to add a new row to a dataframe\n\ndf.loc[len(df)] = [\"Mike Tyson\", 19400, \"2018-6-27\"]\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n3\nMike Tyson\n19400\n2018-6-27\n\n\n\n\n\n\n\nA new column can be added via\n\ndf['age'] = [35, 42, 19, 43]\n\nA column can be deleted via the drop command\n\ndf = df.drop('age', axis = 1)\n\nTwo dataframes can be combined using the concat function. Combining two dataframes row-wise\n\ndf1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndf2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})\ndf3 = pd.concat([df1, df2])\nprint(df3)\n\n    A   B\n0  AA  BA\n1  AB  BB\n0  CA  DA\n1  CB  DB\n\n\nCombining two dataframes column-wise\n\ndfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})\ndfc = pd.concat([dfa, dfb], axis=1)\nprint(dfc)\n\n    A   B   C   D\n0  AA  BA  CA  DA\n1  AB  BB  CB  DB\n\n\n\n\n5.2 Import and Export\n\n# data = pd.read_csv(\"filename.csv\")\n# data = pd.read_excel(\"filename.xlsx\")\n# data.to_csv(\"output.csv\", index=False)\n\n\n\n5.3 Basic Statistical Functions for DataFrames\nA large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as sum and mean.\n\n# data.sum()\n\n\n# data.iloc[:, 1:7].cumsum()\n\n\n\n5.4 Common statistical functions in Pandas\n\n\n\nFunction\nDescription\n\n\n\n\ncount()\nNumber of non-null observations\n\n\nsum()\nSum of values\n\n\nmean()\nMean of values\n\n\nmedian()\nMedian of values\n\n\nmode()\nMode of values\n\n\nstd()\nStandard deviation of the values\n\n\nmin()\nMinimum value\n\n\nmax()\nMaximum value\n\n\nabs()\nAbsolute value\n\n\nprod()\nProduct of values\n\n\ncumsum()\nCumulative sum\n\n\ncumprod()\nCumulative product"
+  },
+  {
+    "objectID": "exercise_1.html#example-case",
+    "href": "exercise_1.html#example-case",
+    "title": "Exercise 1: Foundations of data analytics",
+    "section": "6 Example case",
+    "text": "6 Example case\n\nGet a dataset (nice datasource)\nImport and prepare\nProduce a notebook\n\n\n\n\n\n\n\nNoteTODO\n\n\n\nTODO: add a setup explanation + tests for available python version and packages\nTODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)\nTODO : add a summary"
+  },
+  {
+    "objectID": "exercise_7.html",
+    "href": "exercise_7.html",
+    "title": "Exercise 7: Machine learning II",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_10.html",
+    "href": "exercise_10.html",
+    "title": "Exercise 10: Governance of data analytics",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_8.html",
+    "href": "exercise_8.html",
+    "title": "Exercise 8: Big data",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercise_2.html",
+    "href": "exercise_2.html",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "",
+    "text": "Note\n\n\n\nTODO\n\n\nThis text will appear across all versions of the document\nSolution.\nOnly display the answer in the solution or rubric documents"
+  },
+  {
+    "objectID": "exercise_5.html",
+    "href": "exercise_5.html",
+    "title": "Exercise 5: Regression II",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  }
+]
