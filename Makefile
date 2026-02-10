@@ -73,10 +73,19 @@ slides-clean:
 # exercises-assign:
 #	$(QUARTO) render exercises --profile assign --no-clean
 
-exercises-solution:
-	$(QUARTO) render exercises --profile solution --no-clean
+exercises-solution-html:
+	$(QUARTO) render exercises --profile solution --to html --no-clean
 
-exercises: exercises-solution # exercises-assign
+exercises-assign-ipynb:
+	$(QUARTO) render exercises --profile assign --to ipynb --no-clean
+
+exercises-solution-ipynb:
+	$(QUARTO) render exercises --profile solution --to ipynb --no-clean
+
+
+# exercises: exercises-solution # exercises-assign
+exercises: exercises-solution-ipynb exercises-assign-ipynb exercises-solution-html
+
 
 # --- Site build (main project renders once) ---
 

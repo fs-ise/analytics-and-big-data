@@ -1,2 +1,7 @@
 project:
-  output-dir: ../_site/exercises/assignments
+  type: default
+  output-dir: ../_site/exercises
+
+# Key part: also create notebooks
+execute:
+  enabled: true

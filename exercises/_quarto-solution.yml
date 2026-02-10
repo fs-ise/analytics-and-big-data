@@ -1,2 +1,6 @@
 project:
+  type: default
   output-dir: ../_site/exercises/solutions
+
+execute:
+  enabled: true

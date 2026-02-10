@@ -10,13 +10,13 @@ function Div(div)
 
   -- Directly translate shortcode class to the full profile
   local value_condition = {}
-  if div.classes:includes("sol") then 
+  if div.classes:includes("sol") then
     value_condition = {"when-profile", "solution"}
-  elseif div.classes:includes("rubric") then 
+  elseif div.classes:includes("rubric") then
     value_condition = {"when-profile", "rubric"}
-  elseif div.classes:includes("direction") then 
+  elseif div.classes:includes("direction") then
     value_condition = {"when-profile", "assign"}
-  end 
+  end
 
   -- Register the condition
   local condition = {
@@ -24,16 +24,16 @@ function Div(div)
   }
 
   -- Add additional condition related to a project profile.
-  if div.classes:includes("sol") and quarto.project.profile:includes("rubric") then 
+  if div.classes:includes("sol") and quarto.project.profile:includes("rubric") then
     table.insert(condition, {"when-profile", "rubric"})
   end
 
-  if div.classes:includes("sol") then 
+  if div.classes:includes("sol") then
     -- Create a new Emph (italicized) element
     local new_emph = pandoc.Emph{pandoc.Str("Solution.")}
-    
+
     -- Add the new Emph element to the beginning of the Div's content
-    table.insert(div.content, 1, new_emph)
+    -- table.insert(div.content, 1, new_emph)
   end
 
   -- Return the modified ConditionalBlock
