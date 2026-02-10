@@ -6,59 +6,161 @@ session: "Session 3"
 date: "2026-03-30"
 ---
 
-# Learning objectives {data-state="hide-menubar"}
+## Learning objectives {data-state="hide-menubar"}
 
-- Describe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
+- Describe key characteristics of variables and patterns between variables
+- Visualize and interpret data sets
+- Explain the role of exploratory data analysis in business decision-making
 
+## Table of Contents {data-state="hide-menubar"}
+<ul class="menu"><ul>
 
-# TODO {data-stack-name="TODO"}
+# Univariate analysis {data-stack-name="Univariate analysis"}
 
-## First Application of Data Analytics
+TODO: use contents from [EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf](/home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf)
 
-Dr. John Snow's Map of the 1854 London Cholera Outbreak
+## categorical, ...
 
-![](../images/slides_104.png)
-
-::: aside
-— Source: http://www.udel.edu/johnmack/frec480/cholera
-:::
-
-
-
-## Use Cases of Data Analytics - Examples
-
-![](../images/slides_98_new.png)
+## histogram, boxplot
 
 
+# Multivariate analysis {data-stack-name="Multivariate analysis"}
 
+## correlation
 
-## Fundamental Skills of Data Analytics
+<!--
+        ## Exploratory Data Analysis
 
-![](../images/slides_105.png)
+        > In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
 
+        > People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
 
+        > Reasons for EDA:
 
+        - gain intuition about the data
+        - make comparisons between distributions
+        - sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
+        - find out where data is missing or if there are outliers
+        - summarize the data
 
-## The Data Analytics Process
-
-![](../images/slides_106.png)
-
-::: aside
-— Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process
-:::
+        > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
 
 
 
 
-## Need for Knowledge about the Algorithms
+        ## Univariate Non-Graphical EDA
 
-> The distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.
+        > Non-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:
 
-::: aside
-— Source: Dataiku - Data Science for Banking and Insurance
-:::
+        - measures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.
+        - measures of spread, i.e. variance, standard deviation, and interquartile range
+        - the shape of the distribution
+        - the existence of outliers
+
+        > The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
+
+        ![](../images/slides_188.png)
 
 
+
+
+        ## Tests on Outliers
+
+        > Outlier are data objects, which are clearly different from the others.
+
+        > Usually, the detection of outliers is an unsupervised process, because they are not known before analyses.
+
+        > In the case of **numerical attributes** the Interquartil Range can be used. Here, an outlier is defined if the attribute lies outside the interval.
+
+        ![](../images/slides_187_new.png)
+
+        > Usually, k has a value between 1.5 and 3. The bigger k, the more different the values must be to be classified as outliers.
+
+        > Can be visualized by a Box-and-Whisker Plot:
+
+        ![](../images/slides_189.png)
+
+
+
+
+        ## Handling Outliers
+
+        - Outlier have to be **eliminated** if they
+          - would bias the analysis, e.g. if 9 persons have an age between 20 and 30 and the 10th person is 80 years old.
+          - are erogenous data, e.g. as a result of input errors or a defect sensor.
+        - It is not always acceptable to drop an observation just because it is an outlier. They can be legitimate observations and are sometimes interesting ones. It’s important to investigate the nature of the outlier before deciding.
+        - In those cases where you shouldn’t drop the outlier, one option is to try a transformation. **Log transformations** pull in high numbers. This can reduce the impact of a single point if the outlier is an independent variable.
+
+        ![](../images/slides_190.png)
+
+
+
+
+        ## Univariate Graphical EDA
+
+        > Non-graphical and graphical EDA methods complement each other, they have the same focus. While the non-graphical methods are quantitative and objective, they do not give a full picture of the data. The distribution of a variable tells us what values the variable takes and how often each value occurs.
+
+        > Types of displays:
+
+        - for numerical variables: Histograms, Boxplots, Quantile-normal plots, …
+        - for categorical variables: Pie charts, Bar graphs, …
+
+        <div style="display:flex;justify-content:center">
+        <div style="height:600px;width:400px">
+        ![](../images/slides_193.png)
+        </div>
+        <div style="height:600px;width:400px">
+        ![](../images/slides_191.png)
+        </div>
+        <div style="height:600px;width:400px">
+        ![](../images/slides_192.png)
+        </div>
+        </div>
+
+
+        ## Multivariate Non-Graphical EDA
+
+        > Multivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables.
+
+        <div style="display:flex;justify-content:center;margin-top:4em">
+        <div class="Multivariate-wrapper" >
+        ![](../images/slides_194.png)
+        </div>
+        <div class="Multivariate-wrapper">
+        ![](../images/slides_195.png)
+        </div>
+        </div>
+
+
+        ## Multivariate Graphical EDA
+
+        > Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.
+
+        ![](../images/slides_196.png)
+
+
+-->
+
+# Visualization {data-stack-name="Visualization"}
+
+Add visualization / plotly (grammar of graphics)
+
+## plotly
+
+
+# Role of EDA {data-stack-name="Role of EDA"}
+
+
+## "limitations of EDA"
+
+(descriptive vs. inferential statistics)
+- no model/explanation/prediction (correlation vs causality)
+- sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings)
+-> starting point for building predictions (explanations, hypotheses, models, causality)
+
+<!--
+
+correlation vs causality example: nr of firefighters vs damage (insurance context)
 
 
 ## Statistics vs. Machine Learning
@@ -66,7 +168,6 @@ Dr. John Snow's Map of the 1854 London Cholera Outbreak
 > **Statistics** about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.
 
 > **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
-
 
 
 
@@ -95,9 +196,6 @@ counterfactual : den Tatsachen widersprechend
 
 :::
 
-
-
-
 ## Explanation vs. Prediction (II)
 
 **Explanation:**
@@ -118,8 +216,6 @@ counterfactual : den Tatsachen widersprechend
 - Accuracy is measured using out-of-sample data.
 
 
-
-
 ## Correlation
 
 ![](../images/slides_112.png)
@@ -131,8 +227,6 @@ counterfactual : den Tatsachen widersprechend
 > Organic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!
 
 
-
-
 ## Correlation vs. Causality (I)
 
 ![](../images/slides_107_new.png)
@@ -142,20 +236,14 @@ counterfactual : den Tatsachen widersprechend
 **Causality:** Principle of Cause and Effect
 
 
-
-
 ## Correlation vs. Causality (II)
 
 ![](../images/slides_114.png)
 
 
-
-
 ## Correlation vs. Causality (III)
 
 > But: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing!
-
-
 
 
 ## Statistical Estimation
@@ -166,129 +254,6 @@ counterfactual : den Tatsachen widersprechend
 — Source: http://www.dxbydt.com/the-size-of-your-sample
 :::
 
+-->
 
-
-
-
-## Exploratory Data Analysis
-
-> In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
-
-> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
-
-> Reasons for EDA:
-
-- gain intuition about the data
-- make comparisons between distributions
-- sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
-- find out where data is missing or if there are outliers
-- summarize the data
-
-> Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
-
-
-
-
-## Univariate Non-Graphical EDA
-
-> Non-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:
-
-- measures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.
-- measures of spread, i.e. variance, standard deviation, and interquartile range
-- the shape of the distribution
-- the existence of outliers
-
-> The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
-
-![](../images/slides_188.png)
-
-
-
-
-## Tests on Outliers
-
-> Outlier are data objects, which are clearly different from the others.
-
-> Usually, the detection of outliers is an unsupervised process, because they are not known before analyses.
-
-> In the case of **numerical attributes** the Interquartil Range can be used. Here, an outlier is defined if the attribute lies outside the interval.
-
-![](../images/slides_187_new.png)
-
-> Usually, k has a value between 1.5 and 3. The bigger k, the more different the values must be to be classified as outliers.
-
-> Can be visualized by a Box-and-Whisker Plot:
-
-![](../images/slides_189.png)
-
-
-
-
-## Handling Outliers
-
-- Outlier have to be **eliminated** if they
-  - would bias the analysis, e.g. if 9 persons have an age between 20 and 30 and the 10th person is 80 years old.
-  - are erogenous data, e.g. as a result of input errors or a defect sensor.
-- It is not always acceptable to drop an observation just because it is an outlier. They can be legitimate observations and are sometimes interesting ones. It’s important to investigate the nature of the outlier before deciding.
-- In those cases where you shouldn’t drop the outlier, one option is to try a transformation. **Log transformations** pull in high numbers. This can reduce the impact of a single point if the outlier is an independent variable.
-
-![](../images/slides_190.png)
-
-
-
-
-## Univariate Graphical EDA
-
-> Non-graphical and graphical EDA methods complement each other, they have the same focus. While the non-graphical methods are quantitative and objective, they do not give a full picture of the data. The distribution of a variable tells us what values the variable takes and how often each value occurs.
-
-> Types of displays:
-
-- for numerical variables: Histograms, Boxplots, Quantile-normal plots, …
-- for categorical variables: Pie charts, Bar graphs, …
-
-<div style="display:flex;justify-content:center">
-<div style="height:600px;width:400px">
-![](../images/slides_193.png)
-</div>
-<div style="height:600px;width:400px">
-![](../images/slides_191.png)
-</div>
-<div style="height:600px;width:400px">
-![](../images/slides_192.png)
-</div>
-</div>
-
-
-
-
-## Multivariate Non-Graphical EDA
-
-> Multivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables.
-
-<div style="display:flex;justify-content:center;margin-top:4em">
-<div class="Multivariate-wrapper" >
-![](../images/slides_194.png)
-</div>
-<div class="Multivariate-wrapper">
-![](../images/slides_195.png)
-</div>
-</div>
-
-
-
-
-## Multivariate Graphical EDA
-
-> Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.
-
-![](../images/slides_196.png)
-
-
-
-
-## Touring Diagram
-
-![](../images/slides_199.gif)
-
-
-
+## Summary {data-state="hide-menubar"}

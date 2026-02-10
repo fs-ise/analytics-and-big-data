@@ -6,3 +6,146 @@ format: html
 ::: callout-note
 TODO
 :::
+
+## Learning Objectives
+
+After this session, students should be able to:
+
+- Understand the purpose of exploratory data analysis (EDA)
+- Describe and interpret key characteristics of business data
+- Identify relationships and patterns in multivariate data
+- Use visualizations to explore and communicate insights
+- Understand the basic idea of the grammar of graphics in Python (Plotly)
+
+---
+
+## 0. Why Exploratory Data Analysis?
+- What is EDA and why it matters in business decision-making
+- EDA vs. confirmatory analysis (hypotheses, models)
+- Typical business use cases:
+  - Understanding customers
+  - Exploring sales and performance data
+  - Detecting anomalies and outliers
+- EDA as an *iterative* and *question-driven* process
+
+---
+
+## 1. Univariate Exploratory Data Analysis
+### “What’s in my data?”
+
+### 1.1 Types of Variables
+- Numerical (continuous, discrete)
+- Categorical (nominal, ordinal)
+- Why variable types matter for analysis and visualization
+
+### 1.2 Descriptive Statistics
+- Central tendency: mean, median, mode
+- Dispersion: range, variance, standard deviation
+- Quantiles and interquartile range (IQR)
+- Interpreting statistics in a business context
+
+### 1.3 Distribution Analysis
+- Histograms and density plots
+- Boxplots and outliers
+- Skewness and heavy tails
+- Typical business examples:
+  - Income and revenue distributions
+  - Customer activity and usage data
+
+### 1.4 Categorical Variables
+- Frequency tables
+- Relative frequencies and percentages
+- Bar charts
+- Business questions:
+  - Which customer segment is largest?
+  - How are products distributed across categories?
+
+---
+
+## 2. Multivariate Exploratory Data Analysis
+### “How do variables relate to each other?”
+
+### 2.1 Relationships Between Numerical Variables
+- Scatterplots
+- Correlation (Pearson, Spearman – intuition only)
+- Interpreting correlation (and common pitfalls)
+- Business examples:
+  - Price and demand
+  - Marketing spend and sales
+
+### 2.2 Numerical and Categorical Variables
+- Grouped summaries (means by category)
+- Boxplots by group
+- Comparing distributions across segments
+- Business examples:
+  - Revenue by customer segment
+  - Satisfaction scores by region
+
+### 2.3 Relationships Between Categorical Variables
+- Contingency tables
+- Percentages and conditional distributions
+- Simple association analysis
+- Business examples:
+  - Product category × return behavior
+  - Channel × conversion outcome
+
+### 2.4 From Patterns to Questions
+- EDA does not “prove” causality
+- Using EDA to generate hypotheses
+- Deciding what to analyze next
+
+---
+
+## 3. Visual Exploratory Data Analysis
+### “Seeing and communicating patterns”
+
+### 3.1 Why Visualization Matters
+- Human pattern recognition
+- Visualization for exploration vs. presentation
+- Common visualization mistakes in business reports
+
+### 3.2 Choosing the Right Chart
+- When to use:
+  - Bar charts
+  - Line charts
+  - Scatterplots
+  - Boxplots
+- Matching chart types to questions and data types
+
+### 3.3 Grammar of Graphics (Conceptual)
+- Data
+- Aesthetics (x, y, color, size)
+- Geometries (points, lines, bars)
+- Facets (small multiples)
+- Why this idea scales well for complex analyses
+
+### 3.4 Visual EDA in Python with Plotly
+- Why Plotly for business analytics:
+  - Interactivity
+  - Easy exploration of subgroups
+- Example visual analyses:
+  - Scatterplot with color by category
+  - Distribution plots by segment
+  - Interactive filtering and hover information
+
+---
+
+## 4. Putting It All Together
+- EDA as an iterative workflow:
+  1. Summarize variables
+  2. Explore relationships
+  3. Visualize and refine questions
+- From raw data to business insight
+- Limitations of EDA
+- Transition to:
+  - Statistical modeling
+  - Machine learning
+  - Dashboards and reporting
+
+---
+
+## Key Takeaways
+- EDA helps you *understand* data before modeling it
+- Start simple: univariate → multivariate → visual
+- Focus on business questions, not just techniques
+- Visualization is a core analytical skill, not just decoration

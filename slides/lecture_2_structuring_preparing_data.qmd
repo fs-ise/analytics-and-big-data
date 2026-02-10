@@ -12,6 +12,59 @@ date: "2026-03-23"
 - **Explain** dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).
 - **Model** analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data.
 
+
+
+
+# TODO: integrate this
+
+    ## First Application of Data Analytics
+
+    Dr. John Snow's Map of the 1854 London Cholera Outbreak
+
+    ![](../images/slides_104.png)
+
+    ::: aside
+    — Source: http://www.udel.edu/johnmack/frec480/cholera
+    :::
+
+
+
+    ## Use Cases of Data Analytics - Examples
+
+    ![](../images/slides_98_new.png)
+
+
+
+
+    ## Fundamental Skills of Data Analytics
+
+    ![](../images/slides_105.png)
+
+
+
+
+    ## The Data Analytics Process
+
+    ![](../images/slides_106.png)
+
+    ::: aside
+    — Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process
+    :::
+
+
+
+
+    ## Need for Knowledge about the Algorithms
+
+    > The distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.
+
+    ::: aside
+    — Source: Dataiku - Data Science for Banking and Insurance
+    :::
+
+
+
+
 ## Navigation
 
 ## 2 Descriptive Analytics
