@@ -8,10 +8,10 @@ date: "2026-03-23"
 
 ## Why is Modern Analytics so Successful?
 
-1. More Data for the Analysis
-2. More Computing Power
-3. New Methods and Algorithms
-4. New Analytics Processes
+1. [More Data](#more-data-for-the-analysis)
+2. [More Computing Power](#computing-power)
+3. [New Algorithms](#new-algorithms)
+4. [New Analytics Processes](#analytics-processes)
 
 # More Data for the Analysis {data-stack-name="Data"}
 
@@ -52,7 +52,7 @@ The rapid acceleration of computing power—driven by advances in hardware, clou
 TODO: mention DEA automata. Von Neuman architecture, possible addition of Quantum computing
 TODO: mention chip miniaturization and pushing pysical limits https://www.youtube.com/watch?v=MiUHjLxm3V0
 
-# Algorithms {data-stack-name="Algorithms"}
+# New Algorithms {data-stack-name="Algorithms"}
 
 ## Old vs. New Methods
 
@@ -143,7 +143,7 @@ plt.show()
 :::
 
 
-# New Analytics Processes {data-stack-name="Analytics Processes"}
+# Analytics Processes {data-stack-name="Analytics Processes"}
 
 
 ## Traditional vs. Modern Analytics Process
