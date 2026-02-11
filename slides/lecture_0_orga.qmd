@@ -1,17 +1,17 @@
 ---
-title: "Analytics and Big Data"
+title: "Analytics & Big Data"
 subtitle: "Course Logistics"
 section_label: "Introductory"
 session: "Session 0"
 date: "2026-03-23"
 ---
 
-## Your Instructor
+# Welcome {data-stack-name="Welcome"}
+
+## Prof. Dr. Gerit Wagner
 
 ::: {.columns}
 ::: {.column width="70%"}
-
-**Prof. Dr. Gerit Wagner**
 
 Academic background
 
@@ -29,6 +29,11 @@ Research interests
 Teaching interests
 
 - TODO
+
+What I expect from students
+
+What students can expect from me
+
 :::
 
 <!--
@@ -41,19 +46,44 @@ I am excited study the evolving landscape of **digital work practices** and the 
 :::
 :::
 
-<!--
-## Your expectations for *Big Data & Analytics*
 
- - Your background and perspective on digital work
-- Topics you are interested in
-- Challenges you grapple with
-- Work technologies that are exciting
+## About you
 
-![bg right:45% width:550px](../material/00_unsplash_office_space.jpeg)
+::: {.callout-note title="TODO"}
 
--->
+Quick Poll
 
-## Contents
+- Programming experience
+- Statistics background
+- Industry experience
+- Expectations
+
+Optional: Structured Matrix
+Ask students to self-place on:
+- Business ↔ Technical
+- Beginner ↔ Advanced
+
+:::
+
+<!-- That gives you live calibration. -->
+
+
+# Analytics & Big Data {data-stack-name="Analytics & Big Data"}
+
+## Analytics & Big Data in the curriculum
+
+TODO : include a curriculum overview
+
+Prerequisite: Successful completion of the "Introduction to Programming" module
+
+## Why This Course Matters
+
+- Role of analytics in organizations
+- Strategic relevance
+- Where this fits in your degree
+
+
+## Course Architecture
 
 ```{mermaid}
 flowchart TB
@@ -84,69 +114,6 @@ flowchart TB
   Foundations --> da  --> Organizations
 ```
 
-<!--
-
-**Foundations**
-
-- Session 1: Foundations of data analytics
-
-**Structured Data**
-
-- Session 2: Structuring and preparing data
-- Session 3/4: Descriptive analysis
-- Session 5: Predictive analysis
-- Session 6: Prescriptive analysis
-
-**Big Data**
-
-- Session 7: Big data
-- Session 8: Exploratory analysis
-- Session 9: Predictive analysis
-
-**Organizations**
-
-- Session 10: Governance of data analytics
-- Session 11: Recap, exam preparation, Q&A
--->
-
-## Literature
-
-Part 1: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
-
-Part 2: @Raschka2015, @SchuttONeil2014, @Vaisman2016
-
-Part 3: @BengfortEtAl2018. @Schmarzo2016
-
-Part 4: @Davenport2006, @VidgenEtAl2017
-
-
-<!--
-- **Drivers of change** in digital work and its impact on modern organizations
-- **Personal information management** and strategies for individual work excellence
-- Best practices for **remote teams** and effective communication
-- **Collaborative content creation** and the role of open source in work environments
-- The impact of **platformization** on work structures
-- Understanding **knowledge-intensive services** and how they drive innovation
-- Exploring **future scenarios** for work, including fully **digital and distributed organizing**
-- Addressing important **ethical questions**, including the role of **generative AI** in shaping the future of work
-
-**Note**: The session on **Teaming with (AI) Agents** is our most recent addition.
--->
-
-<!--
-## What This Course Does *Not* Cover
-
-While **digital work** and the **future of work** are broad topics, this course focuses selectively.
-The following areas are **out of scope**:
-
-- Managing **digital stress** and burnout
-- **Holacracy** and alternative organizational models
-- **Gig-work platforms** (e.g., micro-tasking, delivery work)
-- **Augmented reality** applications
-- **Production and industrial** sectors (manufacturing, logistics)
--->
-
-
 ## Learning objectives
 
 **Knowledge**
@@ -167,62 +134,40 @@ The following areas are **out of scope**:
 - **Integrate** analytical technologies into organizational decision-making processes
 - **Assess** the operational and strategic implications of data analytics in organizations.
 
-<!--
-- Describe the historical, organizational, and societal drivers of change in digital work.
-- Understand how digitalization changes work for individuals, teams, and crowds.
-- Build you repertoire of practices, methods, and tools for effective digital work.
-- Explain corresponding theories of personal information management, media synchronicity, and virtual teams.
-- Appreciate different forms of scientific knowledge, theories, and methods prevalent in research on digital work.
-- Critically evaluate ethical outcomes and recommend policy measures.
 
-technology choice, effective (situational) use
+## What This Course Does *Not* Cover
 
-- Familiarize with a repertoire of techniques, methods, and policies for effective digital work at the levels of individuals, teams, and crowds.
-- Apply, adapt, and critically discuss these methods in different practical contexts.
 
-critically discuss: understand where they come from/how they were developed (based on what evidence/theories)
-Critically discuss ethical challenges associated with the future of work.
+- **Engineering of production-grade analytical systems**
+  (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)
 
-Modulkatalog:
-Nach Abschluss des Kurses haben die Studierenden ein Verständnis über die Veränderungen, Gestaltungsbereiche und Auswirkungen digitaler Arbeit. Insbesondere können sie ein Repertoire ausgewählter Methoden, Designprinzipien und organisationelle Policies erklären und situativ anwenden. Zudem können sie die Evaluation einzelner Maßnahmen diskutieren und sie mit diesem Hintergrundwissen  effektiv und verantwortungsvoll in der Praxis einsetzen.
+- **Statistical theory**
+  (inferential statistics, proofs/derivations)
 
-## How this lecture approaches *Big Data & Analytics*
+- **Autonomous / agentic decision systems**
+  (robots/agents acting on decisions, reinforcement learning, LLM engineering)
 
- The "philosophical foundations"
+::: {.callout-note}
+**Interfaces exist:** We will *touch* these areas where needed, but our focus is on **analytical reasoning** and **prototype implementations** (e.g., notebook-based workflows) for real-world datasets.
+:::
 
-- Science and practice inform each other.
-	- Scientists are not the only producers of knowledge in this field (unlike in medicine, for example).
-	- It is valid to study how practitioners commonly work or how outstanding performers work, especially when there is limited scientific evidence.
-	- To do that, it is important to appreciate differences in scientific knowledge, including theories, methods, and evidence.
 
-- We focus on **understanding** changes as well as underlying theory and evidence to shape digital work, and on **applying** repertoire of techniques and methods.
 
-- The course is an opportunity to adapt, test, and refine the methods that work best for you.
-
--->
-
-## Materials
-
-Slides
-
-- Presentation slides will be made available for download.
-- You are expected to take complementary notes and read the recommended literature.
-- We invite you to contribute directly to our teaching materials by submitting an issue ♻️ or suggesting edits 🛠️.
-
-Literature
-
-- Literature and complementary materials will be listed at the end of each lecture.
-- Materials will be made available whenever possible.
-- Reading of complementary materials depends on your interest and ambition.
-
+# Getting started  {data-stack-name="Getting started"}
 
 ## Course organization
-
 
 - Exam: 60 minutes, 60 points (date: TBA/exam week)
 - Group project: written paper (40 pages), 60 points (end of module)
 
 ::: {.callout-note title="TODO"}
+
+- Format
+- Expectations
+- Workload
+- Assessments and deliverables
+- resources and administration
+
 TODO: group sizes, how groups will form, ...
 
 Workload:
@@ -233,7 +178,6 @@ remaining: self-study + group project
 
 Administration
 
-Prerequisite: Successful completion of the "Introduction to Programming" module
 
 TODO: link syllabus
 :::
@@ -289,27 +233,46 @@ Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/1
 -->
 
 
+## Materials
 
-<!--
-## You may also be interested in ...
+Slides
 
-![bg right:35% width:400px vertical](../assets/images/logo)
-![bg right:35% width:400px vertical](../assets/images/logo-project.png)
-![bg right:35% width:400px](../assets/images/logo-theses.png)
-![bg right:35% width:400px](../assets/images/logo)
+- Presentation slides will be made available for download.
+- You are expected to take complementary notes and read the recommended literature.
+- We invite you to contribute directly to our teaching materials by submitting an issue ♻️ or suggesting edits 🛠️.
 
-## The open-source project (WI-Projekt)
+Literature
 
-- Learn to code in Python and contribute to the CoLRev package
-- Practice the use of Git in a small-team setting
+- Literature and complementary materials will be listed at the end of each lecture.
+- Materials will be made available whenever possible.
+- Reading of complementary materials depends on your interest and ambition.
 
-<!-- First session: Thursday, 17. April, 12.15-13.45 (WE5 3.004) -->
+Selected literature:
 
-## You may also be interested in ...
+- Part 1: @ChenEtAl2012, @MartinezEtAl2019, @ShardaEtAl2018
+- Part 2: @Raschka2015, @SchuttONeil2014, @Vaisman2016
+- Part 3: @BengfortEtAl2018. @Schmarzo2016
+- Part 4: @Davenport2006, @VidgenEtAl2017
+
+
+## You may also be interested in ... {data-state="hide-menubar"}
 
 Bachelor's theses
 
 - See information on the [process](https://fs-ise.github.io/theses/) and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
 
+<!--
+    ![bg right:35% width:400px vertical](../assets/images/logo)
+    ![bg right:35% width:400px vertical](../assets/images/logo-project.png)
+    ![bg right:35% width:400px](../assets/images/logo-theses.png)
+    ![bg right:35% width:400px](../assets/images/logo)
 
-## References
+    ## The open-source project (WI-Projekt)
+
+    - Learn to code in Python and contribute to the CoLRev package
+    - Practice the use of Git in a small-team setting
+
+    First session: Thursday, 17. April, 12.15-13.45 (WE5 3.004)
+-->
+
+## References {data-state="hide-menubar"}

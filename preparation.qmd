@@ -43,6 +43,8 @@ See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
 - [ ] Find contents: Analytics case examples
 
 - [ ] Check: Jupyter Exercise setup ?? (GitHub?)
+-> export of jupyter notebooks
+-> generation of PDFs: local only?
 
 
 ### Session 0 — Course logistics
@@ -59,6 +61,8 @@ See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
 - [ ] Exercise polished
 - [ ] Exercise tested
 - [ ] Teaching notes prepared
+
+TODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)
 
 ---
 
@@ -221,3 +225,5 @@ Exercise sheets:
 https://www.coursera.org/learn/data-analysis-with-python
 - python, exploratory data analysis
 -> accessible (good examples?!)
+
+Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI
