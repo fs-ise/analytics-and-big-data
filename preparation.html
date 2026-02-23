@@ -72,17 +72,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -92,6 +81,17 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 div.callout-confidential.callout {
@@ -243,7 +243,7 @@ gantt
 <li><p><label><input type="checkbox">Find contents: Machine learning I</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Machine learning II</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Analytics case examples</label></p></li>
-<li><p><label><input type="checkbox">Check: Jupyter Exercise setup ?? (GitHub?)</label></p></li>
+<li><p><label><input type="checkbox">Check: Jupyter Exercise setup ?? (GitHub?) -&gt; export of jupyter notebooks -&gt; generation of PDFs: local only?</label></p></li>
 </ul>
 <section id="session-0-course-logistics" class="level3">
 <h3 class="anchored" data-anchor-id="session-0-course-logistics">Session 0 — Course logistics</h3>
@@ -264,6 +264,7 @@ gantt
 <li><label><input type="checkbox">Exercise tested</label></li>
 <li><label><input type="checkbox">Teaching notes prepared</label></li>
 </ul>
+<p>TODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)</p>
 <hr>
 </section>
 <section id="session-2-structuring-and-preparing-data" class="level3">
@@ -444,6 +445,7 @@ gantt
 <li><p><label><input type="checkbox">Split Data Analytics with Python.pdf and -&gt; jnb</label></p></li>
 </ul>
 <p>https://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)</p>
+<p>Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI</p>
 
 
 </section>

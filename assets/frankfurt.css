@@ -1,6 +1,6 @@
 /* --- header sizing + spacing --- */
 :root {
-  --fs-header-h: 120px;              /* smaller now, just for logo/title block */
+  --fs-header-h: 60px;              /* smaller now, just for logo/title block */
   --brand-color: #002EFF;   /* Frankfurt blue from the logo */
   --font-family: "Source Sans Pro", sans-serif;
   --font-size: 28px;
@@ -9,8 +9,8 @@
 /* Top-right floating header (title + logo) */
 #fs-header{
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 16px;
+  right: 16px;
   left: auto;                       /* don't stretch full width */
   display: flex;
   align-items: center;

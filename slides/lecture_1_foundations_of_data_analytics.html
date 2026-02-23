@@ -11,7 +11,7 @@
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-23">
-  <title>Analytics &amp; Big Data – Analytics and Big Data</title>
+  <title>Analytics &amp; Big Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -125,17 +125,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -156,6 +145,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -179,8 +179,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="title-slide slide level1 center">
-  <h1>Analytics and Big Data</h1>
+<section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
+  <h1>Analytics &amp; Big Data</h1>
 
   <p></p> Session 1: Foundations of data analytics <p></p>
 
@@ -191,10 +191,10 @@
 <section id="why-is-modern-analytics-so-successful" class="slide level2">
 <h2>Why is Modern Analytics so Successful?</h2>
 <ol type="1">
-<li>More Data for the Analysis</li>
-<li>More Computing Power</li>
-<li>New Methods and Algorithms</li>
-<li>New Analytics Processes</li>
+<li><a href="#/more-data-for-the-analysis">More Data</a></li>
+<li><a href="#/computing-power">More Computing Power</a></li>
+<li><a href="#/new-algorithms">New Algorithms</a></li>
+<li><a href="#/analytics-processes">New Analytics Processes</a></li>
 </ol>
 </section>
 <section>
@@ -241,8 +241,8 @@
 <p>TODO: mention DEA automata. Von Neuman architecture, possible addition of Quantum computing TODO: mention chip miniaturization and pushing pysical limits https://www.youtube.com/watch?v=MiUHjLxm3V0</p>
 </section></section>
 <section>
-<section id="algorithms" class="title-slide slide level1 center" data-stack-name="Algorithms">
-<h1>Algorithms</h1>
+<section id="new-algorithms" class="title-slide slide level1 center" data-stack-name="Algorithms">
+<h1>New Algorithms</h1>
 
 </section>
 <section id="old-vs.-new-methods" class="slide level2">
@@ -263,7 +263,7 @@
 <section id="imagenet" class="slide level2">
 <h2>ImageNet</h2>
 <p>ImageNet is a large-scale image recognition competition where models compete to classify millions of images across thousands of categories. Breakthrough models have historically demonstrated major advances in deep learning.: Models vs Human Baseline</p>
-<div id="526284d5" class="cell" data-execution_count="1">
+<div id="36a2d7d9" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -273,7 +273,7 @@
 </div>
 </div>
 <div class="fragment">
-<div id="a9ec3e2a" class="cell" data-execution_count="2">
+<div id="d955b0d0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -285,8 +285,8 @@
 </div>
 </section></section>
 <section>
-<section id="new-analytics-processes" class="title-slide slide level1 center" data-stack-name="Analytics Processes">
-<h1>New Analytics Processes</h1>
+<section id="analytics-processes" class="title-slide slide level1 center" data-stack-name="Analytics Processes">
+<h1>Analytics Processes</h1>
 
 </section>
 <section id="traditional-vs.-modern-analytics-process" class="slide level2">

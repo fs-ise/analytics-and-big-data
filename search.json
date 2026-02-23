@@ -14,6 +14,55 @@
     "text": "Note\n\n\n\nTODO"
   },
   {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#learning-objectives",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#learning-objectives",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nAfter this session, students should be able to:\n\nUnderstand the purpose of exploratory data analysis (EDA)\nDescribe and interpret key characteristics of business data\nIdentify relationships and patterns in multivariate data\nUse visualizations to explore and communicate insights\nUnderstand the basic idea of the grammar of graphics in Python (Plotly)"
+  },
+  {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#why-exploratory-data-analysis",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#why-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "0. Why Exploratory Data Analysis?",
+    "text": "0. Why Exploratory Data Analysis?\n\nWhat is EDA and why it matters in business decision-making\nEDA vs. confirmatory analysis (hypotheses, models)\nTypical business use cases:\n\nUnderstanding customers\nExploring sales and performance data\nDetecting anomalies and outliers\n\nEDA as an iterative and question-driven process"
+  },
+  {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#univariate-exploratory-data-analysis",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#univariate-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "1. Univariate Exploratory Data Analysis",
+    "text": "1. Univariate Exploratory Data Analysis\n\n“What’s in my data?”\n\n\n1.1 Types of Variables\n\nNumerical (continuous, discrete)\nCategorical (nominal, ordinal)\nWhy variable types matter for analysis and visualization\n\n\n\n1.2 Descriptive Statistics\n\nCentral tendency: mean, median, mode\nDispersion: range, variance, standard deviation\nQuantiles and interquartile range (IQR)\nInterpreting statistics in a business context\n\n\n\n1.3 Distribution Analysis\n\nHistograms and density plots\nBoxplots and outliers\nSkewness and heavy tails\nTypical business examples:\n\nIncome and revenue distributions\nCustomer activity and usage data\n\n\n\n\n1.4 Categorical Variables\n\nFrequency tables\nRelative frequencies and percentages\nBar charts\nBusiness questions:\n\nWhich customer segment is largest?\nHow are products distributed across categories?"
+  },
+  {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#multivariate-exploratory-data-analysis",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#multivariate-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "2. Multivariate Exploratory Data Analysis",
+    "text": "2. Multivariate Exploratory Data Analysis\n\n“How do variables relate to each other?”\n\n\n2.1 Relationships Between Numerical Variables\n\nScatterplots\nCorrelation (Pearson, Spearman – intuition only)\nInterpreting correlation (and common pitfalls)\nBusiness examples:\n\nPrice and demand\nMarketing spend and sales\n\n\n\n\n2.2 Numerical and Categorical Variables\n\nGrouped summaries (means by category)\nBoxplots by group\nComparing distributions across segments\nBusiness examples:\n\nRevenue by customer segment\nSatisfaction scores by region\n\n\n\n\n2.3 Relationships Between Categorical Variables\n\nContingency tables\nPercentages and conditional distributions\nSimple association analysis\nBusiness examples:\n\nProduct category × return behavior\nChannel × conversion outcome\n\n\n\n\n2.4 From Patterns to Questions\n\nEDA does not “prove” causality\nUsing EDA to generate hypotheses\nDeciding what to analyze next"
+  },
+  {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#visual-exploratory-data-analysis",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#visual-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "3. Visual Exploratory Data Analysis",
+    "text": "3. Visual Exploratory Data Analysis\n\n“Seeing and communicating patterns”\n\n\n3.1 Why Visualization Matters\n\nHuman pattern recognition\nVisualization for exploration vs. presentation\nCommon visualization mistakes in business reports\n\n\n\n3.2 Choosing the Right Chart\n\nWhen to use:\n\nBar charts\nLine charts\nScatterplots\nBoxplots\n\nMatching chart types to questions and data types\n\n\n\n3.3 Grammar of Graphics (Conceptual)\n\nData\nAesthetics (x, y, color, size)\nGeometries (points, lines, bars)\nFacets (small multiples)\nWhy this idea scales well for complex analyses\n\n\n\n3.4 Visual EDA in Python with Plotly\n\nWhy Plotly for business analytics:\n\nInteractivity\nEasy exploration of subgroups\n\nExample visual analyses:\n\nScatterplot with color by category\nDistribution plots by segment\nInteractive filtering and hover information"
+  },
+  {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#putting-it-all-together",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#putting-it-all-together",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "4. Putting It All Together",
+    "text": "4. Putting It All Together\n\nEDA as an iterative workflow:\n\nSummarize variables\nExplore relationships\nVisualize and refine questions\n\nFrom raw data to business insight\nLimitations of EDA\nTransition to:\n\nStatistical modeling\nMachine learning\nDashboards and reporting"
+  },
+  {
+    "objectID": "notes/lecture_3_exploratory_data_analysis.html#key-takeaways",
+    "href": "notes/lecture_3_exploratory_data_analysis.html#key-takeaways",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nEDA helps you understand data before modeling it\nStart simple: univariate → multivariate → visual\nFocus on business questions, not just techniques\nVisualization is a core analytical skill, not just decoration"
+  },
+  {
     "objectID": "notes/lecture_9_analytics_case_examples.html",
     "href": "notes/lecture_9_analytics_case_examples.html",
     "title": "Notes: Session 9: Analytics case examples",
@@ -46,7 +95,7 @@
     "href": "notes/lecture_4_regression_1.html",
     "title": "Notes: Session 4: Regression I",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Note\n\n\n\nTODO\nexamples and contents: https://chatgpt.com/c/698d8ac8-a0a0-8394-8432-e644441ed348\nExample: https://github.com/collinprather/ISLR-Python/blob/master/Chapter%203%20Linear%20Regression.ipynb MAFS6010u_Regression see pairwise scatter and multiple linear regression.ipynb Check: https://github.com/lmarti/machine-learning/blob/master/02.%20Linear%20regression.ipynb\n\n\nProcess:\n… in this session, we apply the CRISP-DM, taking a foundational analytical technique as an example -&gt; modeling: selecting a model and refining it; or comparing different models\nUsing the Ames Housing dataset, students explore the relationship between living area and price, estimate a simple regression model, and then extend it to multiple predictors. The case illustrates how regression helps quantify marginal effects under ceteris paribus assumptions and highlights the difference between explanation and prediction in observational data.\nDataset: - mention Kaggle as a great source. Different datasets are available. It offers descriptive overviews (EDA), and links existing analyses (tab: code)\nExplicitly discuss “why do we focus on/start with regression? (boring/want ML/AI)” -&gt; simplest form of a model, where we can see principles (like fitting/overfitting/…) -&gt; sometimes, we may try to extract structured data from big data to run regression/ML models"
   },
   {
     "objectID": "notes/lecture_10_data_governance.html",
@@ -91,53 +140,46 @@
     "text": "Note\n\n\n\nTODO"
   },
   {
-    "objectID": "exercises/exercise_1.html",
-    "href": "exercises/exercise_1.html",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "",
-    "text": "NoteTODO\n\n\n\nTODO: test workflow (github/local jupyter notebook - do not save as qmd / or convert?!) run individual lines with shift+ENTER ??"
-  },
-  {
     "objectID": "exercises/exercise_1.html#preface",
     "href": "exercises/exercise_1.html#preface",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "1 Preface",
-    "text": "1 Preface\nThe purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.\nThe three main libraries are:\n\nNumPy\nPandas\nScikit-learn"
+    "title": "Analytics & Big Data",
+    "section": "Preface",
+    "text": "Preface\nThe purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.\nThe three main libraries are:\n\nNumPy\nPandas\nScikit-learn"
   },
   {
     "objectID": "exercises/exercise_1.html#numpy",
     "href": "exercises/exercise_1.html#numpy",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "2 NumPy",
-    "text": "2 NumPy\nNumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.\nAn introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School)."
+    "title": "Analytics & Big Data",
+    "section": "NumPy",
+    "text": "NumPy\nNumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.\nAn introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School)."
   },
   {
     "objectID": "exercises/exercise_1.html#pandas",
     "href": "exercises/exercise_1.html#pandas",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "3 Pandas",
-    "text": "3 Pandas\nPandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.\nIn Chapter 1, an introduction to using DataFrames with Pandas is given."
+    "title": "Analytics & Big Data",
+    "section": "Pandas",
+    "text": "Pandas\nPandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.\nIn Chapter 1, an introduction to using DataFrames with Pandas is given."
   },
   {
     "objectID": "exercises/exercise_1.html#scikit-learn",
     "href": "exercises/exercise_1.html#scikit-learn",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "4 Scikit-learn",
-    "text": "4 Scikit-learn\nScikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.\nThe structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:\n\n# Schematic example to illustrate a common estimator pattern.\n\nclass ModelEstimator(object):\n    def __init__(self, param1=\"pvalue1\"):\n        self.param1 = param1\n\n    def fit(self, X, y):\n        # X are input values, y are target values (supervised case)\n        # here the functionality for model estimation is implemented\n        return self\n\n    def predict(self, X):\n        # implementation of the predicting function\n        return X"
+    "title": "Analytics & Big Data",
+    "section": "Scikit-learn",
+    "text": "Scikit-learn\nScikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.\nThe structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:"
   },
   {
     "objectID": "exercises/exercise_1.html#dataframes-with-pandas",
     "href": "exercises/exercise_1.html#dataframes-with-pandas",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "5 DataFrames with Pandas",
-    "text": "5 DataFrames with Pandas\n\n5.1 DataFrames\nWhile a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.\nTODO: add illustration\nFor example, the following variable df is a dataframe containing three vectors\n\nimport pandas as pd\n\ndata = {\n    \"employee\": [\"John Doe\", \"Peter Gynn\", \"Jolie Hope\"],\n    \"salary\": [21000, 23400, 26800],\n    \"startdate\": [\"2010-11-1\", \"2008-3-25\", \"2007-3-14\"],\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe result of this is a dataframe named df. The numbers on the left side of the rows are labels and not the indexes. You can inspect the structure using the dtypes property\n\ndf.dtypes\n\nemployee       str\nsalary       int64\nstartdate      str\ndtype: object\n\n\nTo retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples\n\ndf.iloc[0,1] # element in first row, second column\ndf.iloc[:,0] # all rows, first column\ndf.iloc[1:3,1] # second to third row, second column\ndf.iloc[:,-2] # all rows, second column from the end\ndf.iloc[-1,:] # last row, all columns\ndf.iloc[[0, 2], [1, 2]] # first and third row, second to third column\n\n\n\n\n\n\n\n\nsalary\nstartdate\n\n\n\n\n0\n21000\n2010-11-1\n\n\n2\n26800\n2007-3-14\n\n\n\n\n\n\n\nPandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples\n\ndf.loc[1:2,:] # row with labels 1 and 2, all columns\ndf.loc[1:2] # same as above\ndf.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary\ndf.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary\ndf.loc[df.loc[:,'salary']&gt;23000] # all rows where salary&gt;23000, all columns\n# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe loc function can even be used to add a new row to a dataframe\n\ndf.loc[len(df)] = [\"Mike Tyson\", 19400, \"2018-6-27\"]\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n3\nMike Tyson\n19400\n2018-6-27\n\n\n\n\n\n\n\nA new column can be added via\n\ndf['age'] = [35, 42, 19, 43]\n\nA column can be deleted via the drop command\n\ndf = df.drop('age', axis = 1)\n\nTwo dataframes can be combined using the concat function. Combining two dataframes row-wise\n\ndf1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndf2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})\ndf3 = pd.concat([df1, df2])\nprint(df3)\n\n    A   B\n0  AA  BA\n1  AB  BB\n0  CA  DA\n1  CB  DB\n\n\nCombining two dataframes column-wise\n\ndfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})\ndfc = pd.concat([dfa, dfb], axis=1)\nprint(dfc)\n\n    A   B   C   D\n0  AA  BA  CA  DA\n1  AB  BB  CB  DB\n\n\n\n\n5.2 Import and Export\n\n# data = pd.read_csv(\"filename.csv\")\n# data = pd.read_excel(\"filename.xlsx\")\n# data.to_csv(\"output.csv\", index=False)\n\n\n\n5.3 Basic Statistical Functions for DataFrames\nA large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as sum and mean.\n\n# data.sum()\n\n\n# data.iloc[:, 1:7].cumsum()\n\n\n\n5.4 Common statistical functions in Pandas\n\n\n\nFunction\nDescription\n\n\n\n\ncount()\nNumber of non-null observations\n\n\nsum()\nSum of values\n\n\nmean()\nMean of values\n\n\nmedian()\nMedian of values\n\n\nmode()\nMode of values\n\n\nstd()\nStandard deviation of the values\n\n\nmin()\nMinimum value\n\n\nmax()\nMaximum value\n\n\nabs()\nAbsolute value\n\n\nprod()\nProduct of values\n\n\ncumsum()\nCumulative sum\n\n\ncumprod()\nCumulative product"
+    "title": "Analytics & Big Data",
+    "section": "DataFrames with Pandas",
+    "text": "DataFrames with Pandas\n\nDataFrames\nWhile a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.\nTODO: add illustration\nFor example, the following variable df is a dataframe containing three vectors\n\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe result of this is a dataframe named df. The numbers on the left side of the rows are labels and not the indexes. You can inspect the structure using the dtypes property\n\n\nemployee       str\nsalary       int64\nstartdate      str\ndtype: object\n\n\nTo retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples\n\n\n\n\n\n\n\n\n\nsalary\nstartdate\n\n\n\n\n0\n21000\n2010-11-1\n\n\n2\n26800\n2007-3-14\n\n\n\n\n\n\n\nPandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples\n\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe loc function can even be used to add a new row to a dataframe\n\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n3\nMike Tyson\n19400\n2018-6-27\n\n\n\n\n\n\n\nA new column can be added via\nA column can be deleted via the drop command\nTwo dataframes can be combined using the concat function. Combining two dataframes row-wise\n\n\n    A   B\n0  AA  BA\n1  AB  BB\n0  CA  DA\n1  CB  DB\n\n\nCombining two dataframes column-wise\n\n\n    A   B   C   D\n0  AA  BA  CA  DA\n1  AB  BB  CB  DB\n\n\n\n\nImport and Export\n\n\nBasic Statistical Functions for DataFrames\nA large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as sum and mean.\n\n\nCommon statistical functions in Pandas\n\n\n\nFunction\nDescription\n\n\n\n\ncount()\nNumber of non-null observations\n\n\nsum()\nSum of values\n\n\nmean()\nMean of values\n\n\nmedian()\nMedian of values\n\n\nmode()\nMode of values\n\n\nstd()\nStandard deviation of the values\n\n\nmin()\nMinimum value\n\n\nmax()\nMaximum value\n\n\nabs()\nAbsolute value\n\n\nprod()\nProduct of values\n\n\ncumsum()\nCumulative sum\n\n\ncumprod()\nCumulative product"
   },
   {
     "objectID": "exercises/exercise_1.html#example-case",
     "href": "exercises/exercise_1.html#example-case",
-    "title": "Exercise 1: Foundations of data analytics",
-    "section": "6 Example case",
-    "text": "6 Example case\n\nGet a dataset (nice datasource)\nImport and prepare\nProduce a notebook\n\n\n\n\n\n\n\nNoteTODO\n\n\n\nTODO: add a setup explanation + tests for available python version and packages\nTODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)\nTODO : add a summary"
+    "title": "Analytics & Big Data",
+    "section": "Example case",
+    "text": "Example case\n\nGet a dataset (nice datasource)\nImport and prepare\nProduce a notebook\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: add a setup explanation + tests for available python version and packages\nTODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)\nTODO : add a summary"
   },
   {
     "objectID": "slides/lecture_11_recap.html#learning-objectives",
@@ -1316,25 +1358,39 @@
     "text": "Logical Data Warehouse\nA “logical data warehouse” provides analytical company data without first physically moving it to a physical data warehouse.\nAs in a classic data warehouse, uniform views are provided for analysis purposes.\nWhile the data in the classic data warehouse comes from a “well-defined” physically uniform database, the “logical data warehouse” pulls data together from the data lake at the time of the query.\nAggregation is done just in time. Thus, the schema of the data warehouse is just virtual.\n\n\n\n\n\n\n\n\n\n— Source: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#your-instructor",
-    "href": "slides/lecture_0_orga.html#your-instructor",
+    "objectID": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
+    "href": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
     "title": "Analytics & Big Data",
-    "section": "Your Instructor",
-    "text": "Your Instructor\n\n\nProf. Dr. Gerit Wagner\nAcademic background\n\nDoctorate: Universität Regensburg\nPostdoctoral Fellow: HEC Montréal\nAssistant Professor: Otto-Friedrich-Universität Bamberg\nFull Professor: Frankfurt School of Finance & Management\n\n\n\n\n\n\n\n\nTODO\n\n\nResearch interests\n\nTODO\n\nTeaching interests\n\nTODO"
+    "section": "Prof. Dr. Gerit Wagner",
+    "text": "Prof. Dr. Gerit Wagner\n\n\nAcademic background\n\nUniversität Regensburg: Doctorate\nHEC Montréal: Postdoctoral Fellowship\nOtto-Friedrich-Universität Bamberg: Assistant Professor\nFrankfurt School of Finance & Management: Full Professor\n\nResearch interests\n\nOpen, agentic, and boundary-spanning work\nAI-supported knowledge synthesis\n\nTeaching interests\n\nProgramming and software engineering\nAnalytics and big data\nIT security\nDigital knowledge-intensive and platform-based work\nLiterature review methods"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#contents",
-    "href": "slides/lecture_0_orga.html#contents",
+    "objectID": "slides/lecture_0_orga.html#about-you",
+    "href": "slides/lecture_0_orga.html#about-you",
     "title": "Analytics & Big Data",
-    "section": "Contents",
-    "text": "Contents\n\n\n\n\n\nflowchart TB\n  subgraph Foundations\n    F1[Session 1: Foundations]\n  end\n\n  subgraph da[\" \"]\n\n  subgraph bd[\"Big Data\"]\n    BD7[Session 7: Big data]\n    BD8[Session 8: Exploratory analysis]\n    BD9[Session 9: Predictive analysis]\n  end\n  subgraph sd[\"Structured Data\"]\n    SD2[Session 2: Structuring and&lt;br&gt;preparing data]\n    SD34[Session 3/4: Descriptive analysis]\n    SD5[Session 5: Predictive analysis]\n    SD6[Session 6: Prescriptive analysis]\n  end\n\n  end\n\n  subgraph Organizations\n    O10[Session 10: Governance]\n  end\n\n  Foundations --&gt; da  --&gt; Organizations"
+    "section": "About you",
+    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1️⃣ Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where did you feel unprepared for a data-related task?\n\n\n\n2️⃣ Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3️⃣ What are your expectations for the course?"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#literature",
-    "href": "slides/lecture_0_orga.html#literature",
+    "objectID": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
+    "href": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
     "title": "Analytics & Big Data",
-    "section": "Literature",
-    "text": "Literature\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
+    "section": "Analytics & Big Data in the curriculum",
+    "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
+    "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
+    "title": "Analytics & Big Data",
+    "section": "Why Analytics (and This Course) Matter",
+    "text": "Why Analytics (and This Course) Matter\n\n💰 Finance — Algorithmic Trading at Renaissance Technologies\n\nInvestment decisions driven almost entirely by statistical models\nTiny predictive advantages scale across millions of trades\nData replaces intuition in high-stakes financial markets\n\n🎬 Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n⚾ Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#course-architecture",
+    "href": "slides/lecture_0_orga.html#course-architecture",
+    "title": "Analytics & Big Data",
+    "section": "Course Architecture",
+    "text": "Course Architecture\n\n\n\n\n\nflowchart TB\n\n%% --- Styling ---\nclassDef fsborder fill:#ffffff,color:#000000,stroke:#003366,stroke-width:2px;\n\n%% --- Foundations ---\nsubgraph Foundations\n    S1[\"Session 1:&lt;br&gt;Foundations of data analytics\"]\nend\n\n%% --- Data Analytics ---\nsubgraph da[\" \"]\n\n    subgraph bd[\"Big Data\"]\n        S8[\"Session 8:&lt;br&gt;Big data\"]\n        S9[\"Session 9:&lt;br&gt;Analytics case examples\"]\n    end\n\n    subgraph sd[\"Structured Data\"]\n        S2[\"Session 2:&lt;br&gt;Structuring and preparing data\"]\n        S3[\"Session 3:&lt;br&gt;Exploratory data analysis\"]\n        S4[\"Session 4:&lt;br&gt;Regression I\"]\n        S5[\"Session 5:&lt;br&gt;Regression II\"]\n        S6[\"Session 6:&lt;br&gt;Machine learning I\"]\n        S7[\"Session 7:&lt;br&gt;Machine learning II\"]\n    end\n\nend\n\nsubgraph Organizations\n    S10[\"Session 10:&lt;br&gt;Governance of data analytics\"]\nend\n\nFoundations --&gt; da --&gt; Organizations\n\nclass S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;"
   },
   {
     "objectID": "slides/lecture_0_orga.html#learning-objectives",
@@ -1344,25 +1400,32 @@
     "text": "Learning objectives\nKnowledge\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
   },
   {
-    "objectID": "slides/lecture_0_orga.html#materials",
-    "href": "slides/lecture_0_orga.html#materials",
+    "objectID": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
+    "href": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
     "title": "Analytics & Big Data",
-    "section": "Materials",
-    "text": "Materials\nSlides\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.\nWe invite you to contribute directly to our teaching materials by submitting an issue ♻️ or suggesting edits 🛠️.\n\nLiterature\n\nLiterature and complementary materials will be listed at the end of each lecture.\nMaterials will be made available whenever possible.\nReading of complementary materials depends on your interest and ambition."
+    "section": "What This Course Does Not Cover",
+    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
   },
   {
     "objectID": "slides/lecture_0_orga.html#course-organization",
     "href": "slides/lecture_0_orga.html#course-organization",
     "title": "Analytics & Big Data",
     "section": "Course organization",
-    "text": "Course organization\n\nExam: 60 minutes, 60 points (date: TBA/exam week)\nGroup project: written paper (40 pages), 60 points (end of module)\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: group sizes, how groups will form, …\nWorkload:\ntotal: 150h in-class: 44 remaining: self-study + group project\nAdministration\nPrerequisite: Successful completion of the “Introduction to Programming” module\nTODO: link syllabus"
+    "text": "Course organization\nWorkload:\n\nTotal: 150h\nIn-class: 44\nRemaining: self-study + group project\n\nAssessment\n\nExam: 60 minutes, 60 points (date: TBA/exam week)\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee TODO\n\nContact:\n\ng.wagner@fs.de\nOffice hours: booking page"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#materials",
+    "href": "slides/lecture_0_orga.html#materials",
+    "title": "Analytics & Big Data",
+    "section": "Materials",
+    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.\nYou can contribute directly to the teaching materials by submitting an issue ♻️ or suggesting edits 🛠️.\nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
   },
   {
     "objectID": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
     "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
     "title": "Analytics & Big Data",
     "section": "You may also be interested in …",
-    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics"
+    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: update thesis topics"
   },
   {
     "objectID": "slides/lecture_0_orga.html#references",
@@ -1579,7 +1642,7 @@
     "href": "preparation.html#preparation-overview",
     "title": "Preparation",
     "section": "Preparation overview",
-    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Analytics case examples\nCheck: Jupyter Exercise setup ?? (GitHub?)\n\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — Foundations of data analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 2 — Structuring and preparing data\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected (slides available)\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected (slides available)\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Analytics case examples\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
+    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Analytics case examples\nCheck: Jupyter Exercise setup ?? (GitHub?) -&gt; export of jupyter notebooks -&gt; generation of PDFs: local only?\n\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — Foundations of data analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Structuring and preparing data\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected (slides available)\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected (slides available)\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Analytics case examples\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
   },
   {
     "objectID": "preparation.html#cross-cutting-tasks",
@@ -1593,140 +1656,98 @@
     "href": "preparation.html#tbd",
     "title": "Preparation",
     "section": "TBD:",
-    "text": "TBD:\n\nTest exercise sheets: GitHub jupyterlab with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?\nExcerpts for teaching hub\nExercise sheets: solutions?!\nUpdate requirements (exam):\n\nshow and read code for the analysis\ninclude code reading and interpretation, maybe even pseudo-code writing in the exam (and exercises)\nsurveys during the lecture: vote for “additional exercise/more difficult exercise”\n\n\nWork through the different parts (easier to identify materials for a part instead of comparing multiple lectures for multiple topics)\nSlides:\n\nstart with teaching notes and schedule. Setup teaching-notes\nscreen and include relevant materials (e.g., Hopf, Prester; identify gaps)\nspecify learning goals\nPrepare and test-run\n\nExercise sheets:\n\nSpecify exercise goals and state typical exam questions\nIdentify suitable exercise materials (rossbach, hopf, prester)\nPrepare and test-run\nSetup teaching-notes\nSplit Data Analytics with Python.pdf and -&gt; jnb\n\nhttps://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)"
+    "text": "TBD:\n\nTest exercise sheets: GitHub jupyterlab with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?\nExcerpts for teaching hub\nExercise sheets: solutions?!\nUpdate requirements (exam):\n\nshow and read code for the analysis\ninclude code reading and interpretation, maybe even pseudo-code writing in the exam (and exercises)\nsurveys during the lecture: vote for “additional exercise/more difficult exercise”\n\n\nWork through the different parts (easier to identify materials for a part instead of comparing multiple lectures for multiple topics)\nSlides:\n\nstart with teaching notes and schedule. Setup teaching-notes\nscreen and include relevant materials (e.g., Hopf, Prester; identify gaps)\nspecify learning goals\nPrepare and test-run\n\nExercise sheets:\n\nSpecify exercise goals and state typical exam questions\nIdentify suitable exercise materials (rossbach, hopf, prester)\nPrepare and test-run\nSetup teaching-notes\nSplit Data Analytics with Python.pdf and -&gt; jnb\n\nhttps://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)\nSwitch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#navigation",
-    "href": "slides/lecture_4_regression_1.html#navigation",
+    "objectID": "slides/lecture_4_regression_1.html#learning-objectives",
+    "href": "slides/lecture_4_regression_1.html#learning-objectives",
     "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation\n4 Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.2 Regression"
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nUnderstand and interpret linear regression models, including how they represent relationships between variables, how coefficients are interpreted, how OLS estimates parameters, and how model quality is assessed (e.g., via R² and overfitting considerations).\nDescribe how regression models are implemented in Python, mapping conceptual components of the analytics process to their realization in scikit-learn."
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#definitions",
-    "href": "slides/lecture_4_regression_1.html#definitions",
+    "objectID": "slides/lecture_4_regression_1.html#process",
+    "href": "slides/lecture_4_regression_1.html#process",
     "title": "Analytics & Big Data",
-    "section": "Definitions",
-    "text": "Definitions\nA method is a composition of formalized principles that form the basis for a stringent calculation process.\nAn algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.\nIn the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.\nFitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.\nOverfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.\n\n\n— Source: Schutt/O’Neil (2013): Doing Data Science."
+    "section": "Process",
+    "text": "Process\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#traditional-analytics-process",
-    "href": "slides/lecture_4_regression_1.html#traditional-analytics-process",
+    "objectID": "slides/lecture_4_regression_1.html#case-house-prices-what-drives-property-value",
+    "href": "slides/lecture_4_regression_1.html#case-house-prices-what-drives-property-value",
     "title": "Analytics & Big Data",
-    "section": "Traditional Analytics Process",
-    "text": "Traditional Analytics Process"
+    "section": "Case: House Prices — What Drives Property Value?",
+    "text": "Case: House Prices — What Drives Property Value?\n\n\n\n\nHousing markets represent one of the largest asset classes in most economies. Residential real estate accounts for a substantial share of household wealth, and even small pricing errors can translate into large financial consequences.\nUnderstanding what drives house prices is therefore highly relevant:\n\nReal estate firms use pricing models to advise clients.\nBanks rely on valuation models to assess collateral and manage mortgage risk.\nInsurers and policymakers use property data for risk assessment, taxation, and urban planning.\n\nThis case illustrates how regression analysis transforms intuition about property value into systematic, evidence-based decision support across the housing ecosystem."
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#example-regression---fitting-the-model",
-    "href": "slides/lecture_4_regression_1.html#example-regression---fitting-the-model",
+    "objectID": "slides/lecture_4_regression_1.html#dataset-ames-housing-kaggle",
+    "href": "slides/lecture_4_regression_1.html#dataset-ames-housing-kaggle",
     "title": "Analytics & Big Data",
-    "section": "Example Regression - Fitting the model",
-    "text": "Example Regression - Fitting the model"
+    "section": "Dataset: Ames Housing (Kaggle)",
+    "text": "Dataset: Ames Housing (Kaggle)\nDataset: Ames Housing Dataset\nKaggle is a widely-used online platform for data science and machine learning. It provides:\n\nPublic datasets\nNotebooks for analysis\nCompetitions and community discussions\n\n\n\n \nTask (5–7 minutes)\n\nNavigate to the dataset page on Kaggle.\nSkim the dataset description.\nInspect the list of variables (features).\nOpen the data preview and:\n\nIdentify the target variable.\nFind at least three potential explanatory variables. \n\n\nBe prepared to briefly discuss:\n\nWhich variables you expect to be strong predictors of price."
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#example-regression---testing-the-model",
-    "href": "slides/lecture_4_regression_1.html#example-regression---testing-the-model",
+    "objectID": "slides/lecture_4_regression_1.html#section",
+    "href": "slides/lecture_4_regression_1.html#section",
     "title": "Analytics & Big Data",
-    "section": "Example Regression - Testing the model",
-    "text": "Example Regression - Testing the model"
+    "section": "…",
+    "text": "…\nWe skip data preparation for now…"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#data-errors-and-their-consequences",
-    "href": "slides/lecture_4_regression_1.html#data-errors-and-their-consequences",
+    "objectID": "slides/lecture_4_regression_1.html#regression-models-a-visual-illustration",
+    "href": "slides/lecture_4_regression_1.html#regression-models-a-visual-illustration",
     "title": "Analytics & Big Data",
-    "section": "Data Errors and their Consequences",
-    "text": "Data Errors and their Consequences"
+    "section": "Regression models: a visual illustration",
+    "text": "Regression models: a visual illustration\nβ₀ and β₁ move the line\n\nviewof beta0 = Inputs.range([-10, 10], {value: 0, step: 0.1, label: \"β₀ (intercept)\"})\nviewof beta1 = Inputs.range([-3, 3], {value: 1, step: 0.1, label: \"β₁ (slope)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn = 40\n\n// deterministic pseudo-random generator (so the dots don't change on refresh)\nmulberry32 = (a) =&gt; () =&gt; {\n  a |= 0; a = a + 0x6D2B79F5 | 0\n  let t = Math.imul(a ^ a &gt;&gt;&gt; 15, 1 | a)\n  t = t + Math.imul(t ^ t &gt;&gt;&gt; 7, 61 | t) ^ t\n  return ((t ^ t &gt;&gt;&gt; 14) &gt;&gt;&gt; 0) / 4294967296\n}\nrand = mulberry32(12345)\n\n// dataset: y = 2 + 0.7x + noise\nxs = Array.from({length: n}, (_, i) =&gt; -5 + i * (10/(n-1)))\ndata = xs.map(x =&gt; {\n  const noise = (rand() - 0.5) * 6\n  return { x, y: 2 + 0.7 * x + noise }\n})\n\n// handy extents\nxmin = Math.min(...data.map(d =&gt; d.x))\nxmax = Math.max(...data.map(d =&gt; d.x))\n\nfitLine = [\n  { x: xmin, y: beta0 + beta1 * xmin },\n  { x: xmax, y: beta0 + beta1 * xmax }\n]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlotData\n\n\n\nPlot.plot({\n  height: 420,\n  grid: true,\n  x: { label: \"x\" },\n  y: { label: \"y\" },\n  marks: [\n    Plot.dot(data, {x: \"x\", y: \"y\", r: 3}),\n    Plot.line(fitLine, {x: \"x\", y: \"y\", stroke: \"crimson\", strokeWidth: 3}),\n    Plot.ruleY([0])\n  ]\n})\n\n\n\n\n\n\n\n\n\nInputs.table(data, {columns: [\"x\", \"y\"]})"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#modern-analytics-process",
-    "href": "slides/lecture_4_regression_1.html#modern-analytics-process",
+    "objectID": "slides/lecture_4_regression_1.html#model-ols",
+    "href": "slides/lecture_4_regression_1.html#model-ols",
     "title": "Analytics & Big Data",
-    "section": "Modern Analytics Process",
-    "text": "Modern Analytics Process"
+    "section": "Model (OLS)",
+    "text": "Model (OLS)\nillustrate the optimization process"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#best-fit-vs.-best-generalization",
-    "href": "slides/lecture_4_regression_1.html#best-fit-vs.-best-generalization",
+    "objectID": "slides/lecture_4_regression_1.html#model-results",
+    "href": "slides/lecture_4_regression_1.html#model-results",
     "title": "Analytics & Big Data",
-    "section": "Best Fit vs. Best Generalization",
-    "text": "Best Fit vs. Best Generalization"
+    "section": "Model results",
+    "text": "Model results\ninterpret coefficients…."
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#over--and-underfitting",
-    "href": "slides/lecture_4_regression_1.html#over--and-underfitting",
+    "objectID": "slides/lecture_4_regression_1.html#r2-does-it-help-to-predict",
+    "href": "slides/lecture_4_regression_1.html#r2-does-it-help-to-predict",
     "title": "Analytics & Big Data",
-    "section": "Over- and Underfitting",
-    "text": "Over- and Underfitting\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
+    "section": "R^2 (does it help to predict?)",
+    "text": "R^2 (does it help to predict?)\nTBD: illustrate overfitting?!\nTBD: other considerations? (generalization/robustness, ethics, …)"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#the-bias-variance-tradeoff",
-    "href": "slides/lecture_4_regression_1.html#the-bias-variance-tradeoff",
+    "objectID": "slides/lecture_4_regression_1.html#todo-tbd.",
+    "href": "slides/lecture_4_regression_1.html#todo-tbd.",
     "title": "Analytics & Big Data",
-    "section": "The Bias-Variance Tradeoff",
-    "text": "The Bias-Variance Tradeoff\nThe prediction error is influenced by three components:\n\nError = Bias + Variance + Noise\n\n\nBias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.\nVariance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.\nTypically, there is a tradeoff between bias and variance.\nNoise is everything that arises from random variations in the data. It cannot be controlled."
+    "section": "TODO / TBD.",
+    "text": "TODO / TBD.\n\nInclude a prediction example (based on a formula, python code).\nAlso refer to the describe/predict/prescribe\nTBD: how can it be used to prescribe?"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#which-method-should-i-choose",
-    "href": "slides/lecture_4_regression_1.html#which-method-should-i-choose",
+    "objectID": "slides/lecture_4_regression_1.html#vocabulary",
+    "href": "slides/lecture_4_regression_1.html#vocabulary",
     "title": "Analytics & Big Data",
-    "section": "Which Method should I choose?",
-    "text": "Which Method should I choose?\nThe choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.\nIn the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.\nFor this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one."
+    "section": "Vocabulary",
+    "text": "Vocabulary\nA method is a composition of formalized principles that form the basis for a stringent calculation process.\nAn algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.\nIn the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.\nFitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.\nOverfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.\n\n\n— Source: Schutt/O’Neil (2013): Doing Data Science."
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#linear-world",
-    "href": "slides/lecture_4_regression_1.html#linear-world",
+    "objectID": "slides/lecture_4_regression_1.html#summary",
+    "href": "slides/lecture_4_regression_1.html#summary",
     "title": "Analytics & Big Data",
-    "section": "Linear World",
-    "text": "Linear World"
-  },
-  {
-    "objectID": "slides/lecture_4_regression_1.html#quadratic-world",
-    "href": "slides/lecture_4_regression_1.html#quadratic-world",
-    "title": "Analytics & Big Data",
-    "section": "Quadratic World",
-    "text": "Quadratic World"
-  },
-  {
-    "objectID": "slides/lecture_4_regression_1.html#nonlinear-world-type-1",
-    "href": "slides/lecture_4_regression_1.html#nonlinear-world-type-1",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 1)",
-    "text": "Nonlinear World (Type 1)"
-  },
-  {
-    "objectID": "slides/lecture_4_regression_1.html#nonlinear-world-type-2",
-    "href": "slides/lecture_4_regression_1.html#nonlinear-world-type-2",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 2)",
-    "text": "Nonlinear World (Type 2)"
-  },
-  {
-    "objectID": "slides/lecture_4_regression_1.html#nonlinear-world-type-3",
-    "href": "slides/lecture_4_regression_1.html#nonlinear-world-type-3",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 3)",
-    "text": "Nonlinear World (Type 3)"
-  },
-  {
-    "objectID": "slides/lecture_4_regression_1.html#nonlinear-world-type-4",
-    "href": "slides/lecture_4_regression_1.html#nonlinear-world-type-4",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 4)",
-    "text": "Nonlinear World (Type 4)"
-  },
-  {
-    "objectID": "slides/lecture_4_regression_1.html#the-data-analytics-process---technical-view",
-    "href": "slides/lecture_4_regression_1.html#the-data-analytics-process---technical-view",
-    "title": "Analytics & Big Data",
-    "section": "The Data Analytics Process - Technical View",
-    "text": "The Data Analytics Process - Technical View\n\n\n\n\n\n— Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/"
+    "section": "Summary",
+    "text": "Summary\n\nRegression is a core example of a structured, model-based analytics process: from business question to data, modeling, evaluation, and potential deployment.\nLinear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.\nIn practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.\n\nNote: more on python in the exercises"
   },
   {
     "objectID": "slides/lecture_1_foundations_of_data_analytics.html#why-is-modern-analytics-so-successful",
     "href": "slides/lecture_1_foundations_of_data_analytics.html#why-is-modern-analytics-so-successful",
     "title": "Analytics & Big Data",
     "section": "Why is Modern Analytics so Successful?",
-    "text": "Why is Modern Analytics so Successful?\n\nMore Data for the Analysis\nMore Computing Power\nNew Methods and Algorithms\nNew Analytics Processes"
+    "text": "Why is Modern Analytics so Successful?\n\nMore Data\nMore Computing Power\nNew Algorithms\nNew Analytics Processes"
   },
   {
     "objectID": "slides/lecture_1_foundations_of_data_analytics.html#internet-of-things-as-a-driver-of-data",
@@ -1862,158 +1883,60 @@
     "text": "Summary\n🎯 Learning Objective: Explain how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\n\nModern analytics is driven by data availability, computing power, and new methods.\nAnalytics evolves from descriptive to predictive and prescriptive insights.\nModern processes rely on automation, scalability, and data-driven decision making."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#first-application-of-data-analytics",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#first-application-of-data-analytics",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#learning-objectives",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#learning-objectives",
     "title": "Analytics & Big Data",
-    "section": "First Application of Data Analytics",
-    "text": "First Application of Data Analytics\nDr. John Snow’s Map of the 1854 London Cholera Outbreak\n\n\n\n— Source: http://www.udel.edu/johnmack/frec480/cholera"
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nDescribe key characteristics of variables and patterns between variables\nVisualize and interpret data sets\nExplain the role of exploratory data analysis in business decision-making"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#use-cases-of-data-analytics---examples",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#use-cases-of-data-analytics---examples",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#table-of-contents",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#table-of-contents",
     "title": "Analytics & Big Data",
-    "section": "Use Cases of Data Analytics - Examples",
-    "text": "Use Cases of Data Analytics - Examples"
+    "section": "Table of Contents",
+    "text": "Table of Contents"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#fundamental-skills-of-data-analytics",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#fundamental-skills-of-data-analytics",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#categorical",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#categorical",
     "title": "Analytics & Big Data",
-    "section": "Fundamental Skills of Data Analytics",
-    "text": "Fundamental Skills of Data Analytics"
+    "section": "categorical, …",
+    "text": "categorical, …"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#the-data-analytics-process",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#the-data-analytics-process",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#histogram-boxplot",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#histogram-boxplot",
     "title": "Analytics & Big Data",
-    "section": "The Data Analytics Process",
-    "text": "The Data Analytics Process\n\n\n\n— Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#need-for-knowledge-about-the-algorithms",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#need-for-knowledge-about-the-algorithms",
-    "title": "Analytics & Big Data",
-    "section": "Need for Knowledge about the Algorithms",
-    "text": "Need for Knowledge about the Algorithms\n\nThe distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.\n\n\n\n— Source: Dataiku - Data Science for Banking and Insurance"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#statistics-vs.-machine-learning",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#statistics-vs.-machine-learning",
-    "title": "Analytics & Big Data",
-    "section": "Statistics vs. Machine Learning",
-    "text": "Statistics vs. Machine Learning\n\nStatistics about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.\n\n\nMachine Learning (ML) aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works."
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#statistical-regression-vs.-machine-learning-algorithms",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#statistical-regression-vs.-machine-learning-algorithms",
-    "title": "Analytics & Big Data",
-    "section": "Statistical Regression vs. Machine Learning Algorithms",
-    "text": "Statistical Regression vs. Machine Learning Algorithms"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#explanation-vs.-prediction-i",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#explanation-vs.-prediction-i",
-    "title": "Analytics & Big Data",
-    "section": "Explanation vs. Prediction (I)",
-    "text": "Explanation vs. Prediction (I)\n\nQuestion 1: I have a headache. If I take an aspirin now, will it go away?\n\n\nQuestion 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?\n\n\nThe first case is a typical “predictive” question. You are calculating the effect of a hypothetical intervention.\n\n\nThe second case is a typical “explanatory” question. You are calculating the effect of a counterfactual intervention.\n\n\nWhich one is Explanation, which Prediction?\ncounterfactual : den Tatsachen widersprechend"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#explanation-vs.-prediction-ii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#explanation-vs.-prediction-ii",
-    "title": "Analytics & Big Data",
-    "section": "Explanation vs. Prediction (II)",
-    "text": "Explanation vs. Prediction (II)\nExplanation:\n\nExplanation is about understanding relationships and why certain things happen.\nIt requires an understanding of cause and effect.\nTests of causal hypotheses are fundamental.\nMeasures of significance are central.\nA good explanatory model may also have predictive power.\n\nPrediction:\n\nPrediction is about anticipating and forecasting what may happen in the future.\nCorrelations are important in this context (but correlation does not imply causation).\nTherefore, predictive models may have no real explanatory power.\nFor robust prediction, knowledge of causality is preferable.\nThe main task is to find a model that optimally approximates reality and minimizes overfitting.\nAccuracy is measured using out-of-sample data."
+    "section": "histogram, boxplot",
+    "text": "histogram, boxplot"
   },
   {
     "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation",
     "href": "slides/lecture_3_exploratory_data_analysis.html#correlation",
     "title": "Analytics & Big Data",
-    "section": "Correlation",
-    "text": "Correlation\n\n\n\nOrganic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!\n\n\n— Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)"
+    "section": "correlation",
+    "text": "correlation"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-i",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-i",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#plotly",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#plotly",
     "title": "Analytics & Big Data",
-    "section": "Correlation vs. Causality (I)",
-    "text": "Correlation vs. Causality (I)\n\nCorrelation: Two data series behave “similar”\nCausality: Principle of Cause and Effect"
+    "section": "plotly",
+    "text": "plotly"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-ii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-ii",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#limitations-of-eda",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#limitations-of-eda",
     "title": "Analytics & Big Data",
-    "section": "Correlation vs. Causality (II)",
-    "text": "Correlation vs. Causality (II)"
+    "section": "“limitations of EDA”",
+    "text": "“limitations of EDA”\n(descriptive vs. inferential statistics) - no model/explanation/prediction (correlation vs causality) - sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings) -&gt; starting point for building predictions (explanations, hypotheses, models, causality)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-iii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-iii",
+    "objectID": "slides/lecture_3_exploratory_data_analysis.html#summary",
+    "href": "slides/lecture_3_exploratory_data_analysis.html#summary",
     "title": "Analytics & Big Data",
-    "section": "Correlation vs. Causality (III)",
-    "text": "Correlation vs. Causality (III)\n\nBut: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing!"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#statistical-estimation",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#statistical-estimation",
-    "title": "Analytics & Big Data",
-    "section": "Statistical Estimation",
-    "text": "Statistical Estimation\n\n\n\n— Source: http://www.dxbydt.com/the-size-of-your-sample"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#exploratory-data-analysis",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#exploratory-data-analysis",
-    "title": "Analytics & Big Data",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\n\nIn Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.\n\n\nPeople are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.\n\n\nReasons for EDA:\n\n\ngain intuition about the data\nmake comparisons between distributions\nsanity checking (making sure the data is on the scale you expect, in the format you thought it should be)\nfind out where data is missing or if there are outliers\nsummarize the data\n\n\nExploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate."
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#univariate-non-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#univariate-non-graphical-eda",
-    "title": "Analytics & Big Data",
-    "section": "Univariate Non-Graphical EDA",
-    "text": "Univariate Non-Graphical EDA\n\nNon-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:\n\n\nmeasures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.\nmeasures of spread, i.e. variance, standard deviation, and interquartile range\nthe shape of the distribution\nthe existence of outliers\n\n\nThe characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value."
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#tests-on-outliers",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#tests-on-outliers",
-    "title": "Analytics & Big Data",
-    "section": "Tests on Outliers",
-    "text": "Tests on Outliers\n\nOutlier are data objects, which are clearly different from the others.\n\n\nUsually, the detection of outliers is an unsupervised process, because they are not known before analyses.\n\n\nIn the case of numerical attributes the Interquartil Range can be used. Here, an outlier is defined if the attribute lies outside the interval.\n\n\n\nUsually, k has a value between 1.5 and 3. The bigger k, the more different the values must be to be classified as outliers.\n\n\nCan be visualized by a Box-and-Whisker Plot:"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#handling-outliers",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#handling-outliers",
-    "title": "Analytics & Big Data",
-    "section": "Handling Outliers",
-    "text": "Handling Outliers\n\nOutlier have to be eliminated if they\n\nwould bias the analysis, e.g. if 9 persons have an age between 20 and 30 and the 10th person is 80 years old.\nare erogenous data, e.g. as a result of input errors or a defect sensor.\n\nIt is not always acceptable to drop an observation just because it is an outlier. They can be legitimate observations and are sometimes interesting ones. It’s important to investigate the nature of the outlier before deciding.\nIn those cases where you shouldn’t drop the outlier, one option is to try a transformation. Log transformations pull in high numbers. This can reduce the impact of a single point if the outlier is an independent variable."
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#univariate-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#univariate-graphical-eda",
-    "title": "Analytics & Big Data",
-    "section": "Univariate Graphical EDA",
-    "text": "Univariate Graphical EDA\n\nNon-graphical and graphical EDA methods complement each other, they have the same focus. While the non-graphical methods are quantitative and objective, they do not give a full picture of the data. The distribution of a variable tells us what values the variable takes and how often each value occurs.\n\n\nTypes of displays:\n\n\nfor numerical variables: Histograms, Boxplots, Quantile-normal plots, …\nfor categorical variables: Pie charts, Bar graphs, …"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#multivariate-non-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#multivariate-non-graphical-eda",
-    "title": "Analytics & Big Data",
-    "section": "Multivariate Non-Graphical EDA",
-    "text": "Multivariate Non-Graphical EDA\n\nMultivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables."
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#multivariate-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#multivariate-graphical-eda",
-    "title": "Analytics & Big Data",
-    "section": "Multivariate Graphical EDA",
-    "text": "Multivariate Graphical EDA\n\nMultivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types."
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#touring-diagram",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#touring-diagram",
-    "title": "Analytics & Big Data",
-    "section": "Touring Diagram",
-    "text": "Touring Diagram"
+    "section": "Summary",
+    "text": "Summary"
   },
   {
     "objectID": "exercises/exercise_7.html",
@@ -2041,7 +1964,7 @@
     "href": "exercises/exercise_2.html",
     "title": "Exercise 2: Structuring and preparing data",
     "section": "",
-    "text": "Note\n\n\n\nTODO\n\n\nThis text will appear across all versions of the document"
+    "text": "Note\n\n\n\nTODO\n\n\nThis text will appear across all versions of the document\n\nOnly display the directions content in the assignment document\n\n\nOnly display the answer in the solution or rubric documents\n\n\nOnly display the grading notes in the rubric document."
   },
   {
     "objectID": "exercises/exercise_5.html",
@@ -2076,7 +1999,7 @@
     "href": "syllabus.html#related-courses",
     "title": "Syllabus",
     "section": "Related courses",
-    "text": "Related courses\n\nCS109A: Introduction to Data Science and materials\nData Science for Business with syllabus\nUC Berkley: Data 100: Principles and Techniques of Data Science"
+    "text": "Related courses\n\nBig Data & Analytics/Rossbach\nBusiness Intelligence & Analytics (BIA), Hopf\nData-driven Decision Support (DSS), Hopf\nbusiness-analytics-fau, Hopf\nManaging Data at Scale (infs6024), Prester\nCS109A: Introduction to Data Science and materials\nData Science for Business with syllabus\nUC Berkley: Data 100: Principles and Techniques of Data Science"
   },
   {
     "objectID": "syllabus.html#recommended-literature",
@@ -2097,7 +2020,7 @@
     "href": "notes/lecture_0_orga.html",
     "title": "Notes: Orga",
     "section": "",
-    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often."
+    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)"
   },
   {
     "objectID": "notes/lecture_8_big_data.html",

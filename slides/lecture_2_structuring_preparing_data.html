@@ -11,7 +11,7 @@
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-23">
-  <title>Analytics &amp; Big Data – Analytics and Big Data</title>
+  <title>Analytics &amp; Big Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -202,6 +202,17 @@
     content: '🔗';
     background-image: none;
   }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -224,17 +235,6 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
   </style>
 </head>
 <body class="quarto-light">
@@ -245,8 +245,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="title-slide slide level1 center">
-  <h1>Analytics and Big Data</h1>
+<section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
+  <h1>Analytics &amp; Big Data</h1>
 
   <p></p> Session 2: Structuring and preparing data <p></p>
 
@@ -262,6 +262,54 @@
 <li><strong>Model</strong> analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data.</li>
 </ul>
 </section>
+<section>
+<section id="todo-integrate-this" class="title-slide slide level1 center">
+<h1>TODO: integrate this</h1>
+<pre><code>## First Application of Data Analytics
+
+Dr. John Snow's Map of the 1854 London Cholera Outbreak
+
+![](../images/slides_104.png)
+
+::: aside
+— Source: http://www.udel.edu/johnmack/frec480/cholera
+:::
+
+
+
+## Use Cases of Data Analytics - Examples
+
+![](../images/slides_98_new.png)
+
+
+
+
+## Fundamental Skills of Data Analytics
+
+![](../images/slides_105.png)
+
+
+
+
+## The Data Analytics Process
+
+![](../images/slides_106.png)
+
+::: aside
+— Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process
+:::
+
+
+
+
+## Need for Knowledge about the Algorithms
+
+&gt; The distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.
+
+::: aside
+— Source: Dataiku - Data Science for Banking and Insurance
+:::</code></pre>
+</section>
 <section id="navigation" class="slide level2">
 <h2>Navigation</h2>
 </section>
@@ -273,7 +321,7 @@
 <blockquote>
 <p>2.2 Online Analytical Processing (OLAP)</p>
 </blockquote>
-</section>
+</section></section>
 <section>
 <section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
 <h1>TODO</h1>
@@ -586,11 +634,11 @@
 <h2>Queries on the Star Schema</h2>
 <p><strong>Example:</strong></p>
 <p><strong>In which years were the most cars purchased by female customers in Hesse in the 1st quarter?</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
-<span id="cb1-2"><a></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
-<span id="cb1-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
-<span id="cb1-4"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
-<span id="cb1-5"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
+<span id="cb2-2"><a></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
+<span id="cb2-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
+<span id="cb2-4"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
+<span id="cb2-5"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top">
 <thead>
 <tr class="header">
