@@ -44,7 +44,7 @@ $(SLIDES_DIR)/%.html: $(SRC_SLIDES_DIR)/%.qmd _quarto.yml
 .PHONY: pdfs
 pdfs: decktape-warning $(SLIDES_PDF)
 
-# Pattern rule: one PDF depends on its HTML (which depends on the QMD)
+# Pattern rule: one PDF depends on its HTML
 $(SLIDES_DIR)/%.pdf: $(SLIDES_DIR)/%.html scripts/decktape.sh | docker-image
 	@echo "Rendering $@ (from $<)"
 	docker run --rm \
@@ -54,7 +54,20 @@ $(SLIDES_DIR)/%.pdf: $(SLIDES_DIR)/%.html scripts/decktape.sh | docker-image
 	  -w /project \
 	  $(DOCKER_IMAGE) \
 	  bash -lc '\
-	    ./scripts/decktape.sh "$<" "$@" && \
+	    python3 -m http.server 8000 --directory _site >/dev/null 2>&1 & \
+	    SERVER_PID=$$!; \
+	    sleep 2; \
+	    ./scripts/decktape.sh "http://localhost:8000/slides/$(notdir $<)" "$@" && \
+	    kill $$SERVER_PID; \
+	    \
+	    echo "Compressing PDF with Ghostscript..."; \
+	    gs -sDEVICE=pdfwrite \
+	       -dCompatibilityLevel=1.4 \
+	       -dPDFSETTINGS=/ebook \
+	       -dNOPAUSE -dQUIET -dBATCH \
+	       -sOutputFile="$@.compressed" "$@" && \
+	    mv "$@.compressed" "$@"; \
+	    \
 	    chown $$HOST_UID:$$HOST_GID "$@" \
 	  '
 
