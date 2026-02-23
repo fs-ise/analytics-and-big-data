@@ -5,4 +5,30 @@ format: html
 
 ::: callout-note
 TODO
+
+examples and contents: https://chatgpt.com/c/698d8ac8-a0a0-8394-8432-e644441ed348
+
+Example:
+https://github.com/collinprather/ISLR-Python/blob/master/Chapter%203%20Linear%20Regression.ipynb
+MAFS6010u_Regression see pairwise scatter and multiple linear regression.ipynb
+Check:
+https://github.com/lmarti/machine-learning/blob/master/02.%20Linear%20regression.ipynb
+
 :::
+
+
+Process:
+
+... in this session, we apply the CRISP-DM, taking a foundational analytical technique as an example
+-> modeling: selecting a model and refining it; or comparing different models
+
+
+Using the Ames Housing dataset, students explore the relationship between living area and price, estimate a simple regression model, and then extend it to multiple predictors. The case illustrates how regression helps quantify marginal effects under ceteris paribus assumptions and highlights the difference between explanation and prediction in observational data.
+
+Dataset:
+- mention Kaggle as a great source. Different datasets are available. It offers descriptive overviews (EDA), and links existing analyses (tab: code)
+
+
+Explicitly discuss "why do we focus on/start with regression? (boring/want ML/AI)"
+-> simplest form of a model, where we can see principles (like fitting/overfitting/...)
+-> sometimes, we may try to extract structured data from big data to run regression/ML models

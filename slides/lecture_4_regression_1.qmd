@@ -4,202 +4,347 @@ subtitle: "Regression I"
 section_label: "Structured Data"
 session: "Session 4"
 date: "2026-03-30"
+
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-# Learning objectives {data-state="hide-menubar"}
+## Learning objectives {data-state="hide-menubar"}
+
+- **Explain the stages of a model-based analytics workflow** using linear regression as an example.
+- **Understand and interpret linear regression models**, including how they represent relationships between variables, how coefficients are interpreted, how OLS estimates parameters, and how model quality is assessed (e.g., via R² and overfitting considerations).
+- **Describe how regression models are implemented in Python**, mapping conceptual components of the analytics process to their realization in scikit-learn.
 
 
-- A
-- B
-- C
+## Process {data-state="hide-menubar"}
+
+```{dot}
+digraph CRISPDM {
+  layout=neato;
+  overlap=false;
+  splines=true;
+  fontname="Helvetica";
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#f4f6fb",
+    fontname="Helvetica",
+    fontsize=20,
+    width=2.8,
+    height=1
+  ];
+
+  edge [
+    penwidth=1.6,
+    arrowsize=1.1
+  ];
+
+  // --- Circular positions ---
+  A [label="Business\nUnderstanding", pos="-2,2!"];
+  B [label="Data\nUnderstanding", pos="2,2!"];
+  C [label="Data\nPreparation", pos="3,0!"];
+  D [label="Modeling", pos="2,-2!"];
+  E [label="Evaluation", pos="-2,-2!"];
+  F [label="Deployment", pos="-4,0!", fillcolor="#e6f4ea"];
+
+  // --- Central Database ---
+  X [
+    label="Data",
+    shape=cylinder,
+    fillcolor="#e9f2ff",
+    fontsize=22,
+    width=1.9,
+    height=1.4,
+    pos="0,0!"
+  ];
+
+  // --- Main Flow ---
+  A -> B;
+  B -> C;
+  C -> D;
+  D -> E;
+  E -> F;
+
+  // --- True Bidirectional Iterations ---
+  B -> A;
+  A -> B;
+
+  D -> C;
+  C -> D;
+
+  E -> A;
+  A -> E;
+}
+```
+
+# Business understanding {data-stack-name="Business understanding"}
 
 
-# TODO {data-stack-name="TODO"}
+## Case: House Prices — What Drives Property Value?
+
+:::: {.columns}
+
+::: {.column width="35%"}
+![](../images/dan-cutler-hBNuXfc44qs-unsplash.jpg){width="480"}
+
+
+:::
+
+::: {.column width="60%"}
+
+Housing markets represent one of the largest asset classes in most economies. Residential real estate accounts for a substantial share of household wealth, and even small pricing errors can translate into large financial consequences.
+
+Understanding what drives house prices is therefore highly relevant:
+
+- **Real estate firms** use pricing models to advise clients.
+- **Banks** rely on valuation models to assess collateral and manage mortgage risk.
+- **Insurers and policymakers** use property data for risk assessment, taxation, and urban planning.
+
+This case illustrates how regression analysis transforms intuition about property value into systematic, evidence-based decision support across the housing ecosystem.
+
+:::
+
+::::
 
 
 
-## Navigation
+<!--
 
-4 Predictive Analytics
+## Use cases
+# Motivation {data-stack-name="Motivation"}
 
-4.1 Subject of Predictive Analytics
+          ## Example 1: House Prices — Introducing Regression
 
-4.2 The Analytics Process
+          **Core idea:**
+          Use the Ames Housing dataset to explain how regression helps identify and quantify the drivers of house prices.
 
-4.3 Data Preparation
+          **Business question:**
+          Which property characteristics (e.g., size, quality, age, neighborhood) explain variation in selling prices?
 
-4.4 Methods, Algorithms and Applications
+          **Dataset:**
+          Ames Housing Dataset
+          - Kaggle: https://www.kaggle.com/datasets/prevek18/ames-housing-dataset
+          - Documentation: http://jse.amstat.org/v19n3/decock/DataDocumentation.txt
 
-4.4.1 Classification
+          **Teaching logic:**
+          1. Start with a scatterplot (living area vs. price).
+          2. Estimate a simple regression (price ~ size).
+          3. Extend to multiple regression (add quality, garage, age, location).
+          4. Discuss interpretation, model fit, and assumptions.
 
-4.4.2 Regression
+          **Learning goals:**
+          - Interpret coefficients economically (marginal effects).
+          - Understand “ceteris paribus.”
+          - Distinguish explanation vs. prediction.
+          - Recognize limits of causal interpretation.
+
+          This example provides an intuitive, decision-relevant setting that can later be expanded to transformations, diagnostics, and model validation.
+-->
+
+# Data understanding {data-stack-name="Data understanding"}
+
+
+## Dataset: Ames Housing (Kaggle)
+
+**Dataset:**
+[Ames Housing Dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
+
+**Kaggle** is a widely-used online platform for data science and machine learning.
+It provides:
+
+- Public datasets
+- Notebooks for analysis
+- Competitions and community discussions
+
+. . .
+
+{{< countdown "5:30" bottom=10 right=0 >}}
+
+**Task (5–7 minutes)**
+
+1. Navigate to the dataset page on Kaggle.
+2. Skim the dataset description.
+3. Inspect the list of variables (features).
+4. Open the data preview and:
+   - Identify the target variable.
+   - Find at least three potential explanatory variables.
+<!--   - Look for variables that may require cleaning or transformation. -->
+
+Be prepared to briefly discuss:
+
+- Which variables you expect to be strong predictors of price.
+
+
+# Data preparation {data-stack-name="Data understanding"}
+
+## ...
+
+We skip data preparation for now...
+
+
+# Modeling {data-stack-name="Modeling"}
 
 
 
+## Regression models: a visual illustration
 
-## Definitions
+**β₀ and β₁ move the line**
 
-A method is a composition of formalized principles that form the basis for a stringent calculation process.
+```{ojs}
+////| panel: input
+////| layout-ncol: 2
 
-An algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.
+viewof beta0 = Inputs.range([-10, 10], {value: 0, step: 0.1, label: "β₀ (intercept)"})
+viewof beta1 = Inputs.range([-3, 3], {value: 1, step: 0.1, label: "β₁ (slope)"})
+```
 
-In the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.
+```{ojs}
+n = 40
 
-Fitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.
+// deterministic pseudo-random generator (so the dots don't change on refresh)
+mulberry32 = (a) => () => {
+  a |= 0; a = a + 0x6D2B79F5 | 0
+  let t = Math.imul(a ^ a >>> 15, 1 | a)
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t
+  return ((t ^ t >>> 14) >>> 0) / 4294967296
+}
+rand = mulberry32(12345)
 
-Overfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.
+// dataset: y = 2 + 0.7x + noise
+xs = Array.from({length: n}, (_, i) => -5 + i * (10/(n-1)))
+data = xs.map(x => {
+  const noise = (rand() - 0.5) * 6
+  return { x, y: 2 + 0.7 * x + noise }
+})
+
+// handy extents
+xmin = Math.min(...data.map(d => d.x))
+xmax = Math.max(...data.map(d => d.x))
+
+fitLine = [
+  { x: xmin, y: beta0 + beta1 * xmin },
+  { x: xmax, y: beta0 + beta1 * xmax }
+]
+```
+
+::: {.panel-tabset}
+
+### Plot
+
+```{ojs}
+Plot.plot({
+  height: 420,
+  grid: true,
+  x: { label: "x" },
+  y: { label: "y" },
+  marks: [
+    Plot.dot(data, {x: "x", y: "y", r: 3}),
+    Plot.line(fitLine, {x: "x", y: "y", stroke: "crimson", strokeWidth: 3}),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+### Data
+
+```{ojs}
+Inputs.table(data, {columns: ["x", "y"]})
+```
+
+:::
+
+
+## Model (OLS)
+
+illustrate the optimization process
+
+## Model results
+
+interpret coefficients....
+
+
+<!--
+# Simple regression {data-stack-name="Simple regression"}
+
+      # Simple regression {data-stack-name="Simple regression"}
+
+      ## Example
+
+
+              ## Example Regression - Fitting the model
+
+              ![](../images/slides_121.png)
+
+
+              ## Example Regression - Testing the model
+
+              ![](../images/slides_123.png)
+
+      ## Formula
+
+      TBD: fit/R^2 (understanding how low/high R^2 helps/hinders prediction)
+
+      # OLS {data-stack-name="OLS"}
+
+      ## Visual?
+
+      ## Optimization
+
+      # Multiple regression {data-stack-name="Multiple regression"}
+
+      ## Example
+
+      ## Formula / visual
+
+      # Python {data-stack-name="Python"}
+
+      ## scikit learn
+-->
+
+
+# Evaluation {data-stack-name="Evaluation"}
+
+## R^2 (does it help to predict?)
+
+TBD: illustrate overfitting?!
+
+TBD: other considerations? (generalization/robustness, ethics, ...)
+
+
+
+# Deployment {data-stack-name="Deployment"}
+
+
+## TODO / TBD.
+
+- Include a prediction example (based on a formula, python code).
+- Also refer to the describe/predict/prescribe
+- TBD: how can it be used to prescribe?
+
+## Vocabulary {data-state="hide-menubar"}
+
+A **method** is a composition of formalized principles that form the basis for a stringent calculation process.
+
+An **algorithm** is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.
+
+In the given context, a **model** is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.
+
+**Fitting a model** means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.
+
+**Overfitting** is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.
 
 ::: aside
 — Source: Schutt/O’Neil (2013): Doing Data Science.
 :::
 
+## Summary {data-state="hide-menubar"}
 
+- Regression is a core example of a structured, model-based analytics process: from business question to data, modeling, evaluation, and potential deployment.
+- Linear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.
+- In practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.
 
 
-## Traditional Analytics Process
-
-![](../images/slides_117.png)
-
-
-
-
-## Example Regression - Fitting the model
-
-![](../images/slides_121.png)
-
-
-
-
-## Example Regression - Testing the model
-
-![](../images/slides_123.png)
-
-
-
-
-## Data Errors and their Consequences
-
-![](../images/slides_125_new.png)
-
-
-
-
-## Modern Analytics Process
-
-![](../images/slides_126_new.png)
-
-
-
-
-## Best Fit vs. Best Generalization
-
-![](../images/slides_129.png)
-
-
-
-
-## Over- and Underfitting
-
-![](../images/slides_131.png)
-
-> Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
-
-::: {.notes}
-
-Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
-Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55
-
-:::
-
-
-
-
-## The Bias-Variance Tradeoff
-
-The prediction error is influenced by three components:
-
-> Error = Bias + Variance + Noise
-
-- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
-
-- Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
-
-- Typically, there is a tradeoff between bias and variance.
-
-- Noise is everything that arises from random variations in the data. It cannot be controlled.
-
-![](../images/slides_132_new.png)
-
-
-
-
-<!--
-## Summarizing: Statistics vs. Data Analytics
-
-![](../images/slides_133_new.png)
-
--->
-
-
-
-## Which Method should I choose?
-
-The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.
-
-In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.
-
-For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.
-
-
-
-
-## Linear World
-
-![](../images/slides_134_new.png)
-
-
-
-
-## Quadratic World
-
-![](../images/slides_135_new.png)
-
-
-
-
-## Nonlinear World (Type 1)
-
-![](../images/slides_136_new.png)
-
-
-
-
-## Nonlinear World (Type 2)
-
-![](../images/slides_137_new.png)
-
-
-
-
-## Nonlinear World (Type 3)
-
-![](../images/slides_138_new.png)
-
-
-
-
-## Nonlinear World (Type 4)
-
-![](../images/slides_139_new.png)
-
-
-
-
-## The Data Analytics Process - Technical View
-
-![](../images/slides_133.png)
-
-::: aside
-— Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/
-:::
-
+Note: more on python in the exercises
