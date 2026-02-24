@@ -6,14 +6,131 @@ session: "Session 5"
 date: "2026-04-14"
 ---
 
-# Learning objectives {data-state="hide-menubar"}
+## Learning objectives {data-state="hide-menubar"}
+
+- **Refine and critically assess multiple regression models**, explaining how linear regression extends to multiple predictors and when results can be trusted given key assumptions.
+- **Distinguish between inference- and prediction-oriented modeling**, identifying whether a business problem requires causal explanation or predictive accuracy and outlining the implications for model use.
+- **Explain logistic regression as a classification model and bridge to machine learning**, describing how it models binary outcomes as probabilities and supports predictive analytics.
+
+# Refining the model {data-stack-name="Refining the model"}
+
+## Mulitple regression
+
+example + ceteris paribus
+
+## Assumptions
+
+list, illustrate how transformations could model non-linear relationships
 
 
-- A
-- B
-- C
+Transition: we may accept some violations (e.g., multicollinearity) when we are interested in prediction (statisticians and economists: headache when the goal is to make inferences on individual effects)
+
+# Explanation ↔ prediction {data-stack-name="Explanation ↔ prediction"}
+
+## Correlation vs causality / explanation vs prediction
+
+Example: more garages → higher price?
 
 
-# TODO {data-stack-name="TODO"}
+# Regression → Machine learning {data-stack-name="Regression → Machine learning"}
 
-Logistic regression (illustrating the transition from regression to ML; also: fit, train/test?)
+## illustration
+
+business goal: predict defaults or quick-sales (binary outcome; need to select an appropriate model)
+
+## logistic regression...
+
+## classification and evaluation metrics (confusion matrix...)
+
+## similarity to machine learning
+
+
+<!--
+        Logistic regression (illustrating the transition from regression to ML; also: fit, train/test?)
+
+        ## Logistic regression (I)
+
+        > Logistic regression is a regression model where the dependent variable is categorical. The classical logistic regression is a binary classifier, where the dependent variable has two states. The output of a logistic regression model ranges between 0 and 1.
+
+        > Logistic regression uses the logistic function (or Sigmoid function) because it can take an input with any value from negative to positive infinity, whereas the output always takes values between zero and one and hence is interpretable as a probability.
+
+        > It is defined as:
+
+        ![](../images/slides_250.png)
+
+
+
+
+        ## Logistic regression (II)
+
+        > If we set
+
+        > the logistic function can now be written as:
+
+        > We interpret F(x) as the conditional probability that the class attribute has the value 1 with the given input vector x.
+
+        > The coefficients ß0 and ß can be estimated via Maximum Likelihood Estimation.
+
+        > The parameter ß0 represents the unconditional probability of "Y=1" knowing nothing about the feature vector x.
+
+        > The parameter vector β defines the slope of the logit function. It determines the extent to which certain features contribute for increased or decreased likelihood to "Y=1".
+
+        > The output of a logistic model is a probability. To use this for classification purposes:
+
+        > If the predicted probability is > 0.5 the label is 1
+
+        > and otherwise 0.
+
+        ::: aside
+        — Source: odd = Chance
+        :::
+
+
+
+        ## TBD: could this fit in here?
+
+        correlation vs causality example: nr of firefighters vs damage (insurance context)
+
+
+        ## Explanation vs. Prediction (I)
+
+        > Question 1: I have a headache. If I take an aspirin now, will it go away?
+
+        > Question 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?
+
+        > The first case is a typical "predictive" question. You are calculating the effect of a hypothetical intervention.
+
+        > The second case is a typical "explanatory" question. You are calculating the effect of a counterfactual intervention.
+
+        ::: {.notes}
+
+        Which one is Explanation, which Prediction?
+
+        counterfactual : den Tatsachen widersprechend
+
+        :::
+
+        ## Explanation vs. Prediction (II)
+
+        **Explanation:**
+
+        - Explanation is about understanding relationships and why certain things happen.
+        - It requires an understanding of cause and effect.
+        - Tests of causal hypotheses are fundamental.
+        - Measures of significance are central.
+        - A good explanatory model may also have predictive power.
+
+        **Prediction:**
+
+        - Prediction is about anticipating and forecasting what may happen in the future.
+        - Correlations are important in this context (but correlation does not imply causation).
+        - Therefore, predictive models may have no real explanatory power.
+        - For robust prediction, knowledge of causality is preferable.
+        - The main task is to find a model that optimally approximates reality and minimizes overfitting.
+        - Accuracy is measured using out-of-sample data.
+-->
+
+
+## Summary {data-state="hide-menubar"}
+
+- TODO

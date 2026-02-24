@@ -6,3 +6,18 @@ format: html
 ::: callout-note
 TODO
 :::
+
+Goal: Deepen linear regression and surface modeling tensions.
+
+You are not just teaching “more regression.”
+You are teaching: How modeling goals shape methodological choices (or how they interact).
+
+
+Close with a framing slide:
+- Analytics is not one method. It is a toolbox shaped by goals.
+Then summarize:
+- Regression for understanding
+- Regression for prediction
+- Logistic regression as bridge to ML
+And preview:
+- Next: more complex machine learning models.
