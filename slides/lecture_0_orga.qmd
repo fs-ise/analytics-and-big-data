@@ -48,28 +48,26 @@ Please answer the three questions.
 Then choose **one** optional area where you would like to share a bit more.
 
 
-### 1️⃣ Have you worked in an industry role or completed an internship with an analytics focus?
+### 1. Have you worked in an industry role or completed an internship with an analytics focus?
 
 Optional:
 
 - What was something that felt **very useful** in your analytics work?
-- Or where did you feel **unprepared** for a data-related task?
+- Or where would you have liked to be **better prepared** for a data-related task?
 
-### 2️⃣ Which analytics tools or programming languages have you used?
+### 2. Which analytics tools or programming languages have you used?
 
 Optional:
 
-- What was a particularly interesting analytics challenge you encountered?
-- Or a tool you found especially powerful or surprising?
+- What was a particularly interesting analytics **challenge** you encountered?
+- Or a tool you found especially powerful or **surprising**?
 
-### 3️⃣ What are your expectations for the course?
+### 3. What are your expectations for the course?
 
 <!--
 - What do you want to be able to do by the end of this course?
 - What would make this course “worth it” for you?
 -->
-
-
 
 
 
@@ -82,11 +80,38 @@ Optional:
 
 Prerequisite: Completed the "Introduction to Programming" module.
 
+## What exactly is "analytics"?
+
+Business analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007).
+
+<!--
+TODO (ideally referring to a textbook?)
+
+Analytics is the systematic use of data, statistical methods, and digital tools to generate insights that support better business decisions.
+
+If you want it slightly more detailed (but still accessible):
+
+Analytics refers to the process of collecting, processing, and analyzing data to identify patterns, explain outcomes, predict future developments, and improve decision-making in organizations.
+
+You can break it down into four core elements:
+
+Data – Raw facts (e.g., sales numbers, customer clicks, costs).
+
+Methods – Statistical models, algorithms, and visualizations.
+
+Technology – Software tools like spreadsheets, databases, BI systems.
+
+Decision-making – Turning insights into business action.
+-->
+
 
 ## Why Analytics (and This Course) Matter
 
 
 <!-- **Three Examples of Analytics in Action** -->
+
+
+TODO: https://en.wikipedia.org/wiki/Princeton_Newport_Partners (black-scholes)
 
 
 **💰 Finance — Algorithmic Trading at Renaissance Technologies**
@@ -191,29 +216,30 @@ class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
 
 
 
-# Getting started  {data-stack-name="Getting started"}
+# Course logistics  {data-stack-name="Logistics"}
 
-## Course organization
+## Course logistics
 
-Workload:
-
-- Total: 150h
-- In-class: 44
-- Remaining: self-study + group project
+Workload: 150h total (44h in class, remaining: self-study and group project)
 
 Assessment
 
-- Exam: 60 minutes, 60 points (date: TBA/exam week)
+- Exam: 60 minutes, 60 points
 - Group project: written paper (40 pages), 60 points (end of module)
 
 Sessions:
 
-- See **TODO**
+- See overview in Canvas
 
 Contact:
 
 - [g.wagner@fs.de](mailto:g.wagner@fs.de)
 - Office hours: [booking page](https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&ismsaljsauthenabled)
+
+Individual circumstances
+
+If you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early.
+We will work together to find a fair and workable solution.
 
 <!--
 - Format
