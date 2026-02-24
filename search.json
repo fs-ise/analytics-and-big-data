@@ -4,7 +4,7 @@
     "href": "notes/lecture_5_regression_2.html",
     "title": "Notes: Session 5: Regression II",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Note\n\n\n\nTODO\n\n\nGoal: Deepen linear regression and surface modeling tensions.\nYou are not just teaching “more regression.” You are teaching: How modeling goals shape methodological choices (or how they interact).\nClose with a framing slide: - Analytics is not one method. It is a toolbox shaped by goals. Then summarize: - Regression for understanding - Regression for prediction - Logistic regression as bridge to ML And preview: - Next: more complex machine learning models."
   },
   {
     "objectID": "notes/lecture_3_exploratory_data_analysis.html",
@@ -1369,7 +1369,7 @@
     "href": "slides/lecture_0_orga.html#about-you",
     "title": "Analytics & Big Data",
     "section": "About you",
-    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1️⃣ Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where did you feel unprepared for a data-related task?\n\n\n\n2️⃣ Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3️⃣ What are your expectations for the course?"
+    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1. Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where would you have liked to be better prepared for a data-related task?\n\n\n\n2. Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3. What are your expectations for the course?"
   },
   {
     "objectID": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
@@ -1379,11 +1379,18 @@
     "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
   },
   {
+    "objectID": "slides/lecture_0_orga.html#what-exactly-is-analytics",
+    "href": "slides/lecture_0_orga.html#what-exactly-is-analytics",
+    "title": "Analytics & Big Data",
+    "section": "What exactly is “analytics”?",
+    "text": "What exactly is “analytics”?\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
+  },
+  {
     "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
     "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
     "title": "Analytics & Big Data",
     "section": "Why Analytics (and This Course) Matter",
-    "text": "Why Analytics (and This Course) Matter\n\n💰 Finance — Algorithmic Trading at Renaissance Technologies\n\nInvestment decisions driven almost entirely by statistical models\nTiny predictive advantages scale across millions of trades\nData replaces intuition in high-stakes financial markets\n\n🎬 Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n⚾ Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
+    "text": "Why Analytics (and This Course) Matter\n\nTODO: https://en.wikipedia.org/wiki/Princeton_Newport_Partners (black-scholes)\n💰 Finance — Algorithmic Trading at Renaissance Technologies\n\nInvestment decisions driven almost entirely by statistical models\nTiny predictive advantages scale across millions of trades\nData replaces intuition in high-stakes financial markets\n\n🎬 Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n⚾ Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
   },
   {
     "objectID": "slides/lecture_0_orga.html#course-architecture",
@@ -1407,11 +1414,11 @@
     "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
   },
   {
-    "objectID": "slides/lecture_0_orga.html#course-organization",
-    "href": "slides/lecture_0_orga.html#course-organization",
+    "objectID": "slides/lecture_0_orga.html#course-logistics-1",
+    "href": "slides/lecture_0_orga.html#course-logistics-1",
     "title": "Analytics & Big Data",
-    "section": "Course organization",
-    "text": "Course organization\nWorkload:\n\nTotal: 150h\nIn-class: 44\nRemaining: self-study + group project\n\nAssessment\n\nExam: 60 minutes, 60 points (date: TBA/exam week)\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee TODO\n\nContact:\n\ng.wagner@fs.de\nOffice hours: booking page"
+    "section": "Course logistics",
+    "text": "Course logistics\nWorkload: 150h total (44h in class, remaining: self-study and group project)\nAssessment\n\nExam: 60 minutes, 60 points\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee overview in Canvas\n\nContact:\n\ng.wagner@fs.de\nOffice hours: booking page\n\nIndividual circumstances\nIf you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution."
   },
   {
     "objectID": "slides/lecture_0_orga.html#materials",
@@ -1937,6 +1944,69 @@
     "title": "Analytics & Big Data",
     "section": "Summary",
     "text": "Summary"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#learning-objectives",
+    "href": "slides/lecture_5_regression_2.html#learning-objectives",
+    "title": "Analytics & Big Data",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nRefine and critically assess multiple regression models, explaining how linear regression extends to multiple predictors and when results can be trusted given key assumptions.\nDistinguish between inference- and prediction-oriented modeling, identifying whether a business problem requires causal explanation or predictive accuracy and outlining the implications for model use.\nExplain logistic regression as a classification model and bridge to machine learning, describing how it models binary outcomes as probabilities and supports predictive analytics."
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#mulitple-regression",
+    "href": "slides/lecture_5_regression_2.html#mulitple-regression",
+    "title": "Analytics & Big Data",
+    "section": "Mulitple regression",
+    "text": "Mulitple regression\nexample + ceteris paribus"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#assumptions",
+    "href": "slides/lecture_5_regression_2.html#assumptions",
+    "title": "Analytics & Big Data",
+    "section": "Assumptions",
+    "text": "Assumptions\nlist, illustrate how transformations could model non-linear relationships\nTransition: we may accept some violations (e.g., multicollinearity) when we are interested in prediction (statisticians and economists: headache when the goal is to make inferences on individual effects)"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#correlation-vs-causality-explanation-vs-prediction",
+    "href": "slides/lecture_5_regression_2.html#correlation-vs-causality-explanation-vs-prediction",
+    "title": "Analytics & Big Data",
+    "section": "Correlation vs causality / explanation vs prediction",
+    "text": "Correlation vs causality / explanation vs prediction\nExample: more garages → higher price?"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#illustration",
+    "href": "slides/lecture_5_regression_2.html#illustration",
+    "title": "Analytics & Big Data",
+    "section": "illustration",
+    "text": "illustration\nbusiness goal: predict defaults or quick-sales (binary outcome; need to select an appropriate model)"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#logistic-regression",
+    "href": "slides/lecture_5_regression_2.html#logistic-regression",
+    "title": "Analytics & Big Data",
+    "section": "logistic regression…",
+    "text": "logistic regression…"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#classification-and-evaluation-metrics-confusion-matrix",
+    "href": "slides/lecture_5_regression_2.html#classification-and-evaluation-metrics-confusion-matrix",
+    "title": "Analytics & Big Data",
+    "section": "classification and evaluation metrics (confusion matrix…)",
+    "text": "classification and evaluation metrics (confusion matrix…)"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#similarity-to-machine-learning",
+    "href": "slides/lecture_5_regression_2.html#similarity-to-machine-learning",
+    "title": "Analytics & Big Data",
+    "section": "similarity to machine learning",
+    "text": "similarity to machine learning"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#summary",
+    "href": "slides/lecture_5_regression_2.html#summary",
+    "title": "Analytics & Big Data",
+    "section": "Summary",
+    "text": "Summary\n\nTODO"
   },
   {
     "objectID": "exercises/exercise_7.html",

@@ -149,6 +149,17 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -158,17 +169,6 @@
   div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
     content: '🔒';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
     background-image: none;
   }
   div.callout-objective.callout {
@@ -182,15 +182,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -249,23 +249,23 @@
 <h2>About you</h2>
 <p>Please answer the three questions. Then choose <strong>one</strong> optional area where you would like to share a bit more.</p>
 <section id="have-you-worked-in-an-industry-role-or-completed-an-internship-with-an-analytics-focus" class="level3">
-<h3>1️⃣ Have you worked in an industry role or completed an internship with an analytics focus?</h3>
+<h3>1. Have you worked in an industry role or completed an internship with an analytics focus?</h3>
 <p>Optional:</p>
 <ul>
 <li>What was something that felt <strong>very useful</strong> in your analytics work?</li>
-<li>Or where did you feel <strong>unprepared</strong> for a data-related task?</li>
+<li>Or where would you have liked to be <strong>better prepared</strong> for a data-related task?</li>
 </ul>
 </section>
 <section id="which-analytics-tools-or-programming-languages-have-you-used" class="level3">
-<h3>2️⃣ Which analytics tools or programming languages have you used?</h3>
+<h3>2. Which analytics tools or programming languages have you used?</h3>
 <p>Optional:</p>
 <ul>
-<li>What was a particularly interesting analytics challenge you encountered?</li>
-<li>Or a tool you found especially powerful or surprising?</li>
+<li>What was a particularly interesting analytics <strong>challenge</strong> you encountered?</li>
+<li>Or a tool you found especially powerful or <strong>surprising</strong>?</li>
 </ul>
 </section>
 <section id="what-are-your-expectations-for-the-course" class="level3">
-<h3>3️⃣ What are your expectations for the course?</h3>
+<h3>3. What are your expectations for the course?</h3>
 <!--
 - What do you want to be able to do by the end of this course?
 - What would make this course “worth it” for you?
@@ -282,9 +282,33 @@
 <p><img src="../images/curriculum.png" width="600" style="display:block; margin:auto;"></p>
 <p>Prerequisite: Completed the “Introduction to Programming” module.</p>
 </section>
+<section id="what-exactly-is-analytics" class="slide level2">
+<h2>What exactly is “analytics”?</h2>
+<p>Business analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport &amp; Harris 2007).</p>
+<!--
+TODO (ideally referring to a textbook?)
+
+Analytics is the systematic use of data, statistical methods, and digital tools to generate insights that support better business decisions.
+
+If you want it slightly more detailed (but still accessible):
+
+Analytics refers to the process of collecting, processing, and analyzing data to identify patterns, explain outcomes, predict future developments, and improve decision-making in organizations.
+
+You can break it down into four core elements:
+
+Data – Raw facts (e.g., sales numbers, customer clicks, costs).
+
+Methods – Statistical models, algorithms, and visualizations.
+
+Technology – Software tools like spreadsheets, databases, BI systems.
+
+Decision-making – Turning insights into business action.
+-->
+</section>
 <section id="why-analytics-and-this-course-matter" class="slide level2">
 <h2>Why Analytics (and This Course) Matter</h2>
 <!-- **Three Examples of Analytics in Action** -->
+<p>TODO: https://en.wikipedia.org/wiki/Princeton_Newport_Partners (black-scholes)</p>
 <p><strong>💰 Finance — Algorithmic Trading at Renaissance Technologies</strong></p>
 <ul>
 <li>Investment decisions driven almost entirely by statistical models</li>
@@ -398,32 +422,29 @@ class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
 </div>
 </section></section>
 <section>
-<section id="getting-started" class="title-slide slide level1 center" data-stack-name="Getting started">
-<h1>Getting started</h1>
+<section id="course-logistics" class="title-slide slide level1 center" data-stack-name="Logistics">
+<h1>Course logistics</h1>
 
 </section>
-<section id="course-organization" class="slide level2">
-<h2>Course organization</h2>
-<p>Workload:</p>
-<ul>
-<li>Total: 150h</li>
-<li>In-class: 44</li>
-<li>Remaining: self-study + group project</li>
-</ul>
+<section id="course-logistics-1" class="slide level2">
+<h2>Course logistics</h2>
+<p>Workload: 150h total (44h in class, remaining: self-study and group project)</p>
 <p>Assessment</p>
 <ul>
-<li>Exam: 60 minutes, 60 points (date: TBA/exam week)</li>
+<li>Exam: 60 minutes, 60 points</li>
 <li>Group project: written paper (40 pages), 60 points (end of module)</li>
 </ul>
 <p>Sessions:</p>
 <ul>
-<li>See <strong>TODO</strong></li>
+<li>See overview in Canvas</li>
 </ul>
 <p>Contact:</p>
 <ul>
 <li><a href="mailto:g.wagner@fs.de">g.wagner@fs.de</a></li>
 <li>Office hours: <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">booking page</a></li>
 </ul>
+<p>Individual circumstances</p>
+<p>If you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution.</p>
 <!--
 - Format
 - Expectations

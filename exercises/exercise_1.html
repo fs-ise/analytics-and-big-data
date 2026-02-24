@@ -127,17 +127,6 @@
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -169,6 +158,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -240,7 +240,7 @@
 <p>While a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.</p>
 <p><strong>TODO</strong>: add illustration</p>
 <p>For example, the following variable df is a dataframe containing three vectors</p>
-<div id="f4eafea0" class="cell" data-execution_count="2">
+<div id="2bd79d79" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <style scoped="">
@@ -292,7 +292,7 @@
 </div>
 </div>
 <p>The result of this is a dataframe named df. The numbers on the left side of the rows are labels and <strong>not</strong> the indexes. You can inspect the structure using the dtypes property</p>
-<div id="145bd8af" class="cell" data-execution_count="3">
+<div id="23856ba0" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>employee       str
 salary       int64
@@ -301,7 +301,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>To retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples</p>
-<div id="22487ea9" class="cell" data-execution_count="4">
+<div id="0b7c369d" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -344,7 +344,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Pandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples</p>
-<div id="93c0f607" class="cell" data-execution_count="5">
+<div id="db7256d4" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
@@ -390,7 +390,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>The loc function can even be used to add a new row to a dataframe</p>
-<div id="6cbb9ee7" class="cell" data-execution_count="6">
+<div id="903ff14c" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <style scoped="">
@@ -450,7 +450,7 @@ dtype: object</code></pre>
 <p>A new column can be added via</p>
 <p>A column can be deleted via the drop command</p>
 <p>Two dataframes can be combined using the concat function. Combining two dataframes row-wise</p>
-<div id="48804e5f" class="cell" data-execution_count="9">
+<div id="2e804d4b" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>    A   B
 0  AA  BA
@@ -460,7 +460,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Combining two dataframes column-wise</p>
-<div id="a3ca6f55" class="cell" data-execution_count="10">
+<div id="f98ba8f4" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>    A   B   C   D
 0  AA  BA  CA  DA
