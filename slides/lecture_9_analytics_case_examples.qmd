@@ -13,3 +13,113 @@ date: "2026-05-04"
 - C
 
 # TODO {data-stack-name="TODO"}
+
+
+
+
+
+## Reinforcement Learning
+
+> The solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.
+
+> Supervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.
+
+> For example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.
+
+> Unfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.
+
+> For these cases there exist a different approach known as reinforcement learning.
+
+
+
+
+## Reinforcement Learning
+
+![](../images/slides_211.jpg)
+
+> The agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward.
+
+
+
+
+## AlphaGo
+
+> Go is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.
+
+> The core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.
+
+> A newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.
+
+::: {.notes}
+
+Chess 2^64 legal positions, Go 2^120!!!
+
+:::
+
+
+
+
+## Libratus
+
+> An artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.
+
+> Poker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.
+
+> “We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy.
+
+
+
+
+## Types of Artificial Intelligence
+
+> **Discriminative AI** is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.
+
+> **Generative AI** is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.
+
+> Well-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E.
+
+
+
+
+## ChatGPT
+
+> ChatGPT is a generative AI that produces human-like text and communicates with humans.
+
+> The "GPT" in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.
+
+> GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.
+
+
+
+
+## ChatGPT - Approach
+
+> ChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.
+
+![](../images/slides_216.png)
+
+> The most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task.
+
+![](../images/slides_217.png)
+
+
+
+
+## ChatGPT - Semantic Spaces (I)
+
+![](../images/slides_218.png)
+
+
+
+
+## ChatGPT - Semantic Spaces (II)
+
+![](../images/slides_176_new.png)
+
+
+
+
+## ChatGPT - Evaluation Component
+
+![](../images/slides_220.png)
+

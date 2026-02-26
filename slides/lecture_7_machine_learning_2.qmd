@@ -8,301 +8,892 @@ date: "2026-04-20"
 
 # Learning objectives {data-state="hide-menubar"}
 
-- A
-- B
-- C
-
+- **Compare key supervised machine learning algorithms** (e.g., k-NN, logistic regression, decision trees, random forests, neural networks) with respect to their assumptions, flexibility, interpretability, and typical application scenarios.
+- **Explain the core mechanics of selected algorithms**, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).
+- **Select and justify an appropriate method for a given predictive task**, taking into account data characteristics (e.g., dimensionality, non-linearity, class imbalance), performance metrics, and trade-offs between interpretability and predictive power.
 
 # TODO {data-stack-name="TODO"}
 
-## Data Preparation and Enrichment
 
-> The data collection and preparation phase is the most labor-intensive one, consuming on average between 60-80% of a data scientist’s time. It’s critical therefore to select a tool that can automate or at least speed the workflows associated with data preparation.
 
-![](../images/slides_134.png)
 
-2016 Dataiku, Inc.
+## Navigation
 
+4 Predictive Analytics
 
+4.1 Subject of Predictive Analytics
 
+4.2 The Analytics Process
 
-## Data Cleaning
+4.3 Data Preparation
 
-1. Proof of correctness of the data
+4.4 Methods, Algorithms and Applications
 
-- examine for irregular outliers (e.g. Age=236)
-- examine for typographical errors (e.g. Frankfrut)
-- examine for different writing styles (e.g. behavior/behaviour)
--
-2. Handling missing values
+4.4.1 Classification
 
-![](../images/slides_140_new.png)
+4.4.1.1 K-Nearest Neighbors
 
+4.4.1.2 Evaluating the Quality of Classification
 
+4.4.1.3 Decision Tree Approaches
 
+4.4.1.4 Logistic Regression
 
-## Missing Values Strategies
+4.4.1.5 Neural Networks
 
-![](../images/slides_141_new.png)
+4.4.1.6 Resampling
 
+4.4.1.7 Ensemble Learning
 
+4.4.2 Regression
 
 
-## Sampling
 
-A population can be defined as including all people or items with the characteristic one wishes to understand.
 
-Sampling is about to find a representative subset of that population.
+## Introductory Example
 
-Data represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.
+> Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.
 
-There are two sources of randomness and uncertainty:
+> Assume you have the age, income, and a creditworthiness category of "yes" or "no" for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.
 
-- the randomness and uncertainty underlying the process itself, and
-- the uncertainty associated with the underlying sampling method.
+> You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.
 
+> What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?
 
+![](../images/slides_221.png)
 
 
-## Sampling in Times of Big Data
 
-**Question:**
 
-Is there any need for sampling in times of Big Data? Why not "N=ALL"?
+## k-Nearest Neighbors
 
-**Answer:**
+- k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.
+- The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.
+- **Procedure of k-NN:**
+  - 1. Determine parameter k (= number of nearest neighbors)
+  - 2. Calculate the distances between the new object and all known labeled objects.
+  - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.
+  - 4. Count the frequencies of the classes of the nearest neighbors.
+  - 5. Assign the new object to the most frequent class.
 
-Data is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.
 
-**Examples:**
 
-- When analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.
-- When analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently.
 
+## Measuring Similarity
 
+![](../images/slides_182_new.png)
 
 
-## Reasons for Sampling
 
-- The volume of data is too large to capture and process
-- Design the analytics process using a subset of the data for performance reasons. Later use the complete data set.
-- The data set doesn't perfectly represent the target population.
-- The data set is imbalanced.
-- Use sampling to partition into training and test data.
-- ...
 
+## Unnormalized vs. Normalized
 
+![](../images/slides_183_new.png)
 
 
-## Popular Methods of Sampling (I)
 
-![](../images/slides_135.png)
 
+## Example (I)
 
+![](../images/slides_184_new.png)
 
 
-## Popular Methods of Sampling (II)
 
-![](../images/slides_167.png)
 
+## Example (II)
 
----
+![](../images/slides_185_new.png)
 
 
-## Systematic Sampling
 
-![](../images/slides_176.png)
 
+## Example (III)
 
+3. Choose the k nearest neighbors
 
+| Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |
+| C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |
+| E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |
+| F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |
+| G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |
+| X | 0.2286 | 0.3636 | 0.2000 | ? |  |
 
-## Random Sampling
+4. Count the numbers of class members
 
-![](../images/slides_177.png)
+> 3 x yes; 2 x no
 
+5. Assign object to most frequent class
 
+> Customer is creditworthy!
 
 
-## Proportional Sampling
 
-![](../images/slides_178.png)
 
+## Creation and Use of Models
 
+![](../images/slides_188_new.png)
 
 
-## Downsampling
 
-![](../images/slides_179.png)
 
+## Calculating Accuracies
 
+![](../images/slides_189_new.png)
 
 
-## SMOTE
 
-<div style="display:flex">
-<div style="width:60%">
-> SMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class. At first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1. Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.
+
+## Determining Parameter k
+
+1. Split the original labeled dataset into training and test data.
+
+2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.
+
+3. Run k-NN a few times, changing k and checking the evaluation measure.
+
+4. Optimize k by picking the one with the best evaluation measure.
+
+
+| k | Accuracy |
+| :-: | :-: |
+| 1 | 0.720 |
+| 2 | 0.685 |
+| 3 | 0.740 |
+| 4 | 0.745 |
+| 5 | 0.770 |
+| 6 | 0.740 |
+| 7 | 0.750 |
+| 8 | 0.750 |
+| 9 | 0.765 |
+| 10 | 0.760 |
+
+
+
+
+## Navigation
+
+4 Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.1.1 K-Nearest Neighbors
+
+4.4.1.2 Evaluating the Quality of Classification
+
+4.4.1.3 Decision Tree Approaches
+
+4.4.1.4 Logistic Regression
+
+4.4.1.5 Neural Networks
+
+4.4.1.6 Resampling
+
+4.4.1.7 Ensemble Learning
+
+4.4.2 Regression
+
+
+
+
+## Evaluating the quality of Classification (I)
+
+> True positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as "yes", when it is in fact "no". A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications.
+
+![](../images/slides_223.png)
+
+
+
+
+## Evaluating the quality of Classification (II)
+
+> Test metrics are used to assess how accurately the model predicts the known values:
+
+![](../images/slides_192_new.png)
+
+> Most classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:
+
+![](../images/slides_1922_new.png)
+
+
+
+
+## Evaluating the quality of Classification (III)
+
+> Misclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:
+
+![](../images/slides_193_new.png)
+
+> For problems like this additional measures are required to evaluate a classifier.
+
+> **Sensitivity** (true positive rate, recall) measures the proportion of positives that are correctly identified as such. **Specificity** (true negative rate) measures the proportion of negatives that are correctly identified as such.
+
+![](../images/slides_193_2_new.png)
+
+> Using both measures, we can compute the **Balanced Accuracy**.
+
+![](../images/slides_193_3_new.png)
+
+
+
+
+## Problem of Imbalancing and Accuracy
+
+> Assume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be "Accept" (Y) and "Reject" (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.
+
+> Because of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.
+
+> The results of the test of the model is consequently:
+
+![](../images/slides_194_new.png)
+
+> Thus, the model is blind for the N cases. But these are the ones of primary interest for the company.
+
+
+
+
+## Evaluating the quality of Classification (IV)
+
+<div style="display:flex; font-size:1.3em;font-weight:600">
+<div style="width:50%">
+> **Precision** measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.
+
+> **Recall** measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.
+</div>
+<div style="width:50%;text-align:center;">
+![](../images/slides_224.png)
 </div>
 
-<div style="float:right;width:40%">
-![](../images/slides_180.png)
-</div>
 </div>
 
-::: aside
-— Source: https://github.com/minoue-xx/Oversampling-Imbalanced-Data
+> ::: aside
+— Source: Wikipedia
 :::
 
 
 
 
-## Feature Engineering
+## Evaluating the quality of Classification (V)
 
-> Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
+> The F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.
 
-> A feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:
+> ![](../images/slides_196_new.png)
 
-![](../images/slides_144_new.png)
+> A F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.
 
-> Features can be of two major types. **Raw features** are obtained directly from the dataset with no extra data manipulation or engineering. **Derived features** are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing "Birthdate".
+> It is commonly used in cases of high class imbalance.
+
+
+
+
+## Creation and Use of Models
+
+![](../images/slides_197_new.png)
+
+
+
+
+## Navigation
+
+4 Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.1.1 K-Nearest Neighbors
+
+4.4.1.2 Evaluating the Quality of Classification
+
+4.4.1.3 Decision Tree Approaches
+
+4.4.1.4 Logistic Regression
+
+4.4.1.5 Neural Networks
+
+4.4.1.6 Resampling
+
+4.4.1.7 Ensemble Learning
+
+4.4.2 Regression
+
+
+
+
+## Which one is better?
+
+![](../images/slides_199_new.png)
+
+
+
+
+## Introductory Example
+
+![](../images/slides_225.png)
 
 ::: aside
-— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.
+To choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.
+
+Proportions in the leafs can be interpreted as probabilities.
 :::
 
 
 
 
-## Variants of Feature Engineering
+## Decision Trees (I)
 
-1. Transformation
+> Decision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).
 
-- convert features (e.g., birth date → age)
-- build lag structures (e.g., time-lags)
-- normalization / standardization / scaling
+> A decision tree consists of nodes and borders. The topmost node (without any parent node) is called "root". A node without a child node is called "leaf". Nodes that have parent and child nodes are called "interior nodes". The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a "binary tree".
 
-2. Type Conversion
-
-- if numerical type is needed, transform categorical into numerical data using dummy features
-- if categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)
-
-3. Feature Combination
-
-- create interaction features (e.g., school_score = num_schools × median_school
-  with num_schools = number of schools within 5 miles of a property and
-  median_school = median quality score of those schools)
-- combine categories (e.g., when there are very few observations or too many dummy features)
-
-4. Feature Composition
-
-- build ratios (e.g., returns from prices)
-- Principal Component Analysis (Dimensionality Reduction)
+> A decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets).
 
 
 
 
-## Scaling
+## Decision Trees (II)
 
-> Most datasets contain features highly varying in magnitudes, units and range.
+> Graphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.
 
-> Most machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.
+> The decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model.
 
-> To overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization.
-
-![](../images/slides_146_new.png)
+![](../images/slides_241.png)
 
 
 
 
-## Type Conversion (Encoding)
+## Decision Trees (III)
 
-> Many machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:
-
-> **Label encoding** refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g. young → 1, middle_age → 2, old → 3. This only works in specific situations where you have somewhat continuous-like data, e.g. if the categorical feature is ordinal.
-
-> **One hot encoding** is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g.
-
-![](../images/slides_147_new.png)
-
-> It is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap).
-
-
-
-
-## Example of Feature Engineering (I)
-
-> Data sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data "flight date time vs status". Then, given the date-time data, we have to predict the status of the flight.
-
-> But the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature "Hour_Of_Day". Using the "Hour_Of_Day" feature, the machine will learn better as this feature is directly related to the status of the flight.
-
-![](../images/slides_183.png)
+![](../images/slides_242.png)
 
 ::: aside
-— Source: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.
+— Source: http://iopscience.iop.org/article/10.1088/1749-4699/5/1/015004
 :::
 
 
 
 
-## Example of Feature Engineering (II)
+## Overview of important Decision Tree Methods
 
-> Suppose we are given the latitude, longitude and other data with the objective to predict the target feature "Price_Of_House". Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.
-
-> In other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example.
-
-![](../images/slides_185.png)
-
-
-
-
-## Example of Feature Engineering (III)
-
-> Suppose we are given a feature "Marital_Status" and other data with the objective to classify customers into "Creditworthy" and "Not_Creditworthy". In the data set the martial status has many different values, for example:
-
-- single living alone
-- single living with his parents
-- married living together
-- married living separately
-- divorced
-- divorced but living together
-- registered partnerships
-- living in marriage-like community
-- widowed
-- ...
-
-> To avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.
-
-> If there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single "other" class.
+| Name | CART | ID3 | C5.0 | CHAID | Random Forests |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| **Idea** | Choose the attribute with the highest information content | One of the first methods from Quinlan; uses the concept of information gain | Like ID3 based on the concept of information gain | Choose the attribute that is most dependent on the target variable | Construct many trees with different sets of features and samples (randomly). Result by voting. |
+| **Measure used** | Gini-Index | Information gain (entropy) | Ratio of information gain | Chi-square split | Optional, mostly Gini-Index |
+| **Type of Splitting** | Binary | Complete, pruning | Complete, pruning | Complete, pruning | Complete |
 
 
 
 
-## Partitioning the Data
+## Introductory Example
 
-> The partitioning of the data in **Training and Test Data** has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.
-
-> The partitioning of the data in training and test data can be carried out in the following ways:
-
-- By random/stratified/... sampling (problem with the repeatability)
-- according to a list
-- according to rules (e.g. the first/last 50 records or every twelfth)
+![](../images/slides_205_new.png)
 
 
 
 
-## Applying Training and Test Data
+## Splitting with Entropy in ID3
 
-![](../images/slides_152_new.png)
+![](../images/slides_206_new.png)
+
+
+
+
+## Calculating the Information Gain
+
+> The information gain is a measure, that shows (by combination of the entropies) the appropriateness of an attribute for splitting:
+
+![](../images/slides_207_1_new.png)
+
+> where m = number of values (here two: light, strong), ti = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting.
+
+![](../images/slides_207_2_new.png)
+
+
+
+
+## Decision using ID3
+
+> Information gain (outlook) = 0.246
+
+> Information gain (humidity) = 0.151
+
+> Information gain (wind) = 0.048
+
+> Information gain (temperature) = 0.029
+
+> We choose the attribute with the largest information gain (here: outlook) for the first splitting.
+
+> As solution we obtain the following tree:
+
+![](../images/slides_243.png)
+
+
+
+
+## Decision using C5.0
+
+> ID3 tends to favor attributes that have a large number of values, resulting in larger trees. For example, if we have an attribute that has a distinct value for each record, then the entropy is 0, thus the information gain is maximal.
+
+> To compensate for this, C5.0 is a further development that uses the information gain ratio as a splitting criterion:
+
+![](../images/slides_209_new.png)
+
+> In the case of our example the GainRatio of Windy is
+
+![](../images/slides_209_2_new.png)
+
+> and the GainRatio of Outlook is
+
+![](../images/slides_209_2_new.png)
+
+
+
+
+## Handling Numerical Attributes
+
+> Numerical attributes are usually splitted binary. In contrast to categorical attributes many possible splitting points exist.
+
+> The splitting point with the highest information gain is looked for. For this, the potential attribute is sorted according to its values first and then all possible splitting point and the corresponding information gains are calculated. In extreme cases there exists n-1 possibilities.
+
+![](../images/slides_210_new.png)
+
+
+
+
+## The CART Algorithm
+
+> The CART algorithm (Classification And Regression Trees) constructs trees that have only binary splits. Like C5.0, it is able to handle categorical and numerical attributes.
+
+> As a measure for the impurity of a node t, CART uses the Gini Index. In the case of two classes the Gini Index is defined as:
+
+![](../images/slides_211_new.png)
+
+
+
+
+## Splitting in CART
+
+![](../images/slides_212_new.png)
+
+
+
+
+## Coherence between Entropy and Gini Index
+
+![](../images/slides_213_new.png)
+
+> **Remark:** Entropy has been scaled from (0, 1) to (0, 0.5)!
+
+
+
+
+## Overfitting (I)
+
+> Most decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes. If there are no such conflicting objects, the decision tree will correctly classify all training objects.
+
+> If tree performance is measured from the number of correctly classified cases it is common to find that the training data gives an over-optimistic guide to future performance, i.e. with new data. A tree should exhibit generalization, i.e. work well with data other than those used to generate it. When the tree grows during training it often shows a decrease in generalization. This is because the deeper nodes are fitting noise in the training data not representative over the entire universe from which the training set was sampled. This is called 'overfitting'.
+
+![](../images/slides_244.png)
+
+
+
+
+## Overfitting (II)
+
+> The learner overfits to correctly classify the noisy data objects.
+
+![](../images/slides_245.png)
+
+
+
+
+## Random Forest (I)
+
+> Random forest is an ensemble classifier that consists of many decision trees.
+
+> For every tree a subset of the data objects and a subset of features is randomly chosen. Then the tree is constructed usually using the Gini Index.
+
+> In the end, a simple majority vote is taken for prediction.
+
+![](../images/slides_246.png)
+
+> **Algorithm:**
+
+> 1. Create n samples from the original data. Frequent sample size is 2/3.
+> 2. For each of the samples, grow a tree, with the following modification: at each node, rather than choosing the best split among all predictors, randomly sample m* of the m predictors and choose the best split from among those variables.
+> 3. Predict by aggregating the predictions of the n trees (majority votes).
+
+
+
+
+## Random Forest (II)
+
+> Voting-Principle of Random Forest:
+
+> To avoid overfitting effects, the size and the depth of the trees can be restricted.
+
+![](../images/slides_247.png)
+
+
+
+
+## Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.2 Regression
+
+
+
+
+## Introductory Example
+
+![](../images/slides_248.png)
+
+![](../images/slides_249.png)
+
+> **websites (features)**
+
+> 1=visited
+
+> 0=not visited
+
+> **ad (target)**
+
+> 1=clicked
+
+> 0=not clicked
+
+> **Giant sparse matrix!**
+
+> **One matrix for every ad!**
 
 ::: aside
-— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx
+— Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative
 :::
 
 
 
 
-## Partitioning
+## Why not classical linear regression?
 
-![](../images/slides_187.png)
+> It is possible to implement a linear regression on such a dataset where Y={0,1}.
+
+> Problems:
+
+> - The predicted values of the linear model can be greater than 1 or less than 0.
+> - e is not normally distributed because Y takes on only two values.
+> - The error terms are heteroscedastic (the error variance is not constant for all values of X).
+
+::: aside
+— Source: Bichler (2015): Course Business Analytics, TU München
+:::
 
 
+
+
+
+
+## Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.1.1 K-Nearest Neighbors
+
+4.4.1.2 Evaluating the Quality of Classification
+
+4.4.1.3 Decision Tree Approaches
+
+4.4.1.4 Logistic Regression
+
+4.4.1.5 Neural Networks
+
+4.4.1.6 Resampling
+
+4.4.1.7 Ensemble Learning
+
+4.4.2 Regression
+
+
+
+
+## Functionality of Human Neurons
+
+![](../images/slides_251.png)
+
+![](../images/slides_252.png)
+
+> **A Look into the Nervous System**
+
+> **Design of a Neuron**
+
+
+
+
+## An Easy Example (I)
+
+> **f(x) = Activation function**
+
+> e.g.
+
+> where t = Stimulus threshold
+
+
+
+
+## An Easy Example (II)
+
+> **f(x) = Activation function**
+
+> e.g.
+
+> where t = Stimulus threshold
+
+
+
+
+## Functionality of a Neuron
+
+![](../images/slides_253.jpg)
+
+
+
+
+> For the case of n inputs, we can rewrite the neuron's function to
+
+> with b = -t. b is known as the perceptron's bias. The result of this function would then be fed into an activation function to produce a labeling.
+
+![](../images/slides_254.png)
+
+> This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.
+
+::: aside
+— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks
+:::
+
+
+
+
+## The Multilayer Perceptron
+
+> The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.
+
+> **Input Neurons**: receive signals from the outer world.
+
+> **Hidden Neurons**: have an internal representation of the outer world.
+
+> **Output Neurons**: pass signals to the outer world.
+
+
+
+
+## Types of Activation Functions
+
+> A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:
+
+- tangens
+- hyperbolicus
+- logistic function (sigmoid)
+
+
+
+
+## Design of a Multilayer Perceptron
+
+![](../images/slides_319.png)
+
+::: aside
+— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+:::
+
+
+
+
+![](../images/slides_320.png)
+
+::: aside
+— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+:::
+
+
+
+
+## Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.2 Regression
+
+4.4.2.1 OLS
+
+4.4.2.2 Ridge Regression
+
+4.4.2.3 Support Vector Regression
+
+4.4.2.4 Neural Networks
+
+4.4.2.5 Decision Trees
+
+4.4.2.6 K-Nearest Neighbors
+
+
+
+
+## Introductory Example
+
+> Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)
+
+
+
+
+## Regression Trees
+
+> Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.
+
+> The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.
+
+> The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years<4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.
+
+> Players with Years>=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.
+
+![](../images/slides_322.png)
+
+::: aside
+— Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.
+:::
+
+
+
+
+## Constructing a Regression Tree (I)
+
+![](../images/slides_323.png)
+
+::: aside
+— Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+:::
+
+
+
+
+## Constructing a Regression Tree (II)
+
+::: aside
+— Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+:::
+
+
+
+
+## Random Forests for Regression
+
+> Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.
+
+> A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.
+
+> Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.
+
+> The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.
+
+
+
+
+## Comparing the Fitting Ability of one vs. many Regression Trees
+
+**Single Regression Tree**
+
+**Average of 100 Regression Trees**
+
+![](../images/slides_324.png)
+
+![](../images/slides_325.png)
+
+
+
+
+## Limitations of Tree Methods in Regression
+
+> When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.
+
+> Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.
+
+> An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
+
+> If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
+
+
+
+
+## Predictive Analytics
+
+4.1 Subject of Predictive Analytics
+
+4.2 The Analytics Process
+
+4.3 Data Preparation
+
+4.4 Methods, Algorithms and Applications
+
+4.4.1 Classification
+
+4.4.2 Regression
+
+4.4.2.1 OLS
+
+4.4.2.2 Ridge Regression
+
+4.4.2.3 Support Vector Regression
+
+4.4.2.4 Neural Networks
+
+4.4.2.5 Decision Trees
+
+4.4.2.6 K-Nearest Neighbors
+
+
+
+
+## k-Nearest Neighbors for Regression
+
+> k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.
+
+> A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.

@@ -24,21 +24,22 @@ Emphasis is placed on the fit between data types, analytical models, and decisio
 
 **Knowledge** After completing the module, students will be able to:
 
-- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches. 🟢 [l1](slides/lecture_1_foundations_of_data_analytics.html)
-- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts. 🟢 [l2](slides/lecture_2_descriptive_analytics.html)
-- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations. 🟢 [l10](slides/lecture_10_data_governance.html)
+- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches.
+- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
+- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations.
 
 **Skills** Students will be able to:
 
 - **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
-- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
+- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data.
+  This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
 - **Implement** analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
 
 **Competence** Upon successful completion, students will be able to:
 
 - **Design** analytics solutions aligned with business goals and governance principles.
 - **Integrate** analytical technologies into organizational decision-making processes
-- **Assess** the operational and strategic implications of data analytics in organizations. 🟢 [l10](slides/lecture_10_data_governance)
+- **Assess** the operational and strategic implications of data analytics in organizations.
 
 ## Related courses
 
@@ -50,6 +51,7 @@ Emphasis is placed on the fit between data types, analytical models, and decisio
 - [CS109A: Introduction to Data Science](https://harvard-iacs.github.io/2018-CS109A/) and [materials](https://harvard-iacs.github.io/2018-CS109A/pages/materials.html)
 - [Data Science for Business](https://harvardonline.harvard.edu/course/data-science-business) with [syllabus](https://us-west-2.graphassets.com/cmcu78gdx085p08n06vc58sxv/cmi3la9wm6k7v07lk3xx2ezza)
 - [UC Berkley: Data 100: Principles and Techniques of Data Science](https://ds100.org/sp26/)
+- [Coursera: Data Science](/home/gerit/workspace/someday-maybe/integrate_into_data/AR Self Management Applications Languages and Learning/DataScience_Coursera)
 
 ## Recommended literature
 

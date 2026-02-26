@@ -8,23 +8,21 @@ format: html
 ```{mermaid}
 %%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%
 gantt
-
-    title Big Data & Analytics — Prep plan (everything done by 2026-03-09)
+    title Big Data & Analytics — Prep plan (everything done before teaching)
     dateFormat YYYY-MM-DD
     axisFormat %Y-%m-%d
-    excludes weekends, 2026-02-16, 2026-02-17, 2026-02-18, 2026-02-19, 2026-02-20
+    excludes weekends
 
-    section Constraints
-    Vacation :vac, 2026-02-16, 2026-02-20
-    Prep complete (T-2 weeks) :milestone, dl, 2026-03-09, 0d
+    section Milestones
     First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d
 
-    section Preparation by area
-    Foundations (Session 1) :found, 2026-01-13, 3d
-    Structured Data (Sessions 2–6) :struct, after found, 10d
-    Big Data (Sessions 7–9) :big, after struct, 6d
-    Organizations (Sessions 10–11) :org, after big, 4d
-    Integration & polish (all links) :buf, after org, 3d
+    section Week 1
+    Foundations (Session 1) :found, 2026-03-02, 2d
+    Structured Data (Sessions 2–7) :struct, after found, 3d
+
+    section Week 2
+    Big Data (Sessions 8–9) :big, 2026-03-09, 3d
+    Organizations (Sessions 10–11) :org, after big, 2d
 ```
 :::
 
@@ -35,16 +33,17 @@ See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
 ## Preparation overview
 
 - [x] Select contents for each session
-- [ ] Find contents: Exploratory data analysis
+- [x] Find contents: Exploratory data analysis
 - [ ] Find contents: Regression I
 - [ ] Find contents: Regression II
 - [ ] Find contents: Machine learning I
 - [ ] Find contents: Machine learning II
 - [ ] Find contents: Analytics case examples
 
-- [ ] Check: Jupyter Exercise setup ?? (GitHub?)
--> export of jupyter notebooks
--> generation of PDFs: local only?
+- [x] Check: Jupyter Exercise setup: export of jupyter notebooks
+- [ ] Check: Jupyter Exercise setup: running jupyter notebooks (GitHub?)
+
+Generally: generation of PDFs: local only?
 
 
 ### Session 0 — Course logistics
@@ -227,3 +226,7 @@ https://www.coursera.org/learn/data-analysis-with-python
 -> accessible (good examples?!)
 
 Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI
+
+inspiration for model choice/test/exam questions:
+
+Use Cases Quiz: ![](../images/slides_210.png)

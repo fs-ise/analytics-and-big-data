@@ -28,7 +28,7 @@ In this session, our goal is to explain why modern data analytics is successful,
 ::: objective
 Ask students to create a GitHub account (CHECK: free student packs?)
 
-TBD: typical exam questions corresponding to the lecture? - 
+TBD: typical exam questions corresponding to the lecture? -
 
 Explain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im `Umgang mit Spyder.docx`).
 
@@ -36,5 +36,8 @@ Start in groups of two (random?)
 
 Introduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite
 **check classrooms before! - can it be attached to the desks?**
+
+
+TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
 
 :::
