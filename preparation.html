@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fd1faf6fd93e4e6d207ae0f9db51d78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,6 +72,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -92,17 +103,6 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -196,23 +196,21 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 <div>
 <pre class="mermaid mermaid-js">%%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%
 gantt
-
-    title Big Data &amp; Analytics — Prep plan (everything done by 2026-03-09)
+    title Big Data &amp; Analytics — Prep plan (everything done before teaching)
     dateFormat YYYY-MM-DD
     axisFormat %Y-%m-%d
-    excludes weekends, 2026-02-16, 2026-02-17, 2026-02-18, 2026-02-19, 2026-02-20
+    excludes weekends
 
-    section Constraints
-    Vacation :vac, 2026-02-16, 2026-02-20
-    Prep complete (T-2 weeks) :milestone, dl, 2026-03-09, 0d
+    section Milestones
     First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d
 
-    section Preparation by area
-    Foundations (Session 1) :found, 2026-01-13, 3d
-    Structured Data (Sessions 2–6) :struct, after found, 10d
-    Big Data (Sessions 7–9) :big, after struct, 6d
-    Organizations (Sessions 10–11) :org, after big, 4d
-    Integration &amp; polish (all links) :buf, after org, 3d
+    section Week 1
+    Foundations (Session 1) :found, 2026-03-02, 2d
+    Structured Data (Sessions 2–7) :struct, after found, 3d
+
+    section Week 2
+    Big Data (Sessions 8–9) :big, 2026-03-09, 3d
+    Organizations (Sessions 10–11) :org, after big, 2d
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -237,14 +235,16 @@ gantt
 <h2 class="anchored" data-anchor-id="preparation-overview">Preparation overview</h2>
 <ul class="task-list">
 <li><p><label><input type="checkbox" checked="">Select contents for each session</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Exploratory data analysis</label></p></li>
+<li><p><label><input type="checkbox" checked="">Find contents: Exploratory data analysis</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Regression I</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Regression II</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Machine learning I</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Machine learning II</label></p></li>
 <li><p><label><input type="checkbox">Find contents: Analytics case examples</label></p></li>
-<li><p><label><input type="checkbox">Check: Jupyter Exercise setup ?? (GitHub?) -&gt; export of jupyter notebooks -&gt; generation of PDFs: local only?</label></p></li>
+<li><p><label><input type="checkbox" checked="">Check: Jupyter Exercise setup: export of jupyter notebooks</label></p></li>
+<li><p><label><input type="checkbox">Check: Jupyter Exercise setup: running jupyter notebooks (GitHub?)</label></p></li>
 </ul>
+<p>Generally: generation of PDFs: local only?</p>
 <section id="session-0-course-logistics" class="level3">
 <h3 class="anchored" data-anchor-id="session-0-course-logistics">Session 0 — Course logistics</h3>
 <ul class="task-list">
@@ -446,6 +446,8 @@ gantt
 </ul>
 <p>https://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)</p>
 <p>Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI</p>
+<p>inspiration for model choice/test/exam questions:</p>
+<p>Use Cases Quiz: <img src="../images/slides_210.png" class="img-fluid"></p>
 
 
 </section>

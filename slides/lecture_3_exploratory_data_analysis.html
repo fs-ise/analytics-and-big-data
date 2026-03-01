@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
-  <meta name="dcterms.date" content="2026-03-30">
+  <meta name="dcterms.date" content="2026-03-23">
   <title>Analytics &amp; Big Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
@@ -125,17 +191,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -145,6 +200,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -158,15 +224,15 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -182,10 +248,10 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 3: Exploratory data analysis <p></p>
+  <p></p> Session 2: Exploratory data analysis <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
-    <p class="date">(2026-03-30)</p>
+    <p class="date">(2026-03-23)</p>
 
 </section>
 <section id="learning-objectives" class="slide level2" data-state="hide-menubar">
@@ -202,59 +268,481 @@
 <ul>
 </ul></ul></section>
 <section>
-<section id="univariate-analysis" class="title-slide slide level1 center" data-stack-name="Univariate analysis">
-<h1>Univariate analysis</h1>
-<p>TODO: use contents from <a href="../home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf">EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf</a></p>
+<section id="motivation" class="title-slide slide level1 center" data-stack-name="Motivation">
+<h1>Motivation</h1>
+
 </section>
-<section id="categorical" class="slide level2">
-<h2>categorical, …</h2>
+<section id="the-role-of-eda" class="slide level2">
+<h2>The role of EDA</h2>
+<p>process (pre-model), aims, techniques (graphical, non-gaphical, …)</p>
 </section>
-<section id="histogram-boxplot" class="slide level2">
-<h2>histogram, boxplot</h2>
+<section id="limitations-of-eda" class="slide level2">
+<h2>“limitations of EDA”</h2>
+<ul>
+<li>Descriptive vs.&nbsp;inferential statistics</li>
+<li>no model/explanation/prediction (correlation vs causality)</li>
+<li>sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings) -&gt; starting point for building predictions (explanations, hypotheses, models, causality)</li>
+</ul>
 </section></section>
 <section>
-<section id="multivariate-analysis" class="title-slide slide level1 center" data-stack-name="Multivariate analysis">
-<h1>Multivariate analysis</h1>
+<section id="univariate-exploratory-data-analysis" class="title-slide slide level1 center" data-stack-name="Univariate EDA">
+<h1>Univariate exploratory data analysis</h1>
 
 </section>
+<section id="exploratory-data-analysis" class="slide level2">
+<h2>Exploratory Data Analysis</h2>
+<blockquote>
+<p>In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.</p>
+</blockquote>
+<blockquote>
+<p>People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.</p>
+</blockquote>
+<blockquote>
+<p>Reasons for EDA:</p>
+</blockquote>
+<ul>
+<li>gain intuition about the data</li>
+<li>make comparisons between distributions</li>
+<li>sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)</li>
+<li>find out where data is missing or if there are outliers</li>
+<li>summarize the data</li>
+</ul>
+<blockquote>
+<p>Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.</p>
+</blockquote>
+</section>
+<section id="univariate-non-graphical-eda" class="slide level2">
+<h2>Univariate Non-Graphical EDA</h2>
+<blockquote>
+<p>Non-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:</p>
+</blockquote>
+<ul>
+<li>measures of central tendency, i.e.&nbsp;mean and median. The median, known as 50th percentile, is more resistant to outliers.</li>
+<li>measures of spread, i.e.&nbsp;variance, standard deviation, and interquartile range</li>
+<li>the shape of the distribution</li>
+<li>the existence of outliers</li>
+</ul>
+<blockquote>
+<p>The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.</p>
+</blockquote>
+<p><img data-src="../images/slides_188.png"></p>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data types</h2>
+<p>Representing the “real world” in computer requires to use appropriate data types</p>
+<p>From a statistical point of view, there are four fundamental data types, known as measurement scales:</p>
+<p>Qualitative description of objects</p>
+<ul>
+<li>Nominal (special case: binary)</li>
+<li>Ordinal</li>
+</ul>
+<p>Quantitative description objects</p>
+<ul>
+<li>Interval</li>
+<li>Ratio</li>
+</ul>
+</section>
+<section id="nominal-scale-qualitative" class="slide level2">
+<h2>Nominal scale (qualitative)</h2>
+<p>Values of a nominal / categorical attribute are symbols or names of things. Each value represents some kind of category, code, or state</p>
+<p>This scale assumes existence of a finite number of equivalency classes, where each class is named or labeled</p>
+<p>The values do not have any meaningful order</p>
+<p>Examples:</p>
+<ul>
+<li>Hair color = {auburn, black, blond, brown, grey, red, white, …}</li>
+<li>Fruits = {apple, banana, strawberry, …}</li>
+<li>Postal codes = {96052, 96047, …}</li>
+</ul>
+<p>Special case of the nominal scale: Binary scale</p>
+<p>-Nominal attribute with only 2 states (0/1, or TRUE / FALSE) – also called Boolean - 0/FALSE typically means absence and 1/TRUE presence</p>
+<p>There are two types of binary objects:</p>
+<ul>
+<li>Symmetric binary: both outcomes equally important, e.g., gender</li>
+<li>Asymmetric binary: outcomes not equally important, e.g., medical test (positive vs.&nbsp;negative)</li>
+</ul>
+<p>It is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g.&nbsp;people that purchase a product, have a disease)</p>
+<p>Examples:</p>
+<ul>
+<li>Smoking: 1 indicates patients in a trial that smoke, 0 otherwise.</li>
+<li>Purchase: 1 indicates that a person purchased a product, 0 otherwise.</li>
+</ul>
+</section>
+<section id="ordinal-rank-scale-qualitative" class="slide level2">
+<h2>Ordinal / rank scale (qualitative)</h2>
+<ul>
+<li>A categorical attribute with values that have a meaningful order, but the magnitude between successive values is not known</li>
+<li>The ordinal scale is useful for registering subjective assessments and things that cannot be measured objectively (often used in surveys for ratings)</li>
+</ul>
+<p>Values cannot be multiplied or added, even if the numbers belong to the same scale.</p>
+<p>Relations between values:</p>
+<ul>
+<li>Transitivity: If A&gt;B, B&gt;C, then A&gt;C,</li>
+<li>Symmetry: : If A&gt;B, then B&lt;A</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>School grades = {A &lt; B &lt; C &lt; D &lt; E &lt; F} or {1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6}</li>
+<li>Places in a competition = {1st, 2nd, 3rd, 4th, …}</li>
+</ul>
+</section>
+<section id="interval-scale-quantitative" class="slide level2">
+<h2>Interval scale (quantitative)</h2>
+<ul>
+<li>A numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point</li>
+<li>Invariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0</li>
+<li>Two readings on an interval scale cannot be added but calculating an average of such values is possible</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Celsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32</li>
+<li>Dates and time (e.g., conversion from Julian to Gregorian calendar is possible)</li>
+</ul>
+</section>
+<section id="ratio-scale-quantitative" class="slide level2">
+<h2>Ratio scale (quantitative)</h2>
+<ul>
+<li>Numeric values with a meaningful zero point (e.g., “zero” means absence)</li>
+<li>All arithmetic rules and functions can be applied (addition, subtraction)</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Money, person’s age, market share, quantities purchased, speed, …</li>
+<li>Kelvin (K) temperature (has a true zero-point (0 °K=− 273.15 ℃): It is the point at which the particles that comprise matter have zero kinetic energy</li>
+</ul>
+</section>
+<section id="possible-mathematical-operations-for-each-scale-type" class="slide level2">
+<h2>Possible mathematical operations for each scale type</h2>
+<p>Due to the different mathematical properties, not all statistical measures can be computed on different measurement scales:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 42%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scale</th>
+<th>Mathematical operations possible</th>
+<th>Mode</th>
+<th>Frequency</th>
+<th>Percentiles / Median</th>
+<th>Mean / Variance / SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>=, ≠</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>=, ≠, &lt;, &gt;</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Interval</td>
+<td>=, ≠, &lt;, &gt;, linear transformation</td>
+<td>X</td>
+<td>(X)</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>Ratio</td>
+<td>=, ≠, &lt;, &gt;, *, /, +, −</td>
+<td>X</td>
+<td>(X)</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p>The frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low</p>
+</section>
+<section id="descriptive-statistics" class="slide level2">
+<h2>Descriptive statistics</h2>
+<p>How to describe data (not the data type)?</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Customer ID</th>
+<th>Name</th>
+<th>Year of birth</th>
+<th>Tariff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100216</td>
+<td>Kevin Meyer</td>
+<td>1983</td>
+<td>A</td>
+</tr>
+<tr class="even">
+<td>271692</td>
+<td>Lars Knopp</td>
+<td>1963</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td>892615</td>
+<td>Anton Albert</td>
+<td>1954</td>
+<td>C</td>
+</tr>
+<tr class="even">
+<td>331625</td>
+<td>Peter Pan</td>
+<td>1988</td>
+<td>D</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="describing-data-using-descriptive-statistics" class="slide level2">
+<h2>Describing data using descriptive statistics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Basic statistical descriptions can be used to identify characteristics of the data and highlight which data values should be treated as noise or outliers.</p></li>
+<li><p>A good way to get an impression of continuous / numeric data is the <strong>histogram</strong>.</p></li>
+<li><p>The graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="e570a15e" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_3_exploratory_data_analysis_files/figure-revealjs/cell-2-output-1.png" width="825" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="what-are-the-key-figures-of-a-distribution" class="slide level2">
+<h2>What are the “key figures” of a distribution?</h2>
+<ul>
+<li><p>Graphics work well for single variables, but for comparison of different variables and their distributions and later working with the data, numeric indicators are necessary</p></li>
+<li><p>Descriptive statistics provide us with numbers describing the characteristics of a distribution</p></li>
+<li><p>For qualitative / categorical data</p>
+<ul>
+<li><strong>Mode</strong></li>
+<li><strong>Relative frequency</strong></li>
+</ul></li>
+<li><p>For quantitative / numerical data</p>
+<ul>
+<li><strong>Mean</strong> (also known as <strong>Expected Value</strong>) – describing the position of the center</li>
+<li><strong>Variance</strong> (or <strong>Standard Deviation</strong>) – describing the spread</li>
+<li><strong>Percentiles</strong> (also known as quantiles / quintiles) – more detailed figures on the distribution</li>
+</ul></li>
+</ul>
+</section>
+<section id="mode" class="slide level2">
+<h2>Mode</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>The mode is the value that appears most in a set of data values</p></li>
+<li><p>The highest mode also has the highest relative frequency (see next slide)</p></li>
+<li><p>Example: On a party, you meet many other students, and you ask what they are studying.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="ad05ae02" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_3_exploratory_data_analysis_files/figure-revealjs/cell-3-output-1.png" width="941" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="the-relative-frequency" class="slide level2">
+<h2>The relative frequency</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Your company purchases fancy retro light bulbs from overseas. Because of the transport or the low quality of the supplier, 80 of 200 light bulbs are defect. The relative frequency of defect light bulbs in the shipment is</p>
+<p>[ p = {} ]</p>
+<p>[ p = = 0.4 ]</p>
+<p>The relative frequency approach can be used as a probability assessment. However, larger samples must be used, the probability should be observed over longer time, and potential sampling issues must be considered.</p>
+</div><div class="column" style="width:45%;">
+<p>TODO</p>
+<p><img data-src="lightbulb.jpg"></p>
+</div></div>
+</section>
+<section id="the-mean-expected-value" class="slide level2">
+<h2>The mean / expected value</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>The <em>arithmetic</em> mean is calculated as</p>
+<p>[ {x} = _{i=1}^{n} = ]</p>
+<p>where (x_1, x_2, , x_n) is a set of (n) observations. The mean is often denoted as () or with the symbol ({x}).</p>
+<p>Treating the empirical distribution as a probability function of a random variable, the <strong>expected value</strong> can be <strong>estimated by the mean</strong>:</p>
+<p>[ E(X) = {x} ]</p>
+<p><strong>Interpretation:</strong> If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967.</p>
+</div><div class="column" style="width:45%;">
+<div id="defb4b42" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_3_exploratory_data_analysis_files/figure-revealjs/cell-4-output-1.png" width="825" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="boxplot" class="slide level2">
+<h2>Boxplot</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>The boxplot is a condensed illustration of a distribution</p></li>
+<li><p>It consists of</p>
+<ul>
+<li>Median (thick line)</li>
+<li>25% / 75% percentiles</li>
+<li>“Whiskers”: the quartiles ± 1.5 × IQR</li>
+<li>Outliers that are higher/lower than the whiskers</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="35fe905d" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_3_exploratory_data_analysis_files/figure-revealjs/cell-5-output-1.png" width="566" height="566"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="boxplots-can-be-used-to-compare-different-distributions" class="slide level2">
+<h2>Boxplots can be used to compare different distributions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Example:</strong></p>
+<ul>
+<li><p>In an experiment, households received different types of feedback on their electricity consumption</p></li>
+<li><p>The “control” group received no feedback</p></li>
+<li><p>The plot shows boxplots of the savings in electricity consumption after three weeks with feedback</p></li>
+<li><p>One can – for example – see that there is a higher spread in group 2A compared to the others</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="13d117e6" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_3_exploratory_data_analysis_files/figure-revealjs/cell-6-output-1.png" width="810" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="multivariate-exploratory-data-analysis" class="title-slide slide level1 center" data-stack-name="Multivariate EDA">
+<h1>Multivariate exploratory data analysis</h1>
+
+</section>
+<section id="multivariate-non-graphical-eda" class="slide level2">
+<h2>Multivariate Non-Graphical EDA</h2>
+<p>TODO: maybe mention at the very beginning that there are non-graphical and graphical forms of EDA (uni/multivariate)?</p>
+<blockquote>
+<p>Multivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables.</p>
+</blockquote>
+<div style="display:flex;justify-content:center;margin-top:4em">
+<div class="Multivariate-wrapper">
+<p><img data-src="../images/slides_194.png"></p>
+</div>
+<div class="Multivariate-wrapper">
+<p><img data-src="../images/slides_195.png"></p>
+</div>
+</div>
+</section>
+<section id="multivariate-graphical-eda" class="slide level2">
+<h2>Multivariate Graphical EDA</h2>
+<blockquote>
+<p>Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.</p>
+</blockquote>
+<p><img data-src="../images/slides_196.png"></p>
+</section>
+<section id="bivariate-statistics" class="slide level2">
+<h2>Bivariate statistics</h2>
+<ul>
+<li><p>So far, we focused on the description of one variable (univariate statistics)</p></li>
+<li><p>In many cases, we are interested in the interactions between variables (probably not in spurious correlations but in meaningful ones…)</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Per capita cheese consumption</strong> correlates with <strong>Number of people who died by becoming tangled in their bedsheets</strong></p>
+<p><br><br><br></p>
+<div style="height:300px; border:1px solid #ccc; display:flex; align-items:center; justify-content:center;">
+<p><em>Figure placeholder</em></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Worldwide non-commercial space launches</strong> correlates with <strong>Sociology doctorates awarded (US)</strong></p>
+<p><br><br><br></p>
+<div style="height:300px; border:1px solid #ccc; display:flex; align-items:center; justify-content:center;">
+<p><em>Figure placeholder</em></p>
+</div>
+</div></div>
+<p>These and more online: https://www.tylervigen.com/spurious-correlations</p>
+</section>
+<section id="todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance" class="slide level2">
+<h2>TODO : correlation (Hopf slides: not sure I want to cover covariance)</h2>
+</section>
 <section id="correlation" class="slide level2">
-<h2>correlation</h2>
+<h2>Correlation</h2>
+<p><img data-src="../images/slides_112.png"></p>
+
+<blockquote>
+<p>Organic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!</p>
+</blockquote>
+<aside><div>
+<p>— Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)</p>
+</div></aside></section>
+<section id="correlation-vs.-causality-i" class="slide level2">
+<h2>Correlation vs.&nbsp;Causality (I)</h2>
+<p><img data-src="../images/slides_107_new.png"></p>
+<p><strong>Correlation:</strong> Two data series behave “similar”</p>
+<p><strong>Causality:</strong> Principle of Cause and Effect</p>
+</section>
+<section id="correlation-vs.-causality-ii" class="slide level2">
+<h2>Correlation vs.&nbsp;Causality (II)</h2>
+<p><img data-src="../images/slides_114.png"></p>
+</section>
+<section id="correlation-vs.-causality-iii" class="slide level2">
+<h2>Correlation vs.&nbsp;Causality (III)</h2>
+<blockquote>
+<p>But: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing!</p>
+</blockquote>
+</section>
+<section id="statistical-estimation" class="slide level2">
+<h2>Statistical Estimation</h2>
+<p>TODO: TBD whether we cover it here!</p>
+<p><img data-src="../images/slides_116.png"></p>
+
 <!--
-        ## Exploratory Data Analysis
-
-        > In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
-
-        > People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
-
-        > Reasons for EDA:
-
-        - gain intuition about the data
-        - make comparisons between distributions
-        - sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
-        - find out where data is missing or if there are outliers
-        - summarize the data
-
-        > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
-
-
-
-
-        ## Univariate Non-Graphical EDA
-
-        > Non-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:
-
-        - measures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.
-        - measures of spread, i.e. variance, standard deviation, and interquartile range
-        - the shape of the distribution
-        - the existence of outliers
-
-        > The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
-
-        ![](../images/slides_188.png)
-
-
-
-
         ## Tests on Outliers
 
         > Outlier are data objects, which are clearly different from the others.
@@ -309,145 +797,257 @@
         </div>
 
 
-        ## Multivariate Non-Graphical EDA
-
-        > Multivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables.
-
-        <div style="display:flex;justify-content:center;margin-top:4em">
-        <div class="Multivariate-wrapper" >
-        ![](../images/slides_194.png)
-        </div>
-        <div class="Multivariate-wrapper">
-        ![](../images/slides_195.png)
-        </div>
-        </div>
-
-
-        ## Multivariate Graphical EDA
-
-        > Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.
-
-        ![](../images/slides_196.png)
 
 
 -->
+<aside><div>
+<p>— Source: http://www.dxbydt.com/the-size-of-your-sample</p>
+</div></aside></section>
+<section id="todo-add-clustering" class="slide level2">
+<h2>TODO : add clustering!</h2>
+</section>
+<section id="introductory-example" class="slide level2">
+<h2>Introductory Example</h2>
+<blockquote>
+<p>Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:</p>
+</blockquote>
+<ol type="1">
+<li>FRESH: annual spending on fresh products (Continuous);</li>
+<li>MILK: annual spending on milk products (Continuous);</li>
+<li>GROCERY: annual spending on grocery products (Continuous);</li>
+<li>FROZEN: annual spending on frozen products (Continuous);</li>
+<li>DETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);</li>
+<li>DELICATESSEN: annual spending on delicatessen products (Continuous);</li>
+<li>CHANNEL: customers buying channel (Nominal);</li>
+<li>REGION: customers region (Nominal)</li>
+</ol>
+<blockquote>
+<p>Your goal is to segment the users. That means finding similar types of users and bunching them together.</p>
+</blockquote>
+<blockquote>
+<p>Why would you want to do this?</p>
+</blockquote>
+<blockquote>
+<p>You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.</p>
+</blockquote>
+<blockquote>
+<p>You might have a model that works better for specific groups. Or you might have different models for different groups.</p>
+</blockquote>
+</section>
+<section id="cluster-analysis" class="slide level2">
+<h2>Cluster Analysis</h2>
+<blockquote>
+<p>Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.</p>
+</blockquote>
+<blockquote>
+<p>There are different types of cluster analysis methods:</p>
+</blockquote>
+<ul>
+<li>Clustering Methods</li>
+</ul>
+</section>
+<section id="partitioning-cluster-methods" class="slide level2">
+<h2>Partitioning Cluster Methods</h2>
+<blockquote>
+<p>The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.</p>
+</blockquote>
+<blockquote>
+<p>Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).</p>
+</blockquote>
+<blockquote>
+<p>The objective is to find</p>
+</blockquote>
+<blockquote>
+<p>where is the mean of points in Si.</p>
+</blockquote>
+<blockquote>
+<p><strong>Procedure of K-Means:</strong></p>
+</blockquote>
+<blockquote>
+<p>Step 1: Randomly partition the data objects into k clusters.</p>
+</blockquote>
+<blockquote>
+<p>Step 2: Calculate the cluster centroids.</p>
+</blockquote>
+<blockquote>
+<p>Step 3: Calculate the distance from every data point to all centroids.</p>
+</blockquote>
+<blockquote>
+<p>Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.</p>
+</blockquote>
+<blockquote>
+<p>Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.</p>
+</blockquote>
+</section>
+<section id="example-of-a-k-means-cluster-analysis" class="slide level2">
+<h2>Example of a K-Means Cluster Analysis</h2>
+<p><img data-src="../images/slides_327.png"></p>
+<p><strong>Between cluster variance:</strong></p>
+<p><strong>Within cluster variance:</strong></p>
+</section>
+<section id="finding-the-optimal-number-of-clusters-i" class="slide level2">
+<h2>Finding the Optimal Number of Clusters (I)</h2>
+<blockquote>
+<p>The aim of the cluster analysis is the segmentation of objects into clusters, which are preferably homogeneous in it selves and heterogeneous to each other. The less variance exists within the clusters and the more variance exists between the clusters, the better is the number of clusters.</p>
+</blockquote>
+<blockquote>
+<p><strong>Total variance:</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Accumulated variance within the k clusters:</strong></p>
+</blockquote>
+<blockquote>
+<p>This results in the variance between the clusters:</p>
+</blockquote>
+<blockquote>
+<p>with n = number of objects</p>
+</blockquote>
+<blockquote>
+<p>m = number of attributes</p>
+</blockquote>
+</section>
+<section id="finding-the-optimal-number-of-clusters-ii" class="slide level2">
+<h2>Finding the Optimal Number of Clusters (II)</h2>
+<blockquote>
+<p>If you put V in on the ordinate and the number of cluster k on the abscissa, it often results in a curve with one or several kinks. At the point where exists the (first) significant kink, you can find the optimal number of clusters:</p>
+</blockquote>
+<blockquote>
+<p><strong>Total variance V_tot</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Between cluster variance V_betw</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Within cluster variance V_in</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Number of clusters</strong></p>
+</blockquote>
+</section>
+<section id="finding-the-optimal-number-of-clusters-iii" class="slide level2">
+<h2>Finding the Optimal Number of Clusters (III)</h2>
+<blockquote>
+<p>Instead of visually identifying the optimal cluster number, we can calculate the distances from the points on the elbow curve to a straight line linking the first and the last point on the curve. The cluster number with the largest distance is then chosen as the one with the strongest kink.</p>
+</blockquote>
+</section>
+<section id="hierarchical-cluster-methods" class="slide level2">
+<h2>Hierarchical Cluster Methods</h2>
+<ul>
+<li>There are two types of hierarchical cluster methods:
+<ul>
+<li>Agglomerative hierarchical clustering is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.</li>
+<li>Divisive hierarchical clustering is a top-down clustering method. It works in a similar way to agglomerative clustering but in the opposite direction. This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.</li>
+</ul></li>
+</ul>
+</section>
+<section id="process-of-the-hierarchical-cluster-analysis" class="slide level2">
+<h2>Process of the Hierarchical Cluster Analysis</h2>
+</section>
+<section id="measuring-similarity-between-clusters-i" class="slide level2">
+<h2>Measuring Similarity between Clusters (I)</h2>
+<p><img data-src="../images/slides_328.png"></p>
+<blockquote>
+<p>Distance between two clusters is the distance between the closest points:</p>
+</blockquote>
+<blockquote>
+<p><strong>Complete Linkage:</strong></p>
+</blockquote>
+<p><img data-src="../images/slides_329.png"></p>
+<blockquote>
+<p>Distance between two clusters is the distance between the farthest pair of points:</p>
+</blockquote>
+<p><img data-src="../images/slides_330.png"></p>
+<blockquote>
+<p>Distance between two clusters i and j is the distance between their centroids:</p>
+</blockquote>
+</section>
+<section id="measuring-similarity-between-clusters-ii" class="slide level2">
+<h2>Measuring Similarity between Clusters (II)</h2>
+<blockquote>
+<p><strong>Average Linkage:</strong></p>
+</blockquote>
+<blockquote>
+<p>Distance between clusters is the average distance between the cluster points:</p>
+</blockquote>
+<p><img data-src="../images/slides_331.png"></p>
+<blockquote>
+<p><strong>Ward’s Method / Minimum Variance Method (only Agglomerative):</strong></p>
+</blockquote>
+<p><img data-src="../images/slides_332.png"></p>
+<blockquote>
+<p>Ward’s minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:</p>
+</blockquote>
+<blockquote>
+<p>For a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf</p>
+</blockquote>
+</section>
+<section id="single-linkage-example-i" class="slide level2">
+<h2>Single Linkage Example (I)</h2>
+<p><img data-src="../images/slides_333.png"></p>
+
+<aside><div>
+<p>— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa</p>
+</div></aside></section>
+<section id="single-linkage-example-ii" class="slide level2">
+<h2>Single Linkage Example (II)</h2>
+<p><img data-src="../images/slides_334.png"></p>
+
+<aside><div>
+<p>— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa</p>
+</div></aside></section>
+<section id="dendrogram" class="slide level2">
+<h2>Dendrogram</h2>
+<blockquote>
+<p>A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g.&nbsp;euclidean distance) between the clusters.</p>
+</blockquote>
+<blockquote>
+<p>In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length. The red line in the graph below shows such a point:</p>
+</blockquote>
+<blockquote>
+<p>Counting the points that cut this line might be a good answer for the number of clusters the data can have. It is the number 6 in this case.</p>
+</blockquote>
 </section></section>
 <section>
 <section id="visualization" class="title-slide slide level1 center" data-stack-name="Visualization">
 <h1>Visualization</h1>
-<p>Add visualization / plotly (grammar of graphics)</p>
-</section>
-<section id="plotly" class="slide level2">
-<h2>plotly</h2>
-</section></section>
-<section>
-<section id="role-of-eda" class="title-slide slide level1 center" data-stack-name="Role of EDA">
-<h1>Role of EDA</h1>
 
 </section>
-<section id="limitations-of-eda" class="slide level2">
-<h2>“limitations of EDA”</h2>
-<p>(descriptive vs.&nbsp;inferential statistics) - no model/explanation/prediction (correlation vs causality) - sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings) -&gt; starting point for building predictions (explanations, hypotheses, models, causality)</p>
-<!--
-
-correlation vs causality example: nr of firefighters vs damage (insurance context)
-
-
-## Statistics vs. Machine Learning
-
-> **Statistics** about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.
-
-> **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
-
-
-
-## Statistical Regression vs. Machine Learning Algorithms
-
-![](../images/slides_107.png)
-
-
-
-
-## Explanation vs. Prediction (I)
-
-> Question 1: I have a headache. If I take an aspirin now, will it go away?
-
-> Question 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?
-
-> The first case is a typical "predictive" question. You are calculating the effect of a hypothetical intervention.
-
-> The second case is a typical "explanatory" question. You are calculating the effect of a counterfactual intervention.
-
-::: {.notes}
-
-Which one is Explanation, which Prediction?
-
-counterfactual : den Tatsachen widersprechend
-
-:::
-
-## Explanation vs. Prediction (II)
-
-**Explanation:**
-
-- Explanation is about understanding relationships and why certain things happen.
-- It requires an understanding of cause and effect.
-- Tests of causal hypotheses are fundamental.
-- Measures of significance are central.
-- A good explanatory model may also have predictive power.
-
-**Prediction:**
-
-- Prediction is about anticipating and forecasting what may happen in the future.
-- Correlations are important in this context (but correlation does not imply causation).
-- Therefore, predictive models may have no real explanatory power.
-- For robust prediction, knowledge of causality is preferable.
-- The main task is to find a model that optimally approximates reality and minimizes overfitting.
-- Accuracy is measured using out-of-sample data.
-
-
-## Correlation
-
-![](../images/slides_112.png)
-
-::: aside
-— Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)
-:::
-
-> Organic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!
-
-
-## Correlation vs. Causality (I)
-
-![](../images/slides_107_new.png)
-
-**Correlation:** Two data series behave "similar"
-
-**Causality:** Principle of Cause and Effect
-
-
-## Correlation vs. Causality (II)
-
-![](../images/slides_114.png)
-
-
-## Correlation vs. Causality (III)
-
-> But: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing!
-
-
-## Statistical Estimation
-
-![](../images/slides_116.png)
-
-::: aside
-— Source: http://www.dxbydt.com/the-size-of-your-sample
-:::
-
--->
+<section id="todo" class="slide level2">
+<h2>TODO</h2>
+<p>TBD: (grammar of graphics? plotly?)</p>
+<p>TBD: we could even use Pandas built-in visualization</p>
+</section>
+<section id="pandas-and-matplotlib" class="slide level2">
+<h2>pandas and matplotlib</h2>
+<p>Example:</p>
+<div id="164fc370" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-5"><a></a>    <span class="st">"A"</span>: np.random.randn(<span class="dv">100</span>)</span>
+<span id="cb1-6"><a></a>})</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>df.hist()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>array([[&lt;Axes: title={'center': 'A'}&gt;]], dtype=object)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_3_exploratory_data_analysis_files/figure-revealjs/cell-7-output-2.png" width="802" height="431"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="todo-1" class="slide level2">
+<h2>TODO</h2>
+<p>show all (?) visulaizations covered on the previous slides TBD: clustering?!</p>
 </section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
+<p>TODO</p>
 
 
 </section></section>

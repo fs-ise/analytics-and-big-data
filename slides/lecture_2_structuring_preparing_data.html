@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
-  <meta name="dcterms.date" content="2026-03-23">
+  <meta name="dcterms.date" content="2026-03-30">
   <title>Analytics &amp; Big Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -202,15 +202,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -224,15 +224,15 @@
     content: '🔗';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -248,16 +248,16 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 2: Structuring and preparing data <p></p>
+  <p></p> Session 3: Structuring and preparing data <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
-    <p class="date">(2026-03-23)</p>
+    <p class="date">(2026-03-30)</p>
 
 </section>
 <section id="learning-objectives" class="slide level2" data-state="hide-menubar">
 <h2>Learning objectives</h2>
 <ul>
-<li><strong>Describe</strong> how data warehouses support descriptive analytics, including ETL/staging, metadata, and the separation from operational systems.</li>
+<li><strong>Outline</strong> descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems.</li>
 <li><strong>Explain</strong> dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).</li>
 <li><strong>Model</strong> analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data.</li>
 </ul>
@@ -265,15 +265,141 @@
 <section>
 <section id="todo-integrate-this" class="title-slide slide level1 center">
 <h1>TODO: integrate this</h1>
-<pre><code>## First Application of Data Analytics
+<pre><code>## Data Preparation and Enrichment
 
-Dr. John Snow's Map of the 1854 London Cholera Outbreak
+&gt; The data collection and preparation phase is the most labor-intensive one, consuming on average between 60-80% of a data scientist’s time. It’s critical therefore to select a tool that can automate or at least speed the workflows associated with data preparation.
 
-![](../images/slides_104.png)
+![](../images/slides_134.png)
+
+2016 Dataiku, Inc.
+
+
+
+## Data Cleaning
+
+1. Proof of correctness of the data
+
+- examine for irregular outliers (e.g. Age=236)
+- examine for typographical errors (e.g. Frankfrut)
+- examine for different writing styles (e.g. behavior/behaviour)
+-
+2. Handling missing values
+
+![](../images/slides_140_new.png)
+
+
+
+
+## Missing Values Strategies
+
+![](../images/slides_141_new.png)
+
+
+## Sampling
+
+A population can be defined as including all people or items with the characteristic one wishes to understand.
+
+Sampling is about to find a representative subset of that population.
+
+Data represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.
+
+There are two sources of randomness and uncertainty:
+
+- the randomness and uncertainty underlying the process itself, and
+- the uncertainty associated with the underlying sampling method.
+
+
+
+
+## Sampling in Times of Big Data
+
+**Question:**
+
+Is there any need for sampling in times of Big Data? Why not "N=ALL"?
+
+**Answer:**
+
+Data is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.
+
+**Examples:**
+
+- When analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.
+- When analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently.
+
+
+
+
+## Reasons for Sampling
+
+- The volume of data is too large to capture and process
+- Design the analytics process using a subset of the data for performance reasons. Later use the complete data set.
+- The data set doesn't perfectly represent the target population.
+- The data set is imbalanced.
+- Use sampling to partition into training and test data.
+- ...
+
+
+
+
+## Popular Methods of Sampling (I)
+
+![](../images/slides_135.png)
+
+
+
+
+## Popular Methods of Sampling (II)
+
+![](../images/slides_167.png)
+
+
+---
+
+
+## Systematic Sampling
+
+![](../images/slides_176.png)
+
+
+
+
+## Random Sampling
+
+![](../images/slides_177.png)
+
+
+
+
+## Proportional Sampling
+
+![](../images/slides_178.png)
+
+
+
+
+## Downsampling
+
+![](../images/slides_179.png)
+
+
+
+
+## SMOTE
+
+&lt;div style="display:flex"&gt;
+&lt;div style="width:60%"&gt;
+&gt; SMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class. At first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1. Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.
+&lt;/div&gt;
+
+&lt;div style="float:right;width:40%"&gt;
+![](../images/slides_180.png)
+&lt;/div&gt;
+&lt;/div&gt;
 
 ::: aside
-— Source: http://www.udel.edu/johnmack/frec480/cholera
+— Source: https://github.com/minoue-xx/Oversampling-Imbalanced-Data
 :::
+
 
 
 
@@ -289,6 +415,9 @@ Dr. John Snow's Map of the 1854 London Cholera Outbreak
 ![](../images/slides_105.png)
 
 
+## TODO integrate this:
+
+https://pubadmin.institute/administrative-thinkers/decision-making-process-herbert-simon
 
 
 ## The Data Analytics Process
@@ -844,6 +973,10 @@ Dr. John Snow's Map of the 1854 London Cholera Outbreak
 <p><img data-src="../images/slides_70_new.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+</section>
+<section id="summary" class="slide level2" data-state="hide-menubar">
+<h2>Summary</h2>
+<p>TODO</p>
 
 
 </section></section>

@@ -6,7 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
@@ -149,28 +150,6 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -182,6 +161,17 @@
     content: '🎯';
     background-image: none;
   }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -191,6 +181,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -206,7 +207,7 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 0: Course Logistics <p></p>
+  <p></p> Session 0: Course logistics <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
     <p class="date">(2026-03-23)</p>
@@ -307,21 +308,19 @@ Decision-making – Turning insights into business action.
 </section>
 <section id="why-analytics-and-this-course-matter" class="slide level2">
 <h2>Why Analytics (and This Course) Matter</h2>
-<!-- **Three Examples of Analytics in Action** -->
-<p>TODO: https://en.wikipedia.org/wiki/Princeton_Newport_Partners (black-scholes)</p>
-<p><strong>💰 Finance — Algorithmic Trading at Renaissance Technologies</strong></p>
+<p><strong><iconify-icon role="img" inline="" icon="solar:money-bag-bold" aria-label="Icon money-bag-bold from solar Iconify.design set." title="Icon money-bag-bold from solar Iconify.design set."></iconify-icon> Finance — Quantitative Arbitrage at Princeton-Newport Partners</strong></p>
 <ul>
-<li>Investment decisions driven almost entirely by statistical models</li>
-<li>Tiny predictive advantages scale across millions of trades</li>
-<li>Data replaces intuition in high-stakes financial markets</li>
+<li>Early pioneer of applying the Black-Scholes option pricing model in real markets</li>
+<li>Systematic identification of mispriced options through mathematical arbitrage</li>
+<li>Demonstrated how financial models and data could generate consistent trading profits</li>
 </ul>
-<p><strong>🎬 Entertainment — Personalization at Scale at Netflix</strong></p>
+<p><strong><iconify-icon role="img" inline="" icon="mdi:film-open" aria-label="Icon film-open from mdi Iconify.design set." title="Icon film-open from mdi Iconify.design set."></iconify-icon> Entertainment — Personalization at Scale at Netflix</strong></p>
 <ul>
 <li>Recommendation systems shape what millions watch</li>
 <li>Continuous A/B testing and model refinement</li>
 <li>Data directly drives engagement and revenue</li>
 </ul>
-<p><strong>⚾ Sports — The Moneyball Revolution at Oakland Athletics</strong></p>
+<p><strong><iconify-icon role="img" inline="" icon="lucide-lab:baseball" aria-label="Icon baseball from lucide-lab Iconify.design set." title="Icon baseball from lucide-lab Iconify.design set."></iconify-icon> Sports — The Moneyball Revolution at Oakland Athletics</strong></p>
 <ul>
 <li>Advanced metrics replaced traditional scouting intuition</li>
 <li>Data-driven player selection with limited budget</li>
@@ -330,54 +329,227 @@ Decision-making – Turning insights into business action.
 </section>
 <section id="course-architecture" class="slide level2">
 <h2>Course Architecture</h2>
-<div class="cell" data-reveal="true" data-fig-width="12" data-layout-align="default">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TB
-
-%% --- Styling ---
-classDef fsborder fill:#ffffff,color:#000000,stroke:#003366,stroke-width:2px;
-
-%% --- Foundations ---
-subgraph Foundations
-    S1["Session 1:&lt;br&gt;Foundations of data analytics"]
-end
-
-%% --- Data Analytics ---
-subgraph da[" "]
-
-    subgraph bd["Big Data"]
-        S8["Session 8:&lt;br&gt;Big data"]
-        S9["Session 9:&lt;br&gt;Analytics case examples"]
-    end
-
-    subgraph sd["Structured Data"]
-        S2["Session 2:&lt;br&gt;Structuring and preparing data"]
-        S3["Session 3:&lt;br&gt;Exploratory data analysis"]
-        S4["Session 4:&lt;br&gt;Regression I"]
-        S5["Session 5:&lt;br&gt;Regression II"]
-        S6["Session 6:&lt;br&gt;Machine learning I"]
-        S7["Session 7:&lt;br&gt;Machine learning II"]
-    end
-
-end
-
-subgraph Organizations
-    S10["Session 10:&lt;br&gt;Governance of data analytics"]
-end
-
-Foundations --&gt; da --&gt; Organizations
-
-class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
-
-</pre>
+<svg width="960" height="480" viewbox="0.00 0.00 922.00 418.40" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 414.4)">
+<title>DataAnalyticsCourse</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-414.4 918,-414.4 918,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_foundations</title>
+<path fill="none" stroke="black" d="M31,-320C31,-320 203,-320 203,-320 209,-320 215,-326 215,-332 215,-332 215,-390.4 215,-390.4 215,-396.4 209,-402.4 203,-402.4 203,-402.4 31,-402.4 31,-402.4 25,-402.4 19,-396.4 19,-390.4 19,-390.4 19,-332 19,-332 19,-326 25,-320 31,-320"></path>
+<text text-anchor="middle" x="117" y="-385.8" font-family="Times,serif" font-size="14.00">Foundations</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_da</title>
+<path fill="none" stroke="black" d="M20,-98.4C20,-98.4 890,-98.4 890,-98.4 896,-98.4 902,-104.4 902,-110.4 902,-110.4 902,-300 902,-300 902,-306 896,-312 890,-312 890,-312 20,-312 20,-312 14,-312 8,-306 8,-300 8,-300 8,-110.4 8,-110.4 8,-104.4 14,-98.4 20,-98.4"></path>
+<text text-anchor="middle" x="455" y="-295.4" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_bd</title>
+<path fill="none" stroke="black" d="M645,-106.4C645,-106.4 882,-106.4 882,-106.4 888,-106.4 894,-112.4 894,-118.4 894,-118.4 894,-176.8 894,-176.8 894,-182.8 888,-188.8 882,-188.8 882,-188.8 645,-188.8 645,-188.8 639,-188.8 633,-182.8 633,-176.8 633,-176.8 633,-118.4 633,-118.4 633,-112.4 639,-106.4 645,-106.4"></path>
+<text text-anchor="middle" x="763.5" y="-172.2" font-family="Times,serif" font-size="14.00">Big Data</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_sd</title>
+<path fill="none" stroke="black" d="M28,-196.8C28,-196.8 882,-196.8 882,-196.8 888,-196.8 894,-202.8 894,-208.8 894,-208.8 894,-267.2 894,-267.2 894,-273.2 888,-279.2 882,-279.2 882,-279.2 28,-279.2 28,-279.2 22,-279.2 16,-273.2 16,-267.2 16,-267.2 16,-208.8 16,-208.8 16,-202.8 22,-196.8 28,-196.8"></path>
+<text text-anchor="middle" x="455" y="-262.6" font-family="Times,serif" font-size="14.00">Structured Data</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_org</title>
+<path fill="none" stroke="black" d="M724,-8C724,-8 894,-8 894,-8 900,-8 906,-14 906,-20 906,-20 906,-78.4 906,-78.4 906,-84.4 900,-90.4 894,-90.4 894,-90.4 724,-90.4 724,-90.4 718,-90.4 712,-84.4 712,-78.4 712,-78.4 712,-20 712,-20 712,-14 718,-8 724,-8"></path>
+<text text-anchor="middle" x="809" y="-73.8" font-family="Times,serif" font-size="14.00">Organizations</text>
+</g>
+<!-- S1 -->
+<g id="node1" class="node">
+<title>S1</title>
+<path fill="none" stroke="#003366" d="M195.47,-369.4C195.47,-369.4 38.53,-369.4 38.53,-369.4 32.53,-369.4 26.53,-363.4 26.53,-357.4 26.53,-357.4 26.53,-340.2 26.53,-340.2 26.53,-334.2 32.53,-328.2 38.53,-328.2 38.53,-328.2 195.47,-328.2 195.47,-328.2 201.47,-328.2 207.47,-334.2 207.47,-340.2 207.47,-340.2 207.47,-357.4 207.47,-357.4 207.47,-363.4 201.47,-369.4 195.47,-369.4"></path>
+<text text-anchor="middle" x="117" y="-353" font-family="Times,serif" font-size="14.00" fill="#000000">Session 1:</text>
+<text text-anchor="middle" x="117" y="-336.2" font-family="Times,serif" font-size="14.00" fill="#000000">Foundations of data analytics</text>
+</g>
+<!-- S2 -->
+<g id="node4" class="node">
+<title>S2</title>
+<path fill="none" stroke="#003366" d="M198.17,-246.2C198.17,-246.2 35.83,-246.2 35.83,-246.2 29.83,-246.2 23.83,-240.2 23.83,-234.2 23.83,-234.2 23.83,-217 23.83,-217 23.83,-211 29.83,-205 35.83,-205 35.83,-205 198.17,-205 198.17,-205 204.17,-205 210.17,-211 210.17,-217 210.17,-217 210.17,-234.2 210.17,-234.2 210.17,-240.2 204.17,-246.2 198.17,-246.2"></path>
+<text text-anchor="middle" x="117" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Session 2:</text>
+<text text-anchor="middle" x="117" y="-213" font-family="Times,serif" font-size="14.00" fill="#000000">Structuring and preparing data</text>
+</g>
+<!-- S1&#45;&gt;S2 -->
+<g id="edge7" class="edge">
+<title>S1-&gt;S2</title>
+<path fill="none" stroke="black" d="M117,-328.06C117,-308.69 117,-278.9 117,-256.6"></path>
+<polygon fill="black" stroke="black" points="120.5,-256.33 117,-246.33 113.5,-256.33 120.5,-256.33"></polygon>
+</g>
+<!-- S8 -->
+<g id="node2" class="node">
+<title>S8</title>
+<path fill="none" stroke="#003366" d="M702.68,-155.8C702.68,-155.8 653.32,-155.8 653.32,-155.8 647.32,-155.8 641.32,-149.8 641.32,-143.8 641.32,-143.8 641.32,-126.6 641.32,-126.6 641.32,-120.6 647.32,-114.6 653.32,-114.6 653.32,-114.6 702.68,-114.6 702.68,-114.6 708.68,-114.6 714.68,-120.6 714.68,-126.6 714.68,-126.6 714.68,-143.8 714.68,-143.8 714.68,-149.8 708.68,-155.8 702.68,-155.8"></path>
+<text text-anchor="middle" x="678" y="-139.4" font-family="Times,serif" font-size="14.00" fill="#000000">Session 8:</text>
+<text text-anchor="middle" x="678" y="-122.6" font-family="Times,serif" font-size="14.00" fill="#000000">Big data</text>
+</g>
+<!-- S9 -->
+<g id="node3" class="node">
+<title>S9</title>
+<path fill="none" stroke="#003366" d="M873.61,-155.8C873.61,-155.8 744.39,-155.8 744.39,-155.8 738.39,-155.8 732.39,-149.8 732.39,-143.8 732.39,-143.8 732.39,-126.6 732.39,-126.6 732.39,-120.6 738.39,-114.6 744.39,-114.6 744.39,-114.6 873.61,-114.6 873.61,-114.6 879.61,-114.6 885.61,-120.6 885.61,-126.6 885.61,-126.6 885.61,-143.8 885.61,-143.8 885.61,-149.8 879.61,-155.8 873.61,-155.8"></path>
+<text text-anchor="middle" x="809" y="-139.4" font-family="Times,serif" font-size="14.00" fill="#000000">Session 9:</text>
+<text text-anchor="middle" x="809" y="-122.6" font-family="Times,serif" font-size="14.00" fill="#000000">Analytics case examples</text>
+</g>
+<!-- S8&#45;&gt;S9 -->
+<g id="edge1" class="edge">
+<title>S8-&gt;S9</title>
+<path fill="none" stroke="black" d="M714.84,-135.2C717.18,-135.2 719.53,-135.2 721.87,-135.2"></path>
+<polygon fill="black" stroke="black" points="722.13,-138.7 732.13,-135.2 722.13,-131.7 722.13,-138.7"></polygon>
+</g>
+<!-- S10 -->
+<g id="node10" class="node">
+<title>S10</title>
+<path fill="none" stroke="#003366" d="M886.37,-57.4C886.37,-57.4 731.63,-57.4 731.63,-57.4 725.63,-57.4 719.63,-51.4 719.63,-45.4 719.63,-45.4 719.63,-28.2 719.63,-28.2 719.63,-22.2 725.63,-16.2 731.63,-16.2 731.63,-16.2 886.37,-16.2 886.37,-16.2 892.37,-16.2 898.37,-22.2 898.37,-28.2 898.37,-28.2 898.37,-45.4 898.37,-45.4 898.37,-51.4 892.37,-57.4 886.37,-57.4"></path>
+<text text-anchor="middle" x="809" y="-41" font-family="Times,serif" font-size="14.00" fill="#000000">Session 10:</text>
+<text text-anchor="middle" x="809" y="-24.2" font-family="Times,serif" font-size="14.00" fill="#000000">Governance of data analytics</text>
+</g>
+<!-- S9&#45;&gt;S10 -->
+<g id="edge9" class="edge">
+<title>S9-&gt;S10</title>
+<path fill="none" stroke="black" d="M809,-114.23C809,-100.82 809,-82.93 809,-67.82"></path>
+<polygon fill="black" stroke="black" points="812.5,-67.42 809,-57.42 805.5,-67.42 812.5,-67.42"></polygon>
+</g>
+<!-- S3 -->
+<g id="node5" class="node">
+<title>S3</title>
+<path fill="none" stroke="#003366" d="M374.29,-246.2C374.29,-246.2 239.71,-246.2 239.71,-246.2 233.71,-246.2 227.71,-240.2 227.71,-234.2 227.71,-234.2 227.71,-217 227.71,-217 227.71,-211 233.71,-205 239.71,-205 239.71,-205 374.29,-205 374.29,-205 380.29,-205 386.29,-211 386.29,-217 386.29,-217 386.29,-234.2 386.29,-234.2 386.29,-240.2 380.29,-246.2 374.29,-246.2"></path>
+<text text-anchor="middle" x="307" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Session 3:</text>
+<text text-anchor="middle" x="307" y="-213" font-family="Times,serif" font-size="14.00" fill="#000000">Exploratory data analysis</text>
+</g>
+<!-- S2&#45;&gt;S3 -->
+<g id="edge2" class="edge">
+<title>S2-&gt;S3</title>
+<path fill="none" stroke="black" d="M210.52,-225.6C212.95,-225.6 215.39,-225.6 217.83,-225.6"></path>
+<polygon fill="black" stroke="black" points="217.85,-229.1 227.85,-225.6 217.85,-222.1 217.85,-229.1"></polygon>
+</g>
+<!-- S4 -->
+<g id="node6" class="node">
+<title>S4</title>
+<path fill="none" stroke="#003366" d="M478.38,-246.2C478.38,-246.2 415.62,-246.2 415.62,-246.2 409.62,-246.2 403.62,-240.2 403.62,-234.2 403.62,-234.2 403.62,-217 403.62,-217 403.62,-211 409.62,-205 415.62,-205 415.62,-205 478.38,-205 478.38,-205 484.38,-205 490.38,-211 490.38,-217 490.38,-217 490.38,-234.2 490.38,-234.2 490.38,-240.2 484.38,-246.2 478.38,-246.2"></path>
+<text text-anchor="middle" x="447" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Session 4:</text>
+<text text-anchor="middle" x="447" y="-213" font-family="Times,serif" font-size="14.00" fill="#000000">Regression I</text>
+</g>
+<!-- S3&#45;&gt;S4 -->
+<g id="edge3" class="edge">
+<title>S3-&gt;S4</title>
+<path fill="none" stroke="black" d="M386.3,-225.6C388.61,-225.6 390.92,-225.6 393.23,-225.6"></path>
+<polygon fill="black" stroke="black" points="393.37,-229.1 403.37,-225.6 393.37,-222.1 393.37,-229.1"></polygon>
+</g>
+<!-- S5 -->
+<g id="node7" class="node">
+<title>S5</title>
+<path fill="none" stroke="#003366" d="M587.54,-246.2C587.54,-246.2 520.46,-246.2 520.46,-246.2 514.46,-246.2 508.46,-240.2 508.46,-234.2 508.46,-234.2 508.46,-217 508.46,-217 508.46,-211 514.46,-205 520.46,-205 520.46,-205 587.54,-205 587.54,-205 593.54,-205 599.54,-211 599.54,-217 599.54,-217 599.54,-234.2 599.54,-234.2 599.54,-240.2 593.54,-246.2 587.54,-246.2"></path>
+<text text-anchor="middle" x="554" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Session 5:</text>
+<text text-anchor="middle" x="554" y="-213" font-family="Times,serif" font-size="14.00" fill="#000000">Regression II</text>
+</g>
+<!-- S4&#45;&gt;S5 -->
+<g id="edge4" class="edge">
+<title>S4-&gt;S5</title>
+<path fill="none" stroke="black" d="M490.47,-225.6C493.07,-225.6 495.68,-225.6 498.29,-225.6"></path>
+<polygon fill="black" stroke="black" points="498.34,-229.1 508.34,-225.6 498.34,-222.1 498.34,-229.1"></polygon>
+</g>
+<!-- S6 -->
+<g id="node8" class="node">
+<title>S6</title>
+<path fill="none" stroke="#003366" d="M728.01,-246.2C728.01,-246.2 629.99,-246.2 629.99,-246.2 623.99,-246.2 617.99,-240.2 617.99,-234.2 617.99,-234.2 617.99,-217 617.99,-217 617.99,-211 623.99,-205 629.99,-205 629.99,-205 728.01,-205 728.01,-205 734.01,-205 740.01,-211 740.01,-217 740.01,-217 740.01,-234.2 740.01,-234.2 740.01,-240.2 734.01,-246.2 728.01,-246.2"></path>
+<text text-anchor="middle" x="679" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Session 6:</text>
+<text text-anchor="middle" x="679" y="-213" font-family="Times,serif" font-size="14.00" fill="#000000">Machine learning I</text>
+</g>
+<!-- S5&#45;&gt;S6 -->
+<g id="edge5" class="edge">
+<title>S5-&gt;S6</title>
+<path fill="none" stroke="black" d="M599.9,-225.6C602.51,-225.6 605.13,-225.6 607.74,-225.6"></path>
+<polygon fill="black" stroke="black" points="607.82,-229.1 617.82,-225.6 607.82,-222.1 607.82,-229.1"></polygon>
+</g>
+<!-- S7 -->
+<g id="node9" class="node">
+<title>S7</title>
+<path fill="none" stroke="#003366" d="M873.67,-246.2C873.67,-246.2 770.33,-246.2 770.33,-246.2 764.33,-246.2 758.33,-240.2 758.33,-234.2 758.33,-234.2 758.33,-217 758.33,-217 758.33,-211 764.33,-205 770.33,-205 770.33,-205 873.67,-205 873.67,-205 879.67,-205 885.67,-211 885.67,-217 885.67,-217 885.67,-234.2 885.67,-234.2 885.67,-240.2 879.67,-246.2 873.67,-246.2"></path>
+<text text-anchor="middle" x="822" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Session 7:</text>
+<text text-anchor="middle" x="822" y="-213" font-family="Times,serif" font-size="14.00" fill="#000000">Machine learning II</text>
+</g>
+<!-- S6&#45;&gt;S7 -->
+<g id="edge6" class="edge">
+<title>S6-&gt;S7</title>
+<path fill="none" stroke="black" d="M740.17,-225.6C742.82,-225.6 745.48,-225.6 748.14,-225.6"></path>
+<polygon fill="black" stroke="black" points="748.39,-229.1 758.39,-225.6 748.39,-222.1 748.39,-229.1"></polygon>
+</g>
+<!-- S7&#45;&gt;S8 -->
+<g id="edge8" class="edge">
+<title>S7-&gt;S8</title>
+<path fill="none" stroke="black" d="M771.5,-204.88C763.98,-202.09 756.31,-199.31 749,-196.8 737.57,-192.87 733.11,-195.43 723,-188.8 713.08,-182.29 704.11,-172.97 696.84,-163.98"></path>
+<polygon fill="black" stroke="black" points="699.52,-161.73 690.67,-155.91 693.96,-165.98 699.52,-161.73"></polygon>
+</g>
+</g>
+</svg>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
+<!--
+
+::::::{.cell reveal=true layout-align="default"}
+
+:::::{.cell-output-display}
+
+::::{}
+`<figure class=''>`{=html}
+
+:::{}
+
+<pre class="mermaid mermaid-js">        %%| fig-width: 12
+        flowchart TB
+
+        %% --- Styling ---
+        classDef fsborder fill:#ffffff,color:#000000,stroke:#003366,stroke-width:2px;
+
+        %% --- Foundations ---
+        subgraph Foundations
+            S1[&quot;Session 1:&lt;br&gt;Foundations of data analytics&quot;]
+        end
+
+        %% --- Data Analytics ---
+        subgraph da[&quot; &quot;]
+
+            subgraph bd[&quot;Big Data&quot;]
+                S8[&quot;Session 8:&lt;br&gt;Big data&quot;]
+                S9[&quot;Session 9:&lt;br&gt;Analytics case examples&quot;]
+            end
+
+            subgraph sd[&quot;Structured Data&quot;]
+                S2[&quot;Session 2:&lt;br&gt;Structuring and preparing data&quot;]
+                S3[&quot;Session 3:&lt;br&gt;Exploratory data analysis&quot;]
+                S4[&quot;Session 4:&lt;br&gt;Regression I&quot;]
+                S5[&quot;Session 5:&lt;br&gt;Regression II&quot;]
+                S6[&quot;Session 6:&lt;br&gt;Machine learning I&quot;]
+                S7[&quot;Session 7:&lt;br&gt;Machine learning II&quot;]
+            end
+
+        end
+
+        subgraph Organizations
+            S10[&quot;Session 10:&lt;br&gt;Governance of data analytics&quot;]
+        end
+
+        Foundations --&gt; da --&gt; Organizations
+
+        class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
+
+</pre>
+:::
+`</figure>`{=html}
+::::
+:::::
+::::::
+-->
 </section>
 <section id="learning-objectives" class="slide level2">
 <h2>Learning objectives</h2>
@@ -440,7 +612,7 @@ class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
 </ul>
 <p>Contact:</p>
 <ul>
-<li><a href="mailto:g.wagner@fs.de">g.wagner@fs.de</a></li>
+<li>EMail: <a href="mailto:g.wagner@fs.de">g.wagner@fs.de</a></li>
 <li>Office hours: <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">booking page</a></li>
 </ul>
 <p>Individual circumstances</p>
@@ -506,8 +678,7 @@ Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/1
 <p>Slides and materials</p>
 <ul>
 <li>Presentation slides will be made available for download.</li>
-<li>You are expected to take complementary notes and read the recommended literature.</li>
-<li>You can contribute directly to the <a href="https://github.com/fs-ise/big-data-analytics">teaching materials</a> by submitting an issue ♻️ or suggesting edits 🛠️.</li>
+<li>You are expected to take complementary notes and read the recommended literature.7 <!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. --></li>
 <li>Literature and complementary materials will be listed at the end of each lecture.</li>
 <li>Reading of complementary materials depends on your interest and ambition.</li>
 </ul>

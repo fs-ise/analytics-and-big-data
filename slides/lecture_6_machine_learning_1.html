@@ -125,28 +125,6 @@
     }
   </style>
   <style>
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -158,6 +136,17 @@
     content: '🎯';
     background-image: none;
   }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -167,6 +156,17 @@
   div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
     content: '🔒';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   </style>
@@ -188,79 +188,347 @@
     <p class="date">(2026-04-20)</p>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center" data-state="hide-menubar">
-<h1>Learning objectives</h1>
+<section id="learning-objectives" class="slide level2" data-state="hide-menubar">
+<h2>Learning objectives</h2>
 <ul>
-<li>A</li>
-<li>B</li>
-<li>C</li>
+<li><strong>Distinguish between supervised and unsupervised machine learning approaches</strong> and explain the generalization problem in supervised machine learning.</li>
+<li><strong>Describe the workflow of supervised machine learning</strong>, including feature engineering, train–test splitting, model training, cross-validation, and evaluation — and explain why each step is necessary for generalizable results.</li>
+<li><strong>Assess the performance of machine learning models</strong>, using the confusion matrix and metrics such as precision, recall and F1 score.</li>
+<li><strong>Connect conceptual machine learning procedures to Python implementations</strong>, including preprocessing, model training, and evaluation using scikit-learn. (<strong>see exercise</strong>)</li>
 </ul>
 </section>
-
 <section>
-<section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
-<h1>TODO</h1>
+<section id="foundations" class="title-slide slide level1 center" data-stack-name="Foundations">
+<h1>Foundations</h1>
 
 </section>
-<section id="categories-in-machine-learning" class="slide level2">
-<h2>Categories in Machine Learning</h2>
-<p><img data-src="../images/slides_200.png"></p>
-<p>TODO : mention alphago, … (demis hassabis) as an example of reinforcement learning</p>
-</section>
-<section id="supervised-learning" class="slide level2">
-<h2>Supervised Learning</h2>
-<p><img data-src="../images/slides_203.png"></p>
-</section>
-<section id="unsupervised-learning" class="slide level2">
-<h2>Unsupervised Learning</h2>
-<p><img data-src="../images/slides_207.png"></p>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<p>Categories of ML: Supervised vs.&nbsp;Unsupervised (10 min)</p>
+<ul>
+<li>Define both approaches</li>
+<li>Connect to what students already know:
+<ul>
+<li>“Unsupervised → clustering” (covered in exploratory data analysis)</li>
+</ul></li>
+<li>Emphasize: focus of this lecture + next lecture is <strong>supervised learning</strong></li>
+</ul>
+<p>TBD: ## Categories in Machine Learning <img data-src="../images/slides_200.png"></p>
+<!--
+    ## Supervised Learning
+    ![](../images/slides_203.png)
+    ## Unsupervised Learning
+    ![](../images/slides_207.png)
+-->
 </section>
 <section id="supervised-and-unsupervised-learning" class="slide level2">
 <h2>Supervised and Unsupervised Learning</h2>
 <p><img data-src="../images/slides_209.png"></p>
+<p>Brief reminder: logistic regression from previous lecture</p>
+<ul>
+<li>What problem does it solve?</li>
+<li>Why it is already a form of supervised machine learning</li>
+</ul>
+<p>Motivation for today:</p>
+<ul>
+<li>Logistic regression is <strong>powerful but limited</strong> (linear decision boundary)</li>
+<li>Many real-world problems require <strong>non-linear</strong> or more flexible models</li>
+<li>Today’s goal: understand the <strong>general ML workflow</strong> and explore other supervised ML methods</li>
+</ul>
+<p>Note/TBD: focus on supervised machine learning.</p>
+<p>TODO: mention focus on primarily (binary) classification tasks</p>
+<p>TODO: add a definition (and intorductory example)</p>
 </section>
-<section id="use-cases-quiz" class="slide level2">
-<h2>Use Cases Quiz</h2>
-<p><img data-src="../images/slides_210.png"></p>
-</section>
-<section id="reinforcement-learning" class="slide level2">
-<h2>Reinforcement Learning</h2>
+<section id="statistics-vs.-machine-learning" class="slide level2">
+<h2>Statistics vs.&nbsp;Machine Learning</h2>
 <blockquote>
-<p>The solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.</p>
+<p><strong>Statistics</strong> about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g.&nbsp;p-value). The focus is on hypothesis testing.</p>
 </blockquote>
 <blockquote>
-<p>Supervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.</p>
-</blockquote>
-<blockquote>
-<p>For example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.</p>
-</blockquote>
-<blockquote>
-<p>Unfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.</p>
-</blockquote>
-<blockquote>
-<p>For these cases there exist a different approach known as reinforcement learning.</p>
-</blockquote>
-</section>
-<section id="reinforcement-learning-1" class="slide level2">
-<h2>Reinforcement Learning</h2>
-<p><img data-src="../images/slides_211.jpg"></p>
-<blockquote>
-<p>The agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward.</p>
+<p><strong>Machine Learning (ML)</strong> aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.</p>
 </blockquote>
 </section>
-<section id="alphago" class="slide level2">
-<h2>AlphaGo</h2>
+<section id="statistical-regression-vs.-machine-learning-algorithms" class="slide level2">
+<h2>Statistical Regression vs.&nbsp;Machine Learning Algorithms</h2>
+<p><img data-src="../images/slides_107.png"></p>
+</section></section>
+<section>
+<section id="the-generalization-problem" class="title-slide slide level1 center" data-stack-name="Generalization problem">
+<h1>The Generalization Problem</h1>
+
+</section>
+<section id="overfitting-example" class="slide level2">
+<h2>Overfitting (example, …)</h2>
+<p>Traditional Analytics Process</p>
+<p><img data-src="../images/slides_117.png"></p>
+<p>Note: large ML models may create overfitting issues… -&gt; need for separate test set</p>
+</section>
+<section id="generalization-problem" class="slide level2">
+<h2>Generalization problem</h2>
+<p>State the generalization problem very clearly.</p>
+<p>Ask students for ideas</p>
+</section></section>
+<section>
+<section id="the-machine-learning-workflow" class="title-slide slide level1 center" data-stack-name="Workflow">
+<h1>The Machine Learning Workflow</h1>
+
+</section>
+<section id="the-supervised-machine-learning-workflow" class="slide level2">
+<h2>The Supervised Machine Learning Workflow</h2>
+<p>Introduce the high-level pipeline (Modern Analytics Process)</p>
+<p><img data-src="../images/slides_126_new.png"></p>
+<!--
+    ## The Data Analytics Process - Technical View
+
+    ![](../images/slides_133.png)
+
+    ::: aside
+    — Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/
+    :::
+-->
+<p>2.1 Labeled Data - Input features (X) and target labels (y) - Importance of data quality and representativeness</p>
+<p>2.2 Feature Engineering - Transformations, encoding, normalization - Why features matter more than the model itself</p>
+<p>2.3 Train–Test Split - Why we split data into training and testing sets - Preventing information leakage - Hold-out, cross-validation (brief mention)</p>
+<p>2.4 Model Training - Fit model on training data - Conceptual: “learning patterns/parameters”</p>
+<p>2.5 Evaluation on Test Data - Predict on unseen data - Establish generalization performance</p>
+<p>2.6 Applying the Model Beyond the Known Sample - Using the model in decision-making or prediction for future cases</p>
+</section>
+<section id="overview-of-supervised-ml-algorithms" class="slide level2">
+<h2>Overview of Supervised ML Algorithms</h2>
+<p>Which Method should I choose?</p>
+<p>The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.</p>
+<p>In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.</p>
+<p>For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.</p>
+<ul>
+<li><strong>Logistic Regression</strong>
+<ul>
+<li>Linear boundary, interpretable, limited for non-linear patterns</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVM)</strong>
+<ul>
+<li>Margin maximization</li>
+<li>Kernel trick for non-linear boundaries</li>
+</ul></li>
+<li><strong>Decision Trees</strong>
+<ul>
+<li>Recursive splitting, intuitive but prone to overfitting</li>
+</ul></li>
+<li><strong>Random Forests / Ensembles</strong> (optional brief preview)
+<ul>
+<li>Reduce overfitting by combining trees</li>
+</ul></li>
+<li><strong>Neural Networks</strong>
+<ul>
+<li>Layers transforming data</li>
+<li>Extremely flexible but data-hungry and less interpretable</li>
+</ul></li>
+</ul>
+<p>Note: Emphasize the <em>why</em> behind different models: Different inductive biases, different levels of flexibility, different data needs.</p>
+</section>
+<section id="linear-world" class="slide level2">
+<h2>Linear World</h2>
+<p><img data-src="../images/slides_134_new.png"></p>
+</section>
+<section id="quadratic-world" class="slide level2">
+<h2>Quadratic World</h2>
+<p><img data-src="../images/slides_135_new.png"></p>
+</section>
+<section id="nonlinear-world-type-1" class="slide level2">
+<h2>Nonlinear World (Type 1)</h2>
+<p><img data-src="../images/slides_136_new.png"></p>
+</section>
+<section id="nonlinear-world-type-2" class="slide level2">
+<h2>Nonlinear World (Type 2)</h2>
+<p><img data-src="../images/slides_137_new.png"></p>
+</section>
+<section id="nonlinear-world-type-3" class="slide level2">
+<h2>Nonlinear World (Type 3)</h2>
+<p><img data-src="../images/slides_138_new.png"></p>
+</section>
+<section id="nonlinear-world-type-4" class="slide level2">
+<h2>Nonlinear World (Type 4)</h2>
+<p><img data-src="../images/slides_139_new.png"></p>
+</section>
+<section id="feature-engineering" class="slide level2">
+<h2>Feature Engineering</h2>
 <blockquote>
-<p>Go is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.</p>
+<p>Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.</p>
 </blockquote>
 <blockquote>
-<p>The core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.</p>
+<p>A feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:</p>
+</blockquote>
+<p><img data-src="../images/slides_144_new.png"></p>
+<blockquote>
+<p>Features can be of two major types. <strong>Raw features</strong> are obtained directly from the dataset with no extra data manipulation or engineering. <strong>Derived features</strong> are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.</p>
+</blockquote>
+
+<aside><div>
+<p>— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.</p>
+</div></aside></section>
+<section id="variants-of-feature-engineering" class="slide level2">
+<h2>Variants of Feature Engineering</h2>
+<p><strong>1. Transformation</strong></p>
+<ul>
+<li>convert features (e.g., birth date → age)</li>
+<li>build lag structures (e.g., time-lags)</li>
+<li>normalization / standardization / scaling</li>
+</ul>
+<p><strong>2. Type Conversion</strong></p>
+<ul>
+<li>if numerical type is needed, transform categorical into numerical data using dummy features</li>
+<li>if categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)</li>
+</ul>
+<p><strong>3. Feature Combination</strong></p>
+<ul>
+<li>create interaction features (e.g., school_score = num_schools × median_school with num_schools = number of schools within 5 miles of a property and median_school = median quality score of those schools)</li>
+<li>combine categories (e.g., when there are very few observations or too many dummy features)</li>
+</ul>
+<p><strong>4. Feature Composition</strong></p>
+<ul>
+<li>build ratios (e.g., returns from prices)</li>
+<li>Principal Component Analysis (Dimensionality Reduction)</li>
+</ul>
+</section>
+<section id="scaling" class="slide level2">
+<h2>Scaling</h2>
+<blockquote>
+<p>Most datasets contain features highly varying in magnitudes, units and range.</p>
 </blockquote>
 <blockquote>
-<p>A newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.</p>
+<p>Most machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.</p>
+</blockquote>
+<blockquote>
+<p>To overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization.</p>
+</blockquote>
+<p><img data-src="../images/slides_146_new.png"></p>
+</section>
+<section id="type-conversion-encoding" class="slide level2">
+<h2>Type Conversion (Encoding)</h2>
+<blockquote>
+<p>Many machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:</p>
+</blockquote>
+<blockquote>
+<p><strong>Label encoding</strong> refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g.&nbsp;young → 1, middle_age → 2, old → 3. This only works in specific situations where you have somewhat continuous-like data, e.g.&nbsp;if the categorical feature is ordinal.</p>
+</blockquote>
+<blockquote>
+<p><strong>One hot encoding</strong> is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g.</p>
+</blockquote>
+<p><img data-src="../images/slides_147_new.png"></p>
+<blockquote>
+<p>It is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap).</p>
+</blockquote>
+</section>
+<section id="example-of-feature-engineering-i" class="slide level2">
+<h2>Example of Feature Engineering (I)</h2>
+<blockquote>
+<p>Data sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data “flight date time vs status”. Then, given the date-time data, we have to predict the status of the flight.</p>
+</blockquote>
+<blockquote>
+<p>But the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature “Hour_Of_Day”. Using the “Hour_Of_Day” feature, the machine will learn better as this feature is directly related to the status of the flight.</p>
+</blockquote>
+<p><img data-src="../images/slides_183.png"></p>
+
+<aside><div>
+<p>— Source: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.</p>
+</div></aside></section>
+<section id="example-of-feature-engineering-ii" class="slide level2">
+<h2>Example of Feature Engineering (II)</h2>
+<blockquote>
+<p>Suppose we are given the latitude, longitude and other data with the objective to predict the target feature “Price_Of_House”. Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.</p>
+</blockquote>
+<blockquote>
+<p>In other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example.</p>
+</blockquote>
+<p><img data-src="../images/slides_185.png"></p>
+</section>
+<section id="example-of-feature-engineering-iii" class="slide level2">
+<h2>Example of Feature Engineering (III)</h2>
+<blockquote>
+<p>Suppose we are given a feature “Marital_Status” and other data with the objective to classify customers into “Creditworthy” and “Not_Creditworthy”. In the data set the martial status has many different values, for example:</p>
+</blockquote>
+<ul>
+<li>single living alone</li>
+<li>single living with his parents</li>
+<li>married living together</li>
+<li>married living separately</li>
+<li>divorced</li>
+<li>divorced but living together</li>
+<li>registered partnerships</li>
+<li>living in marriage-like community</li>
+<li>widowed</li>
+<li>…</li>
+</ul>
+<blockquote>
+<p>To avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g.&nbsp;in single, married, widowed.</p>
+</blockquote>
+<blockquote>
+<p>If there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single “other” class.</p>
+</blockquote>
+</section>
+<section id="partitioning-the-data" class="slide level2">
+<h2>Partitioning the Data</h2>
+<blockquote>
+<p>The partitioning of the data in <strong>Training and Test Data</strong> has the aim to proof if the analytical results can be generalized. The analysis (e.g.&nbsp;the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.</p>
+</blockquote>
+<blockquote>
+<p>The partitioning of the data in training and test data can be carried out in the following ways:</p>
+</blockquote>
+<ul>
+<li>By random/stratified/… sampling (problem with the repeatability)</li>
+<li>according to a list</li>
+<li>according to rules (e.g.&nbsp;the first/last 50 records or every twelfth)</li>
+</ul>
+</section>
+<section id="applying-training-and-test-data" class="slide level2">
+<h2>Applying Training and Test Data</h2>
+<p><img data-src="../images/slides_152_new.png"></p>
+
+<aside><div>
+<p>— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx</p>
+</div></aside></section>
+<section id="partitioning" class="slide level2">
+<h2>Partitioning</h2>
+<p><img data-src="../images/slides_187.png"></p>
+</section></section>
+<section>
+<section id="performance" class="title-slide slide level1 center" data-stack-name="Evaluation">
+<h1>Performance</h1>
+
+</section>
+<section id="performance-metrics-model-behavior-15-min" class="slide level2">
+<h2>3. Performance Metrics &amp; Model Behavior (15 min)</h2>
+<p>Introduce classification performance evaluation:</p>
+<ul>
+<li>Confusion matrix (TP, TN, FP, FN)</li>
+<li>Accuracy, Precision, Recall</li>
+<li>F1 Score and when it is useful</li>
+<li>ROC/AUC (optional, light touch)</li>
+<li>Bias–Variance tradeoff (intro)</li>
+<li>Overfitting vs.&nbsp;underfitting
+<ul>
+<li>High-level intuition: complexity, flexibility, noise-fitting</li>
+</ul></li>
+</ul>
+<p>TODO: cover cases where some error types are more costly than others <!--
+TBD: unclear?
+
+## Data Errors and their Consequences
+
+![](../images/slides_125_new.png)
+--></p>
+</section>
+<section id="best-fit-vs.-best-generalization" class="slide level2">
+<h2>Best Fit vs.&nbsp;Best Generalization</h2>
+<p><img data-src="../images/slides_129.png"></p>
+</section>
+<section id="over--and-underfitting" class="slide level2">
+<h2>Over- and Underfitting</h2>
+<p><img data-src="../images/slides_131.png"></p>
+<blockquote>
+<p>Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.</p>
 </blockquote>
 <aside class="notes">
-<p>Chess 2^64 legal positions, Go 2^120!!!</p>
+<p>Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -273,1211 +541,22 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="libratus" class="slide level2">
-<h2>Libratus</h2>
+<section id="the-bias-variance-tradeoff" class="slide level2">
+<h2>The Bias-Variance Tradeoff</h2>
+<p>The prediction error is influenced by three components:</p>
 <blockquote>
-<p>An artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.</p>
+<p>Error = Bias + Variance + Noise</p>
 </blockquote>
-<blockquote>
-<p>Poker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.</p>
-</blockquote>
-<blockquote>
-<p>“We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy.</p>
-</blockquote>
-</section>
-<section id="types-of-artificial-intelligence" class="slide level2">
-<h2>Types of Artificial Intelligence</h2>
-<blockquote>
-<p><strong>Discriminative AI</strong> is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.</p>
-</blockquote>
-<blockquote>
-<p><strong>Generative AI</strong> is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.</p>
-</blockquote>
-<blockquote>
-<p>Well-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E.</p>
-</blockquote>
-</section>
-<section id="chatgpt" class="slide level2">
-<h2>ChatGPT</h2>
-<blockquote>
-<p>ChatGPT is a generative AI that produces human-like text and communicates with humans.</p>
-</blockquote>
-<blockquote>
-<p>The “GPT” in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.</p>
-</blockquote>
-<blockquote>
-<p>GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.</p>
-</blockquote>
-</section>
-<section id="chatgpt---approach" class="slide level2">
-<h2>ChatGPT - Approach</h2>
-<blockquote>
-<p>ChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.</p>
-</blockquote>
-<p><img data-src="../images/slides_216.png"></p>
-<blockquote>
-<p>The most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task.</p>
-</blockquote>
-<p><img data-src="../images/slides_217.png"></p>
-</section>
-<section id="chatgpt---semantic-spaces-i" class="slide level2">
-<h2>ChatGPT - Semantic Spaces (I)</h2>
-<p><img data-src="../images/slides_218.png"></p>
-</section>
-<section id="chatgpt---semantic-spaces-ii" class="slide level2">
-<h2>ChatGPT - Semantic Spaces (II)</h2>
-<p><img data-src="../images/slides_176_new.png"></p>
-</section>
-<section id="chatgpt---evaluation-component" class="slide level2">
-<h2>ChatGPT - Evaluation Component</h2>
-<p><img data-src="../images/slides_220.png"></p>
-</section>
-<section id="navigation" class="slide level2">
-<h2>Navigation</h2>
-<p>4 Predictive Analytics</p>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="introductory-example" class="slide level2">
-<h2>Introductory Example</h2>
-<blockquote>
-<p>Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.</p>
-</blockquote>
-<blockquote>
-<p>Assume you have the age, income, and a creditworthiness category of “yes” or “no” for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.</p>
-</blockquote>
-<blockquote>
-<p>You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.</p>
-</blockquote>
-<blockquote>
-<p>What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?</p>
-</blockquote>
-<p><img data-src="../images/slides_221.png"></p>
-</section>
-<section id="k-nearest-neighbors" class="slide level2">
-<h2>k-Nearest Neighbors</h2>
 <ul>
-<li>k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.</li>
-<li>The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.</li>
-<li><strong>Procedure of k-NN:</strong>
-<ul>
-<li><ol type="1">
-<li>Determine parameter k (= number of nearest neighbors)</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>Calculate the distances between the new object and all known labeled objects.</li>
-</ol></li>
-<li><ol start="3" type="1">
-<li>Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.</li>
-</ol></li>
-<li><ol start="4" type="1">
-<li>Count the frequencies of the classes of the nearest neighbors.</li>
-</ol></li>
-<li><ol start="5" type="1">
-<li>Assign the new object to the most frequent class.</li>
-</ol></li>
-</ul></li>
+<li><p>Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g.&nbsp;if a method only produces linear models.</p></li>
+<li><p>Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.</p></li>
+<li><p>Typically, there is a tradeoff between bias and variance.</p></li>
+<li><p>Noise is everything that arises from random variations in the data. It cannot be controlled.</p></li>
 </ul>
+<p><img data-src="../images/slides_132_new.png"></p>
 </section>
-<section id="measuring-similarity" class="slide level2">
-<h2>Measuring Similarity</h2>
-<p><img data-src="../images/slides_182_new.png"></p>
-</section>
-<section id="unnormalized-vs.-normalized" class="slide level2">
-<h2>Unnormalized vs.&nbsp;Normalized</h2>
-<p><img data-src="../images/slides_183_new.png"></p>
-</section>
-<section id="example-i" class="slide level2">
-<h2>Example (I)</h2>
-<p><img data-src="../images/slides_184_new.png"></p>
-</section>
-<section id="example-ii" class="slide level2">
-<h2>Example (II)</h2>
-<p><img data-src="../images/slides_185_new.png"></p>
-</section>
-<section id="example-iii" class="slide level2">
-<h2>Example (III)</h2>
-<ol start="3" type="1">
-<li>Choose the k nearest neighbors</li>
-</ol>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Customer</th>
-<th style="text-align: center;">Age</th>
-<th style="text-align: center;">Monthly Income</th>
-<th style="text-align: center;">Monthly Costs</th>
-<th style="text-align: center;">Creditworthy</th>
-<th style="text-align: center;">Distance</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">0.0000</td>
-<td style="text-align: center;">0.0303</td>
-<td style="text-align: center;">0.0400</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.4347</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">0.1714</td>
-<td style="text-align: center;">0.3333</td>
-<td style="text-align: center;">0.3600</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.1726</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">E</td>
-<td style="text-align: center;">0.3143</td>
-<td style="text-align: center;">0.1818</td>
-<td style="text-align: center;">0.2000</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.2010</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">0.4286</td>
-<td style="text-align: center;">0.3939</td>
-<td style="text-align: center;">0.6000</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.4482</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">G</td>
-<td style="text-align: center;">0.4857</td>
-<td style="text-align: center;">0.2121</td>
-<td style="text-align: center;">0.1200</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.3090</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">0.2286</td>
-<td style="text-align: center;">0.3636</td>
-<td style="text-align: center;">0.2000</td>
-<td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<ol start="4" type="1">
-<li>Count the numbers of class members</li>
-</ol>
-<blockquote>
-<p>3 x yes; 2 x no</p>
-</blockquote>
-<ol start="5" type="1">
-<li>Assign object to most frequent class</li>
-</ol>
-<blockquote>
-<p>Customer is creditworthy!</p>
-</blockquote>
-</section>
-<section id="creation-and-use-of-models" class="slide level2">
-<h2>Creation and Use of Models</h2>
-<p><img data-src="../images/slides_188_new.png"></p>
-</section>
-<section id="calculating-accuracies" class="slide level2">
-<h2>Calculating Accuracies</h2>
-<p><img data-src="../images/slides_189_new.png"></p>
-</section>
-<section id="determining-parameter-k" class="slide level2">
-<h2>Determining Parameter k</h2>
-<ol type="1">
-<li><p>Split the original labeled dataset into training and test data.</p></li>
-<li><p>Pick an evaluation metric. Misclassification rate or accuracy are good ones.</p></li>
-<li><p>Run k-NN a few times, changing k and checking the evaluation measure.</p></li>
-<li><p>Optimize k by picking the one with the best evaluation measure.</p></li>
-</ol>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: center;">k</th>
-<th style="text-align: center;">Accuracy</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0.720</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.685</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.740</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">0.745</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.770</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0.740</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">0.750</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">0.750</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">0.765</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">0.760</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="navigation-1" class="slide level2">
-<h2>Navigation</h2>
-<p>4 Predictive Analytics</p>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="evaluating-the-quality-of-classification-i" class="slide level2">
-<h2>Evaluating the quality of Classification (I)</h2>
-<blockquote>
-<p>True positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as “yes”, when it is in fact “no”. A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications.</p>
-</blockquote>
-<p><img data-src="../images/slides_223.png"></p>
-</section>
-<section id="evaluating-the-quality-of-classification-ii" class="slide level2">
-<h2>Evaluating the quality of Classification (II)</h2>
-<blockquote>
-<p>Test metrics are used to assess how accurately the model predicts the known values:</p>
-</blockquote>
-<p><img data-src="../images/slides_192_new.png"></p>
-<blockquote>
-<p>Most classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:</p>
-</blockquote>
-<p><img data-src="../images/slides_1922_new.png"></p>
-</section>
-<section id="evaluating-the-quality-of-classification-iii" class="slide level2">
-<h2>Evaluating the quality of Classification (III)</h2>
-<blockquote>
-<p>Misclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:</p>
-</blockquote>
-<p><img data-src="../images/slides_193_new.png"></p>
-<blockquote>
-<p>For problems like this additional measures are required to evaluate a classifier.</p>
-</blockquote>
-<blockquote>
-<p><strong>Sensitivity</strong> (true positive rate, recall) measures the proportion of positives that are correctly identified as such. <strong>Specificity</strong> (true negative rate) measures the proportion of negatives that are correctly identified as such.</p>
-</blockquote>
-<p><img data-src="../images/slides_193_2_new.png"></p>
-<blockquote>
-<p>Using both measures, we can compute the <strong>Balanced Accuracy</strong>.</p>
-</blockquote>
-<p><img data-src="../images/slides_193_3_new.png"></p>
-</section>
-<section id="problem-of-imbalancing-and-accuracy" class="slide level2">
-<h2>Problem of Imbalancing and Accuracy</h2>
-<blockquote>
-<p>Assume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be “Accept” (Y) and “Reject” (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.</p>
-</blockquote>
-<blockquote>
-<p>Because of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.</p>
-</blockquote>
-<blockquote>
-<p>The results of the test of the model is consequently:</p>
-</blockquote>
-<p><img data-src="../images/slides_194_new.png"></p>
-<blockquote>
-<p>Thus, the model is blind for the N cases. But these are the ones of primary interest for the company.</p>
-</blockquote>
-</section>
-<section id="evaluating-the-quality-of-classification-iv" class="slide level2">
-<h2>Evaluating the quality of Classification (IV)</h2>
-<div style="display:flex; font-size:1.3em;font-weight:600">
-<div style="width:50%">
-<blockquote>
-<p><strong>Precision</strong> measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.</p>
-</blockquote>
-<blockquote>
-<p><strong>Recall</strong> measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.</p>
-</blockquote>
-</div>
-<div style="width:50%;text-align:center;">
-<p><img data-src="../images/slides_224.png"></p>
-</div>
-</div>
-<blockquote>
-
-</blockquote>
-<aside><div>
-<p>— Source: Wikipedia</p>
-</div></aside></section>
-<section id="evaluating-the-quality-of-classification-v" class="slide level2">
-<h2>Evaluating the quality of Classification (V)</h2>
-<blockquote>
-<p>The F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.</p>
-</blockquote>
-<blockquote>
-<p><img data-src="../images/slides_196_new.png"></p>
-</blockquote>
-<blockquote>
-<p>A F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.</p>
-</blockquote>
-<blockquote>
-<p>It is commonly used in cases of high class imbalance.</p>
-</blockquote>
-</section>
-<section id="creation-and-use-of-models-1" class="slide level2">
-<h2>Creation and Use of Models</h2>
-<p><img data-src="../images/slides_197_new.png"></p>
-</section>
-<section id="navigation-2" class="slide level2">
-<h2>Navigation</h2>
-<p>4 Predictive Analytics</p>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="which-one-is-better" class="slide level2">
-<h2>Which one is better?</h2>
-<p><img data-src="../images/slides_199_new.png"></p>
-</section>
-<section id="introductory-example-1" class="slide level2">
-<h2>Introductory Example</h2>
-<p><img data-src="../images/slides_225.png"></p>
-
-<aside><div>
-<p>To choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.</p>
-<p>Proportions in the leafs can be interpreted as probabilities.</p>
-</div></aside></section>
-<section id="decision-trees-i" class="slide level2">
-<h2>Decision Trees (I)</h2>
-<blockquote>
-<p>Decision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).</p>
-</blockquote>
-<blockquote>
-<p>A decision tree consists of nodes and borders. The topmost node (without any parent node) is called “root”. A node without a child node is called “leaf”. Nodes that have parent and child nodes are called “interior nodes”. The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a “binary tree”.</p>
-</blockquote>
-<blockquote>
-<p>A decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets).</p>
-</blockquote>
-</section>
-<section id="decision-trees-ii" class="slide level2">
-<h2>Decision Trees (II)</h2>
-<blockquote>
-<p>Graphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.</p>
-</blockquote>
-<blockquote>
-<p>The decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model.</p>
-</blockquote>
-<p><img data-src="../images/slides_241.png"></p>
-</section>
-<section id="decision-trees-iii" class="slide level2">
-<h2>Decision Trees (III)</h2>
-<p><img data-src="../images/slides_242.png"></p>
-
-<aside><div>
-<p>— Source: http://iopscience.iop.org/article/10.1088/1749-4699/5/1/015004</p>
-</div></aside></section>
-<section id="overview-of-important-decision-tree-methods" class="slide level2">
-<h2>Overview of important Decision Tree Methods</h2>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">CART</th>
-<th style="text-align: center;">ID3</th>
-<th style="text-align: center;">C5.0</th>
-<th style="text-align: center;">CHAID</th>
-<th style="text-align: center;">Random Forests</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>Idea</strong></td>
-<td style="text-align: center;">Choose the attribute with the highest information content</td>
-<td style="text-align: center;">One of the first methods from Quinlan; uses the concept of information gain</td>
-<td style="text-align: center;">Like ID3 based on the concept of information gain</td>
-<td style="text-align: center;">Choose the attribute that is most dependent on the target variable</td>
-<td style="text-align: center;">Construct many trees with different sets of features and samples (randomly). Result by voting.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Measure used</strong></td>
-<td style="text-align: center;">Gini-Index</td>
-<td style="text-align: center;">Information gain (entropy)</td>
-<td style="text-align: center;">Ratio of information gain</td>
-<td style="text-align: center;">Chi-square split</td>
-<td style="text-align: center;">Optional, mostly Gini-Index</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Type of Splitting</strong></td>
-<td style="text-align: center;">Binary</td>
-<td style="text-align: center;">Complete, pruning</td>
-<td style="text-align: center;">Complete, pruning</td>
-<td style="text-align: center;">Complete, pruning</td>
-<td style="text-align: center;">Complete</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="introductory-example-2" class="slide level2">
-<h2>Introductory Example</h2>
-<p><img data-src="../images/slides_205_new.png"></p>
-</section>
-<section id="splitting-with-entropy-in-id3" class="slide level2">
-<h2>Splitting with Entropy in ID3</h2>
-<p><img data-src="../images/slides_206_new.png"></p>
-</section>
-<section id="calculating-the-information-gain" class="slide level2">
-<h2>Calculating the Information Gain</h2>
-<blockquote>
-<p>The information gain is a measure, that shows (by combination of the entropies) the appropriateness of an attribute for splitting:</p>
-</blockquote>
-<p><img data-src="../images/slides_207_1_new.png"></p>
-<blockquote>
-<p>where m = number of values (here two: light, strong), ti = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting.</p>
-</blockquote>
-<p><img data-src="../images/slides_207_2_new.png"></p>
-</section>
-<section id="decision-using-id3" class="slide level2">
-<h2>Decision using ID3</h2>
-<blockquote>
-<p>Information gain (outlook) = 0.246</p>
-</blockquote>
-<blockquote>
-<p>Information gain (humidity) = 0.151</p>
-</blockquote>
-<blockquote>
-<p>Information gain (wind) = 0.048</p>
-</blockquote>
-<blockquote>
-<p>Information gain (temperature) = 0.029</p>
-</blockquote>
-<blockquote>
-<p>We choose the attribute with the largest information gain (here: outlook) for the first splitting.</p>
-</blockquote>
-<blockquote>
-<p>As solution we obtain the following tree:</p>
-</blockquote>
-<p><img data-src="../images/slides_243.png"></p>
-</section>
-<section id="decision-using-c5.0" class="slide level2">
-<h2>Decision using C5.0</h2>
-<blockquote>
-<p>ID3 tends to favor attributes that have a large number of values, resulting in larger trees. For example, if we have an attribute that has a distinct value for each record, then the entropy is 0, thus the information gain is maximal.</p>
-</blockquote>
-<blockquote>
-<p>To compensate for this, C5.0 is a further development that uses the information gain ratio as a splitting criterion:</p>
-</blockquote>
-<p><img data-src="../images/slides_209_new.png"></p>
-<blockquote>
-<p>In the case of our example the GainRatio of Windy is</p>
-</blockquote>
-<p><img data-src="../images/slides_209_2_new.png"></p>
-<blockquote>
-<p>and the GainRatio of Outlook is</p>
-</blockquote>
-<p><img data-src="../images/slides_209_2_new.png"></p>
-</section>
-<section id="handling-numerical-attributes" class="slide level2">
-<h2>Handling Numerical Attributes</h2>
-<blockquote>
-<p>Numerical attributes are usually splitted binary. In contrast to categorical attributes many possible splitting points exist.</p>
-</blockquote>
-<blockquote>
-<p>The splitting point with the highest information gain is looked for. For this, the potential attribute is sorted according to its values first and then all possible splitting point and the corresponding information gains are calculated. In extreme cases there exists n-1 possibilities.</p>
-</blockquote>
-<p><img data-src="../images/slides_210_new.png"></p>
-</section>
-<section id="the-cart-algorithm" class="slide level2">
-<h2>The CART Algorithm</h2>
-<blockquote>
-<p>The CART algorithm (Classification And Regression Trees) constructs trees that have only binary splits. Like C5.0, it is able to handle categorical and numerical attributes.</p>
-</blockquote>
-<blockquote>
-<p>As a measure for the impurity of a node t, CART uses the Gini Index. In the case of two classes the Gini Index is defined as:</p>
-</blockquote>
-<p><img data-src="../images/slides_211_new.png"></p>
-</section>
-<section id="splitting-in-cart" class="slide level2">
-<h2>Splitting in CART</h2>
-<p><img data-src="../images/slides_212_new.png"></p>
-</section>
-<section id="coherence-between-entropy-and-gini-index" class="slide level2">
-<h2>Coherence between Entropy and Gini Index</h2>
-<p><img data-src="../images/slides_213_new.png"></p>
-<blockquote>
-<p><strong>Remark:</strong> Entropy has been scaled from (0, 1) to (0, 0.5)!</p>
-</blockquote>
-</section>
-<section id="overfitting-i" class="slide level2">
-<h2>Overfitting (I)</h2>
-<blockquote>
-<p>Most decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes. If there are no such conflicting objects, the decision tree will correctly classify all training objects.</p>
-</blockquote>
-<blockquote>
-<p>If tree performance is measured from the number of correctly classified cases it is common to find that the training data gives an over-optimistic guide to future performance, i.e.&nbsp;with new data. A tree should exhibit generalization, i.e.&nbsp;work well with data other than those used to generate it. When the tree grows during training it often shows a decrease in generalization. This is because the deeper nodes are fitting noise in the training data not representative over the entire universe from which the training set was sampled. This is called ‘overfitting’.</p>
-</blockquote>
-<p><img data-src="../images/slides_244.png"></p>
-</section>
-<section id="overfitting-ii" class="slide level2">
-<h2>Overfitting (II)</h2>
-<blockquote>
-<p>The learner overfits to correctly classify the noisy data objects.</p>
-</blockquote>
-<p><img data-src="../images/slides_245.png"></p>
-</section>
-<section id="random-forest-i" class="slide level2">
-<h2>Random Forest (I)</h2>
-<blockquote>
-<p>Random forest is an ensemble classifier that consists of many decision trees.</p>
-</blockquote>
-<blockquote>
-<p>For every tree a subset of the data objects and a subset of features is randomly chosen. Then the tree is constructed usually using the Gini Index.</p>
-</blockquote>
-<blockquote>
-<p>In the end, a simple majority vote is taken for prediction.</p>
-</blockquote>
-<p><img data-src="../images/slides_246.png"></p>
-<blockquote>
-<p><strong>Algorithm:</strong></p>
-</blockquote>
-<ol type="1">
-<li class="fragment">Create n samples from the original data. Frequent sample size is 2/3.</li>
-<li class="fragment">For each of the samples, grow a tree, with the following modification: at each node, rather than choosing the best split among all predictors, randomly sample m* of the m predictors and choose the best split from among those variables.</li>
-<li class="fragment">Predict by aggregating the predictions of the n trees (majority votes).</li>
-</ol>
-</section>
-<section id="random-forest-ii" class="slide level2">
-<h2>Random Forest (II)</h2>
-<blockquote>
-<p>Voting-Principle of Random Forest:</p>
-</blockquote>
-<blockquote>
-<p>To avoid overfitting effects, the size and the depth of the trees can be restricted.</p>
-</blockquote>
-<p><img data-src="../images/slides_247.png"></p>
-</section>
-<section id="predictive-analytics" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="introductory-example-3" class="slide level2">
-<h2>Introductory Example</h2>
-<p><img data-src="../images/slides_248.png"></p>
-<p><img data-src="../images/slides_249.png"></p>
-<blockquote>
-<p><strong>websites (features)</strong></p>
-</blockquote>
-<blockquote>
-<p>1=visited</p>
-</blockquote>
-<blockquote>
-<p>0=not visited</p>
-</blockquote>
-<blockquote>
-<p><strong>ad (target)</strong></p>
-</blockquote>
-<blockquote>
-<p>1=clicked</p>
-</blockquote>
-<blockquote>
-<p>0=not clicked</p>
-</blockquote>
-<blockquote>
-<p><strong>Giant sparse matrix!</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>One matrix for every ad!</strong></p>
-</blockquote>
-
-<aside><div>
-<p>— Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative</p>
-</div></aside></section>
-<section id="why-not-classical-linear-regression" class="slide level2">
-<h2>Why not classical linear regression?</h2>
-<blockquote>
-<p>It is possible to implement a linear regression on such a dataset where Y={0,1}.</p>
-</blockquote>
-<blockquote>
-<p>Problems:</p>
-</blockquote>
-<blockquote>
-
-<ul>
-<li>The predicted values of the linear model can be greater than 1 or less than 0.</li>
-<li>e is not normally distributed because Y takes on only two values.</li>
-<li>The error terms are heteroscedastic (the error variance is not constant for all values of X).</li>
-</ul>
-
-</blockquote>
-
-<aside><div>
-<p>— Source: Bichler (2015): Course Business Analytics, TU München</p>
-</div></aside></section>
-<section id="logistic-regression-i" class="slide level2">
-<h2>Logistic regression (I)</h2>
-<blockquote>
-<p>Logistic regression is a regression model where the dependent variable is categorical. The classical logistic regression is a binary classifier, where the dependent variable has two states. The output of a logistic regression model ranges between 0 and 1.</p>
-</blockquote>
-<blockquote>
-<p>Logistic regression uses the logistic function (or Sigmoid function) because it can take an input with any value from negative to positive infinity, whereas the output always takes values between zero and one and hence is interpretable as a probability.</p>
-</blockquote>
-<blockquote>
-<p>It is defined as:</p>
-</blockquote>
-<p><img data-src="../images/slides_250.png"></p>
-</section>
-<section id="logistic-regression-ii" class="slide level2">
-<h2>Logistic regression (II)</h2>
-<blockquote>
-<p>If we set</p>
-</blockquote>
-<blockquote>
-<p>the logistic function can now be written as:</p>
-</blockquote>
-<blockquote>
-<p>We interpret F(x) as the conditional probability that the class attribute has the value 1 with the given input vector x.</p>
-</blockquote>
-<blockquote>
-<p>The coefficients ß0 and ß can be estimated via Maximum Likelihood Estimation.</p>
-</blockquote>
-<blockquote>
-<p>The parameter ß0 represents the unconditional probability of “Y=1” knowing nothing about the feature vector x.</p>
-</blockquote>
-<blockquote>
-<p>The parameter vector β defines the slope of the logit function. It determines the extent to which certain features contribute for increased or decreased likelihood to “Y=1”.</p>
-</blockquote>
-<blockquote>
-<p>The output of a logistic model is a probability. To use this for classification purposes:</p>
-</blockquote>
-<blockquote>
-<p>If the predicted probability is &gt; 0.5 the label is 1</p>
-</blockquote>
-<blockquote>
-<p>and otherwise 0.</p>
-</blockquote>
-
-<aside><div>
-<p>— Source: odd = Chance</p>
-</div></aside></section>
-<section id="predictive-analytics-1" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="functionality-of-human-neurons" class="slide level2">
-<h2>Functionality of Human Neurons</h2>
-<p><img data-src="../images/slides_251.png"></p>
-<p><img data-src="../images/slides_252.png"></p>
-<blockquote>
-<p><strong>A Look into the Nervous System</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Design of a Neuron</strong></p>
-</blockquote>
-</section>
-<section id="an-easy-example-i" class="slide level2">
-<h2>An Easy Example (I)</h2>
-<blockquote>
-<p><strong>f(x) = Activation function</strong></p>
-</blockquote>
-<blockquote>
-<p>e.g.</p>
-</blockquote>
-<blockquote>
-<p>where t = Stimulus threshold</p>
-</blockquote>
-</section>
-<section id="an-easy-example-ii" class="slide level2">
-<h2>An Easy Example (II)</h2>
-<blockquote>
-<p><strong>f(x) = Activation function</strong></p>
-</blockquote>
-<blockquote>
-<p>e.g.</p>
-</blockquote>
-<blockquote>
-<p>where t = Stimulus threshold</p>
-</blockquote>
-</section>
-<section id="functionality-of-a-neuron" class="slide level2">
-<h2>Functionality of a Neuron</h2>
-<p><img data-src="../images/slides_253.jpg"></p>
-<blockquote>
-<p>For the case of n inputs, we can rewrite the neuron’s function to</p>
-</blockquote>
-<blockquote>
-<p>with b = -t. b is known as the perceptron’s bias. The result of this function would then be fed into an activation function to produce a labeling.</p>
-</blockquote>
-<p><img data-src="../images/slides_254.png"></p>
-<blockquote>
-<p>This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.</p>
-</blockquote>
-
-<aside><div>
-<p>— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks</p>
-</div></aside></section>
-<section id="the-multilayer-perceptron" class="slide level2">
-<h2>The Multilayer Perceptron</h2>
-<blockquote>
-<p>The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.</p>
-</blockquote>
-<blockquote>
-<p><strong>Input Neurons</strong>: receive signals from the outer world.</p>
-</blockquote>
-<blockquote>
-<p><strong>Hidden Neurons</strong>: have an internal representation of the outer world.</p>
-</blockquote>
-<blockquote>
-<p><strong>Output Neurons</strong>: pass signals to the outer world.</p>
-</blockquote>
-</section>
-<section id="types-of-activation-functions" class="slide level2">
-<h2>Types of Activation Functions</h2>
-<blockquote>
-<p>A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:</p>
-</blockquote>
-<ul>
-<li>tangens</li>
-<li>hyperbolicus</li>
-<li>logistic function (sigmoid)</li>
-</ul>
-</section>
-<section id="design-of-a-multilayer-perceptron" class="slide level2">
-<h2>Design of a Multilayer Perceptron</h2>
-<p><img data-src="../images/slides_319.png"></p>
-
-<p><img data-src="../images/slides_320.png"></p>
-
-<aside><div>
-<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div><div>
-<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div></aside></section>
-<section id="predictive-analytics-2" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.2.1 OLS</p>
-<p>4.4.2.2 Ridge Regression</p>
-<p>4.4.2.3 Support Vector Regression</p>
-<p>4.4.2.4 Neural Networks</p>
-<p>4.4.2.5 Decision Trees</p>
-<p>4.4.2.6 K-Nearest Neighbors</p>
-</section>
-<section id="introductory-example-4" class="slide level2">
-<h2>Introductory Example</h2>
-<blockquote>
-<p>Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)</p>
-</blockquote>
-</section>
-<section id="regression-trees" class="slide level2">
-<h2>Regression Trees</h2>
-<blockquote>
-<p>Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.</p>
-</blockquote>
-<blockquote>
-<p>The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.</p>
-</blockquote>
-<blockquote>
-<p>The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g.&nbsp;for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e.&nbsp;$165,670, for these players.</p>
-</blockquote>
-<blockquote>
-<p>Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000<em>e^6.00 =$403,428 and 1,000</em>e^6.74 =$845,346.</p>
-</blockquote>
-<p><img data-src="../images/slides_322.png"></p>
-
-<aside><div>
-<p>— Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;304f.</p>
-</div></aside></section>
-<section id="constructing-a-regression-tree-i" class="slide level2">
-<h2>Constructing a Regression Tree (I)</h2>
-<p><img data-src="../images/slides_323.png"></p>
-
-<aside><div>
-<p>— Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;305f.</p>
-</div></aside></section>
-<section id="constructing-a-regression-tree-ii" class="slide level2">
-<h2>Constructing a Regression Tree (II)</h2>
-
-<aside><div>
-<p>— Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;305f.</p>
-</div></aside></section>
-<section id="random-forests-for-regression" class="slide level2">
-<h2>Random Forests for Regression</h2>
-<blockquote>
-<p>Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.</p>
-</blockquote>
-<blockquote>
-<p>A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.</p>
-</blockquote>
-<blockquote>
-<p>Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.</p>
-</blockquote>
-<blockquote>
-<p>The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.</p>
-</blockquote>
-</section>
-<section id="comparing-the-fitting-ability-of-one-vs.-many-regression-trees" class="slide level2">
-<h2>Comparing the Fitting Ability of one vs.&nbsp;many Regression Trees</h2>
-<p><strong>Single Regression Tree</strong></p>
-<p><strong>Average of 100 Regression Trees</strong></p>
-<p><img data-src="../images/slides_324.png"></p>
-<p><img data-src="../images/slides_325.png"></p>
-</section>
-<section id="limitations-of-tree-methods-in-regression" class="slide level2">
-<h2>Limitations of Tree Methods in Regression</h2>
-<blockquote>
-<p>When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.</p>
-</blockquote>
-<blockquote>
-<p>Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g.&nbsp;in the case of data with persistent trends. A solution may be a frequent re-training in this case.</p>
-</blockquote>
-<blockquote>
-<p>An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.</p>
-</blockquote>
-<blockquote>
-<p>If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.</p>
-</blockquote>
-</section>
-<section id="predictive-analytics-3" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.2.1 OLS</p>
-<p>4.4.2.2 Ridge Regression</p>
-<p>4.4.2.3 Support Vector Regression</p>
-<p>4.4.2.4 Neural Networks</p>
-<p>4.4.2.5 Decision Trees</p>
-<p>4.4.2.6 K-Nearest Neighbors</p>
-</section>
-<section id="k-nearest-neighbors-for-regression" class="slide level2">
-<h2>k-Nearest Neighbors for Regression</h2>
-<blockquote>
-<p>k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.</p>
-</blockquote>
-<blockquote>
-<p>A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</p>
-</blockquote>
-</section>
-<section id="predictive-analytics-4" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.3 Segmentation</p>
-<p>4.4.3.1 K-Means</p>
-<p>4.4.3.2 Hierarchical Cluster Analysis</p>
-</section>
-<section id="introductory-example-5" class="slide level2">
-<h2>Introductory Example</h2>
-<blockquote>
-<p>Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:</p>
-</blockquote>
-<ol type="1">
-<li>FRESH: annual spending on fresh products (Continuous);</li>
-<li>MILK: annual spending on milk products (Continuous);</li>
-<li>GROCERY: annual spending on grocery products (Continuous);</li>
-<li>FROZEN: annual spending on frozen products (Continuous);</li>
-<li>DETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);</li>
-<li>DELICATESSEN: annual spending on delicatessen products (Continuous);</li>
-<li>CHANNEL: customers buying channel (Nominal);</li>
-<li>REGION: customers region (Nominal)</li>
-</ol>
-<blockquote>
-<p>Your goal is to segment the users. That means finding similar types of users and bunching them together.</p>
-</blockquote>
-<blockquote>
-<p>Why would you want to do this?</p>
-</blockquote>
-<blockquote>
-<p>You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.</p>
-</blockquote>
-<blockquote>
-<p>You might have a model that works better for specific groups. Or you might have different models for different groups.</p>
-</blockquote>
-</section>
-<section id="cluster-analysis" class="slide level2">
-<h2>Cluster Analysis</h2>
-<blockquote>
-<p>Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.</p>
-</blockquote>
-<blockquote>
-<p>There are different types of cluster analysis methods:</p>
-</blockquote>
-<ul>
-<li>Clustering Methods</li>
-</ul>
-</section>
-<section id="predictive-analytics-5" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.3 Segmentation</p>
-<p>4.4.3.1 K-Means</p>
-<p>4.4.3.2 Hierarchical Cluster Analysis</p>
-</section>
-<section id="partitioning-cluster-methods" class="slide level2">
-<h2>Partitioning Cluster Methods</h2>
-<blockquote>
-<p>The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.</p>
-</blockquote>
-<blockquote>
-<p>Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).</p>
-</blockquote>
-<blockquote>
-<p>The objective is to find</p>
-</blockquote>
-<blockquote>
-<p>where is the mean of points in Si.</p>
-</blockquote>
-<blockquote>
-<p><strong>Procedure of K-Means:</strong></p>
-</blockquote>
-<blockquote>
-<p>Step 1: Randomly partition the data objects into k clusters.</p>
-</blockquote>
-<blockquote>
-<p>Step 2: Calculate the cluster centroids.</p>
-</blockquote>
-<blockquote>
-<p>Step 3: Calculate the distance from every data point to all centroids.</p>
-</blockquote>
-<blockquote>
-<p>Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.</p>
-</blockquote>
-<blockquote>
-<p>Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.</p>
-</blockquote>
-</section>
-<section id="example-of-a-k-means-cluster-analysis" class="slide level2">
-<h2>Example of a K-Means Cluster Analysis</h2>
-<p><img data-src="../images/slides_327.png"></p>
-<p><strong>Between cluster variance:</strong></p>
-<p><strong>Within cluster variance:</strong></p>
-</section>
-<section id="finding-the-optimal-number-of-clusters-i" class="slide level2">
-<h2>Finding the Optimal Number of Clusters (I)</h2>
-<blockquote>
-<p>The aim of the cluster analysis is the segmentation of objects into clusters, which are preferably homogeneous in it selves and heterogeneous to each other. The less variance exists within the clusters and the more variance exists between the clusters, the better is the number of clusters.</p>
-</blockquote>
-<blockquote>
-<p><strong>Total variance:</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Accumulated variance within the k clusters:</strong></p>
-</blockquote>
-<blockquote>
-<p>This results in the variance between the clusters:</p>
-</blockquote>
-<blockquote>
-<p>with n = number of objects</p>
-</blockquote>
-<blockquote>
-<p>m = number of attributes</p>
-</blockquote>
-</section>
-<section id="finding-the-optimal-number-of-clusters-ii" class="slide level2">
-<h2>Finding the Optimal Number of Clusters (II)</h2>
-<blockquote>
-<p>If you put V in on the ordinate and the number of cluster k on the abscissa, it often results in a curve with one or several kinks. At the point where exists the (first) significant kink, you can find the optimal number of clusters:</p>
-</blockquote>
-<blockquote>
-<p><strong>Total variance V_tot</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Between cluster variance V_betw</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Within cluster variance V_in</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Number of clusters</strong></p>
-</blockquote>
-</section>
-<section id="finding-the-optimal-number-of-clusters-iii" class="slide level2">
-<h2>Finding the Optimal Number of Clusters (III)</h2>
-<blockquote>
-<p>Instead of visually identifying the optimal cluster number, we can calculate the distances from the points on the elbow curve to a straight line linking the first and the last point on the curve. The cluster number with the largest distance is then chosen as the one with the strongest kink.</p>
-</blockquote>
-</section>
-<section id="predictive-analytics-6" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.3 Segmentation</p>
-<p>4.4.3.1 K-Means</p>
-<p>4.4.3.2 Hierarchical Cluster Analysis</p>
-</section>
-<section id="hierarchical-cluster-methods" class="slide level2">
-<h2>Hierarchical Cluster Methods</h2>
-<ul>
-<li>There are two types of hierarchical cluster methods:
-<ul>
-<li>Agglomerative hierarchical clustering is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.</li>
-<li>Divisive hierarchical clustering is a top-down clustering method. It works in a similar way to agglomerative clustering but in the opposite direction. This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.</li>
-</ul></li>
-</ul>
-</section>
-<section id="process-of-the-hierarchical-cluster-analysis" class="slide level2">
-<h2>Process of the Hierarchical Cluster Analysis</h2>
-</section>
-<section id="measuring-similarity-between-clusters-i" class="slide level2">
-<h2>Measuring Similarity between Clusters (I)</h2>
-<p><img data-src="../images/slides_328.png"></p>
-<blockquote>
-<p>Distance between two clusters is the distance between the closest points:</p>
-</blockquote>
-<blockquote>
-<p><strong>Complete Linkage:</strong></p>
-</blockquote>
-<p><img data-src="../images/slides_329.png"></p>
-<blockquote>
-<p>Distance between two clusters is the distance between the farthest pair of points:</p>
-</blockquote>
-<p><img data-src="../images/slides_330.png"></p>
-<blockquote>
-<p>Distance between two clusters i and j is the distance between their centroids:</p>
-</blockquote>
-</section>
-<section id="measuring-similarity-between-clusters-ii" class="slide level2">
-<h2>Measuring Similarity between Clusters (II)</h2>
-<blockquote>
-<p><strong>Average Linkage:</strong></p>
-</blockquote>
-<blockquote>
-<p>Distance between clusters is the average distance between the cluster points:</p>
-</blockquote>
-<p><img data-src="../images/slides_331.png"></p>
-<blockquote>
-<p><strong>Ward’s Method / Minimum Variance Method (only Agglomerative):</strong></p>
-</blockquote>
-<p><img data-src="../images/slides_332.png"></p>
-<blockquote>
-<p>Ward’s minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:</p>
-</blockquote>
-<blockquote>
-<p>For a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf</p>
-</blockquote>
-</section>
-<section id="single-linkage-example-i" class="slide level2">
-<h2>Single Linkage Example (I)</h2>
-<p><img data-src="../images/slides_333.png"></p>
-
-<aside><div>
-<p>— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa</p>
-</div></aside></section>
-<section id="single-linkage-example-ii" class="slide level2">
-<h2>Single Linkage Example (II)</h2>
-<p><img data-src="../images/slides_334.png"></p>
-
-<aside><div>
-<p>— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa</p>
-</div></aside></section>
-<section id="dendrogram" class="slide level2">
-<h2>Dendrogram</h2>
-<blockquote>
-<p>A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g.&nbsp;euclidean distance) between the clusters.</p>
-</blockquote>
-<blockquote>
-<p>In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length. The red line in the graph below shows such a point:</p>
-</blockquote>
-<blockquote>
-<p>Counting the points that cut this line might be a good answer for the number of clusters the data can have. It is the number 6 in this case.</p>
-</blockquote>
+<section id="summary" class="slide level2" data-state="hide-menubar">
+<h2>Summary</h2>
 
 
 </section></section>
