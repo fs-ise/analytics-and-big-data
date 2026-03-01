@@ -8,6 +8,24 @@ format: html
 | 00-20       | 20        | Orga                    |
 
 ::: callout-note
+
+Mention (without bullets on the slide)
+- What I expect from students
+- What students can expect from me
+
+I do not know everything. I make mistakes. ...
+
+About you:
+- Prepare an example (humor/mistake?)
+
+    chatgpt: tell a story of myself (for the beginning of lectures)
+    - short bio
+    - theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)
+
+    My Story as a teacher. Copy Stanford slides for CS vs. Evolved role...
+    Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise
+
+
 - Name tags?
 - tools (spyder)?
 - Format of the session (exercises, preparation/reading)
@@ -29,3 +47,9 @@ format: html
 In learning objectives: apply/select/design:
 - **Strategy-only perspectives without hands-on work**
   (case-only / consulting-style discussions without implementing and evaluating analyses)
+
+
+why analytics matters:
+## Takeaway
+Analytics is not just about data.
+It changes **who wins, how decisions are made, and how organizations compete.**

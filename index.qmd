@@ -44,7 +44,7 @@ SECTION_ORDER = [
     "Data foundations",
     "Analytical models",
     "Deployment in organizations",
-    "Integration and review",
+    "Synthesis",
 ]
 
 # --- helpers ---

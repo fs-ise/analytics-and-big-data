@@ -27,8 +27,8 @@ Research interests
 
 Teaching interests
 
-- Programming and software engineering
 - Analytics and big data
+- Programming and software engineering
 - IT security
 - Digital knowledge-intensive and platform-based work
 - Literature review methods
@@ -128,109 +128,54 @@ Decision-making – Turning insights into business action.
 
 ## Course Architecture
 
-```{dot}
-digraph DataAnalyticsCourse {
 
-    rankdir=TB;
-    node [shape=box, style="rounded", color="#003366", fontcolor="#000000"];
+<div style="text-align:center">
 
-    // --- Foundations ---
-    subgraph cluster_foundations {
-        label="Foundations";
-        style="rounded";
-        S1 [label="Session 1:\nFoundations of data analytics"];
-    }
+```{mermaid}
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#E8EEF7",
+    "primaryTextColor": "#1F2D3D",
+    "primaryBorderColor": "#3A506B",
+    "lineColor": "#3A506B",
+    "secondaryColor": "#F4F6FA",
+    "fontSize": "18px",
+    "fontFamily": "Helvetica, Arial, sans-serif"
+  }
+}}%%
 
-    // --- Data Analytics ---
-    subgraph cluster_da {
-        label=" ";
-        style="rounded";
+flowchart LR
 
-        subgraph cluster_bd {
-            label="Big Data";
-            style="rounded";
+  classDef foundation fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;
+  classDef stack fill:#F4F6FA,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;
+  classDef synthesis fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;
 
-            { rank=same;
-              S8 [label="Session 8:\nBig data"];
-              S9 [label="Session 9:\nAnalytics case examples"];
-            }
+  subgraph Right["<b>Synthesis</b>"]
+    direction TB
+    S["<div align='center'><b>Integration and outlook</b></div>"]
+  end
 
-            S8 -> S9;
-        }
+  subgraph Stack["<b>Analytics capability stack</b>"]
+    direction LR
+    D["<div align='center'><b>Data foundations</b><br/>Exploration and architecture</div>"]
+    M["<div align='center'><b>Analytical models</b><br/>Regression · ML · Big Data</div>"]
+    O["<div align='center'><b>Organizational deployment</b><br/>Governance</div>"]
+    D --> M --> O
+  end
 
-        subgraph cluster_sd {
-            label="Structured Data";
-            style="rounded";
+  subgraph Left["<b>Introduction</b>"]
+    direction TB
+    F2["<div align='center'><b>The rise of analytics</b></div>"]
+  end
 
-            { rank=same;
-              S2 [label="Session 2:\nStructuring and preparing data"];
-              S3 [label="Session 3:\nExploratory data analysis"];
-              S4 [label="Session 4:\nRegression I"];
-              S5 [label="Session 5:\nRegression II"];
-              S6 [label="Session 6:\nMachine learning I"];
-              S7 [label="Session 7:\nMachine learning II"];
-            }
+  class F2 foundation;
+  class D,M,O stack;
+  class S synthesis;
 
-            S2 -> S3 -> S4 -> S5 -> S6 -> S7;
-        }
-    }
-
-    // --- Organizations ---
-    subgraph cluster_org {
-        label="Organizations";
-        style="rounded";
-        S10 [label="Session 10:\nGovernance of data analytics"];
-    }
-
-    // --- High-level flow ---
-    S1 -> S2;
-    S7 -> S8;
-    S9 -> S10;
-}
 ```
 
-<!--
-        ```{mermaid}
-        %%| fig-width: 12
-        flowchart TB
-
-        %% --- Styling ---
-        classDef fsborder fill:#ffffff,color:#000000,stroke:#003366,stroke-width:2px;
-
-        %% --- Foundations ---
-        subgraph Foundations
-            S1["Session 1:<br>Foundations of data analytics"]
-        end
-
-        %% --- Data Analytics ---
-        subgraph da[" "]
-
-            subgraph bd["Big Data"]
-                S8["Session 8:<br>Big data"]
-                S9["Session 9:<br>Analytics case examples"]
-            end
-
-            subgraph sd["Structured Data"]
-                S2["Session 2:<br>Structuring and preparing data"]
-                S3["Session 3:<br>Exploratory data analysis"]
-                S4["Session 4:<br>Regression I"]
-                S5["Session 5:<br>Regression II"]
-                S6["Session 6:<br>Machine learning I"]
-                S7["Session 7:<br>Machine learning II"]
-            end
-
-        end
-
-        subgraph Organizations
-            S10["Session 10:<br>Governance of data analytics"]
-        end
-
-        Foundations --> da --> Organizations
-
-        class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
-
-        ```
--->
+</div>
 
 ## Learning objectives
 
@@ -244,7 +189,7 @@ digraph DataAnalyticsCourse {
 
 - **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
 - **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
-- **Implement** analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).
+- **Implement** analytical procedures in Python, using standard data science libraries (`pandas`, `scikit-learn`, `matplotlib`).
 
 **Competence**
 
