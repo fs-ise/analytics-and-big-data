@@ -25,7 +25,7 @@
     "href": "notes/lecture_0_orga.html",
     "title": "Notes: Orga",
     "section": "",
-    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)"
+    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nI do not know everything. I make mistakes. …\nAbout you: - Prepare an example (humor/mistake?)\nchatgpt: tell a story of myself (for the beginning of lectures)\n- short bio\n- theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)\n\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role...\nAlso Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)\nwhy analytics matters: ## Takeaway Analytics is not just about data. It changes who wins, how decisions are made, and how organizations compete."
   },
   {
     "objectID": "notes/lecture_8_big_data.html",
@@ -42,767 +42,781 @@
     "text": "Note\n\n\n\nTODO"
   },
   {
-    "objectID": "slides/lecture_9_big_data_2.html#reinforcement-learning",
-    "href": "slides/lecture_9_big_data_2.html#reinforcement-learning",
-    "title": "Analytics & Big Data",
-    "section": "Reinforcement Learning",
-    "text": "Reinforcement Learning\n\nThe solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.\n\n\nSupervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.\n\n\nFor example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.\n\n\nUnfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.\n\n\nFor these cases there exist a different approach known as reinforcement learning."
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#reinforcement-learning-1",
-    "href": "slides/lecture_9_big_data_2.html#reinforcement-learning-1",
-    "title": "Analytics & Big Data",
-    "section": "Reinforcement Learning",
-    "text": "Reinforcement Learning\n\n\nThe agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward."
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#alphago",
-    "href": "slides/lecture_9_big_data_2.html#alphago",
-    "title": "Analytics & Big Data",
-    "section": "AlphaGo",
-    "text": "AlphaGo\n\nGo is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.\n\n\nThe core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.\n\n\nA newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.\n\n\nChess 2^64 legal positions, Go 2^120!!!"
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#libratus",
-    "href": "slides/lecture_9_big_data_2.html#libratus",
-    "title": "Analytics & Big Data",
-    "section": "Libratus",
-    "text": "Libratus\n\nAn artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.\n\n\nPoker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.\n\n\n“We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy."
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#types-of-artificial-intelligence",
-    "href": "slides/lecture_9_big_data_2.html#types-of-artificial-intelligence",
-    "title": "Analytics & Big Data",
-    "section": "Types of Artificial Intelligence",
-    "text": "Types of Artificial Intelligence\n\nDiscriminative AI is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.\n\n\nGenerative AI is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.\n\n\nWell-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E."
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#chatgpt",
-    "href": "slides/lecture_9_big_data_2.html#chatgpt",
-    "title": "Analytics & Big Data",
-    "section": "ChatGPT",
-    "text": "ChatGPT\n\nChatGPT is a generative AI that produces human-like text and communicates with humans.\n\n\nThe “GPT” in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.\n\n\nGPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors."
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---approach",
-    "href": "slides/lecture_9_big_data_2.html#chatgpt---approach",
-    "title": "Analytics & Big Data",
-    "section": "ChatGPT - Approach",
-    "text": "ChatGPT - Approach\n\nChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.\n\n\n\nThe most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task."
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-i",
-    "href": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-i",
-    "title": "Analytics & Big Data",
-    "section": "ChatGPT - Semantic Spaces (I)",
-    "text": "ChatGPT - Semantic Spaces (I)"
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-ii",
-    "href": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-ii",
-    "title": "Analytics & Big Data",
-    "section": "ChatGPT - Semantic Spaces (II)",
-    "text": "ChatGPT - Semantic Spaces (II)"
-  },
-  {
-    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---evaluation-component",
-    "href": "slides/lecture_9_big_data_2.html#chatgpt---evaluation-component",
-    "title": "Analytics & Big Data",
-    "section": "ChatGPT - Evaluation Component",
-    "text": "ChatGPT - Evaluation Component"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#learning-objectives",
-    "href": "slides/lecture_2_structuring_preparing_data.html#learning-objectives",
+    "objectID": "slides/lecture_11_synthesis.html#learning-objectives",
+    "href": "slides/lecture_11_synthesis.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\nOutline descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems.\nExplain dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).\nModel analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data."
+    "text": "Learning objectives\nRecap, questions, exam prep"
   },
   {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#navigation",
-    "href": "slides/lecture_2_structuring_preparing_data.html#navigation",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#descriptive-analytics",
-    "href": "slides/lecture_2_structuring_preparing_data.html#descriptive-analytics",
-    "title": "Analytics & Big Data",
-    "section": "2 Descriptive Analytics",
-    "text": "2 Descriptive Analytics\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#application-systems-pyramid",
-    "href": "slides/lecture_2_structuring_preparing_data.html#application-systems-pyramid",
-    "title": "Analytics & Big Data",
-    "section": "Application Systems Pyramid",
-    "text": "Application Systems Pyramid"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#typical-descriptive-questions",
-    "href": "slides/lecture_2_structuring_preparing_data.html#typical-descriptive-questions",
-    "title": "Analytics & Big Data",
-    "section": "Typical Descriptive Questions",
-    "text": "Typical Descriptive Questions\n\n\n\n\n\n\n\n— Source: Alfred Schlaucher, Oracle, p. 15"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#characteristics-of-operational-and-analytical-databases",
-    "href": "slides/lecture_2_structuring_preparing_data.html#characteristics-of-operational-and-analytical-databases",
-    "title": "Analytics & Big Data",
-    "section": "Characteristics of Operational and Analytical Databases",
-    "text": "Characteristics of Operational and Analytical Databases\n\nCharacteristics\nOperational Data\nAnalytical Data\nTarget group\nOperational employees\nManagement, Analysts, Divisional manager\nAccess frequency\nhigh\nslow to medium\nData volume per access\nlow to medium volume\nhigh volume\nRequired response time\nvery short\nshort to medium\nLevel of data\ndetailed\naggregated, processed\nQueries\npredictable, periodic\nunpredictable, ad hoc\nGiven period\ncurrent\npast to future\nTime horizon\n1–3 months\nseveral years up to decades"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
-    "href": "slides/lecture_2_structuring_preparing_data.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
-    "title": "Analytics & Big Data",
-    "section": "Contradiction between Operational Data Architecture and Analytical Information Needs",
-    "text": "Contradiction between Operational Data Architecture and Analytical Information Needs\n\n\n\n\n\n\n\n— Source: Jung/Winter (2000): Data Warehousing Strategie: Erfahrungen, Methoden, Visionen, Berlin, p. 7."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#different-intensities-of-use",
-    "href": "slides/lecture_2_structuring_preparing_data.html#different-intensities-of-use",
-    "title": "Analytics & Big Data",
-    "section": "Different Intensities of Use",
-    "text": "Different Intensities of Use"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#definition-data-warehouse",
-    "href": "slides/lecture_2_structuring_preparing_data.html#definition-data-warehouse",
-    "title": "Analytics & Big Data",
-    "section": "Definition: Data Warehouse",
-    "text": "Definition: Data Warehouse"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#the-data-warehouse-concept",
-    "href": "slides/lecture_2_structuring_preparing_data.html#the-data-warehouse-concept",
-    "title": "Analytics & Big Data",
-    "section": "The Data Warehouse Concept",
-    "text": "The Data Warehouse Concept"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#layers-of-a-data-warehouse-system",
-    "href": "slides/lecture_2_structuring_preparing_data.html#layers-of-a-data-warehouse-system",
-    "title": "Analytics & Big Data",
-    "section": "Layers of a Data Warehouse System",
-    "text": "Layers of a Data Warehouse System"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#components-of-a-data-warehouse",
-    "href": "slides/lecture_2_structuring_preparing_data.html#components-of-a-data-warehouse",
-    "title": "Analytics & Big Data",
-    "section": "Components of a Data Warehouse",
-    "text": "Components of a Data Warehouse"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#structure-of-the-database",
-    "href": "slides/lecture_2_structuring_preparing_data.html#structure-of-the-database",
-    "title": "Analytics & Big Data",
-    "section": "Structure of the Database",
-    "text": "Structure of the Database\nThe database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company. In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company. They are organized in such a way that they can be viewed from different dimensions.\nFrequently used dimensions are:\n\nCompany structure (e.g., business units, organizational structure, legal entities)\nProduct structure (e.g., product groups and individual products)\nRegional structure (e.g., region, country, continent)\nCustomer structure (e.g., customer groups or segments, and individual customers)\nTime structure (e.g., month, quarter, year)\nBusiness parameters (e.g., sales, contribution margin, profit)\nCharacteristics (e.g., target, actual, deviations)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#examples-of-aggregation-levels-in-a-data-warehouse",
-    "href": "slides/lecture_2_structuring_preparing_data.html#examples-of-aggregation-levels-in-a-data-warehouse",
-    "title": "Analytics & Big Data",
-    "section": "Examples of Aggregation Levels in a Data Warehouse",
-    "text": "Examples of Aggregation Levels in a Data Warehouse"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#etl-tools",
-    "href": "slides/lecture_2_structuring_preparing_data.html#etl-tools",
-    "title": "Analytics & Big Data",
-    "section": "ETL-Tools",
-    "text": "ETL-Tools\nThe data in the data warehouse can normally only be accessed in a read-only manner. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.\nThe timeliness with which the transfer to the database is performed can be defined flexibly, e.g., within defined time intervals, immediately after each change, or at the explicit request of the user.\nETL programs include:\n\nMonitors: Detect and report changes in individual sources that are relevant to the data warehouse.\nExtractors: Select and transport data from the data sources into the workspace.\nTransformers: Unify, clean, integrate, consolidate, aggregate, and augment extracted data in the workspace.\nLoaders: Load transformed data from the workspace into the data warehouse after the data retrieval process is complete."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#staging-area",
-    "href": "slides/lecture_2_structuring_preparing_data.html#staging-area",
-    "title": "Analytics & Big Data",
-    "section": "Staging Area",
-    "text": "Staging Area\nThe staging area is a temporary cache that performs the ETL process. It includes the extraction, transformation and loading of the data into the data warehouse.\nNeither the operational systems nor the data warehouse are affected by the process. The data can be transferred incrementally from the operational systems without having to have a permanent connection to them. It is stored temporarily and only transformed when it is sufficiently complete.\nIt is then loaded en bloc into the data warehouse, so that no inconsistencies can occur here either.\nIf the ETL process is successful, the data is deleted from the staging area."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#the-metadata-repository",
-    "href": "slides/lecture_2_structuring_preparing_data.html#the-metadata-repository",
-    "title": "Analytics & Big Data",
-    "section": "The Metadata Repository",
-    "text": "The Metadata Repository\nMetadata supports data management and serves as a descriptor for an object that holds some data or information. In data warehouses, it is collectively organized in a catalog called the metadata repository.\nMetadata is classified into three types:\n\nTechnical metadata: Provides information about the structure of data, where it resides, and other technical details related to locating data in its native database.\nBusiness metadata: Describes the actual data in business-understandable terms. It can provide insights into the type of data, its origin, definition, quality, and relationships with other entities in the data warehouse.\nProcess metadata: Stores information about the occurrence and outcomes of operations taking place in the data warehouse."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#data-warehouse-and-data-mart",
-    "href": "slides/lecture_2_structuring_preparing_data.html#data-warehouse-and-data-mart",
-    "title": "Analytics & Big Data",
-    "section": "Data Warehouse and Data Mart",
-    "text": "Data Warehouse and Data Mart\nA single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.\nComparison: Data Warehouse and Data Mart\n\nApplication\nDivision/Department\nCompany\nData design\nOptimized\nGeneralistic\nData volume\nFrom gigabyte range\nFrom terabyte range\nOrigin\nTask oriented\nData model oriented\nRequirements\nSpecific\nVersatile"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#architectural-variants-of-data-warehouses-in-practice",
-    "href": "slides/lecture_2_structuring_preparing_data.html#architectural-variants-of-data-warehouses-in-practice",
-    "title": "Analytics & Big Data",
-    "section": "Architectural Variants of Data Warehouses in Practice",
-    "text": "Architectural Variants of Data Warehouses in Practice"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#from-transactions-to-reports",
-    "href": "slides/lecture_2_structuring_preparing_data.html#from-transactions-to-reports",
-    "title": "Analytics & Big Data",
-    "section": "From Transactions to Reports",
-    "text": "From Transactions to Reports"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#example-of-a-dashboard",
-    "href": "slides/lecture_2_structuring_preparing_data.html#example-of-a-dashboard",
-    "title": "Analytics & Big Data",
-    "section": "Example of a Dashboard",
-    "text": "Example of a Dashboard\n\n\n\n\n\n\n\n— Source: https://www.bluemargin.com/power-bi-full-blog/topic/private-equity-data-intelligence"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-i",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-i",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema (I)",
-    "text": "Star Schema (I)\nThe Star schema has a central fact table and exactly one dimension table for each dimension.\n\n\n\n\n\nThe cardinality between the fact table and a dimension table is n∶1, i.e. a fact (e.g. sales: 67,000 euros) is described by one dimension expression for each dimension (e.g. time: 1st quarter, region: Hesse, product group: books). A dimension characteristic (e.g. product group: books) is associated with 0, 1 or n facts."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-ii",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-ii",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema (II)",
-    "text": "Star Schema (II)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-iii",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-iii",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema (III)",
-    "text": "Star Schema (III)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-table-design-i",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-table-design-i",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema Table Design (I)",
-    "text": "Star Schema Table Design (I)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-table-design-ii",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-table-design-ii",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema Table Design (II)",
-    "text": "Star Schema Table Design (II)\n\n\n\n\n\n\n\n— Source: https://www.guru99.com/star-snowflake-data-warehousing.html"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-example",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-example",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema Example",
-    "text": "Star Schema Example"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#exercise-1",
-    "href": "slides/lecture_2_structuring_preparing_data.html#exercise-1",
-    "title": "Analytics & Big Data",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nAn online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:\n\nCUSTOMER (ID, name, address, telephone, birthday, gender)\nWINE (ID, name, type, year, bottle_price, class)\nCLASS (ID, name, region)\nTIME (timestamp, date, year)\nORDER (customer, wine, time, bottles)\n\nCreate the star schema for the data warehouse."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#queries-on-the-star-schema",
-    "href": "slides/lecture_2_structuring_preparing_data.html#queries-on-the-star-schema",
-    "title": "Analytics & Big Data",
-    "section": "Queries on the Star Schema",
-    "text": "Queries on the Star Schema\nExample:\nIn which years were the most cars purchased by female customers in Hesse in the 1st quarter?\nselect z.Year as Year, sum(v.Amount) as Total_Amount\nfrom Branch f, Product p, Time z, Customer k, Sales v\nwhere z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID\ngroup by z.Year\norder by Total_Amount Descending;\n\n\n\nYear\nTotal Amount\n\n\n\n\n2004\n745\n\n\n2005\n710\n\n\n2003\n650\n\n\n\n\n\n— Source: Hartung (2011), p. 37"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#snowflake-schema",
-    "href": "slides/lecture_2_structuring_preparing_data.html#snowflake-schema",
-    "title": "Analytics & Big Data",
-    "section": "Snowflake Schema",
-    "text": "Snowflake Schema\nIn the Snowflake schema, the redundancies in the Star schema are resolved in the dimension tables and the hierarchy levels are each modeled with their own tables:\n\n\n\n\n\n\n\n— Source: https://www.guru99.com/star-snowflake-data-warehousing.html"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#star-schema-vs.-snowflake-schema",
-    "href": "slides/lecture_2_structuring_preparing_data.html#star-schema-vs.-snowflake-schema",
-    "title": "Analytics & Big Data",
-    "section": "Star Schema vs. Snowflake Schema",
-    "text": "Star Schema vs. Snowflake Schema\n\nSpeed of query processing is in favor of Star scheme\nData volume tends to be lower with Snowflake schema\nSnowflake schema is easier to change (maintenance)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#galaxy-schema",
-    "href": "slides/lecture_2_structuring_preparing_data.html#galaxy-schema",
-    "title": "Analytics & Big Data",
-    "section": "Galaxy Schema",
-    "text": "Galaxy Schema\nThe Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions. The Galaxy schema thus represents more than one data cube (multi-cubes)."
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#table-structure-of-the-galaxy-schema",
-    "href": "slides/lecture_2_structuring_preparing_data.html#table-structure-of-the-galaxy-schema",
-    "title": "Analytics & Big Data",
-    "section": "Table Structure of the Galaxy Schema",
-    "text": "Table Structure of the Galaxy Schema"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#dw-planning-user-questions-i",
-    "href": "slides/lecture_2_structuring_preparing_data.html#dw-planning-user-questions-i",
-    "title": "Analytics & Big Data",
-    "section": "DW Planning – User Questions (I)",
-    "text": "DW Planning – User Questions (I)\n\nWhat is the ratio of private to corporate customers?\nDoes this quantity ratio correspond to the turnover ratio?\nDo customer characteristics such as occupational group, living situation, education, etc. play a role in turnover?\nWhat are the customers with the highest sales?\nWhat is the development of sales over time? Are there any shifts in relation to customer characteristics?\nCan additional customer segments be formed, e.g. if customer characteristics are combined?\nAre there regional focal points in relation to customer characteristics?\nAre there regional focuses related to products / product groups?\nAre there correlations between customer characteristics and products?\nWhat are the top-selling products? Top sellers/bottom sellers lists?\nAre there seasonal influences on the sales development depending on product or customer characteristics?"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#dw-planning-user-questions-ii",
-    "href": "slides/lecture_2_structuring_preparing_data.html#dw-planning-user-questions-ii",
-    "title": "Analytics & Big Data",
-    "section": "DW Planning – User Questions (II)",
-    "text": "DW Planning – User Questions (II)\n\n\n\n\n\n\n\n— Source: Alfred Schlaucher, Oracle, p. 28"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#result-star-schema",
-    "href": "slides/lecture_2_structuring_preparing_data.html#result-star-schema",
-    "title": "Analytics & Big Data",
-    "section": "Result: Star Schema",
-    "text": "Result: Star Schema\n\n\n\n\n\n\n\n— Source: Alfred Schlaucher, Oracle, p. 40"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#exercise-2",
-    "href": "slides/lecture_2_structuring_preparing_data.html#exercise-2",
-    "title": "Analytics & Big Data",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nA restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation.\nThe company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status.\nThe menu items of the restaurants are divided into the classes “Starters”, “Main courses”, “Desserts”, “Beverages” and “Other”. Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.\nCreate the logical data warehouse schema!"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#exercise-3",
-    "href": "slides/lecture_2_structuring_preparing_data.html#exercise-3",
-    "title": "Analytics & Big Data",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nAs an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.\nFlowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available.\nThe DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.\nThe key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.\nEmployees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.\nCreate the logical data warehouse schema!"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#navigation-1",
-    "href": "slides/lecture_2_structuring_preparing_data.html#navigation-1",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#descriptive-analytics-1",
-    "href": "slides/lecture_2_structuring_preparing_data.html#descriptive-analytics-1",
-    "title": "Analytics & Big Data",
-    "section": "2 Descriptive Analytics",
-    "text": "2 Descriptive Analytics\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#subject-of-olap",
-    "href": "slides/lecture_2_structuring_preparing_data.html#subject-of-olap",
-    "title": "Analytics & Big Data",
-    "section": "Subject of OLAP",
-    "text": "Subject of OLAP\nOnline Analytical Processing (OLAP) is software technology focused on the analysis of dynamic, multidimensional data.\nThe goal is to provide executives with the information they need quickly, flexibly and interactively.\nOLAP functionality can be characterized as dynamic, multidimensional analysis of consolidated enterprise data, which includes the following components:\n\nCalculations of key figures over different dimensions and aggregation levels\nTrend analysis over definable time intervals\n“What if” analyses\nMultidimensional visualization methods"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#facts-and-dimensions",
-    "href": "slides/lecture_2_structuring_preparing_data.html#facts-and-dimensions",
-    "title": "Analytics & Big Data",
-    "section": "Facts and Dimensions",
-    "text": "Facts and Dimensions"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#organizing-data-as-hypercube",
-    "href": "slides/lecture_2_structuring_preparing_data.html#organizing-data-as-hypercube",
-    "title": "Analytics & Big Data",
-    "section": "Organizing Data as Hypercube",
-    "text": "Organizing Data as Hypercube"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#olap-operations-slicing-and-dicing",
-    "href": "slides/lecture_2_structuring_preparing_data.html#olap-operations-slicing-and-dicing",
-    "title": "Analytics & Big Data",
-    "section": "OLAP Operations: Slicing and Dicing",
-    "text": "OLAP Operations: Slicing and Dicing"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#olap-operations-rotate",
-    "href": "slides/lecture_2_structuring_preparing_data.html#olap-operations-rotate",
-    "title": "Analytics & Big Data",
-    "section": "OLAP Operations: Rotate",
-    "text": "OLAP Operations: Rotate"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#olap-operations-drill-down-and-roll-up",
-    "href": "slides/lecture_2_structuring_preparing_data.html#olap-operations-drill-down-and-roll-up",
-    "title": "Analytics & Big Data",
-    "section": "OLAP Operations: Drill Down and Roll Up",
-    "text": "OLAP Operations: Drill Down and Roll Up"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#olap-operations-nest",
-    "href": "slides/lecture_2_structuring_preparing_data.html#olap-operations-nest",
-    "title": "Analytics & Big Data",
-    "section": "OLAP Operations: Nest",
-    "text": "OLAP Operations: Nest\nThe result of a nest operation physically represents a two-dimensional matrix. It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form. In the following example, three dimensions are displayed:"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#olap-as-excel-plug-in",
-    "href": "slides/lecture_2_structuring_preparing_data.html#olap-as-excel-plug-in",
-    "title": "Analytics & Big Data",
-    "section": "OLAP as Excel plug-in",
-    "text": "OLAP as Excel plug-in"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#architecture-of-an-olap-system",
-    "href": "slides/lecture_2_structuring_preparing_data.html#architecture-of-an-olap-system",
-    "title": "Analytics & Big Data",
-    "section": "Architecture of an OLAP System",
-    "text": "Architecture of an OLAP System"
-  },
-  {
-    "objectID": "slides/lecture_2_structuring_preparing_data.html#summary",
-    "href": "slides/lecture_2_structuring_preparing_data.html#summary",
-    "title": "Analytics & Big Data",
-    "section": "Summary",
-    "text": "Summary\nTODO"
-  },
-  {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#learning-objectives",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#learning-objectives",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#learning-objectives",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
     "text": "Learning objectives\n\nDescribe key characteristics of variables and patterns between variables\nVisualize and interpret data sets\nExplain the role of exploratory data analysis in business decision-making"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#table-of-contents",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#table-of-contents",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#table-of-contents",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#table-of-contents",
     "title": "Analytics & Big Data",
     "section": "Table of Contents",
     "text": "Table of Contents"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#the-role-of-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#the-role-of-eda",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#the-role-of-eda",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#the-role-of-eda",
     "title": "Analytics & Big Data",
     "section": "The role of EDA",
     "text": "The role of EDA\nprocess (pre-model), aims, techniques (graphical, non-gaphical, …)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#limitations-of-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#limitations-of-eda",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#limitations-of-eda",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#limitations-of-eda",
     "title": "Analytics & Big Data",
     "section": "“limitations of EDA”",
     "text": "“limitations of EDA”\n\nDescriptive vs. inferential statistics\nno model/explanation/prediction (correlation vs causality)\nsampling error, unless EDA is run on the whole population (e.g., in some Big Data settings) -&gt; starting point for building predictions (explanations, hypotheses, models, causality)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#exploratory-data-analysis",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#exploratory-data-analysis",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#exploratory-data-analysis",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#exploratory-data-analysis",
     "title": "Analytics & Big Data",
     "section": "Exploratory Data Analysis",
     "text": "Exploratory Data Analysis\n\nIn Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.\n\n\nPeople are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.\n\n\nReasons for EDA:\n\n\ngain intuition about the data\nmake comparisons between distributions\nsanity checking (making sure the data is on the scale you expect, in the format you thought it should be)\nfind out where data is missing or if there are outliers\nsummarize the data\n\n\nExploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#univariate-non-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#univariate-non-graphical-eda",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#univariate-non-graphical-eda",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#univariate-non-graphical-eda",
     "title": "Analytics & Big Data",
     "section": "Univariate Non-Graphical EDA",
     "text": "Univariate Non-Graphical EDA\n\nNon-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:\n\n\nmeasures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.\nmeasures of spread, i.e. variance, standard deviation, and interquartile range\nthe shape of the distribution\nthe existence of outliers\n\n\nThe characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#data-types",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#data-types",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#data-types",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#data-types",
     "title": "Analytics & Big Data",
     "section": "Data types",
     "text": "Data types\nRepresenting the “real world” in computer requires to use appropriate data types\nFrom a statistical point of view, there are four fundamental data types, known as measurement scales:\nQualitative description of objects\n\nNominal (special case: binary)\nOrdinal\n\nQuantitative description objects\n\nInterval\nRatio"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#nominal-scale-qualitative",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#nominal-scale-qualitative",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#nominal-scale-qualitative",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#nominal-scale-qualitative",
     "title": "Analytics & Big Data",
     "section": "Nominal scale (qualitative)",
     "text": "Nominal scale (qualitative)\nValues of a nominal / categorical attribute are symbols or names of things. Each value represents some kind of category, code, or state\nThis scale assumes existence of a finite number of equivalency classes, where each class is named or labeled\nThe values do not have any meaningful order\nExamples:\n\nHair color = {auburn, black, blond, brown, grey, red, white, …}\nFruits = {apple, banana, strawberry, …}\nPostal codes = {96052, 96047, …}\n\nSpecial case of the nominal scale: Binary scale\n-Nominal attribute with only 2 states (0/1, or TRUE / FALSE) – also called Boolean - 0/FALSE typically means absence and 1/TRUE presence\nThere are two types of binary objects:\n\nSymmetric binary: both outcomes equally important, e.g., gender\nAsymmetric binary: outcomes not equally important, e.g., medical test (positive vs. negative)\n\nIt is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g. people that purchase a product, have a disease)\nExamples:\n\nSmoking: 1 indicates patients in a trial that smoke, 0 otherwise.\nPurchase: 1 indicates that a person purchased a product, 0 otherwise."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#ordinal-rank-scale-qualitative",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#ordinal-rank-scale-qualitative",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#ordinal-rank-scale-qualitative",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#ordinal-rank-scale-qualitative",
     "title": "Analytics & Big Data",
     "section": "Ordinal / rank scale (qualitative)",
     "text": "Ordinal / rank scale (qualitative)\n\nA categorical attribute with values that have a meaningful order, but the magnitude between successive values is not known\nThe ordinal scale is useful for registering subjective assessments and things that cannot be measured objectively (often used in surveys for ratings)\n\nValues cannot be multiplied or added, even if the numbers belong to the same scale.\nRelations between values:\n\nTransitivity: If A&gt;B, B&gt;C, then A&gt;C,\nSymmetry: : If A&gt;B, then B&lt;A\n\nExamples:\n\nSchool grades = {A &lt; B &lt; C &lt; D &lt; E &lt; F} or {1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6}\nPlaces in a competition = {1st, 2nd, 3rd, 4th, …}"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#interval-scale-quantitative",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#interval-scale-quantitative",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#interval-scale-quantitative",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#interval-scale-quantitative",
     "title": "Analytics & Big Data",
     "section": "Interval scale (quantitative)",
     "text": "Interval scale (quantitative)\n\nA numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point\nInvariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0\nTwo readings on an interval scale cannot be added but calculating an average of such values is possible\n\nExamples:\n\nCelsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32\nDates and time (e.g., conversion from Julian to Gregorian calendar is possible)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#ratio-scale-quantitative",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#ratio-scale-quantitative",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#ratio-scale-quantitative",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#ratio-scale-quantitative",
     "title": "Analytics & Big Data",
     "section": "Ratio scale (quantitative)",
     "text": "Ratio scale (quantitative)\n\nNumeric values with a meaningful zero point (e.g., “zero” means absence)\nAll arithmetic rules and functions can be applied (addition, subtraction)\n\nExamples:\n\nMoney, person’s age, market share, quantities purchased, speed, …\nKelvin (K) temperature (has a true zero-point (0 °K=− 273.15 ℃): It is the point at which the particles that comprise matter have zero kinetic energy"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#possible-mathematical-operations-for-each-scale-type",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#possible-mathematical-operations-for-each-scale-type",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#possible-mathematical-operations-for-each-scale-type",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#possible-mathematical-operations-for-each-scale-type",
     "title": "Analytics & Big Data",
     "section": "Possible mathematical operations for each scale type",
     "text": "Possible mathematical operations for each scale type\nDue to the different mathematical properties, not all statistical measures can be computed on different measurement scales:\n\n\n\n\n\n\n\n\n\n\n\nScale\nMathematical operations possible\nMode\nFrequency\nPercentiles / Median\nMean / Variance / SD\n\n\n\n\nNominal\n=, ≠\nX\nX\n\n\n\n\nOrdinal\n=, ≠, &lt;, &gt;\nX\nX\nX\n\n\n\nInterval\n=, ≠, &lt;, &gt;, linear transformation\nX\n(X)\nX\nX\n\n\nRatio\n=, ≠, &lt;, &gt;, *, /, +, −\nX\n(X)\nX\nX\n\n\n\nThe frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#descriptive-statistics",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#descriptive-statistics",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#descriptive-statistics",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#descriptive-statistics",
     "title": "Analytics & Big Data",
     "section": "Descriptive statistics",
     "text": "Descriptive statistics\nHow to describe data (not the data type)?\n\n\n\nCustomer ID\nName\nYear of birth\nTariff\n\n\n\n\n100216\nKevin Meyer\n1983\nA\n\n\n271692\nLars Knopp\n1963\nB\n\n\n892615\nAnton Albert\n1954\nC\n\n\n331625\nPeter Pan\n1988\nD\n\n\n…\n…\n…\n…"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
     "title": "Analytics & Big Data",
     "section": "Describing data using descriptive statistics",
     "text": "Describing data using descriptive statistics\n\n\n\nBasic statistical descriptions can be used to identify characteristics of the data and highlight which data values should be treated as noise or outliers.\nA good way to get an impression of continuous / numeric data is the histogram.\nThe graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#what-are-the-key-figures-of-a-distribution",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#what-are-the-key-figures-of-a-distribution",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#what-are-the-key-figures-of-a-distribution",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#what-are-the-key-figures-of-a-distribution",
     "title": "Analytics & Big Data",
     "section": "What are the “key figures” of a distribution?",
     "text": "What are the “key figures” of a distribution?\n\nGraphics work well for single variables, but for comparison of different variables and their distributions and later working with the data, numeric indicators are necessary\nDescriptive statistics provide us with numbers describing the characteristics of a distribution\nFor qualitative / categorical data\n\nMode\nRelative frequency\n\nFor quantitative / numerical data\n\nMean (also known as Expected Value) – describing the position of the center\nVariance (or Standard Deviation) – describing the spread\nPercentiles (also known as quantiles / quintiles) – more detailed figures on the distribution"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#mode",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#mode",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#mode",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#mode",
     "title": "Analytics & Big Data",
     "section": "Mode",
     "text": "Mode\n\n\n\nThe mode is the value that appears most in a set of data values\nThe highest mode also has the highest relative frequency (see next slide)\nExample: On a party, you meet many other students, and you ask what they are studying."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#the-relative-frequency",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#the-relative-frequency",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#the-relative-frequency",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#the-relative-frequency",
     "title": "Analytics & Big Data",
     "section": "The relative frequency",
     "text": "The relative frequency\n\n\nYour company purchases fancy retro light bulbs from overseas. Because of the transport or the low quality of the supplier, 80 of 200 light bulbs are defect. The relative frequency of defect light bulbs in the shipment is\n[ p = {} ]\n[ p = = 0.4 ]\nThe relative frequency approach can be used as a probability assessment. However, larger samples must be used, the probability should be observed over longer time, and potential sampling issues must be considered.\n\nTODO"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#the-mean-expected-value",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#the-mean-expected-value",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#the-mean-expected-value",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#the-mean-expected-value",
     "title": "Analytics & Big Data",
     "section": "The mean / expected value",
     "text": "The mean / expected value\n\n\nThe arithmetic mean is calculated as\n[ {x} = _{i=1}^{n} = ]\nwhere (x_1, x_2, , x_n) is a set of (n) observations. The mean is often denoted as () or with the symbol ({x}).\nTreating the empirical distribution as a probability function of a random variable, the expected value can be estimated by the mean:\n[ E(X) = {x} ]\nInterpretation: If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#boxplot",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#boxplot",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#boxplot",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#boxplot",
     "title": "Analytics & Big Data",
     "section": "Boxplot",
     "text": "Boxplot\n\n\n\nThe boxplot is a condensed illustration of a distribution\nIt consists of\n\nMedian (thick line)\n25% / 75% percentiles\n“Whiskers”: the quartiles ± 1.5 × IQR\nOutliers that are higher/lower than the whiskers"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#boxplots-can-be-used-to-compare-different-distributions",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#boxplots-can-be-used-to-compare-different-distributions",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#boxplots-can-be-used-to-compare-different-distributions",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#boxplots-can-be-used-to-compare-different-distributions",
     "title": "Analytics & Big Data",
     "section": "Boxplots can be used to compare different distributions",
     "text": "Boxplots can be used to compare different distributions\n\n\nExample:\n\nIn an experiment, households received different types of feedback on their electricity consumption\nThe “control” group received no feedback\nThe plot shows boxplots of the savings in electricity consumption after three weeks with feedback\nOne can – for example – see that there is a higher spread in group 2A compared to the others"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#multivariate-non-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#multivariate-non-graphical-eda",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#multivariate-non-graphical-eda",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#multivariate-non-graphical-eda",
     "title": "Analytics & Big Data",
     "section": "Multivariate Non-Graphical EDA",
     "text": "Multivariate Non-Graphical EDA\nTODO: maybe mention at the very beginning that there are non-graphical and graphical forms of EDA (uni/multivariate)?\n\nMultivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#multivariate-graphical-eda",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#multivariate-graphical-eda",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#multivariate-graphical-eda",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#multivariate-graphical-eda",
     "title": "Analytics & Big Data",
     "section": "Multivariate Graphical EDA",
     "text": "Multivariate Graphical EDA\n\nMultivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#bivariate-statistics",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#bivariate-statistics",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#bivariate-statistics",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#bivariate-statistics",
     "title": "Analytics & Big Data",
     "section": "Bivariate statistics",
     "text": "Bivariate statistics\n\nSo far, we focused on the description of one variable (univariate statistics)\nIn many cases, we are interested in the interactions between variables (probably not in spurious correlations but in meaningful ones…)\n\n\n\nPer capita cheese consumption correlates with Number of people who died by becoming tangled in their bedsheets\n\n\nFigure placeholder\n\n\nWorldwide non-commercial space launches correlates with Sociology doctorates awarded (US)\n\n\nFigure placeholder\n\n\nThese and more online: https://www.tylervigen.com/spurious-correlations"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance",
     "title": "Analytics & Big Data",
     "section": "TODO : correlation (Hopf slides: not sure I want to cover covariance)",
     "text": "TODO : correlation (Hopf slides: not sure I want to cover covariance)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation",
     "title": "Analytics & Big Data",
     "section": "Correlation",
     "text": "Correlation\n\n\n\nOrganic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!\n\n\n— Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-i",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-i",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-i",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-i",
     "title": "Analytics & Big Data",
     "section": "Correlation vs. Causality (I)",
     "text": "Correlation vs. Causality (I)\n\nCorrelation: Two data series behave “similar”\nCausality: Principle of Cause and Effect"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-ii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-ii",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-ii",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-ii",
     "title": "Analytics & Big Data",
     "section": "Correlation vs. Causality (II)",
     "text": "Correlation vs. Causality (II)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-iii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#correlation-vs.-causality-iii",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-iii",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-iii",
     "title": "Analytics & Big Data",
     "section": "Correlation vs. Causality (III)",
     "text": "Correlation vs. Causality (III)\n\nBut: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing!"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#statistical-estimation",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#statistical-estimation",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#statistical-estimation",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#statistical-estimation",
     "title": "Analytics & Big Data",
     "section": "Statistical Estimation",
     "text": "Statistical Estimation\nTODO: TBD whether we cover it here!\n\n\n\n\n— Source: http://www.dxbydt.com/the-size-of-your-sample"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#todo-add-clustering",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#todo-add-clustering",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo-add-clustering",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#todo-add-clustering",
     "title": "Analytics & Big Data",
     "section": "TODO : add clustering!",
     "text": "TODO : add clustering!"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#introductory-example",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#introductory-example",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#introductory-example",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#introductory-example",
     "title": "Analytics & Big Data",
     "section": "Introductory Example",
     "text": "Introductory Example\n\nAssume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:\n\n\nFRESH: annual spending on fresh products (Continuous);\nMILK: annual spending on milk products (Continuous);\nGROCERY: annual spending on grocery products (Continuous);\nFROZEN: annual spending on frozen products (Continuous);\nDETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);\nDELICATESSEN: annual spending on delicatessen products (Continuous);\nCHANNEL: customers buying channel (Nominal);\nREGION: customers region (Nominal)\n\n\nYour goal is to segment the users. That means finding similar types of users and bunching them together.\n\n\nWhy would you want to do this?\n\n\nYou might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.\n\n\nYou might have a model that works better for specific groups. Or you might have different models for different groups."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#cluster-analysis",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#cluster-analysis",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#cluster-analysis",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#cluster-analysis",
     "title": "Analytics & Big Data",
     "section": "Cluster Analysis",
     "text": "Cluster Analysis\n\nCluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.\n\n\nThere are different types of cluster analysis methods:\n\n\nClustering Methods"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#partitioning-cluster-methods",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#partitioning-cluster-methods",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#partitioning-cluster-methods",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#partitioning-cluster-methods",
     "title": "Analytics & Big Data",
     "section": "Partitioning Cluster Methods",
     "text": "Partitioning Cluster Methods\n\nThe partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.\n\n\nGiven a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).\n\n\nThe objective is to find\n\n\nwhere is the mean of points in Si.\n\n\nProcedure of K-Means:\n\n\nStep 1: Randomly partition the data objects into k clusters.\n\n\nStep 2: Calculate the cluster centroids.\n\n\nStep 3: Calculate the distance from every data point to all centroids.\n\n\nStep 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.\n\n\nStep 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#example-of-a-k-means-cluster-analysis",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#example-of-a-k-means-cluster-analysis",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#example-of-a-k-means-cluster-analysis",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#example-of-a-k-means-cluster-analysis",
     "title": "Analytics & Big Data",
     "section": "Example of a K-Means Cluster Analysis",
     "text": "Example of a K-Means Cluster Analysis\n\nBetween cluster variance:\nWithin cluster variance:"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-i",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-i",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-i",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-i",
     "title": "Analytics & Big Data",
     "section": "Finding the Optimal Number of Clusters (I)",
     "text": "Finding the Optimal Number of Clusters (I)\n\nThe aim of the cluster analysis is the segmentation of objects into clusters, which are preferably homogeneous in it selves and heterogeneous to each other. The less variance exists within the clusters and the more variance exists between the clusters, the better is the number of clusters.\n\n\nTotal variance:\n\n\nAccumulated variance within the k clusters:\n\n\nThis results in the variance between the clusters:\n\n\nwith n = number of objects\n\n\nm = number of attributes"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-ii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-ii",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-ii",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-ii",
     "title": "Analytics & Big Data",
     "section": "Finding the Optimal Number of Clusters (II)",
     "text": "Finding the Optimal Number of Clusters (II)\n\nIf you put V in on the ordinate and the number of cluster k on the abscissa, it often results in a curve with one or several kinks. At the point where exists the (first) significant kink, you can find the optimal number of clusters:\n\n\nTotal variance V_tot\n\n\nBetween cluster variance V_betw\n\n\nWithin cluster variance V_in\n\n\nNumber of clusters"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-iii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-iii",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-iii",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#finding-the-optimal-number-of-clusters-iii",
     "title": "Analytics & Big Data",
     "section": "Finding the Optimal Number of Clusters (III)",
     "text": "Finding the Optimal Number of Clusters (III)\n\nInstead of visually identifying the optimal cluster number, we can calculate the distances from the points on the elbow curve to a straight line linking the first and the last point on the curve. The cluster number with the largest distance is then chosen as the one with the strongest kink."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#hierarchical-cluster-methods",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#hierarchical-cluster-methods",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#hierarchical-cluster-methods",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#hierarchical-cluster-methods",
     "title": "Analytics & Big Data",
     "section": "Hierarchical Cluster Methods",
     "text": "Hierarchical Cluster Methods\n\nThere are two types of hierarchical cluster methods:\n\nAgglomerative hierarchical clustering is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.\nDivisive hierarchical clustering is a top-down clustering method. It works in a similar way to agglomerative clustering but in the opposite direction. This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#process-of-the-hierarchical-cluster-analysis",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#process-of-the-hierarchical-cluster-analysis",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#process-of-the-hierarchical-cluster-analysis",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#process-of-the-hierarchical-cluster-analysis",
     "title": "Analytics & Big Data",
     "section": "Process of the Hierarchical Cluster Analysis",
     "text": "Process of the Hierarchical Cluster Analysis"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#measuring-similarity-between-clusters-i",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#measuring-similarity-between-clusters-i",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#measuring-similarity-between-clusters-i",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#measuring-similarity-between-clusters-i",
     "title": "Analytics & Big Data",
     "section": "Measuring Similarity between Clusters (I)",
     "text": "Measuring Similarity between Clusters (I)\n\n\nDistance between two clusters is the distance between the closest points:\n\n\nComplete Linkage:\n\n\n\nDistance between two clusters is the distance between the farthest pair of points:\n\n\n\nDistance between two clusters i and j is the distance between their centroids:"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#measuring-similarity-between-clusters-ii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#measuring-similarity-between-clusters-ii",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#measuring-similarity-between-clusters-ii",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#measuring-similarity-between-clusters-ii",
     "title": "Analytics & Big Data",
     "section": "Measuring Similarity between Clusters (II)",
     "text": "Measuring Similarity between Clusters (II)\n\nAverage Linkage:\n\n\nDistance between clusters is the average distance between the cluster points:\n\n\n\nWard’s Method / Minimum Variance Method (only Agglomerative):\n\n\n\nWard’s minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:\n\n\nFor a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#single-linkage-example-i",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#single-linkage-example-i",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#single-linkage-example-i",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#single-linkage-example-i",
     "title": "Analytics & Big Data",
     "section": "Single Linkage Example (I)",
     "text": "Single Linkage Example (I)\n\n\n\n— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#single-linkage-example-ii",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#single-linkage-example-ii",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#single-linkage-example-ii",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#single-linkage-example-ii",
     "title": "Analytics & Big Data",
     "section": "Single Linkage Example (II)",
     "text": "Single Linkage Example (II)\n\n\n\n— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#dendrogram",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#dendrogram",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#dendrogram",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#dendrogram",
     "title": "Analytics & Big Data",
     "section": "Dendrogram",
     "text": "Dendrogram\n\nA dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g. euclidean distance) between the clusters.\n\n\nIn a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length. The red line in the graph below shows such a point:\n\n\nCounting the points that cut this line might be a good answer for the number of clusters the data can have. It is the number 6 in this case."
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#todo",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#todo",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#todo",
     "title": "Analytics & Big Data",
     "section": "TODO",
     "text": "TODO\nTBD: (grammar of graphics? plotly?)\nTBD: we could even use Pandas built-in visualization"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#pandas-and-matplotlib",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#pandas-and-matplotlib",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#pandas-and-matplotlib",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#pandas-and-matplotlib",
     "title": "Analytics & Big Data",
     "section": "pandas and matplotlib",
     "text": "pandas and matplotlib\nExample:\n\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\n    \"A\": np.random.randn(100)\n})\n\ndf.hist()\n\narray([[&lt;Axes: title={'center': 'A'}&gt;]], dtype=object)"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#todo-1",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#todo-1",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo-1",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#todo-1",
     "title": "Analytics & Big Data",
     "section": "TODO",
     "text": "TODO\nshow all (?) visulaizations covered on the previous slides TBD: clustering?!"
   },
   {
-    "objectID": "slides/lecture_3_exploratory_data_analysis.html#summary",
-    "href": "slides/lecture_3_exploratory_data_analysis.html#summary",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#summary",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#summary",
     "title": "Analytics & Big Data",
     "section": "Summary",
     "text": "Summary\nTODO"
   },
   {
-    "objectID": "slides/lecture_11_recap.html#learning-objectives",
-    "href": "slides/lecture_11_recap.html#learning-objectives",
+    "objectID": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
+    "href": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
+    "title": "Analytics & Big Data",
+    "section": "Prof. Dr. Gerit Wagner",
+    "text": "Prof. Dr. Gerit Wagner\n\n\nAcademic background\n\nUniversität Regensburg: Doctorate\nHEC Montréal: Postdoctoral Fellowship\nOtto-Friedrich-Universität Bamberg: Assistant Professor\nFrankfurt School of Finance & Management: Full Professor\n\nResearch interests\n\nOpen, agentic, and boundary-spanning work\nAI-supported knowledge synthesis\n\nTeaching interests\n\nAnalytics and big data\nProgramming and software engineering\nIT security\nDigital knowledge-intensive and platform-based work\nLiterature review methods"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#about-you",
+    "href": "slides/lecture_0_orga.html#about-you",
+    "title": "Analytics & Big Data",
+    "section": "About you",
+    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1. Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where would you have liked to be better prepared for a data-related task?\n\n\n\n2. Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3. What are your expectations for the course?"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
+    "href": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
+    "title": "Analytics & Big Data",
+    "section": "Analytics & Big Data in the curriculum",
+    "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#what-exactly-is-analytics",
+    "href": "slides/lecture_0_orga.html#what-exactly-is-analytics",
+    "title": "Analytics & Big Data",
+    "section": "What exactly is “analytics”?",
+    "text": "What exactly is “analytics”?\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
+    "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
+    "title": "Analytics & Big Data",
+    "section": "Why Analytics (and This Course) Matter",
+    "text": "Why Analytics (and This Course) Matter\n Finance — Quantitative Arbitrage at Princeton-Newport Partners\n\nEarly pioneer of applying the Black-Scholes option pricing model in real markets\nSystematic identification of mispriced options through mathematical arbitrage\nDemonstrated how financial models and data could generate consistent trading profits\n\n Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#course-architecture",
+    "href": "slides/lecture_0_orga.html#course-architecture",
+    "title": "Analytics & Big Data",
+    "section": "Course Architecture",
+    "text": "Course Architecture\n\n\n\n\n\n\n%%{init: {\n  \"theme\": \"base\",\n  \"themeVariables\": {\n    \"primaryColor\": \"#E8EEF7\",\n    \"primaryTextColor\": \"#1F2D3D\",\n    \"primaryBorderColor\": \"#3A506B\",\n    \"lineColor\": \"#3A506B\",\n    \"secondaryColor\": \"#F4F6FA\",\n    \"fontSize\": \"18px\",\n    \"fontFamily\": \"Helvetica, Arial, sans-serif\"\n  }\n}}%%\n\nflowchart LR\n\n  classDef foundation fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef stack fill:#F4F6FA,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef synthesis fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n\n  subgraph Right[\"&lt;b&gt;Synthesis&lt;/b&gt;\"]\n    direction TB\n    S[\"&lt;div align='center'&gt;&lt;b&gt;Integration and outlook&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  subgraph Stack[\"&lt;b&gt;Analytics capability stack&lt;/b&gt;\"]\n    direction LR\n    D[\"&lt;div align='center'&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;\"]\n    M[\"&lt;div align='center'&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;\"]\n    O[\"&lt;div align='center'&gt;&lt;b&gt;Organizational deployment&lt;/b&gt;&lt;br/&gt;Governance&lt;/div&gt;\"]\n    D --&gt; M --&gt; O\n  end\n\n  subgraph Left[\"&lt;b&gt;Introduction&lt;/b&gt;\"]\n    direction TB\n    F2[\"&lt;div align='center'&gt;&lt;b&gt;The rise of analytics&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  class F2 foundation;\n  class D,M,O stack;\n  class S synthesis;"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#learning-objectives",
+    "href": "slides/lecture_0_orga.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
-    "text": "Learning objectives\nRecap, questions, exam prep"
+    "text": "Learning objectives\nKnowledge\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
+    "href": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
+    "title": "Analytics & Big Data",
+    "section": "What This Course Does Not Cover",
+    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#course-logistics-1",
+    "href": "slides/lecture_0_orga.html#course-logistics-1",
+    "title": "Analytics & Big Data",
+    "section": "Course logistics",
+    "text": "Course logistics\nWorkload: 150h total (44h in class, remaining: self-study and group project)\nAssessment\n\nExam: 60 minutes, 60 points\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee overview in Canvas\n\nContact:\n\nEMail: g.wagner@fs.de\nOffice hours: booking page\n\nIndividual circumstances\nIf you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#materials",
+    "href": "slides/lecture_0_orga.html#materials",
+    "title": "Analytics & Big Data",
+    "section": "Materials",
+    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.7 \nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
+    "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
+    "title": "Analytics & Big Data",
+    "section": "You may also be interested in …",
+    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: update thesis topics"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#references",
+    "href": "slides/lecture_0_orga.html#references",
+    "title": "Analytics & Big Data",
+    "section": "References",
+    "text": "References\n\n\n\n\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\n\n\nChen, H., Chiang, R. H. L., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly, 36(4), 1165–1188. https://www.jstor.org/stable/41703503\n\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98–107. https://cs.brown.edu/courses/cs295-11/competing.pdf\n\n\nMartı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048–3061. https://ieeexplore.ieee.org/abstract/document/8943998\n\n\nRaschka, S. (2015). Python machine learning. Packt Publishing. https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881\n\n\nSchutt, R., & O’Neil, C. (2014). Doing data science. O’Reilly Media. https://www.oreilly.com/library/view/doing-data-science/9781449363871/\n\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: A managerial perspective. Pearson. https://elibrary.pearson.de/book/99.150005/9781292727530\n\n\nVaisman, A., & Zimányi, E. (2016). Data warehouse systems: Design and implementation. Springer. https://doi.org/10.1007/978-3-662-65167-4\n\n\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626–639. https://www.sciencedirect.com/science/article/pii/S0377221717301455"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#learning-objectives",
+    "href": "slides/lecture_3_structuring_preparing_data.html#learning-objectives",
+    "title": "Analytics & Big Data",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nOutline descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems.\nExplain dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).\nModel analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#navigation",
+    "href": "slides/lecture_3_structuring_preparing_data.html#navigation",
+    "title": "Analytics & Big Data",
+    "section": "Navigation",
+    "text": "Navigation"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#descriptive-analytics",
+    "href": "slides/lecture_3_structuring_preparing_data.html#descriptive-analytics",
+    "title": "Analytics & Big Data",
+    "section": "2 Descriptive Analytics",
+    "text": "2 Descriptive Analytics\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#application-systems-pyramid",
+    "href": "slides/lecture_3_structuring_preparing_data.html#application-systems-pyramid",
+    "title": "Analytics & Big Data",
+    "section": "Application Systems Pyramid",
+    "text": "Application Systems Pyramid"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#typical-descriptive-questions",
+    "href": "slides/lecture_3_structuring_preparing_data.html#typical-descriptive-questions",
+    "title": "Analytics & Big Data",
+    "section": "Typical Descriptive Questions",
+    "text": "Typical Descriptive Questions\n\n\n\n\n\n\n\n— Source: Alfred Schlaucher, Oracle, p. 15"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#characteristics-of-operational-and-analytical-databases",
+    "href": "slides/lecture_3_structuring_preparing_data.html#characteristics-of-operational-and-analytical-databases",
+    "title": "Analytics & Big Data",
+    "section": "Characteristics of Operational and Analytical Databases",
+    "text": "Characteristics of Operational and Analytical Databases\n\nCharacteristics\nOperational Data\nAnalytical Data\nTarget group\nOperational employees\nManagement, Analysts, Divisional manager\nAccess frequency\nhigh\nslow to medium\nData volume per access\nlow to medium volume\nhigh volume\nRequired response time\nvery short\nshort to medium\nLevel of data\ndetailed\naggregated, processed\nQueries\npredictable, periodic\nunpredictable, ad hoc\nGiven period\ncurrent\npast to future\nTime horizon\n1–3 months\nseveral years up to decades"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
+    "href": "slides/lecture_3_structuring_preparing_data.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
+    "title": "Analytics & Big Data",
+    "section": "Contradiction between Operational Data Architecture and Analytical Information Needs",
+    "text": "Contradiction between Operational Data Architecture and Analytical Information Needs\n\n\n\n\n\n\n\n— Source: Jung/Winter (2000): Data Warehousing Strategie: Erfahrungen, Methoden, Visionen, Berlin, p. 7."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#different-intensities-of-use",
+    "href": "slides/lecture_3_structuring_preparing_data.html#different-intensities-of-use",
+    "title": "Analytics & Big Data",
+    "section": "Different Intensities of Use",
+    "text": "Different Intensities of Use"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#definition-data-warehouse",
+    "href": "slides/lecture_3_structuring_preparing_data.html#definition-data-warehouse",
+    "title": "Analytics & Big Data",
+    "section": "Definition: Data Warehouse",
+    "text": "Definition: Data Warehouse"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#the-data-warehouse-concept",
+    "href": "slides/lecture_3_structuring_preparing_data.html#the-data-warehouse-concept",
+    "title": "Analytics & Big Data",
+    "section": "The Data Warehouse Concept",
+    "text": "The Data Warehouse Concept"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#layers-of-a-data-warehouse-system",
+    "href": "slides/lecture_3_structuring_preparing_data.html#layers-of-a-data-warehouse-system",
+    "title": "Analytics & Big Data",
+    "section": "Layers of a Data Warehouse System",
+    "text": "Layers of a Data Warehouse System"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#components-of-a-data-warehouse",
+    "href": "slides/lecture_3_structuring_preparing_data.html#components-of-a-data-warehouse",
+    "title": "Analytics & Big Data",
+    "section": "Components of a Data Warehouse",
+    "text": "Components of a Data Warehouse"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#structure-of-the-database",
+    "href": "slides/lecture_3_structuring_preparing_data.html#structure-of-the-database",
+    "title": "Analytics & Big Data",
+    "section": "Structure of the Database",
+    "text": "Structure of the Database\nThe database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company. In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company. They are organized in such a way that they can be viewed from different dimensions.\nFrequently used dimensions are:\n\nCompany structure (e.g., business units, organizational structure, legal entities)\nProduct structure (e.g., product groups and individual products)\nRegional structure (e.g., region, country, continent)\nCustomer structure (e.g., customer groups or segments, and individual customers)\nTime structure (e.g., month, quarter, year)\nBusiness parameters (e.g., sales, contribution margin, profit)\nCharacteristics (e.g., target, actual, deviations)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#examples-of-aggregation-levels-in-a-data-warehouse",
+    "href": "slides/lecture_3_structuring_preparing_data.html#examples-of-aggregation-levels-in-a-data-warehouse",
+    "title": "Analytics & Big Data",
+    "section": "Examples of Aggregation Levels in a Data Warehouse",
+    "text": "Examples of Aggregation Levels in a Data Warehouse"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#etl-tools",
+    "href": "slides/lecture_3_structuring_preparing_data.html#etl-tools",
+    "title": "Analytics & Big Data",
+    "section": "ETL-Tools",
+    "text": "ETL-Tools\nThe data in the data warehouse can normally only be accessed in a read-only manner. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.\nThe timeliness with which the transfer to the database is performed can be defined flexibly, e.g., within defined time intervals, immediately after each change, or at the explicit request of the user.\nETL programs include:\n\nMonitors: Detect and report changes in individual sources that are relevant to the data warehouse.\nExtractors: Select and transport data from the data sources into the workspace.\nTransformers: Unify, clean, integrate, consolidate, aggregate, and augment extracted data in the workspace.\nLoaders: Load transformed data from the workspace into the data warehouse after the data retrieval process is complete."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#staging-area",
+    "href": "slides/lecture_3_structuring_preparing_data.html#staging-area",
+    "title": "Analytics & Big Data",
+    "section": "Staging Area",
+    "text": "Staging Area\nThe staging area is a temporary cache that performs the ETL process. It includes the extraction, transformation and loading of the data into the data warehouse.\nNeither the operational systems nor the data warehouse are affected by the process. The data can be transferred incrementally from the operational systems without having to have a permanent connection to them. It is stored temporarily and only transformed when it is sufficiently complete.\nIt is then loaded en bloc into the data warehouse, so that no inconsistencies can occur here either.\nIf the ETL process is successful, the data is deleted from the staging area."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#the-metadata-repository",
+    "href": "slides/lecture_3_structuring_preparing_data.html#the-metadata-repository",
+    "title": "Analytics & Big Data",
+    "section": "The Metadata Repository",
+    "text": "The Metadata Repository\nMetadata supports data management and serves as a descriptor for an object that holds some data or information. In data warehouses, it is collectively organized in a catalog called the metadata repository.\nMetadata is classified into three types:\n\nTechnical metadata: Provides information about the structure of data, where it resides, and other technical details related to locating data in its native database.\nBusiness metadata: Describes the actual data in business-understandable terms. It can provide insights into the type of data, its origin, definition, quality, and relationships with other entities in the data warehouse.\nProcess metadata: Stores information about the occurrence and outcomes of operations taking place in the data warehouse."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#data-warehouse-and-data-mart",
+    "href": "slides/lecture_3_structuring_preparing_data.html#data-warehouse-and-data-mart",
+    "title": "Analytics & Big Data",
+    "section": "Data Warehouse and Data Mart",
+    "text": "Data Warehouse and Data Mart\nA single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.\nComparison: Data Warehouse and Data Mart\n\nApplication\nDivision/Department\nCompany\nData design\nOptimized\nGeneralistic\nData volume\nFrom gigabyte range\nFrom terabyte range\nOrigin\nTask oriented\nData model oriented\nRequirements\nSpecific\nVersatile"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#architectural-variants-of-data-warehouses-in-practice",
+    "href": "slides/lecture_3_structuring_preparing_data.html#architectural-variants-of-data-warehouses-in-practice",
+    "title": "Analytics & Big Data",
+    "section": "Architectural Variants of Data Warehouses in Practice",
+    "text": "Architectural Variants of Data Warehouses in Practice"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#from-transactions-to-reports",
+    "href": "slides/lecture_3_structuring_preparing_data.html#from-transactions-to-reports",
+    "title": "Analytics & Big Data",
+    "section": "From Transactions to Reports",
+    "text": "From Transactions to Reports"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#example-of-a-dashboard",
+    "href": "slides/lecture_3_structuring_preparing_data.html#example-of-a-dashboard",
+    "title": "Analytics & Big Data",
+    "section": "Example of a Dashboard",
+    "text": "Example of a Dashboard\n\n\n\n\n\n\n\n— Source: https://www.bluemargin.com/power-bi-full-blog/topic/private-equity-data-intelligence"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-i",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-i",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema (I)",
+    "text": "Star Schema (I)\nThe Star schema has a central fact table and exactly one dimension table for each dimension.\n\n\n\n\n\nThe cardinality between the fact table and a dimension table is n∶1, i.e. a fact (e.g. sales: 67,000 euros) is described by one dimension expression for each dimension (e.g. time: 1st quarter, region: Hesse, product group: books). A dimension characteristic (e.g. product group: books) is associated with 0, 1 or n facts."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-ii",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-ii",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema (II)",
+    "text": "Star Schema (II)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-iii",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-iii",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema (III)",
+    "text": "Star Schema (III)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-table-design-i",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-table-design-i",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema Table Design (I)",
+    "text": "Star Schema Table Design (I)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-table-design-ii",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-table-design-ii",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema Table Design (II)",
+    "text": "Star Schema Table Design (II)\n\n\n\n\n\n\n\n— Source: https://www.guru99.com/star-snowflake-data-warehousing.html"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-example",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-example",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema Example",
+    "text": "Star Schema Example"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#exercise-1",
+    "href": "slides/lecture_3_structuring_preparing_data.html#exercise-1",
+    "title": "Analytics & Big Data",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nAn online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:\n\nCUSTOMER (ID, name, address, telephone, birthday, gender)\nWINE (ID, name, type, year, bottle_price, class)\nCLASS (ID, name, region)\nTIME (timestamp, date, year)\nORDER (customer, wine, time, bottles)\n\nCreate the star schema for the data warehouse."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#queries-on-the-star-schema",
+    "href": "slides/lecture_3_structuring_preparing_data.html#queries-on-the-star-schema",
+    "title": "Analytics & Big Data",
+    "section": "Queries on the Star Schema",
+    "text": "Queries on the Star Schema\nExample:\nIn which years were the most cars purchased by female customers in Hesse in the 1st quarter?\nselect z.Year as Year, sum(v.Amount) as Total_Amount\nfrom Branch f, Product p, Time z, Customer k, Sales v\nwhere z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID\ngroup by z.Year\norder by Total_Amount Descending;\n\n\n\nYear\nTotal Amount\n\n\n\n\n2004\n745\n\n\n2005\n710\n\n\n2003\n650\n\n\n\n\n\n— Source: Hartung (2011), p. 37"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#snowflake-schema",
+    "href": "slides/lecture_3_structuring_preparing_data.html#snowflake-schema",
+    "title": "Analytics & Big Data",
+    "section": "Snowflake Schema",
+    "text": "Snowflake Schema\nIn the Snowflake schema, the redundancies in the Star schema are resolved in the dimension tables and the hierarchy levels are each modeled with their own tables:\n\n\n\n\n\n\n\n— Source: https://www.guru99.com/star-snowflake-data-warehousing.html"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#star-schema-vs.-snowflake-schema",
+    "href": "slides/lecture_3_structuring_preparing_data.html#star-schema-vs.-snowflake-schema",
+    "title": "Analytics & Big Data",
+    "section": "Star Schema vs. Snowflake Schema",
+    "text": "Star Schema vs. Snowflake Schema\n\nSpeed of query processing is in favor of Star scheme\nData volume tends to be lower with Snowflake schema\nSnowflake schema is easier to change (maintenance)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#galaxy-schema",
+    "href": "slides/lecture_3_structuring_preparing_data.html#galaxy-schema",
+    "title": "Analytics & Big Data",
+    "section": "Galaxy Schema",
+    "text": "Galaxy Schema\nThe Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions. The Galaxy schema thus represents more than one data cube (multi-cubes)."
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#table-structure-of-the-galaxy-schema",
+    "href": "slides/lecture_3_structuring_preparing_data.html#table-structure-of-the-galaxy-schema",
+    "title": "Analytics & Big Data",
+    "section": "Table Structure of the Galaxy Schema",
+    "text": "Table Structure of the Galaxy Schema"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#dw-planning-user-questions-i",
+    "href": "slides/lecture_3_structuring_preparing_data.html#dw-planning-user-questions-i",
+    "title": "Analytics & Big Data",
+    "section": "DW Planning – User Questions (I)",
+    "text": "DW Planning – User Questions (I)\n\nWhat is the ratio of private to corporate customers?\nDoes this quantity ratio correspond to the turnover ratio?\nDo customer characteristics such as occupational group, living situation, education, etc. play a role in turnover?\nWhat are the customers with the highest sales?\nWhat is the development of sales over time? Are there any shifts in relation to customer characteristics?\nCan additional customer segments be formed, e.g. if customer characteristics are combined?\nAre there regional focal points in relation to customer characteristics?\nAre there regional focuses related to products / product groups?\nAre there correlations between customer characteristics and products?\nWhat are the top-selling products? Top sellers/bottom sellers lists?\nAre there seasonal influences on the sales development depending on product or customer characteristics?"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#dw-planning-user-questions-ii",
+    "href": "slides/lecture_3_structuring_preparing_data.html#dw-planning-user-questions-ii",
+    "title": "Analytics & Big Data",
+    "section": "DW Planning – User Questions (II)",
+    "text": "DW Planning – User Questions (II)\n\n\n\n\n\n\n\n— Source: Alfred Schlaucher, Oracle, p. 28"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#result-star-schema",
+    "href": "slides/lecture_3_structuring_preparing_data.html#result-star-schema",
+    "title": "Analytics & Big Data",
+    "section": "Result: Star Schema",
+    "text": "Result: Star Schema\n\n\n\n\n\n\n\n— Source: Alfred Schlaucher, Oracle, p. 40"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#exercise-2",
+    "href": "slides/lecture_3_structuring_preparing_data.html#exercise-2",
+    "title": "Analytics & Big Data",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nA restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation.\nThe company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status.\nThe menu items of the restaurants are divided into the classes “Starters”, “Main courses”, “Desserts”, “Beverages” and “Other”. Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.\nCreate the logical data warehouse schema!"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#exercise-3",
+    "href": "slides/lecture_3_structuring_preparing_data.html#exercise-3",
+    "title": "Analytics & Big Data",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nAs an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.\nFlowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available.\nThe DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.\nThe key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.\nEmployees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.\nCreate the logical data warehouse schema!"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#navigation-1",
+    "href": "slides/lecture_3_structuring_preparing_data.html#navigation-1",
+    "title": "Analytics & Big Data",
+    "section": "Navigation",
+    "text": "Navigation"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#descriptive-analytics-1",
+    "href": "slides/lecture_3_structuring_preparing_data.html#descriptive-analytics-1",
+    "title": "Analytics & Big Data",
+    "section": "2 Descriptive Analytics",
+    "text": "2 Descriptive Analytics\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#subject-of-olap",
+    "href": "slides/lecture_3_structuring_preparing_data.html#subject-of-olap",
+    "title": "Analytics & Big Data",
+    "section": "Subject of OLAP",
+    "text": "Subject of OLAP\nOnline Analytical Processing (OLAP) is software technology focused on the analysis of dynamic, multidimensional data.\nThe goal is to provide executives with the information they need quickly, flexibly and interactively.\nOLAP functionality can be characterized as dynamic, multidimensional analysis of consolidated enterprise data, which includes the following components:\n\nCalculations of key figures over different dimensions and aggregation levels\nTrend analysis over definable time intervals\n“What if” analyses\nMultidimensional visualization methods"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#facts-and-dimensions",
+    "href": "slides/lecture_3_structuring_preparing_data.html#facts-and-dimensions",
+    "title": "Analytics & Big Data",
+    "section": "Facts and Dimensions",
+    "text": "Facts and Dimensions"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#organizing-data-as-hypercube",
+    "href": "slides/lecture_3_structuring_preparing_data.html#organizing-data-as-hypercube",
+    "title": "Analytics & Big Data",
+    "section": "Organizing Data as Hypercube",
+    "text": "Organizing Data as Hypercube"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#olap-operations-slicing-and-dicing",
+    "href": "slides/lecture_3_structuring_preparing_data.html#olap-operations-slicing-and-dicing",
+    "title": "Analytics & Big Data",
+    "section": "OLAP Operations: Slicing and Dicing",
+    "text": "OLAP Operations: Slicing and Dicing"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#olap-operations-rotate",
+    "href": "slides/lecture_3_structuring_preparing_data.html#olap-operations-rotate",
+    "title": "Analytics & Big Data",
+    "section": "OLAP Operations: Rotate",
+    "text": "OLAP Operations: Rotate"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#olap-operations-drill-down-and-roll-up",
+    "href": "slides/lecture_3_structuring_preparing_data.html#olap-operations-drill-down-and-roll-up",
+    "title": "Analytics & Big Data",
+    "section": "OLAP Operations: Drill Down and Roll Up",
+    "text": "OLAP Operations: Drill Down and Roll Up"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#olap-operations-nest",
+    "href": "slides/lecture_3_structuring_preparing_data.html#olap-operations-nest",
+    "title": "Analytics & Big Data",
+    "section": "OLAP Operations: Nest",
+    "text": "OLAP Operations: Nest\nThe result of a nest operation physically represents a two-dimensional matrix. It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form. In the following example, three dimensions are displayed:"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#olap-as-excel-plug-in",
+    "href": "slides/lecture_3_structuring_preparing_data.html#olap-as-excel-plug-in",
+    "title": "Analytics & Big Data",
+    "section": "OLAP as Excel plug-in",
+    "text": "OLAP as Excel plug-in"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#architecture-of-an-olap-system",
+    "href": "slides/lecture_3_structuring_preparing_data.html#architecture-of-an-olap-system",
+    "title": "Analytics & Big Data",
+    "section": "Architecture of an OLAP System",
+    "text": "Architecture of an OLAP System"
+  },
+  {
+    "objectID": "slides/lecture_3_structuring_preparing_data.html#summary",
+    "href": "slides/lecture_3_structuring_preparing_data.html#summary",
+    "title": "Analytics & Big Data",
+    "section": "Summary",
+    "text": "Summary\nTODO"
   },
   {
     "objectID": "slides/lecture_8_big_data_1.html#limitations-of-the-data-warehouse-approach",
@@ -1152,7 +1166,7 @@
     "href": "index.html#sessions",
     "title": "Analytics & Big Data",
     "section": "Sessions",
-    "text": "Sessions\n\n\nIntroduction\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 0\n\n\nCourse logistics\n\n\nslides, notes\n\n\n\n\n\n\n2026-03-23\n\n\nSession 1\n\n\nThe rise of analytics\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nData foundations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 2\n\n\nExploratory data analysis\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-03-30\n\n\nSession 3\n\n\nStructuring and preparing data\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nAnalytical models\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-30\n\n\nSession 4\n\n\nRegression I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-14\n\n\nSession 5\n\n\nRegression II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-20\n\n\nSession 6\n\n\nMachine learning I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-20\n\n\nSession 7\n\n\nMachine learning II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-05-04\n\n\nSession 8\n\n\nBig data I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-05-04\n\n\nSession 9\n\n\nBig data II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nDeployment in organizations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 10\n\n\nGovernance of data analytics\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nIntegration and review\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 11\n\n\nRecap, exam preparation, Q&A\n\n\nslides, notes\n\n\nexercise"
+    "text": "Sessions\n\n\nIntroduction\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 0\n\n\nCourse logistics\n\n\nslides, notes\n\n\n\n\n\n\n2026-03-23\n\n\nSession 1\n\n\nThe rise of analytics\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nData foundations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 2\n\n\nExploratory data analysis\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-03-30\n\n\nSession 3\n\n\nAnalytical data architecture\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nAnalytical models\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-30\n\n\nSession 4\n\n\nRegression I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-14\n\n\nSession 5\n\n\nRegression II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-20\n\n\nSession 6\n\n\nMachine learning I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-20\n\n\nSession 7\n\n\nMachine learning II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-05-04\n\n\nSession 8\n\n\nBig data I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-05-04\n\n\nSession 9\n\n\nBig data II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nDeployment in organizations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 10\n\n\nGovernance of data analytics\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nSynthesis\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 11\n\n\nIntegration and exam preparation\n\n\nslides, notes\n\n\nexercise"
   },
   {
     "objectID": "preparation.html",
@@ -1834,90 +1848,6 @@
     "text": "Summary\n\nTODO"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
-    "href": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
-    "title": "Analytics & Big Data",
-    "section": "Prof. Dr. Gerit Wagner",
-    "text": "Prof. Dr. Gerit Wagner\n\n\nAcademic background\n\nUniversität Regensburg: Doctorate\nHEC Montréal: Postdoctoral Fellowship\nOtto-Friedrich-Universität Bamberg: Assistant Professor\nFrankfurt School of Finance & Management: Full Professor\n\nResearch interests\n\nOpen, agentic, and boundary-spanning work\nAI-supported knowledge synthesis\n\nTeaching interests\n\nProgramming and software engineering\nAnalytics and big data\nIT security\nDigital knowledge-intensive and platform-based work\nLiterature review methods"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#about-you",
-    "href": "slides/lecture_0_orga.html#about-you",
-    "title": "Analytics & Big Data",
-    "section": "About you",
-    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1. Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where would you have liked to be better prepared for a data-related task?\n\n\n\n2. Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3. What are your expectations for the course?"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
-    "href": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
-    "title": "Analytics & Big Data",
-    "section": "Analytics & Big Data in the curriculum",
-    "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#what-exactly-is-analytics",
-    "href": "slides/lecture_0_orga.html#what-exactly-is-analytics",
-    "title": "Analytics & Big Data",
-    "section": "What exactly is “analytics”?",
-    "text": "What exactly is “analytics”?\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
-    "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
-    "title": "Analytics & Big Data",
-    "section": "Why Analytics (and This Course) Matter",
-    "text": "Why Analytics (and This Course) Matter\n Finance — Quantitative Arbitrage at Princeton-Newport Partners\n\nEarly pioneer of applying the Black-Scholes option pricing model in real markets\nSystematic identification of mispriced options through mathematical arbitrage\nDemonstrated how financial models and data could generate consistent trading profits\n\n Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#course-architecture",
-    "href": "slides/lecture_0_orga.html#course-architecture",
-    "title": "Analytics & Big Data",
-    "section": "Course Architecture",
-    "text": "Course Architecture\n\n\n\n\n\n\n\nDataAnalyticsCourse\n\n\ncluster_foundations\n\nFoundations\n\n\ncluster_da\n\n \n\n\ncluster_bd\n\nBig Data\n\n\ncluster_sd\n\nStructured Data\n\n\ncluster_org\n\nOrganizations\n\n\n\nS1\n\nSession 1:\nFoundations of data analytics\n\n\n\nS2\n\nSession 2:\nStructuring and preparing data\n\n\n\nS1-&gt;S2\n\n\n\n\n\nS8\n\nSession 8:\nBig data\n\n\n\nS9\n\nSession 9:\nAnalytics case examples\n\n\n\nS8-&gt;S9\n\n\n\n\n\nS10\n\nSession 10:\nGovernance of data analytics\n\n\n\nS9-&gt;S10\n\n\n\n\n\nS3\n\nSession 3:\nExploratory data analysis\n\n\n\nS2-&gt;S3\n\n\n\n\n\nS4\n\nSession 4:\nRegression I\n\n\n\nS3-&gt;S4\n\n\n\n\n\nS5\n\nSession 5:\nRegression II\n\n\n\nS4-&gt;S5\n\n\n\n\n\nS6\n\nSession 6:\nMachine learning I\n\n\n\nS5-&gt;S6\n\n\n\n\n\nS7\n\nSession 7:\nMachine learning II\n\n\n\nS6-&gt;S7\n\n\n\n\n\nS7-&gt;S8"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#learning-objectives",
-    "href": "slides/lecture_0_orga.html#learning-objectives",
-    "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nKnowledge\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
-    "href": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
-    "title": "Analytics & Big Data",
-    "section": "What This Course Does Not Cover",
-    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#course-logistics-1",
-    "href": "slides/lecture_0_orga.html#course-logistics-1",
-    "title": "Analytics & Big Data",
-    "section": "Course logistics",
-    "text": "Course logistics\nWorkload: 150h total (44h in class, remaining: self-study and group project)\nAssessment\n\nExam: 60 minutes, 60 points\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee overview in Canvas\n\nContact:\n\nEMail: g.wagner@fs.de\nOffice hours: booking page\n\nIndividual circumstances\nIf you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#materials",
-    "href": "slides/lecture_0_orga.html#materials",
-    "title": "Analytics & Big Data",
-    "section": "Materials",
-    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.7 \nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
-    "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
-    "title": "Analytics & Big Data",
-    "section": "You may also be interested in …",
-    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: update thesis topics"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#references",
-    "href": "slides/lecture_0_orga.html#references",
-    "title": "Analytics & Big Data",
-    "section": "References",
-    "text": "References\n\n\n\n\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\n\n\nChen, H., Chiang, R. H. L., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly, 36(4), 1165–1188. https://www.jstor.org/stable/41703503\n\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98–107. https://cs.brown.edu/courses/cs295-11/competing.pdf\n\n\nMartı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048–3061. https://ieeexplore.ieee.org/abstract/document/8943998\n\n\nRaschka, S. (2015). Python machine learning. Packt Publishing. https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881\n\n\nSchutt, R., & O’Neil, C. (2014). Doing data science. O’Reilly Media. https://www.oreilly.com/library/view/doing-data-science/9781449363871/\n\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: A managerial perspective. Pearson. https://elibrary.pearson.de/book/99.150005/9781292727530\n\n\nVaisman, A., & Zimányi, E. (2016). Data warehouse systems: Design and implementation. Springer. https://doi.org/10.1007/978-3-662-65167-4\n\n\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626–639. https://www.sciencedirect.com/science/article/pii/S0377221717301455"
-  },
-  {
     "objectID": "slides/lecture_6_machine_learning_1.html#learning-objectives",
     "href": "slides/lecture_6_machine_learning_1.html#learning-objectives",
     "title": "Analytics & Big Data",
@@ -2210,6 +2140,76 @@
     "title": "Analytics & Big Data",
     "section": "Summary",
     "text": "Summary\n\nRegression is a core example of a structured, model-based analytics process: from business question to data, modeling, evaluation, and potential deployment.\nLinear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.\nIn practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.\n\nNote: more on python in the exercises"
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#reinforcement-learning",
+    "href": "slides/lecture_9_big_data_2.html#reinforcement-learning",
+    "title": "Analytics & Big Data",
+    "section": "Reinforcement Learning",
+    "text": "Reinforcement Learning\n\nThe solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.\n\n\nSupervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.\n\n\nFor example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.\n\n\nUnfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.\n\n\nFor these cases there exist a different approach known as reinforcement learning."
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#reinforcement-learning-1",
+    "href": "slides/lecture_9_big_data_2.html#reinforcement-learning-1",
+    "title": "Analytics & Big Data",
+    "section": "Reinforcement Learning",
+    "text": "Reinforcement Learning\n\n\nThe agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward."
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#alphago",
+    "href": "slides/lecture_9_big_data_2.html#alphago",
+    "title": "Analytics & Big Data",
+    "section": "AlphaGo",
+    "text": "AlphaGo\n\nGo is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.\n\n\nThe core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.\n\n\nA newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.\n\n\nChess 2^64 legal positions, Go 2^120!!!"
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#libratus",
+    "href": "slides/lecture_9_big_data_2.html#libratus",
+    "title": "Analytics & Big Data",
+    "section": "Libratus",
+    "text": "Libratus\n\nAn artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.\n\n\nPoker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.\n\n\n“We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy."
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#types-of-artificial-intelligence",
+    "href": "slides/lecture_9_big_data_2.html#types-of-artificial-intelligence",
+    "title": "Analytics & Big Data",
+    "section": "Types of Artificial Intelligence",
+    "text": "Types of Artificial Intelligence\n\nDiscriminative AI is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.\n\n\nGenerative AI is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.\n\n\nWell-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E."
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#chatgpt",
+    "href": "slides/lecture_9_big_data_2.html#chatgpt",
+    "title": "Analytics & Big Data",
+    "section": "ChatGPT",
+    "text": "ChatGPT\n\nChatGPT is a generative AI that produces human-like text and communicates with humans.\n\n\nThe “GPT” in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.\n\n\nGPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors."
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---approach",
+    "href": "slides/lecture_9_big_data_2.html#chatgpt---approach",
+    "title": "Analytics & Big Data",
+    "section": "ChatGPT - Approach",
+    "text": "ChatGPT - Approach\n\nChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.\n\n\n\nThe most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task."
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-i",
+    "href": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-i",
+    "title": "Analytics & Big Data",
+    "section": "ChatGPT - Semantic Spaces (I)",
+    "text": "ChatGPT - Semantic Spaces (I)"
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-ii",
+    "href": "slides/lecture_9_big_data_2.html#chatgpt---semantic-spaces-ii",
+    "title": "Analytics & Big Data",
+    "section": "ChatGPT - Semantic Spaces (II)",
+    "text": "ChatGPT - Semantic Spaces (II)"
+  },
+  {
+    "objectID": "slides/lecture_9_big_data_2.html#chatgpt---evaluation-component",
+    "href": "slides/lecture_9_big_data_2.html#chatgpt---evaluation-component",
+    "title": "Analytics & Big Data",
+    "section": "ChatGPT - Evaluation Component",
+    "text": "ChatGPT - Evaluation Component"
   },
   {
     "objectID": "notes/lecture_7_machine_learning_2.html",
