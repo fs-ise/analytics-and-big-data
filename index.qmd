@@ -1,6 +1,8 @@
 ---
 title: "Analytics & Big Data"
-format: html
+format:
+    html:
+        css: assets/styles.css
 ---
 
 {{< var course.semester >}}
@@ -24,6 +26,7 @@ from collections import defaultdict
 import re
 import yaml
 from datetime import datetime
+import pandas as pd
 
 # --- config (adjust if your repo layout differs) ---
 SEARCH_ROOT = Path(".")
@@ -37,10 +40,11 @@ NOTES_OUT_DIR = Path("notes")
 EXERCISES_DIR = Path("exercises")
 
 SECTION_ORDER = [
-    "Introductory",
-    "Structured Data",
-    "Big Data",
-    "Organizations",
+    "Introduction",
+    "Data foundations",
+    "Analytical models",
+    "Deployment in organizations",
+    "Integration and review",
 ]
 
 # --- helpers ---
@@ -174,8 +178,7 @@ headers = ["Date", "Session", "Topic", "Lecture", "Exercise"]
 for sec in ordered_sections:
     print(f"### {sec}\n")
     rows = [[e["date"], e["session"], e["topic"], e["lecture"], e["exercise"]] for e in grouped[sec]]
-    print(md_table(headers, rows))
+    df = pd.DataFrame(rows, columns=headers)
+    print(df.to_html(index=False, classes="session-table", escape=False))
     print()
-
-
 ```

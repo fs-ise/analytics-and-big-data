@@ -1,7 +1,7 @@
 ---
 title: "Analytics & Big Data"
 subtitle: "Machine learning II"
-section_label: "Structured Data"
+section_label: "Analytical models"
 session: "Session 7"
 date: "2026-04-20"
 ---
@@ -897,3 +897,6 @@ Proportions in the leafs can be interpreted as probabilities.
 > k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.
 
 > A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.
+
+
+## TODO/TBD: close with ensemble classifiers?

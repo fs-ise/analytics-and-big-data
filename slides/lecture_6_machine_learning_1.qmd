@@ -1,26 +1,50 @@
 ---
 title: "Analytics & Big Data"
 subtitle: "Machine learning I"
-section_label: "Structured Data"
+section_label: "Analytical models"
 session: "Session 6"
 date: "2026-04-20"
 ---
 
 ## Learning objectives {data-state="hide-menubar"}
 
-- **Distinguish between supervised and unsupervised learning approaches** and explain the role of labeled data in supervised machine learning.
-- **Describe the core workflow of supervised machine learning**, including feature engineering, train–test splitting, model training, cross-validation, and evaluation — and explain why each step is necessary for generalizable results.
-- **Assess and interpret the performance of classification models**, using metrics such as the confusion matrix, accuracy, precision, recall, F1 score, and related concepts such as overfitting and the bias–variance tradeoff.
-- **Connect conceptual machine learning procedures to Python implementations**, including preprocessing, model training, and evaluation using scikit-learn.
+- **Distinguish between supervised and unsupervised machine learning approaches** and explain the generalization problem in supervised machine learning.
+- **Describe the workflow of supervised machine learning**, including feature engineering, train–test splitting, model training, cross-validation, and evaluation — and explain why each step is necessary for generalizable results.
+- **Assess the performance of machine learning models**, using the confusion matrix and metrics such as precision, recall and F1 score.
+- **Connect conceptual machine learning procedures to Python implementations**, including preprocessing, model training, and evaluation using scikit-learn. (**see exercise**)
 
-Note: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)
 
-TODO: suggest code reading/understanding exercises (e.g., "what are the next steps of the procedure?", "annotate what is done in the code blocks", "give pseudo code", "are there any errors (e.g., switched code blocks)?")
-
-# Motivation {data-stack-name="Motivation"}
+# Foundations {data-stack-name="Foundations"}
 
 
 ## Today
+
+Categories of ML: Supervised vs. Unsupervised (10 min)
+
+- Define both approaches
+- Connect to what students already know:
+  - “Unsupervised → clustering” (covered in exploratory data analysis)
+- Emphasize: focus of this lecture + next lecture is **supervised learning**
+
+
+
+TBD:
+    ## Categories in Machine Learning
+    ![](../images/slides_200.png)
+
+<!--
+    ## Supervised Learning
+    ![](../images/slides_203.png)
+    ## Unsupervised Learning
+    ![](../images/slides_207.png)
+-->
+
+
+## Supervised and Unsupervised Learning
+
+![](../images/slides_209.png)
+
+
 
 
 Brief reminder: logistic regression from previous lecture
@@ -36,6 +60,9 @@ Motivation for today:
 
 Note/TBD: focus on supervised machine learning.
 
+TODO: mention focus on primarily (binary) classification tasks
+
+TODO: add a definition (and intorductory example)
 
 
 ## Statistics vs. Machine Learning
@@ -50,20 +77,42 @@ Note/TBD: focus on supervised machine learning.
 
 ![](../images/slides_107.png)
 
+# The Generalization Problem {data-stack-name="Generalization problem"}
+
+
+## Overfitting (example, ...)
+
+Traditional Analytics Process
+
+![](../images/slides_117.png)
+
+Note: large ML models may create overfitting issues... -> need for separate test set
+
+## Generalization problem
+
+State the generalization problem very clearly.
+
+Ask students for ideas
+
+# The Machine Learning Workflow {data-stack-name="Workflow"}
 
 
 
-# Supervised Machine Learning {data-stack-name="Supervised Machine Learning"}
+## The Supervised Machine Learning Workflow
 
-## Categories of ML: Supervised vs. Unsupervised (10 min)
-- Define both approaches
-- Connect to what students already know:
-  - “Unsupervised → clustering” (covered in exploratory data analysis)
-- Emphasize: focus of this lecture + next lecture is **supervised learning**
+Introduce the high-level pipeline (Modern Analytics Process)
 
-## The Supervised Machine Learning Workflow (15 min)
+![](../images/slides_126_new.png)
 
-Introduce the high-level pipeline:
+<!--
+    ## The Data Analytics Process - Technical View
+
+    ![](../images/slides_133.png)
+
+    ::: aside
+    — Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/
+    :::
+-->
 
 2.1 Labeled Data
 - Input features (X) and target labels (y)
@@ -89,20 +138,17 @@ Introduce the high-level pipeline:
 2.6 Applying the Model Beyond the Known Sample
 - Using the model in decision-making or prediction for future cases
 
-## 3. Performance Metrics & Model Behavior (15 min)
-Introduce classification performance evaluation:
-
-- Confusion matrix (TP, TN, FP, FN)
-- Accuracy, Precision, Recall
-- F1 Score and when it is useful
-- ROC/AUC (optional, light touch)
-- Bias–Variance tradeoff (intro)
-- Overfitting vs. underfitting
-  - High-level intuition: complexity, flexibility, noise-fitting
-
-# ML Algorithms {data-stack-name="Algorithms"}
 
 ## Overview of Supervised ML Algorithms
+
+Which Method should I choose?
+
+The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.
+
+In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.
+
+For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.
+
 
 - **Logistic Regression**
   - Linear boundary, interpretable, limited for non-linear patterns
@@ -123,104 +169,6 @@ Introduce classification performance evaluation:
 
 Note: Emphasize the *why* behind different models:
 Different inductive biases, different levels of flexibility, different data needs.
-
-
-# Python {data-stack-name="Python"}
-
-## Implementation in Python with scikit-learn (20 min)
-
-Walk through a simple, reproducible pipeline:
-
-1. Load dataset (toy dataset or small real-world example)
-2. Train–test split
-3. Preprocessing pipeline (e.g., StandardScaler + model)
-4. Fit logistic regression vs. one non-linear model (e.g., decision tree or SVM)
-5. Compare performance metrics
-6. Show how to inspect confusion matrix & classification report
-
-Highlight:
-- Consistent API (`fit`, `predict`, `score`)
-- Use of `Pipeline`
-- Keeping code **structured and reproducible**
-
-
-
-
-## Summary {data-state="hide-menubar"}
-
-
-
-
-
-
-
-
-
-## Traditional Analytics Process
-
-![](../images/slides_117.png)
-
-Note: large ML models may create overfitting issues... -> need for separate test set
-
-## Modern Analytics Process
-
-![](../images/slides_126_new.png)
-
-
-
-## Data Errors and their Consequences
-
-![](../images/slides_125_new.png)
-
-
-
-## Best Fit vs. Best Generalization
-
-![](../images/slides_129.png)
-
-
-## Over- and Underfitting
-
-![](../images/slides_131.png)
-
-> Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
-
-::: {.notes}
-
-Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
-Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55
-
-:::
-
-
-## The Bias-Variance Tradeoff
-
-The prediction error is influenced by three components:
-
-> Error = Bias + Variance + Noise
-
-- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
-
-- Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
-
-- Typically, there is a tradeoff between bias and variance.
-
-- Noise is everything that arises from random variations in the data. It cannot be controlled.
-
-![](../images/slides_132_new.png)
-
-
-
-
-
-
-## Which Method should I choose?
-
-The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.
-
-In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.
-
-For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.
 
 
 
@@ -267,53 +215,6 @@ For this reason, the choice of the method can often not be made ex ante. In thes
 
 
 
-## The Data Analytics Process - Technical View
-
-![](../images/slides_133.png)
-
-::: aside
-— Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/
-:::
-
-
-
-
-
-
-## Categories in Machine Learning
-
-![](../images/slides_200.png)
-
-TODO : mention alphago, ... (demis hassabis) as an example of reinforcement learning
-
-
-## Supervised Learning
-
-![](../images/slides_203.png)
-
-
-
-
-## Unsupervised Learning
-
-![](../images/slides_207.png)
-
-
-
-
-## Supervised and Unsupervised Learning
-
-![](../images/slides_209.png)
-
-
-
-
-
-
-
-
-
-
 ## Feature Engineering
 
 > Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
@@ -329,34 +230,30 @@ TODO : mention alphago, ... (demis hassabis) as an example of reinforcement lear
 :::
 
 
-
-
 ## Variants of Feature Engineering
 
-1. Transformation
+**1. Transformation**
 
 - convert features (e.g., birth date → age)
 - build lag structures (e.g., time-lags)
 - normalization / standardization / scaling
 
-2. Type Conversion
+**2. Type Conversion**
 
 - if numerical type is needed, transform categorical into numerical data using dummy features
 - if categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)
 
-3. Feature Combination
+**3. Feature Combination**
 
 - create interaction features (e.g., school_score = num_schools × median_school
   with num_schools = number of schools within 5 miles of a property and
   median_school = median quality score of those schools)
 - combine categories (e.g., when there are very few observations or too many dummy features)
 
-4. Feature Composition
+**4. Feature Composition**
 
 - build ratios (e.g., returns from prices)
 - Principal Component Analysis (Dimensionality Reduction)
-
-
 
 
 ## Scaling
@@ -462,5 +359,72 @@ TODO : mention alphago, ... (demis hassabis) as an example of reinforcement lear
 ## Partitioning
 
 ![](../images/slides_187.png)
+
+
+
+
+
+
+# Performance {data-stack-name="Evaluation"}
+
+## 3. Performance Metrics & Model Behavior (15 min)
+Introduce classification performance evaluation:
+
+- Confusion matrix (TP, TN, FP, FN)
+- Accuracy, Precision, Recall
+- F1 Score and when it is useful
+- ROC/AUC (optional, light touch)
+- Bias–Variance tradeoff (intro)
+- Overfitting vs. underfitting
+  - High-level intuition: complexity, flexibility, noise-fitting
+
+TODO: cover cases where some error types are more costly than others
+<!--
+TBD: unclear?
+
+## Data Errors and their Consequences
+
+![](../images/slides_125_new.png)
+-->
+
+## Best Fit vs. Best Generalization
+
+![](../images/slides_129.png)
+
+
+## Over- and Underfitting
+
+![](../images/slides_131.png)
+
+> Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
+
+::: {.notes}
+
+Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55
+
+:::
+
+## The Bias-Variance Tradeoff
+
+The prediction error is influenced by three components:
+
+> Error = Bias + Variance + Noise
+
+- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
+
+- Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
+
+- Typically, there is a tradeoff between bias and variance.
+
+- Noise is everything that arises from random variations in the data. It cannot be controlled.
+
+![](../images/slides_132_new.png)
+
+
+
+## Summary {data-state="hide-menubar"}
+
+
 
 

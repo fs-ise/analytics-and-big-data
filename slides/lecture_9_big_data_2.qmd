@@ -1,7 +1,7 @@
 ---
 title: "Analytics & Big Data"
-subtitle: "Analytics case examples"
-section_label: "Big Data"
+subtitle: "Big data II"
+section_label: "Analytical models"
 session: "Session 9"
 date: "2026-05-04"
 ---
@@ -11,6 +11,9 @@ date: "2026-05-04"
 - A
 - B
 - C
+
+TBD: spatial/social-media analytics?
+
 
 # TODO {data-stack-name="TODO"}
 

@@ -1,7 +1,7 @@
 ---
 title: "Analytics & Big Data"
-subtitle: "Foundations of data analytics"
-section_label: "Introductory"
+subtitle: "The rise of analytics"
+section_label: "Introduction"
 session: "Session 1"
 date: "2026-03-23"
 ---
@@ -53,6 +53,8 @@ TODO: mention DEA automata. Von Neuman architecture, possible addition of Quantu
 TODO: mention chip miniaturization and pushing pysical limits https://www.youtube.com/watch?v=MiUHjLxm3V0
 
 # New Algorithms {data-stack-name="Algorithms"}
+
+## TODO : tBD: should it be "algorithms" or models?
 
 ## Old vs. New Methods
 
@@ -146,6 +148,14 @@ plt.show()
 # Analytics Processes {data-stack-name="Analytics Processes"}
 
 
+## Structure: TODO
+
+- start with epistemic goals (describing, predicting, prescribing)
+- introduce CRISP-DM
+- distinguish different analytical models and disciplines (referring to the epistemic goals - example: statistician would not be happy with an ML model because it does not support inference/explanation. ML engineer is not happy with a regression model - it may support inference/explanation better, but its predictions may be less accurate)
+
+![](../images/dispute-statistician-ml-engineer.png){fig-align="center" width="40%"}
+
 ## Traditional vs. Modern Analytics Process
 
 
@@ -205,6 +215,8 @@ Source: Schmarzo, p. 88
 - Use the predictions to make decisions.
 - Example: Set the best price to optimize the profit.
 
+**TODO: the same analytical method may be applied for different purposes. maybe even switch to "Analytical purposes"? **
+
 
 
 ## Types of Analytics (III)
@@ -228,8 +240,30 @@ Source: Schmarzo, p. 13
 :::
 
 
+## TODO: introduce CRISP-DM ??
+
+Illustrate the multitude of models (here or in the "new algorithms" section?)
+
+| Discipline          | Model Culture           | Typical Models            |
+| ------------------- | ----------------------- | ------------------------- |
+| Statistics          | Probabilistic inference | Regression, GLM, Bayesian |
+| Econometrics        | Causal modeling         | IV, panel models          |
+| Computer Science    | Algorithmic learning    | Trees, SVM, NN            |
+| Operations Research | Optimization            | LP, MIP                   |
+| Management Science  | Decision modeling       | Stochastic optimization   |
+| Engineering         | Signal processing       | State space, filtering    |
+| Complex Systems     | Simulation              | ABM, DES                  |
+
+-> highlight what we focus on. Mention that not all disciplines focus on the "business understanding" and using insights to support business decisions. Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).
+
+Statistics vs. Data Analytics
+
+![](../images/slides_133_new.png)
+
 
 ## Descriptive Analytics Process
+
+
 
 ![](../images/slides_23.png){fig-align="center" width="45%"}
 

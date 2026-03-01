@@ -1,14 +1,14 @@
 ---
 title: "Analytics & Big Data"
 subtitle: "Structuring and preparing data"
-section_label: "Structured Data"
-session: "Session 2"
-date: "2026-03-23"
+section_label: "Data foundations"
+session: "Session 3"
+date: "2026-03-30"
 ---
 
 ## Learning objectives {data-state="hide-menubar"}
 
-- **Describe** how data warehouses support descriptive analytics, including ETL/staging, metadata, and the separation from operational systems.
+- **Outline** descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems.
 - **Explain** dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).
 - **Model** analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data.
 

@@ -1,7 +1,7 @@
 ---
 title: "Analytics & Big Data"
-subtitle: "Course Logistics"
-section_label: "Introductory"
+subtitle: "Course logistics"
+section_label: "Introduction"
 session: "Session 0"
 date: "2026-03-23"
 ---
@@ -107,75 +107,130 @@ Decision-making – Turning insights into business action.
 
 ## Why Analytics (and This Course) Matter
 
+**{{< iconify solar:money-bag-bold >}} Finance — Quantitative Arbitrage at Princeton-Newport Partners**
 
-<!-- **Three Examples of Analytics in Action** -->
+- Early pioneer of applying the Black-Scholes option pricing model in real markets
+- Systematic identification of mispriced options through mathematical arbitrage
+- Demonstrated how financial models and data could generate consistent trading profits
 
-
-TODO: https://en.wikipedia.org/wiki/Princeton_Newport_Partners (black-scholes)
-
-
-**💰 Finance — Algorithmic Trading at Renaissance Technologies**
-
-- Investment decisions driven almost entirely by statistical models
-- Tiny predictive advantages scale across millions of trades
-- Data replaces intuition in high-stakes financial markets
-
-**🎬 Entertainment — Personalization at Scale at Netflix**
+**{{< iconify mdi:film-open >}} Entertainment — Personalization at Scale at Netflix**
 
 - Recommendation systems shape what millions watch
 - Continuous A/B testing and model refinement
 - Data directly drives engagement and revenue
 
-**⚾ Sports — The Moneyball Revolution at Oakland Athletics**
+**{{< iconify lucide-lab:baseball >}} Sports — The Moneyball Revolution at Oakland Athletics**
 
 - Advanced metrics replaced traditional scouting intuition
 - Data-driven player selection with limited budget
 - Competitive advantage through better measurement
 
 
-
 ## Course Architecture
 
-```{mermaid}
-%%| fig-width: 12
-flowchart TB
+```{dot}
+digraph DataAnalyticsCourse {
 
-%% --- Styling ---
-classDef fsborder fill:#ffffff,color:#000000,stroke:#003366,stroke-width:2px;
+    rankdir=TB;
+    node [shape=box, style="rounded", color="#003366", fontcolor="#000000"];
 
-%% --- Foundations ---
-subgraph Foundations
-    S1["Session 1:<br>Foundations of data analytics"]
-end
+    // --- Foundations ---
+    subgraph cluster_foundations {
+        label="Foundations";
+        style="rounded";
+        S1 [label="Session 1:\nFoundations of data analytics"];
+    }
 
-%% --- Data Analytics ---
-subgraph da[" "]
+    // --- Data Analytics ---
+    subgraph cluster_da {
+        label=" ";
+        style="rounded";
 
-    subgraph bd["Big Data"]
-        S8["Session 8:<br>Big data"]
-        S9["Session 9:<br>Analytics case examples"]
-    end
+        subgraph cluster_bd {
+            label="Big Data";
+            style="rounded";
 
-    subgraph sd["Structured Data"]
-        S2["Session 2:<br>Structuring and preparing data"]
-        S3["Session 3:<br>Exploratory data analysis"]
-        S4["Session 4:<br>Regression I"]
-        S5["Session 5:<br>Regression II"]
-        S6["Session 6:<br>Machine learning I"]
-        S7["Session 7:<br>Machine learning II"]
-    end
+            { rank=same;
+              S8 [label="Session 8:\nBig data"];
+              S9 [label="Session 9:\nAnalytics case examples"];
+            }
 
-end
+            S8 -> S9;
+        }
 
-subgraph Organizations
-    S10["Session 10:<br>Governance of data analytics"]
-end
+        subgraph cluster_sd {
+            label="Structured Data";
+            style="rounded";
 
-Foundations --> da --> Organizations
+            { rank=same;
+              S2 [label="Session 2:\nStructuring and preparing data"];
+              S3 [label="Session 3:\nExploratory data analysis"];
+              S4 [label="Session 4:\nRegression I"];
+              S5 [label="Session 5:\nRegression II"];
+              S6 [label="Session 6:\nMachine learning I"];
+              S7 [label="Session 7:\nMachine learning II"];
+            }
 
-class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
+            S2 -> S3 -> S4 -> S5 -> S6 -> S7;
+        }
+    }
 
+    // --- Organizations ---
+    subgraph cluster_org {
+        label="Organizations";
+        style="rounded";
+        S10 [label="Session 10:\nGovernance of data analytics"];
+    }
+
+    // --- High-level flow ---
+    S1 -> S2;
+    S7 -> S8;
+    S9 -> S10;
+}
 ```
+
+<!--
+        ```{mermaid}
+        %%| fig-width: 12
+        flowchart TB
+
+        %% --- Styling ---
+        classDef fsborder fill:#ffffff,color:#000000,stroke:#003366,stroke-width:2px;
+
+        %% --- Foundations ---
+        subgraph Foundations
+            S1["Session 1:<br>Foundations of data analytics"]
+        end
+
+        %% --- Data Analytics ---
+        subgraph da[" "]
+
+            subgraph bd["Big Data"]
+                S8["Session 8:<br>Big data"]
+                S9["Session 9:<br>Analytics case examples"]
+            end
+
+            subgraph sd["Structured Data"]
+                S2["Session 2:<br>Structuring and preparing data"]
+                S3["Session 3:<br>Exploratory data analysis"]
+                S4["Session 4:<br>Regression I"]
+                S5["Session 5:<br>Regression II"]
+                S6["Session 6:<br>Machine learning I"]
+                S7["Session 7:<br>Machine learning II"]
+            end
+
+        end
+
+        subgraph Organizations
+            S10["Session 10:<br>Governance of data analytics"]
+        end
+
+        Foundations --> da --> Organizations
+
+        class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 fsborder;
+
+        ```
+-->
 
 ## Learning objectives
 
@@ -233,7 +288,7 @@ Sessions:
 
 Contact:
 
-- [g.wagner@fs.de](mailto:g.wagner@fs.de)
+- EMail: [g.wagner@fs.de](mailto:g.wagner@fs.de)
 - Office hours: [booking page](https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&ismsaljsauthenabled)
 
 Individual circumstances
@@ -306,8 +361,8 @@ Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/1
 Slides and materials
 
 - Presentation slides will be made available for download.
-- You are expected to take complementary notes and read the recommended literature.
-- You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️.
+- You are expected to take complementary notes and read the recommended literature.7
+<!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. -->
 - Literature and complementary materials will be listed at the end of each lecture.
 - Reading of complementary materials depends on your interest and ambition.
 
