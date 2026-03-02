@@ -2,6 +2,5 @@ project:
   type: default
   output-dir: ../_site/exercises
 
-# Key part: also create notebooks
 execute:
   enabled: true

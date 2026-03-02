@@ -34,16 +34,19 @@ See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
 
 - [x] Select contents for each session
 - [x] Find contents: Exploratory data analysis
-- [ ] Find contents: Regression I
-- [ ] Find contents: Regression II
-- [ ] Find contents: Machine learning I
-- [ ] Find contents: Machine learning II
-- [ ] Find contents: Analytics case examples
+- [x] Find contents: Regression I
+- [x] Find contents: Regression II
+- [x] Find contents: Machine learning I
+- [x] Find contents: Machine learning II
+- [ ] Find contents: Big data I
+- [ ] Find contents: Big data II
 
 - [x] Check: Jupyter Exercise setup: export of jupyter notebooks
 - [ ] Check: Jupyter Exercise setup: running jupyter notebooks (GitHub?)
 
 Generally: generation of PDFs: local only?
+
+TODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)
 
 
 ### Session 0 — Course logistics
@@ -52,10 +55,10 @@ Generally: generation of PDFs: local only?
 
 ---
 
-### Session 1 — Foundations of data analytics
+### Session 1 — The rise of analytics
 - [x] Learning objectives set
 - [x] Lecture contents selected
-- [x] Exercise contents selected
+- [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
 - [ ] Exercise tested
@@ -65,7 +68,7 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 
 ---
 
-### Session 2 — Structuring and preparing data
+### Session 2 — Exploratory data analysis
 - [x] Learning objectives set
 - [x] Lecture contents selected
 - [ ] Exercise contents selected
@@ -76,9 +79,9 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 
 ---
 
-### Session 3 — Exploratory data analysis
-- [ ] Learning objectives set
-- [ ] Lecture contents selected ⚠️
+### Session 3 — Analytical data architecture
+- [x] Learning objectives set
+- [x] Lecture contents selected
 - [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
@@ -88,8 +91,8 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 ---
 
 ### Session 4 — Regression I
-- [ ] Learning objectives set
-- [ ] Lecture contents selected ⚠️
+- [x] Learning objectives set
+- [x] Lecture contents selected
 - [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
@@ -99,8 +102,8 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 ---
 
 ### Session 5 — Regression II
-- [ ] Learning objectives set
-- [ ] Lecture contents selected (**slides available**)
+- [x] Learning objectives set
+- [x] Lecture contents selected
 - [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
@@ -110,8 +113,8 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 ---
 
 ### Session 6 — Machine learning I
-- [ ] Learning objectives set
-- [ ] Lecture contents selected ⚠️
+- [x] Learning objectives set
+- [x] Lecture contents selected
 - [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
@@ -121,8 +124,8 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 ---
 
 ### Session 7 — Machine learning II
-- [ ] Learning objectives set
-- [ ] Lecture contents selected (**slides available**)
+- [x] Learning objectives set
+- [x] Lecture contents selected
 - [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
@@ -131,9 +134,9 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 
 ---
 
-### Session 8 — Big Data
-- [ ] Learning objectives set
-- [ ] Lecture contents selected ⚠️
+### Session 8 — Big Data I
+- [x] Learning objectives set
+- [x] Lecture contents selected
 - [ ] Exercise contents selected
 - [ ] Lecture polished
 - [ ] Exercise polished
@@ -142,8 +145,8 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 
 ---
 
-### Session 9 — Analytics case examples
-- [ ] Learning objectives set
+### Session 9 — Big Data II
+- [x] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
 - [ ] Lecture polished
@@ -154,7 +157,7 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 ---
 
 ### Session 10 — Governance of data analytics
-- [ ] Learning objectives set
+- [x] Learning objectives set
 - [ ] Lecture contents selected ⚠️
 - [ ] Exercise contents selected
 - [ ] Lecture polished
@@ -165,7 +168,7 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 ---
 
 ### Session 11 — Recap, exam preparation, Q&A
-- [ ] Learning objectives set
+- [x] Learning objectives set
 - [ ] Recap structure defined
 - [ ] Exam-relevant topics consolidated
 - [ ] Slides polished
@@ -185,7 +188,7 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 - [ ] Group exercises tested
 - [ ] Test exam prepared
 - [ ] Consistency of terminology across sessions
-- [ ] Learning objectives aligned with exam scope
+- [x] Learning objectives aligned with exam scope
 - [ ] Optional: handout / combined PDF prepared
 - [ ] Syllabus updated
 - [ ] License, code of conduct, contributing, ...

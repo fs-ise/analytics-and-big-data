@@ -1,29 +1,117 @@
 ---
 title: "Exercise 2: Structuring and preparing data"
-format: html
 ---
 
 ::: callout-note
 TODO
 :::
 
-This text will appear across all versions of the document
+::: callout-note
+You will create a small synthetic dataset, inspect it, and compute descriptive statistics with **pandas**.
+:::
+
+This text will appear across all versions of the document.
+
+```{python}
+#| label: setup
+import numpy as np
+import pandas as pd
+
+rng = np.random.default_rng(42)
+
+n = 200
+df = pd.DataFrame({
+    "age": rng.integers(18, 66, size=n),
+    "department": rng.choice(["Sales", "Ops", "R&D"], size=n, p=[0.35, 0.40, 0.25]),
+    "remote_days_per_week": rng.integers(0, 6, size=n),
+})
+
+# base salary with department effects + noise
+dept_effect = df["department"].map({"Sales": 8000, "Ops": 5000, "R&D": 11000})
+df["salary_eur"] = (35000 + dept_effect + 250 * df["age"] + rng.normal(0, 6000, size=n)).round(0)
+
+# Inject a few missing values (common in real data)
+missing_idx = rng.choice(df.index, size=8, replace=False)
+df.loc[missing_idx[:4], "salary_eur"] = np.nan
+df.loc[missing_idx[4:], "remote_days_per_week"] = np.nan
+
+df.head()
+```
 
 :::{.direction}
+## Tasks
 
-Only display the directions content in the assignment document
+1. **Inspect the data**
+   - Print `df.info()` and explain (in one sentence) what it tells you about missing values and dtypes.
+
+2. **Overall descriptive statistics**
+   - Use `df.describe()` for numeric columns.
+   - Report: mean and std of `salary_eur`, and the min/max of `age`.
+
+3. **Group-wise descriptive statistics**
+   - Compute the **mean salary** and **median salary** by `department`.
+   - Compute the **mean remote_days_per_week** by `department` (handle missing values appropriately).
+
+4. **One simple data-quality check**
+   - Count how many rows have **any missing value**.
+:::
+
+
+::::{.sol}
+
+:::{.callout-tip title="Solution"}
+
+```{python}
+print('hello world')
+```
 
 :::
+
+::::
+
 
 :::{.sol}
+## Solution
 
-Only display the answer in the solution or rubric documents
+### 1) Inspect the data
+```{python}
+df.info()
+```
 
-:::
+### 2) Overall descriptive statistics
+```{python}
+desc = df.describe()
+desc
+```
 
+```{python}
+salary_mean = df["salary_eur"].mean()      # skips NaN by default
+salary_std  = df["salary_eur"].std()
+age_min     = df["age"].min()
+age_max     = df["age"].max()
 
-:::{.rubric}
+salary_mean, salary_std, age_min, age_max
+```
 
-Only display the grading notes in the rubric document.
+### 3) Group-wise descriptive statistics
+```{python}
+salary_by_dept = df.groupby("department")["salary_eur"].agg(["mean", "median", "count"])
+salary_by_dept
+```
 
+```{python}
+remote_by_dept = df.groupby("department")["remote_days_per_week"].mean()  # skips NaN
+remote_by_dept
+```
+
+### 4) Data-quality check
+```{python}
+rows_with_any_missing = df.isna().any(axis=1).sum()
+rows_with_any_missing
+```
+
+**Interpretation (example):**
+
+- `count` in the grouped salary table shows how many non-missing salary observations exist per department.
+- Group means ignore missing values unless you explicitly change that behavior.
 :::
