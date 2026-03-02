@@ -37,7 +37,7 @@ LECTURE_ROOT = SEARCH_ROOT
 SLIDES_OUT_DIR = Path("slides")
 NOTES_OUT_DIR = Path("notes")
 EXERCISES_DIR = Path("exercises")
-SOLUTIONS_DIR = Path("exercises/solutions")
+SOLUTIONS_DIR = Path("exercises/notebooks/solutions")
 
 SECTION_ORDER = [
     "Introduction",
@@ -105,7 +105,7 @@ if EXERCISES_DIR.exists():
             continue
         n = int(m.group(1))
         assign_by_session[n] = {
-            "ipynb": (EXERCISES_DIR / f"{ex_qmd.stem}.ipynb").as_posix(),
+            "ipynb": (EXERCISES_DIR / f"notebooks/{ex_qmd.stem}.ipynb").as_posix(),
             "html": (EXERCISES_DIR / f"{ex_qmd.stem}.html").as_posix(),
         }
 
@@ -117,8 +117,8 @@ for sol_qmd in EXERCISES_DIR.glob("*.qmd"):
         continue
     n = int(m.group(1))
     solution_by_session[n] = {
-        "ipynb": (SOLUTIONS_DIR / f"{sol_qmd.stem}.ipynb").as_posix(),
-        "html": (SOLUTIONS_DIR / f"{sol_qmd.stem}.html").as_posix(),
+        "ipynb": (EXERCISES_DIR / f"notebooks/solutions/{sol_qmd.stem}_solution.ipynb").as_posix(),
+        "html": (EXERCISES_DIR / f"solutions/{sol_qmd.stem}.html").as_posix(),
     }
 
 # --- collect sessions ---
@@ -149,16 +149,16 @@ for qmd in sorted(LECTURE_ROOT.glob(QMD_GLOB)):
         if sess_n in assign_by_session:
             a = assign_by_session[sess_n]
             parts.append(
-                f'{md_download_link("assignment", a["ipynb"])} ({md_link("📄", a["html"])})'
+                f'{md_download_link("assignment", a["ipynb"])}' # ({md_link("📄", a["html"])})
             )
 
         if sess_n in solution_by_session:
             s = solution_by_session[sess_n]
             parts.append(
-                f'{md_download_link("solution", s["ipynb"])} ({md_link("📄", s["html"])})'
+                f'{md_download_link("solution", s["ipynb"])}' # ({md_link("📄", s["html"])})
             )
 
-        ex_cell = "<div style='line-height:1.6'>" + "<br>".join(parts) + "</div>"
+        ex_cell = "<div style='line-height:1.6'>" + ", ".join(parts) + "</div>"
 
     events.append({
         "section_label": section_label,

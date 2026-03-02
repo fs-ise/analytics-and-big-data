@@ -1,6 +1,6 @@
 project:
   type: default
-  output-dir: ../_site/exercises/solutions
+  output-dir: ../_site/exercises/notebooks/solutions
 
 execute:
   enabled: true

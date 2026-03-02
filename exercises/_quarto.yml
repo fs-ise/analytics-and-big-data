@@ -3,13 +3,6 @@ project:
   output-dir: ../_site/exercises   # base (will be overridden by profiles)
   title: Exercises
 
-format:
-  html:
-    toc: true
-    toc-location: left
-    number-sections: false
-    toc-title: "Contents"
-
 filters:
   - assign
 

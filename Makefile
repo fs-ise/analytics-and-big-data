@@ -90,14 +90,18 @@ exercises-assign-html:
 	$(QUARTO) render exercises --profile assign --to html --no-clean
 
 exercises-solution-ipynb:
+	mkdir -p _site/exercises/notebooks/solutions
+	rm -f _site/exercises/notebooks/solutions/*.ipynb
 	$(QUARTO) render exercises --profile solution --to ipynb --no-clean
+	for f in _site/exercises/notebooks/solutions/*.ipynb; do \
+		mv "$$f" "$${f%.ipynb}_solution.ipynb"; \
+	done
 
 exercises-solution-html:
 	$(QUARTO) render exercises --profile solution --to html --no-clean
 
-# exercises: exercises-solution # exercises-assign
-exercises: exercises-assign-ipynb exercises-assign-html exercises-solution-ipynb exercises-solution-html
-
+# exercises-assign-html exercises-solution-html
+exercises: exercises-assign-ipynb exercises-solution-ipynb
 
 # --- Site build (main project renders once) ---
 

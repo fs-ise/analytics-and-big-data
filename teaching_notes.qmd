@@ -13,3 +13,29 @@ Setup:
 
 - Instructor: JupyterLab: TODO
 - Students: TBD (GitHub/jupyter notebooks)
+
+
+Setup and installation of JupyterLab in venv:
+
+```sh
+sudo dnf install python3 python3-pip python3-virtualenv
+python3 -m venv ~/venvs/jupyterlab
+source ~/venvs/jupyterlab/bin/activate
+pip install --upgrade pip
+pip install jupyterlab
+```
+
+Start
+
+```sh
+source ~/venvs/jupyterlab/bin/activate
+cd _site/exercises/notebooks
+jupyter lab
+# http://localhost:8888
+```
+
+TODO :
+- installing libraries (pandas, ...)
+- exporting jupyter notebooks (assignments and solutions) in separate directory?
+
+Note: must call `make exercises` after `quarto render`
