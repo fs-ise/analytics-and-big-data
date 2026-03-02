@@ -8,7 +8,10 @@ date: "2026-05-11"
 
 # Learning objectives {data-state="hide-menubar"}
 
-- Explain fundamental concepts of data analytics, and its role in data-driven organizations.
-- Assess the operational and strategic implications of data analytics in organizations.
+::: {.learning-objectives}
+- **Explain** the strategic role of data analytics in data-driven organizations.
+- **Design** an end-to-end analytics solution aligned with a business problem and governance constraints.
+- **Discuss** the ethical and legal boundaries of data analytics in organizations.
+:::
 
 # TODO {data-stack-name="TODO"}

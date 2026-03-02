@@ -8,9 +8,17 @@ date: "2026-04-14"
 
 ## Learning objectives {data-state="hide-menubar"}
 
+::: {.learning-objectives}
+- **Understand and assess** multiple regression models, including refinement strategies and key assumptions.
+- **Distinguish** between inference- and prediction-oriented modeling and their implications for business contexts.
+- **Explain** logistic regression as a probabilistic classification model and its role as a bridge to machine learning.
+:::
+
+<!--
 - **Refine and critically assess multiple regression models**, explaining how linear regression extends to multiple predictors and when results can be trusted given key assumptions.
 - **Distinguish between inference- and prediction-oriented modeling**, identifying whether a business problem requires causal explanation or predictive accuracy and outlining the implications for model use.
 - **Explain logistic regression as a classification model and bridge to machine learning**, describing how it models binary outcomes as probabilities and supports predictive analytics.
+-->
 
 # Refining the model {data-stack-name="Refining the model"}
 

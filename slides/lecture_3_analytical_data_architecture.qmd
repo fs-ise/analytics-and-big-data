@@ -8,10 +8,16 @@ date: "2026-03-30"
 
 ## Learning objectives {data-state="hide-menubar"}
 
-- **Outline** descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems.
-- **Explain** dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy).
-- **Model** analytical data structures by designing fact/dimension schemas (star, snowflake, galaxy) from business questions and operational data.
+::: {.learning-objectives}
+- **Outline** the architecture of data warehouses.
+- **Explain** dimensional modeling concepts and common schemata.
+- **Design** fact/dimension schemata from business questions and operational data.
+:::
 
+<!--
+- descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems
+- dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy)
+-->
 
 # TODO: integrate this
 

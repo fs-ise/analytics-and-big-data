@@ -8,11 +8,16 @@ date: "2026-04-20"
 
 ## Learning objectives {data-state="hide-menubar"}
 
-- **Distinguish between supervised and unsupervised machine learning approaches** and explain the generalization problem in supervised machine learning.
-- **Describe the workflow of supervised machine learning**, including feature engineering, train–test splitting, model training, cross-validation, and evaluation — and explain why each step is necessary for generalizable results.
-- **Assess the performance of machine learning models**, using the confusion matrix and metrics such as precision, recall and F1 score.
-- **Connect conceptual machine learning procedures to Python implementations**, including preprocessing, model training, and evaluation using scikit-learn. (**see exercise**)
+::: {.learning-objectives}
+- **Distinguish** between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.
+- **Describe** the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.
+- **Assess** the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.
+- **Connect** conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (*see exercise*)
+:::
 
+<!--
+workflow: and explain why each step is necessary for generalizable results
+-->
 
 # Foundations {data-stack-name="Foundations"}
 

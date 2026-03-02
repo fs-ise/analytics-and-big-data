@@ -8,9 +8,14 @@ date: "2026-05-04"
 
 # Learning objectives {data-state="hide-menubar"}
 
-- A
-- B
-- C
+::: {.learning-objectives}
+**Tentatively**
+
+- **Explain** the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).
+- **Acquire and preprocess** large-scale or unstructured data using APIs and appropriate tools in Python.
+- **Apply** large language models or other scalable methods to extract, classify, or summarize unstructured data.
+- **Evaluate** the reliability, bias, and limitations of API- and LLM-based analytics workflows.
+:::
 
 TBD: spatial/social-media analytics?
 

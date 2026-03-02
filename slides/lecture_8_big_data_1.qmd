@@ -9,9 +9,14 @@ date: "2026-05-04"
 
 # Learning objectives {data-state="hide-menubar"}
 
-- A
-- B
-- C
+::: {.learning-objectives}
+- **Explain** the characteristics of big data and their implications for analytics workflows.
+- **Assess** key challenges of big data, including scalability, heterogeneity, and data quality.
+- **Outline** distributed data architectures and their role in large-scale analytics.
+:::
+
+TODO: Explain how big data environments reshape model development, validation, and deployment. This creates continuity with: Generalization problem, Overfitting, Model evaluation
+
 
 # TODO {data-stack-name="TODO"}
 

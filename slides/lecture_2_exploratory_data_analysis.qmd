@@ -8,9 +8,11 @@ date: "2026-03-23"
 
 ## Learning objectives {data-state="hide-menubar"}
 
-- Describe key characteristics of variables and patterns between variables
-- Visualize and interpret data sets
-- Explain the role of exploratory data analysis in business decision-making
+::: {.learning-objectives}
+- **Describe** key characteristics of variables and patterns between variables.
+- **Explore** data sets by using appropriate descriptive and visual techniques in Python.
+- **Explain** the role of exploratory data analysis in business decision-making.
+:::
 
 ## Table of Contents {data-state="hide-menubar"}
 <ul class="menu"><ul>

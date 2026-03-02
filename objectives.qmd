@@ -1,0 +1,88 @@
+---
+title: "Overview of learning objectives"
+format: html
+---
+
+```{python}
+#| echo: false
+#| output: asis
+#| warning: false
+#| message: false
+
+
+from pathlib import Path
+import re
+import yaml
+
+slides_dir = Path("slides")
+results = []
+
+def extract_yaml_and_body(text):
+    """Split YAML front matter and body."""
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            return parts[1], parts[2]
+    return "", text
+
+def extract_learning_objectives(body):
+    """Extract ::: {.learning-objectives} blocks."""
+    pattern = re.compile(
+        r":::\s*\{\.learning-objectives.*?\}(.*?):::",
+        re.DOTALL
+    )
+    matches = pattern.findall(body)
+    objectives = []
+
+    for match in matches:
+        lines = match.strip().splitlines()
+        for line in lines:
+            line = line.strip()
+            if line.startswith("- "):
+                objectives.append(line[2:].strip())
+
+    return objectives
+
+def extract_session_number(meta):
+    """Extract numeric session value (e.g., 'Session 3' -> 3)."""
+    session = meta.get("session", "")
+    match = re.search(r"\d+", str(session))
+    return int(match.group()) if match else 999  # fallback for missing sessions
+
+for qmd in slides_dir.rglob("*.qmd"):
+    text = qmd.read_text(encoding="utf-8")
+    yaml_text, body = extract_yaml_and_body(text)
+
+    title = qmd.stem  # fallback
+    meta = {}
+    session_number = 999
+
+    if yaml_text:
+        try:
+            meta = yaml.safe_load(yaml_text)
+            title = meta.get("subtitle") or meta.get("title") or title
+            session_number = extract_session_number(meta)
+        except Exception:
+            pass
+
+    objectives = extract_learning_objectives(body)
+
+    if objectives:
+        results.append({
+            "file": qmd,
+            "title": str(title),
+            "objectives": objectives,
+            "session_number": session_number
+        })
+
+# Sort by session number (numeric)
+results.sort(key=lambda x: x["session_number"])
+
+for entry in results:
+    print(f"## {entry['title']}\n")
+    for obj in entry["objectives"]:
+        print(f"- {obj}")
+    print()
+
+
+```

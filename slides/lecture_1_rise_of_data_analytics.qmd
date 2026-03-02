@@ -304,12 +304,9 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 
 ## Summary {data-state="hide-menubar"}
 
+🎯 **Learning Objective**
 
-🎯 **Learning Objective**:
-Explain how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.
-
-
-- Modern analytics is driven by data availability, computing power, and new methods.
-- Analytics evolves from descriptive to predictive and prescriptive insights.
-- Modern processes rely on automation, scalability, and data-driven decision making.
-
+::: {.learning-objectives}
+- **Illustrate** how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.
+- **Distinguish** between descriptive, predictive, and prescriptive analytics.
+:::

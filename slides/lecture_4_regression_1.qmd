@@ -13,10 +13,15 @@ execute:
 
 ## Learning objectives {data-state="hide-menubar"}
 
-- **Explain the stages of a model-based analytics workflow** using linear regression as an example.
-- **Understand and interpret linear regression models**, including how they represent relationships between variables, how coefficients are interpreted, how OLS estimates parameters, and how model quality is assessed (e.g., via R² and overfitting considerations).
-- **Describe how regression models are implemented in Python**, mapping conceptual components of the analytics process to their realization in scikit-learn.
+::: {.learning-objectives}
+- **Explain** the stages of a model-based analytics workflow using linear regression as an example.
+- **Interpret** linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).
+- **Describe** how regression models are implemented in Python.
+:::
 
+<!--
+, mapping conceptual components of the analytics process to their realization in `scikit-learn`
+-->
 
 ## Process {data-state="hide-menubar"}
 
