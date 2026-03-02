@@ -2,162 +2,166 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_9_analytics_case_examples.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_4_regression_1.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_6_machine_learning_1.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_0_orga.html</loc>
-    <lastmod>2026-03-01T11:00:21.283Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.907Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_8_big_data.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_11_recap.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_11_synthesis.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_2_exploratory_data_analysis.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_10_data_governance.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_0_orga.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_3_structuring_preparing_data.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_8_big_data_1.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/group_work.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/syllabus.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/readme.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_1.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_10.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_3.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_5.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_9.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_11.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_4.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_8.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_7.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_6.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_2.html</loc>
-    <lastmod>2026-03-01T11:00:20.969Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/index.html</loc>
-    <lastmod>2026-03-01T11:00:21.283Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/preparation.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_1_rise_of_data_analytics.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_7_machine_learning_2.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_5_regression_2.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_6_machine_learning_1.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_4_regression_1.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
+    <loc>https://fs-ise.github.io/big-data-analytics/objectives.html</loc>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_9_big_data_2.html</loc>
-    <lastmod>2026-03-01T11:00:21.285Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_4_regression_1.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_6_machine_learning_1.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_5_regression_2.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_7_machine_learning_2.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_1_rise_of_data_analytics.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/preparation.html</loc>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/index.html</loc>
+    <lastmod>2026-03-02T10:35:31.907Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_2.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_6.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_7.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_8.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_4.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_11.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_9.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_5.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_3.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_10.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/exercises/exercise_1.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/readme.html</loc>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/syllabus.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/group_work.html</loc>
+    <lastmod>2026-03-02T10:35:31.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_8_big_data_1.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_3_analytical_data_architecture.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_0_orga.html</loc>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_10_data_governance.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_2_exploratory_data_analysis.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fs-ise.github.io/big-data-analytics/slides/lecture_11_synthesis.html</loc>
+    <lastmod>2026-03-02T10:35:31.909Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_7_machine_learning_2.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_5_regression_2.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_3_exploratory_data_analysis.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_2_structuring_preparing_data.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_10_data_governance.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://fs-ise.github.io/big-data-analytics/notes/lecture_1_foundations_of_data_analytics.html</loc>
-    <lastmod>2026-03-01T11:00:21.284Z</lastmod>
+    <lastmod>2026-03-02T10:35:31.908Z</lastmod>
   </url>
 </urlset>

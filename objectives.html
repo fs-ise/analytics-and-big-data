@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 5: Regression II – Analytics &amp; Big Data</title>
+<title>Overview of learning objectives – Analytics &amp; Big Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +69,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -89,17 +100,6 @@ div.callout-self-service.callout-style-default > .callout-header {
 div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
   content: '🛠️';
-  background-image: none;
-}
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
   background-image: none;
 }
 div.callout-resource.callout {
@@ -125,7 +125,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Analytics &amp; Big Data</span>
     </a>
   </div>
@@ -136,19 +136,19 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../group_work.html"> 
+    <a class="nav-link" href="./group_work.html"> 
 <span class="menu-text">Group work</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html"> 
+    <a class="nav-link" href="./syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../preparation.html"> 
+    <a class="nav-link" href="./preparation.html"> 
 <span class="menu-text">⚠️ Preparation</span></a>
   </li>  
 </ul>
@@ -168,7 +168,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 5: Regression II</h1>
+<h1 class="title">Overview of learning objectives</h1>
 </div>
 
 
@@ -185,22 +185,96 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="e0bd8dec" class="cell" data-message="false" data-execution_count="1">
+<section id="the-rise-of-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="the-rise-of-analytics">The rise of analytics</h2>
+<ul>
+<li><strong>Illustrate</strong> how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.</li>
+<li><strong>Distinguish</strong> between descriptive, predictive, and prescriptive analytics.</li>
+</ul>
+</section>
+<section id="exploratory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
+<ul>
+<li><strong>Describe</strong> key characteristics of variables and patterns between variables.</li>
+<li><strong>Explore</strong> data sets by using appropriate descriptive and visual techniques in Python.</li>
+<li><strong>Explain</strong> the role of exploratory data analysis in business decision-making.</li>
+</ul>
+</section>
+<section id="analytical-data-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-data-architecture">Analytical data architecture</h2>
+<ul>
+<li><strong>Outline</strong> the architecture of data warehouses.</li>
+<li><strong>Explain</strong> dimensional modeling concepts and common schemata.</li>
+<li><strong>Design</strong> fact/dimension schemata from business questions and operational data.</li>
+</ul>
+</section>
+<section id="regression-i" class="level2">
+<h2 class="anchored" data-anchor-id="regression-i">Regression I</h2>
+<ul>
+<li><strong>Explain</strong> the stages of a model-based analytics workflow using linear regression as an example.</li>
+<li><strong>Interpret</strong> linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).</li>
+<li><strong>Describe</strong> how regression models are implemented in Python.</li>
+</ul>
+</section>
+<section id="regression-ii" class="level2">
+<h2 class="anchored" data-anchor-id="regression-ii">Regression II</h2>
+<ul>
+<li><strong>Understand and assess</strong> multiple regression models, including refinement strategies and key assumptions.</li>
+<li><strong>Distinguish</strong> between inference- and prediction-oriented modeling and their implications for business contexts.</li>
+<li><strong>Explain</strong> logistic regression as a probabilistic classification model and its role as a bridge to machine learning.</li>
+</ul>
+</section>
+<section id="machine-learning-i" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-i">Machine learning I</h2>
+<ul>
+<li><strong>Distinguish</strong> between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.</li>
+<li><strong>Describe</strong> the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.</li>
+<li><strong>Assess</strong> the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.</li>
+<li><strong>Connect</strong> conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (<em>see exercise</em>)</li>
+</ul>
+</section>
+<section id="machine-learning-ii" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-ii">Machine learning II</h2>
+<ul>
+<li><strong>Compare</strong> selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.</li>
+<li><strong>Explain</strong> the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).</li>
+<li><strong>Select and justify</strong> an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.</li>
+</ul>
+</section>
+<section id="big-data-i" class="level2">
+<h2 class="anchored" data-anchor-id="big-data-i">Big data I</h2>
+<ul>
+<li><strong>Explain</strong> the characteristics of big data and their implications for analytics workflows.</li>
+<li><strong>Assess</strong> key challenges of big data, including scalability, heterogeneity, and data quality.</li>
+<li><strong>Outline</strong> distributed data architectures and their role in large-scale analytics.</li>
+</ul>
+</section>
+<section id="big-data-ii" class="level2">
+<h2 class="anchored" data-anchor-id="big-data-ii">Big data II</h2>
+<ul>
+<li><strong>Explain</strong> the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).</li>
+<li><strong>Acquire and preprocess</strong> large-scale or unstructured data using APIs and appropriate tools in Python.</li>
+<li><strong>Apply</strong> large language models or other scalable methods to extract, classify, or summarize unstructured data.</li>
+<li><strong>Evaluate</strong> the reliability, bias, and limitations of API- and LLM-based analytics workflows.</li>
+</ul>
+</section>
+<section id="governance-of-data-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="governance-of-data-analytics">Governance of data analytics</h2>
+<ul>
+<li><strong>Explain</strong> the strategic role of data analytics in data-driven organizations.</li>
+<li><strong>Design</strong> an end-to-end analytics solution aligned with a business problem and governance constraints.</li>
+<li><strong>Discuss</strong> the ethical and legal boundaries of data analytics in organizations.</li>
+</ul>
+</section>
+<section id="integration-and-exam-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="integration-and-exam-preparation">Integration and exam preparation</h2>
+<ul>
+<li><strong>Summarize</strong> how learnings integrate across the semester.</li>
+<li><strong>Resolve</strong> remaining questions for exam preparation.</li>
+</ul>
+</section>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO</p>
-</div>
-</div>
-<p>Goal: Deepen linear regression and surface modeling tensions.</p>
-<p>You are not just teaching “more regression.” You are teaching: How modeling goals shape methodological choices (or how they interact).</p>
-<p>Close with a framing slide: - Analytics is not one method. It is a toolbox shaped by goals. Then summarize: - Regression for understanding - Regression for prediction - Logistic regression as bridge to ML And preview: - Next: more complex machine learning models.</p>
 
 
 
@@ -610,4 +684,4 @@ Note
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/notes/lecture_5_regression_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/objectives.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
