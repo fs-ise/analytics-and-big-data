@@ -1,4 +1,4 @@
-# Quarto slides (template)
+# Analytics & Big Data
 
 Serve preview:
 
