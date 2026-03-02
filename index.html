@@ -69,15 +69,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 div.callout-confidential.callout {
@@ -102,15 +102,15 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 </style>
@@ -191,7 +191,7 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 <p>Online Office Hours zoom link: <a href="https://us02web.zoom.us/j/81020783843">https://us02web.zoom.us/j/81020783843</a></p>
 <section id="sessions" class="level2">
 <h2 class="anchored" data-anchor-id="sessions">Sessions</h2>
-<div id="a123df21" class="cell" data-message="false" data-execution_count="1">
+<div id="c348799c" class="cell" data-message="false" data-execution_count="1">
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <table class="dataframe session-table table table-sm table-striped small">
@@ -229,6 +229,9 @@ Course logistics
 <a href="slides/lecture_0_orga.html">slides</a>, <a href="notes/lecture_0_orga.html">notes</a>
 </td>
 <td>
+<div style="line-height:1.6">
+
+</div>
 </td>
 </tr>
 <tr>
@@ -245,7 +248,9 @@ The rise of analytics
 <a href="slides/lecture_1_rise_of_data_analytics.html">slides</a>, <a href="notes/lecture_1_rise_of_data_analytics.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_1.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_1.ipynb" download="">assignment</a> (<a href="exercises/exercise_1.html">📄</a>)<br><a href="exercises/solutions/exercise_1.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_1.html">📄</a>)
+</div>
 </td>
 </tr>
 </tbody>
@@ -288,7 +293,9 @@ Exploratory data analysis
 <a href="slides/lecture_2_exploratory_data_analysis.html">slides</a>, <a href="notes/lecture_2_exploratory_data_analysis.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_2.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_2.ipynb" download="">assignment</a> (<a href="exercises/exercise_2.html">📄</a>)<br><a href="exercises/solutions/exercise_2.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_2.html">📄</a>)
+</div>
 </td>
 </tr>
 <tr>
@@ -305,7 +312,9 @@ Analytical data architecture
 <a href="slides/lecture_3_analytical_data_architecture.html">slides</a>, <a href="notes/lecture_3_analytical_data_architecture.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_3.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_3.ipynb" download="">assignment</a> (<a href="exercises/exercise_3.html">📄</a>)<br><a href="exercises/solutions/exercise_3.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_3.html">📄</a>)
+</div>
 </td>
 </tr>
 </tbody>
@@ -348,7 +357,9 @@ Regression I
 <a href="slides/lecture_4_regression_1.html">slides</a>, <a href="notes/lecture_4_regression_1.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_4.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_4.ipynb" download="">assignment</a> (<a href="exercises/exercise_4.html">📄</a>)<br><a href="exercises/solutions/exercise_4.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_4.html">📄</a>)
+</div>
 </td>
 </tr>
 <tr>
@@ -365,7 +376,9 @@ Regression II
 <a href="slides/lecture_5_regression_2.html">slides</a>, <a href="notes/lecture_5_regression_2.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_5.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_5.ipynb" download="">assignment</a> (<a href="exercises/exercise_5.html">📄</a>)<br><a href="exercises/solutions/exercise_5.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_5.html">📄</a>)
+</div>
 </td>
 </tr>
 <tr>
@@ -382,7 +395,9 @@ Machine learning I
 <a href="slides/lecture_6_machine_learning_1.html">slides</a>, <a href="notes/lecture_6_machine_learning_1.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_6.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_6.ipynb" download="">assignment</a> (<a href="exercises/exercise_6.html">📄</a>)<br><a href="exercises/solutions/exercise_6.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_6.html">📄</a>)
+</div>
 </td>
 </tr>
 <tr>
@@ -399,7 +414,9 @@ Machine learning II
 <a href="slides/lecture_7_machine_learning_2.html">slides</a>, <a href="notes/lecture_7_machine_learning_2.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_7.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_7.ipynb" download="">assignment</a> (<a href="exercises/exercise_7.html">📄</a>)<br><a href="exercises/solutions/exercise_7.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_7.html">📄</a>)
+</div>
 </td>
 </tr>
 <tr>
@@ -416,7 +433,9 @@ Big data I
 <a href="slides/lecture_8_big_data_1.html">slides</a>, <a href="notes/lecture_8_big_data_1.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_8.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_8.ipynb" download="">assignment</a> (<a href="exercises/exercise_8.html">📄</a>)<br><a href="exercises/solutions/exercise_8.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_8.html">📄</a>)
+</div>
 </td>
 </tr>
 <tr>
@@ -433,7 +452,9 @@ Big data II
 <a href="slides/lecture_9_big_data_2.html">slides</a>, <a href="notes/lecture_9_big_data_2.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_9.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_9.ipynb" download="">assignment</a> (<a href="exercises/exercise_9.html">📄</a>)<br><a href="exercises/solutions/exercise_9.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_9.html">📄</a>)
+</div>
 </td>
 </tr>
 </tbody>
@@ -476,7 +497,9 @@ Governance of data analytics
 <a href="slides/lecture_10_data_governance.html">slides</a>, <a href="notes/lecture_10_data_governance.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_10.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_10.ipynb" download="">assignment</a> (<a href="exercises/exercise_10.html">📄</a>)<br><a href="exercises/solutions/exercise_10.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_10.html">📄</a>)
+</div>
 </td>
 </tr>
 </tbody>
@@ -519,7 +542,9 @@ Integration and exam preparation
 <a href="slides/lecture_11_synthesis.html">slides</a>, <a href="notes/lecture_11_synthesis.html">notes</a>
 </td>
 <td>
-<a href="exercises/exercise_11.html">exercise</a>
+<div style="line-height:1.6">
+<a href="exercises/exercise_11.ipynb" download="">assignment</a> (<a href="exercises/exercise_11.html">📄</a>)<br><a href="exercises/solutions/exercise_11.ipynb" download="">solution</a> (<a href="exercises/solutions/exercise_11.html">📄</a>)
+</div>
 </td>
 </tr>
 </tbody>

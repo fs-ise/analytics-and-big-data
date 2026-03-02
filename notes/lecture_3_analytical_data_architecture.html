@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 1: Foundations of data analytics – Analytics &amp; Big Data</title>
+<title>Notes: Session 2: Analytical data architecture – Analytics &amp; Big Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,17 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -91,15 +80,15 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '🔗';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 div.callout-confidential.callout {
@@ -111,6 +100,17 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -168,7 +168,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 1: Foundations of data analytics</h1>
+<h1 class="title">Notes: Session 2: Analytical data architecture</h1>
 </div>
 
 
@@ -185,118 +185,26 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
-<section id="lecture" class="level2">
-<h2 class="anchored" data-anchor-id="lecture">Lecture</h2>
-<p>Note: Orga: 20 min</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 30%">
-<col style="width: 46%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time (min)</th>
-<th>Duration</th>
-<th>Topic</th>
-<th>Additional materials</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>20-35</td>
-<td>15</td>
-<td>More data</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>35-50</td>
-<td>15</td>
-<td>More computing power</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>50-65</td>
-<td>15</td>
-<td>New methods and algorithms</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>65-80</td>
-<td>15</td>
-<td>New analytics processes</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-objective callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Objective</span>Objective
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.</p>
-</div>
-</div>
-</section>
-<section id="exercise" class="level2">
-<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 33%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time (min)</th>
-<th>Duration</th>
-<th>Topic</th>
-<th>Additional materials</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0-30</td>
-<td>30</td>
-<td>Introduction and setup</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>30-90</td>
-<td>60</td>
-<td>Data handling in Python</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-objective callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Objective</span>Objective
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ask students to create a GitHub account (CHECK: free student packs?)</p>
-<p>TBD: typical exam questions corresponding to the lecture? -</p>
-<p>Explain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im <code>Umgang mit Spyder.docx</code>).</p>
-<p>Start in groups of two (random?)</p>
-<p>Introduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite <strong>check classrooms before! - can it be attached to the desks?</strong></p>
-<p>TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools</p>
+<p>TODO</p>
+<p>Learning objective: writing SQL queries!?</p>
+<p>Illustrate: OLAP as a “systems approach”, notebooks as a more flexible data science approach</p>
+<p>Rotating hypercube: similar to rotating in tidy-data preparation?</p>
+<p>Drop the Excel OLAP plugin?</p>
+<p>Extract exercises?</p>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -704,4 +612,4 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/notes/lecture_1_foundations_of_data_analytics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/notes/lecture_3_analytical_data_architecture.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

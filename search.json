@@ -1,22 +1,71 @@
 [
   {
-    "objectID": "notes/lecture_9_analytics_case_examples.html",
-    "href": "notes/lecture_9_analytics_case_examples.html",
-    "title": "Notes: Session 9: Analytics case examples",
+    "objectID": "notes/lecture_11_synthesis.html",
+    "href": "notes/lecture_11_synthesis.html",
+    "title": "Notes: Session 11: Integration and exam preparation",
     "section": "",
     "text": "Note\n\n\n\nTODO"
   },
   {
-    "objectID": "notes/lecture_4_regression_1.html",
-    "href": "notes/lecture_4_regression_1.html",
-    "title": "Notes: Session 4: Regression I",
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html",
+    "href": "notes/lecture_2_exploratory_data_analysis.html",
+    "title": "Notes: Session 3: Exploratory data analysis",
     "section": "",
-    "text": "Note\n\n\n\nTODO\nexamples and contents: https://chatgpt.com/c/698d8ac8-a0a0-8394-8432-e644441ed348\nExample: https://github.com/collinprather/ISLR-Python/blob/master/Chapter%203%20Linear%20Regression.ipynb MAFS6010u_Regression see pairwise scatter and multiple linear regression.ipynb Check: https://github.com/lmarti/machine-learning/blob/master/02.%20Linear%20regression.ipynb\n\n\nProcess:\n… in this session, we apply the CRISP-DM, taking a foundational analytical technique as an example -&gt; modeling: selecting a model and refining it; or comparing different models\nUsing the Ames Housing dataset, students explore the relationship between living area and price, estimate a simple regression model, and then extend it to multiple predictors. The case illustrates how regression helps quantify marginal effects under ceteris paribus assumptions and highlights the difference between explanation and prediction in observational data.\nDataset: - mention Kaggle as a great source. Different datasets are available. It offers descriptive overviews (EDA), and links existing analyses (tab: code)\nExplicitly discuss “why do we focus on/start with regression? (boring/want ML/AI)” -&gt; simplest form of a model, where we can see principles (like fitting/overfitting/…) -&gt; sometimes, we may try to extract structured data from big data to run regression/ML models"
+    "text": "Note\n\n\n\nTODO\nContents based on: EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf"
   },
   {
-    "objectID": "notes/lecture_6_machine_learning_1.html",
-    "href": "notes/lecture_6_machine_learning_1.html",
-    "title": "Notes: Session 6: Machine learning I",
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#learning-objectives",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#learning-objectives",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nAfter this session, students should be able to:\n\nUnderstand the purpose of exploratory data analysis (EDA)\nDescribe and interpret key characteristics of business data\nIdentify relationships and patterns in multivariate data\nUse visualizations to explore and communicate insights\nUnderstand the basic idea of the grammar of graphics in Python (Plotly)"
+  },
+  {
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#why-exploratory-data-analysis",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#why-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "0. Why Exploratory Data Analysis?",
+    "text": "0. Why Exploratory Data Analysis?\n\nWhat is EDA and why it matters in business decision-making\nEDA vs. confirmatory analysis (hypotheses, models)\nTypical business use cases:\n\nUnderstanding customers\nExploring sales and performance data\nDetecting anomalies and outliers\n\nEDA as an iterative and question-driven process"
+  },
+  {
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#univariate-exploratory-data-analysis",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#univariate-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "1. Univariate Exploratory Data Analysis",
+    "text": "1. Univariate Exploratory Data Analysis\n\n“What’s in my data?”\n\n\n1.1 Types of Variables\n\nNumerical (continuous, discrete)\nCategorical (nominal, ordinal)\nWhy variable types matter for analysis and visualization\n\n\n\n1.2 Descriptive Statistics\n\nCentral tendency: mean, median, mode\nDispersion: range, variance, standard deviation\nQuantiles and interquartile range (IQR)\nInterpreting statistics in a business context\n\n\n\n1.3 Distribution Analysis\n\nHistograms and density plots\nBoxplots and outliers\nSkewness and heavy tails\nTypical business examples:\n\nIncome and revenue distributions\nCustomer activity and usage data\n\n\n\n\n1.4 Categorical Variables\n\nFrequency tables\nRelative frequencies and percentages\nBar charts\nBusiness questions:\n\nWhich customer segment is largest?\nHow are products distributed across categories?"
+  },
+  {
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#multivariate-exploratory-data-analysis",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#multivariate-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "2. Multivariate Exploratory Data Analysis",
+    "text": "2. Multivariate Exploratory Data Analysis\n\n“How do variables relate to each other?”\n\n\n2.1 Relationships Between Numerical Variables\n\nScatterplots\nCorrelation (Pearson, Spearman – intuition only)\nInterpreting correlation (and common pitfalls)\nBusiness examples:\n\nPrice and demand\nMarketing spend and sales\n\n\n\n\n2.2 Numerical and Categorical Variables\n\nGrouped summaries (means by category)\nBoxplots by group\nComparing distributions across segments\nBusiness examples:\n\nRevenue by customer segment\nSatisfaction scores by region\n\n\n\n\n2.3 Relationships Between Categorical Variables\n\nContingency tables\nPercentages and conditional distributions\nSimple association analysis\nBusiness examples:\n\nProduct category × return behavior\nChannel × conversion outcome\n\n\n\n\n2.4 From Patterns to Questions\n\nEDA does not “prove” causality\nUsing EDA to generate hypotheses\nDeciding what to analyze next"
+  },
+  {
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#visual-exploratory-data-analysis",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#visual-exploratory-data-analysis",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "3. Visual Exploratory Data Analysis",
+    "text": "3. Visual Exploratory Data Analysis\n\n“Seeing and communicating patterns”\n\n\n3.1 Why Visualization Matters\n\nHuman pattern recognition\nVisualization for exploration vs. presentation\nCommon visualization mistakes in business reports\n\n\n\n3.2 Choosing the Right Chart\n\nWhen to use:\n\nBar charts\nLine charts\nScatterplots\nBoxplots\n\nMatching chart types to questions and data types\n\n\n\n3.3 Grammar of Graphics (Conceptual)\n\nData\nAesthetics (x, y, color, size)\nGeometries (points, lines, bars)\nFacets (small multiples)\nWhy this idea scales well for complex analyses\n\n\n\n3.4 Visual EDA in Python with Plotly\n\nWhy Plotly for business analytics:\n\nInteractivity\nEasy exploration of subgroups\n\nExample visual analyses:\n\nScatterplot with color by category\nDistribution plots by segment\nInteractive filtering and hover information"
+  },
+  {
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#putting-it-all-together",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#putting-it-all-together",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "4. Putting It All Together",
+    "text": "4. Putting It All Together\n\nEDA as an iterative workflow:\n\nSummarize variables\nExplore relationships\nVisualize and refine questions\n\nFrom raw data to business insight\nLimitations of EDA\nTransition to:\n\nStatistical modeling\nMachine learning\nDashboards and reporting"
+  },
+  {
+    "objectID": "notes/lecture_2_exploratory_data_analysis.html#key-takeaways",
+    "href": "notes/lecture_2_exploratory_data_analysis.html#key-takeaways",
+    "title": "Notes: Session 3: Exploratory data analysis",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nEDA helps you understand data before modeling it\nStart simple: univariate → multivariate → visual\nFocus on business questions, not just techniques\nVisualization is a core analytical skill, not just decoration"
+  },
+  {
+    "objectID": "notes/lecture_10_data_governance.html",
+    "href": "notes/lecture_10_data_governance.html",
+    "title": "Notes: Session 10: Governance of data analytics",
     "section": "",
     "text": "Note\n\n\n\nTODO"
   },
@@ -28,16 +77,16 @@
     "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nI do not know everything. I make mistakes. …\nAbout you: - Prepare an example (humor/mistake?)\nchatgpt: tell a story of myself (for the beginning of lectures)\n- short bio\n- theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)\n\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role...\nAlso Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)\nwhy analytics matters: ## Takeaway Analytics is not just about data. It changes who wins, how decisions are made, and how organizations compete."
   },
   {
-    "objectID": "notes/lecture_8_big_data.html",
-    "href": "notes/lecture_8_big_data.html",
-    "title": "Notes: Session 8: Big Data",
+    "objectID": "notes/lecture_3_analytical_data_architecture.html",
+    "href": "notes/lecture_3_analytical_data_architecture.html",
+    "title": "Notes: Session 2: Analytical data architecture",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Note\n\n\n\nTODO\nLearning objective: writing SQL queries!?\nIllustrate: OLAP as a “systems approach”, notebooks as a more flexible data science approach\nRotating hypercube: similar to rotating in tidy-data preparation?\nDrop the Excel OLAP plugin?\nExtract exercises?"
   },
   {
-    "objectID": "notes/lecture_11_recap.html",
-    "href": "notes/lecture_11_recap.html",
-    "title": "Notes: Session 11: Recap, exam preparation, Q&A",
+    "objectID": "notes/lecture_8_big_data_1.html",
+    "href": "notes/lecture_8_big_data_1.html",
+    "title": "Notes: Session 8: Big Data I",
     "section": "",
     "text": "Note\n\n\n\nTODO"
   },
@@ -1180,7 +1229,7 @@
     "href": "index.html#sessions",
     "title": "Analytics & Big Data",
     "section": "Sessions",
-    "text": "Sessions\n\n\nIntroduction\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 0\n\n\nCourse logistics\n\n\nslides, notes\n\n\n\n\n\n\n2026-03-23\n\n\nSession 1\n\n\nThe rise of analytics\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nData foundations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 2\n\n\nExploratory data analysis\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-03-30\n\n\nSession 3\n\n\nAnalytical data architecture\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nAnalytical models\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-30\n\n\nSession 4\n\n\nRegression I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-14\n\n\nSession 5\n\n\nRegression II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-20\n\n\nSession 6\n\n\nMachine learning I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-04-20\n\n\nSession 7\n\n\nMachine learning II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-05-04\n\n\nSession 8\n\n\nBig data I\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n2026-05-04\n\n\nSession 9\n\n\nBig data II\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nDeployment in organizations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 10\n\n\nGovernance of data analytics\n\n\nslides, notes\n\n\nexercise\n\n\n\n\n\n\nSynthesis\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 11\n\n\nIntegration and exam preparation\n\n\nslides, notes\n\n\nexercise"
+    "text": "Sessions\n\n\nIntroduction\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 0\n\n\nCourse logistics\n\n\nslides, notes\n\n\n\n\n\n\n\n\n\n2026-03-23\n\n\nSession 1\n\n\nThe rise of analytics\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n\n\nData foundations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 2\n\n\nExploratory data analysis\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n2026-03-30\n\n\nSession 3\n\n\nAnalytical data architecture\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n\n\nAnalytical models\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-30\n\n\nSession 4\n\n\nRegression I\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n2026-04-14\n\n\nSession 5\n\n\nRegression II\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n2026-04-20\n\n\nSession 6\n\n\nMachine learning I\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n2026-04-20\n\n\nSession 7\n\n\nMachine learning II\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n2026-05-04\n\n\nSession 8\n\n\nBig data I\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n2026-05-04\n\n\nSession 9\n\n\nBig data II\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n\n\nDeployment in organizations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 10\n\n\nGovernance of data analytics\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)\n\n\n\n\n\n\n\nSynthesis\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 11\n\n\nIntegration and exam preparation\n\n\nslides, notes\n\n\n\nassignment (📄)solution (📄)"
   },
   {
     "objectID": "exercises/exercise_2.html",
@@ -2296,6 +2345,27 @@
     "text": "Learning objectives\n\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
   },
   {
+    "objectID": "notes/lecture_1_rise_of_data_analytics.html",
+    "href": "notes/lecture_1_rise_of_data_analytics.html",
+    "title": "Notes: Session 1: The rise of analytics",
+    "section": "",
+    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew methods and algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas."
+  },
+  {
+    "objectID": "notes/lecture_1_rise_of_data_analytics.html#lecture",
+    "href": "notes/lecture_1_rise_of_data_analytics.html#lecture",
+    "title": "Notes: Session 1: The rise of analytics",
+    "section": "",
+    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew methods and algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas."
+  },
+  {
+    "objectID": "notes/lecture_1_rise_of_data_analytics.html#exercise",
+    "href": "notes/lecture_1_rise_of_data_analytics.html#exercise",
+    "title": "Notes: Session 1: The rise of analytics",
+    "section": "Exercise",
+    "text": "Exercise\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n0-30\n30\nIntroduction and setup\n\n\n\n30-90\n60\nData handling in Python\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nAsk students to create a GitHub account (CHECK: free student packs?)\nTBD: typical exam questions corresponding to the lecture? -\nExplain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im Umgang mit Spyder.docx).\nStart in groups of two (random?)\nIntroduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite check classrooms before! - can it be attached to the desks?\nTODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools"
+  },
+  {
     "objectID": "notes/lecture_7_machine_learning_2.html",
     "href": "notes/lecture_7_machine_learning_2.html",
     "title": "Notes: Session 7: Machine learning II",
@@ -2310,94 +2380,24 @@
     "text": "Note\n\n\n\nTODO\n\n\nGoal: Deepen linear regression and surface modeling tensions.\nYou are not just teaching “more regression.” You are teaching: How modeling goals shape methodological choices (or how they interact).\nClose with a framing slide: - Analytics is not one method. It is a toolbox shaped by goals. Then summarize: - Regression for understanding - Regression for prediction - Logistic regression as bridge to ML And preview: - Next: more complex machine learning models."
   },
   {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html",
-    "href": "notes/lecture_3_exploratory_data_analysis.html",
-    "title": "Notes: Session 3: Exploratory data analysis",
+    "objectID": "notes/lecture_6_machine_learning_1.html",
+    "href": "notes/lecture_6_machine_learning_1.html",
+    "title": "Notes: Session 6: Machine learning I",
     "section": "",
-    "text": "Note\n\n\n\nTODO\nContents based on: EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf"
+    "text": "Note\n\n\n\nNote: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)\nTODO: suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudo code”, “are there any errors (e.g., switched code blocks)?”)"
   },
   {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#learning-objectives",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#learning-objectives",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nAfter this session, students should be able to:\n\nUnderstand the purpose of exploratory data analysis (EDA)\nDescribe and interpret key characteristics of business data\nIdentify relationships and patterns in multivariate data\nUse visualizations to explore and communicate insights\nUnderstand the basic idea of the grammar of graphics in Python (Plotly)"
-  },
-  {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#why-exploratory-data-analysis",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#why-exploratory-data-analysis",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "0. Why Exploratory Data Analysis?",
-    "text": "0. Why Exploratory Data Analysis?\n\nWhat is EDA and why it matters in business decision-making\nEDA vs. confirmatory analysis (hypotheses, models)\nTypical business use cases:\n\nUnderstanding customers\nExploring sales and performance data\nDetecting anomalies and outliers\n\nEDA as an iterative and question-driven process"
-  },
-  {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#univariate-exploratory-data-analysis",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#univariate-exploratory-data-analysis",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "1. Univariate Exploratory Data Analysis",
-    "text": "1. Univariate Exploratory Data Analysis\n\n“What’s in my data?”\n\n\n1.1 Types of Variables\n\nNumerical (continuous, discrete)\nCategorical (nominal, ordinal)\nWhy variable types matter for analysis and visualization\n\n\n\n1.2 Descriptive Statistics\n\nCentral tendency: mean, median, mode\nDispersion: range, variance, standard deviation\nQuantiles and interquartile range (IQR)\nInterpreting statistics in a business context\n\n\n\n1.3 Distribution Analysis\n\nHistograms and density plots\nBoxplots and outliers\nSkewness and heavy tails\nTypical business examples:\n\nIncome and revenue distributions\nCustomer activity and usage data\n\n\n\n\n1.4 Categorical Variables\n\nFrequency tables\nRelative frequencies and percentages\nBar charts\nBusiness questions:\n\nWhich customer segment is largest?\nHow are products distributed across categories?"
-  },
-  {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#multivariate-exploratory-data-analysis",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#multivariate-exploratory-data-analysis",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "2. Multivariate Exploratory Data Analysis",
-    "text": "2. Multivariate Exploratory Data Analysis\n\n“How do variables relate to each other?”\n\n\n2.1 Relationships Between Numerical Variables\n\nScatterplots\nCorrelation (Pearson, Spearman – intuition only)\nInterpreting correlation (and common pitfalls)\nBusiness examples:\n\nPrice and demand\nMarketing spend and sales\n\n\n\n\n2.2 Numerical and Categorical Variables\n\nGrouped summaries (means by category)\nBoxplots by group\nComparing distributions across segments\nBusiness examples:\n\nRevenue by customer segment\nSatisfaction scores by region\n\n\n\n\n2.3 Relationships Between Categorical Variables\n\nContingency tables\nPercentages and conditional distributions\nSimple association analysis\nBusiness examples:\n\nProduct category × return behavior\nChannel × conversion outcome\n\n\n\n\n2.4 From Patterns to Questions\n\nEDA does not “prove” causality\nUsing EDA to generate hypotheses\nDeciding what to analyze next"
-  },
-  {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#visual-exploratory-data-analysis",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#visual-exploratory-data-analysis",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "3. Visual Exploratory Data Analysis",
-    "text": "3. Visual Exploratory Data Analysis\n\n“Seeing and communicating patterns”\n\n\n3.1 Why Visualization Matters\n\nHuman pattern recognition\nVisualization for exploration vs. presentation\nCommon visualization mistakes in business reports\n\n\n\n3.2 Choosing the Right Chart\n\nWhen to use:\n\nBar charts\nLine charts\nScatterplots\nBoxplots\n\nMatching chart types to questions and data types\n\n\n\n3.3 Grammar of Graphics (Conceptual)\n\nData\nAesthetics (x, y, color, size)\nGeometries (points, lines, bars)\nFacets (small multiples)\nWhy this idea scales well for complex analyses\n\n\n\n3.4 Visual EDA in Python with Plotly\n\nWhy Plotly for business analytics:\n\nInteractivity\nEasy exploration of subgroups\n\nExample visual analyses:\n\nScatterplot with color by category\nDistribution plots by segment\nInteractive filtering and hover information"
-  },
-  {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#putting-it-all-together",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#putting-it-all-together",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "4. Putting It All Together",
-    "text": "4. Putting It All Together\n\nEDA as an iterative workflow:\n\nSummarize variables\nExplore relationships\nVisualize and refine questions\n\nFrom raw data to business insight\nLimitations of EDA\nTransition to:\n\nStatistical modeling\nMachine learning\nDashboards and reporting"
-  },
-  {
-    "objectID": "notes/lecture_3_exploratory_data_analysis.html#key-takeaways",
-    "href": "notes/lecture_3_exploratory_data_analysis.html#key-takeaways",
-    "title": "Notes: Session 3: Exploratory data analysis",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nEDA helps you understand data before modeling it\nStart simple: univariate → multivariate → visual\nFocus on business questions, not just techniques\nVisualization is a core analytical skill, not just decoration"
-  },
-  {
-    "objectID": "notes/lecture_2_structuring_preparing_data.html",
-    "href": "notes/lecture_2_structuring_preparing_data.html",
-    "title": "Notes: Session 2: Structuring and preparing data",
+    "objectID": "notes/lecture_4_regression_1.html",
+    "href": "notes/lecture_4_regression_1.html",
+    "title": "Notes: Session 4: Regression I",
     "section": "",
-    "text": "Note\n\n\n\nTODO\nLearning objective: writing SQL queries!?\nIllustrate: OLAP as a “systems approach”, notebooks as a more flexible data science approach\nRotating hypercube: similar to rotating in tidy-data preparation?\nDrop the Excel OLAP plugin?\nExtract exercises?"
+    "text": "Note\n\n\n\nTODO\nexamples and contents: https://chatgpt.com/c/698d8ac8-a0a0-8394-8432-e644441ed348\nExample: https://github.com/collinprather/ISLR-Python/blob/master/Chapter%203%20Linear%20Regression.ipynb MAFS6010u_Regression see pairwise scatter and multiple linear regression.ipynb Check: https://github.com/lmarti/machine-learning/blob/master/02.%20Linear%20regression.ipynb\n\n\nProcess:\n… in this session, we apply the CRISP-DM, taking a foundational analytical technique as an example -&gt; modeling: selecting a model and refining it; or comparing different models\nUsing the Ames Housing dataset, students explore the relationship between living area and price, estimate a simple regression model, and then extend it to multiple predictors. The case illustrates how regression helps quantify marginal effects under ceteris paribus assumptions and highlights the difference between explanation and prediction in observational data.\nDataset: - mention Kaggle as a great source. Different datasets are available. It offers descriptive overviews (EDA), and links existing analyses (tab: code)\nExplicitly discuss “why do we focus on/start with regression? (boring/want ML/AI)” -&gt; simplest form of a model, where we can see principles (like fitting/overfitting/…) -&gt; sometimes, we may try to extract structured data from big data to run regression/ML models"
   },
   {
-    "objectID": "notes/lecture_10_data_governance.html",
-    "href": "notes/lecture_10_data_governance.html",
-    "title": "Notes: Session 10: Governance of data analytics",
+    "objectID": "notes/lecture_9_big_data_2.html",
+    "href": "notes/lecture_9_big_data_2.html",
+    "title": "Notes: Session 9: Big Data II",
     "section": "",
     "text": "Note\n\n\n\nTODO"
-  },
-  {
-    "objectID": "notes/lecture_1_foundations_of_data_analytics.html",
-    "href": "notes/lecture_1_foundations_of_data_analytics.html",
-    "title": "Notes: Session 1: Foundations of data analytics",
-    "section": "",
-    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew methods and algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas."
-  },
-  {
-    "objectID": "notes/lecture_1_foundations_of_data_analytics.html#lecture",
-    "href": "notes/lecture_1_foundations_of_data_analytics.html#lecture",
-    "title": "Notes: Session 1: Foundations of data analytics",
-    "section": "",
-    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew methods and algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas."
-  },
-  {
-    "objectID": "notes/lecture_1_foundations_of_data_analytics.html#exercise",
-    "href": "notes/lecture_1_foundations_of_data_analytics.html#exercise",
-    "title": "Notes: Session 1: Foundations of data analytics",
-    "section": "Exercise",
-    "text": "Exercise\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n0-30\n30\nIntroduction and setup\n\n\n\n30-90\n60\nData handling in Python\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nAsk students to create a GitHub account (CHECK: free student packs?)\nTBD: typical exam questions corresponding to the lecture? -\nExplain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im Umgang mit Spyder.docx).\nStart in groups of two (random?)\nIntroduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite check classrooms before! - can it be attached to the desks?\nTODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools"
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 3: Exploratory data analysis – Analytics &amp; Big Data</title>
+<title>Notes: Session 1: The rise of analytics – Analytics &amp; Big Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,17 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -91,17 +80,6 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '🔗';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -111,6 +89,28 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -168,7 +168,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 3: Exploratory data analysis</h1>
+<h1 class="title">Notes: Session 1: The rise of analytics</h1>
 </div>
 
 
@@ -185,233 +185,115 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="lecture" class="level2">
+<h2 class="anchored" data-anchor-id="lecture">Lecture</h2>
+<p>Note: Orga: 20 min</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (min)</th>
+<th>Duration</th>
+<th>Topic</th>
+<th>Additional materials</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20-35</td>
+<td>15</td>
+<td>More data</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>35-50</td>
+<td>15</td>
+<td>More computing power</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>50-65</td>
+<td>15</td>
+<td>New methods and algorithms</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>65-80</td>
+<td>15</td>
+<td>New analytics processes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-objective callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Objective</span>Objective
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO</p>
+<p>In this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.</p>
 </div>
 </div>
-<p>Contents based on: <a href="../home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf">EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf</a></p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>After this session, students should be able to:</p>
-<ul>
-<li>Understand the purpose of exploratory data analysis (EDA)</li>
-<li>Describe and interpret key characteristics of business data</li>
-<li>Identify relationships and patterns in multivariate data</li>
-<li>Use visualizations to explore and communicate insights</li>
-<li>Understand the basic idea of the grammar of graphics in Python (Plotly)</li>
-</ul>
-<hr>
 </section>
-<section id="why-exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="why-exploratory-data-analysis">0. Why Exploratory Data Analysis?</h2>
-<ul>
-<li>What is EDA and why it matters in business decision-making</li>
-<li>EDA vs.&nbsp;confirmatory analysis (hypotheses, models)</li>
-<li>Typical business use cases:
-<ul>
-<li>Understanding customers</li>
-<li>Exploring sales and performance data</li>
-<li>Detecting anomalies and outliers</li>
-</ul></li>
-<li>EDA as an <em>iterative</em> and <em>question-driven</em> process</li>
-</ul>
-<hr>
-</section>
-<section id="univariate-exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="univariate-exploratory-data-analysis">1. Univariate Exploratory Data Analysis</h2>
-<section id="whats-in-my-data" class="level3">
-<h3 class="anchored" data-anchor-id="whats-in-my-data">“What’s in my data?”</h3>
-</section>
-<section id="types-of-variables" class="level3">
-<h3 class="anchored" data-anchor-id="types-of-variables">1.1 Types of Variables</h3>
-<ul>
-<li>Numerical (continuous, discrete)</li>
-<li>Categorical (nominal, ordinal)</li>
-<li>Why variable types matter for analysis and visualization</li>
-</ul>
-</section>
-<section id="descriptive-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="descriptive-statistics">1.2 Descriptive Statistics</h3>
-<ul>
-<li>Central tendency: mean, median, mode</li>
-<li>Dispersion: range, variance, standard deviation</li>
-<li>Quantiles and interquartile range (IQR)</li>
-<li>Interpreting statistics in a business context</li>
-</ul>
-</section>
-<section id="distribution-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="distribution-analysis">1.3 Distribution Analysis</h3>
-<ul>
-<li>Histograms and density plots</li>
-<li>Boxplots and outliers</li>
-<li>Skewness and heavy tails</li>
-<li>Typical business examples:
-<ul>
-<li>Income and revenue distributions</li>
-<li>Customer activity and usage data</li>
-</ul></li>
-</ul>
-</section>
-<section id="categorical-variables" class="level3">
-<h3 class="anchored" data-anchor-id="categorical-variables">1.4 Categorical Variables</h3>
-<ul>
-<li>Frequency tables</li>
-<li>Relative frequencies and percentages</li>
-<li>Bar charts</li>
-<li>Business questions:
-<ul>
-<li>Which customer segment is largest?</li>
-<li>How are products distributed across categories?</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="multivariate-exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="multivariate-exploratory-data-analysis">2. Multivariate Exploratory Data Analysis</h2>
-<section id="how-do-variables-relate-to-each-other" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-variables-relate-to-each-other">“How do variables relate to each other?”</h3>
-</section>
-<section id="relationships-between-numerical-variables" class="level3">
-<h3 class="anchored" data-anchor-id="relationships-between-numerical-variables">2.1 Relationships Between Numerical Variables</h3>
-<ul>
-<li>Scatterplots</li>
-<li>Correlation (Pearson, Spearman – intuition only)</li>
-<li>Interpreting correlation (and common pitfalls)</li>
-<li>Business examples:
-<ul>
-<li>Price and demand</li>
-<li>Marketing spend and sales</li>
-</ul></li>
-</ul>
-</section>
-<section id="numerical-and-categorical-variables" class="level3">
-<h3 class="anchored" data-anchor-id="numerical-and-categorical-variables">2.2 Numerical and Categorical Variables</h3>
-<ul>
-<li>Grouped summaries (means by category)</li>
-<li>Boxplots by group</li>
-<li>Comparing distributions across segments</li>
-<li>Business examples:
-<ul>
-<li>Revenue by customer segment</li>
-<li>Satisfaction scores by region</li>
-</ul></li>
-</ul>
-</section>
-<section id="relationships-between-categorical-variables" class="level3">
-<h3 class="anchored" data-anchor-id="relationships-between-categorical-variables">2.3 Relationships Between Categorical Variables</h3>
-<ul>
-<li>Contingency tables</li>
-<li>Percentages and conditional distributions</li>
-<li>Simple association analysis</li>
-<li>Business examples:
-<ul>
-<li>Product category × return behavior</li>
-<li>Channel × conversion outcome</li>
-</ul></li>
-</ul>
-</section>
-<section id="from-patterns-to-questions" class="level3">
-<h3 class="anchored" data-anchor-id="from-patterns-to-questions">2.4 From Patterns to Questions</h3>
-<ul>
-<li>EDA does not “prove” causality</li>
-<li>Using EDA to generate hypotheses</li>
-<li>Deciding what to analyze next</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="visual-exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="visual-exploratory-data-analysis">3. Visual Exploratory Data Analysis</h2>
-<section id="seeing-and-communicating-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="seeing-and-communicating-patterns">“Seeing and communicating patterns”</h3>
-</section>
-<section id="why-visualization-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-visualization-matters">3.1 Why Visualization Matters</h3>
-<ul>
-<li>Human pattern recognition</li>
-<li>Visualization for exploration vs.&nbsp;presentation</li>
-<li>Common visualization mistakes in business reports</li>
-</ul>
-</section>
-<section id="choosing-the-right-chart" class="level3">
-<h3 class="anchored" data-anchor-id="choosing-the-right-chart">3.2 Choosing the Right Chart</h3>
-<ul>
-<li>When to use:
-<ul>
-<li>Bar charts</li>
-<li>Line charts</li>
-<li>Scatterplots</li>
-<li>Boxplots</li>
-</ul></li>
-<li>Matching chart types to questions and data types</li>
-</ul>
-</section>
-<section id="grammar-of-graphics-conceptual" class="level3">
-<h3 class="anchored" data-anchor-id="grammar-of-graphics-conceptual">3.3 Grammar of Graphics (Conceptual)</h3>
-<ul>
-<li>Data</li>
-<li>Aesthetics (x, y, color, size)</li>
-<li>Geometries (points, lines, bars)</li>
-<li>Facets (small multiples)</li>
-<li>Why this idea scales well for complex analyses</li>
-</ul>
-</section>
-<section id="visual-eda-in-python-with-plotly" class="level3">
-<h3 class="anchored" data-anchor-id="visual-eda-in-python-with-plotly">3.4 Visual EDA in Python with Plotly</h3>
-<ul>
-<li>Why Plotly for business analytics:
-<ul>
-<li>Interactivity</li>
-<li>Easy exploration of subgroups</li>
-</ul></li>
-<li>Example visual analyses:
-<ul>
-<li>Scatterplot with color by category</li>
-<li>Distribution plots by segment</li>
-<li>Interactive filtering and hover information</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="putting-it-all-together" class="level2">
-<h2 class="anchored" data-anchor-id="putting-it-all-together">4. Putting It All Together</h2>
-<ul>
-<li>EDA as an iterative workflow:
-<ol type="1">
-<li>Summarize variables</li>
-<li>Explore relationships</li>
-<li>Visualize and refine questions</li>
-</ol></li>
-<li>From raw data to business insight</li>
-<li>Limitations of EDA</li>
-<li>Transition to:
-<ul>
-<li>Statistical modeling</li>
-<li>Machine learning</li>
-<li>Dashboards and reporting</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="key-takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
-<ul>
-<li>EDA helps you <em>understand</em> data before modeling it</li>
-<li>Start simple: univariate → multivariate → visual</li>
-<li>Focus on business questions, not just techniques</li>
-<li>Visualization is a core analytical skill, not just decoration</li>
-</ul>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 33%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (min)</th>
+<th>Duration</th>
+<th>Topic</th>
+<th>Additional materials</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0-30</td>
+<td>30</td>
+<td>Introduction and setup</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>30-90</td>
+<td>60</td>
+<td>Data handling in Python</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-objective callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Objective</span>Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ask students to create a GitHub account (CHECK: free student packs?)</p>
+<p>TBD: typical exam questions corresponding to the lecture? -</p>
+<p>Explain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im <code>Umgang mit Spyder.docx</code>).</p>
+<p>Start in groups of two (random?)</p>
+<p>Introduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite <strong>check classrooms before! - can it be attached to the desks?</strong></p>
+<p>TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools</p>
+</div>
+</div>
 
 
 </section>
@@ -822,4 +704,4 @@ Note
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/notes/lecture_3_exploratory_data_analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/notes/lecture_1_rise_of_data_analytics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
