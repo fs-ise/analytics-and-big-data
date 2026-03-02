@@ -151,6 +151,10 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./teaching_notes.html"> 
+<span class="menu-text">Teaching notes</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="./preparation.html" aria-current="page"> 
 <span class="menu-text">⚠️ Preparation</span></a>
   </li>  
@@ -236,15 +240,17 @@ gantt
 <ul class="task-list">
 <li><p><label><input type="checkbox" checked="">Select contents for each session</label></p></li>
 <li><p><label><input type="checkbox" checked="">Find contents: Exploratory data analysis</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Regression I</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Regression II</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Machine learning I</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Machine learning II</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Analytics case examples</label></p></li>
+<li><p><label><input type="checkbox" checked="">Find contents: Regression I</label></p></li>
+<li><p><label><input type="checkbox" checked="">Find contents: Regression II</label></p></li>
+<li><p><label><input type="checkbox" checked="">Find contents: Machine learning I</label></p></li>
+<li><p><label><input type="checkbox" checked="">Find contents: Machine learning II</label></p></li>
+<li><p><label><input type="checkbox">Find contents: Big data I</label></p></li>
+<li><p><label><input type="checkbox">Find contents: Big data II</label></p></li>
 <li><p><label><input type="checkbox" checked="">Check: Jupyter Exercise setup: export of jupyter notebooks</label></p></li>
 <li><p><label><input type="checkbox">Check: Jupyter Exercise setup: running jupyter notebooks (GitHub?)</label></p></li>
 </ul>
 <p>Generally: generation of PDFs: local only?</p>
+<p>TODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)</p>
 <section id="session-0-course-logistics" class="level3">
 <h3 class="anchored" data-anchor-id="session-0-course-logistics">Session 0 — Course logistics</h3>
 <ul class="task-list">
@@ -253,12 +259,12 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-1-foundations-of-data-analytics" class="level3">
-<h3 class="anchored" data-anchor-id="session-1-foundations-of-data-analytics">Session 1 — Foundations of data analytics</h3>
+<section id="session-1-the-rise-of-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="session-1-the-rise-of-analytics">Session 1 — The rise of analytics</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox" checked="">Exercise contents selected</label></li>
+<li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
 <li><label><input type="checkbox">Exercise tested</label></li>
@@ -267,8 +273,8 @@ gantt
 <p>TODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)</p>
 <hr>
 </section>
-<section id="session-2-structuring-and-preparing-data" class="level3">
-<h3 class="anchored" data-anchor-id="session-2-structuring-and-preparing-data">Session 2 — Structuring and preparing data</h3>
+<section id="session-2-exploratory-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="session-2-exploratory-data-analysis">Session 2 — Exploratory data analysis</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
@@ -280,11 +286,11 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-3-exploratory-data-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="session-3-exploratory-data-analysis">Session 3 — Exploratory data analysis</h3>
+<section id="session-3-analytical-data-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="session-3-analytical-data-architecture">Session 3 — Analytical data architecture</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
@@ -296,8 +302,8 @@ gantt
 <section id="session-4-regression-i" class="level3">
 <h3 class="anchored" data-anchor-id="session-4-regression-i">Session 4 — Regression I</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
@@ -309,8 +315,8 @@ gantt
 <section id="session-5-regression-ii" class="level3">
 <h3 class="anchored" data-anchor-id="session-5-regression-ii">Session 5 — Regression II</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected (<strong>slides available</strong>)</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
@@ -322,8 +328,8 @@ gantt
 <section id="session-6-machine-learning-i" class="level3">
 <h3 class="anchored" data-anchor-id="session-6-machine-learning-i">Session 6 — Machine learning I</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
@@ -335,8 +341,8 @@ gantt
 <section id="session-7-machine-learning-ii" class="level3">
 <h3 class="anchored" data-anchor-id="session-7-machine-learning-ii">Session 7 — Machine learning II</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected (<strong>slides available</strong>)</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
@@ -345,11 +351,11 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-8-big-data" class="level3">
-<h3 class="anchored" data-anchor-id="session-8-big-data">Session 8 — Big Data</h3>
+<section id="session-8-big-data-i" class="level3">
+<h3 class="anchored" data-anchor-id="session-8-big-data-i">Session 8 — Big Data I</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
 <li><label><input type="checkbox">Exercise polished</label></li>
@@ -358,10 +364,10 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-9-analytics-case-examples" class="level3">
-<h3 class="anchored" data-anchor-id="session-9-analytics-case-examples">Session 9 — Analytics case examples</h3>
+<section id="session-9-big-data-ii" class="level3">
+<h3 class="anchored" data-anchor-id="session-9-big-data-ii">Session 9 — Big Data II</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
@@ -374,7 +380,7 @@ gantt
 <section id="session-10-governance-of-data-analytics" class="level3">
 <h3 class="anchored" data-anchor-id="session-10-governance-of-data-analytics">Session 10 — Governance of data analytics</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
 <li><label><input type="checkbox">Exercise contents selected</label></li>
 <li><label><input type="checkbox">Lecture polished</label></li>
@@ -387,7 +393,7 @@ gantt
 <section id="session-11-recap-exam-preparation-qa" class="level3">
 <h3 class="anchored" data-anchor-id="session-11-recap-exam-preparation-qa">Session 11 — Recap, exam preparation, Q&amp;A</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Learning objectives set</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox">Recap structure defined</label></li>
 <li><label><input type="checkbox">Exam-relevant topics consolidated</label></li>
 <li><label><input type="checkbox">Slides polished</label></li>
@@ -409,7 +415,7 @@ gantt
 <li><label><input type="checkbox">Group exercises tested</label></li>
 <li><label><input type="checkbox">Test exam prepared</label></li>
 <li><label><input type="checkbox">Consistency of terminology across sessions</label></li>
-<li><label><input type="checkbox">Learning objectives aligned with exam scope</label></li>
+<li><label><input type="checkbox" checked="">Learning objectives aligned with exam scope</label></li>
 <li><label><input type="checkbox">Optional: handout / combined PDF prepared</label></li>
 <li><label><input type="checkbox">Syllabus updated</label></li>
 <li><label><input type="checkbox">License, code of conduct, contributing, …</label></li>
