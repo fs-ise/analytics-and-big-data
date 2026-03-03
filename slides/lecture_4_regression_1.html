@@ -195,17 +195,6 @@
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -215,6 +204,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -228,15 +228,15 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -263,7 +263,7 @@
 <div class="learning-objectives">
 <ul>
 <li><strong>Explain</strong> the stages of a model-based analytics workflow using linear regression as an example.</li>
-<li><strong>Interpret</strong> linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).</li>
+<li><strong>Interpret</strong> linear regression models, including coefficient meaning, OLS estimation, and model evaluation.</li>
 <li><strong>Describe</strong> how regression models are implemented in Python.</li>
 </ul>
 </div>
@@ -470,7 +470,7 @@
 <li>Competitions and community discussions</li>
 </ul>
 <div class="fragment">
-<countdown-timer id="timer_2f076896ccfb178011e5c66b755981bf8750504d" minutes="05" seconds="30" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 10;">
+<countdown-timer id="timer_05960429b9e62e2b77dadda680b88e31392d4ac4" minutes="05" seconds="30" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 10;">
  </countdown-timer>
 <p><strong>Task (5–7 minutes)</strong></p>
 <ol type="1">

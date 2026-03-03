@@ -69,17 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
-  background-image: none;
-}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -91,17 +80,6 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
   content: '🔒';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -111,6 +89,28 @@ div.callout-objective.callout-style-default > .callout-header {
 div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
   content: '🎯';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -189,19 +189,33 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 </header>
 
 
-<div id="2c0df121" class="cell" data-message="false" data-execution_count="1">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following extracts the primary learning objectives from the lecture slides. Exercises typically mirror these objectives (covering practical implementation, illustrative cases, or specific exam prep/questions). Objectives that are covered in the exercises exclusively are highlighted.</p>
+</div>
+</div>
+<div id="d8b2c743" class="cell" data-message="false" data-execution_count="1">
 <section id="the-rise-of-analytics" class="level2">
 <h2 class="anchored" data-anchor-id="the-rise-of-analytics">The rise of analytics</h2>
 <ul>
 <li><strong>Illustrate</strong> how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.</li>
 <li><strong>Distinguish</strong> between descriptive, predictive, and prescriptive analytics.</li>
+<li><strong>Explore</strong> the Python and Jupyter analytics ecosystem (<em>exercise</em>).</li>
 </ul>
 </section>
 <section id="exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
 <ul>
 <li><strong>Describe</strong> key characteristics of variables and patterns between variables.</li>
-<li><strong>Explore</strong> data sets by using appropriate descriptive and visual techniques in Python.</li>
+<li><strong>Explore</strong> data sets by using appropriate descriptive and visual techniques in Python (<em>exercise</em>).</li>
 <li><strong>Explain</strong> the role of exploratory data analysis in business decision-making.</li>
 </ul>
 </section>
@@ -217,7 +231,7 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 <h2 class="anchored" data-anchor-id="regression-i">Regression I</h2>
 <ul>
 <li><strong>Explain</strong> the stages of a model-based analytics workflow using linear regression as an example.</li>
-<li><strong>Interpret</strong> linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).</li>
+<li><strong>Interpret</strong> linear regression models, including coefficient meaning, OLS estimation, and model evaluation.</li>
 <li><strong>Describe</strong> how regression models are implemented in Python.</li>
 </ul>
 </section>
@@ -267,7 +281,6 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 <h2 class="anchored" data-anchor-id="analytics-in-organizations">Analytics in organizations</h2>
 <ul>
 <li><strong>Explain</strong> the strategic role of data analytics in data-driven organizations.</li>
-<li><strong>Design</strong> an end-to-end analytics solution aligned with a business problem and governance constraints.</li>
 <li><strong>Discuss</strong> the ethical and legal boundaries of data analytics in organizations.</li>
 </ul>
 </section>

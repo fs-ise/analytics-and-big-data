@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise 1: Foundations of data analytics – Analytics &amp; Big Data</title>
+<title>Exercise 1: The rise of analytics – Analytics &amp; Big Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,6 +107,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <style>
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -138,17 +149,6 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
-  background-image: none;
-}
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
   background-image: none;
 }
 </style>
@@ -210,7 +210,7 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exercise 1: Foundations of data analytics</h1>
+<h1 class="title">Exercise 1: The rise of analytics</h1>
 </div>
 
 
@@ -227,6 +227,14 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 </header>
 
 
+<div class="learning-objectives">
+<p>Explore the Python and Jupyter analytics ecosystem:</p>
+<ul>
+<li>Start Jupyter in a VM (GitHub Codespace)</li>
+<li>Install packages (pandas / !pip install.. and requirements.txt)</li>
+<li>Write a first notebook</li>
+</ul>
+</div>
 <div class="callout callout-style-default callout-note callout-titled" title="TODO">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -237,7 +245,16 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO: test workflow (github/local jupyter notebook - do not save as qmd / or convert?!) run individual lines with shift+ENTER ??</p>
+<ul>
+<li><p>test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)</p></li>
+<li><p>shortcuts: run individual lines with shift+ENTER ??, press a, b, x, …</p></li>
+<li><p>start with a simple example of an excel spreadsheet, then check an API</p></li>
+<li><p>repeat python data types (dict, pandas, …)</p></li>
+<li><p>what is “in memory”? (<code>%whos</code>)</p></li>
+<li><p>extend slide-deck?</p></li>
+<li><p>writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is.</p></li>
+<li><p>example notebook: financial API (code for the api call should be included)</p></li>
+</ul>
 </div>
 </div>
 <section id="preface" class="level2">
@@ -264,7 +281,7 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 <h2 class="anchored" data-anchor-id="scikit-learn">Scikit-learn</h2>
 <p>Scikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.</p>
 <p>The structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:</p>
-<div id="972c7536" class="cell" data-execution_count="1">
+<div id="f3ff6fef" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Schematic example to illustrate a common estimator pattern.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ModelEstimator(<span class="bu">object</span>):</span>
@@ -288,7 +305,7 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 <p>While a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.</p>
 <p><strong>TODO</strong>: add illustration</p>
 <p>For example, the following variable df is a dataframe containing three vectors</p>
-<div id="a92e011b" class="cell" data-execution_count="2">
+<div id="5c67a67a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
@@ -338,7 +355,7 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
 </div>
 </div>
 <p>The result of this is a dataframe named df. The numbers on the left side of the rows are labels and <strong>not</strong> the indexes. You can inspect the structure using the dtypes property</p>
-<div id="1ff8a698" class="cell" data-execution_count="3">
+<div id="c48f3b1a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>employee       str
@@ -348,7 +365,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>To retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples</p>
-<div id="92ff6308" class="cell" data-execution_count="4">
+<div id="936ff0c2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>,<span class="dv">1</span>] <span class="co"># element in first row, second column</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="dv">0</span>] <span class="co"># all rows, first column</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">1</span>:<span class="dv">3</span>,<span class="dv">1</span>] <span class="co"># second to third row, second column</span></span>
@@ -385,7 +402,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Pandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples</p>
-<div id="34733df4" class="cell" data-execution_count="5">
+<div id="8c6ec141" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>,:] <span class="co"># row with labels 1 and 2, all columns</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>] <span class="co"># same as above</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>, <span class="st">'salary'</span>] <span class="co"># row with labels 1 and 2, column with name salary</span></span>
@@ -425,7 +442,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>The loc function can even be used to add a new row to a dataframe</p>
-<div id="4a0530d9" class="cell" data-execution_count="6">
+<div id="79dae326" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="bu">len</span>(df)] <span class="op">=</span> [<span class="st">"Mike Tyson"</span>, <span class="dv">19400</span>, <span class="st">"2018-6-27"</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -473,15 +490,15 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>A new column can be added via</p>
-<div id="63d3ff3d" class="cell" data-execution_count="7">
+<div id="25275c06" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age'</span>] <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">42</span>, <span class="dv">19</span>, <span class="dv">43</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A column can be deleted via the drop command</p>
-<div id="d964ab6f" class="cell" data-execution_count="8">
+<div id="bc931188" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'age'</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Two dataframes can be combined using the concat function. Combining two dataframes row-wise</p>
-<div id="df4e87a3" class="cell" data-execution_count="9">
+<div id="c30bcfcf" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>:[<span class="st">'AA'</span>, <span class="st">'AB'</span>], <span class="st">'B'</span>:[<span class="st">'BA'</span>, <span class="st">'BB'</span>]})</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>:[<span class="st">'CA'</span>, <span class="st">'CB'</span>], <span class="st">'B'</span>:[<span class="st">'DA'</span>, <span class="st">'DB'</span>]})</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.concat([df1, df2])</span>
@@ -495,7 +512,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Combining two dataframes column-wise</p>
-<div id="cf2eea4c" class="cell" data-execution_count="10">
+<div id="906385c8" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dfa <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>:[<span class="st">'AA'</span>, <span class="st">'AB'</span>], <span class="st">'B'</span>:[<span class="st">'BA'</span>, <span class="st">'BB'</span>]})</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>dfb <span class="op">=</span> pd.DataFrame({<span class="st">'C'</span>:[<span class="st">'CA'</span>, <span class="st">'CB'</span>], <span class="st">'D'</span>:[<span class="st">'DA'</span>, <span class="st">'DB'</span>]})</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dfc <span class="op">=</span> pd.concat([dfa, dfb], axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -509,7 +526,7 @@ dtype: object</code></pre>
 </section>
 <section id="import-and-export" class="level3">
 <h3 class="anchored" data-anchor-id="import-and-export">Import and Export</h3>
-<div id="5177ff5d" class="cell" data-execution_count="11">
+<div id="40c86d8d" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data = pd.read_csv("filename.csv")</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data = pd.read_excel("filename.xlsx")</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data.to_csv("output.csv", index=False)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -518,10 +535,10 @@ dtype: object</code></pre>
 <section id="basic-statistical-functions-for-dataframes" class="level3">
 <h3 class="anchored" data-anchor-id="basic-statistical-functions-for-dataframes">Basic Statistical Functions for DataFrames</h3>
 <p>A large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as <code>sum</code> and <code>mean</code>.</p>
-<div id="eb3b2712" class="cell" data-execution_count="12">
+<div id="ef22c6aa" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.sum()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="3b944cfc" class="cell" data-execution_count="13">
+<div id="5a25ca7c" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.iloc[:, 1:7].cumsum()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -609,6 +626,10 @@ dtype: object</code></pre>
 <p><strong>TODO : add a summary</strong></p>
 </div>
 </div>
+</section>
+<section id="exam-prep" class="level2">
+<h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
+<p>TODO : include specific questions/tasks that could be included in the exam.</p>
 
 
 </section>

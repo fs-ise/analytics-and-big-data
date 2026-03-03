@@ -125,17 +125,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -147,15 +136,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -167,6 +156,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -266,7 +266,7 @@
 <section id="imagenet" class="slide level2">
 <h2>ImageNet</h2>
 <p>ImageNet is a large-scale image recognition competition where models compete to classify millions of images across thousands of categories. Breakthrough models have historically demonstrated major advances in deep learning.: Models vs Human Baseline</p>
-<div id="e3e28554" class="cell" data-execution_count="1">
+<div id="f1b5106b" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -276,7 +276,7 @@
 </div>
 </div>
 <div class="fragment">
-<div id="b6fa8ea1" class="cell" data-execution_count="2">
+<div id="9e5df6f9" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -543,6 +543,7 @@ On the basis of more than 300 million data records per week, Otto makes more tha
 <ul>
 <li><strong>Illustrate</strong> how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.</li>
 <li><strong>Distinguish</strong> between descriptive, predictive, and prescriptive analytics.</li>
+<li><strong>Explore</strong> the Python and Jupyter analytics ecosystem (<em>exercise</em>).</li>
 </ul>
 </div>
 

@@ -95,84 +95,84 @@
     "href": "objectives.html",
     "title": "Overview of learning objectives",
     "section": "",
-    "text": "Illustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\n\n\n\n\n\nDescribe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python.\nExplain the role of exploratory data analysis in business decision-making.\n\n\n\n\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact/dimension schemata from business questions and operational data.\n\n\n\n\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).\nDescribe how regression models are implemented in Python.\n\n\n\n\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning.\n\n\n\n\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)\n\n\n\n\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.\n\n\n\n\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics.\n\n\n\n\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows.\n\n\n\n\n\nExplain the strategic role of data analytics in data-driven organizations.\nDesign an end-to-end analytics solution aligned with a business problem and governance constraints.\nDiscuss the ethical and legal boundaries of data analytics in organizations.\n\n\n\n\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
+    "text": "Note\n\n\n\nThe following extracts the primary learning objectives from the lecture slides. Exercises typically mirror these objectives (covering practical implementation, illustrative cases, or specific exam prep/questions). Objectives that are covered in the exercises exclusively are highlighted.\nThe rise of analytics\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise).\n\n\n\nExploratory data analysis\n\nDescribe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python (exercise).\nExplain the role of exploratory data analysis in business decision-making.\n\n\n\nAnalytical data architecture\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact/dimension schemata from business questions and operational data.\n\n\n\nRegression I\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python.\n\n\n\nRegression II\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning.\n\n\n\nMachine learning I\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)\n\n\n\nMachine learning II\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.\n\n\n\nBig data I\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics.\n\n\n\nBig data II\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows.\n\n\n\nAnalytics in organizations\n\nExplain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations.\n\n\n\nIntegration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
   },
   {
     "objectID": "objectives.html#the-rise-of-analytics",
     "href": "objectives.html#the-rise-of-analytics",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Illustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics."
+    "section": "The rise of analytics",
+    "text": "The rise of analytics\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
   },
   {
     "objectID": "objectives.html#exploratory-data-analysis",
     "href": "objectives.html#exploratory-data-analysis",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Describe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python.\nExplain the role of exploratory data analysis in business decision-making."
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\nDescribe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python (exercise).\nExplain the role of exploratory data analysis in business decision-making."
   },
   {
     "objectID": "objectives.html#analytical-data-architecture",
     "href": "objectives.html#analytical-data-architecture",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Outline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact/dimension schemata from business questions and operational data."
+    "section": "Analytical data architecture",
+    "text": "Analytical data architecture\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact/dimension schemata from business questions and operational data."
   },
   {
     "objectID": "objectives.html#regression-i",
     "href": "objectives.html#regression-i",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Explain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).\nDescribe how regression models are implemented in Python."
+    "section": "Regression I",
+    "text": "Regression I\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python."
   },
   {
     "objectID": "objectives.html#regression-ii",
     "href": "objectives.html#regression-ii",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Understand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
+    "section": "Regression II",
+    "text": "Regression II\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
   },
   {
     "objectID": "objectives.html#machine-learning-i",
     "href": "objectives.html#machine-learning-i",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Distinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
+    "section": "Machine learning I",
+    "text": "Machine learning I\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
   },
   {
     "objectID": "objectives.html#machine-learning-ii",
     "href": "objectives.html#machine-learning-ii",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Compare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
+    "section": "Machine learning II",
+    "text": "Machine learning II\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
   },
   {
     "objectID": "objectives.html#big-data-i",
     "href": "objectives.html#big-data-i",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Explain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics."
+    "section": "Big data I",
+    "text": "Big data I\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics."
   },
   {
     "objectID": "objectives.html#big-data-ii",
     "href": "objectives.html#big-data-ii",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Explain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows."
+    "section": "Big data II",
+    "text": "Big data II\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows."
   },
   {
     "objectID": "objectives.html#analytics-in-organizations",
     "href": "objectives.html#analytics-in-organizations",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Explain the strategic role of data analytics in data-driven organizations.\nDesign an end-to-end analytics solution aligned with a business problem and governance constraints.\nDiscuss the ethical and legal boundaries of data analytics in organizations."
+    "section": "Analytics in organizations",
+    "text": "Analytics in organizations\n\nExplain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations."
   },
   {
     "objectID": "objectives.html#integration-and-exam-preparation",
     "href": "objectives.html#integration-and-exam-preparation",
     "title": "Overview of learning objectives",
-    "section": "",
-    "text": "Summarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
+    "section": "Integration and exam preparation",
+    "text": "Integration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
   },
   {
     "objectID": "slides/lecture_9_big_data_2.html#reinforcement-learning",
@@ -249,7 +249,7 @@
     "href": "slides/lecture_4_regression_1.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).\nDescribe how regression models are implemented in Python."
+    "text": "Learning objectives\n\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python."
   },
   {
     "objectID": "slides/lecture_4_regression_1.html#process",
@@ -998,7 +998,7 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#summary",
     "title": "Analytics & Big Data",
     "section": "Summary",
-    "text": "Summary\n🎯 Learning Objective\n\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics."
+    "text": "Summary\n🎯 Learning Objective\n\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
   },
   {
     "objectID": "group_work.html",
@@ -1066,79 +1066,114 @@
   {
     "objectID": "exercises/exercise_1.html",
     "href": "exercises/exercise_1.html",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "",
-    "text": "NoteTODO\n\n\n\nTODO: test workflow (github/local jupyter notebook - do not save as qmd / or convert?!) run individual lines with shift+ENTER ??"
+    "text": "Explore the Python and Jupyter analytics ecosystem:\n\nStart Jupyter in a VM (GitHub Codespace)\nInstall packages (pandas / !pip install.. and requirements.txt)\nWrite a first notebook"
   },
   {
     "objectID": "exercises/exercise_1.html#preface",
     "href": "exercises/exercise_1.html#preface",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "Preface",
     "text": "Preface\nThe purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.\nThe three main libraries are:\n\nNumPy\nPandas\nScikit-learn"
   },
   {
     "objectID": "exercises/exercise_1.html#numpy",
     "href": "exercises/exercise_1.html#numpy",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "NumPy",
     "text": "NumPy\nNumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.\nAn introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School)."
   },
   {
     "objectID": "exercises/exercise_1.html#pandas",
     "href": "exercises/exercise_1.html#pandas",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "Pandas",
     "text": "Pandas\nPandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.\nIn Chapter 1, an introduction to using DataFrames with Pandas is given."
   },
   {
     "objectID": "exercises/exercise_1.html#scikit-learn",
     "href": "exercises/exercise_1.html#scikit-learn",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "Scikit-learn",
     "text": "Scikit-learn\nScikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.\nThe structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:\n\n# Schematic example to illustrate a common estimator pattern.\n\nclass ModelEstimator(object):\n    def __init__(self, param1=\"pvalue1\"):\n        self.param1 = param1\n\n    def fit(self, X, y):\n        # X are input values, y are target values (supervised case)\n        # here the functionality for model estimation is implemented\n        return self\n\n    def predict(self, X):\n        # implementation of the predicting function\n        return X"
   },
   {
     "objectID": "exercises/exercise_1.html#dataframes-with-pandas",
     "href": "exercises/exercise_1.html#dataframes-with-pandas",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "DataFrames with Pandas",
     "text": "DataFrames with Pandas\n\nDataFrames\nWhile a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.\nTODO: add illustration\nFor example, the following variable df is a dataframe containing three vectors\n\nimport pandas as pd\n\ndata = {\n    \"employee\": [\"John Doe\", \"Peter Gynn\", \"Jolie Hope\"],\n    \"salary\": [21000, 23400, 26800],\n    \"startdate\": [\"2010-11-1\", \"2008-3-25\", \"2007-3-14\"],\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe result of this is a dataframe named df. The numbers on the left side of the rows are labels and not the indexes. You can inspect the structure using the dtypes property\n\ndf.dtypes\n\nemployee       str\nsalary       int64\nstartdate      str\ndtype: object\n\n\nTo retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples\n\ndf.iloc[0,1] # element in first row, second column\ndf.iloc[:,0] # all rows, first column\ndf.iloc[1:3,1] # second to third row, second column\ndf.iloc[:,-2] # all rows, second column from the end\ndf.iloc[-1,:] # last row, all columns\ndf.iloc[[0, 2], [1, 2]] # first and third row, second to third column\n\n\n\n\n\n\n\n\nsalary\nstartdate\n\n\n\n\n0\n21000\n2010-11-1\n\n\n2\n26800\n2007-3-14\n\n\n\n\n\n\n\nPandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples\n\ndf.loc[1:2,:] # row with labels 1 and 2, all columns\ndf.loc[1:2] # same as above\ndf.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary\ndf.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary\ndf.loc[df.loc[:,'salary']&gt;23000] # all rows where salary&gt;23000, all columns\n# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe loc function can even be used to add a new row to a dataframe\n\ndf.loc[len(df)] = [\"Mike Tyson\", 19400, \"2018-6-27\"]\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n3\nMike Tyson\n19400\n2018-6-27\n\n\n\n\n\n\n\nA new column can be added via\n\ndf['age'] = [35, 42, 19, 43]\n\nA column can be deleted via the drop command\n\ndf = df.drop('age', axis = 1)\n\nTwo dataframes can be combined using the concat function. Combining two dataframes row-wise\n\ndf1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndf2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})\ndf3 = pd.concat([df1, df2])\nprint(df3)\n\n    A   B\n0  AA  BA\n1  AB  BB\n0  CA  DA\n1  CB  DB\n\n\nCombining two dataframes column-wise\n\ndfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})\ndfc = pd.concat([dfa, dfb], axis=1)\nprint(dfc)\n\n    A   B   C   D\n0  AA  BA  CA  DA\n1  AB  BB  CB  DB\n\n\n\n\nImport and Export\n\n# data = pd.read_csv(\"filename.csv\")\n# data = pd.read_excel(\"filename.xlsx\")\n# data.to_csv(\"output.csv\", index=False)\n\n\n\nBasic Statistical Functions for DataFrames\nA large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as sum and mean.\n\n# data.sum()\n\n\n# data.iloc[:, 1:7].cumsum()\n\n\n\nCommon statistical functions in Pandas\n\n\n\nFunction\nDescription\n\n\n\n\ncount()\nNumber of non-null observations\n\n\nsum()\nSum of values\n\n\nmean()\nMean of values\n\n\nmedian()\nMedian of values\n\n\nmode()\nMode of values\n\n\nstd()\nStandard deviation of the values\n\n\nmin()\nMinimum value\n\n\nmax()\nMaximum value\n\n\nabs()\nAbsolute value\n\n\nprod()\nProduct of values\n\n\ncumsum()\nCumulative sum\n\n\ncumprod()\nCumulative product"
   },
   {
     "objectID": "exercises/exercise_1.html#example-case",
     "href": "exercises/exercise_1.html#example-case",
-    "title": "Exercise 1: Foundations of data analytics",
+    "title": "Exercise 1: The rise of analytics",
     "section": "Example case",
     "text": "Example case\n\nGet a dataset (nice datasource)\nImport and prepare\nProduce a notebook\n\n\n\n\n\n\n\nNoteTODO\n\n\n\nTODO: add a setup explanation + tests for available python version and packages\nTODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)\nTODO : add a summary"
+  },
+  {
+    "objectID": "exercises/exercise_1.html#exam-prep",
+    "href": "exercises/exercise_1.html#exam-prep",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_10.html",
     "href": "exercises/exercise_10.html",
     "title": "Exercise 10: Governance of data analytics",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Analyze how data analytics creates strategic value within a given organizational context.\nIdentify ethical and legal risks in analytics initiatives and propose mitigation strategies."
+  },
+  {
+    "objectID": "exercises/exercise_10.html#exam-prep",
+    "href": "exercises/exercise_10.html#exam-prep",
+    "title": "Exercise 10: Governance of data analytics",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_3.html",
     "href": "exercises/exercise_3.html",
-    "title": "Exercise 3: Exploratory data analysis",
+    "title": "Exercise 3: Analytical data architecture",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Design fact/dimension schemata from business questions and operational data."
+  },
+  {
+    "objectID": "exercises/exercise_3.html#exam-prep",
+    "href": "exercises/exercise_3.html#exam-prep",
+    "title": "Exercise 3: Analytical data architecture",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_5.html",
     "href": "exercises/exercise_5.html",
     "title": "Exercise 5: Regression II",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Estimate and interpret a multiple regression model in Python.\nRefine a regression model, assessing how additional predictors affect model fit.\nImplement and evaluate a logistic regression model for a binary outcome."
+  },
+  {
+    "objectID": "exercises/exercise_5.html#exam-prep",
+    "href": "exercises/exercise_5.html#exam-prep",
+    "title": "Exercise 5: Regression II",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_9.html",
     "href": "exercises/exercise_9.html",
-    "title": "Exercise 9: Analytics case examples",
+    "title": "Exercise 9: Big data II",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python. Apply large language models or other scalable methods to extract, classify, or summarize unstructured data."
+  },
+  {
+    "objectID": "exercises/exercise_9.html#exam-prep",
+    "href": "exercises/exercise_9.html#exam-prep",
+    "title": "Exercise 9: Big data II",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_11.html",
@@ -1148,32 +1183,60 @@
     "text": "Note\n\n\n\nTODO"
   },
   {
+    "objectID": "exercises/exercise_11.html#exam-prep",
+    "href": "exercises/exercise_11.html#exam-prep",
+    "title": "Exercise 11: Recap, exam preparation, Q&A",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
+  },
+  {
     "objectID": "exercises/exercise_4.html",
     "href": "exercises/exercise_4.html",
     "title": "Exercise 4: Regression I",
     "section": "",
-    "text": "Note\n\n\n\nTODO see /home/gerit/workspace/projects/bda/nextcloud/Material/business-analytics-fau/4_Regression.ipynb (plus solutions)\nhttps://github.com/krishnaik06/Multiple-Linear-Regression/tree/master"
+    "text": "Describe how regression models are implemented in Python.\n\nImplement and interpret a regression model in Python using standard libraries.\nEvaluate model performance using appropriate regression metrics.\nExplain how regression modeling fits into the CRISP-DM process, including deployment of trained models."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#exam-prep",
+    "href": "exercises/exercise_4.html#exam-prep",
+    "title": "Exercise 4: Regression I",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_8.html",
     "href": "exercises/exercise_8.html",
     "title": "Exercise 8: Big data",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "TBD: traditional case study (with questions)?"
+  },
+  {
+    "objectID": "exercises/exercise_8.html#exam-prep",
+    "href": "exercises/exercise_8.html#exam-prep",
+    "title": "Exercise 8: Big data",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_7.html",
     "href": "exercises/exercise_7.html",
     "title": "Exercise 7: Machine learning II",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Implement and evaluate k-nearest neighbors, decision trees, and neural networks for a business prediction task.\nCompare models with respect to accuracy, interpretability, and practical implications.\nRecommend a suitable model for deployment."
+  },
+  {
+    "objectID": "exercises/exercise_7.html#exam-prep",
+    "href": "exercises/exercise_7.html#exam-prep",
+    "title": "Exercise 7: Machine learning II",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "exercises/exercise_6.html",
     "href": "exercises/exercise_6.html",
     "title": "Exercise 6: Machine learning I",
     "section": "",
-    "text": "Note\n\n\n\nTODO\nhttps://github.com/justmarkham/scikit-learn-videos"
+    "text": "Implement a machine learning model in Python, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nhttps://github.com/justmarkham/scikit-learn-videos"
   },
   {
     "objectID": "exercises/exercise_6.html#implementation-in-python-with-scikit-learn-20-min",
@@ -1183,11 +1246,18 @@
     "text": "Implementation in Python with scikit-learn (20 min)\nWalk through a simple, reproducible pipeline:\n\nLoad dataset (toy dataset or small real-world example)\nTrain–test split\nPreprocessing pipeline (e.g., StandardScaler + model)\nFit logistic regression vs. one non-linear model (e.g., decision tree or SVM)\nCompare performance metrics\nShow how to inspect confusion matrix & classification report\n\nHighlight: - Consistent API (fit, predict, score) - Use of Pipeline - Keeping code structured and reproducible"
   },
   {
+    "objectID": "exercises/exercise_6.html#exam-prep",
+    "href": "exercises/exercise_6.html#exam-prep",
+    "title": "Exercise 6: Machine learning I",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
+  },
+  {
     "objectID": "exercises/exercise_2.html",
     "href": "exercises/exercise_2.html",
     "title": "Exercise 2: Structuring and preparing data",
     "section": "",
-    "text": "Note\n\n\n\nTODO\nThis text will appear across all versions of the document.\nimport numpy as np\nimport pandas as pd\n\nrng = np.random.default_rng(42)\n\nn = 200\ndf = pd.DataFrame({\n    \"age\": rng.integers(18, 66, size=n),\n    \"department\": rng.choice([\"Sales\", \"Ops\", \"R&D\"], size=n, p=[0.35, 0.40, 0.25]),\n    \"remote_days_per_week\": rng.integers(0, 6, size=n),\n})\n\n# base salary with department effects + noise\ndept_effect = df[\"department\"].map({\"Sales\": 8000, \"Ops\": 5000, \"R&D\": 11000})\ndf[\"salary_eur\"] = (35000 + dept_effect + 250 * df[\"age\"] + rng.normal(0, 6000, size=n)).round(0)\n\n# Inject a few missing values (common in real data)\nmissing_idx = rng.choice(df.index, size=8, replace=False)\ndf.loc[missing_idx[:4], \"salary_eur\"] = np.nan\ndf.loc[missing_idx[4:], \"remote_days_per_week\"] = np.nan\n\ndf.head()\n\n\n\n\n\n\n\n\nage\ndepartment\nremote_days_per_week\nsalary_eur\n\n\n\n\n0\n22\nR&D\n3.0\n54138.0\n\n\n1\n55\nOps\n4.0\n56895.0\n\n\n2\n49\nSales\n4.0\n56908.0\n\n\n3\n39\nR&D\n0.0\n47273.0\n\n\n4\n38\nR&D\n4.0\n41639.0"
+    "text": "Explore data sets by using appropriate descriptive and visual techniques in Python:\n\nInspecting the structure of a dataset (variables, types, conversion)\nDescriptive statistics\nVisualizations (maybe even interactive?)\n\nTBD: include data preparation and data quality considerations?\nThis text will appear across all versions of the document.\nimport numpy as np\nimport pandas as pd\n\nrng = np.random.default_rng(42)\n\nn = 200\ndf = pd.DataFrame({\n    \"age\": rng.integers(18, 66, size=n),\n    \"department\": rng.choice([\"Sales\", \"Ops\", \"R&D\"], size=n, p=[0.35, 0.40, 0.25]),\n    \"remote_days_per_week\": rng.integers(0, 6, size=n),\n})\n\n# base salary with department effects + noise\ndept_effect = df[\"department\"].map({\"Sales\": 8000, \"Ops\": 5000, \"R&D\": 11000})\ndf[\"salary_eur\"] = (35000 + dept_effect + 250 * df[\"age\"] + rng.normal(0, 6000, size=n)).round(0)\n\n# Inject a few missing values (common in real data)\nmissing_idx = rng.choice(df.index, size=8, replace=False)\ndf.loc[missing_idx[:4], \"salary_eur\"] = np.nan\ndf.loc[missing_idx[4:], \"remote_days_per_week\"] = np.nan\n\ndf.head()\n\n\n\n\n\n\n\n\nage\ndepartment\nremote_days_per_week\nsalary_eur\n\n\n\n\n0\n22\nR&D\n3.0\n54138.0\n\n\n1\n55\nOps\n4.0\n56895.0\n\n\n2\n49\nSales\n4.0\n56908.0\n\n\n3\n39\nR&D\n0.0\n47273.0\n\n\n4\n38\nR&D\n4.0\n41639.0"
   },
   {
     "objectID": "exercises/exercise_2.html#tasks",
@@ -1202,6 +1272,13 @@
     "title": "Exercise 2: Structuring and preparing data",
     "section": "Solution",
     "text": "Solution\n\n1) Inspect the data\n\ndf.info()\n\n&lt;class 'pandas.DataFrame'&gt;\nRangeIndex: 200 entries, 0 to 199\nData columns (total 4 columns):\n #   Column                Non-Null Count  Dtype  \n---  ------                --------------  -----  \n 0   age                   200 non-null    int64  \n 1   department            200 non-null    str    \n 2   remote_days_per_week  196 non-null    float64\n 3   salary_eur            196 non-null    float64\ndtypes: float64(2), int64(1), str(1)\nmemory usage: 6.4 KB\n\n\n\n\n2) Overall descriptive statistics\n\ndesc = df.describe()\ndesc\n\n\n\n\n\n\n\n\nage\nremote_days_per_week\nsalary_eur\n\n\n\n\ncount\n200.000000\n196.000000\n196.000000\n\n\nmean\n41.945000\n2.602041\n52964.061224\n\n\nstd\n13.193267\n1.674789\n7151.644642\n\n\nmin\n18.000000\n0.000000\n35463.000000\n\n\n25%\n31.000000\n1.000000\n48173.750000\n\n\n50%\n42.000000\n3.000000\n52869.000000\n\n\n75%\n54.000000\n4.000000\n57796.500000\n\n\nmax\n65.000000\n5.000000\n72956.000000\n\n\n\n\n\n\n\n\nsalary_mean = df[\"salary_eur\"].mean()      # skips NaN by default\nsalary_std  = df[\"salary_eur\"].std()\nage_min     = df[\"age\"].min()\nage_max     = df[\"age\"].max()\n\nsalary_mean, salary_std, age_min, age_max\n\n(np.float64(52964.06122448979),\n np.float64(7151.644641857691),\n np.int64(18),\n np.int64(65))\n\n\n\n\n3) Group-wise descriptive statistics\n\nsalary_by_dept = df.groupby(\"department\")[\"salary_eur\"].agg([\"mean\", \"median\", \"count\"])\nsalary_by_dept\n\n\n\n\n\n\n\n\nmean\nmedian\ncount\n\n\ndepartment\n\n\n\n\n\n\n\nOps\n50173.200000\n50136.0\n70\n\n\nR&D\n55501.076923\n55519.5\n52\n\n\nSales\n53821.297297\n54310.5\n74\n\n\n\n\n\n\n\n\nremote_by_dept = df.groupby(\"department\")[\"remote_days_per_week\"].mean()  # skips NaN\nremote_by_dept\n\ndepartment\nOps      2.705882\nR&D      2.450980\nSales    2.610390\nName: remote_days_per_week, dtype: float64\n\n\n\n\n4) Data-quality check\n\nrows_with_any_missing = df.isna().any(axis=1).sum()\nrows_with_any_missing\n\nnp.int64(8)\n\n\nInterpretation (example):\n\ncount in the grouped salary table shows how many non-missing salary observations exist per department.\nGroup means ignore missing values unless you explicitly change that behavior."
+  },
+  {
+    "objectID": "exercises/exercise_2.html#exam-prep",
+    "href": "exercises/exercise_2.html#exam-prep",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
   },
   {
     "objectID": "index.html",
@@ -2048,7 +2125,7 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nDescribe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python.\nExplain the role of exploratory data analysis in business decision-making."
+    "text": "Learning objectives\n\n\nDescribe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python (exercise).\nExplain the role of exploratory data analysis in business decision-making."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#table-of-contents",
