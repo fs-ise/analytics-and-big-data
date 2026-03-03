@@ -6,12 +6,108 @@ title: "Exercise 3: Analytical data architecture"
 Design fact/dimension schemata from business questions and operational data.
 :::
 
+<!--
 ::: callout-note
+See /home/gerit/workspace/projects/abd/nextcloud/Material/ABD/exercises/Solutions_DW-Modelling.pdf
 TODO: existing exercise sheet?
 https://github.com/ShantanilBagchi/DataCamp/blob/master/SQL%20Courses/Database%20Design/Solutions.md
 https://gitlab.ost.ch/db/datana/-/blob/master/Uebungen/02_DW_OLAP/README.adoc
+:::
+-->
 
-Use Mermaid for illustration?
+## Part 1
+
+An online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales.
+The relevant part of the operational database consists of the following tables:
+
+**CUSTOMER** (ID, name, address, telephone, birthday, gender)  
+**WINE** (ID, name, type, year, bottle_price, class)  
+**CLASS** (ID, name, region)  
+**TIME** (timestamp, date, year)  
+**ORDER** (customer, wine, time, bottles)  
+
+Create the star schema for the data warehouse.
+
+:::{.sol}
+
+## Solution
+
+![](../images/schema_solution_1.png){width=100}
+
+:::
+
+
+## Part 1a
+
+An online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales.
+The relevant part of the operational database consists of the following tables:
+
+CUSTOMER (ID, name, address, telephone, birthday, gender)
+WINE (ID, name, type, year, bottle_price, purchase_price, class)
+CLASS (ID, name, region)
+TIME (timestamp, date, year)
+ORDER (customer, wine, time, bottles)
+
+Create the star schema for the data warehouse.
+
+
+:::{.sol}
+
+## Solution
+
+TODO
+
+:::
+
+## Part 2
+
+A restaurant chain wants to build a management information system.
+The application system architecture is to be aligned with the data warehouse concept.
+An OLAP system is chosen for report generation.
+The company maintains various restaurants, which can be differentiated by region and by renovation status.
+The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status.
+The restaurant Nordblick is also located in the North region, but its renovation status is Old.
+The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status.
+The menu items of the restaurants are divided into the classes "Starters", "Main courses", "Desserts", "Beverages" and "Other".
+Time-based analyses are to enable evaluations by days of the week, weeks, months and years.
+Simple contribution margin calculations for restaurants, services and days are to be supported.
+The contribution margin is mathematically calculated from sales minus costs.
+
+Create the logical data warehouse schema!
+
+
+:::{.sol}
+
+## Solution
+
+TODO
+
+:::
+
+
+## Part 3
+
+As an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.
+Flowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France.
+Product categories include cut flowers, garden flowers and bridal jewelry.
+Within garden flowers, the rose family includes the genera roses and wild roses.
+Products in the rose genus include thornless roses and roses with thorns.
+The company distinguishes between corporate and private customers.
+Data about the place of residence of the customers is available.
+The DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.
+The key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.
+Employees have been working in the different branches of the company for different periods of time.
+The DWH should also enable headcount analyses.
+The key figure required for this is the headcount.
+
+Create the logical data warehouse schema!
+
+:::{.sol}
+
+## Solution
+
+TODO
+
 :::
 
 ## Exam prep

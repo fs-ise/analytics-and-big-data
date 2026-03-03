@@ -1,0 +1,38 @@
+```mermaid
+erDiagram
+
+    CUSTOMER {
+        int ID
+        string name
+        int age
+        string gender
+        string region
+    }
+
+    WINE {
+        int ID
+        string name
+        string type
+        int year
+        string class
+        string region
+    }
+
+    TIME {
+        datetime timestamp
+        date date
+        int year
+    }
+
+    SALES {
+        int customer_id
+        int wine_id
+        datetime time_id
+        int units_sold
+        float turnover
+    }
+
+    CUSTOMER ||--o{ SALES : purchases
+    WINE     ||--o{ SALES : includes
+    TIME     ||--o{ SALES : occurs_at
+```
