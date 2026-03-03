@@ -2,8 +2,13 @@
 title: "Exercise 6: Machine learning I"
 ---
 
+
+::: {.learning-objectives}
+Implement a machine learning model in Python, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.
+:::
+
 ::: callout-note
-TODO
+This should be "as simple as possible"
 :::
 
 https://github.com/justmarkham/scikit-learn-videos
@@ -26,3 +31,7 @@ Highlight:
 - Consistent API (`fit`, `predict`, `score`)
 - Use of `Pipeline`
 - Keeping code **structured and reproducible**
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

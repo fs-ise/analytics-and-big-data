@@ -1,7 +1,19 @@
 ---
-title: "Exercise 3: Exploratory data analysis"
+title: "Exercise 3: Analytical data architecture"
 ---
 
-::: callout-note
-TODO
+::: {.learning-objectives}
+Design fact/dimension schemata from business questions and operational data.
 :::
+
+::: callout-note
+TODO: existing exercise sheet?
+https://github.com/ShantanilBagchi/DataCamp/blob/master/SQL%20Courses/Database%20Design/Solutions.md
+https://gitlab.ost.ch/db/datana/-/blob/master/Uebungen/02_DW_OLAP/README.adoc
+
+Use Mermaid for illustration?
+:::
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

@@ -1,10 +1,26 @@
 ---
-title: "Exercise 1: Foundations of data analytics"
+title: "Exercise 1: The rise of analytics"
 ---
 
+::: {.learning-objectives}
+Explore the Python and Jupyter analytics ecosystem:
+
+- Start Jupyter in a VM (GitHub Codespace)
+- Install packages (pandas / !pip install.. and requirements.txt)
+- Write a first notebook
+:::
+
 ::: {.callout-note title="TODO"}
-TODO: test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)
-run individual lines with shift+ENTER ??
+- test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)
+- shortcuts: run individual lines with shift+ENTER ??, press a, b, x, ...
+- start with a simple example of an excel spreadsheet, then check an API
+- repeat python data types (dict, pandas, ...)
+- what is "in memory"? (`%whos`)
+- extend slide-deck?
+
+- writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is.
+
+- example notebook: financial API (code for the api call should be included)
 :::
 
 ## Preface
@@ -216,3 +232,8 @@ Most of them are aggregations such as `sum` and `mean`.
 
 **TODO : add a summary**
 :::
+
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

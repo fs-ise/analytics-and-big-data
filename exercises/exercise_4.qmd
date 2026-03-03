@@ -2,10 +2,25 @@
 title: "Exercise 4: Regression I"
 ---
 
-::: callout-note
-TODO
-see /home/gerit/workspace/projects/bda/nextcloud/Material/business-analytics-fau/4_Regression.ipynb (plus solutions)
+::: {.learning-objectives}
+Describe how regression models are implemented in Python.
 
-https://github.com/krishnaik06/Multiple-Linear-Regression/tree/master
-
+- Implement and interpret a regression model in Python using standard libraries.
+- Evaluate model performance using appropriate regression metrics.
+- Explain how regression modeling fits into the CRISP-DM process, including deployment of trained models.
 :::
+
+::: callout-note
+- start with one simple example
+
+TBD: include exploration of a dataset on kaggle
+follow CRISP-DM to design notebooks (groups, present to the class)
+At the end: use joblib to save and load models (to make a prediction) - illustrating the deployment phase of CRISP-DM
+
+- see /home/gerit/workspace/projects/bda/nextcloud/Material/business-analytics-fau/4_Regression.ipynb (plus solutions)
+- https://github.com/krishnaik06/Multiple-Linear-Regression/tree/master
+:::
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

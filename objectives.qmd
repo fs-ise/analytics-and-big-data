@@ -3,12 +3,18 @@ title: "Overview of learning objectives"
 format: html
 ---
 
+::: callout-note
+The following extracts the primary learning objectives from the lecture slides.
+Exercises typically mirror these objectives (covering practical implementation, illustrative cases, or specific exam prep/questions).
+Objectives that are covered in the exercises exclusively are highlighted.
+:::
+
+
 ```{python}
 #| echo: false
 #| output: asis
 #| warning: false
 #| message: false
-
 
 from pathlib import Path
 import re

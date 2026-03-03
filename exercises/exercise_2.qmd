@@ -2,13 +2,19 @@
 title: "Exercise 2: Structuring and preparing data"
 ---
 
-::: callout-note
-TODO
+::: {.learning-objectives}
+Explore data sets by using appropriate descriptive and visual techniques in Python:
+
+- Inspecting the structure of a dataset (variables, types, conversion)
+- Descriptive statistics
+- Visualizations (maybe even interactive?)
+
+TBD: include data preparation and data quality considerations?
 :::
 
-::: callout-note
+<!--
 You will create a small synthetic dataset, inspect it, and compute descriptive statistics with **pandas**.
-:::
+-->
 
 This text will appear across all versions of the document.
 
@@ -115,3 +121,8 @@ rows_with_any_missing
 - `count` in the grouped salary table shows how many non-missing salary observations exist per department.
 - Group means ignore missing values unless you explicitly change that behavior.
 :::
+
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

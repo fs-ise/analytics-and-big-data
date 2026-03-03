@@ -15,7 +15,7 @@ execute:
 
 ::: {.learning-objectives}
 - **Explain** the stages of a model-based analytics workflow using linear regression as an example.
-- **Interpret** linear regression models, including coefficient meaning, OLS estimation, and model evaluation (e.g., R², overfitting).
+- **Interpret** linear regression models, including coefficient meaning, OLS estimation, and model evaluation.
 - **Describe** how regression models are implemented in Python.
 :::
 

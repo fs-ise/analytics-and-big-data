@@ -1,7 +1,18 @@
 ---
-title: "Exercise 9: Analytics case examples"
+title: "Exercise 9: Big data II"
 ---
+
+::: {.learning-objectives}
+Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.
+Apply large language models or other scalable methods to extract, classify, or summarize unstructured data.
+:::
 
 ::: callout-note
 TODO
+
+TBD: API Keys?!
 :::
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

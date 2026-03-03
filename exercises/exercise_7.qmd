@@ -2,6 +2,16 @@
 title: "Exercise 7: Machine learning II"
 ---
 
+::: {.learning-objectives}
+- Implement and evaluate k-nearest neighbors, decision trees, and neural networks for a business prediction task.
+- Compare models with respect to accuracy, interpretability, and practical implications.
+- Recommend a suitable model for deployment.
+:::
+
 ::: callout-note
 TODO
 :::
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.

@@ -309,4 +309,5 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 ::: {.learning-objectives}
 - **Illustrate** how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.
 - **Distinguish** between descriptive, predictive, and prescriptive analytics.
+- **Explore** the Python and Jupyter analytics ecosystem (*exercise*).
 :::

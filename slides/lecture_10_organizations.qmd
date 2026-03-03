@@ -10,8 +10,11 @@ date: "2026-05-11"
 
 ::: {.learning-objectives}
 - **Explain** the strategic role of data analytics in data-driven organizations.
-- **Design** an end-to-end analytics solution aligned with a business problem and governance constraints.
 - **Discuss** the ethical and legal boundaries of data analytics in organizations.
 :::
+
+<!--
+- **Design** an end-to-end analytics solution aligned with a business problem and governance constraints.
+-->
 
 # TODO {data-stack-name="TODO"}

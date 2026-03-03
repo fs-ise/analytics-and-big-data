@@ -2,6 +2,17 @@
 title: "Exercise 5: Regression II"
 ---
 
-::: callout-note
-TODO
+::: {.learning-objectives}
+- Estimate and interpret a multiple regression model in Python.
+- Refine a regression model, assessing how additional predictors affect model fit.
+- Implement and evaluate a logistic regression model for a binary outcome.
 :::
+
+::: callout-note
+using forward and backward variable selection
+logistic regression: interpreting predicted probabilities and classification performance
+:::
+
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.
