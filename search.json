@@ -63,18 +63,18 @@
     "text": "Key Takeaways\n\nEDA helps you understand data before modeling it\nStart simple: univariate → multivariate → visual\nFocus on business questions, not just techniques\nVisualization is a core analytical skill, not just decoration"
   },
   {
-    "objectID": "notes/lecture_10_data_governance.html",
-    "href": "notes/lecture_10_data_governance.html",
-    "title": "Notes: Session 10: Governance of data analytics",
+    "objectID": "notes/lecture_6_machine_learning_1.html",
+    "href": "notes/lecture_6_machine_learning_1.html",
+    "title": "Notes: Session 6: Machine learning I",
     "section": "",
-    "text": "Note\n\n\n\nTODO"
+    "text": "Note\n\n\n\nNote: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)\nTODO: suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudo code”, “are there any errors (e.g., switched code blocks)?”)"
   },
   {
-    "objectID": "notes/lecture_0_orga.html",
-    "href": "notes/lecture_0_orga.html",
-    "title": "Notes: Orga",
+    "objectID": "notes/lecture_5_regression_2.html",
+    "href": "notes/lecture_5_regression_2.html",
+    "title": "Notes: Session 5: Regression II",
     "section": "",
-    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nI do not know everything. I make mistakes. …\nAbout you: - Prepare an example (humor/mistake?)\nchatgpt: tell a story of myself (for the beginning of lectures)\n- short bio\n- theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)\n\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role...\nAlso Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)\nwhy analytics matters: ## Takeaway Analytics is not just about data. It changes who wins, how decisions are made, and how organizations compete."
+    "text": "Note\n\n\n\nTODO\n\n\nGoal: Deepen linear regression and surface modeling tensions.\nYou are not just teaching “more regression.” You are teaching: How modeling goals shape methodological choices (or how they interact).\nClose with a framing slide: - Analytics is not one method. It is a toolbox shaped by goals. Then summarize: - Regression for understanding - Regression for prediction - Logistic regression as bridge to ML And preview: - Next: more complex machine learning models."
   },
   {
     "objectID": "notes/lecture_3_analytical_data_architecture.html",
@@ -161,8 +161,8 @@
     "text": "Explain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows."
   },
   {
-    "objectID": "objectives.html#governance-of-data-analytics",
-    "href": "objectives.html#governance-of-data-analytics",
+    "objectID": "objectives.html#analytics-in-organizations",
+    "href": "objectives.html#analytics-in-organizations",
     "title": "Overview of learning objectives",
     "section": "",
     "text": "Explain the strategic role of data analytics in data-driven organizations.\nDesign an end-to-end analytics solution aligned with a business problem and governance constraints.\nDiscuss the ethical and legal boundaries of data analytics in organizations."
@@ -329,277 +329,88 @@
     "text": "Summary\n\nRegression is a core example of a structured, model-based analytics process: from business question to data, modeling, evaluation, and potential deployment.\nLinear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.\nIn practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.\n\nNote: more on python in the exercises"
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#learning-objectives",
-    "href": "slides/lecture_6_machine_learning_1.html#learning-objectives",
+    "objectID": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
+    "href": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
+    "title": "Analytics & Big Data",
+    "section": "Prof. Dr. Gerit Wagner",
+    "text": "Prof. Dr. Gerit Wagner\n\n\nAcademic background\n\nUniversität Regensburg: Doctorate\nHEC Montréal: Postdoctoral Fellowship\nOtto-Friedrich-Universität Bamberg: Assistant Professor\nFrankfurt School of Finance & Management: Full Professor\n\nResearch interests\n\nOpen, agentic, and boundary-spanning work\nAI-supported knowledge synthesis\n\nTeaching interests\n\nAnalytics and big data\nProgramming and software engineering\nIT security\nDigital knowledge-intensive and platform-based work\nLiterature review methods"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#about-you",
+    "href": "slides/lecture_0_orga.html#about-you",
+    "title": "Analytics & Big Data",
+    "section": "About you",
+    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1. Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where would you have liked to be better prepared for a data-related task?\n\n\n\n2. Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3. What are your expectations for the course?"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
+    "href": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
+    "title": "Analytics & Big Data",
+    "section": "Analytics & Big Data in the curriculum",
+    "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#what-exactly-is-analytics",
+    "href": "slides/lecture_0_orga.html#what-exactly-is-analytics",
+    "title": "Analytics & Big Data",
+    "section": "What exactly is “analytics”?",
+    "text": "What exactly is “analytics”?\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
+    "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
+    "title": "Analytics & Big Data",
+    "section": "Why Analytics (and This Course) Matter",
+    "text": "Why Analytics (and This Course) Matter\n Finance — Quantitative Arbitrage at Princeton-Newport Partners\n\nEarly pioneer of applying the Black-Scholes option pricing model in real markets\nSystematic identification of mispriced options through mathematical arbitrage\nDemonstrated how financial models and data could generate consistent trading profits\n\n Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#course-architecture",
+    "href": "slides/lecture_0_orga.html#course-architecture",
+    "title": "Analytics & Big Data",
+    "section": "Course Architecture",
+    "text": "Course Architecture\n\n\n\n\n\n\n%%{init: {\n  \"theme\": \"base\",\n  \"themeVariables\": {\n    \"primaryColor\": \"#E8EEF7\",\n    \"primaryTextColor\": \"#1F2D3D\",\n    \"primaryBorderColor\": \"#3A506B\",\n    \"lineColor\": \"#3A506B\",\n    \"secondaryColor\": \"#F4F6FA\",\n    \"fontSize\": \"18px\",\n    \"fontFamily\": \"Helvetica, Arial, sans-serif\"\n  }\n}}%%\n\nflowchart LR\n\n  classDef foundation fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef stack fill:#F4F6FA,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef synthesis fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n\n  subgraph Right[\"&lt;b&gt;Synthesis&lt;/b&gt;\"]\n    direction TB\n    S[\"&lt;div align='center'&gt;&lt;b&gt;Integration and outlook&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  subgraph Stack[\"&lt;b&gt;Analytics capability stack&lt;/b&gt;\"]\n    direction LR\n    D[\"&lt;div align='center'&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;\"]\n    M[\"&lt;div align='center'&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;\"]\n    O[\"&lt;div align='center'&gt;&lt;b&gt;Organizational deployment&lt;/b&gt;&lt;br/&gt;Governance&lt;/div&gt;\"]\n    D --&gt; M --&gt; O\n  end\n\n  subgraph Left[\"&lt;b&gt;Introduction&lt;/b&gt;\"]\n    direction TB\n    F2[\"&lt;div align='center'&gt;&lt;b&gt;The rise of analytics&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  class F2 foundation;\n  class D,M,O stack;\n  class S synthesis;"
+  },
+  {
+    "objectID": "slides/lecture_0_orga.html#learning-objectives",
+    "href": "slides/lecture_0_orga.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
+    "text": "Learning objectives\nKnowledge\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#today",
-    "href": "slides/lecture_6_machine_learning_1.html#today",
+    "objectID": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
+    "href": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
     "title": "Analytics & Big Data",
-    "section": "Today",
-    "text": "Today\nCategories of ML: Supervised vs. Unsupervised (10 min)\n\nDefine both approaches\nConnect to what students already know:\n\n“Unsupervised → clustering” (covered in exploratory data analysis)\n\nEmphasize: focus of this lecture + next lecture is supervised learning\n\nTBD: ## Categories in Machine Learning"
+    "section": "What This Course Does Not Cover",
+    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#supervised-and-unsupervised-learning",
-    "href": "slides/lecture_6_machine_learning_1.html#supervised-and-unsupervised-learning",
+    "objectID": "slides/lecture_0_orga.html#course-logistics-1",
+    "href": "slides/lecture_0_orga.html#course-logistics-1",
     "title": "Analytics & Big Data",
-    "section": "Supervised and Unsupervised Learning",
-    "text": "Supervised and Unsupervised Learning\n\nBrief reminder: logistic regression from previous lecture\n\nWhat problem does it solve?\nWhy it is already a form of supervised machine learning\n\nMotivation for today:\n\nLogistic regression is powerful but limited (linear decision boundary)\nMany real-world problems require non-linear or more flexible models\nToday’s goal: understand the general ML workflow and explore other supervised ML methods\n\nNote/TBD: focus on supervised machine learning.\nTODO: mention focus on primarily (binary) classification tasks\nTODO: add a definition (and intorductory example)"
+    "section": "Course logistics",
+    "text": "Course logistics\nWorkload: 150h total (44h in class, remaining: self-study and group project)\nAssessment\n\nExam: 60 minutes, 60 points\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee overview in Canvas\n\nContact:\n\nEMail: g.wagner@fs.de\nOffice hours: booking page\n\nIndividual circumstances\nIf you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution."
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#statistics-vs.-machine-learning",
-    "href": "slides/lecture_6_machine_learning_1.html#statistics-vs.-machine-learning",
+    "objectID": "slides/lecture_0_orga.html#materials",
+    "href": "slides/lecture_0_orga.html#materials",
     "title": "Analytics & Big Data",
-    "section": "Statistics vs. Machine Learning",
-    "text": "Statistics vs. Machine Learning\n\nStatistics about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.\n\n\nMachine Learning (ML) aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works."
+    "section": "Materials",
+    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.7 \nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#statistical-regression-vs.-machine-learning-algorithms",
-    "href": "slides/lecture_6_machine_learning_1.html#statistical-regression-vs.-machine-learning-algorithms",
+    "objectID": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
+    "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
     "title": "Analytics & Big Data",
-    "section": "Statistical Regression vs. Machine Learning Algorithms",
-    "text": "Statistical Regression vs. Machine Learning Algorithms"
+    "section": "You may also be interested in …",
+    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: update thesis topics"
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#overfitting-example",
-    "href": "slides/lecture_6_machine_learning_1.html#overfitting-example",
+    "objectID": "slides/lecture_0_orga.html#references",
+    "href": "slides/lecture_0_orga.html#references",
     "title": "Analytics & Big Data",
-    "section": "Overfitting (example, …)",
-    "text": "Overfitting (example, …)\nTraditional Analytics Process\n\nNote: large ML models may create overfitting issues… -&gt; need for separate test set"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#generalization-problem",
-    "href": "slides/lecture_6_machine_learning_1.html#generalization-problem",
-    "title": "Analytics & Big Data",
-    "section": "Generalization problem",
-    "text": "Generalization problem\nState the generalization problem very clearly.\nAsk students for ideas"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#the-supervised-machine-learning-workflow",
-    "href": "slides/lecture_6_machine_learning_1.html#the-supervised-machine-learning-workflow",
-    "title": "Analytics & Big Data",
-    "section": "The Supervised Machine Learning Workflow",
-    "text": "The Supervised Machine Learning Workflow\nIntroduce the high-level pipeline (Modern Analytics Process)\n\n\n2.1 Labeled Data - Input features (X) and target labels (y) - Importance of data quality and representativeness\n2.2 Feature Engineering - Transformations, encoding, normalization - Why features matter more than the model itself\n2.3 Train–Test Split - Why we split data into training and testing sets - Preventing information leakage - Hold-out, cross-validation (brief mention)\n2.4 Model Training - Fit model on training data - Conceptual: “learning patterns/parameters”\n2.5 Evaluation on Test Data - Predict on unseen data - Establish generalization performance\n2.6 Applying the Model Beyond the Known Sample - Using the model in decision-making or prediction for future cases"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#overview-of-supervised-ml-algorithms",
-    "href": "slides/lecture_6_machine_learning_1.html#overview-of-supervised-ml-algorithms",
-    "title": "Analytics & Big Data",
-    "section": "Overview of Supervised ML Algorithms",
-    "text": "Overview of Supervised ML Algorithms\nWhich Method should I choose?\nThe choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.\nIn the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.\nFor this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.\n\nLogistic Regression\n\nLinear boundary, interpretable, limited for non-linear patterns\n\nSupport Vector Machines (SVM)\n\nMargin maximization\nKernel trick for non-linear boundaries\n\nDecision Trees\n\nRecursive splitting, intuitive but prone to overfitting\n\nRandom Forests / Ensembles (optional brief preview)\n\nReduce overfitting by combining trees\n\nNeural Networks\n\nLayers transforming data\nExtremely flexible but data-hungry and less interpretable\n\n\nNote: Emphasize the why behind different models: Different inductive biases, different levels of flexibility, different data needs."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#linear-world",
-    "href": "slides/lecture_6_machine_learning_1.html#linear-world",
-    "title": "Analytics & Big Data",
-    "section": "Linear World",
-    "text": "Linear World"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#quadratic-world",
-    "href": "slides/lecture_6_machine_learning_1.html#quadratic-world",
-    "title": "Analytics & Big Data",
-    "section": "Quadratic World",
-    "text": "Quadratic World"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-1",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-1",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 1)",
-    "text": "Nonlinear World (Type 1)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-2",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-2",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 2)",
-    "text": "Nonlinear World (Type 2)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-3",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-3",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 3)",
-    "text": "Nonlinear World (Type 3)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-4",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-4",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 4)",
-    "text": "Nonlinear World (Type 4)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#feature-engineering",
-    "href": "slides/lecture_6_machine_learning_1.html#feature-engineering",
-    "title": "Analytics & Big Data",
-    "section": "Feature Engineering",
-    "text": "Feature Engineering\n\nFeature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.\n\n\nA feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:\n\n\n\nFeatures can be of two major types. Raw features are obtained directly from the dataset with no extra data manipulation or engineering. Derived features are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.\n\n\n\n— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#variants-of-feature-engineering",
-    "href": "slides/lecture_6_machine_learning_1.html#variants-of-feature-engineering",
-    "title": "Analytics & Big Data",
-    "section": "Variants of Feature Engineering",
-    "text": "Variants of Feature Engineering\n1. Transformation\n\nconvert features (e.g., birth date → age)\nbuild lag structures (e.g., time-lags)\nnormalization / standardization / scaling\n\n2. Type Conversion\n\nif numerical type is needed, transform categorical into numerical data using dummy features\nif categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)\n\n3. Feature Combination\n\ncreate interaction features (e.g., school_score = num_schools × median_school with num_schools = number of schools within 5 miles of a property and median_school = median quality score of those schools)\ncombine categories (e.g., when there are very few observations or too many dummy features)\n\n4. Feature Composition\n\nbuild ratios (e.g., returns from prices)\nPrincipal Component Analysis (Dimensionality Reduction)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#scaling",
-    "href": "slides/lecture_6_machine_learning_1.html#scaling",
-    "title": "Analytics & Big Data",
-    "section": "Scaling",
-    "text": "Scaling\n\nMost datasets contain features highly varying in magnitudes, units and range.\n\n\nMost machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.\n\n\nTo overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#type-conversion-encoding",
-    "href": "slides/lecture_6_machine_learning_1.html#type-conversion-encoding",
-    "title": "Analytics & Big Data",
-    "section": "Type Conversion (Encoding)",
-    "text": "Type Conversion (Encoding)\n\nMany machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:\n\n\nLabel encoding refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g. young → 1, middle_age → 2, old → 3. This only works in specific situations where you have somewhat continuous-like data, e.g. if the categorical feature is ordinal.\n\n\nOne hot encoding is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g.\n\n\n\nIt is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap)."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-i",
-    "href": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-i",
-    "title": "Analytics & Big Data",
-    "section": "Example of Feature Engineering (I)",
-    "text": "Example of Feature Engineering (I)\n\nData sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data “flight date time vs status”. Then, given the date-time data, we have to predict the status of the flight.\n\n\nBut the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature “Hour_Of_Day”. Using the “Hour_Of_Day” feature, the machine will learn better as this feature is directly related to the status of the flight.\n\n\n\n\n— Source: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-ii",
-    "href": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-ii",
-    "title": "Analytics & Big Data",
-    "section": "Example of Feature Engineering (II)",
-    "text": "Example of Feature Engineering (II)\n\nSuppose we are given the latitude, longitude and other data with the objective to predict the target feature “Price_Of_House”. Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.\n\n\nIn other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-iii",
-    "href": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-iii",
-    "title": "Analytics & Big Data",
-    "section": "Example of Feature Engineering (III)",
-    "text": "Example of Feature Engineering (III)\n\nSuppose we are given a feature “Marital_Status” and other data with the objective to classify customers into “Creditworthy” and “Not_Creditworthy”. In the data set the martial status has many different values, for example:\n\n\nsingle living alone\nsingle living with his parents\nmarried living together\nmarried living separately\ndivorced\ndivorced but living together\nregistered partnerships\nliving in marriage-like community\nwidowed\n…\n\n\nTo avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.\n\n\nIf there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single “other” class."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
-    "href": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
-    "title": "Analytics & Big Data",
-    "section": "Partitioning the Data",
-    "text": "Partitioning the Data\n\nThe partitioning of the data in Training and Test Data has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.\n\n\nThe partitioning of the data in training and test data can be carried out in the following ways:\n\n\nBy random/stratified/… sampling (problem with the repeatability)\naccording to a list\naccording to rules (e.g. the first/last 50 records or every twelfth)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
-    "href": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
-    "title": "Analytics & Big Data",
-    "section": "Applying Training and Test Data",
-    "text": "Applying Training and Test Data\n\n\n\n— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning",
-    "href": "slides/lecture_6_machine_learning_1.html#partitioning",
-    "title": "Analytics & Big Data",
-    "section": "Partitioning",
-    "text": "Partitioning"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#performance-metrics-model-behavior-15-min",
-    "href": "slides/lecture_6_machine_learning_1.html#performance-metrics-model-behavior-15-min",
-    "title": "Analytics & Big Data",
-    "section": "3. Performance Metrics & Model Behavior (15 min)",
-    "text": "3. Performance Metrics & Model Behavior (15 min)\nIntroduce classification performance evaluation:\n\nConfusion matrix (TP, TN, FP, FN)\nAccuracy, Precision, Recall\nF1 Score and when it is useful\nROC/AUC (optional, light touch)\nBias–Variance tradeoff (intro)\nOverfitting vs. underfitting\n\nHigh-level intuition: complexity, flexibility, noise-fitting\n\n\nTODO: cover cases where some error types are more costly than others"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
-    "href": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
-    "title": "Analytics & Big Data",
-    "section": "Best Fit vs. Best Generalization",
-    "text": "Best Fit vs. Best Generalization"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
-    "href": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
-    "title": "Analytics & Big Data",
-    "section": "Over- and Underfitting",
-    "text": "Over- and Underfitting\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
-    "href": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
-    "title": "Analytics & Big Data",
-    "section": "The Bias-Variance Tradeoff",
-    "text": "The Bias-Variance Tradeoff\nThe prediction error is influenced by three components:\n\nError = Bias + Variance + Noise\n\n\nBias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.\nVariance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.\nTypically, there is a tradeoff between bias and variance.\nNoise is everything that arises from random variations in the data. It cannot be controlled."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#summary",
-    "href": "slides/lecture_6_machine_learning_1.html#summary",
-    "title": "Analytics & Big Data",
-    "section": "Summary",
-    "text": "Summary"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#learning-objectives",
-    "href": "slides/lecture_5_regression_2.html#learning-objectives",
-    "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#mulitple-regression",
-    "href": "slides/lecture_5_regression_2.html#mulitple-regression",
-    "title": "Analytics & Big Data",
-    "section": "Mulitple regression",
-    "text": "Mulitple regression\nexample + ceteris paribus"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#assumptions",
-    "href": "slides/lecture_5_regression_2.html#assumptions",
-    "title": "Analytics & Big Data",
-    "section": "Assumptions",
-    "text": "Assumptions\nlist, illustrate how transformations could model non-linear relationships\nTransition: we may accept some violations (e.g., multicollinearity) when we are interested in prediction (statisticians and economists: headache when the goal is to make inferences on individual effects)"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#correlation-vs-causality-explanation-vs-prediction",
-    "href": "slides/lecture_5_regression_2.html#correlation-vs-causality-explanation-vs-prediction",
-    "title": "Analytics & Big Data",
-    "section": "Correlation vs causality / explanation vs prediction",
-    "text": "Correlation vs causality / explanation vs prediction\nExample: more garages → higher price?"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#illustration",
-    "href": "slides/lecture_5_regression_2.html#illustration",
-    "title": "Analytics & Big Data",
-    "section": "illustration",
-    "text": "illustration\nbusiness goal: predict defaults or quick-sales (binary outcome; need to select an appropriate model)"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#logistic-regression",
-    "href": "slides/lecture_5_regression_2.html#logistic-regression",
-    "title": "Analytics & Big Data",
-    "section": "logistic regression…",
-    "text": "logistic regression…"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#classification-and-evaluation-metrics-confusion-matrix",
-    "href": "slides/lecture_5_regression_2.html#classification-and-evaluation-metrics-confusion-matrix",
-    "title": "Analytics & Big Data",
-    "section": "classification and evaluation metrics (confusion matrix…)",
-    "text": "classification and evaluation metrics (confusion matrix…)"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#similarity-to-machine-learning",
-    "href": "slides/lecture_5_regression_2.html#similarity-to-machine-learning",
-    "title": "Analytics & Big Data",
-    "section": "similarity to machine learning",
-    "text": "similarity to machine learning"
-  },
-  {
-    "objectID": "slides/lecture_5_regression_2.html#summary",
-    "href": "slides/lecture_5_regression_2.html#summary",
-    "title": "Analytics & Big Data",
-    "section": "Summary",
-    "text": "Summary\n\nTODO"
+    "section": "References",
+    "text": "References\n\n\n\n\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\n\n\nChen, H., Chiang, R. H. L., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly, 36(4), 1165–1188. https://www.jstor.org/stable/41703503\n\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98–107. https://cs.brown.edu/courses/cs295-11/competing.pdf\n\n\nMartı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048–3061. https://ieeexplore.ieee.org/abstract/document/8943998\n\n\nRaschka, S. (2015). Python machine learning. Packt Publishing. https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881\n\n\nSchutt, R., & O’Neil, C. (2014). Doing data science. O’Reilly Media. https://www.oreilly.com/library/view/doing-data-science/9781449363871/\n\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: A managerial perspective. Pearson. https://elibrary.pearson.de/book/99.150005/9781292727530\n\n\nVaisman, A., & Zimányi, E. (2016). Data warehouse systems: Design and implementation. Springer. https://doi.org/10.1007/978-3-662-65167-4\n\n\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626–639. https://www.sciencedirect.com/science/article/pii/S0377221717301455"
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#navigation",
@@ -1404,7 +1215,7 @@
     "href": "index.html#sessions",
     "title": "Analytics & Big Data",
     "section": "Sessions",
-    "text": "Sessions\n\n\nIntroduction\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 0\n\n\nCourse logistics\n\n\nslides, notes\n\n\n\n\n\n\n\n\n\n2026-03-23\n\n\nSession 1\n\n\nThe rise of analytics\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nData foundations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 2\n\n\nExploratory data analysis\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-03-30\n\n\nSession 3\n\n\nAnalytical data architecture\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nAnalytical models\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-30\n\n\nSession 4\n\n\nRegression I\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-04-14\n\n\nSession 5\n\n\nRegression II\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-04-20\n\n\nSession 6\n\n\nMachine learning I\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-04-20\n\n\nSession 7\n\n\nMachine learning II\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-05-04\n\n\nSession 8\n\n\nBig data I\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-05-04\n\n\nSession 9\n\n\nBig data II\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nDeployment in organizations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 10\n\n\nGovernance of data analytics\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nSynthesis\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 11\n\n\nIntegration and exam preparation\n\n\nslides, notes\n\n\n\nassignment, solution"
+    "text": "Sessions\n\n\nIntroduction\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 0\n\n\nCourse logistics\n\n\nslides, notes\n\n\n\n\n\n\n\n\n\n2026-03-23\n\n\nSession 1\n\n\nThe rise of analytics\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nData foundations\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-23\n\n\nSession 2\n\n\nExploratory data analysis\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-03-30\n\n\nSession 3\n\n\nAnalytical data architecture\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nAnalytical models\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-03-30\n\n\nSession 4\n\n\nRegression I\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-04-14\n\n\nSession 5\n\n\nRegression II\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-04-20\n\n\nSession 6\n\n\nMachine learning I\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-04-20\n\n\nSession 7\n\n\nMachine learning II\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-05-04\n\n\nSession 8\n\n\nBig data I\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n2026-05-04\n\n\nSession 9\n\n\nBig data II\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nDeployment\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 10\n\n\nAnalytics in organizations\n\n\nslides, notes\n\n\n\nassignment, solution\n\n\n\n\n\n\n\nSynthesis\n\n\n\n\nDate\n\n\nSession\n\n\nTopic\n\n\nLecture\n\n\nExercise\n\n\n\n\n\n\n2026-05-11\n\n\nSession 11\n\n\nIntegration and exam preparation\n\n\nslides, notes\n\n\n\nassignment, solution"
   },
   {
     "objectID": "preparation.html",
@@ -1960,88 +1771,277 @@
     "text": "Summary\nTODO"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
-    "href": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
-    "title": "Analytics & Big Data",
-    "section": "Prof. Dr. Gerit Wagner",
-    "text": "Prof. Dr. Gerit Wagner\n\n\nAcademic background\n\nUniversität Regensburg: Doctorate\nHEC Montréal: Postdoctoral Fellowship\nOtto-Friedrich-Universität Bamberg: Assistant Professor\nFrankfurt School of Finance & Management: Full Professor\n\nResearch interests\n\nOpen, agentic, and boundary-spanning work\nAI-supported knowledge synthesis\n\nTeaching interests\n\nAnalytics and big data\nProgramming and software engineering\nIT security\nDigital knowledge-intensive and platform-based work\nLiterature review methods"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#about-you",
-    "href": "slides/lecture_0_orga.html#about-you",
-    "title": "Analytics & Big Data",
-    "section": "About you",
-    "text": "About you\nPlease answer the three questions. Then choose one optional area where you would like to share a bit more.\n\n1. Have you worked in an industry role or completed an internship with an analytics focus?\nOptional:\n\nWhat was something that felt very useful in your analytics work?\nOr where would you have liked to be better prepared for a data-related task?\n\n\n\n2. Which analytics tools or programming languages have you used?\nOptional:\n\nWhat was a particularly interesting analytics challenge you encountered?\nOr a tool you found especially powerful or surprising?\n\n\n\n3. What are your expectations for the course?"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
-    "href": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
-    "title": "Analytics & Big Data",
-    "section": "Analytics & Big Data in the curriculum",
-    "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#what-exactly-is-analytics",
-    "href": "slides/lecture_0_orga.html#what-exactly-is-analytics",
-    "title": "Analytics & Big Data",
-    "section": "What exactly is “analytics”?",
-    "text": "What exactly is “analytics”?\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
-    "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
-    "title": "Analytics & Big Data",
-    "section": "Why Analytics (and This Course) Matter",
-    "text": "Why Analytics (and This Course) Matter\n Finance — Quantitative Arbitrage at Princeton-Newport Partners\n\nEarly pioneer of applying the Black-Scholes option pricing model in real markets\nSystematic identification of mispriced options through mathematical arbitrage\nDemonstrated how financial models and data could generate consistent trading profits\n\n Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#course-architecture",
-    "href": "slides/lecture_0_orga.html#course-architecture",
-    "title": "Analytics & Big Data",
-    "section": "Course Architecture",
-    "text": "Course Architecture\n\n\n\n\n\n\n%%{init: {\n  \"theme\": \"base\",\n  \"themeVariables\": {\n    \"primaryColor\": \"#E8EEF7\",\n    \"primaryTextColor\": \"#1F2D3D\",\n    \"primaryBorderColor\": \"#3A506B\",\n    \"lineColor\": \"#3A506B\",\n    \"secondaryColor\": \"#F4F6FA\",\n    \"fontSize\": \"18px\",\n    \"fontFamily\": \"Helvetica, Arial, sans-serif\"\n  }\n}}%%\n\nflowchart LR\n\n  classDef foundation fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef stack fill:#F4F6FA,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef synthesis fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n\n  subgraph Right[\"&lt;b&gt;Synthesis&lt;/b&gt;\"]\n    direction TB\n    S[\"&lt;div align='center'&gt;&lt;b&gt;Integration and outlook&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  subgraph Stack[\"&lt;b&gt;Analytics capability stack&lt;/b&gt;\"]\n    direction LR\n    D[\"&lt;div align='center'&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;\"]\n    M[\"&lt;div align='center'&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;\"]\n    O[\"&lt;div align='center'&gt;&lt;b&gt;Organizational deployment&lt;/b&gt;&lt;br/&gt;Governance&lt;/div&gt;\"]\n    D --&gt; M --&gt; O\n  end\n\n  subgraph Left[\"&lt;b&gt;Introduction&lt;/b&gt;\"]\n    direction TB\n    F2[\"&lt;div align='center'&gt;&lt;b&gt;The rise of analytics&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  class F2 foundation;\n  class D,M,O stack;\n  class S synthesis;"
-  },
-  {
-    "objectID": "slides/lecture_0_orga.html#learning-objectives",
-    "href": "slides/lecture_0_orga.html#learning-objectives",
+    "objectID": "slides/lecture_5_regression_2.html#learning-objectives",
+    "href": "slides/lecture_5_regression_2.html#learning-objectives",
     "title": "Analytics & Big Data",
     "section": "Learning objectives",
-    "text": "Learning objectives\nKnowledge\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
+    "text": "Learning objectives\n\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
   },
   {
-    "objectID": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
-    "href": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
+    "objectID": "slides/lecture_5_regression_2.html#mulitple-regression",
+    "href": "slides/lecture_5_regression_2.html#mulitple-regression",
     "title": "Analytics & Big Data",
-    "section": "What This Course Does Not Cover",
-    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
+    "section": "Mulitple regression",
+    "text": "Mulitple regression\nexample + ceteris paribus"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#course-logistics-1",
-    "href": "slides/lecture_0_orga.html#course-logistics-1",
+    "objectID": "slides/lecture_5_regression_2.html#assumptions",
+    "href": "slides/lecture_5_regression_2.html#assumptions",
     "title": "Analytics & Big Data",
-    "section": "Course logistics",
-    "text": "Course logistics\nWorkload: 150h total (44h in class, remaining: self-study and group project)\nAssessment\n\nExam: 60 minutes, 60 points\nGroup project: written paper (40 pages), 60 points (end of module)\n\nSessions:\n\nSee overview in Canvas\n\nContact:\n\nEMail: g.wagner@fs.de\nOffice hours: booking page\n\nIndividual circumstances\nIf you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution."
+    "section": "Assumptions",
+    "text": "Assumptions\nlist, illustrate how transformations could model non-linear relationships\nTransition: we may accept some violations (e.g., multicollinearity) when we are interested in prediction (statisticians and economists: headache when the goal is to make inferences on individual effects)"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#materials",
-    "href": "slides/lecture_0_orga.html#materials",
+    "objectID": "slides/lecture_5_regression_2.html#correlation-vs-causality-explanation-vs-prediction",
+    "href": "slides/lecture_5_regression_2.html#correlation-vs-causality-explanation-vs-prediction",
     "title": "Analytics & Big Data",
-    "section": "Materials",
-    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.7 \nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
+    "section": "Correlation vs causality / explanation vs prediction",
+    "text": "Correlation vs causality / explanation vs prediction\nExample: more garages → higher price?"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
-    "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
+    "objectID": "slides/lecture_5_regression_2.html#illustration",
+    "href": "slides/lecture_5_regression_2.html#illustration",
     "title": "Analytics & Big Data",
-    "section": "You may also be interested in …",
-    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: update thesis topics"
+    "section": "illustration",
+    "text": "illustration\nbusiness goal: predict defaults or quick-sales (binary outcome; need to select an appropriate model)"
   },
   {
-    "objectID": "slides/lecture_0_orga.html#references",
-    "href": "slides/lecture_0_orga.html#references",
+    "objectID": "slides/lecture_5_regression_2.html#logistic-regression",
+    "href": "slides/lecture_5_regression_2.html#logistic-regression",
     "title": "Analytics & Big Data",
-    "section": "References",
-    "text": "References\n\n\n\n\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\n\n\nChen, H., Chiang, R. H. L., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly, 36(4), 1165–1188. https://www.jstor.org/stable/41703503\n\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98–107. https://cs.brown.edu/courses/cs295-11/competing.pdf\n\n\nMartı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048–3061. https://ieeexplore.ieee.org/abstract/document/8943998\n\n\nRaschka, S. (2015). Python machine learning. Packt Publishing. https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881\n\n\nSchutt, R., & O’Neil, C. (2014). Doing data science. O’Reilly Media. https://www.oreilly.com/library/view/doing-data-science/9781449363871/\n\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: A managerial perspective. Pearson. https://elibrary.pearson.de/book/99.150005/9781292727530\n\n\nVaisman, A., & Zimányi, E. (2016). Data warehouse systems: Design and implementation. Springer. https://doi.org/10.1007/978-3-662-65167-4\n\n\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626–639. https://www.sciencedirect.com/science/article/pii/S0377221717301455"
+    "section": "logistic regression…",
+    "text": "logistic regression…"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#classification-and-evaluation-metrics-confusion-matrix",
+    "href": "slides/lecture_5_regression_2.html#classification-and-evaluation-metrics-confusion-matrix",
+    "title": "Analytics & Big Data",
+    "section": "classification and evaluation metrics (confusion matrix…)",
+    "text": "classification and evaluation metrics (confusion matrix…)"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#similarity-to-machine-learning",
+    "href": "slides/lecture_5_regression_2.html#similarity-to-machine-learning",
+    "title": "Analytics & Big Data",
+    "section": "similarity to machine learning",
+    "text": "similarity to machine learning"
+  },
+  {
+    "objectID": "slides/lecture_5_regression_2.html#summary",
+    "href": "slides/lecture_5_regression_2.html#summary",
+    "title": "Analytics & Big Data",
+    "section": "Summary",
+    "text": "Summary\n\nTODO"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#learning-objectives",
+    "href": "slides/lecture_6_machine_learning_1.html#learning-objectives",
+    "title": "Analytics & Big Data",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#today",
+    "href": "slides/lecture_6_machine_learning_1.html#today",
+    "title": "Analytics & Big Data",
+    "section": "Today",
+    "text": "Today\nCategories of ML: Supervised vs. Unsupervised (10 min)\n\nDefine both approaches\nConnect to what students already know:\n\n“Unsupervised → clustering” (covered in exploratory data analysis)\n\nEmphasize: focus of this lecture + next lecture is supervised learning\n\nTBD: ## Categories in Machine Learning"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#supervised-and-unsupervised-learning",
+    "href": "slides/lecture_6_machine_learning_1.html#supervised-and-unsupervised-learning",
+    "title": "Analytics & Big Data",
+    "section": "Supervised and Unsupervised Learning",
+    "text": "Supervised and Unsupervised Learning\n\nBrief reminder: logistic regression from previous lecture\n\nWhat problem does it solve?\nWhy it is already a form of supervised machine learning\n\nMotivation for today:\n\nLogistic regression is powerful but limited (linear decision boundary)\nMany real-world problems require non-linear or more flexible models\nToday’s goal: understand the general ML workflow and explore other supervised ML methods\n\nNote/TBD: focus on supervised machine learning.\nTODO: mention focus on primarily (binary) classification tasks\nTODO: add a definition (and intorductory example)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#statistics-vs.-machine-learning",
+    "href": "slides/lecture_6_machine_learning_1.html#statistics-vs.-machine-learning",
+    "title": "Analytics & Big Data",
+    "section": "Statistics vs. Machine Learning",
+    "text": "Statistics vs. Machine Learning\n\nStatistics about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.\n\n\nMachine Learning (ML) aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#statistical-regression-vs.-machine-learning-algorithms",
+    "href": "slides/lecture_6_machine_learning_1.html#statistical-regression-vs.-machine-learning-algorithms",
+    "title": "Analytics & Big Data",
+    "section": "Statistical Regression vs. Machine Learning Algorithms",
+    "text": "Statistical Regression vs. Machine Learning Algorithms"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#overfitting-example",
+    "href": "slides/lecture_6_machine_learning_1.html#overfitting-example",
+    "title": "Analytics & Big Data",
+    "section": "Overfitting (example, …)",
+    "text": "Overfitting (example, …)\nTraditional Analytics Process\n\nNote: large ML models may create overfitting issues… -&gt; need for separate test set"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#generalization-problem",
+    "href": "slides/lecture_6_machine_learning_1.html#generalization-problem",
+    "title": "Analytics & Big Data",
+    "section": "Generalization problem",
+    "text": "Generalization problem\nState the generalization problem very clearly.\nAsk students for ideas"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#the-supervised-machine-learning-workflow",
+    "href": "slides/lecture_6_machine_learning_1.html#the-supervised-machine-learning-workflow",
+    "title": "Analytics & Big Data",
+    "section": "The Supervised Machine Learning Workflow",
+    "text": "The Supervised Machine Learning Workflow\nIntroduce the high-level pipeline (Modern Analytics Process)\n\n\n2.1 Labeled Data - Input features (X) and target labels (y) - Importance of data quality and representativeness\n2.2 Feature Engineering - Transformations, encoding, normalization - Why features matter more than the model itself\n2.3 Train–Test Split - Why we split data into training and testing sets - Preventing information leakage - Hold-out, cross-validation (brief mention)\n2.4 Model Training - Fit model on training data - Conceptual: “learning patterns/parameters”\n2.5 Evaluation on Test Data - Predict on unseen data - Establish generalization performance\n2.6 Applying the Model Beyond the Known Sample - Using the model in decision-making or prediction for future cases"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#overview-of-supervised-ml-algorithms",
+    "href": "slides/lecture_6_machine_learning_1.html#overview-of-supervised-ml-algorithms",
+    "title": "Analytics & Big Data",
+    "section": "Overview of Supervised ML Algorithms",
+    "text": "Overview of Supervised ML Algorithms\nWhich Method should I choose?\nThe choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.\nIn the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.\nFor this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.\n\nLogistic Regression\n\nLinear boundary, interpretable, limited for non-linear patterns\n\nSupport Vector Machines (SVM)\n\nMargin maximization\nKernel trick for non-linear boundaries\n\nDecision Trees\n\nRecursive splitting, intuitive but prone to overfitting\n\nRandom Forests / Ensembles (optional brief preview)\n\nReduce overfitting by combining trees\n\nNeural Networks\n\nLayers transforming data\nExtremely flexible but data-hungry and less interpretable\n\n\nNote: Emphasize the why behind different models: Different inductive biases, different levels of flexibility, different data needs."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#linear-world",
+    "href": "slides/lecture_6_machine_learning_1.html#linear-world",
+    "title": "Analytics & Big Data",
+    "section": "Linear World",
+    "text": "Linear World"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#quadratic-world",
+    "href": "slides/lecture_6_machine_learning_1.html#quadratic-world",
+    "title": "Analytics & Big Data",
+    "section": "Quadratic World",
+    "text": "Quadratic World"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-1",
+    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-1",
+    "title": "Analytics & Big Data",
+    "section": "Nonlinear World (Type 1)",
+    "text": "Nonlinear World (Type 1)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-2",
+    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-2",
+    "title": "Analytics & Big Data",
+    "section": "Nonlinear World (Type 2)",
+    "text": "Nonlinear World (Type 2)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-3",
+    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-3",
+    "title": "Analytics & Big Data",
+    "section": "Nonlinear World (Type 3)",
+    "text": "Nonlinear World (Type 3)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-4",
+    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-4",
+    "title": "Analytics & Big Data",
+    "section": "Nonlinear World (Type 4)",
+    "text": "Nonlinear World (Type 4)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#feature-engineering",
+    "href": "slides/lecture_6_machine_learning_1.html#feature-engineering",
+    "title": "Analytics & Big Data",
+    "section": "Feature Engineering",
+    "text": "Feature Engineering\n\nFeature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.\n\n\nA feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:\n\n\n\nFeatures can be of two major types. Raw features are obtained directly from the dataset with no extra data manipulation or engineering. Derived features are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.\n\n\n\n— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#variants-of-feature-engineering",
+    "href": "slides/lecture_6_machine_learning_1.html#variants-of-feature-engineering",
+    "title": "Analytics & Big Data",
+    "section": "Variants of Feature Engineering",
+    "text": "Variants of Feature Engineering\n1. Transformation\n\nconvert features (e.g., birth date → age)\nbuild lag structures (e.g., time-lags)\nnormalization / standardization / scaling\n\n2. Type Conversion\n\nif numerical type is needed, transform categorical into numerical data using dummy features\nif categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)\n\n3. Feature Combination\n\ncreate interaction features (e.g., school_score = num_schools × median_school with num_schools = number of schools within 5 miles of a property and median_school = median quality score of those schools)\ncombine categories (e.g., when there are very few observations or too many dummy features)\n\n4. Feature Composition\n\nbuild ratios (e.g., returns from prices)\nPrincipal Component Analysis (Dimensionality Reduction)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#scaling",
+    "href": "slides/lecture_6_machine_learning_1.html#scaling",
+    "title": "Analytics & Big Data",
+    "section": "Scaling",
+    "text": "Scaling\n\nMost datasets contain features highly varying in magnitudes, units and range.\n\n\nMost machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.\n\n\nTo overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#type-conversion-encoding",
+    "href": "slides/lecture_6_machine_learning_1.html#type-conversion-encoding",
+    "title": "Analytics & Big Data",
+    "section": "Type Conversion (Encoding)",
+    "text": "Type Conversion (Encoding)\n\nMany machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:\n\n\nLabel encoding refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g. young → 1, middle_age → 2, old → 3. This only works in specific situations where you have somewhat continuous-like data, e.g. if the categorical feature is ordinal.\n\n\nOne hot encoding is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g.\n\n\n\nIt is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap)."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-i",
+    "href": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-i",
+    "title": "Analytics & Big Data",
+    "section": "Example of Feature Engineering (I)",
+    "text": "Example of Feature Engineering (I)\n\nData sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data “flight date time vs status”. Then, given the date-time data, we have to predict the status of the flight.\n\n\nBut the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature “Hour_Of_Day”. Using the “Hour_Of_Day” feature, the machine will learn better as this feature is directly related to the status of the flight.\n\n\n\n\n— Source: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-ii",
+    "href": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-ii",
+    "title": "Analytics & Big Data",
+    "section": "Example of Feature Engineering (II)",
+    "text": "Example of Feature Engineering (II)\n\nSuppose we are given the latitude, longitude and other data with the objective to predict the target feature “Price_Of_House”. Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.\n\n\nIn other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-iii",
+    "href": "slides/lecture_6_machine_learning_1.html#example-of-feature-engineering-iii",
+    "title": "Analytics & Big Data",
+    "section": "Example of Feature Engineering (III)",
+    "text": "Example of Feature Engineering (III)\n\nSuppose we are given a feature “Marital_Status” and other data with the objective to classify customers into “Creditworthy” and “Not_Creditworthy”. In the data set the martial status has many different values, for example:\n\n\nsingle living alone\nsingle living with his parents\nmarried living together\nmarried living separately\ndivorced\ndivorced but living together\nregistered partnerships\nliving in marriage-like community\nwidowed\n…\n\n\nTo avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.\n\n\nIf there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single “other” class."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
+    "href": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
+    "title": "Analytics & Big Data",
+    "section": "Partitioning the Data",
+    "text": "Partitioning the Data\n\nThe partitioning of the data in Training and Test Data has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.\n\n\nThe partitioning of the data in training and test data can be carried out in the following ways:\n\n\nBy random/stratified/… sampling (problem with the repeatability)\naccording to a list\naccording to rules (e.g. the first/last 50 records or every twelfth)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
+    "href": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
+    "title": "Analytics & Big Data",
+    "section": "Applying Training and Test Data",
+    "text": "Applying Training and Test Data\n\n\n\n— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning",
+    "href": "slides/lecture_6_machine_learning_1.html#partitioning",
+    "title": "Analytics & Big Data",
+    "section": "Partitioning",
+    "text": "Partitioning"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#performance-metrics-model-behavior-15-min",
+    "href": "slides/lecture_6_machine_learning_1.html#performance-metrics-model-behavior-15-min",
+    "title": "Analytics & Big Data",
+    "section": "3. Performance Metrics & Model Behavior (15 min)",
+    "text": "3. Performance Metrics & Model Behavior (15 min)\nIntroduce classification performance evaluation:\n\nConfusion matrix (TP, TN, FP, FN)\nAccuracy, Precision, Recall\nF1 Score and when it is useful\nROC/AUC (optional, light touch)\nBias–Variance tradeoff (intro)\nOverfitting vs. underfitting\n\nHigh-level intuition: complexity, flexibility, noise-fitting\n\n\nTODO: cover cases where some error types are more costly than others"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
+    "href": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
+    "title": "Analytics & Big Data",
+    "section": "Best Fit vs. Best Generalization",
+    "text": "Best Fit vs. Best Generalization"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
+    "href": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
+    "title": "Analytics & Big Data",
+    "section": "Over- and Underfitting",
+    "text": "Over- and Underfitting\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
+    "href": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
+    "title": "Analytics & Big Data",
+    "section": "The Bias-Variance Tradeoff",
+    "text": "The Bias-Variance Tradeoff\nThe prediction error is influenced by three components:\n\nError = Bias + Variance + Noise\n\n\nBias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.\nVariance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.\nTypically, there is a tradeoff between bias and variance.\nNoise is everything that arises from random variations in the data. It cannot be controlled."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#summary",
+    "href": "slides/lecture_6_machine_learning_1.html#summary",
+    "title": "Analytics & Big Data",
+    "section": "Summary",
+    "text": "Summary"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#learning-objectives",
@@ -2415,18 +2415,18 @@
     "text": "Note\n\n\n\nTODO"
   },
   {
-    "objectID": "notes/lecture_5_regression_2.html",
-    "href": "notes/lecture_5_regression_2.html",
-    "title": "Notes: Session 5: Regression II",
+    "objectID": "notes/lecture_10_organizations.html",
+    "href": "notes/lecture_10_organizations.html",
+    "title": "Notes: Session 10: Governance of data analytics",
     "section": "",
-    "text": "Note\n\n\n\nTODO\n\n\nGoal: Deepen linear regression and surface modeling tensions.\nYou are not just teaching “more regression.” You are teaching: How modeling goals shape methodological choices (or how they interact).\nClose with a framing slide: - Analytics is not one method. It is a toolbox shaped by goals. Then summarize: - Regression for understanding - Regression for prediction - Logistic regression as bridge to ML And preview: - Next: more complex machine learning models."
+    "text": "Note\n\n\n\nTODO"
   },
   {
-    "objectID": "notes/lecture_6_machine_learning_1.html",
-    "href": "notes/lecture_6_machine_learning_1.html",
-    "title": "Notes: Session 6: Machine learning I",
+    "objectID": "notes/lecture_0_orga.html",
+    "href": "notes/lecture_0_orga.html",
+    "title": "Notes: Orga",
     "section": "",
-    "text": "Note\n\n\n\nNote: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)\nTODO: suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudo code”, “are there any errors (e.g., switched code blocks)?”)"
+    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nI do not know everything. I make mistakes. …\nAbout you: - Prepare an example (humor/mistake?)\nchatgpt: tell a story of myself (for the beginning of lectures)\n- short bio\n- theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)\n\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role...\nAlso Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)\nwhy analytics matters: ## Takeaway Analytics is not just about data. It changes who wins, how decisions are made, and how organizations compete."
   },
   {
     "objectID": "notes/lecture_4_regression_1.html",
