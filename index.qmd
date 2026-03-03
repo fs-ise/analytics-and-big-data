@@ -43,7 +43,7 @@ SECTION_ORDER = [
     "Introduction",
     "Data foundations",
     "Analytical models",
-    "Deployment in organizations",
+    "Deployment",
     "Synthesis",
 ]
 
