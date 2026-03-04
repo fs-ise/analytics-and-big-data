@@ -73,16 +73,35 @@ Optional:
 
 # Analytics & Big Data {data-stack-name="Analytics & Big Data"}
 
+
 ## Analytics & Big Data in the curriculum
 
+<div style="text-align:center">
+  ![](../images/curriculum.png){width=40%}
+</div>
 
+
+<!--
 <img src="../images/curriculum.png" width="600" style="display:block; margin:auto;">
-
 Prerequisite: Completed the "Introduction to Programming" module.
+-->
 
 ## What exactly is "analytics"?
 
+:::: {.columns}
+
+::: {.column width="50%"}
+<br><br>
+![](../images/deng-xiang--WXQm_NTK0U-unsplash.jpg){width=90% fig-align="center"}
+:::
+
+::: {.column width="50%"}
+<br><br><br><br><br><br>
+
 Business analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007).
+:::
+
+::::
 
 <!--
 TODO (ideally referring to a textbook?)
@@ -113,11 +132,15 @@ Decision-making – Turning insights into business action.
 - Systematic identification of mispriced options through mathematical arbitrage
 - Demonstrated how financial models and data could generate consistent trading profits
 
+. . .
+
 **{{< iconify mdi:film-open >}} Entertainment — Personalization at Scale at Netflix**
 
 - Recommendation systems shape what millions watch
 - Continuous A/B testing and model refinement
 - Data directly drives engagement and revenue
+
+. . .
 
 **{{< iconify lucide-lab:baseball >}} Sports — The Moneyball Revolution at Oakland Athletics**
 
@@ -128,9 +151,11 @@ Decision-making – Turning insights into business action.
 
 ## Course Architecture
 
-
 <div style="text-align:center">
 
+![](../images/overview_structure.png){width=60%}
+
+<!--
 ```{mermaid}
 %%{init: {
   "theme": "base",
@@ -153,14 +178,14 @@ flowchart LR
 
   subgraph Right["<b>Synthesis</b>"]
     direction TB
-    S["<div align='center'><b>Integration and outlook</b></div>"]
+    S["<div align='center'><b>Integration and exam prepation</b></div>"]
   end
 
-  subgraph Stack["<b>Analytics capability stack</b>"]
+  subgraph Stack["<b>Analytics</b>"]
     direction LR
     D["<div align='center'><b>Data foundations</b><br/>Exploration and architecture</div>"]
     M["<div align='center'><b>Analytical models</b><br/>Regression · ML · Big Data</div>"]
-    O["<div align='center'><b>Organizational deployment</b><br/>Governance</div>"]
+    O["<div align='center'><b>Deployment</b><br/>Organizations</div>"]
     D --> M --> O
   end
 
@@ -172,8 +197,8 @@ flowchart LR
   class F2 foundation;
   class D,M,O stack;
   class S synthesis;
-
 ```
+-->
 
 </div>
 
@@ -202,18 +227,27 @@ flowchart LR
 
 
 - **Engineering of production-grade analytical systems**
-  (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)
+
+  - Software engineering
+  - Database design
+  - DevOps/MLOps pipelines
+  - Scalable application development
 
 - **Statistical theory**
-  (inferential statistics, proofs/derivations)
 
-- **Autonomous / agentic decision systems**
-  (robots/agents acting on decisions, reinforcement learning, LLM engineering)
+  - Inferential statistics
+  - Proofs/derivations
 
-::: {.callout-note}
-**Interfaces exist:** We will *touch* these areas where needed, but our focus is on **analytical reasoning** and **prototype implementations** (e.g., notebook-based workflows) for real-world datasets.
-:::
+- **Mathematical optimization and simulation models**
 
+  - Scheduling, logistics, queueing
+
+- **Autonomous or agentic decision systems**
+ 
+  - Robots/agents acting on decisions
+  - Reinforcement learning
+
+{{< iconify fluent-mdl2:insights >}} We will *touch* these areas where needed, but our focus is on **analytical reasoning** and **notebook-based implementations**.
 
 
 # Course logistics  {data-stack-name="Logistics"}
@@ -306,7 +340,7 @@ Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/1
 Slides and materials
 
 - Presentation slides will be made available for download.
-- You are expected to take complementary notes and read the recommended literature.7
+- You are expected to take complementary notes and read the recommended literature.
 <!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. -->
 - Literature and complementary materials will be listed at the end of each lecture.
 - Reading of complementary materials depends on your interest and ambition.
@@ -323,15 +357,20 @@ Selected literature
 
 ## You may also be interested in ... {data-state="hide-menubar"}
 
-Bachelor's theses
+Bachelor's theses: See [SuSy](https://susy.frankfurt-school.de/) and additional information on [this page](https://fs-ise.github.io/theses/).
 
-- See information on the [process](https://fs-ise.github.io/theses/) and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
+<br>
+
+![](../images/yen-vu-TdgfSyDoWBE-unsplash.jpg){width=50% fig-align=center}
+
+
+<!--
+ and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
 
 ::: {.callout-note title="TODO"}
 TODO: update thesis topics
 :::
 
-<!--
     ![bg right:35% width:400px vertical](../assets/images/logo)
     ![bg right:35% width:400px vertical](../assets/images/logo-project.png)
     ![bg right:35% width:400px](../assets/images/logo-theses.png)

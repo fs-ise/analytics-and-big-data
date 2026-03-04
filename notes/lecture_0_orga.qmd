@@ -5,51 +5,83 @@ format: html
 
 | Time (min)  | Duration  | Topic                   |
 |-------------|-----------|-------------------------|
-| 00-20       | 20        | Orga                    |
+| 00-30       | 30        | Orga                    |
 
-::: callout-note
+::: {.callout-note title="Preparation"}
+- Check room
+- Print student list
+:::
+
+## Myself
+
+I do not know everything. I make mistakes. ...
+
+My Story as a teacher. Copy Stanford slides for CS vs. Evolved role...
+- theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)
+Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise
+
+- Story (TI: Stanford slides, ... - both: hard skills + engagement with practice)
+- I give my very best, aim to make this the best analytics course.
 
 Mention (without bullets on the slide)
 - What I expect from students
 - What students can expect from me
 
-I do not know everything. I make mistakes. ...
+First round
+- Lot of unknowns: how long session will take, how much you already know, what is challenging or easy
+- I will learn as much as you will.
+- I will ask for your feedback **very** regularly (at the end of each session)
 
-About you:
+<!--
 - Prepare an example (humor/mistake?)
 
     chatgpt: tell a story of myself (for the beginning of lectures)
     - short bio
-    - theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)
+-->
 
-    My Story as a teacher. Copy Stanford slides for CS vs. Evolved role...
-    Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise
+## About you
+
+TODO
+
+- prior experience (e.g., python)?
+- Ask students how they learn (PDF, ...) whether they use a knowledge management system (which one), ...
 
 
-- Name tags?
-- tools (spyder)?
+## Curriculum
+
+## Analytics and why it matters
+
+Takeaway - why analytics matters:
+Analytics is not just about data.
+It changes **who wins, how decisions are made, and how organizations compete.**
+
+## Architecture
+
+## Objectives
+
+- Python implementation: we will acquire some technical skills.
+  Python was selected deliberately. I know there are many graphical, low-code/no-code tools out there.
+  But they have their limitations. If we learn Python, that is more useful to understand other tools as well.
+  In addition, using LLMs on Python code is much easier and you can clearly see and control what is suggested.
+
+## Not covered
+
+
+## Logistics
+
 - Format of the session (exercises, preparation/reading)
 - Summary presentations of practitioner materials?
 - Consultation hour?
-- prior experience (e.g., python)?
-- used spyder before? - of course, you can continue to use it.
-- Ask students how they learn (PDF, ...) whether they use a knowledge management system (which one), ...
 
+
+## Materials
+
+
+## Theses
+
+- My students publish (very proud of them)
+
+<!--
 /home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf
 -> special needs/religious holidays/...?
-
-- Story (TI: Stanford slides, ... - both: hard skills + engagement with practice)
-- I give my very best, aim to make this the best analytics course.
-- It is the first round - some things may not work immediately. I will ask for feedback very often.
-:::
-
-
-In learning objectives: apply/select/design:
-- **Strategy-only perspectives without hands-on work**
-  (case-only / consulting-style discussions without implementing and evaluating analyses)
-
-
-why analytics matters:
-## Takeaway
-Analytics is not just about data.
-It changes **who wins, how decisions are made, and how organizations compete.**
+-->
