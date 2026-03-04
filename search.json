@@ -347,28 +347,28 @@
     "href": "slides/lecture_0_orga.html#analytics-big-data-in-the-curriculum",
     "title": "Analytics & Big Data",
     "section": "Analytics & Big Data in the curriculum",
-    "text": "Analytics & Big Data in the curriculum\n\nPrerequisite: Completed the “Introduction to Programming” module."
+    "text": "Analytics & Big Data in the curriculum"
   },
   {
     "objectID": "slides/lecture_0_orga.html#what-exactly-is-analytics",
     "href": "slides/lecture_0_orga.html#what-exactly-is-analytics",
     "title": "Analytics & Big Data",
     "section": "What exactly is “analytics”?",
-    "text": "What exactly is “analytics”?\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
+    "text": "What exactly is “analytics”?\n\n\n \n\n\nBusiness analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport & Harris 2007)."
   },
   {
     "objectID": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
     "href": "slides/lecture_0_orga.html#why-analytics-and-this-course-matter",
     "title": "Analytics & Big Data",
     "section": "Why Analytics (and This Course) Matter",
-    "text": "Why Analytics (and This Course) Matter\n Finance — Quantitative Arbitrage at Princeton-Newport Partners\n\nEarly pioneer of applying the Black-Scholes option pricing model in real markets\nSystematic identification of mispriced options through mathematical arbitrage\nDemonstrated how financial models and data could generate consistent trading profits\n\n Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
+    "text": "Why Analytics (and This Course) Matter\n Finance — Quantitative Arbitrage at Princeton-Newport Partners\n\nEarly pioneer of applying the Black-Scholes option pricing model in real markets\nSystematic identification of mispriced options through mathematical arbitrage\nDemonstrated how financial models and data could generate consistent trading profits\n\n\n Entertainment — Personalization at Scale at Netflix\n\nRecommendation systems shape what millions watch\nContinuous A/B testing and model refinement\nData directly drives engagement and revenue\n\n\n\n Sports — The Moneyball Revolution at Oakland Athletics\n\nAdvanced metrics replaced traditional scouting intuition\nData-driven player selection with limited budget\nCompetitive advantage through better measurement"
   },
   {
     "objectID": "slides/lecture_0_orga.html#course-architecture",
     "href": "slides/lecture_0_orga.html#course-architecture",
     "title": "Analytics & Big Data",
     "section": "Course Architecture",
-    "text": "Course Architecture\n\n\n\n\n\n\n%%{init: {\n  \"theme\": \"base\",\n  \"themeVariables\": {\n    \"primaryColor\": \"#E8EEF7\",\n    \"primaryTextColor\": \"#1F2D3D\",\n    \"primaryBorderColor\": \"#3A506B\",\n    \"lineColor\": \"#3A506B\",\n    \"secondaryColor\": \"#F4F6FA\",\n    \"fontSize\": \"18px\",\n    \"fontFamily\": \"Helvetica, Arial, sans-serif\"\n  }\n}}%%\n\nflowchart LR\n\n  classDef foundation fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef stack fill:#F4F6FA,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n  classDef synthesis fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;\n\n  subgraph Right[\"&lt;b&gt;Synthesis&lt;/b&gt;\"]\n    direction TB\n    S[\"&lt;div align='center'&gt;&lt;b&gt;Integration and outlook&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  subgraph Stack[\"&lt;b&gt;Analytics capability stack&lt;/b&gt;\"]\n    direction LR\n    D[\"&lt;div align='center'&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;\"]\n    M[\"&lt;div align='center'&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;\"]\n    O[\"&lt;div align='center'&gt;&lt;b&gt;Organizational deployment&lt;/b&gt;&lt;br/&gt;Governance&lt;/div&gt;\"]\n    D --&gt; M --&gt; O\n  end\n\n  subgraph Left[\"&lt;b&gt;Introduction&lt;/b&gt;\"]\n    direction TB\n    F2[\"&lt;div align='center'&gt;&lt;b&gt;The rise of analytics&lt;/b&gt;&lt;/div&gt;\"]\n  end\n\n  class F2 foundation;\n  class D,M,O stack;\n  class S synthesis;"
+    "text": "Course Architecture"
   },
   {
     "objectID": "slides/lecture_0_orga.html#learning-objectives",
@@ -382,7 +382,7 @@
     "href": "slides/lecture_0_orga.html#what-this-course-does-not-cover",
     "title": "Analytics & Big Data",
     "section": "What This Course Does Not Cover",
-    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)\nStatistical theory (inferential statistics, proofs/derivations)\nAutonomous / agentic decision systems (robots/agents acting on decisions, reinforcement learning, LLM engineering)\n\n\n\n\n\n\n\nNote\n\n\nInterfaces exist: We will touch these areas where needed, but our focus is on analytical reasoning and prototype implementations (e.g., notebook-based workflows) for real-world datasets."
+    "text": "What This Course Does Not Cover\n\nEngineering of production-grade analytical systems\n\nSoftware engineering\nDatabase design\nDevOps/MLOps pipelines\nScalable application development\n\nStatistical theory\n\nInferential statistics\nProofs/derivations\n\nMathematical optimization and simulation models\n\nScheduling, logistics, queueing\n\nAutonomous or agentic decision systems\n\nRobots/agents acting on decisions\nReinforcement learning\n\n\n We will touch these areas where needed, but our focus is on analytical reasoning and notebook-based implementations."
   },
   {
     "objectID": "slides/lecture_0_orga.html#course-logistics-1",
@@ -396,14 +396,14 @@
     "href": "slides/lecture_0_orga.html#materials",
     "title": "Analytics & Big Data",
     "section": "Materials",
-    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature.7 \nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
+    "text": "Materials\nSlides and materials\n\nPresentation slides will be made available for download.\nYou are expected to take complementary notes and read the recommended literature. \nLiterature and complementary materials will be listed at the end of each lecture.\nReading of complementary materials depends on your interest and ambition.\n\n\nSelected literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
   },
   {
     "objectID": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
     "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
     "title": "Analytics & Big Data",
     "section": "You may also be interested in …",
-    "text": "You may also be interested in …\nBachelor’s theses\n\nSee information on the process and open topics\n\n\n\n\n\n\n\n\nTODO\n\n\nTODO: update thesis topics"
+    "text": "You may also be interested in …\nBachelor’s theses: See SuSy and additional information on this page."
   },
   {
     "objectID": "slides/lecture_0_orga.html#references",
@@ -2566,7 +2566,77 @@
     "href": "notes/lecture_0_orga.html",
     "title": "Notes: Orga",
     "section": "",
-    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-20\n20\nOrga\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nI do not know everything. I make mistakes. …\nAbout you: - Prepare an example (humor/mistake?)\nchatgpt: tell a story of myself (for the beginning of lectures)\n- short bio\n- theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)\n\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role...\nAlso Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nName tags?\ntools (spyder)?\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?\nprior experience (e.g., python)?\nused spyder before? - of course, you can continue to use it.\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …\n\n/home/gerit/ownCloud/data/teaching/teaching-hub/data/teaching-hub/archive/Diversity_guideline_first_session.pdf -&gt; special needs/religious holidays/…?\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\nIt is the first round - some things may not work immediately. I will ask for feedback very often.\n\n\n\nIn learning objectives: apply/select/design: - Strategy-only perspectives without hands-on work (case-only / consulting-style discussions without implementing and evaluating analyses)\nwhy analytics matters: ## Takeaway Analytics is not just about data. It changes who wins, how decisions are made, and how organizations compete."
+    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-30\n30\nOrga"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#myself",
+    "href": "notes/lecture_0_orga.html#myself",
+    "title": "Notes: Orga",
+    "section": "Myself",
+    "text": "Myself\nI do not know everything. I make mistakes. …\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role… - theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution) Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nFirst round - Lot of unknowns: how long session will take, how much you already know, what is challenging or easy - I will learn as much as you will. - I will ask for your feedback very regularly (at the end of each session)"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#about-you",
+    "href": "notes/lecture_0_orga.html#about-you",
+    "title": "Notes: Orga",
+    "section": "About you",
+    "text": "About you\nTODO\n\nprior experience (e.g., python)?\nAsk students how they learn (PDF, …) whether they use a knowledge management system (which one), …"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#curriculum",
+    "href": "notes/lecture_0_orga.html#curriculum",
+    "title": "Notes: Orga",
+    "section": "Curriculum",
+    "text": "Curriculum"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#analytics-and-why-it-matters",
+    "href": "notes/lecture_0_orga.html#analytics-and-why-it-matters",
+    "title": "Notes: Orga",
+    "section": "Analytics and why it matters",
+    "text": "Analytics and why it matters\nTakeaway - why analytics matters: Analytics is not just about data. It changes who wins, how decisions are made, and how organizations compete."
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#architecture",
+    "href": "notes/lecture_0_orga.html#architecture",
+    "title": "Notes: Orga",
+    "section": "Architecture",
+    "text": "Architecture"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#objectives",
+    "href": "notes/lecture_0_orga.html#objectives",
+    "title": "Notes: Orga",
+    "section": "Objectives",
+    "text": "Objectives\n\nPython implementation: we will acquire some technical skills. Python was selected deliberately. I know there are many graphical, low-code/no-code tools out there. But they have their limitations. If we learn Python, that is more useful to understand other tools as well. In addition, using LLMs on Python code is much easier and you can clearly see and control what is suggested."
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#not-covered",
+    "href": "notes/lecture_0_orga.html#not-covered",
+    "title": "Notes: Orga",
+    "section": "Not covered",
+    "text": "Not covered"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#logistics",
+    "href": "notes/lecture_0_orga.html#logistics",
+    "title": "Notes: Orga",
+    "section": "Logistics",
+    "text": "Logistics\n\nFormat of the session (exercises, preparation/reading)\nSummary presentations of practitioner materials?\nConsultation hour?"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#materials",
+    "href": "notes/lecture_0_orga.html#materials",
+    "title": "Notes: Orga",
+    "section": "Materials",
+    "text": "Materials"
+  },
+  {
+    "objectID": "notes/lecture_0_orga.html#theses",
+    "href": "notes/lecture_0_orga.html#theses",
+    "title": "Notes: Orga",
+    "section": "Theses",
+    "text": "Theses\n\nMy students publish (very proud of them)"
   },
   {
     "objectID": "notes/lecture_4_regression_1.html",

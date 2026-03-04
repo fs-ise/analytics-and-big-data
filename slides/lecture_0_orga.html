@@ -172,17 +172,6 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -192,6 +181,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -280,12 +280,23 @@
 </section>
 <section id="analytics-big-data-in-the-curriculum" class="slide level2">
 <h2>Analytics &amp; Big Data in the curriculum</h2>
-<p><img src="../images/curriculum.png" width="600" style="display:block; margin:auto;"></p>
-<p>Prerequisite: Completed the “Introduction to Programming” module.</p>
+<div style="text-align:center">
+<p><img data-src="../images/curriculum.png" style="width:40.0%"></p>
+</div>
+<!--
+<img src="../images/curriculum.png" width="600" style="display:block; margin:auto;">
+Prerequisite: Completed the "Introduction to Programming" module.
+-->
 </section>
 <section id="what-exactly-is-analytics" class="slide level2">
 <h2>What exactly is “analytics”?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br><br> <img data-src="../images/deng-xiang--WXQm_NTK0U-unsplash.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><br><br><br><br><br><br></p>
 <p>Business analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport &amp; Harris 2007).</p>
+</div></div>
 <!--
 TODO (ideally referring to a textbook?)
 
@@ -314,37 +325,48 @@ Decision-making – Turning insights into business action.
 <li>Systematic identification of mispriced options through mathematical arbitrage</li>
 <li>Demonstrated how financial models and data could generate consistent trading profits</li>
 </ul>
+<div class="fragment">
 <p><strong><iconify-icon role="img" inline="" icon="mdi:film-open" aria-label="Icon film-open from mdi Iconify.design set." title="Icon film-open from mdi Iconify.design set."></iconify-icon> Entertainment — Personalization at Scale at Netflix</strong></p>
 <ul>
 <li>Recommendation systems shape what millions watch</li>
 <li>Continuous A/B testing and model refinement</li>
 <li>Data directly drives engagement and revenue</li>
 </ul>
+</div>
+<div class="fragment">
 <p><strong><iconify-icon role="img" inline="" icon="lucide-lab:baseball" aria-label="Icon baseball from lucide-lab Iconify.design set." title="Icon baseball from lucide-lab Iconify.design set."></iconify-icon> Sports — The Moneyball Revolution at Oakland Athletics</strong></p>
 <ul>
 <li>Advanced metrics replaced traditional scouting intuition</li>
 <li>Data-driven player selection with limited budget</li>
 <li>Competitive advantage through better measurement</li>
 </ul>
+</div>
 </section>
 <section id="course-architecture" class="slide level2">
 <h2>Course Architecture</h2>
 <div style="text-align:center">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
+<p><img data-src="../images/overview_structure.png" style="width:60.0%"></p>
+<!--
+
+::::::{.cell reveal=true layout-align="default"}
+
+:::::{.cell-output-display}
+
+::::{}
+`<figure class=''>`{=html}
+
+:::{}
+
 <pre class="mermaid mermaid-js">%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "primaryColor": "#E8EEF7",
-    "primaryTextColor": "#1F2D3D",
-    "primaryBorderColor": "#3A506B",
-    "lineColor": "#3A506B",
-    "secondaryColor": "#F4F6FA",
-    "fontSize": "18px",
-    "fontFamily": "Helvetica, Arial, sans-serif"
+  &quot;theme&quot;: &quot;base&quot;,
+  &quot;themeVariables&quot;: {
+    &quot;primaryColor&quot;: &quot;#E8EEF7&quot;,
+    &quot;primaryTextColor&quot;: &quot;#1F2D3D&quot;,
+    &quot;primaryBorderColor&quot;: &quot;#3A506B&quot;,
+    &quot;lineColor&quot;: &quot;#3A506B&quot;,
+    &quot;secondaryColor&quot;: &quot;#F4F6FA&quot;,
+    &quot;fontSize&quot;: &quot;18px&quot;,
+    &quot;fontFamily&quot;: &quot;Helvetica, Arial, sans-serif&quot;
   }
 }}%%
 
@@ -354,34 +376,34 @@ flowchart LR
   classDef stack fill:#F4F6FA,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;
   classDef synthesis fill:#E8EEF7,stroke:#3A506B,stroke-width:2px,rx:10,ry:10,text-align:center;
 
-  subgraph Right["&lt;b&gt;Synthesis&lt;/b&gt;"]
+  subgraph Right[&quot;&lt;b&gt;Synthesis&lt;/b&gt;&quot;]
     direction TB
-    S["&lt;div align='center'&gt;&lt;b&gt;Integration and outlook&lt;/b&gt;&lt;/div&gt;"]
+    S[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Integration and exam prepation&lt;/b&gt;&lt;/div&gt;&quot;]
   end
 
-  subgraph Stack["&lt;b&gt;Analytics capability stack&lt;/b&gt;"]
+  subgraph Stack[&quot;&lt;b&gt;Analytics&lt;/b&gt;&quot;]
     direction LR
-    D["&lt;div align='center'&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;"]
-    M["&lt;div align='center'&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;"]
-    O["&lt;div align='center'&gt;&lt;b&gt;Organizational deployment&lt;/b&gt;&lt;br/&gt;Governance&lt;/div&gt;"]
+    D[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;&quot;]
+    M[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;&quot;]
+    O[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Deployment&lt;/b&gt;&lt;br/&gt;Organizations&lt;/div&gt;&quot;]
     D --&gt; M --&gt; O
   end
 
-  subgraph Left["&lt;b&gt;Introduction&lt;/b&gt;"]
+  subgraph Left[&quot;&lt;b&gt;Introduction&lt;/b&gt;&quot;]
     direction TB
-    F2["&lt;div align='center'&gt;&lt;b&gt;The rise of analytics&lt;/b&gt;&lt;/div&gt;"]
+    F2[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;The rise of analytics&lt;/b&gt;&lt;/div&gt;&quot;]
   end
 
   class F2 foundation;
   class D,M,O stack;
   class S synthesis;
-
 </pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+:::
+`</figure>`{=html}
+::::
+:::::
+::::::
+-->
 </div>
 </section>
 <section id="learning-objectives" class="slide level2">
@@ -408,23 +430,29 @@ flowchart LR
 <section id="what-this-course-does-not-cover" class="slide level2">
 <h2>What This Course Does <em>Not</em> Cover</h2>
 <ul>
-<li><p><strong>Engineering of production-grade analytical systems</strong> (software engineering, database design and optimization, DevOps/MLOps pipelines, scalable application development, distributed systems implementation)</p></li>
-<li><p><strong>Statistical theory</strong> (inferential statistics, proofs/derivations)</p></li>
-<li><p><strong>Autonomous / agentic decision systems</strong> (robots/agents acting on decisions, reinforcement learning, LLM engineering)</p></li>
+<li><p><strong>Engineering of production-grade analytical systems</strong></p>
+<ul>
+<li>Software engineering</li>
+<li>Database design</li>
+<li>DevOps/MLOps pipelines</li>
+<li>Scalable application development</li>
+</ul></li>
+<li><p><strong>Statistical theory</strong></p>
+<ul>
+<li>Inferential statistics</li>
+<li>Proofs/derivations</li>
+</ul></li>
+<li><p><strong>Mathematical optimization and simulation models</strong></p>
+<ul>
+<li>Scheduling, logistics, queueing</li>
+</ul></li>
+<li><p><strong>Autonomous or agentic decision systems</strong></p>
+<ul>
+<li>Robots/agents acting on decisions</li>
+<li>Reinforcement learning</li>
+</ul></li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Interfaces exist:</strong> We will <em>touch</em> these areas where needed, but our focus is on <strong>analytical reasoning</strong> and <strong>prototype implementations</strong> (e.g., notebook-based workflows) for real-world datasets.</p>
-</div>
-</div>
-</div>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> We will <em>touch</em> these areas where needed, but our focus is on <strong>analytical reasoning</strong> and <strong>notebook-based implementations</strong>.</p>
 </section></section>
 <section>
 <section id="course-logistics" class="title-slide slide level1 center" data-stack-name="Logistics">
@@ -511,7 +539,7 @@ Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/1
 <p>Slides and materials</p>
 <ul>
 <li>Presentation slides will be made available for download.</li>
-<li>You are expected to take complementary notes and read the recommended literature.7 <!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. --></li>
+<li>You are expected to take complementary notes and read the recommended literature. <!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. --></li>
 <li>Literature and complementary materials will be listed at the end of each lecture.</li>
 <li>Reading of complementary materials depends on your interest and ambition.</li>
 </ul>
@@ -526,26 +554,20 @@ Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/1
 </section>
 <section id="you-may-also-be-interested-in" class="slide level2" data-state="hide-menubar">
 <h2>You may also be interested in …</h2>
-<p>Bachelor’s theses</p>
-<ul>
-<li>See information on the <a href="https://fs-ise.github.io/theses/">process</a> and <a href="https://fs-ise.github.io/theses/docs/topics.html">open topics</a></li>
-</ul>
-<div title="TODO">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>TODO</strong></p>
-</div>
-<div class="callout-content">
-<p>TODO: update thesis topics</p>
-</div>
-</div>
-</div>
+<p>Bachelor’s theses: See <a href="https://susy.frankfurt-school.de/">SuSy</a> and additional information on <a href="https://fs-ise.github.io/theses/">this page</a>.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/yen-vu-TdgfSyDoWBE-unsplash.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
 </div>
 <!--
+ and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
+
+::: {.callout-note title="TODO"}
+TODO: update thesis topics
+:::
+
     ![bg right:35% width:400px vertical](../assets/images/logo)
     ![bg right:35% width:400px vertical](../assets/images/logo-project.png)
     ![bg right:35% width:400px](../assets/images/logo-theses.png)
