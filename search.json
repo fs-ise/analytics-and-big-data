@@ -175,6 +175,13 @@
     "text": "Integration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
   },
   {
+    "objectID": "slides/lecture_9_big_data_2.html#section",
+    "href": "slides/lecture_9_big_data_2.html#section",
+    "title": "Analytics & Big Data",
+    "section": "",
+    "text": "Tentatively\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows.\n\n\nTBD: spatial/social-media analytics?"
+  },
+  {
     "objectID": "slides/lecture_9_big_data_2.html#reinforcement-learning",
     "href": "slides/lecture_9_big_data_2.html#reinforcement-learning",
     "title": "Analytics & Big Data",
@@ -245,11 +252,11 @@
     "text": "ChatGPT - Evaluation Component"
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#learning-objectives",
-    "href": "slides/lecture_4_regression_1.html#learning-objectives",
+    "objectID": "slides/lecture_4_regression_1.html#section",
+    "href": "slides/lecture_4_regression_1.html#section",
     "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python."
+    "section": "",
+    "text": "Explain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficient meaning, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python."
   },
   {
     "objectID": "slides/lecture_4_regression_1.html#process",
@@ -273,8 +280,8 @@
     "text": "Dataset: Ames Housing (Kaggle)\nDataset: Ames Housing Dataset\nKaggle is a widely-used online platform for data science and machine learning. It provides:\n\nPublic datasets\nNotebooks for analysis\nCompetitions and community discussions\n\n\n\n \nTask (5–7 minutes)\n\nNavigate to the dataset page on Kaggle.\nSkim the dataset description.\nInspect the list of variables (features).\nOpen the data preview and:\n\nIdentify the target variable.\nFind at least three potential explanatory variables. \n\n\nBe prepared to briefly discuss:\n\nWhich variables you expect to be strong predictors of price."
   },
   {
-    "objectID": "slides/lecture_4_regression_1.html#section",
-    "href": "slides/lecture_4_regression_1.html#section",
+    "objectID": "slides/lecture_4_regression_1.html#section-1",
+    "href": "slides/lecture_4_regression_1.html#section-1",
     "title": "Analytics & Big Data",
     "section": "…",
     "text": "…\nWe skip data preparation for now…"
@@ -406,11 +413,18 @@
     "text": "You may also be interested in …\nBachelor’s theses: See SuSy and additional information on this page."
   },
   {
-    "objectID": "slides/lecture_0_orga.html#references",
-    "href": "slides/lecture_0_orga.html#references",
+    "objectID": "slides/lecture_10_organizations.html#section",
+    "href": "slides/lecture_10_organizations.html#section",
     "title": "Analytics & Big Data",
-    "section": "References",
-    "text": "References\n\n\n\n\nBengfort, B., Bilbro, R., & Ojeda, T. (2018). Applied text analysis with python: Enabling language-aware data products with machine learning. O’Reilly Media. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\n\n\nChen, H., Chiang, R. H. L., & Storey, V. C. (2012). Business intelligence and analytics: From big data to big impact. MIS Quarterly, 36(4), 1165–1188. https://www.jstor.org/stable/41703503\n\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98–107. https://cs.brown.edu/courses/cs295-11/competing.pdf\n\n\nMartı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., & Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. IEEE Transactions on Knowledge and Data Engineering, 33(8), 3048–3061. https://ieeexplore.ieee.org/abstract/document/8943998\n\n\nRaschka, S. (2015). Python machine learning. Packt Publishing. https://www.packtpub.com/en-us/product/python-machine-learning-9781783555130\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881\n\n\nSchutt, R., & O’Neil, C. (2014). Doing data science. O’Reilly Media. https://www.oreilly.com/library/view/doing-data-science/9781449363871/\n\n\nSharda, R., Delen, D., & Turban, E. (2018). Business intelligence, analytics, and data science: A managerial perspective. Pearson. https://elibrary.pearson.de/book/99.150005/9781292727530\n\n\nVaisman, A., & Zimányi, E. (2016). Data warehouse systems: Design and implementation. Springer. https://doi.org/10.1007/978-3-662-65167-4\n\n\nVidgen, R., Shaw, S., & Grant, D. B. (2017). Management challenges in creating value from business analytics. European Journal of Operational Research, 261(2), 626–639. https://www.sciencedirect.com/science/article/pii/S0377221717301455"
+    "section": "",
+    "text": "Explain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations."
+  },
+  {
+    "objectID": "slides/lecture_7_machine_learning_2.html#section",
+    "href": "slides/lecture_7_machine_learning_2.html#section",
+    "title": "Analytics & Big Data",
+    "section": "",
+    "text": "Compare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#navigation",
@@ -942,14 +956,14 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm",
     "title": "Analytics & Big Data",
     "section": "CRISP-DM",
-    "text": "CRISP-DM\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData"
+    "text": "CRISP-DM\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData\n\n\n\n\n\n\n\n\n:::\n::::"
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#summary",
     "href": "slides/lecture_1_rise_of_data_analytics.html#summary",
     "title": "Analytics & Big Data",
     "section": "Summary",
-    "text": "Summary\n🎯 Learning Objective\n\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
+    "text": "Summary\n\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#todo",
@@ -963,7 +977,7 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#survey-session-1",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 1",
-    "text": "Survey: Session 1\n\n\n\n    \n\nLink: https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor\nNote: We will use and possibly publish results (anonmyously)."
+    "text": "Survey: Session 1\n\n\n\n    \n\nLink: https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor\nNote: We will use and possibly publish results (anonymously)."
   },
   {
     "objectID": "teaching_notes.html",
@@ -1358,6 +1372,13 @@
     "text": "erDiagram\n\n    CUSTOMER {\n        int ID\n        string name\n        int age\n        string gender\n        string region\n    }\n\n    WINE {\n        int ID\n        string name\n        string type\n        int year\n        string class\n        string region\n    }\n\n    TIME {\n        datetime timestamp\n        date date\n        int year\n    }\n\n    SALES {\n        int customer_id\n        int wine_id\n        datetime time_id\n        int units_sold\n        float turnover\n    }\n\n    CUSTOMER ||--o{ SALES : purchases\n    WINE     ||--o{ SALES : includes\n    TIME     ||--o{ SALES : occurs_at"
   },
   {
+    "objectID": "slides/lecture_8_big_data_1.html#section",
+    "href": "slides/lecture_8_big_data_1.html#section",
+    "title": "Analytics & Big Data",
+    "section": "",
+    "text": "Explain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics.\n\n\nTODO: Explain how big data environments reshape model development, validation, and deployment. This creates continuity with: Generalization problem, Overfitting, Model evaluation"
+  },
+  {
     "objectID": "slides/lecture_8_big_data_1.html#limitations-of-the-data-warehouse-approach",
     "href": "slides/lecture_8_big_data_1.html#limitations-of-the-data-warehouse-approach",
     "title": "Analytics & Big Data",
@@ -1523,28 +1544,14 @@
     "href": "slides/lecture_8_big_data_1.html#logical-data-warehouse",
     "title": "Analytics & Big Data",
     "section": "Logical Data Warehouse",
-    "text": "Logical Data Warehouse\nA “logical data warehouse” provides analytical company data without first physically moving it to a physical data warehouse.\nAs in a classic data warehouse, uniform views are provided for analysis purposes.\nWhile the data in the classic data warehouse comes from a “well-defined” physically uniform database, the “logical data warehouse” pulls data together from the data lake at the time of the query.\nAggregation is done just in time. Thus, the schema of the data warehouse is just virtual.\n\n\n\n\n\n\n\n\n\n— Source: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/"
+    "text": "Logical Data Warehouse\nA “logical data warehouse” provides analytical company data without first physically moving it to a physical data warehouse.\nAs in a classic data warehouse, uniform views are provided for analysis purposes.\nWhile the data in the classic data warehouse comes from a “well-defined” physically uniform database, the “logical data warehouse” pulls data together from the data lake at the time of the query.\nAggregation is done just in time. Thus, the schema of the data warehouse is just virtual.\n\n\n\n\n\n\n\n— Source: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/"
   },
   {
-    "objectID": "slides/lecture_3_analytical_data_architecture.html#learning-objectives",
-    "href": "slides/lecture_3_analytical_data_architecture.html#learning-objectives",
+    "objectID": "slides/lecture_3_analytical_data_architecture.html#section",
+    "href": "slides/lecture_3_analytical_data_architecture.html#section",
     "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact/dimension schemata from business questions and operational data."
-  },
-  {
-    "objectID": "slides/lecture_3_analytical_data_architecture.html#navigation",
-    "href": "slides/lecture_3_analytical_data_architecture.html#navigation",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation"
-  },
-  {
-    "objectID": "slides/lecture_3_analytical_data_architecture.html#descriptive-analytics",
-    "href": "slides/lecture_3_analytical_data_architecture.html#descriptive-analytics",
-    "title": "Analytics & Big Data",
-    "section": "2 Descriptive Analytics",
-    "text": "2 Descriptive Analytics\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
+    "section": "",
+    "text": "Outline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact/dimension schemata from business questions and operational data."
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#application-systems-pyramid",
@@ -1565,7 +1572,7 @@
     "href": "slides/lecture_3_analytical_data_architecture.html#characteristics-of-operational-and-analytical-databases",
     "title": "Analytics & Big Data",
     "section": "Characteristics of Operational and Analytical Databases",
-    "text": "Characteristics of Operational and Analytical Databases\n\nCharacteristics\nOperational Data\nAnalytical Data\nTarget group\nOperational employees\nManagement, Analysts, Divisional manager\nAccess frequency\nhigh\nslow to medium\nData volume per access\nlow to medium volume\nhigh volume\nRequired response time\nvery short\nshort to medium\nLevel of data\ndetailed\naggregated, processed\nQueries\npredictable, periodic\nunpredictable, ad hoc\nGiven period\ncurrent\npast to future\nTime horizon\n1–3 months\nseveral years up to decades"
+    "text": "Characteristics of Operational and Analytical Databases\n\n\n\n\n\n\n\n\n\n\nOperational Data\nAnalytical Data\n\n\n\n\nTarget group\nOperational employees\nManagement, Analysts\n\n\nAccess frequency\nHigh\nSlow to medium\n\n\nData volume per access\nLow to medium volume\nHigh volume\n\n\nRequired response time\nVery short\nShort to medium\n\n\nLevel of data\nDetailed\nAggregated, processed\n\n\nQueries\nPredictable, periodic\nUnpredictable, ad hoc\n\n\nGiven period\nCurrent\nPast to future\n\n\nTime horizon\n1–3 months\nYears or decades"
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#contradiction-between-operational-data-architecture-and-analytical-information-needs",
@@ -1579,14 +1586,14 @@
     "href": "slides/lecture_3_analytical_data_architecture.html#different-intensities-of-use",
     "title": "Analytics & Big Data",
     "section": "Different Intensities of Use",
-    "text": "Different Intensities of Use"
+    "text": "Different Intensities of Use\nThe hardware load differs in operational application systems and data warehouse systems over time\n\n\n\n\n\n=&gt; A data warehouse relieves the operational systems\n\n\n— Source: Inmon: Building the Data Warehouse, 2002, p. 23."
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#definition-data-warehouse",
     "href": "slides/lecture_3_analytical_data_architecture.html#definition-data-warehouse",
     "title": "Analytics & Big Data",
     "section": "Definition: Data Warehouse",
-    "text": "Definition: Data Warehouse"
+    "text": "Definition: Data Warehouse\nThe term Data Warehouse was coined by Inmon (1995), who defined it as follows:\n\n“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision making process.”\n\n\nHe defined the terms in the sentence as follows:\n\nSubject Oriented: Data that gives information about a particular subject instead of about a company’s ongoing operations.\n\n\nIntegrated: Data that is gathered into the data warehouse from a variety of sources and merged into a coherent whole.\n\n\nTime-variant: All data in the data warehouse is identified with a particular time period.\n\n\nNon-volatile: Data is stable in a data warehouse. More data is added but data is never removed. This enables management to gain a consistent picture of the business."
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#the-data-warehouse-concept",
@@ -1792,20 +1799,6 @@
     "text": "Exercise 3\nAs an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses.\nFlowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available.\nThe DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports.\nThe key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.\nEmployees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.\nCreate the logical data warehouse schema!"
   },
   {
-    "objectID": "slides/lecture_3_analytical_data_architecture.html#navigation-1",
-    "href": "slides/lecture_3_analytical_data_architecture.html#navigation-1",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation"
-  },
-  {
-    "objectID": "slides/lecture_3_analytical_data_architecture.html#descriptive-analytics-1",
-    "href": "slides/lecture_3_analytical_data_architecture.html#descriptive-analytics-1",
-    "title": "Analytics & Big Data",
-    "section": "2 Descriptive Analytics",
-    "text": "2 Descriptive Analytics\n\n2.1 Data Warehouse Systems\n\n\n2.2 Online Analytical Processing (OLAP)"
-  },
-  {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#subject-of-olap",
     "href": "slides/lecture_3_analytical_data_architecture.html#subject-of-olap",
     "title": "Analytics & Big Data",
@@ -1876,11 +1869,11 @@
     "text": "Summary\nTODO"
   },
   {
-    "objectID": "slides/lecture_5_regression_2.html#learning-objectives",
-    "href": "slides/lecture_5_regression_2.html#learning-objectives",
+    "objectID": "slides/lecture_5_regression_2.html#section",
+    "href": "slides/lecture_5_regression_2.html#section",
     "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
+    "section": "",
+    "text": "Understand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
   },
   {
     "objectID": "slides/lecture_5_regression_2.html#mulitple-regression",
@@ -1939,11 +1932,11 @@
     "text": "Summary\n\nTODO"
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#learning-objectives",
-    "href": "slides/lecture_6_machine_learning_1.html#learning-objectives",
+    "objectID": "slides/lecture_6_machine_learning_1.html#section",
+    "href": "slides/lecture_6_machine_learning_1.html#section",
     "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
+    "section": "",
+    "text": "Distinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#today",
@@ -2149,11 +2142,11 @@
     "text": "Summary"
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#learning-objectives",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#learning-objectives",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#section",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#section",
     "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nDescribe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python (exercise).\nExplain the role of exploratory data analysis in business decision-making."
+    "section": "",
+    "text": "Describe key characteristics of variables and patterns between variables.\nExplore data sets by using appropriate descriptive and visual techniques in Python (exercise).\nExplain the role of exploratory data analysis in business decision-making."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#table-of-contents",
@@ -2485,11 +2478,11 @@
     "text": "Summary\nTODO"
   },
   {
-    "objectID": "slides/lecture_11_synthesis.html#learning-objectives",
-    "href": "slides/lecture_11_synthesis.html#learning-objectives",
+    "objectID": "slides/lecture_11_synthesis.html#section",
+    "href": "slides/lecture_11_synthesis.html#section",
     "title": "Analytics & Big Data",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
+    "section": "",
+    "text": "Summarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html",

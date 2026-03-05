@@ -173,3 +173,31 @@ body,
   font-size: 1.05em;  /* slightly larger author */
   margin-top: 0.2em;
 }
+
+/* Learning objectives box */
+.learning-objectives {
+  border-left: 6px solid #2c7be5;
+  background-color: #f5f8ff;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+}
+
+/* Title with icon */
+.learning-objectives::before {
+  content: "🎯 Learning Objectives";
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* List styling */
+.learning-objectives ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.learning-objectives li {
+  margin-bottom: 0.35rem;
+}

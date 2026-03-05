@@ -95,7 +95,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -213,17 +233,6 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -233,6 +242,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   </style>
@@ -254,8 +274,9 @@
     <p class="date">(2026-03-30)</p>
 
 </section>
-<section id="learning-objectives" class="slide level2" data-state="hide-menubar">
-<h2>Learning objectives</h2>
+<section id="section" class="slide level2" data-state="hide-menubar">
+<h2></h2>
+<p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
 <li><strong>Outline</strong> the architecture of data warehouses.</li>
@@ -264,209 +285,20 @@
 </ul>
 </div>
 <!--
-- descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems
-- dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy)
+    - descriptive analytics in the context of data warehouses, including ETL/staging, metadata, and the separation from operational systems
+    - dimensional modeling concepts (facts, dimensions, hierarchies) and common schema variants (star, snowflake, galaxy)
 -->
 </section>
 <section>
-<section id="todo-integrate-this" class="title-slide slide level1 center">
-<h1>TODO: integrate this</h1>
-<pre><code>## Data Preparation and Enrichment
-
-&gt; The data collection and preparation phase is the most labor-intensive one, consuming on average between 60-80% of a data scientist’s time. It’s critical therefore to select a tool that can automate or at least speed the workflows associated with data preparation.
-
-![](../images/slides_134.png)
-
-2016 Dataiku, Inc.
-
-
-
-## Data Cleaning
-
-1. Proof of correctness of the data
-
-- examine for irregular outliers (e.g. Age=236)
-- examine for typographical errors (e.g. Frankfrut)
-- examine for different writing styles (e.g. behavior/behaviour)
--
-2. Handling missing values
-
-![](../images/slides_140_new.png)
-
-
-
-
-## Missing Values Strategies
-
-![](../images/slides_141_new.png)
-
-
-## Sampling
-
-A population can be defined as including all people or items with the characteristic one wishes to understand.
-
-Sampling is about to find a representative subset of that population.
-
-Data represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.
-
-There are two sources of randomness and uncertainty:
-
-- the randomness and uncertainty underlying the process itself, and
-- the uncertainty associated with the underlying sampling method.
-
-
-
-
-## Sampling in Times of Big Data
-
-**Question:**
-
-Is there any need for sampling in times of Big Data? Why not "N=ALL"?
-
-**Answer:**
-
-Data is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.
-
-**Examples:**
-
-- When analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.
-- When analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently.
-
-
-
-
-## Reasons for Sampling
-
-- The volume of data is too large to capture and process
-- Design the analytics process using a subset of the data for performance reasons. Later use the complete data set.
-- The data set doesn't perfectly represent the target population.
-- The data set is imbalanced.
-- Use sampling to partition into training and test data.
-- ...
-
-
-
-
-## Popular Methods of Sampling (I)
-
-![](../images/slides_135.png)
-
-
-
-
-## Popular Methods of Sampling (II)
-
-![](../images/slides_167.png)
-
-
----
-
-
-## Systematic Sampling
-
-![](../images/slides_176.png)
-
-
-
-
-## Random Sampling
-
-![](../images/slides_177.png)
-
-
-
-
-## Proportional Sampling
-
-![](../images/slides_178.png)
-
-
-
-
-## Downsampling
-
-![](../images/slides_179.png)
-
-
-
-
-## SMOTE
-
-&lt;div style="display:flex"&gt;
-&lt;div style="width:60%"&gt;
-&gt; SMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class. At first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1. Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.
-&lt;/div&gt;
-
-&lt;div style="float:right;width:40%"&gt;
-![](../images/slides_180.png)
-&lt;/div&gt;
-&lt;/div&gt;
-
-::: aside
-— Source: https://github.com/minoue-xx/Oversampling-Imbalanced-Data
-:::
-
-
-
-
-## Use Cases of Data Analytics - Examples
-
-![](../images/slides_98_new.png)
-
-
-
-
-## Fundamental Skills of Data Analytics
-
-![](../images/slides_105.png)
-
-
-## TODO integrate this:
-
-https://pubadmin.institute/administrative-thinkers/decision-making-process-herbert-simon
-
-
-## The Data Analytics Process
-
-![](../images/slides_106.png)
-
-::: aside
-— Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process
-:::
-
-
-
-
-## Need for Knowledge about the Algorithms
-
-&gt; The distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.
-
-::: aside
-— Source: Dataiku - Data Science for Banking and Insurance
-:::</code></pre>
-</section>
-<section id="navigation" class="slide level2">
-<h2>Navigation</h2>
-</section>
-<section id="descriptive-analytics" class="slide level2">
-<h2>2 Descriptive Analytics</h2>
-<blockquote>
-<p>2.1 Data Warehouse Systems</p>
-</blockquote>
-<blockquote>
-<p>2.2 Online Analytical Processing (OLAP)</p>
-</blockquote>
-</section></section>
-<section>
-<section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
-<h1>TODO</h1>
+<section id="data-warehouse" class="title-slide slide level1 center" data-stack-name="Data Warehouse">
+<h1>Data Warehouse</h1>
 
 </section>
 <section id="application-systems-pyramid" class="slide level2">
 <h2>Application Systems Pyramid</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_27.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/dwh.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
 </section>
@@ -483,35 +315,63 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 </div></aside></section>
 <section id="characteristics-of-operational-and-analytical-databases" class="slide level2">
 <h2>Characteristics of Operational and Analytical Databases</h2>
-<ul>
-<li><p>Characteristics</p></li>
-<li><p>Operational Data</p></li>
-<li><p>Analytical Data</p></li>
-<li><p>Target group</p></li>
-<li><p>Operational employees</p></li>
-<li><p>Management, Analysts, Divisional manager</p></li>
-<li><p>Access frequency</p></li>
-<li><p>high</p></li>
-<li><p>slow to medium</p></li>
-<li><p>Data volume per access</p></li>
-<li><p>low to medium volume</p></li>
-<li><p>high volume</p></li>
-<li><p>Required response time</p></li>
-<li><p>very short</p></li>
-<li><p>short to medium</p></li>
-<li><p>Level of data</p></li>
-<li><p>detailed</p></li>
-<li><p>aggregated, processed</p></li>
-<li><p>Queries</p></li>
-<li><p>predictable, periodic</p></li>
-<li><p>unpredictable, ad hoc</p></li>
-<li><p>Given period</p></li>
-<li><p>current</p></li>
-<li><p>past to future</p></li>
-<li><p>Time horizon</p></li>
-<li><p>1–3 months</p></li>
-<li><p>several years up to decades</p></li>
-</ul>
+<p><br><br></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 26%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Operational Data</th>
+<th>Analytical Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Target group</td>
+<td>Operational employees</td>
+<td>Management, Analysts</td>
+</tr>
+<tr class="even">
+<td>Access frequency</td>
+<td>High</td>
+<td>Slow to medium</td>
+</tr>
+<tr class="odd">
+<td>Data volume per access</td>
+<td>Low to medium volume</td>
+<td>High volume</td>
+</tr>
+<tr class="even">
+<td>Required response time</td>
+<td>Very short</td>
+<td>Short to medium</td>
+</tr>
+<tr class="odd">
+<td>Level of data</td>
+<td>Detailed</td>
+<td>Aggregated, processed</td>
+</tr>
+<tr class="even">
+<td>Queries</td>
+<td>Predictable, periodic</td>
+<td>Unpredictable, ad hoc</td>
+</tr>
+<tr class="odd">
+<td>Given period</td>
+<td>Current</td>
+<td>Past to future</td>
+</tr>
+<tr class="even">
+<td>Time horizon</td>
+<td>1–3 months</td>
+<td>Years or decades</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="contradiction-between-operational-data-architecture-and-analytical-information-needs" class="slide level2">
 <h2>Contradiction between Operational Data Architecture and Analytical Information Needs</h2>
@@ -526,39 +386,25 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 </div></aside></section>
 <section id="different-intensities-of-use" class="slide level2">
 <h2>Different Intensities of Use</h2>
-</section></section>
-<section id="the-hardware-load-differs-in-operational-application-systems-and-data-warehouse-systems-over-time" class="title-slide slide level1 center">
-<h1>The hardware load differs in operational application systems and data warehouse systems over time</h1>
+<p>The hardware load differs in operational application systems and data warehouse systems over time</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_30.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
-</section>
-
-<section>
-<section id="a-data-warehouse-relieves-the-operational-systems" class="title-slide slide level1 center">
-<h1>=&gt; A data warehouse relieves the operational systems</h1>
+<p>=&gt; A data warehouse relieves the operational systems</p>
 
 <aside><div>
 <p>— Source: Inmon: Building the Data Warehouse, 2002, p.&nbsp;23.</p>
 </div></aside></section>
 <section id="definition-data-warehouse" class="slide level2">
 <h2>Definition: Data Warehouse</h2>
-</section></section>
-<section id="the-term-data-warehouse-was-coined-by-bill-inmon-in-1990-which-he-defined-in-the-following-way" class="title-slide slide level1 center">
-<h1>The term Data Warehouse was coined by Bill Inmon in 1990, which he defined in the following way:</h1>
-
-</section>
-
-<section id="a-data-warehouse-is-a-subject-oriented-integrated-time-variant-and-non-volatile-collection-of-data-in-support-of-managements-decision-making-process." class="title-slide slide level1 center">
-<h1>“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision making process.”</h1>
-
-</section>
-
-<section>
-<section id="he-defined-the-terms-in-the-sentence-as-follows" class="title-slide slide level1 center">
-<h1>He defined the terms in the sentence as follows:</h1>
+<p>The term Data Warehouse was coined by <span class="citation" data-cites="Inmon1995">Inmon (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, who defined it as follows:</p>
+<blockquote>
+<p><strong>“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision making process.”</strong></p>
+</blockquote>
+<div class="fragment">
+<p>He defined the terms in the sentence as follows:</p>
 <blockquote>
 <p><strong>Subject Oriented:</strong> Data that gives information about a particular subject instead of about a company’s ongoing operations.</p>
 </blockquote>
@@ -571,10 +417,8 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 <blockquote>
 <p><strong>Non-volatile:</strong> Data is stable in a data warehouse. More data is added but data is never removed. This enables management to gain a consistent picture of the business.</p>
 </blockquote>
-
-<aside><div>
-<p>— Source: “What is a Data Warehouse?” W. H. Inmon, Prism, Volume 1, Number 1, 1995</p>
-</div></aside></section>
+</div>
+</section>
 <section id="the-data-warehouse-concept" class="slide level2">
 <h2>The Data Warehouse Concept</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -620,6 +464,11 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 <p><img data-src="../images/slides_37_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
+</section></section>
+<section>
+<section id="etl-pipeline" class="title-slide slide level1 center" data-stack-name="ETL Pipeline">
+<h1>ETL Pipeline</h1>
+
 </section>
 <section id="etl-tools" class="slide level2">
 <h2>ETL-Tools</h2>
@@ -671,6 +520,11 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 <li><p>Specific</p></li>
 <li><p>Versatile</p></li>
 </ul>
+</section></section>
+<section>
+<section id="dimensional-modeling" class="title-slide slide level1 center" data-stack-name="Dimensional Modeling">
+<h1>Dimensional Modeling</h1>
+
 </section>
 <section id="architectural-variants-of-data-warehouses-in-practice" class="slide level2">
 <h2>Architectural Variants of Data Warehouses in Practice</h2>
@@ -769,11 +623,11 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 <h2>Queries on the Star Schema</h2>
 <p><strong>Example:</strong></p>
 <p><strong>In which years were the most cars purchased by female customers in Hesse in the 1st quarter?</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
-<span id="cb2-2"><a></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
-<span id="cb2-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
-<span id="cb2-4"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
-<span id="cb2-5"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
+<span id="cb1-2"><a></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
+<span id="cb1-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
+<span id="cb1-4"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
+<span id="cb1-5"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -890,18 +744,11 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 <p>The key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs.</p>
 <p>Employees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.</p>
 <p><strong>Create the logical data warehouse schema!</strong></p>
-</section>
-<section id="navigation-1" class="slide level2">
-<h2>Navigation</h2>
-</section>
-<section id="descriptive-analytics-1" class="slide level2">
-<h2>2 Descriptive Analytics</h2>
-<blockquote>
-<p>2.1 Data Warehouse Systems</p>
-</blockquote>
-<blockquote>
-<p>2.2 Online Analytical Processing (OLAP)</p>
-</blockquote>
+</section></section>
+<section>
+<section id="olap-operations" class="title-slide slide level1 center" data-stack-name="OLAP Operations">
+<h1>OLAP Operations</h1>
+
 </section>
 <section id="subject-of-olap" class="slide level2">
 <h2>Subject of OLAP</h2>
@@ -983,9 +830,17 @@ https://pubadmin.institute/administrative-thinkers/decision-making-process-herbe
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
 <p>TODO</p>
-
-
 </section></section>
+<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
+<h1>References</h1>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Inmon1995" class="csl-entry" role="listitem">
+Inmon, W. H. (1995). What is a data warehouse? <em>Prism Tech Topic</em>, <em>1</em>(1), 1–5.
+</div>
+</div>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
