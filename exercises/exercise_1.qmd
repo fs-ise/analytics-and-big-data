@@ -11,6 +11,10 @@ Explore the Python and Jupyter analytics ecosystem:
 :::
 
 ::: {.callout-note title="TODO"}
+See https://www.codecademy.com/article/how-to-use-jupyter-notebooks
+https://www.codecademy.com/article/getting-started-with-jupyter
+-> variable? + tab-completion, shift-tab for function arguments
+
 - test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)
 - shortcuts: run individual lines with shift+ENTER ??, press a, b, x, ...
 - start with a simple example of an excel spreadsheet, then check an API
@@ -237,3 +241,7 @@ Most of them are aggregations such as `sum` and `mean`.
 ## Exam prep
 
 TODO : include specific questions/tasks that could be included in the exam.
+
+- "Simple question" (e.g., Amazon is successful because we all order online. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
+- table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
+- TBD: questions related to the jupyter ecosystem?

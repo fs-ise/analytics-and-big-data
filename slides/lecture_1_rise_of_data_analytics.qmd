@@ -604,6 +604,38 @@ digraph CRISPDM {
 - Github account, start Codespace in [analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
 - option to use a local setup after this session (if it works on your machine)
 - explain setup
-- Working example (setup time seems to be fast!): https://github.com/github/codespaces-jupyter
-- Github advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning
 
+<!--
+  - Github advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning
+  
+  - Working example (setup time seems to be fast!): https://github.com/github/codespaces-jupyter
+  - https://github.com/devcontainers-community/templates-jupyter-datascience-notebooks
+  - https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html
+
+    Start codespace, go to https://github.com/codespaces -> open in jupyterlab
+    https://github.blog/changelog/2022-11-09-using-codespaces-with-jupyterlab-public-beta/
+    can select jupyterlab as default editor in github/settings/codespaces/editor preferences
+    BUT: VSCode seems to be the better supported/more popular and reliable version...
+    Note: pin the image version (to enable caching and prevent re-loading)
+
+    Note: only microsoft is cached.
+    -> TODO: test whether pip-install through devcontainer setup works.
+    -> microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
+-->
+
+Kernel: select global env
+
+TODO: download/save changes (and stop/delete codespace)
+
+
+## Survey: Session 1 {data-state="hide-menubar"}
+
+<br><br>
+
+{{< qrcode https://docs.google.com/forms/u/0/ width=400 height=400  >}}
+
+<br><br>
+
+Link: [https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor](https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor)
+
+Note: We will use and possibly publish results (anonmyously).

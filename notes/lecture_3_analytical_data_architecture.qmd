@@ -6,6 +6,12 @@ format: html
 ::: callout-note
 TODO
 
+Clarify: OLTP <-> OLAP
+OLTP -> ETL -> DWH -> OLAP
+
+Distinguish fact and dimension tables
+
+
 Learning objective: writing SQL queries!?
 
 Illustrate: OLAP as a "systems approach", notebooks as a more flexible data science approach

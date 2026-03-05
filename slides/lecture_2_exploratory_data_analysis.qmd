@@ -21,7 +21,7 @@ date: "2026-03-23"
 
 ## The role of EDA
 
-process (pre-model), aims, techniques (graphical, non-gaphical, ...)
+process (pre-model), aims, techniques (graphical, non-graphical, ...)
 
 ## "limitations of EDA"
 
@@ -133,7 +133,7 @@ Examples:
 
 - A numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point
 - Invariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 > 0, 𝑏 ≥ 0
-- Two readings on an interval scale cannot be added but calculating an average of such values is possible
+- Although the sum of two interval-scale measurements is not meaningful by itself, their average can be computed
 
 Examples:
 
@@ -876,7 +876,7 @@ df.hist()
 
 ## TODO
 
-show all (?) visulaizations covered on the previous slides
+show all (?) visualization covered on the previous slides
 TBD: clustering?!
 
 ## Summary {data-state="hide-menubar"}
