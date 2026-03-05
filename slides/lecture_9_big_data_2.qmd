@@ -6,7 +6,9 @@ session: "Session 9"
 date: "2026-05-04"
 ---
 
-# Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 **Tentatively**
@@ -131,3 +133,5 @@ Chess 2^64 legal positions, Go 2^120!!!
 
 ![](../images/slides_220.png)
 
+
+# References {data-state="hide-menubar"}

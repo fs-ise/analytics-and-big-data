@@ -11,7 +11,9 @@ execute:
   message: false
 ---
 
-## Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Explain** the stages of a model-based analytics workflow using linear regression as an example.
@@ -353,3 +355,5 @@ In the given context, a **model** is the description of the relationship between
 
 
 Note: more on python in the exercises
+
+# References {data-state="hide-menubar"}

@@ -6,7 +6,9 @@ session: "Session 7"
 date: "2026-04-20"
 ---
 
-# Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Compare** selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.
@@ -907,3 +909,5 @@ Proportions in the leafs can be interpreted as probabilities.
 
 
 ## TODO/TBD: close with ensemble classifiers?
+
+# References {data-state="hide-menubar"}

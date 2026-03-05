@@ -6,7 +6,9 @@ session: "Session 11"
 date: "2026-05-11"
 ---
 
-## Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Summarize** how learnings integrate across the semester.
@@ -14,3 +16,5 @@ date: "2026-05-11"
 :::
 
 # TODO {data-stack-name="TODO"}
+
+# References {data-state="hide-menubar"}

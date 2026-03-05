@@ -6,7 +6,9 @@ session: "Session 3"
 date: "2026-03-30"
 ---
 
-## Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Outline** the architecture of data warehouses.
@@ -667,3 +669,6 @@ The result of a nest operation physically represents a two-dimensional matrix. I
 ## Summary {data-state="hide-menubar"}
 
 TODO
+
+
+# References {data-state="hide-menubar"}

@@ -6,7 +6,9 @@ session: "Session 5"
 date: "2026-04-14"
 ---
 
-## Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Understand and assess** multiple regression models, including refinement strategies and key assumptions.
@@ -142,3 +144,5 @@ business goal: predict defaults or quick-sales (binary outcome; need to select a
 ## Summary {data-state="hide-menubar"}
 
 - TODO
+
+# References {data-state="hide-menubar"}

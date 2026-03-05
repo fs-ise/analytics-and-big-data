@@ -6,7 +6,9 @@ session: "Session 2"
 date: "2026-03-23"
 ---
 
-## Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Describe** key characteristics of variables and patterns between variables.

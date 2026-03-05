@@ -6,7 +6,9 @@ session: "Session 6"
 date: "2026-04-20"
 ---
 
-## Learning objectives {data-state="hide-menubar"}
+## {data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Distinguish** between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.
@@ -432,4 +434,4 @@ The prediction error is influenced by three components:
 
 
 
-
+# References {data-state="hide-menubar"}

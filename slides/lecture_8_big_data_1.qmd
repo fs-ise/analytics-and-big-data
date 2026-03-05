@@ -6,8 +6,9 @@ session: "Session 8"
 date: "2026-05-04"
 ---
 
+## {data-state="hide-menubar"}
 
-# Learning objectives {data-state="hide-menubar"}
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Explain** the characteristics of big data and their implications for analytics workflows.
@@ -305,3 +306,5 @@ Aggregation is done just in time. Thus, the schema of the data warehouse is just
 ::: aside
 — Source: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/
 :::
+
+# References {data-state="hide-menubar"}
