@@ -81,7 +81,7 @@
     "href": "notes/lecture_3_analytical_data_architecture.html",
     "title": "Notes: Session 2: Analytical data architecture",
     "section": "",
-    "text": "Note\n\n\n\nTODO\nLearning objective: writing SQL queries!?\nIllustrate: OLAP as a “systems approach”, notebooks as a more flexible data science approach\nRotating hypercube: similar to rotating in tidy-data preparation?\nDrop the Excel OLAP plugin?\nExtract exercises?"
+    "text": "Note\n\n\n\nTODO\nClarify: OLTP &lt;-&gt; OLAP OLTP -&gt; ETL -&gt; DWH -&gt; OLAP\nDistinguish fact and dimension tables\nLearning objective: writing SQL queries!?\nIllustrate: OLAP as a “systems approach”, notebooks as a more flexible data science approach\nRotating hypercube: similar to rotating in tidy-data preparation?\nDrop the Excel OLAP plugin?\nExtract exercises?"
   },
   {
     "objectID": "notes/lecture_8_big_data_1.html",
@@ -956,7 +956,14 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#todo",
     "title": "Analytics & Big Data",
     "section": "TODO",
-    "text": "TODO\n\nGithub account, start Codespace in analytics-and-big-data-notebooks\noption to use a local setup after this session (if it works on your machine)\nexplain setup\nWorking example (setup time seems to be fast!): https://github.com/github/codespaces-jupyter\nGithub advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning"
+    "text": "TODO\n\nGithub account, start Codespace in analytics-and-big-data-notebooks\noption to use a local setup after this session (if it works on your machine)\nexplain setup\n\n\nKernel: select global env\nTODO: download/save changes (and stop/delete codespace)"
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#survey-session-1",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#survey-session-1",
+    "title": "Analytics & Big Data",
+    "section": "Survey: Session 1",
+    "text": "Survey: Session 1\n\n\n\n    \n\nLink: https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor\nNote: We will use and possibly publish results (anonmyously)."
   },
   {
     "objectID": "teaching_notes.html",
@@ -977,7 +984,7 @@
     "href": "preparation.html#preparation-overview",
     "title": "Preparation",
     "section": "Preparation overview",
-    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Big data I\nFind contents: Big data II\nCheck: Jupyter Exercise setup: export of jupyter notebooks\nCheck: Jupyter Exercise setup: running jupyter notebooks (GitHub?)\n\nGenerally: generation of PDFs: local only?\nTODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — The rise of analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Analytical data architecture\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Big Data II\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
+    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Big data I\nFind contents: Big data II\nCheck: Jupyter Exercise setup: export of jupyter notebooks\nCheck: Jupyter Exercise setup: running jupyter notebooks (GitHub?)\n\nGenerally: generation of PDFs: local only?\nPlan to record timing (data in the repository) and data from google surveys - TODO: session/exercise structure should be reflected in each survey -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration\nTODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — The rise of analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Analytical data architecture\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Big Data II\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
   },
   {
     "objectID": "preparation.html#cross-cutting-tasks",
@@ -1278,7 +1285,7 @@
     "href": "exercises/exercise_1.html#exam-prep",
     "title": "Exercise 1: The rise of analytics",
     "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam."
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n“Simple question” (e.g., Amazon is successful because we all order online. -&gt; explain how it exemplifies the rise of modern analytics, referring to the four “pillars”)\ntable with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive\nTBD: questions related to the jupyter ecosystem?"
   },
   {
     "objectID": "readme.html",
@@ -2160,7 +2167,7 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#the-role-of-eda",
     "title": "Analytics & Big Data",
     "section": "The role of EDA",
-    "text": "The role of EDA\nprocess (pre-model), aims, techniques (graphical, non-gaphical, …)"
+    "text": "The role of EDA\nprocess (pre-model), aims, techniques (graphical, non-graphical, …)"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#limitations-of-eda",
@@ -2209,7 +2216,7 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#interval-scale-quantitative",
     "title": "Analytics & Big Data",
     "section": "Interval scale (quantitative)",
-    "text": "Interval scale (quantitative)\n\nA numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point\nInvariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0\nTwo readings on an interval scale cannot be added but calculating an average of such values is possible\n\nExamples:\n\nCelsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32\nDates and time (e.g., conversion from Julian to Gregorian calendar is possible)"
+    "text": "Interval scale (quantitative)\n\nA numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point\nInvariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0\nAlthough the sum of two interval-scale measurements is not meaningful by itself, their average can be computed\n\nExamples:\n\nCelsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32\nDates and time (e.g., conversion from Julian to Gregorian calendar is possible)"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#ratio-scale-quantitative",
@@ -2468,7 +2475,7 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#todo-1",
     "title": "Analytics & Big Data",
     "section": "TODO",
-    "text": "TODO\nshow all (?) visulaizations covered on the previous slides TBD: clustering?!"
+    "text": "TODO\nshow all (?) visualization covered on the previous slides TBD: clustering?!"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#summary",
@@ -2538,7 +2545,7 @@
     "href": "notes/lecture_0_orga.html#myself",
     "title": "Notes: Orga",
     "section": "Myself",
-    "text": "Myself\nI do not know everything. I make mistakes. …\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role… - theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution) Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\n\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nFirst round - Lot of unknowns: how long session will take, how much you already know, what is challenging or easy - I will learn as much as you will. - I will ask for your feedback very regularly (at the end of each session)"
+    "text": "Myself\nI do not know everything. I make mistakes. …\nMy Story as a teacher. Copy Stanford slides for CS vs. Evolved role… - theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution) Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise\n\nStory (TI: Stanford slides, … - both: hard skills + engagement with practice)\nI give my very best, aim to make this the best analytics course.\n\nMention surveys after each session (voluntary, but help me assess and prioritize)\nMention (without bullets on the slide) - What I expect from students - What students can expect from me\nFirst round - Lot of unknowns: how long session will take, how much you already know, what is challenging or easy - I will learn as much as you will. - I will ask for your feedback very regularly (at the end of each session)"
   },
   {
     "objectID": "notes/lecture_0_orga.html#about-you",
