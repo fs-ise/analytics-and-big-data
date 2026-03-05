@@ -69,6 +69,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -78,17 +89,6 @@ div.callout-objective.callout-style-default > .callout-header {
 div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
   content: '🎯';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -102,15 +102,15 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
   content: '🛠️';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 </style>
@@ -223,7 +223,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <tr class="odd">
 <td>50-65</td>
 <td>15</td>
-<td>New methods and algorithms</td>
+<td>New algorithms</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -247,6 +247,17 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <p>In this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.</p>
 </div>
 </div>
+<p>Focus on algorithms (enable more elaborate models and analyses)</p>
+</section>
+<section id="analytical-processes" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-processes">Analytical processes</h2>
+<p>Key trends of improvement:</p>
+<ul>
+<li>Maturing: from descriptive to predictive and prescriptive (reducing ambiguity and the need for human involvement in business decisions)</li>
+<li>Pervasive: extending to different areas (e.g., understanding customers with A/B testing), departments (logistics, financial, …) with specific disciplines refining more specialized models (forecasting, supply chain, scheduling, queueing, …)</li>
+<li>Standardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -&gt; intensifies competition</li>
+</ul>
+<p>CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)</p>
 </section>
 <section id="exercise" class="level2">
 <h2 class="anchored" data-anchor-id="exercise">Exercise</h2>

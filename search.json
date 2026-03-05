@@ -847,109 +847,67 @@
     "text": "Why is Modern Analytics so Successful?\n\nMore Data\nMore Computing Power\nNew Algorithms\nNew Analytics Processes"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#internet-of-things-as-a-driver-of-data",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#internet-of-things-as-a-driver-of-data",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#the-data-explosion",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#the-data-explosion",
     "title": "Analytics & Big Data",
-    "section": "Internet of Things as a driver of data",
-    "text": "Internet of Things as a driver of data\n\n\n\n\n\n\n\n\nSource: Bernard Marr; Source: Ruoming Jin"
+    "section": "The Data Explosion",
+    "text": "The Data Explosion\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnit\nEquivalent\nApproximate Meaning\n\n\n\n\nGigabyte (GB)\n\nA HD movie file or a few hundred photos\n\n\nTerabyte (TB)\n1,000 GB\nStorage of a modern laptop or external drive\n\n\nPetabyte (PB)\n1,000 TB\nData of a large company or several large data centers\n\n\nExabyte (EB)\n1,000 PB\nRoughly the yearly internet traffic of a small country\n\n\nZettabyte (ZB)\n1,000 EB\n≈ 1 trillion gigabytes; global data creation scale"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#social-media-as-a-driver-of-data",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#social-media-as-a-driver-of-data",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#data-production",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#data-production",
     "title": "Analytics & Big Data",
-    "section": "Social media as a driver of data",
-    "text": "Social media as a driver of data"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#worldwide-corporate-data-growth",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#worldwide-corporate-data-growth",
-    "title": "Analytics & Big Data",
-    "section": "Worldwide Corporate Data Growth",
-    "text": "Worldwide Corporate Data Growth"
+    "section": "Data production",
+    "text": "Data production\nEnterprise and Transactional Data\nEnterprise systems such as ERP, CRM, and supply chain platforms generate large volumes of structured data through everyday business transactions.\neCommerce\nEvery search, click, purchase, and review creates behavioral and transactional data used for recommendations and personalized marketing.\nSocial Media and User-Generated Content\nPlatforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live streaming.\nIoT and Smart Devices\nConnected devices—from wearables to industrial sensors—continuously produce real-time data across interconnected systems.\nDigital Transactions\nOnline banking, mobile payments, and blockchain systems generate detailed financial records for transactions and security monitoring.\nAI-Generated Data\nMachine learning and generative AI create large datasets during training and operation, further accelerating global data growth."
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#growth-of-computing-power",
     "href": "slides/lecture_1_rise_of_data_analytics.html#growth-of-computing-power",
     "title": "Analytics & Big Data",
     "section": "Growth of Computing Power",
-    "text": "Growth of Computing Power\nThe rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets.\n\n\n\n\n\nTODO: mention DEA automata. Von Neuman architecture, possible addition of Quantum computing TODO: mention chip miniaturization and pushing pysical limits https://www.youtube.com/watch?v=MiUHjLxm3V0"
+    "text": "Growth of Computing Power\nThe rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets."
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#todo-tbd-should-it-be-algorithms-or-models",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#todo-tbd-should-it-be-algorithms-or-models",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#evolution-of-computing-power",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#evolution-of-computing-power",
     "title": "Analytics & Big Data",
-    "section": "TODO : tBD: should it be “algorithms” or models?",
-    "text": "TODO : tBD: should it be “algorithms” or models?"
+    "section": "Evolution of Computing Power",
+    "text": "Evolution of Computing Power\nThe growth of modern analytics is enabled by changing strategies for increasing computing power.\n\n\n\n\n\n\n\n\n\nEra\nMain Strategy\nExplanation\n\n\n\n\n1970s–2000s (*)\nMoore’s Law & miniaturization\nSmaller transistors → more components per chip → faster processors\n\n\n2005–today\nParallel computing\nPerformance increases by using multiple processors simultaneously\n\n\n2010s–today\nSpecialized hardware\nChips optimized for specific workloads (GPUs, TPUs, AI accelerators)\n\n\nEmerging\nNew computing paradigms\nAlternative computing models such as quantum computing\n\n\n\n\n\n(*) Miniaturization continues today, but progress has slowed as transistors approach physical limits. Advances such as extreme ultraviolet (EUV) lithography are required to continue scaling. See how $400 million machines are constructed to build modern chips: https://www.youtube.com/watch?v=MiUHjLxm3V0."
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#old-vs.-new-methods",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#old-vs.-new-methods",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#algorithms-enable-more-powerful-models",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#algorithms-enable-more-powerful-models",
     "title": "Analytics & Big Data",
-    "section": "Old vs. New Methods",
-    "text": "Old vs. New Methods\n\n\n Traditional Regression\n\n Decision Tree\n Neural Network\n\n\n\nTODO: Alpha fold: deep mind on Protein folding: deep learning for small datasets (Algorithm selection)\n\nSource: Lalit Sachan"
+    "section": "Algorithms enable more powerful models",
+    "text": "Algorithms enable more powerful models\n\n\n\n\nTraditional Regression\n\n\nDecision Tree\n\n\nNeural Network"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#imagenet",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#imagenet",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#rapid-advances-in-algorithms",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#rapid-advances-in-algorithms",
     "title": "Analytics & Big Data",
-    "section": "ImageNet",
-    "text": "ImageNet\nImageNet is a large-scale image recognition competition where models compete to classify millions of images across thousands of categories. Breakthrough models have historically demonstrated major advances in deep learning.: Models vs Human Baseline"
+    "section": "Rapid Advances in Algorithms",
+    "text": "Rapid Advances in Algorithms\nRecent breakthroughs in AI show how new algorithms can rapidly surpass human performance in specific domains.\n\n\nAlphaGo (2016)\n\nDeveloped by DeepMind\nUses deep neural networks + reinforcement learning\nDefeated world champion Lee Sedol in the game of Go\n\nKey insight:\n\nGo was long considered too complex for computers due to the enormous search space.\n\nResult\n\nAI surpassed human experts in complex strategic reasoning.\n\n\nAlphaFold (2020–2022)\n\nDeveloped by DeepMind\nUses deep learning to predict protein structures\nAchieved breakthrough performance in the CASP competition\n\nKey insight:\n\nPredicting protein folding had been a major unsolved problem in biology for decades.\n\nResult\n\nAI can solve scientific problems that previously required years of human research.\n\n\nKey takeaway\nAI progress often occurs through algorithmic breakthroughs, enabling machines to outperform humans in increasingly complex domains:\nTODO: - add illustrations - - nobel prize + biotech. ?"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#structure-todo",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#structure-todo",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#jagged-frontier",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#jagged-frontier",
     "title": "Analytics & Big Data",
-    "section": "Structure: TODO",
-    "text": "Structure: TODO\n\nstart with epistemic goals (describing, predicting, prescribing)\nintroduce CRISP-DM\ndistinguish different analytical models and disciplines (referring to the epistemic goals - example: statistician would not be happy with an ML model because it does not support inference/explanation. ML engineer is not happy with a regression model - it may support inference/explanation better, but its predictions may be less accurate)"
+    "section": "Jagged frontier",
+    "text": "Jagged frontier\n\n\n\n\n\n\n\n\n\nTODO: cite Dellacqua"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#traditional-vs.-modern-analytics-process",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#traditional-vs.-modern-analytics-process",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#maturing-analytical-capabilities",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#maturing-analytical-capabilities",
     "title": "Analytics & Big Data",
-    "section": "Traditional vs. Modern Analytics Process",
-    "text": "Traditional vs. Modern Analytics Process\nTraditional Analytics Process:\n\n\n\n\n\nModern Analytics Process:"
+    "section": "Maturing analytical capabilities",
+    "text": "Maturing analytical capabilities"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#from-the-past-to-the-present",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#from-the-past-to-the-present",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#analytical-purposes",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#analytical-purposes",
     "title": "Analytics & Big Data",
-    "section": "From the Past to the Present",
-    "text": "From the Past to the Present"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#evolution-of-analytics",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#evolution-of-analytics",
-    "title": "Analytics & Big Data",
-    "section": "Evolution of Analytics",
-    "text": "Evolution of Analytics\n\n\n\n\n\n\n\nSource: http://juxt.pro/blog/posts/machine-learning-with-clojure.html"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#types-of-analytics-i",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#types-of-analytics-i",
-    "title": "Analytics & Big Data",
-    "section": "Types of Analytics (I)",
-    "text": "Types of Analytics (I)\n\n\n\n\n\n\n\nSource: Schmarzo, p. 88"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#types-of-analytics-ii",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#types-of-analytics-ii",
-    "title": "Analytics & Big Data",
-    "section": "Types of Analytics (II)",
-    "text": "Types of Analytics (II)\nDescriptive\n\nWhat happened in the past?\nExample: Report the profits of the last years.\n\nPredictive\n\nFind patterns and relationships in data and use them for prediction.\nExample: Find the functional relationship between price and demand.\n\nPrescriptive\n\nUse the predictions to make decisions.\nExample: Set the best price to optimize the profit.\n\nTODO: the same analytical method may be applied for different purposes. maybe even switch to “Analytical purposes”?"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#types-of-analytics-iii",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#types-of-analytics-iii",
-    "title": "Analytics & Big Data",
-    "section": "Types of Analytics (III)",
-    "text": "Types of Analytics (III)\n\n\n\n\n\n\n\n\n\nWhat happened? (descriptive / BI)\nWhat will happen? (predictive analytics)\nWhat should I do? (prescriptive analytics)\n\n\n\n\nHow many widgets did I sell last month?\nHow many widgets will I sell next month?\nOrder 5,000 units of Component Z to support widget sales for next month.\n\n\nWhat were sales by zip code for Christmas last year?\nWhat will be sales by zip code over this Christmas season?\nHire Y new sales reps by these zip codes to handle projected Christmas sales.\n\n\nHow many of Product X were returned last month?\nHow many of Product X will be returned next month?\nSet aside $125K in financial reserve to cover Product X returns.\n\n\nWhat were company revenues and profits for the past quarter?\nWhat are projected company revenues and profits for next quarter?\nSell the following product mix to achieve quarterly revenue and margin goals.\n\n\nHow many employees did I hire last year?\nHow many employees will I need to hire next year?\nIncrease hiring pipeline by 35% to achieve hiring goals.\n\n\n\n\n\n\nSource: Schmarzo, p. 13"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#todo-introduce-crisp-dm",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#todo-introduce-crisp-dm",
-    "title": "Analytics & Big Data",
-    "section": "TODO: introduce CRISP-DM ??",
-    "text": "TODO: introduce CRISP-DM ??\nIllustrate the multitude of models (here or in the “new algorithms” section?)\n\n\n\n\n\n\n\n\nDiscipline\nModel Culture\nTypical Models\n\n\n\n\nStatistics\nProbabilistic inference\nRegression, GLM, Bayesian\n\n\nEconometrics\nCausal modeling\nIV, panel models\n\n\nComputer Science\nAlgorithmic learning\nTrees, SVM, NN\n\n\nOperations Research\nOptimization\nLP, MIP\n\n\nManagement Science\nDecision modeling\nStochastic optimization\n\n\nEngineering\nSignal processing\nState space, filtering\n\n\nComplex Systems\nSimulation\nABM, DES\n\n\n\n-&gt; highlight what we focus on. Mention that not all disciplines focus on the “business understanding” and using insights to support business decisions. Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).\nStatistics vs. Data Analytics"
+    "section": "Analytical purposes",
+    "text": "Analytical purposes\n\n\n\n\n\n\n\n\n\n\nWhat happened? (descriptive )\nWhat will happen? (predictive analytics)\nWhat should I do? (prescriptive analytics)\n\n\n\n\nHow many widgets did I sell last month?\nHow many widgets will I sell next month?\nOrder 5,000 units of Component Z to support widget sales for next month.\n\n\nWhat were sales by zip code for Christmas last year?\nWhat will be sales by zip code over this Christmas season?\nHire Y new sales reps by these zip codes to handle projected Christmas sales.\n\n\nHow many of Product X were returned last month?\nHow many of Product X will be returned next month?\nSet aside $125K in financial reserve to cover Product X returns.\n\n\nWhat were company revenues and profits for the past quarter?\nWhat are projected company revenues and profits for next quarter?\nSell the following product mix to achieve quarterly revenue and margin goals.\n\n\nHow many employees did I hire last year?\nHow many employees will I need to hire next year?\nIncrease hiring pipeline by 35% to achieve hiring goals.\n\n\n\n\n\n A particular method, such as regression or machine learning, can serve multiple purposes.\n\n\n\nSource: Schmarzo, p. 13"
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#descriptive-analytics-process",
@@ -970,28 +928,21 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#example-inventory-planning",
     "title": "Analytics & Big Data",
     "section": "Example Inventory Planning",
-    "text": "Example Inventory Planning\n\n\n\n\n\n\nOn the basis of more than 300 million data records per week, Otto makes more than one billion forecasts per year on the sales development of individual articles for the next days and weeks. Such forecasts allow Otto to reduce its own inventories by up to 30% on average.\n\n\n\nSource: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/files/441/442/777/1015/DLK12_C3-3_Praesentation_Stueben.pdf"
+    "text": "Example Inventory Planning\n\n\n\n\n\n\nOn the basis of more than 300 million data records per week, Otto makes more than one billion forecasts per year on the sales development of individual articles for the next days and weeks. Such forecasts allow Otto to reduce its own inventories by up to 30% on average.\n\n\n\n\nSource: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/files/441/442/777/1015/DLK12_C3-3_Praesentation_Stueben.pdf"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#classical-corporate-planning",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#classical-corporate-planning",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#analytical-models",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#analytical-models",
     "title": "Analytics & Big Data",
-    "section": "Classical Corporate Planning",
-    "text": "Classical Corporate Planning"
+    "section": "Analytical models",
+    "text": "Analytical models\n\n\n\n\n\n\n\n\n\nDiscipline\nModel Culture\nTypical Models\n\n\n\n\nStatistics\nProbabilistic inference\nRegression, GLM, Bayesian\n\n\nEconometrics\nCausal modeling\nIV, panel models\n\n\nComputer Science\nAlgorithmic learning\nTrees, SVM, NN\n\n\nOperations Research\nOptimization\nLP, MIP\n\n\nManagement Science\nDecision modeling\nStochastic optimization\n\n\nComplex Systems\nSimulation\nABM, DES\n\n\n\n-&gt; highlight what we focus on. Mention that not all disciplines focus on the “business understanding” and using insights to support business decisions. Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).\nTODO: replace abbreviations"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#example-driver-based-planing-i",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#example-driver-based-planing-i",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm",
     "title": "Analytics & Big Data",
-    "section": "Example Driver-based Planing (I)",
-    "text": "Example Driver-based Planing (I)"
-  },
-  {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#example-driver-based-planing-ii",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#example-driver-based-planing-ii",
-    "title": "Analytics & Big Data",
-    "section": "Example Driver-based Planing (II)",
-    "text": "Example Driver-based Planing (II)\n\n\n\n\n\n\nSales forecasts based on market and social media data\nAutomated pricing based on market and competitor analyses\nEarly detection of price changes and adjustment of purchasing behavior\nOptimization of inventory management based on customers’ current purchasing preferences"
+    "section": "CRISP-DM",
+    "text": "CRISP-DM\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData"
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#summary",
@@ -999,6 +950,13 @@
     "title": "Analytics & Big Data",
     "section": "Summary",
     "text": "Summary\n🎯 Learning Objective\n\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#todo",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#todo",
+    "title": "Analytics & Big Data",
+    "section": "TODO",
+    "text": "TODO\n\nGithub account, start Codespace in analytics-and-big-data-notebooks\noption to use a local setup after this session (if it works on your machine)\nexplain setup\nWorking example (setup time seems to be fast!): https://github.com/github/codespaces-jupyter\nGithub advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning"
   },
   {
     "objectID": "teaching_notes.html",
@@ -2531,14 +2489,21 @@
     "href": "notes/lecture_1_rise_of_data_analytics.html",
     "title": "Notes: Session 1: The rise of analytics",
     "section": "",
-    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew methods and algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas."
+    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.\n\n\nFocus on algorithms (enable more elaborate models and analyses)"
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html#lecture",
     "href": "notes/lecture_1_rise_of_data_analytics.html#lecture",
     "title": "Notes: Session 1: The rise of analytics",
     "section": "",
-    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew methods and algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas."
+    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.\n\n\nFocus on algorithms (enable more elaborate models and analyses)"
+  },
+  {
+    "objectID": "notes/lecture_1_rise_of_data_analytics.html#analytical-processes",
+    "href": "notes/lecture_1_rise_of_data_analytics.html#analytical-processes",
+    "title": "Notes: Session 1: The rise of analytics",
+    "section": "Analytical processes",
+    "text": "Analytical processes\nKey trends of improvement:\n\nMaturing: from descriptive to predictive and prescriptive (reducing ambiguity and the need for human involvement in business decisions)\nPervasive: extending to different areas (e.g., understanding customers with A/B testing), departments (logistics, financial, …) with specific disciplines refining more specialized models (forecasting, supply chain, scheduling, queueing, …)\nStandardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -&gt; intensifies competition\n\nCRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)"
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html#exercise",
