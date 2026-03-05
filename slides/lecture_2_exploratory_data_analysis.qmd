@@ -649,8 +649,6 @@ TODO: TBD whether we cover it here!
 
 
 
-
-
 ## Introductory Example
 
 > Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:
@@ -664,60 +662,44 @@ TODO: TBD whether we cover it here!
 7) CHANNEL: customers buying channel (Nominal);
 8) REGION: customers region (Nominal)
 
-> Your goal is to segment the users. That means finding similar types of users and bunching them together.
-
-> Why would you want to do this?
-
-> You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.
-
+> Your goal is to segment the users. That means finding similar types of users and bunching them together.  
+> Why would you want to do this?  
+> You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.  
 > You might have a model that works better for specific groups. Or you might have different models for different groups.
-
-
 
 
 ## Cluster Analysis
 
-> Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.
+Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.
 
-> There are different types of cluster analysis methods:
+There are different types of cluster analysis methods:
 
 - Clustering Methods
 
+TODO: fix missing?
 
 
 ## Partitioning Cluster Methods
 
-> The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.
+The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.
 
-> Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).
+Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).
 
-> The objective is to find
-
-> where  is the mean of points in Si.
-
-
+The objective is to find where  is the mean of points in Si.
 
 
 > **Procedure of K-Means:**
 
-> Step 1: Randomly partition the data objects into k clusters.
-
-> Step 2: Calculate the cluster centroids.
-
-> Step 3: Calculate the distance from every data point to all centroids.
-
-> Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.
-
+> Step 1: Randomly partition the data objects into k clusters.  
+> Step 2: Calculate the cluster centroids.  
+> Step 3: Calculate the distance from every data point to all centroids.  
+> Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.  
 > Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.
-
-
 
 
 ## Example of a K-Means Cluster Analysis
 
 ![](../images/slides_327.png)
-
-
 
 
 **Between cluster variance:**
@@ -884,3 +866,5 @@ TBD: clustering?!
 ## Summary {data-state="hide-menubar"}
 
 TODO
+
+# References {data-state="hide-menubar"}

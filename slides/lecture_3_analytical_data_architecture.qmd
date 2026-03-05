@@ -71,7 +71,7 @@ The hardware load differs in operational application systems and data warehouse 
 => A data warehouse relieves the operational systems
 
 ::: aside
-— Source: Inmon: Building the Data Warehouse, 2002, p. 23.
+— Source: @Inmon2005, p. 23.
 :::
 
 
@@ -177,27 +177,19 @@ Metadata is classified into three types:
 
 A single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.
 
+<br><br>
+
 Comparison: Data Warehouse and Data Mart
 
-- Application
-- Division/Department
-- Company
+<br>
 
-- Data design
-- Optimized
-- Generalistic
-
-- Data volume
-- From gigabyte range
-- From terabyte range
-
-- Origin
-- Task oriented
-- Data model oriented
-
-- Requirements
-- Specific
-- Versatile
+|                    | Data Mart            | Data Warehouse        |
+|--------------------|----------------------|-----------------------|
+| Application        | Division/Department  | Company               |
+| Data design        | Optimized            | Generalistic          |
+| Data volume        | Gigabyte scale       | Terabytescale         |
+| Origin             | Task oriented        | Data model oriented   |
+| Requirements       | Specific             | Versatile             |
 
 
 # Dimensional Modeling {data-stack-name="Dimensional Modeling"}

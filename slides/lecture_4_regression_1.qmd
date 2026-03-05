@@ -344,7 +344,7 @@ In the given context, a **model** is the description of the relationship between
 **Overfitting** is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.
 
 ::: aside
-— Source: Schutt/O’Neil (2013): Doing Data Science.
+— Source: @SchuttONeil2014
 :::
 
 ## Summary {data-state="hide-menubar"}
