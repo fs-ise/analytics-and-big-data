@@ -191,6 +191,17 @@
     }
   </style>
   <style>
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -211,17 +222,6 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
-    background-image: none;
-  }
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -528,7 +528,7 @@
 <li><p>The graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="87b6a16e" class="cell" data-execution_count="1">
+<div id="36304800" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -567,7 +567,7 @@
 <li><p>Example: On a party, you meet many other students, and you ask what they are studying.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="81f7cec6" class="cell" data-execution_count="2">
+<div id="70ef9291" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -602,7 +602,7 @@
 <p>[ E(X) = {x} ]</p>
 <p><strong>Interpretation:</strong> If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967.</p>
 </div><div class="column" style="width:45%;">
-<div id="01501a01" class="cell" data-execution_count="3">
+<div id="4ed18f10" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -628,7 +628,7 @@
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="2bc7d41c" class="cell" data-execution_count="4">
+<div id="9f44a9f8" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -651,7 +651,7 @@
 <li><p>One can – for example – see that there is a higher spread in group 2A compared to the others</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="28f72b6b" class="cell" data-execution_count="5">
+<div id="4c169869" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -825,61 +825,35 @@
 <li>REGION: customers region (Nominal)</li>
 </ol>
 <blockquote>
-<p>Your goal is to segment the users. That means finding similar types of users and bunching them together.</p>
-</blockquote>
-<blockquote>
-<p>Why would you want to do this?</p>
-</blockquote>
-<blockquote>
-<p>You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.</p>
-</blockquote>
-<blockquote>
-<p>You might have a model that works better for specific groups. Or you might have different models for different groups.</p>
+<p>Your goal is to segment the users. That means finding similar types of users and bunching them together.<br>
+Why would you want to do this?<br>
+You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.<br>
+You might have a model that works better for specific groups. Or you might have different models for different groups.</p>
 </blockquote>
 </section>
 <section id="cluster-analysis" class="slide level2">
 <h2>Cluster Analysis</h2>
-<blockquote>
 <p>Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.</p>
-</blockquote>
-<blockquote>
 <p>There are different types of cluster analysis methods:</p>
-</blockquote>
 <ul>
 <li>Clustering Methods</li>
 </ul>
+<p>TODO: fix missing?</p>
 </section>
 <section id="partitioning-cluster-methods" class="slide level2">
 <h2>Partitioning Cluster Methods</h2>
-<blockquote>
 <p>The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.</p>
-</blockquote>
-<blockquote>
 <p>Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).</p>
-</blockquote>
-<blockquote>
-<p>The objective is to find</p>
-</blockquote>
-<blockquote>
-<p>where is the mean of points in Si.</p>
-</blockquote>
+<p>The objective is to find where is the mean of points in Si.</p>
 <blockquote>
 <p><strong>Procedure of K-Means:</strong></p>
 </blockquote>
 <blockquote>
-<p>Step 1: Randomly partition the data objects into k clusters.</p>
-</blockquote>
-<blockquote>
-<p>Step 2: Calculate the cluster centroids.</p>
-</blockquote>
-<blockquote>
-<p>Step 3: Calculate the distance from every data point to all centroids.</p>
-</blockquote>
-<blockquote>
-<p>Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.</p>
-</blockquote>
-<blockquote>
-<p>Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.</p>
+<p>Step 1: Randomly partition the data objects into k clusters.<br>
+Step 2: Calculate the cluster centroids.<br>
+Step 3: Calculate the distance from every data point to all centroids.<br>
+Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.<br>
+Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.</p>
 </blockquote>
 </section>
 <section id="example-of-a-k-means-cluster-analysis" class="slide level2">
@@ -1023,7 +997,7 @@
 <section id="pandas-and-matplotlib" class="slide level2">
 <h2>pandas and matplotlib</h2>
 <p>Example:</p>
-<div id="15b9ba40" class="cell" data-execution_count="6">
+<div id="582b5e02" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a></a></span>
@@ -1051,9 +1025,12 @@
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
 <p>TODO</p>
-
-
 </section></section>
+<section id="references" class="title-slide slide level1 center" data-state="hide-menubar">
+<h1>References</h1>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

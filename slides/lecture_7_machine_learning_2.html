@@ -125,15 +125,15 @@
     }
   </style>
   <style>
-  div.callout-self-service.callout {
-    border-left-color: #198754;
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
   }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
   }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-confidential.callout {
@@ -158,15 +158,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -203,28 +203,6 @@
 characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 -->
 </section>
-<section>
-<section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
-<h1>TODO</h1>
-
-</section>
-<section id="navigation" class="slide level2">
-<h2>Navigation</h2>
-<p>4 Predictive Analytics</p>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
-</section>
 <section id="introductory-example" class="slide level2">
 <h2>Introductory Example</h2>
 <blockquote>
@@ -241,7 +219,12 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </blockquote>
 <p><img data-src="../images/slides_221.png"></p>
 </section>
-<section id="k-nearest-neighbors" class="slide level2">
+<section>
+<section id="k-nearest-neighbors" class="title-slide slide level1 center" data-stack-name="k-Nearest Neighbors">
+<h1>k-Nearest Neighbors</h1>
+
+</section>
+<section id="k-nearest-neighbors-1" class="slide level2">
 <h2>k-Nearest Neighbors</h2>
 <ul>
 <li>k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.</li>
@@ -436,132 +419,11 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </tr>
 </tbody>
 </table>
-</section>
-<section id="navigation-1" class="slide level2">
-<h2>Navigation</h2>
-<p>4 Predictive Analytics</p>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="evaluating-the-quality-of-classification-i" class="slide level2">
-<h2>Evaluating the quality of Classification (I)</h2>
-<blockquote>
-<p>True positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as “yes”, when it is in fact “no”. A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications.</p>
-</blockquote>
-<p><img data-src="../images/slides_223.png"></p>
-</section>
-<section id="evaluating-the-quality-of-classification-ii" class="slide level2">
-<h2>Evaluating the quality of Classification (II)</h2>
-<blockquote>
-<p>Test metrics are used to assess how accurately the model predicts the known values:</p>
-</blockquote>
-<p><img data-src="../images/slides_192_new.png"></p>
-<blockquote>
-<p>Most classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:</p>
-</blockquote>
-<p><img data-src="../images/slides_1922_new.png"></p>
-</section>
-<section id="evaluating-the-quality-of-classification-iii" class="slide level2">
-<h2>Evaluating the quality of Classification (III)</h2>
-<blockquote>
-<p>Misclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:</p>
-</blockquote>
-<p><img data-src="../images/slides_193_new.png"></p>
-<blockquote>
-<p>For problems like this additional measures are required to evaluate a classifier.</p>
-</blockquote>
-<blockquote>
-<p><strong>Sensitivity</strong> (true positive rate, recall) measures the proportion of positives that are correctly identified as such. <strong>Specificity</strong> (true negative rate) measures the proportion of negatives that are correctly identified as such.</p>
-</blockquote>
-<p><img data-src="../images/slides_193_2_new.png"></p>
-<blockquote>
-<p>Using both measures, we can compute the <strong>Balanced Accuracy</strong>.</p>
-</blockquote>
-<p><img data-src="../images/slides_193_3_new.png"></p>
-</section>
-<section id="problem-of-imbalancing-and-accuracy" class="slide level2">
-<h2>Problem of Imbalancing and Accuracy</h2>
-<blockquote>
-<p>Assume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be “Accept” (Y) and “Reject” (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.</p>
-</blockquote>
-<blockquote>
-<p>Because of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.</p>
-</blockquote>
-<blockquote>
-<p>The results of the test of the model is consequently:</p>
-</blockquote>
-<p><img data-src="../images/slides_194_new.png"></p>
-<blockquote>
-<p>Thus, the model is blind for the N cases. But these are the ones of primary interest for the company.</p>
-</blockquote>
-</section>
-<section id="evaluating-the-quality-of-classification-iv" class="slide level2">
-<h2>Evaluating the quality of Classification (IV)</h2>
-<div style="display:flex; font-size:1.3em;font-weight:600">
-<div style="width:50%">
-<blockquote>
-<p><strong>Precision</strong> measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.</p>
-</blockquote>
-<blockquote>
-<p><strong>Recall</strong> measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.</p>
-</blockquote>
-</div>
-<div style="width:50%;text-align:center;">
-<p><img data-src="../images/slides_224.png"></p>
-</div>
-</div>
-<blockquote>
+</section></section>
+<section>
+<section id="decision-trees" class="title-slide slide level1 center" data-stack-name="Decision trees">
+<h1>Decision trees</h1>
 
-</blockquote>
-<aside><div>
-<p>— Source: Wikipedia</p>
-</div></aside></section>
-<section id="evaluating-the-quality-of-classification-v" class="slide level2">
-<h2>Evaluating the quality of Classification (V)</h2>
-<blockquote>
-<p>The F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.</p>
-</blockquote>
-<blockquote>
-<p><img data-src="../images/slides_196_new.png"></p>
-</blockquote>
-<blockquote>
-<p>A F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.</p>
-</blockquote>
-<blockquote>
-<p>It is commonly used in cases of high class imbalance.</p>
-</blockquote>
-</section>
-<section id="creation-and-use-of-models-1" class="slide level2">
-<h2>Creation and Use of Models</h2>
-<p><img data-src="../images/slides_197_new.png"></p>
-</section>
-<section id="navigation-2" class="slide level2">
-<h2>Navigation</h2>
-<p>4 Predictive Analytics</p>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
 </section>
 <section id="which-one-is-better" class="slide level2">
 <h2>Which one is better?</h2>
@@ -577,24 +439,14 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </div></aside></section>
 <section id="decision-trees-i" class="slide level2">
 <h2>Decision Trees (I)</h2>
-<blockquote>
 <p>Decision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).</p>
-</blockquote>
-<blockquote>
 <p>A decision tree consists of nodes and borders. The topmost node (without any parent node) is called “root”. A node without a child node is called “leaf”. Nodes that have parent and child nodes are called “interior nodes”. The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a “binary tree”.</p>
-</blockquote>
-<blockquote>
 <p>A decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets).</p>
-</blockquote>
 </section>
 <section id="decision-trees-ii" class="slide level2">
 <h2>Decision Trees (II)</h2>
-<blockquote>
 <p>Graphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.</p>
-</blockquote>
-<blockquote>
 <p>The decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model.</p>
-</blockquote>
 <p><img data-src="../images/slides_241.png"></p>
 </section>
 <section id="decision-trees-iii" class="slide level2">
@@ -759,6 +611,11 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 <p>The learner overfits to correctly classify the noisy data objects.</p>
 </blockquote>
 <p><img data-src="../images/slides_245.png"></p>
+</section></section>
+<section>
+<section id="random-forest" class="title-slide slide level1 center" data-stack-name="Random Forest">
+<h1>Random Forest</h1>
+
 </section>
 <section id="random-forest-i" class="slide level2">
 <h2>Random Forest (I)</h2>
@@ -790,84 +647,53 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 <p>To avoid overfitting effects, the size and the depth of the trees can be restricted.</p>
 </blockquote>
 <p><img data-src="../images/slides_247.png"></p>
-</section>
-<section id="predictive-analytics" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-</section>
-<section id="introductory-example-3" class="slide level2">
-<h2>Introductory Example</h2>
-<p><img data-src="../images/slides_248.png"></p>
-<p><img data-src="../images/slides_249.png"></p>
-<blockquote>
-<p><strong>websites (features)</strong></p>
-</blockquote>
-<blockquote>
-<p>1=visited</p>
-</blockquote>
-<blockquote>
-<p>0=not visited</p>
-</blockquote>
-<blockquote>
-<p><strong>ad (target)</strong></p>
-</blockquote>
-<blockquote>
-<p>1=clicked</p>
-</blockquote>
-<blockquote>
-<p>0=not clicked</p>
-</blockquote>
-<blockquote>
-<p><strong>Giant sparse matrix!</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>One matrix for every ad!</strong></p>
-</blockquote>
+<pre><code>      ## Introductory Example
 
-<aside><div>
-<p>— Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative</p>
-</div></aside></section>
-<section id="why-not-classical-linear-regression" class="slide level2">
-<h2>Why not classical linear regression?</h2>
-<blockquote>
-<p>It is possible to implement a linear regression on such a dataset where Y={0,1}.</p>
-</blockquote>
-<blockquote>
-<p>Problems:</p>
-</blockquote>
-<blockquote>
+      ![](../images/slides_248.png)
 
-<ul>
-<li>The predicted values of the linear model can be greater than 1 or less than 0.</li>
-<li>e is not normally distributed because Y takes on only two values.</li>
-<li>The error terms are heteroscedastic (the error variance is not constant for all values of X).</li>
-</ul>
+      ![](../images/slides_249.png)
 
-</blockquote>
+      &gt; **websites (features)**
 
-<aside><div>
-<p>— Source: Bichler (2015): Course Business Analytics, TU München</p>
-</div></aside></section>
-<section id="predictive-analytics-1" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.1.1 K-Nearest Neighbors</p>
-<p>4.4.1.2 Evaluating the Quality of Classification</p>
-<p>4.4.1.3 Decision Tree Approaches</p>
-<p>4.4.1.4 Logistic Regression</p>
-<p>4.4.1.5 Neural Networks</p>
-<p>4.4.1.6 Resampling</p>
-<p>4.4.1.7 Ensemble Learning</p>
-<p>4.4.2 Regression</p>
+      &gt; 1=visited
+
+      &gt; 0=not visited
+
+      &gt; **ad (target)**
+
+      &gt; 1=clicked
+
+      &gt; 0=not clicked
+
+      &gt; **Giant sparse matrix!**
+
+      &gt; **One matrix for every ad!**
+
+      ::: aside
+      — Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative
+      :::
+
+
+
+
+      ## Why not classical linear regression?
+
+      &gt; It is possible to implement a linear regression on such a dataset where Y={0,1}.
+
+      &gt; Problems:
+
+      &gt; - The predicted values of the linear model can be greater than 1 or less than 0.
+      &gt; - e is not normally distributed because Y takes on only two values.
+      &gt; - The error terms are heteroscedastic (the error variance is not constant for all values of X).
+
+      ::: aside
+      — Source: Bichler (2015): Course Business Analytics, TU München
+      :::</code></pre>
+</section></section>
+<section>
+<section id="neural-networks" class="title-slide slide level1 center" data-stack-name="Neural Networks">
+<h1>Neural Networks</h1>
+
 </section>
 <section id="functionality-of-human-neurons" class="slide level2">
 <h2>Functionality of Human Neurons</h2>
@@ -953,125 +779,101 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 
 <p><img data-src="../images/slides_320.png"></p>
 
+<pre><code>          ## Introductory Example
+
+          &gt; Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)
+
+
+
+
+          ## Regression Trees
+
+          &gt; Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.
+
+          &gt; The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.
+
+          &gt; The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.
+
+          &gt; Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.
+
+          ![](../images/slides_322.png)
+
+          ::: aside
+          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.
+          :::
+
+
+
+
+          ## Constructing a Regression Tree (I)
+
+          ![](../images/slides_323.png)
+
+          ::: aside
+          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+          :::
+
+
+
+
+          ## Constructing a Regression Tree (II)
+
+          ::: aside
+          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+          :::
+
+
+
+
+          ## Random Forests for Regression
+
+          &gt; Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.
+
+          &gt; A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.
+
+          &gt; Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.
+
+          &gt; The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.
+
+
+
+
+          ## Comparing the Fitting Ability of one vs. many Regression Trees
+
+          **Single Regression Tree**
+
+          **Average of 100 Regression Trees**
+
+          ![](../images/slides_324.png)
+
+          ![](../images/slides_325.png)
+
+
+
+
+          ## Limitations of Tree Methods in Regression
+
+          &gt; When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.
+
+          &gt; Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.
+
+          &gt; An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
+
+          &gt; If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
+
+
+
+
+          ## k-Nearest Neighbors for Regression
+
+          &gt; k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.
+
+          &gt; A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</code></pre>
 <aside><div>
 <p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
 </div><div>
 <p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
 </div></aside></section>
-<section id="predictive-analytics-2" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.2.1 OLS</p>
-<p>4.4.2.2 Ridge Regression</p>
-<p>4.4.2.3 Support Vector Regression</p>
-<p>4.4.2.4 Neural Networks</p>
-<p>4.4.2.5 Decision Trees</p>
-<p>4.4.2.6 K-Nearest Neighbors</p>
-</section>
-<section id="introductory-example-4" class="slide level2">
-<h2>Introductory Example</h2>
-<blockquote>
-<p>Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)</p>
-</blockquote>
-</section>
-<section id="regression-trees" class="slide level2">
-<h2>Regression Trees</h2>
-<blockquote>
-<p>Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.</p>
-</blockquote>
-<blockquote>
-<p>The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.</p>
-</blockquote>
-<blockquote>
-<p>The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g.&nbsp;for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e.&nbsp;$165,670, for these players.</p>
-</blockquote>
-<blockquote>
-<p>Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000<em>e^6.00 =$403,428 and 1,000</em>e^6.74 =$845,346.</p>
-</blockquote>
-<p><img data-src="../images/slides_322.png"></p>
-
-<aside><div>
-<p>— Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;304f.</p>
-</div></aside></section>
-<section id="constructing-a-regression-tree-i" class="slide level2">
-<h2>Constructing a Regression Tree (I)</h2>
-<p><img data-src="../images/slides_323.png"></p>
-
-<aside><div>
-<p>— Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;305f.</p>
-</div></aside></section>
-<section id="constructing-a-regression-tree-ii" class="slide level2">
-<h2>Constructing a Regression Tree (II)</h2>
-
-<aside><div>
-<p>— Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;305f.</p>
-</div></aside></section>
-<section id="random-forests-for-regression" class="slide level2">
-<h2>Random Forests for Regression</h2>
-<blockquote>
-<p>Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.</p>
-</blockquote>
-<blockquote>
-<p>A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.</p>
-</blockquote>
-<blockquote>
-<p>Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.</p>
-</blockquote>
-<blockquote>
-<p>The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.</p>
-</blockquote>
-</section>
-<section id="comparing-the-fitting-ability-of-one-vs.-many-regression-trees" class="slide level2">
-<h2>Comparing the Fitting Ability of one vs.&nbsp;many Regression Trees</h2>
-<p><strong>Single Regression Tree</strong></p>
-<p><strong>Average of 100 Regression Trees</strong></p>
-<p><img data-src="../images/slides_324.png"></p>
-<p><img data-src="../images/slides_325.png"></p>
-</section>
-<section id="limitations-of-tree-methods-in-regression" class="slide level2">
-<h2>Limitations of Tree Methods in Regression</h2>
-<blockquote>
-<p>When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.</p>
-</blockquote>
-<blockquote>
-<p>Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g.&nbsp;in the case of data with persistent trends. A solution may be a frequent re-training in this case.</p>
-</blockquote>
-<blockquote>
-<p>An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.</p>
-</blockquote>
-<blockquote>
-<p>If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.</p>
-</blockquote>
-</section>
-<section id="predictive-analytics-3" class="slide level2">
-<h2>Predictive Analytics</h2>
-<p>4.1 Subject of Predictive Analytics</p>
-<p>4.2 The Analytics Process</p>
-<p>4.3 Data Preparation</p>
-<p>4.4 Methods, Algorithms and Applications</p>
-<p>4.4.1 Classification</p>
-<p>4.4.2 Regression</p>
-<p>4.4.2.1 OLS</p>
-<p>4.4.2.2 Ridge Regression</p>
-<p>4.4.2.3 Support Vector Regression</p>
-<p>4.4.2.4 Neural Networks</p>
-<p>4.4.2.5 Decision Trees</p>
-<p>4.4.2.6 K-Nearest Neighbors</p>
-</section>
-<section id="k-nearest-neighbors-for-regression" class="slide level2">
-<h2>k-Nearest Neighbors for Regression</h2>
-<blockquote>
-<p>k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.</p>
-</blockquote>
-<blockquote>
-<p>A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</p>
-</blockquote>
-</section>
 <section id="todotbd-close-with-ensemble-classifiers" class="slide level2">
 <h2>TODO/TBD: close with ensemble classifiers?</h2>
 </section></section>

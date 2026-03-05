@@ -211,26 +211,15 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
-  div.callout-objective.callout {
+  div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
-  div.callout-objective.callout-style-default > .callout-header {
+  div.callout-resource.callout-style-default > .callout-header {
     background-color: rgba(13, 110, 253, 0.13);
   }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -244,15 +233,26 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-resource.callout {
+  div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
-  div.callout-resource.callout-style-default > .callout-header {
+  div.callout-objective.callout-style-default > .callout-header {
     background-color: rgba(13, 110, 253, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -395,7 +395,7 @@
 <p>=&gt; A data warehouse relieves the operational systems</p>
 
 <aside><div>
-<p>— Source: Inmon: Building the Data Warehouse, 2002, p.&nbsp;23.</p>
+<p>— Source: <span class="citation" data-cites="Inmon2005">Inmon (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>, p.&nbsp;23.</p>
 </div></aside></section>
 <section id="definition-data-warehouse" class="slide level2">
 <h2>Definition: Data Warehouse</h2>
@@ -502,24 +502,45 @@
 <section id="data-warehouse-and-data-mart" class="slide level2">
 <h2>Data Warehouse and Data Mart</h2>
 <p>A single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.</p>
+<p><br><br></p>
 <p>Comparison: Data Warehouse and Data Mart</p>
-<ul>
-<li><p>Application</p></li>
-<li><p>Division/Department</p></li>
-<li><p>Company</p></li>
-<li><p>Data design</p></li>
-<li><p>Optimized</p></li>
-<li><p>Generalistic</p></li>
-<li><p>Data volume</p></li>
-<li><p>From gigabyte range</p></li>
-<li><p>From terabyte range</p></li>
-<li><p>Origin</p></li>
-<li><p>Task oriented</p></li>
-<li><p>Data model oriented</p></li>
-<li><p>Requirements</p></li>
-<li><p>Specific</p></li>
-<li><p>Versatile</p></li>
-</ul>
+<p><br></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Data Mart</th>
+<th>Data Warehouse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Application</td>
+<td>Division/Department</td>
+<td>Company</td>
+</tr>
+<tr class="even">
+<td>Data design</td>
+<td>Optimized</td>
+<td>Generalistic</td>
+</tr>
+<tr class="odd">
+<td>Data volume</td>
+<td>Gigabyte scale</td>
+<td>Terabytescale</td>
+</tr>
+<tr class="even">
+<td>Origin</td>
+<td>Task oriented</td>
+<td>Data model oriented</td>
+</tr>
+<tr class="odd">
+<td>Requirements</td>
+<td>Specific</td>
+<td>Versatile</td>
+</tr>
+</tbody>
+</table>
 </section></section>
 <section>
 <section id="dimensional-modeling" class="title-slide slide level1 center" data-stack-name="Dimensional Modeling">
@@ -838,6 +859,9 @@
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Inmon1995" class="csl-entry" role="listitem">
 Inmon, W. H. (1995). What is a data warehouse? <em>Prism Tech Topic</em>, <em>1</em>(1), 1–5.
+</div>
+<div id="ref-Inmon2005" class="csl-entry" role="listitem">
+Inmon, W. H. (2005). <em>Building the data warehouse</em>. John wiley &amp; sons.
 </div>
 </div>
 </section>

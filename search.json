@@ -326,7 +326,7 @@
     "href": "slides/lecture_4_regression_1.html#vocabulary",
     "title": "Analytics & Big Data",
     "section": "Vocabulary",
-    "text": "Vocabulary\nA method is a composition of formalized principles that form the basis for a stringent calculation process.\nAn algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.\nIn the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.\nFitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.\nOverfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.\n\n\n— Source: Schutt/O’Neil (2013): Doing Data Science."
+    "text": "Vocabulary\nA method is a composition of formalized principles that form the basis for a stringent calculation process.\nAn algorithm is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.\nIn the given context, a model is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.\nFitting a model means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.\nOverfitting is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.\n\n\n— Source: Schutt & O’Neil (2014)"
   },
   {
     "objectID": "slides/lecture_4_regression_1.html#summary",
@@ -427,13 +427,6 @@
     "text": "Compare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#navigation",
-    "href": "slides/lecture_7_machine_learning_2.html#navigation",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation\n4 Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.1.1 K-Nearest Neighbors\n4.4.1.2 Evaluating the Quality of Classification\n4.4.1.3 Decision Tree Approaches\n4.4.1.4 Logistic Regression\n4.4.1.5 Neural Networks\n4.4.1.6 Resampling\n4.4.1.7 Ensemble Learning\n4.4.2 Regression"
-  },
-  {
     "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example",
     "href": "slides/lecture_7_machine_learning_2.html#introductory-example",
     "title": "Analytics & Big Data",
@@ -441,8 +434,8 @@
     "text": "Introductory Example\n\nCredit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.\n\n\nAssume you have the age, income, and a creditworthiness category of “yes” or “no” for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.\n\n\nYou can plot people as points on the plane and label people with an empty circle if they have low credit ratings.\n\n\nWhat if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?"
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#k-nearest-neighbors",
-    "href": "slides/lecture_7_machine_learning_2.html#k-nearest-neighbors",
+    "objectID": "slides/lecture_7_machine_learning_2.html#k-nearest-neighbors-1",
+    "href": "slides/lecture_7_machine_learning_2.html#k-nearest-neighbors-1",
     "title": "Analytics & Big Data",
     "section": "k-Nearest Neighbors",
     "text": "k-Nearest Neighbors\n\nk-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.\nThe intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.\nProcedure of k-NN:\n\n\nDetermine parameter k (= number of nearest neighbors)\n\n\nCalculate the distances between the new object and all known labeled objects.\n\n\nChoose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.\n\n\nCount the frequencies of the classes of the nearest neighbors.\n\n\nAssign the new object to the most frequent class."
@@ -504,69 +497,6 @@
     "text": "Determining Parameter k\n\nSplit the original labeled dataset into training and test data.\nPick an evaluation metric. Misclassification rate or accuracy are good ones.\nRun k-NN a few times, changing k and checking the evaluation measure.\nOptimize k by picking the one with the best evaluation measure.\n\n\n\n\nk\nAccuracy\n\n\n\n\n1\n0.720\n\n\n2\n0.685\n\n\n3\n0.740\n\n\n4\n0.745\n\n\n5\n0.770\n\n\n6\n0.740\n\n\n7\n0.750\n\n\n8\n0.750\n\n\n9\n0.765\n\n\n10\n0.760"
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#navigation-1",
-    "href": "slides/lecture_7_machine_learning_2.html#navigation-1",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation\n4 Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.1.1 K-Nearest Neighbors\n4.4.1.2 Evaluating the Quality of Classification\n4.4.1.3 Decision Tree Approaches\n4.4.1.4 Logistic Regression\n4.4.1.5 Neural Networks\n4.4.1.6 Resampling\n4.4.1.7 Ensemble Learning\n4.4.2 Regression"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-i",
-    "href": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-i",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (I)",
-    "text": "Evaluating the quality of Classification (I)\n\nTrue positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as “yes”, when it is in fact “no”. A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-ii",
-    "href": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-ii",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (II)",
-    "text": "Evaluating the quality of Classification (II)\n\nTest metrics are used to assess how accurately the model predicts the known values:\n\n\n\nMost classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-iii",
-    "href": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-iii",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (III)",
-    "text": "Evaluating the quality of Classification (III)\n\nMisclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:\n\n\n\nFor problems like this additional measures are required to evaluate a classifier.\n\n\nSensitivity (true positive rate, recall) measures the proportion of positives that are correctly identified as such. Specificity (true negative rate) measures the proportion of negatives that are correctly identified as such.\n\n\n\nUsing both measures, we can compute the Balanced Accuracy."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#problem-of-imbalancing-and-accuracy",
-    "href": "slides/lecture_7_machine_learning_2.html#problem-of-imbalancing-and-accuracy",
-    "title": "Analytics & Big Data",
-    "section": "Problem of Imbalancing and Accuracy",
-    "text": "Problem of Imbalancing and Accuracy\n\nAssume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be “Accept” (Y) and “Reject” (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.\n\n\nBecause of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.\n\n\nThe results of the test of the model is consequently:\n\n\n\nThus, the model is blind for the N cases. But these are the ones of primary interest for the company."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-iv",
-    "href": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-iv",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (IV)",
-    "text": "Evaluating the quality of Classification (IV)\n\n\n\nPrecision measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.\n\n\nRecall measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.\n\n\n\n\n\n\n\n\n\n\n— Source: Wikipedia"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-v",
-    "href": "slides/lecture_7_machine_learning_2.html#evaluating-the-quality-of-classification-v",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (V)",
-    "text": "Evaluating the quality of Classification (V)\n\nThe F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.\n\n\n\n\n\nA F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.\n\n\nIt is commonly used in cases of high class imbalance."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#creation-and-use-of-models-1",
-    "href": "slides/lecture_7_machine_learning_2.html#creation-and-use-of-models-1",
-    "title": "Analytics & Big Data",
-    "section": "Creation and Use of Models",
-    "text": "Creation and Use of Models"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#navigation-2",
-    "href": "slides/lecture_7_machine_learning_2.html#navigation-2",
-    "title": "Analytics & Big Data",
-    "section": "Navigation",
-    "text": "Navigation\n4 Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.1.1 K-Nearest Neighbors\n4.4.1.2 Evaluating the Quality of Classification\n4.4.1.3 Decision Tree Approaches\n4.4.1.4 Logistic Regression\n4.4.1.5 Neural Networks\n4.4.1.6 Resampling\n4.4.1.7 Ensemble Learning\n4.4.2 Regression"
-  },
-  {
     "objectID": "slides/lecture_7_machine_learning_2.html#which-one-is-better",
     "href": "slides/lecture_7_machine_learning_2.html#which-one-is-better",
     "title": "Analytics & Big Data",
@@ -585,14 +515,14 @@
     "href": "slides/lecture_7_machine_learning_2.html#decision-trees-i",
     "title": "Analytics & Big Data",
     "section": "Decision Trees (I)",
-    "text": "Decision Trees (I)\n\nDecision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).\n\n\nA decision tree consists of nodes and borders. The topmost node (without any parent node) is called “root”. A node without a child node is called “leaf”. Nodes that have parent and child nodes are called “interior nodes”. The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a “binary tree”.\n\n\nA decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets)."
+    "text": "Decision Trees (I)\nDecision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).\nA decision tree consists of nodes and borders. The topmost node (without any parent node) is called “root”. A node without a child node is called “leaf”. Nodes that have parent and child nodes are called “interior nodes”. The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a “binary tree”.\nA decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets)."
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#decision-trees-ii",
     "href": "slides/lecture_7_machine_learning_2.html#decision-trees-ii",
     "title": "Analytics & Big Data",
     "section": "Decision Trees (II)",
-    "text": "Decision Trees (II)\n\nGraphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.\n\n\nThe decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model."
+    "text": "Decision Trees (II)\nGraphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.\nThe decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model."
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#decision-trees-iii",
@@ -697,35 +627,7 @@
     "href": "slides/lecture_7_machine_learning_2.html#random-forest-ii",
     "title": "Analytics & Big Data",
     "section": "Random Forest (II)",
-    "text": "Random Forest (II)\n\nVoting-Principle of Random Forest:\n\n\nTo avoid overfitting effects, the size and the depth of the trees can be restricted."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#predictive-analytics",
-    "href": "slides/lecture_7_machine_learning_2.html#predictive-analytics",
-    "title": "Analytics & Big Data",
-    "section": "Predictive Analytics",
-    "text": "Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.2 Regression"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example-3",
-    "href": "slides/lecture_7_machine_learning_2.html#introductory-example-3",
-    "title": "Analytics & Big Data",
-    "section": "Introductory Example",
-    "text": "Introductory Example\n\n\n\nwebsites (features)\n\n\n1=visited\n\n\n0=not visited\n\n\nad (target)\n\n\n1=clicked\n\n\n0=not clicked\n\n\nGiant sparse matrix!\n\n\nOne matrix for every ad!\n\n\n\n— Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#why-not-classical-linear-regression",
-    "href": "slides/lecture_7_machine_learning_2.html#why-not-classical-linear-regression",
-    "title": "Analytics & Big Data",
-    "section": "Why not classical linear regression?",
-    "text": "Why not classical linear regression?\n\nIt is possible to implement a linear regression on such a dataset where Y={0,1}.\n\n\nProblems:\n\n\n\n\nThe predicted values of the linear model can be greater than 1 or less than 0.\ne is not normally distributed because Y takes on only two values.\nThe error terms are heteroscedastic (the error variance is not constant for all values of X).\n\n\n\n\n\n— Source: Bichler (2015): Course Business Analytics, TU München"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#predictive-analytics-1",
-    "href": "slides/lecture_7_machine_learning_2.html#predictive-analytics-1",
-    "title": "Analytics & Big Data",
-    "section": "Predictive Analytics",
-    "text": "Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.1.1 K-Nearest Neighbors\n4.4.1.2 Evaluating the Quality of Classification\n4.4.1.3 Decision Tree Approaches\n4.4.1.4 Logistic Regression\n4.4.1.5 Neural Networks\n4.4.1.6 Resampling\n4.4.1.7 Ensemble Learning\n4.4.2 Regression"
+    "text": "Random Forest (II)\n\nVoting-Principle of Random Forest:\n\n\nTo avoid overfitting effects, the size and the depth of the trees can be restricted.\n\n\n      ## Introductory Example\n\n      ![](../images/slides_248.png)\n\n      ![](../images/slides_249.png)\n\n      &gt; **websites (features)**\n\n      &gt; 1=visited\n\n      &gt; 0=not visited\n\n      &gt; **ad (target)**\n\n      &gt; 1=clicked\n\n      &gt; 0=not clicked\n\n      &gt; **Giant sparse matrix!**\n\n      &gt; **One matrix for every ad!**\n\n      ::: aside\n      — Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative\n      :::\n\n\n\n\n      ## Why not classical linear regression?\n\n      &gt; It is possible to implement a linear regression on such a dataset where Y={0,1}.\n\n      &gt; Problems:\n\n      &gt; - The predicted values of the linear model can be greater than 1 or less than 0.\n      &gt; - e is not normally distributed because Y takes on only two values.\n      &gt; - The error terms are heteroscedastic (the error variance is not constant for all values of X).\n\n      ::: aside\n      — Source: Bichler (2015): Course Business Analytics, TU München\n      :::"
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#functionality-of-human-neurons",
@@ -774,77 +676,7 @@
     "href": "slides/lecture_7_machine_learning_2.html#design-of-a-multilayer-perceptron",
     "title": "Analytics & Big Data",
     "section": "Design of a Multilayer Perceptron",
-    "text": "Design of a Multilayer Perceptron\n\n\n\n\n\n— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf\n\n— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#predictive-analytics-2",
-    "href": "slides/lecture_7_machine_learning_2.html#predictive-analytics-2",
-    "title": "Analytics & Big Data",
-    "section": "Predictive Analytics",
-    "text": "Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.2 Regression\n4.4.2.1 OLS\n4.4.2.2 Ridge Regression\n4.4.2.3 Support Vector Regression\n4.4.2.4 Neural Networks\n4.4.2.5 Decision Trees\n4.4.2.6 K-Nearest Neighbors"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example-4",
-    "href": "slides/lecture_7_machine_learning_2.html#introductory-example-4",
-    "title": "Analytics & Big Data",
-    "section": "Introductory Example",
-    "text": "Introductory Example\n\nDecision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#regression-trees",
-    "href": "slides/lecture_7_machine_learning_2.html#regression-trees",
-    "title": "Analytics & Big Data",
-    "section": "Regression Trees",
-    "text": "Regression Trees\n\nSome of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.\n\n\nThe figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.\n\n\nThe predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.\n\n\nPlayers with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000e^6.00 =$403,428 and 1,000e^6.74 =$845,346.\n\n\n\n\n— Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#constructing-a-regression-tree-i",
-    "href": "slides/lecture_7_machine_learning_2.html#constructing-a-regression-tree-i",
-    "title": "Analytics & Big Data",
-    "section": "Constructing a Regression Tree (I)",
-    "text": "Constructing a Regression Tree (I)\n\n\n\n— Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#constructing-a-regression-tree-ii",
-    "href": "slides/lecture_7_machine_learning_2.html#constructing-a-regression-tree-ii",
-    "title": "Analytics & Big Data",
-    "section": "Constructing a Regression Tree (II)",
-    "text": "Constructing a Regression Tree (II)\n\n\n— Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#random-forests-for-regression",
-    "href": "slides/lecture_7_machine_learning_2.html#random-forests-for-regression",
-    "title": "Analytics & Big Data",
-    "section": "Random Forests for Regression",
-    "text": "Random Forests for Regression\n\nDue to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.\n\n\nA much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.\n\n\nRegression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.\n\n\nThe disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#comparing-the-fitting-ability-of-one-vs.-many-regression-trees",
-    "href": "slides/lecture_7_machine_learning_2.html#comparing-the-fitting-ability-of-one-vs.-many-regression-trees",
-    "title": "Analytics & Big Data",
-    "section": "Comparing the Fitting Ability of one vs. many Regression Trees",
-    "text": "Comparing the Fitting Ability of one vs. many Regression Trees\nSingle Regression Tree\nAverage of 100 Regression Trees"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#limitations-of-tree-methods-in-regression",
-    "href": "slides/lecture_7_machine_learning_2.html#limitations-of-tree-methods-in-regression",
-    "title": "Analytics & Big Data",
-    "section": "Limitations of Tree Methods in Regression",
-    "text": "Limitations of Tree Methods in Regression\n\nWhen applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.\n\n\nThus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.\n\n\nAn important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.\n\n\nIf there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions."
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#predictive-analytics-3",
-    "href": "slides/lecture_7_machine_learning_2.html#predictive-analytics-3",
-    "title": "Analytics & Big Data",
-    "section": "Predictive Analytics",
-    "text": "Predictive Analytics\n4.1 Subject of Predictive Analytics\n4.2 The Analytics Process\n4.3 Data Preparation\n4.4 Methods, Algorithms and Applications\n4.4.1 Classification\n4.4.2 Regression\n4.4.2.1 OLS\n4.4.2.2 Ridge Regression\n4.4.2.3 Support Vector Regression\n4.4.2.4 Neural Networks\n4.4.2.5 Decision Trees\n4.4.2.6 K-Nearest Neighbors"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#k-nearest-neighbors-for-regression",
-    "href": "slides/lecture_7_machine_learning_2.html#k-nearest-neighbors-for-regression",
-    "title": "Analytics & Big Data",
-    "section": "k-Nearest Neighbors for Regression",
-    "text": "k-Nearest Neighbors for Regression\n\nk-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.\n\n\nA simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification."
+    "text": "Design of a Multilayer Perceptron\n\n\n\n\n          ## Introductory Example\n\n          &gt; Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)\n\n\n\n\n          ## Regression Trees\n\n          &gt; Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.\n\n          &gt; The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.\n\n          &gt; The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.\n\n          &gt; Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.\n\n          ![](../images/slides_322.png)\n\n          ::: aside\n          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.\n          :::\n\n\n\n\n          ## Constructing a Regression Tree (I)\n\n          ![](../images/slides_323.png)\n\n          ::: aside\n          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.\n          :::\n\n\n\n\n          ## Constructing a Regression Tree (II)\n\n          ::: aside\n          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.\n          :::\n\n\n\n\n          ## Random Forests for Regression\n\n          &gt; Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.\n\n          &gt; A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.\n\n          &gt; Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.\n\n          &gt; The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.\n\n\n\n\n          ## Comparing the Fitting Ability of one vs. many Regression Trees\n\n          **Single Regression Tree**\n\n          **Average of 100 Regression Trees**\n\n          ![](../images/slides_324.png)\n\n          ![](../images/slides_325.png)\n\n\n\n\n          ## Limitations of Tree Methods in Regression\n\n          &gt; When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.\n\n          &gt; Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.\n\n          &gt; An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.\n\n          &gt; If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.\n\n\n\n\n          ## k-Nearest Neighbors for Regression\n\n          &gt; k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.\n\n          &gt; A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.\n\n— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf\n\n— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf"
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#todotbd-close-with-ensemble-classifiers",
@@ -921,7 +753,7 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#analytical-purposes",
     "title": "Analytics & Big Data",
     "section": "Analytical purposes",
-    "text": "Analytical purposes\n\n\n\n\n\n\n\n\n\n\nWhat happened? (descriptive )\nWhat will happen? (predictive analytics)\nWhat should I do? (prescriptive analytics)\n\n\n\n\nHow many widgets did I sell last month?\nHow many widgets will I sell next month?\nOrder 5,000 units of Component Z to support widget sales for next month.\n\n\nWhat were sales by zip code for Christmas last year?\nWhat will be sales by zip code over this Christmas season?\nHire Y new sales reps by these zip codes to handle projected Christmas sales.\n\n\nHow many of Product X were returned last month?\nHow many of Product X will be returned next month?\nSet aside $125K in financial reserve to cover Product X returns.\n\n\nWhat were company revenues and profits for the past quarter?\nWhat are projected company revenues and profits for next quarter?\nSell the following product mix to achieve quarterly revenue and margin goals.\n\n\nHow many employees did I hire last year?\nHow many employees will I need to hire next year?\nIncrease hiring pipeline by 35% to achieve hiring goals.\n\n\n\n\n\n A particular method, such as regression or machine learning, can serve multiple purposes.\n\n\n\nSource: Schmarzo, p. 13"
+    "text": "Analytical purposes\n\n\n\n\n\n\n\n\n\n\nWhat happened? (descriptive )\nWhat will happen? (predictive analytics)\nWhat should I do? (prescriptive analytics)\n\n\n\n\nHow many widgets did I sell last month?\nHow many widgets will I sell next month?\nOrder 5,000 units of Component Z to support widget sales for next month.\n\n\nWhat were sales by zip code for Christmas last year?\nWhat will be sales by zip code over this Christmas season?\nHire Y new sales reps by these zip codes to handle projected Christmas sales.\n\n\nHow many of Product X were returned last month?\nHow many of Product X will be returned next month?\nSet aside $125K in financial reserve to cover Product X returns.\n\n\nWhat were company revenues and profits for the past quarter?\nWhat are projected company revenues and profits for next quarter?\nSell the following product mix to achieve quarterly revenue and margin goals.\n\n\nHow many employees did I hire last year?\nHow many employees will I need to hire next year?\nIncrease hiring pipeline by 35% to achieve hiring goals.\n\n\n\n\n\n A particular method, such as regression or machine learning, can serve multiple purposes.\n\n\n\nSource: Schmarzo (2016), p. 13"
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#descriptive-analytics-process",
@@ -1495,7 +1327,7 @@
     "href": "slides/lecture_8_big_data_1.html#identify-and-prioritize-data-sources",
     "title": "Analytics & Big Data",
     "section": "Identify and Prioritize Data Sources",
-    "text": "Identify and Prioritize Data Sources\n\n\n\n\n\n\n\n— Source: Schmarzo (2016): Big Data MBA, p. 49"
+    "text": "Identify and Prioritize Data Sources\n\n\n\n\n\n\n\n— Source: Schmarzo (2016), p. 49"
   },
   {
     "objectID": "slides/lecture_8_big_data_1.html#the-four-layers-of-big-data-ii",
@@ -1586,7 +1418,7 @@
     "href": "slides/lecture_3_analytical_data_architecture.html#different-intensities-of-use",
     "title": "Analytics & Big Data",
     "section": "Different Intensities of Use",
-    "text": "Different Intensities of Use\nThe hardware load differs in operational application systems and data warehouse systems over time\n\n\n\n\n\n=&gt; A data warehouse relieves the operational systems\n\n\n— Source: Inmon: Building the Data Warehouse, 2002, p. 23."
+    "text": "Different Intensities of Use\nThe hardware load differs in operational application systems and data warehouse systems over time\n\n\n\n\n\n=&gt; A data warehouse relieves the operational systems\n\n\n— Source: Inmon (2005), p. 23."
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#definition-data-warehouse",
@@ -1656,7 +1488,7 @@
     "href": "slides/lecture_3_analytical_data_architecture.html#data-warehouse-and-data-mart",
     "title": "Analytics & Big Data",
     "section": "Data Warehouse and Data Mart",
-    "text": "Data Warehouse and Data Mart\nA single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.\nComparison: Data Warehouse and Data Mart\n\nApplication\nDivision/Department\nCompany\nData design\nOptimized\nGeneralistic\nData volume\nFrom gigabyte range\nFrom terabyte range\nOrigin\nTask oriented\nData model oriented\nRequirements\nSpecific\nVersatile"
+    "text": "Data Warehouse and Data Mart\nA single-subject data warehouse is typically referred to as a Data Mart, while Data Warehouses are generally enterprise in scope.\n\nComparison: Data Warehouse and Data Mart\n\n\n\n\n\nData Mart\nData Warehouse\n\n\n\n\nApplication\nDivision/Department\nCompany\n\n\nData design\nOptimized\nGeneralistic\n\n\nData volume\nGigabyte scale\nTerabytescale\n\n\nOrigin\nTask oriented\nData model oriented\n\n\nRequirements\nSpecific\nVersatile"
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#architectural-variants-of-data-warehouses-in-practice",
@@ -2128,6 +1960,55 @@
     "text": "Over- and Underfitting\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
   },
   {
+    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-i",
+    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-i",
+    "title": "Analytics & Big Data",
+    "section": "Evaluating the quality of Classification (I)",
+    "text": "Evaluating the quality of Classification (I)\n\nTrue positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as “yes”, when it is in fact “no”. A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-ii",
+    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-ii",
+    "title": "Analytics & Big Data",
+    "section": "Evaluating the quality of Classification (II)",
+    "text": "Evaluating the quality of Classification (II)\n\nTest metrics are used to assess how accurately the model predicts the known values:\n\n\n\nMost classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iii",
+    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iii",
+    "title": "Analytics & Big Data",
+    "section": "Evaluating the quality of Classification (III)",
+    "text": "Evaluating the quality of Classification (III)\n\nMisclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:\n\n\n\nFor problems like this additional measures are required to evaluate a classifier.\n\n\nSensitivity (true positive rate, recall) measures the proportion of positives that are correctly identified as such. Specificity (true negative rate) measures the proportion of negatives that are correctly identified as such.\n\n\n\nUsing both measures, we can compute the Balanced Accuracy."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#problem-of-imbalancing-and-accuracy",
+    "href": "slides/lecture_6_machine_learning_1.html#problem-of-imbalancing-and-accuracy",
+    "title": "Analytics & Big Data",
+    "section": "Problem of Imbalancing and Accuracy",
+    "text": "Problem of Imbalancing and Accuracy\n\nAssume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be “Accept” (Y) and “Reject” (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.\n\n\nBecause of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.\n\n\nThe results of the test of the model is consequently:\n\n\n\nThus, the model is blind for the N cases. But these are the ones of primary interest for the company."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iv",
+    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iv",
+    "title": "Analytics & Big Data",
+    "section": "Evaluating the quality of Classification (IV)",
+    "text": "Evaluating the quality of Classification (IV)\n\n\n\nPrecision measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.\n\n\nRecall measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.\n\n\n\n\n\n\n\n\n\n\n— Source: Wikipedia"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-v",
+    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-v",
+    "title": "Analytics & Big Data",
+    "section": "Evaluating the quality of Classification (V)",
+    "text": "Evaluating the quality of Classification (V)\n\nThe F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.\n\n\n\n\n\nA F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.\n\n\nIt is commonly used in cases of high class imbalance."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#creation-and-use-of-models",
+    "href": "slides/lecture_6_machine_learning_1.html#creation-and-use-of-models",
+    "title": "Analytics & Big Data",
+    "section": "Creation and Use of Models",
+    "text": "Creation and Use of Models"
+  },
+  {
     "objectID": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
     "href": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
     "title": "Analytics & Big Data",
@@ -2356,21 +2237,21 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#introductory-example",
     "title": "Analytics & Big Data",
     "section": "Introductory Example",
-    "text": "Introductory Example\n\nAssume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:\n\n\nFRESH: annual spending on fresh products (Continuous);\nMILK: annual spending on milk products (Continuous);\nGROCERY: annual spending on grocery products (Continuous);\nFROZEN: annual spending on frozen products (Continuous);\nDETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);\nDELICATESSEN: annual spending on delicatessen products (Continuous);\nCHANNEL: customers buying channel (Nominal);\nREGION: customers region (Nominal)\n\n\nYour goal is to segment the users. That means finding similar types of users and bunching them together.\n\n\nWhy would you want to do this?\n\n\nYou might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.\n\n\nYou might have a model that works better for specific groups. Or you might have different models for different groups."
+    "text": "Introductory Example\n\nAssume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:\n\n\nFRESH: annual spending on fresh products (Continuous);\nMILK: annual spending on milk products (Continuous);\nGROCERY: annual spending on grocery products (Continuous);\nFROZEN: annual spending on frozen products (Continuous);\nDETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);\nDELICATESSEN: annual spending on delicatessen products (Continuous);\nCHANNEL: customers buying channel (Nominal);\nREGION: customers region (Nominal)\n\n\nYour goal is to segment the users. That means finding similar types of users and bunching them together.\nWhy would you want to do this?\nYou might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.\nYou might have a model that works better for specific groups. Or you might have different models for different groups."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#cluster-analysis",
     "href": "slides/lecture_2_exploratory_data_analysis.html#cluster-analysis",
     "title": "Analytics & Big Data",
     "section": "Cluster Analysis",
-    "text": "Cluster Analysis\n\nCluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.\n\n\nThere are different types of cluster analysis methods:\n\n\nClustering Methods"
+    "text": "Cluster Analysis\nCluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.\nThere are different types of cluster analysis methods:\n\nClustering Methods\n\nTODO: fix missing?"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#partitioning-cluster-methods",
     "href": "slides/lecture_2_exploratory_data_analysis.html#partitioning-cluster-methods",
     "title": "Analytics & Big Data",
     "section": "Partitioning Cluster Methods",
-    "text": "Partitioning Cluster Methods\n\nThe partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.\n\n\nGiven a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).\n\n\nThe objective is to find\n\n\nwhere is the mean of points in Si.\n\n\nProcedure of K-Means:\n\n\nStep 1: Randomly partition the data objects into k clusters.\n\n\nStep 2: Calculate the cluster centroids.\n\n\nStep 3: Calculate the distance from every data point to all centroids.\n\n\nStep 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.\n\n\nStep 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another."
+    "text": "Partitioning Cluster Methods\nThe partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.\nGiven a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).\nThe objective is to find where is the mean of points in Si.\n\nProcedure of K-Means:\n\n\nStep 1: Randomly partition the data objects into k clusters.\nStep 2: Calculate the cluster centroids.\nStep 3: Calculate the distance from every data point to all centroids.\nStep 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.\nStep 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#example-of-a-k-means-cluster-analysis",
