@@ -11,12 +11,28 @@ Note: Orga: 20 min
 |-------------|-----------|-------------------------------|------------------------------------------------|
 | 20-35       | 15        | More data                     |                                                |
 | 35-50       | 15        | More computing power          |                                                |
-| 50-65       | 15        | New methods and algorithms    |                                                |
+| 50-65       | 15        | New algorithms                |                                                |
 | 65-80       | 15        | New analytics processes       |                                                |
 
 ::: objective
 In this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.
 :::
+
+Focus on algorithms (enable more elaborate models and analyses)
+
+
+
+## Analytical processes
+
+Key trends of improvement:
+
+- Maturing: from descriptive to predictive and prescriptive (reducing ambiguity and the need for human involvement in business decisions)
+- Pervasive: extending to different areas (e.g., understanding customers with A/B testing), departments (logistics, financial, ...) with specific disciplines refining more specialized models (forecasting, supply chain, scheduling, queueing, ...)
+- Standardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -> intensifies competition
+
+CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)
+
+
 
 ## Exercise
 
