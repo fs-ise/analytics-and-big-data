@@ -3,6 +3,11 @@ title: "Notes: Session 1: The rise of analytics"
 format: html
 ---
 
+::: {.callout-note title="Preparation"}
+- Prepare/bring tags for groups
+- Prepare a zoom session for students to share their work
+:::
+
 ## Lecture
 
 Note: Orga: 20 min
@@ -20,7 +25,8 @@ In this session, our goal is to explain why modern data analytics is successful,
 
 Focus on algorithms (enable more elaborate models and analyses)
 
-
+- AlphaFold: also illustrates how science and algorithmic competitions drive progress
+- AlphaFold enables a range of commercial use cases in the pharmaceutical and biotech industries ()
 
 ## Analytical processes
 
@@ -32,7 +38,7 @@ Key trends of improvement:
 
 CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)
 
-
+Transition: CRISP-DM is a well-established model for data analytics, so it also serves as a structure for this course...
 
 ## Exercise
 
@@ -41,7 +47,15 @@ CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabro
 | 0-30       | 30        | Introduction and setup             |                                                |
 | 30-90      | 60        | Data handling in Python            |                                                |
 
+
+Distribute tags (1.1, 1.1, 1.2, 1.2, 2.1, 2.1, 2.2, 2.2) -> work in pairs.
+
+TODO: I will work with the notebook group. 
+
 ::: objective
+TODO: https://chatgpt.com/c/69a69645-6f10-8390-932f-440be042030d
+TBD: include examples (such as giving the mean after removing rows with NA in columns X, Y, Z), which are very hard to do in Excel (where students see the value of separating analysis from data / maybe with API data?)
+
 Ask students to create a GitHub account (CHECK: free student packs?)
 
 TBD: typical exam questions corresponding to the lecture? -
@@ -54,7 +68,13 @@ Introduce system (badges) - similar to https://eduki.com/de/material/306565/schi
 **check classrooms before! - can it be attached to the desks?**
 
 
+"simple" amazon question: you could say yes, but you will get no points for it. All exam questions are about selecting the appropriate concepts from the lecture and applying them to the case. Explain: signals the need for a rationale
+- yes: 0 points
+- no - it is about data/computation/algorithms/processes. 2 points
+- yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.
+
 TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
 
+See how far you get: helps me understand how much students already know.,
 
 :::

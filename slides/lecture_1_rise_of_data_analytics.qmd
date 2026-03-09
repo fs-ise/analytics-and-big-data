@@ -167,6 +167,8 @@ Moores law, Cloud computing, ...
 
 The rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets.
 
+<!-- TODO : could include an illustration of a modern AI data center -->
+
 <br>
 
 ![](../images/slides_3.png){fig-align="center" width="70%"}
@@ -192,8 +194,25 @@ See how $400 million machines are constructed to build modern chips: [https://ww
 
 # New Algorithms {data-stack-name="Algorithms"}
 
+## Algorithms
 
-## Algorithms enable more powerful models
+An algorithm is a step-by-step procedure for performing a computation and thereby solving a problem.
+
+Algorithms determine how efficiently computers can process data and solve tasks.
+
+
+Examples:
+
+- **Linux Scheduling Algorithms** *(1990s–present)* — Efficient process scheduling enabling operating systems to run many tasks concurrently
+- **RSA Encryption** *(1977)* — Public-key cryptography algorithm enabling secure internet communication
+- **PageRank** *(1998)* — Algorithm ranking webpages based on link structure, enabling scalable web search
+- **Blockchain / Proof-of-Work Consensus** *(2008)* — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies
+- **Deep Learning** *(2010s)* — Improved neural network training enabling major advances in vision, speech, and language AI
+- **Gradient Boosting / XGBoost** *(2014)* — High-performance ensemble learning algorithm widely used in predictive analytics and data science
+- **GPT / Transformer Models** *(2017–present)* — Transformer architecture enabling large language models and generative AI
+
+
+## Algorithms enable more powerful analytical models
 
 <br><br>
 
@@ -221,9 +240,13 @@ Neural Network
 :::
 
 
-## Rapid Advances in Algorithms
+## Algorithmic Breakthroughs Drive AI Progress
 
-Recent breakthroughs in AI show how new algorithms can rapidly surpass human performance in specific domains.
+Recent breakthroughs in artificial intelligence (AI)^[AI systems are based on algorithms; in the following, we use the broader term AI when referring to such algorithm-based systems.] show how new algorithms can rapidly surpass human performance.
+**DeepMind** provides good examples.
+
+
+<br>
 
 ::: columns
 
@@ -231,17 +254,12 @@ Recent breakthroughs in AI show how new algorithms can rapidly surpass human per
 
 AlphaGo (2016)
 
-- Developed by **DeepMind**
 - Uses **deep neural networks + reinforcement learning**
 - Defeated world champion **Lee Sedol** in the game of Go
 
-Key insight:
+Go was long considered too complex for computers due to the enormous search space.
 
-- Go was long considered too complex for computers due to the enormous search space.
-
-**Result**
-
-> AI surpassed human experts in complex strategic reasoning.
+![](../images/alphago.png){width=50% fig-align="center"}
 
 :::
 
@@ -249,69 +267,41 @@ Key insight:
 
 AlphaFold (2020–2022)
 
-- Developed by **DeepMind**
 - Uses deep learning to predict **protein structures**
-- Achieved breakthrough performance in the **CASP competition**
+- Achieved breakthrough performance in the **CASP competition**^[Hassabis and colleagues were awarded the 2024 Nobel Prize in Chemistry, in part for the development of AlphaFold.]
 
-Key insight:
+Predicting protein folding had been a major unsolved problem in biology for decades.
 
-- Predicting protein folding had been a major unsolved problem in biology for decades.
-
-**Result**
-
-> AI can solve scientific problems that previously required years of human research.
+![](../images/casp.png){width=50% fig-align="center"}
 
 :::
 
 :::
 
-**Key takeaway**
 
-AI progress often occurs through **algorithmic breakthroughs**, enabling machines to outperform humans in increasingly complex domains:
+## Jagged frontier of AI
 
-TODO:
-- add illustrations
-- 
-- nobel prize + biotech. ?
+:::: {.columns}
+
+::: {.column width="40%"}
+Recent studies suggest that AI creates a **“jagged frontier.”** [@DellAcquaEtAl2023], i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities. 
+
+- **Within this frontier, AI can strongly enhance knowledge work**, improving productivity and the quality of outputs. 
+- **Outside the frontier, AI can reduce performance**, especially when users rely too heavily on its outputs without verification. 
+
+
+AI progress often occurs through **algorithmic breakthroughs**, enabling machines to outperform humans in increasingly complex tasks.
 
 <!--
-        ## ImageNet
-
-        ImageNet is a large-scale image recognition competition where models compete to classify millions of images across thousands of categories.
-        Breakthrough models have historically demonstrated major advances in deep learning.
+https://www.agidefinition.ai/
+https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
 -->
 
-```{python}
-#| echo: false
-import matplotlib.pyplot as plt
+:::
 
-# Same data
-years = ["2010", "2011", "2012", "2013", "2014", "2016", "2017"]
-models = ["NEC-UIUC", "XRCE", "AlexNet/\nSupervision",
-          "ZFNet", "GoogLeNet", "T-S", "SEN"]
-error_rates = [28.2, 25.8, 16.34, 11.7, 6.7, 3.0, 2.25]
-human_error = 5.1
+::: {.column width="60%"}
 
-fig, ax = plt.subplots(figsize=(8, 4))
-x = range(len(years))
-ax.bar(x, error_rates)
-
-ax.axhline(human_error, linestyle="--")
-ax.text(len(years)-0.5, human_error + 0.3,
-        f"Human error rate ({human_error}%)",
-        ha="right", va="bottom")
-
-ax.set_xticks(x)
-ax.set_xticklabels(models, rotation=30, ha="right")
-ax.set_ylabel("Top-5 error rate (%)")
-ax.set_ylim(0, 30)
-ax.set_title("Error rates of winning ImageNet entries")
-
-fig.tight_layout()
-plt.show()
-```
-
-## Jagged frontier
+<br><br>
 
 ```{python}
 #| echo: false
@@ -334,8 +324,8 @@ labels = [
 ]
 
 # Example scores (approximate values from the illustration)
-gpt4 = [8, 6, 5, 4, 1, 0, 2, 0, 0, 3]
-gpt5 = [9, 9, 9, 7, 5, 0, 4, 0, 6, 3]
+gpt4 = [8, 6, 4, 0, 2, 0, 4, 0, 0, 3]
+gpt5 = [9, 10, 10, 7, 4, 0, 4, 4, 6, 3]
 
 # Close the polygon
 gpt4 = gpt4 + [gpt4[0]]
@@ -346,7 +336,11 @@ angles = np.linspace(0, 2*np.pi, len(labels), endpoint=False).tolist()
 angles += angles[:1]
 
 # Create figure
+# fig, ax = plt.subplots(figsize=(6,6), subplot_kw=dict(polar=True))
 fig, ax = plt.subplots(figsize=(6,6), subplot_kw=dict(polar=True))
+
+ax.set_theta_offset(np.pi / 2)   # rotate so first label is at top
+ax.set_theta_direction(-1)       # make axes go clockwise
 
 # Plot data
 ax.plot(angles, gpt5, linewidth=2, label="GPT-5 (2025)")
@@ -363,18 +357,19 @@ ax.set_xticklabels(labels)
 ax.set_ylim(0, 10)
 
 # Grid and legend
-ax.set_title("Capabilities of GPT-4 and GPT-5", pad=20)
+ax.set_title("AI Capabilities", pad=20)
 ax.legend(loc="upper right", bbox_to_anchor=(1.3, 1.1))
 
 plt.show()
 ```
+:::
 
-TODO: cite Dellacqua
+::::
 
-<!--
-https://www.agidefinition.ai/
-https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
--->
+::: aside
+Figure based on @HendrycksEtAl2025.
+:::
+
 
 # Analytics Processes {data-stack-name="Analytics Processes"}
 
@@ -464,23 +459,31 @@ Source: @Schmarzo2016, p. 88
 Source: @Schmarzo2016, p. 13
 :::
 
-## Descriptive Analytics Process
+## Example: Descriptive Analytics
+
+<br>
 
 ![](../images/slides_23.png){fig-align="center" width="45%"}
 
-## Predictive Analytics Process
+## Example: Predictive Analytics
+
+<br>
 
 ![](../images/slides_24.png){fig-align="center" width="60%"}
 
-## Example Inventory Planning
+## Example: Prescriptive Analytics
+
+Based on more than 300 million data records per week, Otto generates over one billion forecasts annually on the expected sales of individual products in the coming days and weeks.
+These forecasts are used to optimize inventory decisions, determining how many units of each product should be stocked or reordered across warehouses.
+By systematically adjusting inventory levels based on these data-driven recommendations, Otto is able to reduce its overall inventories by up to 30% on average while maintaining product availability.
 
 ![](../images/slides_25.png){fig-align="center" width="60%"}
-
-<p>On the basis of more than 300 million data records per week, Otto makes more than one billion forecasts per year on the sales development of individual articles for the next days and weeks. Such forecasts allow Otto to reduce its own inventories by up to 30% on average.</p>
 
 ::: aside
 Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/files/441/442/777/1015/DLK12_C3-3_Praesentation_Stueben.pdf
 :::
+
+<!-- TODO: include an example from algorithmic management/Uber or automated financial trading -->
 
 <!--
         ## Classical Corporate Planning
@@ -503,6 +506,9 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 
 ## Analytical models
 
+There is a a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes.
+While these fields often focus on methodological development, business analytics emphasizes applying these approaches to support understanding and decision-making in organizational contexts.
+
 <br>
 
 | Discipline          | Model Culture           | Typical Models            |
@@ -510,24 +516,39 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 | Statistics          | Probabilistic inference | Regression, GLM, Bayesian |
 | Econometrics        | Causal modeling         | IV, panel models          |
 | Computer Science    | Algorithmic learning    | Trees, SVM, NN            |
-| Operations Research | Optimization            | LP, MIP                   |
+| Operations Research | Optimization            | Linear programming, Non-linear optimization                   |
 | Management Science  | Decision modeling       | Stochastic optimization   |
-| Complex Systems     | Simulation              | ABM, DES                  |
-
--> highlight what we focus on. Mention that not all disciplines focus on the "business understanding" and using insights to support business decisions. Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).
-
-TODO: replace abbreviations
+| Complex Systems     | Simulation              | Agent-Based/Discrete Event Simulation                  |
 
 <!--
-Statistics vs. Data Analytics
+    Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).
 
-![](../images/slides_133_new.png)
+    Statistics vs. Data Analytics
+
+    ![](../images/slides_133_new.png)
 -->
 
+## CRISP-DM Cross-Industry Standard Process for Data Mining
 
-## CRISP-DM
+:::: {.columns}
 
+::: {.column width="45%"}
+
+**CRISP-DM** is a widely used framework that structures data mining and analytics projects [@WirthHipp2000].
+
+- Developed by an **industry consortium** (e.g., DaimlerChrysler, SPSS, NCR) to create a common methodology for data mining projects.
+- Designed to be **independent of specific industries and technologies**, making it applicable across many domains.
+- Integrates **best practices from real-world projects**, helping teams plan, communicate, and document analytics work.
+- Became popular because it provides a **reliable and repeatable standard process** for managing complex data mining projects.
+
+:::
+
+::: {.column width="55%"}
+
+<br>
 ```{dot}
+//| fig-width: 8
+
 digraph CRISPDM {
   layout=neato;
   overlap=false;
@@ -591,7 +612,106 @@ digraph CRISPDM {
 
 ::::
 
+::: aside
+Besides CRISP-DM, there are other models, such as KDD Process, SEMMA, or TDSP.
+:::
 
+## Structure of the course
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+
+We structure the course along the **CRISP-DM analytics lifecycle**:
+
+- **Introduction** (Session 0–1)  
+  - Overview of analytics and the CRISP-DM workflow.
+
+- **Data Foundations** (Session 2–3)
+  - Exploration and analytical data architecture.
+
+- **Analytical Models** (Session 4-9)
+  - Regression, machine learning, and big data analytics.
+
+- **Deployment** (Session 10)
+  - Analytics in organizations.
+
+- **Synthesis** (Session 11)
+  - Integration of the full analytics workflow.
+
+:::
+
+::: {.column width="55%"}
+
+<br>
+```{dot}
+//| fig-width: 8
+
+digraph CRISPDM {
+  layout=neato;
+  overlap=false;
+  splines=true;
+  fontname="Helvetica";
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#f4f6fb",
+    fontname="Helvetica",
+    fontsize=20,
+    width=2.8,
+    height=1
+  ];
+
+  edge [
+    penwidth=1.6,
+    arrowsize=1.1
+  ];
+
+  // --- Circular positions ---
+  A [label="Business\nUnderstanding", pos="-2,2!"];
+  B [label="Data\nUnderstanding", pos="2,2!"];
+  C [label="Data\nPreparation", pos="3,0!"];
+  D [label="Modeling", pos="2,-2!"];
+  E [label="Evaluation", pos="-2,-2!"];
+  F [label="Deployment", pos="-4,0!", fillcolor="#e6f4ea"];
+
+  // --- Central Database ---
+  X [
+    label="Data",
+    shape=cylinder,
+    fillcolor="#e9f2ff",
+    fontsize=22,
+    width=1.9,
+    height=1.4,
+    pos="0,0!"
+  ];
+
+  // --- Main Flow ---
+  A -> B;
+  B -> C;
+  C -> D;
+  D -> E;
+  E -> F;
+
+  // --- True Bidirectional Iterations ---
+  B -> A;
+  A -> B;
+
+  D -> C;
+  C -> D;
+
+  E -> A;
+  A -> E;
+}
+```
+
+:::
+
+::::
+
+> Analytics is not a linear pipeline. We constantly move between business problems, data, modeling, and evaluation.
 
 ## Summary {data-state="hide-menubar"}
 
@@ -603,11 +723,48 @@ digraph CRISPDM {
 
 # Exercise {data-state="hide-menubar"}
 
-## TODO {data-state="hide-menubar"}
+## Setup
 
-- Github account, start Codespace in [analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
-- option to use a local setup after this session (if it works on your machine)
+TODO
+
+- Why Jupyter/Codespaces? (other options?)
 - explain setup
+
+
+Steps: 
+
+- Create a Github account [here](https://github.com/signup)
+- Start Codespace in [fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
+
+::: aside
+You can use a local setup after this session (if it works on your machine).
+:::
+
+## Break
+
+## Group split
+
+Each section is 30 min.
+
+<br><br><br>
+
+```{mermaid}
+flowchart LR
+
+B{Split} --> C[Group 1<br>Jupyter Notebook]
+B --> D[Group 2<br>Reading]
+
+C --> E[Switch]
+D --> E
+
+E --> F[Group 1<br>Reading]
+E --> G[Group 2<br>Jupyter Notebook]
+
+F --> H["Discussion & Comparison"]
+G --> H
+```
+
+## TODO {data-state="hide-menubar"}
 
 <!--
   - Github advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning
@@ -632,11 +789,18 @@ Kernel: select global env
 TODO: download/save changes (and stop/delete codespace)
 
 
+## TODO: reading/synthesis?
+
+
 ## Survey: Session 1 {data-state="hide-menubar"}
 
 <br><br>
 
-{{< qrcode https://docs.google.com/forms/u/0/ width=400 height=400  >}}
+::: {style="display:flex; justify-content:center;"}
+
+{{< qrcode https://docs.google.com/forms/u/0/ width=400 height=400 >}}
+
+:::
 
 <br><br>
 

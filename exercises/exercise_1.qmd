@@ -2,11 +2,37 @@
 title: "Exercise 1: The rise of analytics"
 ---
 
+
+
+In this session, we split into two groups.
+You have approx. 30 mins for each part.
+
+## Group 1: Read _Competing on Analytics_
+
+Read the _Competing on Analytics_ paper by @Davenport2006.
+
+Davenport, T. Competing on Analytics, HBR. [link](https://cs.brown.edu/courses/cs295-11/competing.pdf)
+
+![](../images/davenport-competing-on-analytics.png){width=50% fig-align="center"}
+
+Prepare to discuss the following questions:
+
+1. **What does it mean for a company to “compete on analytics”?**  
+   How is this different from simply using data or reports in decision making?
+
+2. **What organizational capabilities are required to compete on analytics?**  
+   Consider aspects such as leadership, culture, people, and technology.
+
+3. **Which companies or industries today seem to compete on analytics?**  
+   Give examples and explain how analytics creates their competitive advantage.
+
+
+## Group 2: Create an analytical notebook in Jupyter
+
 ::: {.learning-objectives}
 Explore the Python and Jupyter analytics ecosystem:
 
 - Start Jupyter in a VM (GitHub Codespace)
-- Install packages (pandas / !pip install.. and requirements.txt)
 - Write a first notebook
 :::
 
@@ -16,232 +42,70 @@ https://www.codecademy.com/article/getting-started-with-jupyter
 -> variable? + tab-completion, shift-tab for function arguments
 
 - test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)
+- understand the elements of a jupyter notebook
+
 - shortcuts: run individual lines with shift+ENTER ??, press a, b, x, ...
-- start with a simple example of an excel spreadsheet, then check an API
-- repeat python data types (dict, pandas, ...)
-- what is "in memory"? (`%whos`)
+
 - extend slide-deck?
 
-- writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is.
-
-- example notebook: financial API (code for the api call should be included)
 :::
+
+
 
 ## Preface
 
 The purpose of this document is to give an introduction to data analytics with Python.
-We will use three main libraries for data analytics provided for Python. For special cases,
-we will use additional libraries as mentioned in the text.
 
-The three main libraries are:
-
-1. NumPy
-2. Pandas
-3. Scikit-learn
-
-## NumPy
-
-NumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that
-provides a set of array and matrix data types which are essential for statistics, econometrics,
-and data analysis. They behave similarly to the data structures in Python. In addition,
-NumPy offers methods to manipulate and extract information from these structures.
-
-An introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of
-the course “Introduction to Programming” (first semester Bachelor at Frankfurt School).
-
-## Pandas
-
-Pandas is a Python library that provides high-level data structures and a vast variety of tools
-for analysis. The great feature of this package is the ability to translate rather complex
-operations with data into one or two commands. Pandas contains many built-in methods
-for grouping, filtering, and combining data, as well as time-series functionality. All of this
-is followed by impressive speed indicators.
-
-In Chapter 1, an introduction to using DataFrames with Pandas is given.
-
-## Scikit-learn
-
-Scikit-learn provides a range of supervised and unsupervised learning algorithms via a
-consistent interface in Python. The library is focused on modeling data. It is not focused on
-loading, manipulating, and summarizing data. For these features, refer to NumPy and
-Pandas.
-
-The structure of the implementation of the algorithms always follows the same template,
-so that they can be used in the same way. Example for the implementation of a supervised
-learning algorithm:
-
-```{python}
-# Schematic example to illustrate a common estimator pattern.
-
-class ModelEstimator(object):
-    def __init__(self, param1="pvalue1"):
-        self.param1 = param1
-
-    def fit(self, X, y):
-        # X are input values, y are target values (supervised case)
-        # here the functionality for model estimation is implemented
-        return self
-
-    def predict(self, X):
-        # implementation of the predicting function
-        return X
-```
++ jupyter notebooks and libraries
 
 
-## DataFrames with Pandas
-
-### DataFrames
-
-While a matrix is of simple structure intended for mathematical operations, a DataFrame is
-more suited to representing a table of data. It is a list of vectors of equal length. The top line
-of a DataFrame, called the header, contains the column names. Each horizontal line afterward
-denotes a data row.
-
-**TODO**: add illustration
-
-For example, the following variable df is a dataframe containing three vectors
-
-```{python}
-import pandas as pd
-
-data = {
-    "employee": ["John Doe", "Peter Gynn", "Jolie Hope"],
-    "salary": [21000, 23400, 26800],
-    "startdate": ["2010-11-1", "2008-3-25", "2007-3-14"],
-}
-
-df = pd.DataFrame(data)
-df
-```
-
-The result of this is a dataframe named df. The numbers on the left side of the rows are labels
-and **not** the indexes. You can inspect the structure using the dtypes property
-
-```{python}
-df.dtypes
-```
-
-To retrieve data Pandas provide various variants in order to get purely integer based indexing.
-Like python and numpy, these are 0-based indexing. The various access variants are an integer,
-a list of integers, and a range of values. Examples
-
-```{python}
-df.iloc[0,1] # element in first row, second column
-df.iloc[:,0] # all rows, first column
-df.iloc[1:3,1] # second to third row, second column
-df.iloc[:,-2] # all rows, second column from the end
-df.iloc[-1,:] # last row, all columns
-df.iloc[[0, 2], [1, 2]] # first and third row, second to third column
-```
-
-Pandas provides too various methods of label based indexing. The loc function takes two
-single/list/range operators separated by a comma. The first one indicates the row and the
-second one indicates columns. Examples
-
-```{python}
-df.loc[1:2,:] # row with labels 1 and 2, all columns
-df.loc[1:2] # same as above
-df.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary
-df.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary
-df.loc[df.loc[:,'salary']>23000] # all rows where salary>23000, all columns
-# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset
-```
-
-The loc function can even be used to add a new row to a dataframe
-
-```{python}
-df.loc[len(df)] = ["Mike Tyson", 19400, "2018-6-27"]
-df
-```
-
-A new column can be added via
-
-```{python}
-df['age'] = [35, 42, 19, 43]
-```
-
-A column can be deleted via the drop command
-
-```{python}
-df = df.drop('age', axis = 1)
-```
-
-Two dataframes can be combined using the concat function. Combining two dataframes row-wise
-
-```{python}
-df1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})
-df2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})
-df3 = pd.concat([df1, df2])
-print(df3)
-```
-
-Combining two dataframes column-wise
-
-```{python}
-dfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})
-dfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})
-dfc = pd.concat([dfa, dfb], axis=1)
-print(dfc)
-```
-
-### Import and Export
-
-```{python}
-# data = pd.read_csv("filename.csv")
-# data = pd.read_excel("filename.xlsx")
-# data.to_csv("output.csv", index=False)
-```
-
-### Basic Statistical Functions for DataFrames
-
-A large number of methods compute basic statistical measures on a DataFrame.
-Most of them are aggregations such as `sum` and `mean`.
-
-```{python}
-# data.sum()
-```
-
-```{python}
-# data.iloc[:, 1:7].cumsum()
-```
-
-### Common statistical functions in Pandas
-
-| Function     | Description                             |
-|-------------|------------------------------------------|
-| `count()`   | Number of non-null observations          |
-| `sum()`     | Sum of values                            |
-| `mean()`    | Mean of values                           |
-| `median()`  | Median of values                         |
-| `mode()`    | Mode of values                           |
-| `std()`     | Standard deviation of the values         |
-| `min()`     | Minimum value                            |
-| `max()`     | Maximum value                            |
-| `abs()`     | Absolute value                           |
-| `prod()`    | Product of values                        |
-| `cumsum()`  | Cumulative sum                           |
-| `cumprod()` | Cumulative product                       |
 
 
 ## Example case
+
+1. Select a case (business problem and dataset)
+
+Kaggle: [Retail and shopping](https://www.kaggle.com/datasets?topic=retailAndShoppingDataset), [financial](https://www.kaggle.com/datasets?search=financial) or [trending](https://www.kaggle.com/datasets?topic=trendingDataset).
+
+2. Draft an analytical notebook
+
+- writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is.
+-> Create a new notebook: create a skeleton (following CRISP-DM). explain the business problem, import a dataset from kaggle, explain what you would do in the different steps, include code cells and add notes on how you would analyze the data, which parts would be  (if you are not sure about a particular part, you can leave it as TODO, say probably XY, or list two or three options that coudl be tried)
+
+3. Refine the notebook
+
+- Go over the notebook and annotate: which parts would be descriptive, predictive, prescriptive?
+
+4. Start implementing 
+
+See how far you get:
+
+- import the CSV, create a descriptive overview of the data, select a model to make predictions
+
+Consult the documentation of Python libraries such as pandas or scikit-learn.
 
 - Get a dataset (nice datasource)
 - Import and prepare
 - Produce a notebook
 
+
 ::: {.callout-note title="TODO"}
 **TODO: add a setup explanation + tests for available python version and packages**
-
-**TODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)**
-
-**TODO : add a summary**
 :::
+
+
 
 
 ## Exam prep
 
 TODO : include specific questions/tasks that could be included in the exam.
 
-- "Simple question" (e.g., Amazon is successful because we all order online. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
+- "Simple question" (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
 - table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
 - TBD: questions related to the jupyter ecosystem?
+
+
+## Survey
+
+
+# References
