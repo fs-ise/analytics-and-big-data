@@ -410,7 +410,7 @@
     "href": "slides/lecture_0_orga.html#you-may-also-be-interested-in",
     "title": "Analytics & Big Data",
     "section": "You may also be interested in …",
-    "text": "You may also be interested in …\nBachelor’s theses: See SuSy and additional information on this page."
+    "text": "You may also be interested in …\n\n\nBachelor’s theses: See SuSy and additional information on this page.\nIn SuSy, you can find more information on my primary research topics:\n\nOpen, Agentic, and Boundary-Spanning Work\nThis area examines how AI agents and open digital infrastructures reshape knowledge work and collaboration across organizational boundaries. It focuses on agentic systems embedded in real work contexts (e.g., Git workflows, handbooks, and repositories) and how they transform coordination, governance, and accountability.\nAI-Supported Knowledge Synthesis\nThis area investigates how AI supports knowledge synthesis across academic and professional contexts, focusing on transparency, rigor, and traceability in AI-assisted processes. It includes literature reviews and synthesis in digital gardens, second-brain systems, and other knowledge repositories."
   },
   {
     "objectID": "slides/lecture_10_organizations.html#section",
@@ -2461,7 +2461,7 @@
     "href": "notes/lecture_0_orga.html#not-covered",
     "title": "Notes: Orga",
     "section": "Not covered",
-    "text": "Not covered"
+    "text": "Not covered\n\nEngineering: “building the system”\nStatistical theory: “explaining the WHY”\nMathematical models: “building more specialized models”\nAutonomous systems: “Implementing the decisions”"
   },
   {
     "objectID": "notes/lecture_0_orga.html#logistics",

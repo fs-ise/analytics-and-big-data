@@ -150,6 +150,17 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -170,17 +181,6 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -552,13 +552,24 @@ flowchart LR
 </section>
 <section id="you-may-also-be-interested-in" class="slide level2" data-state="hide-menubar">
 <h2>You may also be interested in …</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>Bachelor’s theses: See <a href="https://susy.frankfurt-school.de/">SuSy</a> and additional information on <a href="https://fs-ise.github.io/theses/">this page</a>.</p>
-<p><br></p>
+<p>In SuSy, you can find more information on my primary research topics:</p>
+<ul>
+<li><strong>Open, Agentic, and Boundary-Spanning Work</strong><br>
+This area examines how AI agents and open digital infrastructures reshape knowledge work and collaboration across organizational boundaries. It focuses on agentic systems embedded in real work contexts (e.g., Git workflows, handbooks, and repositories) and how they transform coordination, governance, and accountability.</li>
+<li><strong>AI-Supported Knowledge Synthesis</strong><br>
+This area investigates how AI supports knowledge synthesis across academic and professional contexts, focusing on transparency, rigor, and traceability in AI-assisted processes. It includes literature reviews and synthesis in digital gardens, second-brain systems, and other knowledge repositories.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br><br><br><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/yen-vu-TdgfSyDoWBE-unsplash.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/yen-vu-TdgfSyDoWBE-unsplash.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
+</div></div>
 <!--
  and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
 
