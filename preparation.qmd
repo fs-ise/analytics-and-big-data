@@ -51,10 +51,11 @@ Plan to record timing (data in the repository) and data from google surveys - **
 
 TODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)
 
+Consistently include "vocabulary" sections at the end (like in regression 1)
 
 ### Session 0 — Course logistics
-- [ ] Slides polished
-- [ ] Teaching notes prepared
+- [x] Slides polished
+- [x] Teaching notes prepared
 
 ---
 
