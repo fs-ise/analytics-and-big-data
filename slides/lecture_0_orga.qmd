@@ -352,12 +352,28 @@ Selected literature
 
 ## You may also be interested in ... {data-state="hide-menubar"}
 
+:::: {.columns}
+
+::: {.column width="50%"}
 Bachelor's theses: See [SuSy](https://susy.frankfurt-school.de/) and additional information on [this page](https://fs-ise.github.io/theses/).
 
-<br>
 
-![](../images/yen-vu-TdgfSyDoWBE-unsplash.jpg){width=50% fig-align=center}
+In SuSy, you can find more information on my primary research topics:
 
+- **Open, Agentic, and Boundary-Spanning Work**  
+  This area examines how AI agents and open digital infrastructures reshape knowledge work and collaboration across organizational boundaries. It focuses on agentic systems embedded in real work contexts (e.g., Git workflows, handbooks, and repositories) and how they transform coordination, governance, and accountability.
+- **AI-Supported Knowledge Synthesis**  
+  This area investigates how AI supports knowledge synthesis across academic and professional contexts, focusing on transparency, rigor, and traceability in AI-assisted processes. It includes literature reviews and synthesis in digital gardens, second-brain systems, and other knowledge repositories.
+
+:::
+
+::: {.column width="50%"}
+<br><br><br><br>
+
+![](../images/yen-vu-TdgfSyDoWBE-unsplash.jpg){width=70% fig-align=center}
+:::
+
+::::
 
 <!--
  and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
