@@ -19,6 +19,28 @@ After this session, students should be able to:
 - Use visualizations to explore and communicate insights
 - Understand the basic idea of the grammar of graphics in Python (Plotly)
 
+
+---
+
+Badly formatted data blocks analysis — data preparation unlocks it.
+
+
+Data preparation:
+
+- Statistics traditionally relies on a controlled mode of data collection
+- Repurposing of data, analyzing transactional data is not a typical setting
+- Data quality measures are relatively limited (focused on outliers)
+- Data preparation (manual correction or the use of synthetic data) are even discarded as a questionable research practice
+
+Metaphor: statisticians carefully collect their data on their own (live on their own island) - business analysts have to work with existing data (which can be very messy)
+
+
+But: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing! Examples:
+
+- Recommendation systems: Which movie are you likely to watch next? thousands of variables may be available; we may never know why exactly a particular recommendation works, but recommendations generally improve engagement/revenue. ("We don't know/don't give a recommendation" is the worst option)
+ -> Business decision to recommend anything is always better than no recommendation at all
+- Fraud detection: prediction of irregular and fraudulent transactions can be very accurate, but the attackers goal is to behave in a way that is hard to anticipate. Prediction may focus on identifying cases that are "not behaving regularly" (rather than identifying generalizable patterns)
+
 ---
 
 ## 0. Why Exploratory Data Analysis?
