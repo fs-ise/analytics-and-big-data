@@ -80,6 +80,17 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '🔗';
   background-image: none;
 }
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -100,17 +111,6 @@ div.callout-self-service.callout-style-default > .callout-header {
 div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
   content: '🛠️';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
   background-image: none;
 }
 </style>
@@ -189,6 +189,22 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled" title="Preparation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Preparation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Prepare/bring tags for groups</li>
+<li>Prepare a zoom session for students to share their work</li>
+</ul>
+</div>
+</div>
 <section id="lecture" class="level2">
 <h2 class="anchored" data-anchor-id="lecture">Lecture</h2>
 <p>Note: Orga: 20 min</p>
@@ -248,6 +264,10 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </div>
 </div>
 <p>Focus on algorithms (enable more elaborate models and analyses)</p>
+<ul>
+<li>AlphaFold: also illustrates how science and algorithmic competitions drive progress</li>
+<li>AlphaFold enables a range of commercial use cases in the pharmaceutical and biotech industries ()</li>
+</ul>
 </section>
 <section id="analytical-processes" class="level2">
 <h2 class="anchored" data-anchor-id="analytical-processes">Analytical processes</h2>
@@ -258,6 +278,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <li>Standardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -&gt; intensifies competition</li>
 </ul>
 <p>CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)</p>
+<p>Transition: CRISP-DM is a well-established model for data analytics, so it also serves as a structure for this course…</p>
 </section>
 <section id="exercise" class="level2">
 <h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
@@ -291,6 +312,8 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </tr>
 </tbody>
 </table>
+<p>Distribute tags (1.1, 1.1, 1.2, 1.2, 2.1, 2.1, 2.2, 2.2) -&gt; work in pairs.</p>
+<p>TODO: I will work with the notebook group.</p>
 <div class="callout callout-style-default callout-objective callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -301,12 +324,15 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>TODO: https://chatgpt.com/c/69a69645-6f10-8390-932f-440be042030d TBD: include examples (such as giving the mean after removing rows with NA in columns X, Y, Z), which are very hard to do in Excel (where students see the value of separating analysis from data / maybe with API data?)</p>
 <p>Ask students to create a GitHub account (CHECK: free student packs?)</p>
 <p>TBD: typical exam questions corresponding to the lecture? -</p>
 <p>Explain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im <code>Umgang mit Spyder.docx</code>).</p>
 <p>Start in groups of two (random?)</p>
 <p>Introduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite <strong>check classrooms before! - can it be attached to the desks?</strong></p>
+<p>“simple” amazon question: you could say yes, but you will get no points for it. All exam questions are about selecting the appropriate concepts from the lecture and applying them to the case. Explain: signals the need for a rationale - yes: 0 points - no - it is about data/computation/algorithms/processes. 2 points - yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.</p>
 <p>TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools</p>
+<p>See how far you get: helps me understand how much students already know.,</p>
 </div>
 </div>
 

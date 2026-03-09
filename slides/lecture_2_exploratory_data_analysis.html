@@ -191,17 +191,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -211,6 +200,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -224,15 +224,15 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -528,7 +528,7 @@
 <li><p>The graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="b698598a" class="cell" data-execution_count="1">
+<div id="44091dda" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -567,7 +567,7 @@
 <li><p>Example: On a party, you meet many other students, and you ask what they are studying.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="dd51eaa9" class="cell" data-execution_count="2">
+<div id="005bf72d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -602,7 +602,7 @@
 <p>[ E(X) = {x} ]</p>
 <p><strong>Interpretation:</strong> If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967.</p>
 </div><div class="column" style="width:45%;">
-<div id="cb0f43e9" class="cell" data-execution_count="3">
+<div id="d274f08b" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -628,7 +628,7 @@
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="5fd694c8" class="cell" data-execution_count="4">
+<div id="cf7f4701" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -651,7 +651,7 @@
 <li><p>One can – for example – see that there is a higher spread in group 2A compared to the others</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="ea728260" class="cell" data-execution_count="5">
+<div id="8670372e" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -997,7 +997,7 @@ Step 5: Repeat the step 2 to 4 until a complete pass through of all the data poi
 <section id="pandas-and-matplotlib" class="slide level2">
 <h2>pandas and matplotlib</h2>
 <p>Example:</p>
-<div id="b48f0810" class="cell" data-execution_count="6">
+<div id="955afdbe" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a></a></span>

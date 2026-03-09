@@ -20,45 +20,30 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -103,21 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <style>
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
 div.callout-self-service.callout {
   border-left-color: #198754;
 }
@@ -129,15 +100,15 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
   content: '🛠️';
   background-image: none;
 }
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
 }
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
 }
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 div.callout-resource.callout {
@@ -149,6 +120,17 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 </style>
@@ -227,11 +209,25 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </header>
 
 
+<p>In this session, we split into two groups. You have approx. 30 mins for each part.</p>
+<section id="group-1-read-competing-on-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="group-1-read-competing-on-analytics">Group 1: Read <em>Competing on Analytics</em></h2>
+<p>Read the <em>Competing on Analytics</em> paper by <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span>. Prepare to discuss the following questions:</p>
+<ol type="1">
+<li><p><strong>What does it mean for a company to “compete on analytics”?</strong><br>
+How is this different from simply using data or reports in decision making?</p></li>
+<li><p><strong>What organizational capabilities are required to compete on analytics?</strong><br>
+Consider aspects such as leadership, culture, people, and technology.</p></li>
+<li><p><strong>Which companies or industries today seem to compete on analytics?</strong><br>
+Give examples and explain how analytics creates their competitive advantage.</p></li>
+</ol>
+</section>
+<section id="group-2-create-an-analytical-notebook-in-jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="group-2-create-an-analytical-notebook-in-jupyter">Group 2: Create an analytical notebook in Jupyter</h2>
 <div class="learning-objectives">
 <p>Explore the Python and Jupyter analytics ecosystem:</p>
 <ul>
 <li>Start Jupyter in a VM (GitHub Codespace)</li>
-<li>Install packages (pandas / !pip install.. and requirements.txt)</li>
 <li>Write a first notebook</li>
 </ul>
 </div>
@@ -248,365 +244,46 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <p>See https://www.codecademy.com/article/how-to-use-jupyter-notebooks https://www.codecademy.com/article/getting-started-with-jupyter -&gt; variable? + tab-completion, shift-tab for function arguments</p>
 <ul>
 <li><p>test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)</p></li>
+<li><p>understand the elements of a jupyter notebook</p></li>
 <li><p>shortcuts: run individual lines with shift+ENTER ??, press a, b, x, …</p></li>
-<li><p>start with a simple example of an excel spreadsheet, then check an API</p></li>
-<li><p>repeat python data types (dict, pandas, …)</p></li>
-<li><p>what is “in memory”? (<code>%whos</code>)</p></li>
 <li><p>extend slide-deck?</p></li>
-<li><p>writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is.</p></li>
-<li><p>example notebook: financial API (code for the api call should be included)</p></li>
 </ul>
 </div>
 </div>
+</section>
 <section id="preface" class="level2">
 <h2 class="anchored" data-anchor-id="preface">Preface</h2>
-<p>The purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.</p>
-<p>The three main libraries are:</p>
-<ol type="1">
-<li>NumPy</li>
-<li>Pandas</li>
-<li>Scikit-learn</li>
-</ol>
-</section>
-<section id="numpy" class="level2">
-<h2 class="anchored" data-anchor-id="numpy">NumPy</h2>
-<p>NumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.</p>
-<p>An introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School).</p>
-</section>
-<section id="pandas" class="level2">
-<h2 class="anchored" data-anchor-id="pandas">Pandas</h2>
-<p>Pandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.</p>
-<p>In Chapter 1, an introduction to using DataFrames with Pandas is given.</p>
-</section>
-<section id="scikit-learn" class="level2">
-<h2 class="anchored" data-anchor-id="scikit-learn">Scikit-learn</h2>
-<p>Scikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.</p>
-<p>The structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:</p>
-<div id="be1eec8d" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Schematic example to illustrate a common estimator pattern.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ModelEstimator(<span class="bu">object</span>):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, param1<span class="op">=</span><span class="st">"pvalue1"</span>):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.param1 <span class="op">=</span> param1</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> fit(<span class="va">self</span>, X, y):</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># X are input values, y are target values (supervised case)</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># here the functionality for model estimation is implemented</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> predict(<span class="va">self</span>, X):</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># implementation of the predicting function</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> X</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="dataframes-with-pandas" class="level2">
-<h2 class="anchored" data-anchor-id="dataframes-with-pandas">DataFrames with Pandas</h2>
-<section id="dataframes" class="level3">
-<h3 class="anchored" data-anchor-id="dataframes">DataFrames</h3>
-<p>While a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.</p>
-<p><strong>TODO</strong>: add illustration</p>
-<p>For example, the following variable df is a dataframe containing three vectors</p>
-<div id="2cf85673" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"employee"</span>: [<span class="st">"John Doe"</span>, <span class="st">"Peter Gynn"</span>, <span class="st">"Jolie Hope"</span>],</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salary"</span>: [<span class="dv">21000</span>, <span class="dv">23400</span>, <span class="dv">26800</span>],</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"startdate"</span>: [<span class="st">"2010-11-1"</span>, <span class="st">"2008-3-25"</span>, <span class="st">"2007-3-14"</span>],</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">employee</th>
-<th data-quarto-table-cell-role="th">salary</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>John Doe</td>
-<td>21000</td>
-<td>2010-11-1</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Peter Gynn</td>
-<td>23400</td>
-<td>2008-3-25</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Jolie Hope</td>
-<td>26800</td>
-<td>2007-3-14</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>The result of this is a dataframe named df. The numbers on the left side of the rows are labels and <strong>not</strong> the indexes. You can inspect the structure using the dtypes property</p>
-<div id="74d2402a" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>employee       str
-salary       int64
-startdate      str
-dtype: object</code></pre>
-</div>
-</div>
-<p>To retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples</p>
-<div id="3db43616" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>,<span class="dv">1</span>] <span class="co"># element in first row, second column</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="dv">0</span>] <span class="co"># all rows, first column</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">1</span>:<span class="dv">3</span>,<span class="dv">1</span>] <span class="co"># second to third row, second column</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="op">-</span><span class="dv">2</span>] <span class="co"># all rows, second column from the end</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">1</span>,:] <span class="co"># last row, all columns</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">0</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">2</span>]] <span class="co"># first and third row, second to third column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">salary</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>21000</td>
-<td>2010-11-1</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2</th>
-<td>26800</td>
-<td>2007-3-14</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Pandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples</p>
-<div id="bf9421c3" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>,:] <span class="co"># row with labels 1 and 2, all columns</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>] <span class="co"># same as above</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">1</span>:<span class="dv">2</span>, <span class="st">'salary'</span>] <span class="co"># row with labels 1 and 2, column with name salary</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>df.loc [<span class="dv">1</span>:<span class="dv">2</span>, [<span class="st">'employee'</span>,<span class="st">'salary'</span>]] <span class="co"># second to third row, columns with names employee and salary</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df.loc[df.loc[:,<span class="st">'salary'</span>]<span class="op">&gt;</span><span class="dv">23000</span>] <span class="co"># all rows where salary&gt;23000, all columns</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">employee</th>
-<th data-quarto-table-cell-role="th">salary</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Peter Gynn</td>
-<td>23400</td>
-<td>2008-3-25</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Jolie Hope</td>
-<td>26800</td>
-<td>2007-3-14</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>The loc function can even be used to add a new row to a dataframe</p>
-<div id="a2663602" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="bu">len</span>(df)] <span class="op">=</span> [<span class="st">"Mike Tyson"</span>, <span class="dv">19400</span>, <span class="st">"2018-6-27"</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">employee</th>
-<th data-quarto-table-cell-role="th">salary</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>John Doe</td>
-<td>21000</td>
-<td>2010-11-1</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Peter Gynn</td>
-<td>23400</td>
-<td>2008-3-25</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Jolie Hope</td>
-<td>26800</td>
-<td>2007-3-14</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>Mike Tyson</td>
-<td>19400</td>
-<td>2018-6-27</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>A new column can be added via</p>
-<div id="71e2bde4" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age'</span>] <span class="op">=</span> [<span class="dv">35</span>, <span class="dv">42</span>, <span class="dv">19</span>, <span class="dv">43</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>A column can be deleted via the drop command</p>
-<div id="37c42da4" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'age'</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Two dataframes can be combined using the concat function. Combining two dataframes row-wise</p>
-<div id="60f95c3d" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>:[<span class="st">'AA'</span>, <span class="st">'AB'</span>], <span class="st">'B'</span>:[<span class="st">'BA'</span>, <span class="st">'BB'</span>]})</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>:[<span class="st">'CA'</span>, <span class="st">'CB'</span>], <span class="st">'B'</span>:[<span class="st">'DA'</span>, <span class="st">'DB'</span>]})</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.concat([df1, df2])</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    A   B
-0  AA  BA
-1  AB  BB
-0  CA  DA
-1  CB  DB</code></pre>
-</div>
-</div>
-<p>Combining two dataframes column-wise</p>
-<div id="f776917c" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dfa <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>:[<span class="st">'AA'</span>, <span class="st">'AB'</span>], <span class="st">'B'</span>:[<span class="st">'BA'</span>, <span class="st">'BB'</span>]})</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>dfb <span class="op">=</span> pd.DataFrame({<span class="st">'C'</span>:[<span class="st">'CA'</span>, <span class="st">'CB'</span>], <span class="st">'D'</span>:[<span class="st">'DA'</span>, <span class="st">'DB'</span>]})</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dfc <span class="op">=</span> pd.concat([dfa, dfb], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dfc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    A   B   C   D
-0  AA  BA  CA  DA
-1  AB  BB  CB  DB</code></pre>
-</div>
-</div>
-</section>
-<section id="import-and-export" class="level3">
-<h3 class="anchored" data-anchor-id="import-and-export">Import and Export</h3>
-<div id="0d4ce9a4" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data = pd.read_csv("filename.csv")</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data = pd.read_excel("filename.xlsx")</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data.to_csv("output.csv", index=False)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="basic-statistical-functions-for-dataframes" class="level3">
-<h3 class="anchored" data-anchor-id="basic-statistical-functions-for-dataframes">Basic Statistical Functions for DataFrames</h3>
-<p>A large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as <code>sum</code> and <code>mean</code>.</p>
-<div id="29ff28b8" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.sum()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="9aebb4bc" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.iloc[:, 1:7].cumsum()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="common-statistical-functions-in-pandas" class="level3">
-<h3 class="anchored" data-anchor-id="common-statistical-functions-in-pandas">Common statistical functions in Pandas</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>count()</code></td>
-<td>Number of non-null observations</td>
-</tr>
-<tr class="even">
-<td><code>sum()</code></td>
-<td>Sum of values</td>
-</tr>
-<tr class="odd">
-<td><code>mean()</code></td>
-<td>Mean of values</td>
-</tr>
-<tr class="even">
-<td><code>median()</code></td>
-<td>Median of values</td>
-</tr>
-<tr class="odd">
-<td><code>mode()</code></td>
-<td>Mode of values</td>
-</tr>
-<tr class="even">
-<td><code>std()</code></td>
-<td>Standard deviation of the values</td>
-</tr>
-<tr class="odd">
-<td><code>min()</code></td>
-<td>Minimum value</td>
-</tr>
-<tr class="even">
-<td><code>max()</code></td>
-<td>Maximum value</td>
-</tr>
-<tr class="odd">
-<td><code>abs()</code></td>
-<td>Absolute value</td>
-</tr>
-<tr class="even">
-<td><code>prod()</code></td>
-<td>Product of values</td>
-</tr>
-<tr class="odd">
-<td><code>cumsum()</code></td>
-<td>Cumulative sum</td>
-</tr>
-<tr class="even">
-<td><code>cumprod()</code></td>
-<td>Cumulative product</td>
-</tr>
-</tbody>
-</table>
-</section>
+<p>The purpose of this document is to give an introduction to data analytics with Python.</p>
+<ul>
+<li>jupyter notebooks and libraries</li>
+</ul>
 </section>
 <section id="example-case" class="level2">
 <h2 class="anchored" data-anchor-id="example-case">Example case</h2>
+<ol type="1">
+<li>Select a case (business problem and dataset)</li>
+</ol>
+<p>Kaggle: <a href="https://www.kaggle.com/datasets?topic=retailAndShoppingDataset">Retail and shopping</a>, <a href="https://www.kaggle.com/datasets?search=financial">financial</a> or <a href="https://www.kaggle.com/datasets?topic=trendingDataset">trending</a>.</p>
+<ol start="2" type="1">
+<li>Draft an analytical notebook</li>
+</ol>
+<ul>
+<li>writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is. -&gt; Create a new notebook: create a skeleton (following CRISP-DM). explain the business problem, import a dataset from kaggle, explain what you would do in the different steps, include code cells and add notes on how you would analyze the data, which parts would be (if you are not sure about a particular part, you can leave it as TODO, say probably XY, or list two or three options that coudl be tried)</li>
+</ul>
+<ol start="3" type="1">
+<li>Refine the notebook</li>
+</ol>
+<ul>
+<li>Go over the notebook and annotate: which parts would be descriptive, predictive, prescriptive?</li>
+</ul>
+<ol start="4" type="1">
+<li>Start implementing</li>
+</ol>
+<p>See how far you get:</p>
+<ul>
+<li>import the CSV, create a descriptive overview of the data, select a model to make predictions</li>
+</ul>
+<p>Consult the documentation of Python libraries such as pandas or scikit-learn.</p>
 <ul>
 <li>Get a dataset (nice datasource)</li>
 <li>Import and prepare</li>
@@ -623,8 +300,6 @@ dtype: object</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>TODO: add a setup explanation + tests for available python version and packages</strong></p>
-<p><strong>TODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)</strong></p>
-<p><strong>TODO : add a summary</strong></p>
 </div>
 </div>
 </section>
@@ -632,15 +307,26 @@ dtype: object</code></pre>
 <h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
 <p>TODO : include specific questions/tasks that could be included in the exam.</p>
 <ul>
-<li>“Simple question” (e.g., Amazon is successful because we all order online. -&gt; explain how it exemplifies the rise of modern analytics, referring to the four “pillars”)</li>
+<li>“Simple question” (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -&gt; explain how it exemplifies the rise of modern analytics, referring to the four “pillars”)</li>
 <li>table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive</li>
 <li>TBD: questions related to the jupyter ecosystem?</li>
 </ul>
+</section>
+<section id="survey" class="level2">
+<h2 class="anchored" data-anchor-id="survey">Survey</h2>
+</section>
+<section id="references" class="level1">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Davenport2006" class="csl-entry" role="listitem">
+Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

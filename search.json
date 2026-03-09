@@ -721,25 +721,32 @@
     "text": "Evolution of Computing Power\nThe growth of modern analytics is enabled by changing strategies for increasing computing power.\n\n\n\n\n\n\n\n\n\nEra\nMain Strategy\nExplanation\n\n\n\n\n1970s–2000s (*)\nMoore’s Law & miniaturization\nSmaller transistors → more components per chip → faster processors\n\n\n2005–today\nParallel computing\nPerformance increases by using multiple processors simultaneously\n\n\n2010s–today\nSpecialized hardware\nChips optimized for specific workloads (GPUs, TPUs, AI accelerators)\n\n\nEmerging\nNew computing paradigms\nAlternative computing models such as quantum computing\n\n\n\n\n\n(*) Miniaturization continues today, but progress has slowed as transistors approach physical limits. Advances such as extreme ultraviolet (EUV) lithography are required to continue scaling. See how $400 million machines are constructed to build modern chips: https://www.youtube.com/watch?v=MiUHjLxm3V0."
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#algorithms-enable-more-powerful-models",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#algorithms-enable-more-powerful-models",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#algorithms",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#algorithms",
     "title": "Analytics & Big Data",
-    "section": "Algorithms enable more powerful models",
-    "text": "Algorithms enable more powerful models\n\n\n\n\nTraditional Regression\n\n\nDecision Tree\n\n\nNeural Network"
+    "section": "Algorithms",
+    "text": "Algorithms\nAn algorithm is a step-by-step procedure for performing a computation and thereby solving a problem.\nAlgorithms determine how efficiently computers can process data and solve tasks.\nExamples:\n\nLinux Scheduling Algorithms (1990s–present) — Efficient process scheduling enabling operating systems to run many tasks concurrently\nRSA Encryption (1977) — Public-key cryptography algorithm enabling secure internet communication\nPageRank (1998) — Algorithm ranking webpages based on link structure, enabling scalable web search\nBlockchain / Proof-of-Work Consensus (2008) — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies\nDeep Learning (2010s) — Improved neural network training enabling major advances in vision, speech, and language AI\nGradient Boosting / XGBoost (2014) — High-performance ensemble learning algorithm widely used in predictive analytics and data science\nGPT / Transformer Models (2017–present) — Transformer architecture enabling large language models and generative AI"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#rapid-advances-in-algorithms",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#rapid-advances-in-algorithms",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#algorithms-enable-more-powerful-analytical-models",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#algorithms-enable-more-powerful-analytical-models",
     "title": "Analytics & Big Data",
-    "section": "Rapid Advances in Algorithms",
-    "text": "Rapid Advances in Algorithms\nRecent breakthroughs in AI show how new algorithms can rapidly surpass human performance in specific domains.\n\n\nAlphaGo (2016)\n\nDeveloped by DeepMind\nUses deep neural networks + reinforcement learning\nDefeated world champion Lee Sedol in the game of Go\n\nKey insight:\n\nGo was long considered too complex for computers due to the enormous search space.\n\nResult\n\nAI surpassed human experts in complex strategic reasoning.\n\n\nAlphaFold (2020–2022)\n\nDeveloped by DeepMind\nUses deep learning to predict protein structures\nAchieved breakthrough performance in the CASP competition\n\nKey insight:\n\nPredicting protein folding had been a major unsolved problem in biology for decades.\n\nResult\n\nAI can solve scientific problems that previously required years of human research.\n\n\nKey takeaway\nAI progress often occurs through algorithmic breakthroughs, enabling machines to outperform humans in increasingly complex domains:\nTODO: - add illustrations - - nobel prize + biotech. ?"
+    "section": "Algorithms enable more powerful analytical models",
+    "text": "Algorithms enable more powerful analytical models\n\n\n\n\nTraditional Regression\n\n\nDecision Tree\n\n\nNeural Network"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#jagged-frontier",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#jagged-frontier",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#algorithmic-breakthroughs-drive-ai-progress",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#algorithmic-breakthroughs-drive-ai-progress",
     "title": "Analytics & Big Data",
-    "section": "Jagged frontier",
-    "text": "Jagged frontier\n\n\n\n\n\n\n\n\n\nTODO: cite Dellacqua"
+    "section": "Algorithmic Breakthroughs Drive AI Progress",
+    "text": "Algorithmic Breakthroughs Drive AI Progress\nRecent breakthroughs in artificial intelligence (AI)1 show how new algorithms can rapidly surpass human performance. DeepMind provides good examples.\n\n\n\nAlphaGo (2016)\n\nUses deep neural networks + reinforcement learning\nDefeated world champion Lee Sedol in the game of Go\n\nGo was long considered too complex for computers due to the enormous search space.\n\n\n\n\n\n\nAlphaFold (2020–2022)\n\nUses deep learning to predict protein structures\nAchieved breakthrough performance in the CASP competition2\n\nPredicting protein folding had been a major unsolved problem in biology for decades.\n\n\n\n\n\n\nAI systems are based on algorithms; in the following, we use the broader term AI when referring to such algorithm-based systems.Hassabis and colleagues were awarded the 2024 Nobel Prize in Chemistry, in part for the development of AlphaFold."
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#jagged-frontier-of-ai",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#jagged-frontier-of-ai",
+    "title": "Analytics & Big Data",
+    "section": "Jagged frontier of AI",
+    "text": "Jagged frontier of AI\n\n\nRecent studies suggest that AI creates a “jagged frontier.” (Dell’Acqua et al., 2023), i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities.\n\nWithin this frontier, AI can strongly enhance knowledge work, improving productivity and the quality of outputs.\nOutside the frontier, AI can reduce performance, especially when users rely too heavily on its outputs without verification.\n\nAI progress often occurs through algorithmic breakthroughs, enabling machines to outperform humans in increasingly complex tasks.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure based on Hendrycks et al. (2025)."
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#maturing-analytical-capabilities",
@@ -756,39 +763,46 @@
     "text": "Analytical purposes\n\n\n\n\n\n\n\n\n\n\nWhat happened? (descriptive )\nWhat will happen? (predictive analytics)\nWhat should I do? (prescriptive analytics)\n\n\n\n\nHow many widgets did I sell last month?\nHow many widgets will I sell next month?\nOrder 5,000 units of Component Z to support widget sales for next month.\n\n\nWhat were sales by zip code for Christmas last year?\nWhat will be sales by zip code over this Christmas season?\nHire Y new sales reps by these zip codes to handle projected Christmas sales.\n\n\nHow many of Product X were returned last month?\nHow many of Product X will be returned next month?\nSet aside $125K in financial reserve to cover Product X returns.\n\n\nWhat were company revenues and profits for the past quarter?\nWhat are projected company revenues and profits for next quarter?\nSell the following product mix to achieve quarterly revenue and margin goals.\n\n\nHow many employees did I hire last year?\nHow many employees will I need to hire next year?\nIncrease hiring pipeline by 35% to achieve hiring goals.\n\n\n\n\n\n A particular method, such as regression or machine learning, can serve multiple purposes.\n\n\n\nSource: Schmarzo (2016), p. 13"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#descriptive-analytics-process",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#descriptive-analytics-process",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#example-descriptive-analytics",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#example-descriptive-analytics",
     "title": "Analytics & Big Data",
-    "section": "Descriptive Analytics Process",
-    "text": "Descriptive Analytics Process"
+    "section": "Example: Descriptive Analytics",
+    "text": "Example: Descriptive Analytics"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#predictive-analytics-process",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#predictive-analytics-process",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#example-predictive-analytics",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#example-predictive-analytics",
     "title": "Analytics & Big Data",
-    "section": "Predictive Analytics Process",
-    "text": "Predictive Analytics Process"
+    "section": "Example: Predictive Analytics",
+    "text": "Example: Predictive Analytics"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#example-inventory-planning",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#example-inventory-planning",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#example-prescriptive-analytics",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#example-prescriptive-analytics",
     "title": "Analytics & Big Data",
-    "section": "Example Inventory Planning",
-    "text": "Example Inventory Planning\n\n\n\n\n\n\nOn the basis of more than 300 million data records per week, Otto makes more than one billion forecasts per year on the sales development of individual articles for the next days and weeks. Such forecasts allow Otto to reduce its own inventories by up to 30% on average.\n\n\n\n\nSource: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/files/441/442/777/1015/DLK12_C3-3_Praesentation_Stueben.pdf"
+    "section": "Example: Prescriptive Analytics",
+    "text": "Example: Prescriptive Analytics\nBased on more than 300 million data records per week, Otto generates over one billion forecasts annually on the expected sales of individual products in the coming days and weeks. These forecasts are used to optimize inventory decisions, determining how many units of each product should be stocked or reordered across warehouses. By systematically adjusting inventory levels based on these data-driven recommendations, Otto is able to reduce its overall inventories by up to 30% on average while maintaining product availability.\n\n\n\n\n\n\n\n\n\nSource: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/files/441/442/777/1015/DLK12_C3-3_Praesentation_Stueben.pdf"
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#analytical-models",
     "href": "slides/lecture_1_rise_of_data_analytics.html#analytical-models",
     "title": "Analytics & Big Data",
     "section": "Analytical models",
-    "text": "Analytical models\n\n\n\n\n\n\n\n\n\nDiscipline\nModel Culture\nTypical Models\n\n\n\n\nStatistics\nProbabilistic inference\nRegression, GLM, Bayesian\n\n\nEconometrics\nCausal modeling\nIV, panel models\n\n\nComputer Science\nAlgorithmic learning\nTrees, SVM, NN\n\n\nOperations Research\nOptimization\nLP, MIP\n\n\nManagement Science\nDecision modeling\nStochastic optimization\n\n\nComplex Systems\nSimulation\nABM, DES\n\n\n\n-&gt; highlight what we focus on. Mention that not all disciplines focus on the “business understanding” and using insights to support business decisions. Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).\nTODO: replace abbreviations"
+    "text": "Analytical models\nThere is a a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes. While these fields often focus on methodological development, business analytics emphasizes applying these approaches to support understanding and decision-making in organizational contexts.\n\n\n\n\n\n\n\n\n\nDiscipline\nModel Culture\nTypical Models\n\n\n\n\nStatistics\nProbabilistic inference\nRegression, GLM, Bayesian\n\n\nEconometrics\nCausal modeling\nIV, panel models\n\n\nComputer Science\nAlgorithmic learning\nTrees, SVM, NN\n\n\nOperations Research\nOptimization\nLinear programming, Non-linear optimization\n\n\nManagement Science\nDecision modeling\nStochastic optimization\n\n\nComplex Systems\nSimulation\nAgent-Based/Discrete Event Simulation"
   },
   {
-    "objectID": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm",
-    "href": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm",
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm-cross-industry-standard-process-for-data-mining",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#crisp-dm-cross-industry-standard-process-for-data-mining",
     "title": "Analytics & Big Data",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData\n\n\n\n\n\n\n\n\n:::\n::::"
+    "section": "CRISP-DM Cross-Industry Standard Process for Data Mining",
+    "text": "CRISP-DM Cross-Industry Standard Process for Data Mining\n\n\nCRISP-DM is a widely used framework that structures data mining and analytics projects (Wirth & Hipp, 2000).\n\nDeveloped by an industry consortium (e.g., DaimlerChrysler, SPSS, NCR) to create a common methodology for data mining projects.\nDesigned to be independent of specific industries and technologies, making it applicable across many domains.\nIntegrates best practices from real-world projects, helping teams plan, communicate, and document analytics work.\nBecame popular because it provides a reliable and repeatable standard process for managing complex data mining projects.\n\n\n\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData\n\n\n\n\n\n\n\n\n\n\n\nBesides CRISP-DM, there are other models, such as KDD Process, SEMMA, or TDSP."
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#structure-of-the-course",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#structure-of-the-course",
+    "title": "Analytics & Big Data",
+    "section": "Structure of the course",
+    "text": "Structure of the course\n\n\nWe structure the course along the CRISP-DM analytics lifecycle:\n\nIntroduction (Session 0–1)\n\nOverview of analytics and the CRISP-DM workflow.\n\nData Foundations (Session 2–3)\n\nExploration and analytical data architecture.\n\nAnalytical Models (Session 4-9)\n\nRegression, machine learning, and big data analytics.\n\nDeployment (Session 10)\n\nAnalytics in organizations.\n\nSynthesis (Session 11)\n\nIntegration of the full analytics workflow.\n\n\n\n\n\n\n\n\n\n\n\nCRISPDM\n\n\n\nA\n\nBusiness\nUnderstanding\n\n\n\nB\n\nData\nUnderstanding\n\n\n\nA-&gt;B\n\n\n\n\n\nA-&gt;B\n\n\n\n\n\nE\n\nEvaluation\n\n\n\nA-&gt;E\n\n\n\n\n\nB-&gt;A\n\n\n\n\n\nC\n\nData\nPreparation\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nModeling\n\n\n\nC-&gt;D\n\n\n\n\n\nC-&gt;D\n\n\n\n\n\nD-&gt;C\n\n\n\n\n\nD-&gt;E\n\n\n\n\n\nE-&gt;A\n\n\n\n\n\nF\n\nDeployment\n\n\n\nE-&gt;F\n\n\n\n\n\nX\n\n\nData\n\n\n\n\n\n\n\n\n\n\nAnalytics is not a linear pipeline. We constantly move between business problems, data, modeling, and evaluation."
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#summary",
@@ -798,18 +812,46 @@
     "text": "Summary\n\n\nIllustrate how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
   },
   {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#setup",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#setup",
+    "title": "Analytics & Big Data",
+    "section": "Setup",
+    "text": "Setup\nTODO\n\nWhy Jupyter/Codespaces? (other options?)\nexplain setup\n\nSteps:\n\nCreate a Github account here\nStart Codespace in fs-ise/analytics-and-big-data-notebooks\n\n\n\nYou can use a local setup after this session (if it works on your machine)."
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#break",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#break",
+    "title": "Analytics & Big Data",
+    "section": "Break",
+    "text": "Break"
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#group-split",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#group-split",
+    "title": "Analytics & Big Data",
+    "section": "Group split",
+    "text": "Group split\nEach section is 30 min.\n\n\n\n\n\n\nflowchart LR\n\nB{Split} --&gt; C[Group 1&lt;br&gt;Jupyter Notebook]\nB --&gt; D[Group 2&lt;br&gt;Reading]\n\nC --&gt; E[Switch]\nD --&gt; E\n\nE --&gt; F[Group 1&lt;br&gt;Reading]\nE --&gt; G[Group 2&lt;br&gt;Jupyter Notebook]\n\nF --&gt; H[\"Discussion & Comparison\"]\nG --&gt; H"
+  },
+  {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#todo",
     "href": "slides/lecture_1_rise_of_data_analytics.html#todo",
     "title": "Analytics & Big Data",
     "section": "TODO",
-    "text": "TODO\n\nGithub account, start Codespace in analytics-and-big-data-notebooks\noption to use a local setup after this session (if it works on your machine)\nexplain setup\n\n\nKernel: select global env\nTODO: download/save changes (and stop/delete codespace)"
+    "text": "TODO\n\nKernel: select global env\nTODO: download/save changes (and stop/delete codespace)"
+  },
+  {
+    "objectID": "slides/lecture_1_rise_of_data_analytics.html#todo-readingsynthesis",
+    "href": "slides/lecture_1_rise_of_data_analytics.html#todo-readingsynthesis",
+    "title": "Analytics & Big Data",
+    "section": "TODO: reading/synthesis?",
+    "text": "TODO: reading/synthesis?"
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#survey-session-1",
     "href": "slides/lecture_1_rise_of_data_analytics.html#survey-session-1",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 1",
-    "text": "Survey: Session 1\n\n\n\n    \n\nLink: https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor\nNote: We will use and possibly publish results (anonymously)."
+    "text": "Survey: Session 1\n\n\n\n\n    \n\n\nLink: https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor\nNote: We will use and possibly publish results (anonymously)."
   },
   {
     "objectID": "teaching_notes.html",
@@ -830,7 +872,7 @@
     "href": "preparation.html#preparation-overview",
     "title": "Preparation",
     "section": "Preparation overview",
-    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Big data I\nFind contents: Big data II\nCheck: Jupyter Exercise setup: export of jupyter notebooks\nCheck: Jupyter Exercise setup: running jupyter notebooks (GitHub?)\n\nGenerally: generation of PDFs: local only?\nPlan to record timing (data in the repository) and data from google surveys - TODO: session/exercise structure should be reflected in each survey -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration\nTODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — The rise of analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Analytical data architecture\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Big Data II\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
+    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Big data I\nFind contents: Big data II\nCheck: Jupyter Exercise setup: export of jupyter notebooks\nCheck: Jupyter Exercise setup: running jupyter notebooks (GitHub?)\n\nGenerally: generation of PDFs: local only?\nPlan to record timing (data in the repository) and data from google surveys - TODO: session/exercise structure should be reflected in each survey -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration\nTODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)\nConsistently include “vocabulary” sections at the end (like in regression 1)\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — The rise of analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Analytical data architecture\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Big Data II\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
   },
   {
     "objectID": "preparation.html#cross-cutting-tasks",
@@ -865,7 +907,7 @@
     "href": "exercises/exercise_2.html",
     "title": "Exercise 2: Structuring and preparing data",
     "section": "",
-    "text": "Explore data sets by using appropriate descriptive and visual techniques in Python:\n\nInspecting the structure of a dataset (variables, types, conversion)\nDescriptive statistics\nVisualizations (maybe even interactive?)\n\nTBD: include data preparation and data quality considerations?\nThis text will appear across all versions of the document.\nimport numpy as np\nimport pandas as pd\n\nrng = np.random.default_rng(42)\n\nn = 200\ndf = pd.DataFrame({\n    \"age\": rng.integers(18, 66, size=n),\n    \"department\": rng.choice([\"Sales\", \"Ops\", \"R&D\"], size=n, p=[0.35, 0.40, 0.25]),\n    \"remote_days_per_week\": rng.integers(0, 6, size=n),\n})\n\n# base salary with department effects + noise\ndept_effect = df[\"department\"].map({\"Sales\": 8000, \"Ops\": 5000, \"R&D\": 11000})\ndf[\"salary_eur\"] = (35000 + dept_effect + 250 * df[\"age\"] + rng.normal(0, 6000, size=n)).round(0)\n\n# Inject a few missing values (common in real data)\nmissing_idx = rng.choice(df.index, size=8, replace=False)\ndf.loc[missing_idx[:4], \"salary_eur\"] = np.nan\ndf.loc[missing_idx[4:], \"remote_days_per_week\"] = np.nan\n\ndf.head()\n\n\n\n\n\n\n\n\nage\ndepartment\nremote_days_per_week\nsalary_eur\n\n\n\n\n0\n22\nR&D\n3.0\n54138.0\n\n\n1\n55\nOps\n4.0\n56895.0\n\n\n2\n49\nSales\n4.0\n56908.0\n\n\n3\n39\nR&D\n0.0\n47273.0\n\n\n4\n38\nR&D\n4.0\n41639.0"
+    "text": "repeat python data types (dict, pandas, …)\nwhat is “in memory”? (%whos)\nstart with a simple example of an excel spreadsheet, then check an API\nexample notebook: financial API (code for the api call should be included)\nTODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)\nThis text will appear across all versions of the document.\nimport numpy as np\nimport pandas as pd\n\nrng = np.random.default_rng(42)\n\nn = 200\ndf = pd.DataFrame({\n    \"age\": rng.integers(18, 66, size=n),\n    \"department\": rng.choice([\"Sales\", \"Ops\", \"R&D\"], size=n, p=[0.35, 0.40, 0.25]),\n    \"remote_days_per_week\": rng.integers(0, 6, size=n),\n})\n\n# base salary with department effects + noise\ndept_effect = df[\"department\"].map({\"Sales\": 8000, \"Ops\": 5000, \"R&D\": 11000})\ndf[\"salary_eur\"] = (35000 + dept_effect + 250 * df[\"age\"] + rng.normal(0, 6000, size=n)).round(0)\n\n# Inject a few missing values (common in real data)\nmissing_idx = rng.choice(df.index, size=8, replace=False)\ndf.loc[missing_idx[:4], \"salary_eur\"] = np.nan\ndf.loc[missing_idx[4:], \"remote_days_per_week\"] = np.nan\n\ndf.head()\n\n\n\n\n\n\n\n\nage\ndepartment\nremote_days_per_week\nsalary_eur\n\n\n\n\n0\n22\nR&D\n3.0\n54138.0\n\n\n1\n55\nOps\n4.0\n56895.0\n\n\n2\n49\nSales\n4.0\n56908.0\n\n\n3\n39\nR&D\n0.0\n47273.0\n\n\n4\n38\nR&D\n4.0\n41639.0"
   },
   {
     "objectID": "exercises/exercise_2.html#tasks",
@@ -880,6 +922,41 @@
     "title": "Exercise 2: Structuring and preparing data",
     "section": "Solution",
     "text": "Solution\n\n1) Inspect the data\n\ndf.info()\n\n&lt;class 'pandas.DataFrame'&gt;\nRangeIndex: 200 entries, 0 to 199\nData columns (total 4 columns):\n #   Column                Non-Null Count  Dtype  \n---  ------                --------------  -----  \n 0   age                   200 non-null    int64  \n 1   department            200 non-null    str    \n 2   remote_days_per_week  196 non-null    float64\n 3   salary_eur            196 non-null    float64\ndtypes: float64(2), int64(1), str(1)\nmemory usage: 6.4 KB\n\n\n\n\n2) Overall descriptive statistics\n\ndesc = df.describe()\ndesc\n\n\n\n\n\n\n\n\nage\nremote_days_per_week\nsalary_eur\n\n\n\n\ncount\n200.000000\n196.000000\n196.000000\n\n\nmean\n41.945000\n2.602041\n52964.061224\n\n\nstd\n13.193267\n1.674789\n7151.644642\n\n\nmin\n18.000000\n0.000000\n35463.000000\n\n\n25%\n31.000000\n1.000000\n48173.750000\n\n\n50%\n42.000000\n3.000000\n52869.000000\n\n\n75%\n54.000000\n4.000000\n57796.500000\n\n\nmax\n65.000000\n5.000000\n72956.000000\n\n\n\n\n\n\n\n\nsalary_mean = df[\"salary_eur\"].mean()      # skips NaN by default\nsalary_std  = df[\"salary_eur\"].std()\nage_min     = df[\"age\"].min()\nage_max     = df[\"age\"].max()\n\nsalary_mean, salary_std, age_min, age_max\n\n(np.float64(52964.06122448979),\n np.float64(7151.644641857691),\n np.int64(18),\n np.int64(65))\n\n\n\n\n3) Group-wise descriptive statistics\n\nsalary_by_dept = df.groupby(\"department\")[\"salary_eur\"].agg([\"mean\", \"median\", \"count\"])\nsalary_by_dept\n\n\n\n\n\n\n\n\nmean\nmedian\ncount\n\n\ndepartment\n\n\n\n\n\n\n\nOps\n50173.200000\n50136.0\n70\n\n\nR&D\n55501.076923\n55519.5\n52\n\n\nSales\n53821.297297\n54310.5\n74\n\n\n\n\n\n\n\n\nremote_by_dept = df.groupby(\"department\")[\"remote_days_per_week\"].mean()  # skips NaN\nremote_by_dept\n\ndepartment\nOps      2.705882\nR&D      2.450980\nSales    2.610390\nName: remote_days_per_week, dtype: float64\n\n\n\n\n4) Data-quality check\n\nrows_with_any_missing = df.isna().any(axis=1).sum()\nrows_with_any_missing\n\nnp.int64(8)\n\n\nInterpretation (example):\n\ncount in the grouped salary table shows how many non-missing salary observations exist per department.\nGroup means ignore missing values unless you explicitly change that behavior."
+  },
+  {
+    "objectID": "exercises/exercise_2.html#preface",
+    "href": "exercises/exercise_2.html#preface",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "Preface",
+    "text": "Preface\nThe purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.\nThe three main libraries are:\n\nNumPy\nPandas\nScikit-learn"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#numpy",
+    "href": "exercises/exercise_2.html#numpy",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "NumPy",
+    "text": "NumPy\nNumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.\nAn introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School)."
+  },
+  {
+    "objectID": "exercises/exercise_2.html#pandas",
+    "href": "exercises/exercise_2.html#pandas",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "Pandas",
+    "text": "Pandas\nPandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.\nIn Chapter 1, an introduction to using DataFrames with Pandas is given."
+  },
+  {
+    "objectID": "exercises/exercise_2.html#scikit-learn",
+    "href": "exercises/exercise_2.html#scikit-learn",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "Scikit-learn",
+    "text": "Scikit-learn\nScikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.\nThe structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:\n\n# Schematic example to illustrate a common estimator pattern.\n\nclass ModelEstimator(object):\n    def __init__(self, param1=\"pvalue1\"):\n        self.param1 = param1\n\n    def fit(self, X, y):\n        # X are input values, y are target values (supervised case)\n        # here the functionality for model estimation is implemented\n        return self\n\n    def predict(self, X):\n        # implementation of the predicting function\n        return X"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#dataframes-with-pandas",
+    "href": "exercises/exercise_2.html#dataframes-with-pandas",
+    "title": "Exercise 2: Structuring and preparing data",
+    "section": "DataFrames with Pandas",
+    "text": "DataFrames with Pandas\n\nDataFrames\nWhile a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.\nTODO: add illustration\nFor example, the following variable df is a dataframe containing three vectors\n\nimport pandas as pd\n\ndata = {\n    \"employee\": [\"John Doe\", \"Peter Gynn\", \"Jolie Hope\"],\n    \"salary\": [21000, 23400, 26800],\n    \"startdate\": [\"2010-11-1\", \"2008-3-25\", \"2007-3-14\"],\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe result of this is a dataframe named df. The numbers on the left side of the rows are labels and not the indexes. You can inspect the structure using the dtypes property\n\ndf.dtypes\n\nemployee       str\nsalary       int64\nstartdate      str\ndtype: object\n\n\nTo retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples\n\ndf.iloc[0,1] # element in first row, second column\ndf.iloc[:,0] # all rows, first column\ndf.iloc[1:3,1] # second to third row, second column\ndf.iloc[:,-2] # all rows, second column from the end\ndf.iloc[-1,:] # last row, all columns\ndf.iloc[[0, 2], [1, 2]] # first and third row, second to third column\n\n\n\n\n\n\n\n\nsalary\nstartdate\n\n\n\n\n0\n21000\n2010-11-1\n\n\n2\n26800\n2007-3-14\n\n\n\n\n\n\n\nPandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples\n\ndf.loc[1:2,:] # row with labels 1 and 2, all columns\ndf.loc[1:2] # same as above\ndf.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary\ndf.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary\ndf.loc[df.loc[:,'salary']&gt;23000] # all rows where salary&gt;23000, all columns\n# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe loc function can even be used to add a new row to a dataframe\n\ndf.loc[len(df)] = [\"Mike Tyson\", 19400, \"2018-6-27\"]\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n3\nMike Tyson\n19400\n2018-6-27\n\n\n\n\n\n\n\nA new column can be added via\n\ndf['age'] = [35, 42, 19, 43]\n\nA column can be deleted via the drop command\n\ndf = df.drop('age', axis = 1)\n\nTwo dataframes can be combined using the concat function. Combining two dataframes row-wise\n\ndf1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndf2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})\ndf3 = pd.concat([df1, df2])\nprint(df3)\n\n    A   B\n0  AA  BA\n1  AB  BB\n0  CA  DA\n1  CB  DB\n\n\nCombining two dataframes column-wise\n\ndfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})\ndfc = pd.concat([dfa, dfb], axis=1)\nprint(dfc)\n\n    A   B   C   D\n0  AA  BA  CA  DA\n1  AB  BB  CB  DB\n\n\n\n\nImport and Export\n\n# data = pd.read_csv(\"filename.csv\")\n# data = pd.read_excel(\"filename.xlsx\")\n# data.to_csv(\"output.csv\", index=False)\n\n\n\nBasic Statistical Functions for DataFrames\nA large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as sum and mean.\n\n# data.sum()\n\n\n# data.iloc[:, 1:7].cumsum()\n\n\n\nCommon statistical functions in Pandas\n\n\n\nFunction\nDescription\n\n\n\n\ncount()\nNumber of non-null observations\n\n\nsum()\nSum of values\n\n\nmean()\nMean of values\n\n\nmedian()\nMedian of values\n\n\nmode()\nMode of values\n\n\nstd()\nStandard deviation of the values\n\n\nmin()\nMinimum value\n\n\nmax()\nMaximum value\n\n\nabs()\nAbsolute value\n\n\nprod()\nProduct of values\n\n\ncumsum()\nCumulative sum\n\n\ncumprod()\nCumulative product"
   },
   {
     "objectID": "exercises/exercise_2.html#exam-prep",
@@ -1082,56 +1159,49 @@
     "href": "exercises/exercise_1.html",
     "title": "Exercise 1: The rise of analytics",
     "section": "",
-    "text": "Explore the Python and Jupyter analytics ecosystem:\n\nStart Jupyter in a VM (GitHub Codespace)\nInstall packages (pandas / !pip install.. and requirements.txt)\nWrite a first notebook"
+    "text": "In this session, we split into two groups. You have approx. 30 mins for each part."
+  },
+  {
+    "objectID": "exercises/exercise_1.html#group-1-read-competing-on-analytics",
+    "href": "exercises/exercise_1.html#group-1-read-competing-on-analytics",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Group 1: Read Competing on Analytics",
+    "text": "Group 1: Read Competing on Analytics\nRead the Competing on Analytics paper by Davenport (2006). Prepare to discuss the following questions:\n\nWhat does it mean for a company to “compete on analytics”?\nHow is this different from simply using data or reports in decision making?\nWhat organizational capabilities are required to compete on analytics?\nConsider aspects such as leadership, culture, people, and technology.\nWhich companies or industries today seem to compete on analytics?\nGive examples and explain how analytics creates their competitive advantage."
+  },
+  {
+    "objectID": "exercises/exercise_1.html#group-2-create-an-analytical-notebook-in-jupyter",
+    "href": "exercises/exercise_1.html#group-2-create-an-analytical-notebook-in-jupyter",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Group 2: Create an analytical notebook in Jupyter",
+    "text": "Group 2: Create an analytical notebook in Jupyter\n\nExplore the Python and Jupyter analytics ecosystem:\n\nStart Jupyter in a VM (GitHub Codespace)\nWrite a first notebook\n\n\n\n\n\n\n\n\nNoteTODO\n\n\n\nSee https://www.codecademy.com/article/how-to-use-jupyter-notebooks https://www.codecademy.com/article/getting-started-with-jupyter -&gt; variable? + tab-completion, shift-tab for function arguments\n\ntest workflow (github/local jupyter notebook - do not save as qmd / or convert?!)\nunderstand the elements of a jupyter notebook\nshortcuts: run individual lines with shift+ENTER ??, press a, b, x, …\nextend slide-deck?"
   },
   {
     "objectID": "exercises/exercise_1.html#preface",
     "href": "exercises/exercise_1.html#preface",
     "title": "Exercise 1: The rise of analytics",
     "section": "Preface",
-    "text": "Preface\nThe purpose of this document is to give an introduction to data analytics with Python. We will use three main libraries for data analytics provided for Python. For special cases, we will use additional libraries as mentioned in the text.\nThe three main libraries are:\n\nNumPy\nPandas\nScikit-learn"
-  },
-  {
-    "objectID": "exercises/exercise_1.html#numpy",
-    "href": "exercises/exercise_1.html#numpy",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "NumPy",
-    "text": "NumPy\nNumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that provides a set of array and matrix data types which are essential for statistics, econometrics, and data analysis. They behave similarly to the data structures in Python. In addition, NumPy offers methods to manipulate and extract information from these structures.\nAn introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of the course “Introduction to Programming” (first semester Bachelor at Frankfurt School)."
-  },
-  {
-    "objectID": "exercises/exercise_1.html#pandas",
-    "href": "exercises/exercise_1.html#pandas",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "Pandas",
-    "text": "Pandas\nPandas is a Python library that provides high-level data structures and a vast variety of tools for analysis. The great feature of this package is the ability to translate rather complex operations with data into one or two commands. Pandas contains many built-in methods for grouping, filtering, and combining data, as well as time-series functionality. All of this is followed by impressive speed indicators.\nIn Chapter 1, an introduction to using DataFrames with Pandas is given."
-  },
-  {
-    "objectID": "exercises/exercise_1.html#scikit-learn",
-    "href": "exercises/exercise_1.html#scikit-learn",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "Scikit-learn",
-    "text": "Scikit-learn\nScikit-learn provides a range of supervised and unsupervised learning algorithms via a consistent interface in Python. The library is focused on modeling data. It is not focused on loading, manipulating, and summarizing data. For these features, refer to NumPy and Pandas.\nThe structure of the implementation of the algorithms always follows the same template, so that they can be used in the same way. Example for the implementation of a supervised learning algorithm:\n\n# Schematic example to illustrate a common estimator pattern.\n\nclass ModelEstimator(object):\n    def __init__(self, param1=\"pvalue1\"):\n        self.param1 = param1\n\n    def fit(self, X, y):\n        # X are input values, y are target values (supervised case)\n        # here the functionality for model estimation is implemented\n        return self\n\n    def predict(self, X):\n        # implementation of the predicting function\n        return X"
-  },
-  {
-    "objectID": "exercises/exercise_1.html#dataframes-with-pandas",
-    "href": "exercises/exercise_1.html#dataframes-with-pandas",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "DataFrames with Pandas",
-    "text": "DataFrames with Pandas\n\nDataFrames\nWhile a matrix is of simple structure intended for mathematical operations, a DataFrame is more suited to representing a table of data. It is a list of vectors of equal length. The top line of a DataFrame, called the header, contains the column names. Each horizontal line afterward denotes a data row.\nTODO: add illustration\nFor example, the following variable df is a dataframe containing three vectors\n\nimport pandas as pd\n\ndata = {\n    \"employee\": [\"John Doe\", \"Peter Gynn\", \"Jolie Hope\"],\n    \"salary\": [21000, 23400, 26800],\n    \"startdate\": [\"2010-11-1\", \"2008-3-25\", \"2007-3-14\"],\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe result of this is a dataframe named df. The numbers on the left side of the rows are labels and not the indexes. You can inspect the structure using the dtypes property\n\ndf.dtypes\n\nemployee       str\nsalary       int64\nstartdate      str\ndtype: object\n\n\nTo retrieve data Pandas provide various variants in order to get purely integer based indexing. Like python and numpy, these are 0-based indexing. The various access variants are an integer, a list of integers, and a range of values. Examples\n\ndf.iloc[0,1] # element in first row, second column\ndf.iloc[:,0] # all rows, first column\ndf.iloc[1:3,1] # second to third row, second column\ndf.iloc[:,-2] # all rows, second column from the end\ndf.iloc[-1,:] # last row, all columns\ndf.iloc[[0, 2], [1, 2]] # first and third row, second to third column\n\n\n\n\n\n\n\n\nsalary\nstartdate\n\n\n\n\n0\n21000\n2010-11-1\n\n\n2\n26800\n2007-3-14\n\n\n\n\n\n\n\nPandas provides too various methods of label based indexing. The loc function takes two single/list/range operators separated by a comma. The first one indicates the row and the second one indicates columns. Examples\n\ndf.loc[1:2,:] # row with labels 1 and 2, all columns\ndf.loc[1:2] # same as above\ndf.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary\ndf.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary\ndf.loc[df.loc[:,'salary']&gt;23000] # all rows where salary&gt;23000, all columns\n# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n\n\n\n\n\nThe loc function can even be used to add a new row to a dataframe\n\ndf.loc[len(df)] = [\"Mike Tyson\", 19400, \"2018-6-27\"]\ndf\n\n\n\n\n\n\n\n\nemployee\nsalary\nstartdate\n\n\n\n\n0\nJohn Doe\n21000\n2010-11-1\n\n\n1\nPeter Gynn\n23400\n2008-3-25\n\n\n2\nJolie Hope\n26800\n2007-3-14\n\n\n3\nMike Tyson\n19400\n2018-6-27\n\n\n\n\n\n\n\nA new column can be added via\n\ndf['age'] = [35, 42, 19, 43]\n\nA column can be deleted via the drop command\n\ndf = df.drop('age', axis = 1)\n\nTwo dataframes can be combined using the concat function. Combining two dataframes row-wise\n\ndf1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndf2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})\ndf3 = pd.concat([df1, df2])\nprint(df3)\n\n    A   B\n0  AA  BA\n1  AB  BB\n0  CA  DA\n1  CB  DB\n\n\nCombining two dataframes column-wise\n\ndfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})\ndfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})\ndfc = pd.concat([dfa, dfb], axis=1)\nprint(dfc)\n\n    A   B   C   D\n0  AA  BA  CA  DA\n1  AB  BB  CB  DB\n\n\n\n\nImport and Export\n\n# data = pd.read_csv(\"filename.csv\")\n# data = pd.read_excel(\"filename.xlsx\")\n# data.to_csv(\"output.csv\", index=False)\n\n\n\nBasic Statistical Functions for DataFrames\nA large number of methods compute basic statistical measures on a DataFrame. Most of them are aggregations such as sum and mean.\n\n# data.sum()\n\n\n# data.iloc[:, 1:7].cumsum()\n\n\n\nCommon statistical functions in Pandas\n\n\n\nFunction\nDescription\n\n\n\n\ncount()\nNumber of non-null observations\n\n\nsum()\nSum of values\n\n\nmean()\nMean of values\n\n\nmedian()\nMedian of values\n\n\nmode()\nMode of values\n\n\nstd()\nStandard deviation of the values\n\n\nmin()\nMinimum value\n\n\nmax()\nMaximum value\n\n\nabs()\nAbsolute value\n\n\nprod()\nProduct of values\n\n\ncumsum()\nCumulative sum\n\n\ncumprod()\nCumulative product"
+    "text": "Preface\nThe purpose of this document is to give an introduction to data analytics with Python.\n\njupyter notebooks and libraries"
   },
   {
     "objectID": "exercises/exercise_1.html#example-case",
     "href": "exercises/exercise_1.html#example-case",
     "title": "Exercise 1: The rise of analytics",
     "section": "Example case",
-    "text": "Example case\n\nGet a dataset (nice datasource)\nImport and prepare\nProduce a notebook\n\n\n\n\n\n\n\nNoteTODO\n\n\n\nTODO: add a setup explanation + tests for available python version and packages\nTODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)\nTODO : add a summary"
+    "text": "Example case\n\nSelect a case (business problem and dataset)\n\nKaggle: Retail and shopping, financial or trending.\n\nDraft an analytical notebook\n\n\nwriting a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is. -&gt; Create a new notebook: create a skeleton (following CRISP-DM). explain the business problem, import a dataset from kaggle, explain what you would do in the different steps, include code cells and add notes on how you would analyze the data, which parts would be (if you are not sure about a particular part, you can leave it as TODO, say probably XY, or list two or three options that coudl be tried)\n\n\nRefine the notebook\n\n\nGo over the notebook and annotate: which parts would be descriptive, predictive, prescriptive?\n\n\nStart implementing\n\nSee how far you get:\n\nimport the CSV, create a descriptive overview of the data, select a model to make predictions\n\nConsult the documentation of Python libraries such as pandas or scikit-learn.\n\nGet a dataset (nice datasource)\nImport and prepare\nProduce a notebook\n\n\n\n\n\n\n\nNoteTODO\n\n\n\nTODO: add a setup explanation + tests for available python version and packages"
   },
   {
     "objectID": "exercises/exercise_1.html#exam-prep",
     "href": "exercises/exercise_1.html#exam-prep",
     "title": "Exercise 1: The rise of analytics",
     "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n“Simple question” (e.g., Amazon is successful because we all order online. -&gt; explain how it exemplifies the rise of modern analytics, referring to the four “pillars”)\ntable with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive\nTBD: questions related to the jupyter ecosystem?"
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n“Simple question” (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -&gt; explain how it exemplifies the rise of modern analytics, referring to the four “pillars”)\ntable with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive\nTBD: questions related to the jupyter ecosystem?"
+  },
+  {
+    "objectID": "exercises/exercise_1.html#survey",
+    "href": "exercises/exercise_1.html#survey",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Survey",
+    "text": "Survey"
   },
   {
     "objectID": "readme.html",
@@ -2370,28 +2440,28 @@
     "href": "notes/lecture_1_rise_of_data_analytics.html",
     "title": "Notes: Session 1: The rise of analytics",
     "section": "",
-    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.\n\n\nFocus on algorithms (enable more elaborate models and analyses)"
+    "text": "NotePreparation\n\n\n\n\nPrepare/bring tags for groups\nPrepare a zoom session for students to share their work"
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html#lecture",
     "href": "notes/lecture_1_rise_of_data_analytics.html#lecture",
     "title": "Notes: Session 1: The rise of analytics",
-    "section": "",
-    "text": "Note: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.\n\n\nFocus on algorithms (enable more elaborate models and analyses)"
+    "section": "Lecture",
+    "text": "Lecture\nNote: Orga: 20 min\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n20-35\n15\nMore data\n\n\n\n35-50\n15\nMore computing power\n\n\n\n50-65\n15\nNew algorithms\n\n\n\n65-80\n15\nNew analytics processes\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nIn this session, our goal is to explain why modern data analytics is successful, with reference to and examples from the four areas.\n\n\nFocus on algorithms (enable more elaborate models and analyses)\n\nAlphaFold: also illustrates how science and algorithmic competitions drive progress\nAlphaFold enables a range of commercial use cases in the pharmaceutical and biotech industries ()"
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html#analytical-processes",
     "href": "notes/lecture_1_rise_of_data_analytics.html#analytical-processes",
     "title": "Notes: Session 1: The rise of analytics",
     "section": "Analytical processes",
-    "text": "Analytical processes\nKey trends of improvement:\n\nMaturing: from descriptive to predictive and prescriptive (reducing ambiguity and the need for human involvement in business decisions)\nPervasive: extending to different areas (e.g., understanding customers with A/B testing), departments (logistics, financial, …) with specific disciplines refining more specialized models (forecasting, supply chain, scheduling, queueing, …)\nStandardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -&gt; intensifies competition\n\nCRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)"
+    "text": "Analytical processes\nKey trends of improvement:\n\nMaturing: from descriptive to predictive and prescriptive (reducing ambiguity and the need for human involvement in business decisions)\nPervasive: extending to different areas (e.g., understanding customers with A/B testing), departments (logistics, financial, …) with specific disciplines refining more specialized models (forecasting, supply chain, scheduling, queueing, …)\nStandardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -&gt; intensifies competition\n\nCRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)\nTransition: CRISP-DM is a well-established model for data analytics, so it also serves as a structure for this course…"
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html#exercise",
     "href": "notes/lecture_1_rise_of_data_analytics.html#exercise",
     "title": "Notes: Session 1: The rise of analytics",
     "section": "Exercise",
-    "text": "Exercise\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n0-30\n30\nIntroduction and setup\n\n\n\n30-90\n60\nData handling in Python\n\n\n\n\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nAsk students to create a GitHub account (CHECK: free student packs?)\nTBD: typical exam questions corresponding to the lecture? -\nExplain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im Umgang mit Spyder.docx).\nStart in groups of two (random?)\nIntroduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite check classrooms before! - can it be attached to the desks?\nTODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools"
+    "text": "Exercise\n\n\n\n\n\n\n\n\n\nTime (min)\nDuration\nTopic\nAdditional materials\n\n\n\n\n0-30\n30\nIntroduction and setup\n\n\n\n30-90\n60\nData handling in Python\n\n\n\n\nDistribute tags (1.1, 1.1, 1.2, 1.2, 2.1, 2.1, 2.2, 2.2) -&gt; work in pairs.\nTODO: I will work with the notebook group.\n\n\n\n\n\n\nObjectiveObjective\n\n\n\nTODO: https://chatgpt.com/c/69a69645-6f10-8390-932f-440be042030d TBD: include examples (such as giving the mean after removing rows with NA in columns X, Y, Z), which are very hard to do in Excel (where students see the value of separating analysis from data / maybe with API data?)\nAsk students to create a GitHub account (CHECK: free student packs?)\nTBD: typical exam questions corresponding to the lecture? -\nExplain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im Umgang mit Spyder.docx).\nStart in groups of two (random?)\nIntroduce system (badges) - similar to https://eduki.com/de/material/306565/schilder-fragen-fertig-ich-arbeite check classrooms before! - can it be attached to the desks?\n“simple” amazon question: you could say yes, but you will get no points for it. All exam questions are about selecting the appropriate concepts from the lecture and applying them to the case. Explain: signals the need for a rationale - yes: 0 points - no - it is about data/computation/algorithms/processes. 2 points - yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.\nTODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools\nSee how far you get: helps me understand how much students already know.,"
   },
   {
     "objectID": "notes/lecture_7_machine_learning_2.html",
@@ -2412,7 +2482,7 @@
     "href": "notes/lecture_0_orga.html",
     "title": "Notes: Orga",
     "section": "",
-    "text": "Time (min)\nDuration\nTopic\n\n\n\n\n00-30\n30\nOrga"
+    "text": "NotePreparation\n\n\n\n\nCheck room\nPrint student list\nPrepare/bring tags to form groups\n\nPrepare a zoom session for students to share their work (TODO: INCLUDE THE LINK AT XXXXXX????)"
   },
   {
     "objectID": "notes/lecture_0_orga.html#myself",

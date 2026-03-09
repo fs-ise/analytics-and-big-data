@@ -146,18 +146,11 @@
       margin-right: 0; 
     }
   </style>
+  <meta name="mermaid-theme" content="default">
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -169,15 +162,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -189,6 +182,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   </style>
@@ -229,7 +233,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br></p>
-<div id="2d44d436" class="cell" data-execution_count="1">
+<div id="f03a98a6" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -310,6 +314,7 @@ Moores law, Cloud computing, ...
 <section id="growth-of-computing-power" class="slide level2">
 <h2>Growth of Computing Power</h2>
 <p>The rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets.</p>
+<!-- TODO : could include an illustration of a modern AI data center -->
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -366,8 +371,23 @@ Moores law, Cloud computing, ...
 <h1>New Algorithms</h1>
 
 </section>
-<section id="algorithms-enable-more-powerful-models" class="slide level2">
-<h2>Algorithms enable more powerful models</h2>
+<section id="algorithms" class="slide level2">
+<h2>Algorithms</h2>
+<p>An algorithm is a step-by-step procedure for performing a computation and thereby solving a problem.</p>
+<p>Algorithms determine how efficiently computers can process data and solve tasks.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Linux Scheduling Algorithms</strong> <em>(1990s–present)</em> — Efficient process scheduling enabling operating systems to run many tasks concurrently</li>
+<li><strong>RSA Encryption</strong> <em>(1977)</em> — Public-key cryptography algorithm enabling secure internet communication</li>
+<li><strong>PageRank</strong> <em>(1998)</em> — Algorithm ranking webpages based on link structure, enabling scalable web search</li>
+<li><strong>Blockchain / Proof-of-Work Consensus</strong> <em>(2008)</em> — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies</li>
+<li><strong>Deep Learning</strong> <em>(2010s)</em> — Improved neural network training enabling major advances in vision, speech, and language AI</li>
+<li><strong>Gradient Boosting / XGBoost</strong> <em>(2014)</em> — High-performance ensemble learning algorithm widely used in predictive analytics and data science</li>
+<li><strong>GPT / Transformer Models</strong> <em>(2017–present)</em> — Transformer architecture enabling large language models and generative AI</li>
+</ul>
+</section>
+<section id="algorithms-enable-more-powerful-analytical-models" class="slide level2">
+<h2>Algorithms enable more powerful analytical models</h2>
 <p><br><br></p>
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -381,77 +401,67 @@ Moores law, Cloud computing, ...
 <p>Neural Network</p>
 </div></div>
 </section>
-<section id="rapid-advances-in-algorithms" class="slide level2">
-<h2>Rapid Advances in Algorithms</h2>
-<p>Recent breakthroughs in AI show how new algorithms can rapidly surpass human performance in specific domains.</p>
+<section id="algorithmic-breakthroughs-drive-ai-progress" class="slide level2">
+<h2>Algorithmic Breakthroughs Drive AI Progress</h2>
+<p>Recent breakthroughs in artificial intelligence (AI)<sup>1</sup> show how new algorithms can rapidly surpass human performance. <strong>DeepMind</strong> provides good examples.</p>
+<p><br></p>
 <div class="columns">
 <div class="column">
 <p>AlphaGo (2016)</p>
 <ul>
-<li>Developed by <strong>DeepMind</strong></li>
 <li>Uses <strong>deep neural networks + reinforcement learning</strong></li>
 <li>Defeated world champion <strong>Lee Sedol</strong> in the game of Go</li>
 </ul>
-<p>Key insight:</p>
-<ul>
-<li>Go was long considered too complex for computers due to the enormous search space.</li>
-</ul>
-<p><strong>Result</strong></p>
-<blockquote>
-<p>AI surpassed human experts in complex strategic reasoning.</p>
-</blockquote>
+<p>Go was long considered too complex for computers due to the enormous search space.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/alphago.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
 </div><div class="column">
 <p>AlphaFold (2020–2022)</p>
 <ul>
-<li>Developed by <strong>DeepMind</strong></li>
 <li>Uses deep learning to predict <strong>protein structures</strong></li>
-<li>Achieved breakthrough performance in the <strong>CASP competition</strong></li>
+<li>Achieved breakthrough performance in the <strong>CASP competition</strong><sup>2</sup></li>
 </ul>
-<p>Key insight:</p>
-<ul>
-<li>Predicting protein folding had been a major unsolved problem in biology for decades.</li>
-</ul>
-<p><strong>Result</strong></p>
-<blockquote>
-<p>AI can solve scientific problems that previously required years of human research.</p>
-</blockquote>
+<p>Predicting protein folding had been a major unsolved problem in biology for decades.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/casp.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
 </div></div>
-<p><strong>Key takeaway</strong></p>
-<p>AI progress often occurs through <strong>algorithmic breakthroughs</strong>, enabling machines to outperform humans in increasingly complex domains:</p>
-<p>TODO: - add illustrations - - nobel prize + biotech. ?</p>
-<!--
-        ## ImageNet
-
-        ImageNet is a large-scale image recognition competition where models compete to classify millions of images across thousands of categories.
-        Breakthrough models have historically demonstrated major advances in deep learning.
--->
-<div id="773821a3" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture_1_rise_of_data_analytics_files/figure-revealjs/cell-3-output-1.png" width="758" height="374"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="jagged-frontier" class="slide level2">
-<h2>Jagged frontier</h2>
-<div id="8622dc93" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture_1_rise_of_data_analytics_files/figure-revealjs/cell-4-output-1.png" width="663" height="515"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>TODO: cite Dellacqua</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>AI systems are based on algorithms; in the following, we use the broader term AI when referring to such algorithm-based systems.</p></li><li id="fn2"><p>Hassabis and colleagues were awarded the 2024 Nobel Prize in Chemistry, in part for the development of AlphaFold.</p></li></ol></aside></section>
+<section id="jagged-frontier-of-ai" class="slide level2">
+<h2>Jagged frontier of AI</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Recent studies suggest that AI creates a <strong>“jagged frontier.”</strong> <span class="citation" data-cites="DellAcquaEtAl2023">(<a href="#/references" role="doc-biblioref" onclick="">Dell’Acqua et al., 2023</a>)</span>, i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities.</p>
+<ul>
+<li><strong>Within this frontier, AI can strongly enhance knowledge work</strong>, improving productivity and the quality of outputs.</li>
+<li><strong>Outside the frontier, AI can reduce performance</strong>, especially when users rely too heavily on its outputs without verification.</li>
+</ul>
+<p>AI progress often occurs through <strong>algorithmic breakthroughs</strong>, enabling machines to outperform humans in increasingly complex tasks.</p>
 <!--
 https://www.agidefinition.ai/
 https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
 -->
-</section></section>
+</div><div class="column" style="width:60%;">
+<p><br><br></p>
+<div id="51986ef6" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_1_rise_of_data_analytics_files/figure-revealjs/cell-3-output-1.png" width="624" height="552"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+
+<aside><div>
+<p>Figure based on <span class="citation" data-cites="HendrycksEtAl2025">Hendrycks et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span>.</p>
+</div></aside></section></section>
 <section>
 <section id="analytics-processes" class="title-slide slide level1 center" data-stack-name="Analytics Processes">
 <h1>Analytics Processes</h1>
@@ -570,33 +580,34 @@ Source: @Schmarzo2016, p. 88
 <aside><div>
 <p>Source: <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>, p.&nbsp;13</p>
 </div></aside></section>
-<section id="descriptive-analytics-process" class="slide level2">
-<h2>Descriptive Analytics Process</h2>
+<section id="example-descriptive-analytics" class="slide level2">
+<h2>Example: Descriptive Analytics</h2>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_23.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
 </figure>
 </div>
 </section>
-<section id="predictive-analytics-process" class="slide level2">
-<h2>Predictive Analytics Process</h2>
+<section id="example-predictive-analytics" class="slide level2">
+<h2>Example: Predictive Analytics</h2>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_24.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </section>
-<section id="example-inventory-planning" class="slide level2">
-<h2>Example Inventory Planning</h2>
+<section id="example-prescriptive-analytics" class="slide level2">
+<h2>Example: Prescriptive Analytics</h2>
+<p>Based on more than 300 million data records per week, Otto generates over one billion forecasts annually on the expected sales of individual products in the coming days and weeks. These forecasts are used to optimize inventory decisions, determining how many units of each product should be stocked or reordered across warehouses. By systematically adjusting inventory levels based on these data-driven recommendations, Otto is able to reduce its overall inventories by up to 30% on average while maintaining product availability.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_25.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
-<p>
-On the basis of more than 300 million data records per week, Otto makes more than one billion forecasts per year on the sales development of individual articles for the next days and weeks. Such forecasts allow Otto to reduce its own inventories by up to 30% on average.
-</p>
 
+<!-- TODO: include an example from algorithmic management/Uber or automated financial trading -->
 <!--
         ## Classical Corporate Planning
 
@@ -620,6 +631,7 @@ On the basis of more than 300 million data records per week, Otto makes more tha
 </div></aside></section>
 <section id="analytical-models" class="slide level2">
 <h2>Analytical models</h2>
+<p>There is a a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes. While these fields often focus on methodological development, business analytics emphasizes applying these approaches to support understanding and decision-making in organizational contexts.</p>
 <p><br></p>
 <table class="caption-top">
 <colgroup>
@@ -653,7 +665,7 @@ On the basis of more than 300 million data records per week, Otto makes more tha
 <tr class="even">
 <td>Operations Research</td>
 <td>Optimization</td>
-<td>LP, MIP</td>
+<td>Linear programming, Non-linear optimization</td>
 </tr>
 <tr class="odd">
 <td>Management Science</td>
@@ -663,26 +675,37 @@ On the basis of more than 300 million data records per week, Otto makes more tha
 <tr class="even">
 <td>Complex Systems</td>
 <td>Simulation</td>
-<td>ABM, DES</td>
+<td>Agent-Based/Discrete Event Simulation</td>
 </tr>
 </tbody>
 </table>
-<p>-&gt; highlight what we focus on. Mention that not all disciplines focus on the “business understanding” and using insights to support business decisions. Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).</p>
-<p>TODO: replace abbreviations</p>
 <!--
-Statistics vs. Data Analytics
+    Oftentimes, the goal may also be to understand and explain, not to decide (prescribe).
 
-![](../images/slides_133_new.png)
+    Statistics vs. Data Analytics
+
+    ![](../images/slides_133_new.png)
 -->
 </section>
-<section id="crisp-dm" class="slide level2">
-<h2>CRISP-DM</h2>
-<div class="cell" data-layout-align="default">
+<section id="crisp-dm-cross-industry-standard-process-for-data-mining" class="slide level2">
+<h2>CRISP-DM Cross-Industry Standard Process for Data Mining</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>CRISP-DM</strong> is a widely used framework that structures data mining and analytics projects <span class="citation" data-cites="WirthHipp2000">(<a href="#/references" role="doc-biblioref" onclick="">Wirth &amp; Hipp, 2000</a>)</span>.</p>
+<ul>
+<li>Developed by an <strong>industry consortium</strong> (e.g., DaimlerChrysler, SPSS, NCR) to create a common methodology for data mining projects.</li>
+<li>Designed to be <strong>independent of specific industries and technologies</strong>, making it applicable across many domains.</li>
+<li>Integrates <strong>best practices from real-world projects</strong>, helping teams plan, communicate, and document analytics work.</li>
+<li>Became popular because it provides a <strong>reliable and repeatable standard process</strong> for managing complex data mining projects.</li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><br></p>
+<div class="cell" data-fig-width="8" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<svg width="960" height="480" viewbox="0.00 0.00 714.00 368.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<svg width="768" height="480" viewbox="0.00 0.00 714.00 368.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 364)">
 <title>CRISPDM</title>
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-364 710,-364 710,4 -4,4"></polygon>
@@ -805,8 +828,172 @@ Statistics vs. Data Analytics
 </div>
 </div>
 </div>
-<p>:::</p>
-<p>::::</p>
+</div></div>
+
+<aside><div>
+<p>Besides CRISP-DM, there are other models, such as KDD Process, SEMMA, or TDSP.</p>
+</div></aside></section>
+<section id="structure-of-the-course" class="slide level2">
+<h2>Structure of the course</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>We structure the course along the <strong>CRISP-DM analytics lifecycle</strong>:</p>
+<ul>
+<li><strong>Introduction</strong> (Session 0–1)
+<ul>
+<li>Overview of analytics and the CRISP-DM workflow.</li>
+</ul></li>
+<li><strong>Data Foundations</strong> (Session 2–3)
+<ul>
+<li>Exploration and analytical data architecture.</li>
+</ul></li>
+<li><strong>Analytical Models</strong> (Session 4-9)
+<ul>
+<li>Regression, machine learning, and big data analytics.</li>
+</ul></li>
+<li><strong>Deployment</strong> (Session 10)
+<ul>
+<li>Analytics in organizations.</li>
+</ul></li>
+<li><strong>Synthesis</strong> (Session 11)
+<ul>
+<li>Integration of the full analytics workflow.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><br></p>
+<div class="cell" data-fig-width="8" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="768" height="480" viewbox="0.00 0.00 714.00 368.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 364)">
+<title>CRISPDM</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-364 710,-364 710,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<path fill="#f4f6fb" stroke="black" d="M334,-360C334,-360 156,-360 156,-360 150,-360 144,-354 144,-348 144,-348 144,-300 144,-300 144,-294 150,-288 156,-288 156,-288 334,-288 334,-288 340,-288 346,-294 346,-300 346,-300 346,-348 346,-348 346,-354 340,-360 334,-360"></path>
+<text text-anchor="middle" x="245" y="-330" font-family="Helvetica,sans-Serif" font-size="20.00">Business</text>
+<text text-anchor="middle" x="245" y="-306" font-family="Helvetica,sans-Serif" font-size="20.00">Understanding</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<path fill="#f4f6fb" stroke="black" d="M622,-360C622,-360 444,-360 444,-360 438,-360 432,-354 432,-348 432,-348 432,-300 432,-300 432,-294 438,-288 444,-288 444,-288 622,-288 622,-288 628,-288 634,-294 634,-300 634,-300 634,-348 634,-348 634,-354 628,-360 622,-360"></path>
+<text text-anchor="middle" x="533" y="-330" font-family="Helvetica,sans-Serif" font-size="20.00">Data</text>
+<text text-anchor="middle" x="533" y="-306" font-family="Helvetica,sans-Serif" font-size="20.00">Understanding</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M346.13,-324C370.17,-324 395.96,-324 420.46,-324"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="420.62,-327.85 431.62,-324 420.62,-320.15 420.62,-327.85"></polygon>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge7" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M346.13,-324C370.17,-324 395.96,-324 420.46,-324"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="420.62,-327.85 431.62,-324 420.62,-320.15 420.62,-327.85"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<path fill="#f4f6fb" stroke="black" d="M334,-72C334,-72 156,-72 156,-72 150,-72 144,-66 144,-60 144,-60 144,-12 144,-12 144,-6 150,0 156,0 156,0 334,0 334,0 340,0 346,-6 346,-12 346,-12 346,-60 346,-60 346,-66 340,-72 334,-72"></path>
+<text text-anchor="middle" x="245" y="-30" font-family="Helvetica,sans-Serif" font-size="20.00">Evaluation</text>
+</g>
+<!-- A&#45;&gt;E -->
+<g id="edge11" class="edge">
+<title>A-&gt;E</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M245,-287.82C245,-236.09 245,-140.92 245,-83.55"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="248.85,-83.26 245,-72.26 241.15,-83.26 248.85,-83.26"></polygon>
+</g>
+<!-- B&#45;&gt;A -->
+<g id="edge6" class="edge">
+<title>B-&gt;A</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M431.87,-324C407.83,-324 382.04,-324 357.54,-324"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="357.38,-320.15 346.38,-324 357.38,-327.85 357.38,-320.15"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<path fill="#f4f6fb" stroke="black" d="M694,-216C694,-216 516,-216 516,-216 510,-216 504,-210 504,-204 504,-204 504,-156 504,-156 504,-150 510,-144 516,-144 516,-144 694,-144 694,-144 700,-144 706,-150 706,-156 706,-156 706,-204 706,-204 706,-210 700,-216 694,-216"></path>
+<text text-anchor="middle" x="605" y="-186" font-family="Helvetica,sans-Serif" font-size="20.00">Data</text>
+<text text-anchor="middle" x="605" y="-162" font-family="Helvetica,sans-Serif" font-size="20.00">Preparation</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M551.17,-287.66C560.5,-269 571.97,-246.07 581.92,-226.17"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="585.49,-227.64 586.96,-216.08 578.6,-224.19 585.49,-227.64"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<path fill="#f4f6fb" stroke="black" d="M622,-72C622,-72 444,-72 444,-72 438,-72 432,-66 432,-60 432,-60 432,-12 432,-12 432,-6 438,0 444,0 444,0 622,0 622,0 628,0 634,-6 634,-12 634,-12 634,-60 634,-60 634,-66 628,-72 622,-72"></path>
+<text text-anchor="middle" x="533" y="-30" font-family="Helvetica,sans-Serif" font-size="20.00">Modeling</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M586.83,-143.66C577.5,-125 566.03,-102.07 556.08,-82.17"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="559.4,-80.19 551.04,-72.08 552.51,-83.64 559.4,-80.19"></polygon>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge9" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M586.83,-143.66C577.5,-125 566.03,-102.07 556.08,-82.17"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="559.4,-80.19 551.04,-72.08 552.51,-83.64 559.4,-80.19"></polygon>
+</g>
+<!-- D&#45;&gt;C -->
+<g id="edge8" class="edge">
+<title>D-&gt;C</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M551.17,-72.34C560.5,-91 571.97,-113.93 581.92,-133.83"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="578.6,-135.81 586.96,-143.92 585.49,-132.36 578.6,-135.81"></polygon>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M431.87,-36C407.83,-36 382.04,-36 357.54,-36"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="357.38,-32.15 346.38,-36 357.38,-39.85 357.38,-32.15"></polygon>
+</g>
+<!-- E&#45;&gt;A -->
+<g id="edge10" class="edge">
+<title>E-&gt;A</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M245,-72.18C245,-123.91 245,-219.08 245,-276.45"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="241.15,-276.74 245,-287.74 248.85,-276.74 241.15,-276.74"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<path fill="#e6f4ea" stroke="black" d="M190,-216C190,-216 12,-216 12,-216 6,-216 0,-210 0,-204 0,-204 0,-156 0,-156 0,-150 6,-144 12,-144 12,-144 190,-144 190,-144 196,-144 202,-150 202,-156 202,-156 202,-204 202,-204 202,-210 196,-216 190,-216"></path>
+<text text-anchor="middle" x="101" y="-174" font-family="Helvetica,sans-Serif" font-size="20.00">Deployment</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" stroke-width="1.6" d="M208.66,-72.34C189.32,-91.68 165.38,-115.62 144.99,-136.01"></path>
+<polygon fill="black" stroke="black" stroke-width="1.6" points="142.13,-133.42 137.08,-143.92 147.58,-138.87 142.13,-133.42"></polygon>
+</g>
+<!-- X -->
+<g id="node7" class="node">
+<title>X</title>
+<path fill="#e9f2ff" stroke="black" d="M457.5,-221.32C457.5,-226.38 426.8,-230.5 389,-230.5 351.2,-230.5 320.5,-226.38 320.5,-221.32 320.5,-221.32 320.5,-138.68 320.5,-138.68 320.5,-133.62 351.2,-129.5 389,-129.5 426.8,-129.5 457.5,-133.62 457.5,-138.68 457.5,-138.68 457.5,-221.32 457.5,-221.32"></path>
+<path fill="none" stroke="black" d="M457.5,-221.32C457.5,-216.25 426.8,-212.14 389,-212.14 351.2,-212.14 320.5,-216.25 320.5,-221.32"></path>
+<text text-anchor="middle" x="389" y="-173.4" font-family="Helvetica,sans-Serif" font-size="22.00">Data</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+<blockquote>
+<p>Analytics is not a linear pipeline. We constantly move between business problems, data, modeling, and evaluation.</p>
+</blockquote>
 </section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
@@ -823,13 +1010,56 @@ Statistics vs. Data Analytics
 <h1>Exercise</h1>
 
 </section>
-<section id="todo" class="slide level2" data-state="hide-menubar">
-<h2>TODO</h2>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<p>TODO</p>
 <ul>
-<li>Github account, start Codespace in <a href="https://github.com/fs-ise/analytics-and-big-data-notebooks">analytics-and-big-data-notebooks</a></li>
-<li>option to use a local setup after this session (if it works on your machine)</li>
+<li>Why Jupyter/Codespaces? (other options?)</li>
 <li>explain setup</li>
 </ul>
+<p>Steps:</p>
+<ul>
+<li>Create a Github account <a href="https://github.com/signup">here</a></li>
+<li>Start Codespace in <a href="https://github.com/fs-ise/analytics-and-big-data-notebooks">fs-ise/analytics-and-big-data-notebooks</a></li>
+</ul>
+
+<aside><div>
+<p>You can use a local setup after this session (if it works on your machine).</p>
+</div></aside></section>
+<section id="break" class="slide level2">
+<h2>Break</h2>
+</section>
+<section id="group-split" class="slide level2">
+<h2>Group split</h2>
+<p>Each section is 30 min.</p>
+<p><br><br><br></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+B{Split} --&gt; C[Group 1&lt;br&gt;Jupyter Notebook]
+B --&gt; D[Group 2&lt;br&gt;Reading]
+
+C --&gt; E[Switch]
+D --&gt; E
+
+E --&gt; F[Group 1&lt;br&gt;Reading]
+E --&gt; G[Group 2&lt;br&gt;Jupyter Notebook]
+
+F --&gt; H["Discussion &amp; Comparison"]
+G --&gt; H
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="todo" class="slide level2" data-state="hide-menubar">
+<h2>TODO</h2>
 <!--
   - Github advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning
   
@@ -850,9 +1080,13 @@ Statistics vs. Data Analytics
 <p>Kernel: select global env</p>
 <p>TODO: download/save changes (and stop/delete codespace)</p>
 </section>
+<section id="todo-readingsynthesis" class="slide level2">
+<h2>TODO: reading/synthesis?</h2>
+</section>
 <section id="survey-session-1" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 1</h2>
 <p><br><br></p>
+<div style="display:flex; justify-content:center;">
 <div id="" class="qrcode"></div>
 <script type="text/javascript">
 (function() {
@@ -863,6 +1097,7 @@ Statistics vs. Data Analytics
 })();
 </script>
     
+</div>
 <p><br><br></p>
 <p>Link: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor">https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor</a></p>
 <p>Note: We will use and possibly publish results (anonymously).</p>
@@ -872,11 +1107,22 @@ Statistics vs. Data Analytics
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-DellAcquaEtAl2023" class="csl-entry" role="listitem">
+Dell’Acqua, F., McFowland, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., Lakhani, K. R., Bervell, M., Cheng, J., Deshpande, P., Ledovskiy, M., Kalil, J., Kung, K., Lacerda, R., Awada, M., Sariego, P. M., Noriega, R., … Lakhani, M. (2023). <em>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</em> (Working Paper 24-013). Harvard Business School.
+</div>
+<div id="ref-HendrycksEtAl2025" class="csl-entry" role="listitem">
+Hendrycks, D., Song, D., Szegedy, C., Lee, H., Gal, Y., Brynjolfsson, E., Li, S., Zou, A., Levine, L., Han, B., et al. (2025). A definition of AGI. In <em>arXiv preprint arXiv:2510.18212</em>.
+</div>
 <div id="ref-Schmarzo2016" class="csl-entry" role="listitem">
 Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1002/9781119238881">https://doi.org/10.1002/9781119238881</a>
 </div>
+<div id="ref-WirthHipp2000" class="csl-entry" role="listitem">
+Wirth, R., &amp; Hipp, J. (2000). CRISP-DM: Towards a standard process model for data mining. <em>Proceedings of the 4th International Conference on the Practical Applications of Knowledge Discovery and Data Mining</em>, <em>1</em>, 29–39.
+</div>
 </div>
 </section>
+
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
