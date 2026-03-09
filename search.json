@@ -18,7 +18,7 @@
     "href": "notes/lecture_2_exploratory_data_analysis.html#learning-objectives",
     "title": "Notes: Session 3: Exploratory data analysis",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nAfter this session, students should be able to:\n\nUnderstand the purpose of exploratory data analysis (EDA)\nDescribe and interpret key characteristics of business data\nIdentify relationships and patterns in multivariate data\nUse visualizations to explore and communicate insights\nUnderstand the basic idea of the grammar of graphics in Python (Plotly)"
+    "text": "Learning Objectives\nAfter this session, students should be able to:\n\nUnderstand the purpose of exploratory data analysis (EDA)\nDescribe and interpret key characteristics of business data\nIdentify relationships and patterns in multivariate data\nUse visualizations to explore and communicate insights\nUnderstand the basic idea of the grammar of graphics in Python (Plotly)\n\n\nBadly formatted data blocks analysis — data preparation unlocks it.\nData preparation:\n\nStatistics traditionally relies on a controlled mode of data collection\nRepurposing of data, analyzing transactional data is not a typical setting\nData quality measures are relatively limited (focused on outliers)\nData preparation (manual correction or the use of synthetic data) are even discarded as a questionable research practice\n\nMetaphor: statisticians carefully collect their data on their own (live on their own island) - business analysts have to work with existing data (which can be very messy)\nBut: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing! Examples:\n\nRecommendation systems: Which movie are you likely to watch next? thousands of variables may be available; we may never know why exactly a particular recommendation works, but recommendations generally improve engagement/revenue. (“We don’t know/don’t give a recommendation” is the worst option) -&gt; Business decision to recommend anything is always better than no recommendation at all\nFraud detection: prediction of irregular and fraudulent transactions can be very accurate, but the attackers goal is to behave in a way that is hard to anticipate. Prediction may focus on identifying cases that are “not behaving regularly” (rather than identifying generalizable patterns)"
   },
   {
     "objectID": "notes/lecture_2_exploratory_data_analysis.html#why-exploratory-data-analysis",
@@ -2111,56 +2111,35 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#the-role-of-eda",
     "title": "Analytics & Big Data",
     "section": "The role of EDA",
-    "text": "The role of EDA\nprocess (pre-model), aims, techniques (graphical, non-graphical, …)"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#limitations-of-eda",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#limitations-of-eda",
-    "title": "Analytics & Big Data",
-    "section": "“limitations of EDA”",
-    "text": "“limitations of EDA”\n\nDescriptive vs. inferential statistics\nno model/explanation/prediction (correlation vs causality)\nsampling error, unless EDA is run on the whole population (e.g., in some Big Data settings) -&gt; starting point for building predictions (explanations, hypotheses, models, causality)"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#exploratory-data-analysis",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#exploratory-data-analysis",
-    "title": "Analytics & Big Data",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\n\nIn Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.\n\n\nPeople are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.\n\n\nReasons for EDA:\n\n\ngain intuition about the data\nmake comparisons between distributions\nsanity checking (making sure the data is on the scale you expect, in the format you thought it should be)\nfind out where data is missing or if there are outliers\nsummarize the data\n\n\nExploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate."
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#univariate-non-graphical-eda",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#univariate-non-graphical-eda",
-    "title": "Analytics & Big Data",
-    "section": "Univariate Non-Graphical EDA",
-    "text": "Univariate Non-Graphical EDA\n\nNon-graphical exploratory data analysis is the first step when beginning to analyze the data. This preliminary data analysis step focuses on four points:\n\n\nmeasures of central tendency, i.e. mean and median. The median, known as 50th percentile, is more resistant to outliers.\nmeasures of spread, i.e. variance, standard deviation, and interquartile range\nthe shape of the distribution\nthe existence of outliers\n\n\nThe characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value."
+    "text": "The role of EDA\nExploratory Data Analysis (EDA) is the process of examining and summarizing data to understand its main characteristics before building analytical models.\nEDA typically involves:\n\nDescriptive statistics (e.g., mean, variance, frequencies)\nData quality checks (e.g., missing values, outliers)\nVisualization techniques (e.g., histograms, boxplots, scatterplots)\n\nGoal: gain intuition about the data, detect patterns or anomalies, and prepare the data for further analysis or modeling.\n\n\nThe following forms of EDA are typically distinguished:\n\n\n\n\n\nUnivariate\n\n\nMultivariate\n\n\n\n\nNon-graphical\n\n\nmean, medianfrequencies\n\n\ncross-tabscorrelations\n\n\n\n\nGraphical\n\n\nhistogramsdot plots\n\n\nscatter plotsgrouped dot plots"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#data-types",
     "href": "slides/lecture_2_exploratory_data_analysis.html#data-types",
     "title": "Analytics & Big Data",
     "section": "Data types",
-    "text": "Data types\nRepresenting the “real world” in computer requires to use appropriate data types\nFrom a statistical point of view, there are four fundamental data types, known as measurement scales:\nQualitative description of objects\n\nNominal (special case: binary)\nOrdinal\n\nQuantitative description objects\n\nInterval\nRatio"
+    "text": "Data types\nConducting EDA and representing the “real world” in computer requires us to use appropriate data types. Typically, we distinguish four fundamental data types, known as measurement scales:\nQualitative description of objects\n\nNominal (special case: binary)\nOrdinal\n\nQuantitative description objects\n\nInterval\nRatio"
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#nominal-scale-qualitative",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#nominal-scale-qualitative",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#qualitative-nominal-scale",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#qualitative-nominal-scale",
     "title": "Analytics & Big Data",
-    "section": "Nominal scale (qualitative)",
-    "text": "Nominal scale (qualitative)\nValues of a nominal / categorical attribute are symbols or names of things. Each value represents some kind of category, code, or state\nThis scale assumes existence of a finite number of equivalency classes, where each class is named or labeled\nThe values do not have any meaningful order\nExamples:\n\nHair color = {auburn, black, blond, brown, grey, red, white, …}\nFruits = {apple, banana, strawberry, …}\nPostal codes = {96052, 96047, …}\n\nSpecial case of the nominal scale: Binary scale\n-Nominal attribute with only 2 states (0/1, or TRUE / FALSE) – also called Boolean - 0/FALSE typically means absence and 1/TRUE presence\nThere are two types of binary objects:\n\nSymmetric binary: both outcomes equally important, e.g., gender\nAsymmetric binary: outcomes not equally important, e.g., medical test (positive vs. negative)\n\nIt is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g. people that purchase a product, have a disease)\nExamples:\n\nSmoking: 1 indicates patients in a trial that smoke, 0 otherwise.\nPurchase: 1 indicates that a person purchased a product, 0 otherwise."
+    "section": "Qualitative: Nominal scale",
+    "text": "Qualitative: Nominal scale\n\nValues of a nominal (aka. categorical) attribute are symbols or names of things\nEach value represents some kind of category, code, or state.\nThis scale assumes existence of a finite number of equivalency classes, where each class is named or labeled.\nThe values do not have any meaningful order.\n\nExamples:\n\nHair color = {black, blond, brown, grey, red, white, …}\nPostal codes = {96047, 96048, …}\n\n\nSpecial case of the nominal scale: Binary scale\n\nNominal attribute with only 2 states (0/1, or TRUE / FALSE) – also called Boolean\n0/FALSE typically means absence and 1/TRUE presence\n\nIt is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g. people that purchase a product, have a disease)\nExamples:\n\nSmoking: 1 indicates patients in a trial that smoke, 0 otherwise.\nPurchase: 1 indicates that a person purchased a product, 0 otherwise."
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#ordinal-rank-scale-qualitative",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#ordinal-rank-scale-qualitative",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#qualitative-ordinal-scale",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#qualitative-ordinal-scale",
     "title": "Analytics & Big Data",
-    "section": "Ordinal / rank scale (qualitative)",
-    "text": "Ordinal / rank scale (qualitative)\n\nA categorical attribute with values that have a meaningful order, but the magnitude between successive values is not known\nThe ordinal scale is useful for registering subjective assessments and things that cannot be measured objectively (often used in surveys for ratings)\n\nValues cannot be multiplied or added, even if the numbers belong to the same scale.\nRelations between values:\n\nTransitivity: If A&gt;B, B&gt;C, then A&gt;C,\nSymmetry: : If A&gt;B, then B&lt;A\n\nExamples:\n\nSchool grades = {A &lt; B &lt; C &lt; D &lt; E &lt; F} or {1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6}\nPlaces in a competition = {1st, 2nd, 3rd, 4th, …}"
+    "section": "Qualitative: Ordinal scale1",
+    "text": "Qualitative: Ordinal scale1\n\nA categorical attribute with values that have a meaningful order, but the magnitude between successive values is not known\nThe ordinal scale is useful for registering subjective assessments and things that cannot be measured objectively (often used in surveys for ratings)\n\nValues cannot be multiplied or added, even if the numbers belong to the same scale.\nRelations between values:\n\nTransitivity: If A&gt;B, B&gt;C, then A&gt;C,\nSymmetry: : If A&gt;B, then B&lt;A\n\nExamples:\n\nSchool grades = {A &lt; B &lt; C &lt; D &lt; E &lt; F} or {1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6}\nPlaces in a competition = {1st, 2nd, 3rd, 4th, …}\n\nAlso known as a “rank scale”."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#interval-scale-quantitative",
     "href": "slides/lecture_2_exploratory_data_analysis.html#interval-scale-quantitative",
     "title": "Analytics & Big Data",
     "section": "Interval scale (quantitative)",
-    "text": "Interval scale (quantitative)\n\nA numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point\nInvariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0\nAlthough the sum of two interval-scale measurements is not meaningful by itself, their average can be computed\n\nExamples:\n\nCelsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32\nDates and time (e.g., conversion from Julian to Gregorian calendar is possible)"
+    "text": "Interval scale (quantitative)\n\nA numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point.\nInvariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0\nAlthough the sum of two interval-scale measurements is not meaningful by itself, their average can be computed\n\nExamples:\n\nCelsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32\nDates and time (e.g., conversion from Julian to Gregorian calendar is possible)"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#ratio-scale-quantitative",
@@ -2174,7 +2153,21 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#possible-mathematical-operations-for-each-scale-type",
     "title": "Analytics & Big Data",
     "section": "Possible mathematical operations for each scale type",
-    "text": "Possible mathematical operations for each scale type\nDue to the different mathematical properties, not all statistical measures can be computed on different measurement scales:\n\n\n\n\n\n\n\n\n\n\n\nScale\nMathematical operations possible\nMode\nFrequency\nPercentiles / Median\nMean / Variance / SD\n\n\n\n\nNominal\n=, ≠\nX\nX\n\n\n\n\nOrdinal\n=, ≠, &lt;, &gt;\nX\nX\nX\n\n\n\nInterval\n=, ≠, &lt;, &gt;, linear transformation\nX\n(X)\nX\nX\n\n\nRatio\n=, ≠, &lt;, &gt;, *, /, +, −\nX\n(X)\nX\nX\n\n\n\nThe frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low"
+    "text": "Possible mathematical operations for each scale type\nDue to the different mathematical properties, not all statistical measures can be computed on different measurement scales:\n\n\n\n\n\n\n\n\n\n\n\n\nScale\nMathematical operations possible\nMode\nFrequency\nPercentiles / Median\nMean / Variance / SD\n\n\n\n\nNominal\n=, ≠\nX\nX\n\n\n\n\nOrdinal\n=, ≠, &lt;, &gt;\nX\nX\nX\n\n\n\nInterval\n=, ≠, &lt;, &gt;, linear transformation\nX\n(X)\nX\nX\n\n\nRatio\n=, ≠, &lt;, &gt;, *, /, +, −\nX\n(X)\nX\nX\n\n\n\n\n\n\n\nThe frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low"
+  },
+  {
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#data-preparation-formatting",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#data-preparation-formatting",
+    "title": "Analytics & Big Data",
+    "section": "Data preparation: Formatting",
+    "text": "Data preparation: Formatting\n\n\nOften, the way data is stored determines which mathematical operations are possible.\nExample: timestamps stored as strings\n\n\n\nuser_id\ntimestamp\n\n\n\n\n101\n“2025-03-12 14:23:05”\n\n\n102\n“2025-03-12 18:02:11”\n\n\n103\n“2025-03-13 09:15:42”\n\n\n\nIf treated as a string, we can only perform operations such as:\n\nequality checks (= / ≠)\nsimple filtering or sorting\n\nThis severely limits analysis.\n\nFormat conversions help transform raw data into representations suitable for EDA and analytical models:\n\n\n\nRepresentation\nExample\nPossible analysis\n\n\n\n\nNumeric timestamp\n1741789385\ntime differences, time series\n\n\nHour of day\n14\nactivity patterns during the day\n\n\nDay of week\nWednesday\nweekday vs. weekend behavior\n\n\nDay of year\n71\nseasonal patterns\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nData preparation transforms raw data into formats that allow meaningful mathematical operations and analysis."
+  },
+  {
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#data-quality-checks",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#data-quality-checks",
+    "title": "Analytics & Big Data",
+    "section": "Data quality checks",
+    "text": "Data quality checks\nBefore conducting analysis, we must ensure that the data is fit for use (Strong et al., 1997).\nCommon data quality issues include:\n\nMissing values (e.g., incomplete historical market data)\nOutdated values (e.g., customer address has changed)\nOutliers or implausible values (e.g., age = 250)\nInconsistent formats or units (e.g., dates stored as text, mixed currencies)\nDuplicate records (e.g., customers with multiple accounts)\nMeasurement or data entry errors (e.g., human data entry, broken sensors)\n\n\nTypical data preparation actions\n\nCorrect values (e.g., fix formatting or units)\nRemove problematic observations\nImpute missing values\nCollect additional data if necessary\n\n\n\n\nIn many real-world analytics projects, data preparation and cleaning can take up to ~80% of the total effort."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#descriptive-statistics",
@@ -2184,13 +2177,6 @@
     "text": "Descriptive statistics\nHow to describe data (not the data type)?\n\n\n\nCustomer ID\nName\nYear of birth\nTariff\n\n\n\n\n100216\nKevin Meyer\n1983\nA\n\n\n271692\nLars Knopp\n1963\nB\n\n\n892615\nAnton Albert\n1954\nC\n\n\n331625\nPeter Pan\n1988\nD\n\n\n…\n…\n…\n…"
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
-    "title": "Analytics & Big Data",
-    "section": "Describing data using descriptive statistics",
-    "text": "Describing data using descriptive statistics\n\n\n\nBasic statistical descriptions can be used to identify characteristics of the data and highlight which data values should be treated as noise or outliers.\nA good way to get an impression of continuous / numeric data is the histogram.\nThe graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set."
-  },
-  {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#what-are-the-key-figures-of-a-distribution",
     "href": "slides/lecture_2_exploratory_data_analysis.html#what-are-the-key-figures-of-a-distribution",
     "title": "Analytics & Big Data",
@@ -2198,25 +2184,18 @@
     "text": "What are the “key figures” of a distribution?\n\nGraphics work well for single variables, but for comparison of different variables and their distributions and later working with the data, numeric indicators are necessary\nDescriptive statistics provide us with numbers describing the characteristics of a distribution\nFor qualitative / categorical data\n\nMode\nRelative frequency\n\nFor quantitative / numerical data\n\nMean (also known as Expected Value) – describing the position of the center\nVariance (or Standard Deviation) – describing the spread\nPercentiles (also known as quantiles / quintiles) – more detailed figures on the distribution"
   },
   {
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#describing-data-using-descriptive-statistics",
+    "title": "Analytics & Big Data",
+    "section": "Describing data using descriptive statistics",
+    "text": "Describing data using descriptive statistics\n\n\n\nBasic statistical descriptions can be used to identify characteristics of the data and highlight which data values should be treated as noise or outliers.\nA good way to get an impression of continuous / numeric data is the histogram.\nThe graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set."
+  },
+  {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#mode",
     "href": "slides/lecture_2_exploratory_data_analysis.html#mode",
     "title": "Analytics & Big Data",
     "section": "Mode",
     "text": "Mode\n\n\n\nThe mode is the value that appears most in a set of data values\nThe highest mode also has the highest relative frequency (see next slide)\nExample: On a party, you meet many other students, and you ask what they are studying."
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#the-relative-frequency",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#the-relative-frequency",
-    "title": "Analytics & Big Data",
-    "section": "The relative frequency",
-    "text": "The relative frequency\n\n\nYour company purchases fancy retro light bulbs from overseas. Because of the transport or the low quality of the supplier, 80 of 200 light bulbs are defect. The relative frequency of defect light bulbs in the shipment is\n[ p = {} ]\n[ p = = 0.4 ]\nThe relative frequency approach can be used as a probability assessment. However, larger samples must be used, the probability should be observed over longer time, and potential sampling issues must be considered.\n\nTODO"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#the-mean-expected-value",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#the-mean-expected-value",
-    "title": "Analytics & Big Data",
-    "section": "The mean / expected value",
-    "text": "The mean / expected value\n\n\nThe arithmetic mean is calculated as\n[ {x} = _{i=1}^{n} = ]\nwhere (x_1, x_2, , x_n) is a set of (n) observations. The mean is often denoted as () or with the symbol ({x}).\nTreating the empirical distribution as a probability function of a random variable, the expected value can be estimated by the mean:\n[ E(X) = {x} ]\nInterpretation: If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#boxplot",
@@ -2237,84 +2216,49 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#multivariate-non-graphical-eda",
     "title": "Analytics & Big Data",
     "section": "Multivariate Non-Graphical EDA",
-    "text": "Multivariate Non-Graphical EDA\nTODO: maybe mention at the very beginning that there are non-graphical and graphical forms of EDA (uni/multivariate)?\n\nMultivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables."
+    "text": "Multivariate Non-Graphical EDA\nMultivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#multivariate-graphical-eda",
     "href": "slides/lecture_2_exploratory_data_analysis.html#multivariate-graphical-eda",
     "title": "Analytics & Big Data",
     "section": "Multivariate Graphical EDA",
-    "text": "Multivariate Graphical EDA\n\nMultivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types."
+    "text": "Multivariate Graphical EDA\nMultivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types."
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#bivariate-statistics",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#bivariate-statistics",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#bivariate-statistics-correlation",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#bivariate-statistics-correlation",
     "title": "Analytics & Big Data",
-    "section": "Bivariate statistics",
-    "text": "Bivariate statistics\n\nSo far, we focused on the description of one variable (univariate statistics)\nIn many cases, we are interested in the interactions between variables (probably not in spurious correlations but in meaningful ones…)\n\n\n\nPer capita cheese consumption correlates with Number of people who died by becoming tangled in their bedsheets\n\n\nFigure placeholder\n\n\nWorldwide non-commercial space launches correlates with Sociology doctorates awarded (US)\n\n\nFigure placeholder\n\n\nThese and more online: https://www.tylervigen.com/spurious-correlations"
+    "section": "Bivariate statistics: Correlation",
+    "text": "Bivariate statistics: Correlation\n\nCorrelation measures how strongly two variables move together. Suppose we observe two variables for the same observations:\n\\[X = (x_1, x_2, ..., x_n)\\]\n\\[Y = (y_1, y_2, ..., y_n)\\]\nThe Pearson correlation coefficient is calculated as:\n\\[r =\n\\frac{\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})}\n{\\sqrt{\\sum_{i=1}^{n}(x_i-\\bar{x})^2}\\sqrt{\\sum_{i=1}^{n}(y_i-\\bar{y})^2}}\\]"
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#todo-correlation-hopf-slides-not-sure-i-want-to-cover-covariance",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality",
     "title": "Analytics & Big Data",
-    "section": "TODO : correlation (Hopf slides: not sure I want to cover covariance)",
-    "text": "TODO : correlation (Hopf slides: not sure I want to cover covariance)"
+    "section": "Correlation vs. Causality",
+    "text": "Correlation vs. Causality\nCorrelation: Two data series behave “similar”\nCausality: Principle of cause and effect\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCorrelation does not imply causation!\n\n\n\nBut: Sometimes it is better to predict something even if we cannot explain it instead of doing nothing!\n\n\n\n\n\nThese and more online: https://www.tylervigen.com/spurious-correlations"
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#clustering-in-eda",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#clustering-in-eda",
     "title": "Analytics & Big Data",
-    "section": "Correlation",
-    "text": "Correlation\n\n\n\nOrganic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!\n\n\n— Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-i",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-i",
-    "title": "Analytics & Big Data",
-    "section": "Correlation vs. Causality (I)",
-    "text": "Correlation vs. Causality (I)\n\nCorrelation: Two data series behave “similar”\nCausality: Principle of Cause and Effect"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-ii",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-ii",
-    "title": "Analytics & Big Data",
-    "section": "Correlation vs. Causality (II)",
-    "text": "Correlation vs. Causality (II)"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-iii",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#correlation-vs.-causality-iii",
-    "title": "Analytics & Big Data",
-    "section": "Correlation vs. Causality (III)",
-    "text": "Correlation vs. Causality (III)\n\nBut: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing!"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#statistical-estimation",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#statistical-estimation",
-    "title": "Analytics & Big Data",
-    "section": "Statistical Estimation",
-    "text": "Statistical Estimation\nTODO: TBD whether we cover it here!\n\n\n\n\n— Source: http://www.dxbydt.com/the-size-of-your-sample"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo-add-clustering",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#todo-add-clustering",
-    "title": "Analytics & Big Data",
-    "section": "TODO : add clustering!",
-    "text": "TODO : add clustering!"
+    "section": "Clustering in EDA",
+    "text": "Clustering in EDA\nIn multivariate exploratory data analysis, we often want to understand whether observations form natural groups.\nClustering is a technique that automatically groups similar observations based on their characteristics.\n\nIdea: Objects within the same cluster should be similar to each other, but different from objects in other clusters.\n\n\n\nExamples\n\nCustomer segmentation in marketing\nGrouping similar products based on purchasing patterns\nIdentifying behavioral patterns in users\nDetecting anomalies in transactions"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#introductory-example",
     "href": "slides/lecture_2_exploratory_data_analysis.html#introductory-example",
     "title": "Analytics & Big Data",
     "section": "Introductory Example",
-    "text": "Introductory Example\n\nAssume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:\n\n\nFRESH: annual spending on fresh products (Continuous);\nMILK: annual spending on milk products (Continuous);\nGROCERY: annual spending on grocery products (Continuous);\nFROZEN: annual spending on frozen products (Continuous);\nDETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);\nDELICATESSEN: annual spending on delicatessen products (Continuous);\nCHANNEL: customers buying channel (Nominal);\nREGION: customers region (Nominal)\n\n\nYour goal is to segment the users. That means finding similar types of users and bunching them together.\nWhy would you want to do this?\nYou might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.\nYou might have a model that works better for specific groups. Or you might have different models for different groups."
+    "text": "Introductory Example\nAssume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:\n\nFRESH: annual spending on fresh products (Continuous);\nMILK: annual spending on milk products (Continuous);\nGROCERY: annual spending on grocery products (Continuous);\nFROZEN: annual spending on frozen products (Continuous);\nDETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);\nDELICATESSEN: annual spending on delicatessen products (Continuous);\nCHANNEL: customers buying channel (Nominal);\nREGION: customers region (Nominal)\n\n\nYour goal is to segment the users. That means finding similar types of users and bunching them together.\nWhy would you want to do this?\nYou might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.\nYou might have a model that works better for specific groups. Or you might have different models for different groups."
   },
   {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#cluster-analysis",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#cluster-analysis",
+    "objectID": "slides/lecture_2_exploratory_data_analysis.html#clustering-overview",
+    "href": "slides/lecture_2_exploratory_data_analysis.html#clustering-overview",
     "title": "Analytics & Big Data",
-    "section": "Cluster Analysis",
-    "text": "Cluster Analysis\nCluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.\nThere are different types of cluster analysis methods:\n\nClustering Methods\n\nTODO: fix missing?"
+    "section": "Clustering: Overview",
+    "text": "Clustering: Overview\nClustering groups observations into clusters based on similarity across multiple variables.\nInput\n\nEach observation is described by multiple attributes (multivariate data)\n\nExample: customer spending on different product categories\n\n\\[x_i = (x_{i1}, x_{i2}, ..., x_{im})\\]\nSimilarity between observations is typically measured using a distance metric (e.g., Euclidean distance).\n\nTypes of clustering algorithms\n\nPartitioning methods (e.g., K-Means)\nHierarchical methods (agglomerative, divisive)\nDensity-based methods (e.g., DBSCAN)\n\n\n\n⚠ Important\nClustering algorithms will always produce clusters, even if the data has no real structure.\nTherefore, clusters must be evaluated and interpreted carefully."
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#partitioning-cluster-methods",
@@ -2399,27 +2343,6 @@
     "title": "Analytics & Big Data",
     "section": "Dendrogram",
     "text": "Dendrogram\n\nA dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g. euclidean distance) between the clusters.\n\n\nIn a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length. The red line in the graph below shows such a point:\n\n\nCounting the points that cut this line might be a good answer for the number of clusters the data can have. It is the number 6 in this case."
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#todo",
-    "title": "Analytics & Big Data",
-    "section": "TODO",
-    "text": "TODO\nTBD: (grammar of graphics? plotly?)\nTBD: we could even use Pandas built-in visualization"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#pandas-and-matplotlib",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#pandas-and-matplotlib",
-    "title": "Analytics & Big Data",
-    "section": "pandas and matplotlib",
-    "text": "pandas and matplotlib\nExample:\n\nimport pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\n    \"A\": np.random.randn(100)\n})\n\ndf.hist()\n\narray([[&lt;Axes: title={'center': 'A'}&gt;]], dtype=object)"
-  },
-  {
-    "objectID": "slides/lecture_2_exploratory_data_analysis.html#todo-1",
-    "href": "slides/lecture_2_exploratory_data_analysis.html#todo-1",
-    "title": "Analytics & Big Data",
-    "section": "TODO",
-    "text": "TODO\nshow all (?) visualization covered on the previous slides TBD: clustering?!"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#summary",

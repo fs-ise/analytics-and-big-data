@@ -69,17 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
-  background-image: none;
-}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -100,6 +89,17 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -212,6 +212,21 @@ Note
 <li>Identify relationships and patterns in multivariate data</li>
 <li>Use visualizations to explore and communicate insights</li>
 <li>Understand the basic idea of the grammar of graphics in Python (Plotly)</li>
+</ul>
+<hr>
+<p>Badly formatted data blocks analysis — data preparation unlocks it.</p>
+<p>Data preparation:</p>
+<ul>
+<li>Statistics traditionally relies on a controlled mode of data collection</li>
+<li>Repurposing of data, analyzing transactional data is not a typical setting</li>
+<li>Data quality measures are relatively limited (focused on outliers)</li>
+<li>Data preparation (manual correction or the use of synthetic data) are even discarded as a questionable research practice</li>
+</ul>
+<p>Metaphor: statisticians carefully collect their data on their own (live on their own island) - business analysts have to work with existing data (which can be very messy)</p>
+<p>But: Sometimes it is better to know/predict something even if we cannot explain it instead of doing nothing! Examples:</p>
+<ul>
+<li>Recommendation systems: Which movie are you likely to watch next? thousands of variables may be available; we may never know why exactly a particular recommendation works, but recommendations generally improve engagement/revenue. (“We don’t know/don’t give a recommendation” is the worst option) -&gt; Business decision to recommend anything is always better than no recommendation at all</li>
+<li>Fraud detection: prediction of irregular and fraudulent transactions can be very accurate, but the attackers goal is to behave in a way that is hard to anticipate. Prediction may focus on identifying cases that are “not behaving regularly” (rather than identifying generalizable patterns)</li>
 </ul>
 <hr>
 </section>
