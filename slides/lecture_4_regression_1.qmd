@@ -27,6 +27,12 @@ execute:
 
 ## Process {data-state="hide-menubar"}
 
+<br>
+
+In this session, we follow the CRISP-DM process:
+
+<br><br>
+
 ```{dot}
 digraph CRISPDM {
   layout=neato;
@@ -97,7 +103,6 @@ digraph CRISPDM {
 ::: {.column width="35%"}
 ![](../images/dan-cutler-hBNuXfc44qs-unsplash.jpg){width="480"}
 
-
 :::
 
 ::: {.column width="60%"}
@@ -110,18 +115,16 @@ Understanding what drives house prices is therefore highly relevant:
 - **Banks** rely on valuation models to assess collateral and manage mortgage risk.
 - **Insurers and policymakers** use property data for risk assessment, taxation, and urban planning.
 
-This case illustrates how regression analysis transforms intuition about property value into systematic, evidence-based decision support across the housing ecosystem.
+How could we use analytical models, such as regression models, to understand the drivers of prices?
 
 :::
 
 ::::
 
-
-
 <!--
 
-## Use cases
-# Motivation {data-stack-name="Motivation"}
+    ## Use cases
+    # Motivation {data-stack-name="Motivation"}
 
           ## Example 1: House Prices — Introducing Regression
 
@@ -156,8 +159,10 @@ This case illustrates how regression analysis transforms intuition about propert
 
 ## Dataset: Ames Housing (Kaggle)
 
-**Dataset:**
-[Ames Housing Dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
+**Resources:**
+[Competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview) and [dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset/data)
+
+<!-- https://www.kaggle.com/datasets/prevek18/ames-housing-dataset -->
 
 **Kaggle** is a widely-used online platform for data science and machine learning.
 It provides:
@@ -166,47 +171,78 @@ It provides:
 - Notebooks for analysis
 - Competitions and community discussions
 
-. . .
 
-{{< countdown "5:30" bottom=10 right=0 >}}
+# Data preparation {data-stack-name="Data preparation"}
 
-**Task (5–7 minutes)**
-
-1. Navigate to the dataset page on Kaggle.
-2. Skim the dataset description.
-3. Inspect the list of variables (features).
-4. Open the data preview and:
-   - Identify the target variable.
-   - Find at least three potential explanatory variables.
-<!--   - Look for variables that may require cleaning or transformation. -->
-
-Be prepared to briefly discuss:
-
-- Which variables you expect to be strong predictors of price.
+## Load the data
 
 
-# Data preparation {data-stack-name="Data understanding"}
+```{python}
+#| echo: true     # show code
+#| output: true   # show output
 
-## ...
+import pandas as pd
 
-We skip data preparation for now...
+USAhousing = pd.read_csv('USA_Housing.csv')
+USAhousing.head()
+```
+
+https://www.kaggle.com/code/faressayah/practical-introduction-to-10-regression-algorithm
+
+## Explore the data 
+
+<!--
+TODO: typically involves: identifying and formatting variables (as already discussed) + assumptions of the model (state, mention that some assumptions are more important for inference than for prediction, infobox: no need to memorize the assumptions)
+-->
+
+Before estimating a regression model, we first **explore and prepare the data**.
+
+Typical steps include
+
+- **Identify variables**
+
+  * Which variable is the **outcome (dependent variable)**?
+  * Which variables are **predictors (independent variables)**?
+
+- **Check variable formats**
+
+  * Numeric variables (e.g., *price*, *square footage*)
+  * Categorical variables (e.g., *neighborhood*, *house type*)
+
+- **Explore the data visually**
+
+  * Summary statistics
+  * Scatter plots
+  * Distributions
+
+## Model assumptions
+
+Regression models rely on several **statistical assumptions**, for example:
+
+* Linear relationship between predictors and outcome
+* Independent observations
+* Constant variance of errors (*homoscedasticity*)
+* Errors roughly normally distributed
+
+::: {.callout-note}
+
+### Important
+
+You **do not need to memorize all regression assumptions**.
+
+For many **prediction tasks**, violations are often less problematic.
+Assumptions become **more important when doing statistical inference** (e.g., interpreting p-values or confidence intervals).
+
+:::
+
 
 
 # Modeling {data-stack-name="Modeling"}
 
 
-
 ## Regression models: a visual illustration
 
-**β₀ and β₁ move the line**
-
-```{ojs}
-////| panel: input
-////| layout-ncol: 2
-
-viewof beta0 = Inputs.range([-10, 10], {value: 0, step: 0.1, label: "β₀ (intercept)"})
-viewof beta1 = Inputs.range([-3, 3], {value: 1, step: 0.1, label: "β₁ (slope)"})
-```
+Model formula: $$Price = \beta_0 + \beta_1*SquareFootage$$
 
 ```{ojs}
 n = 40
@@ -220,57 +256,209 @@ mulberry32 = (a) => () => {
 }
 rand = mulberry32(12345)
 
-// dataset: y = 2 + 0.7x + noise
-xs = Array.from({length: n}, (_, i) => -5 + i * (10/(n-1)))
-data = xs.map(x => {
-  const noise = (rand() - 0.5) * 6
-  return { x, y: 2 + 0.7 * x + noise }
+// generate synthetic housing data
+data = Array.from({length: n}, () => {
+  const squarefoot = 500 + rand() * 3000
+  const noise = (rand() - 0.5) * 100000
+  const price = 50000 + squarefoot * 180 + noise
+  return {squarefoot, price}
 })
 
 // handy extents
-xmin = Math.min(...data.map(d => d.x))
-xmax = Math.max(...data.map(d => d.x))
+xmin = Math.min(...data.map(d => d.squarefoot))
+xmax = Math.max(...data.map(d => d.squarefoot))
 
 fitLine = [
-  { x: xmin, y: beta0 + beta1 * xmin },
-  { x: xmax, y: beta0 + beta1 * xmax }
+  { squarefoot: xmin, price: beta0 + beta1 * xmin },
+  { squarefoot: xmax, price: beta0 + beta1 * xmax }
 ]
 ```
 
 ::: {.panel-tabset}
 
+### Data
+
+```{ojs}
+Inputs.table(data, {columns: ["squarefoot", "price"]})
+```
+
 ### Plot
+
+```{ojs}
+////| panel: input
+////| layout-ncol: 2
+
+viewof beta0 = Inputs.range([0, 300000], {value: 50000, step: 5000, label: "β₀ (base price)"})
+viewof beta1 = Inputs.range([50, 400], {value: 180, step: 5, label: "β₁ (price per sq ft)"})
+```
+
+<!--
+**β₀ and β₁ move the line**
+-->
 
 ```{ojs}
 Plot.plot({
   height: 420,
   grid: true,
-  x: { label: "x" },
-  y: { label: "y" },
+  x: { label: "Square Footage" },
+  y: { label: "House Price ($)" },
   marks: [
-    Plot.dot(data, {x: "x", y: "y", r: 3}),
-    Plot.line(fitLine, {x: "x", y: "y", stroke: "crimson", strokeWidth: 3}),
-    Plot.ruleY([0])
+    Plot.dot(data, {x: "squarefoot", y: "price", r: 3}),
+    Plot.line(fitLine, {x: "squarefoot", y: "price", stroke: "crimson", strokeWidth: 3})
   ]
 })
 ```
 
-### Data
-
-```{ojs}
-Inputs.table(data, {columns: ["x", "y"]})
-```
-
 :::
 
+## Including multiple predictor variables
 
-## Model (OLS)
+We can include many additional variables to predict the price of a house.
+Each coefficient (β) captures the differential effect of a variable—that is, how much the price is expected to change when that variable increases while the others are held constant.
 
-illustrate the optimization process
+<br>
+
+```{dot}
+digraph regression_model {
+  rankdir=LR
+  bgcolor="transparent"
+
+  node [
+    shape=circle
+    style=filled
+    fillcolor="#0B2A66"
+    fontcolor="white"
+    fontsize=22
+    fixedsize=true
+    width=2
+    height=2
+  ]
+
+  edge [
+    fontsize=20
+    fontcolor="black"
+  ]
+
+  sqft   [label="Square\nfootage"]
+  beds   [label="Bed-\nrooms"]
+  age    [label="Age"]
+  school [label="School\nRating"]
+  price  [label="Price"]
+
+  sqft -> price [label="β₁"]
+  beds -> price [label="β₂"]
+  age -> price [label="β₃"]
+  school -> price [label="β₄"]
+
+  {rank=same; sqft beds age school}
+
+  sqft -> beds   [style=invis]
+  beds -> age    [style=invis]
+  age  -> school [style=invis]
+}
+```
+
+<br>
+
+As we add more predictors, the model becomes multidimensional, making it increasingly difficult to visualize.
+
+
+## Ordinary Least Squares Regression (OLS)
+
+TODO: should the residual error be $\epsilon$?
+
+OLS is a **linear approach for predicting a quantitative response** $(Y)$ based on a set of predictor variables $X_j$.
+
+$$ y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + u_i $$
+
+or in vector form
+
+$$ y_i = \beta_0 + \beta' x_i + u_i $$
+
+**Key idea**
+
+OLS assumes there is **approximately a linear relationship between \(X\) and \(Y\)**.
+
+The optimal **regression line** minimizes the **Residual Sum of Squares (RSS)**:
+
+$$
+RSS = \sum_{i=1}^{n} u_i^2
+    = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+    = \sum_{i=1}^{n} (y_i - \beta_0 - \beta' x_i)^2
+$$
+
+
+## Matrix representation
+
+$$ y = X\beta + u $$
+
+where
+
+$$
+y =
+\begin{bmatrix}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_n
+\end{bmatrix}
+\quad
+X =
+\begin{bmatrix}
+1 & x_{1,1} & \dots & x_{m,1} \\
+1 & x_{1,2} & \dots & x_{m,2} \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & x_{1,n} & \dots & x_{m,n}
+\end{bmatrix}
+$$
+
+**Closed-form solution**
+
+The parameter vector can be estimated by
+
+$$ \beta = (X'X)^{-1}X'y $$
+
+## Implementation in Python
+
+Live demo: see [notebook](TODO).
+
+. . . 
+
+<br>
+
+```python
+import pandas as pd                      
+from sklearn.linear_model import LinearRegression  # <1>
+
+df = pd.read_csv("data/ames.csv")        # <2>
+
+predictors = ["area", "Overall.Qual"]      # <3>
+X = df[predictors]
+y = df["price"]
+
+model = LinearRegression()               # <4>
+model.fit(X, y)                          # <5>
+```
+1. Import relevant libraries
+2. Load the Ames housing dataset
+3. Select predictor variables
+4. Create the regression model
+5. Estimate the model on the data
+
+**TODO: clarify expectations (TBD: what is reasonable when ChatGPT would be available? - knowing code structure, reproducing? - add example exam questions)**
+
+::: aside
+Data available at [https://www.openintro.org/data/index.php?data=ames](https://www.openintro.org/data/index.php?data=ames)
+:::
 
 ## Model results
 
 interpret coefficients....
+
+| Feature       |  Coefficient |
+| ------------- | -----------: |
+| area          |    58.754027 |
+| Overall.Qual  | 33241.400060 |
 
 
 <!--
@@ -314,22 +502,28 @@ interpret coefficients....
 
 # Evaluation {data-stack-name="Evaluation"}
 
-## R^2 (does it help to predict?)
+## $R^2$
+
+- does it help to predict?
 
 TBD: illustrate overfitting?!
 
-TBD: other considerations? (generalization/robustness, ethics, ...)
+## Next steps
 
+TODO
+
+- Forward / Backward selection
+- What if we "throw all variables available" into the model?
 
 
 # Deployment {data-stack-name="Deployment"}
-
 
 ## TODO / TBD.
 
 - Include a prediction example (based on a formula, python code).
 - Also refer to the describe/predict/prescribe
 - TBD: how can it be used to prescribe?
+- TBD: other considerations? (generalization/robustness, ethics, ...)
 
 ## Vocabulary {data-state="hide-menubar"}
 
