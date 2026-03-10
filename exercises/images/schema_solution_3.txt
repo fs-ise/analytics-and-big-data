@@ -1,0 +1,38 @@
+```{mermaid}
+erDiagram
+
+    PRODUCT {
+        int product_ID
+        string product
+        string class
+    }
+
+    RESTAURANTS {
+        int restaurant_ID
+        string name
+        string region
+        string renov_status
+    }
+
+    TIME {
+        int time_ID
+        int year
+        int month
+        int week
+        int weekday
+        int day
+    }
+
+    ANALYSIS {
+        int product_ID
+        int time_ID
+        int restaurant_ID
+        float cont_margin
+        float turnover
+        float cost
+    }
+
+    PRODUCT ||--o{ ANALYSIS : product
+    RESTAURANTS ||--o{ ANALYSIS : restaurant
+    TIME ||--o{ ANALYSIS : time
+```

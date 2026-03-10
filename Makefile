@@ -83,25 +83,37 @@ slides-clean:
 
 .PHONY: exercises-assign exercises-solution exercises
 
-exercises-assign-ipynb:
+exercises-assign:
 	$(QUARTO) render exercises --profile assign --to ipynb --no-clean
-
-exercises-assign-html:
 	$(QUARTO) render exercises --profile assign --to html --no-clean
+	for f in _site/exercises/*.ipynb; do \
+		[ -e "$$f" ] || continue; \
+		mv "$$f" "$${f%.ipynb}_assign.ipynb"; \
+	done
+	for f in _site/exercises/*.html; do \
+		[ -e "$$f" ] || continue; \
+		mv "$$f" "$${f%.html}_assign.html"; \
+	done
 
-exercises-solution-ipynb:
-	mkdir -p _site/exercises/notebooks/solutions
-	rm -f _site/exercises/notebooks/solutions/*.ipynb
+exercises-solution:
 	$(QUARTO) render exercises --profile solution --to ipynb --no-clean
-	for f in _site/exercises/notebooks/solutions/*.ipynb; do \
+	$(QUARTO) render exercises --profile solution --to html --no-clean
+
+	for f in _site/exercises/*.ipynb; do \
+		[ -e "$$f" ] || continue; \
+		case "$$f" in *_assign.ipynb|*_solution.ipynb) continue ;; esac; \
 		mv "$$f" "$${f%.ipynb}_solution.ipynb"; \
 	done
 
-exercises-solution-html:
-	$(QUARTO) render exercises --profile solution --to html --no-clean
+	for f in _site/exercises/*.html; do \
+		[ -e "$$f" ] || continue; \
+		case "$$f" in *_assign.html|*_solution.html) continue ;; esac; \
+		mv "$$f" "$${f%.html}_solution.html"; \
+	done
 
-# exercises-assign-html exercises-solution-html
-exercises: exercises-assign-ipynb exercises-solution-ipynb
+exercises: exercises-assign exercises-solution
+
+exercises: exercises-assign exercises-solution
 
 # --- Site build (main project renders once) ---
 

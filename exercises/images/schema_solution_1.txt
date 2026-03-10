@@ -1,0 +1,40 @@
+```{mermaid}
+erDiagram
+
+    PRODUCT ||--o{ SALES : contains
+    CUSTOMER ||--o{ SALES : buys
+    TIME ||--o{ SALES : occurs_at
+    REGION ||--o{ SALES : happens_in
+
+    PRODUCT {
+        string product_id
+        string name
+        string color
+    }
+
+    CUSTOMER {
+        string customer_id
+        string name
+        string status
+    }
+
+    TIME {
+        string time_id
+        date date
+        string quarter
+    }
+
+    REGION {
+        string region_id
+        string name
+        string population_density
+    }
+
+    SALES {
+        string product_id
+        string region_id
+        string time_id
+        string customer_id
+        int quantity
+    }
+```

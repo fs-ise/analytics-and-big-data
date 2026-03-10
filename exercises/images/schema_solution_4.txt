@@ -1,0 +1,64 @@
+```{mermaid}
+erDiagram
+
+    PRODUCT ||--o{ SALES : sold
+    CUSTOMER ||--o{ SALES : buys
+    BRANCH ||--o{ SALES : occurs_at
+    TIME ||--o{ SALES : recorded_at
+
+    BRANCH ||--o{ STAFF : employs
+    EMPLOYEE ||--o{ STAFF : assigned
+    TIME ||--o{ STAFF : recorded_at
+
+    PRODUCT {
+        string product_ID
+        string category
+        string family
+        string genus
+        string product
+    }
+
+    CUSTOMER {
+        string cust_ID
+        string residence
+        string group
+    }
+
+    BRANCH {
+        string branch_ID
+        string country
+        string region
+        string city
+        string branch
+    }
+
+    TIME {
+        string time_ID
+        int year
+        int month
+        int week
+        int day
+    }
+
+    EMPLOYEE {
+        string emp_ID
+        string name
+    }
+
+    SALES {
+        string branch_ID
+        string product_ID
+        string time_ID
+        string cust_ID
+        float profit
+        float cost
+        float revenue
+    }
+
+    STAFF {
+        string branch_ID
+        string emp_ID
+        string time_ID
+        int headcount
+    }
+```

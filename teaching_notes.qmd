@@ -22,14 +22,14 @@ sudo dnf install python3 python3-pip python3-virtualenv
 python3 -m venv ~/venvs/jupyterlab
 source ~/venvs/jupyterlab/bin/activate
 pip install --upgrade pip
-pip install jupyterlab
+pip install jupyterlab scikit-learn pandas numpy matplotlib
 ```
 
 Start
 
 ```sh
 source ~/venvs/jupyterlab/bin/activate
-cd _site/exercises/notebooks
+cd ~/repos/analytics-and-big-data/_site/exercises
 jupyter lab
 # http://localhost:8888
 ```
