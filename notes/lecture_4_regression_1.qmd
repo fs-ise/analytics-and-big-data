@@ -4,6 +4,12 @@ format: html
 ---
 
 ::: callout-note
+Preparation: start regression demo notebook:
+
+cd ~/repos/analytics-and-big-data/_site/exercises
+jupyter lab
+TODO: open XY
+
 TODO
 
 examples and contents: https://chatgpt.com/c/698d8ac8-a0a0-8394-8432-e644441ed348
@@ -27,6 +33,50 @@ Using the Ames Housing dataset, students explore the relationship between living
 
 Dataset:
 - mention Kaggle as a great source. Different datasets are available. It offers descriptive overviews (EDA), and links existing analyses (tab: code)
+
+
+Notebook demonstration: run regression without NA-filling and correct afterwards.
+
+"Solution"
+
+```python
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Load dataset (download from Kaggle and place train.csv locally)
+df = pd.read_csv("data/ames.csv")
+
+df.columns
+
+
+# Select numeric predictors
+features = [
+    "area",
+    "Overall.Qual",
+]
+
+X = df[features]
+y = df["price"]
+
+
+# Fit linear regression
+model = LinearRegression()
+model.fit(X, y)
+
+
+# Run, read error, add fillna before model
+X = X.fillna(X.median())
+
+# Show coefficients
+coef_df = pd.DataFrame({
+    "Feature": features,
+    "Coefficient": model.coef_
+})
+print(coef_df)
+```
 
 
 Explicitly discuss "why do we focus on/start with regression? (boring/want ML/AI)"
