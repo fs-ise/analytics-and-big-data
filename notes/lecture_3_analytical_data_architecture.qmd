@@ -18,8 +18,18 @@ Illustrate: OLAP as a "systems approach", notebooks as a more flexible data scie
 
 Rotating hypercube: similar to rotating in tidy-data preparation?
 
-Drop the Excel OLAP plugin?
-
 Extract exercises?
 
+TBD: complete the exercise on paper? provide a PDF version?
+
 :::
+
+
+<!--
+::: callout-note
+See /home/gerit/workspace/projects/abd/nextcloud/Material/ABD/exercises/Solutions_DW-Modelling.pdf
+TODO: existing exercise sheet?
+https://github.com/ShantanilBagchi/DataCamp/blob/master/SQL%20Courses/Database%20Design/Solutions.md
+https://gitlab.ost.ch/db/datana/-/blob/master/Uebungen/02_DW_OLAP/README.adoc
+:::
+-->
