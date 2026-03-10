@@ -184,7 +184,7 @@ flowchart LR
   subgraph Stack["<b>Analytics</b>"]
     direction LR
     D["<div align='center'><b>Data foundations</b><br/>Exploration and architecture</div>"]
-    M["<div align='center'><b>Analytical models</b><br/>Regression · ML · Big Data</div>"]
+    M["<div align='center'><b>Analytical modeling</b><br/>Regression · ML · Big Data</div>"]
     O["<div align='center'><b>Deployment</b><br/>Organizations</div>"]
     D --> M --> O
   end

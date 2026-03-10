@@ -42,7 +42,7 @@ SOLUTIONS_DIR = Path("exercises/notebooks/solutions")
 SECTION_ORDER = [
     "Introduction",
     "Data foundations",
-    "Analytical models",
+    "Analytical modeling",
     "Deployment",
     "Synthesis",
 ]
