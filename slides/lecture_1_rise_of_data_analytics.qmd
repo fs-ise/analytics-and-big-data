@@ -284,13 +284,12 @@ Predicting protein folding had been a major unsolved problem in biology for deca
 :::: {.columns}
 
 ::: {.column width="40%"}
+AI progress often occurs through **algorithmic breakthroughs**, enabling machines to outperform humans in increasingly complex tasks.
+
 Recent studies suggest that AI creates a **“jagged frontier.”** [@DellAcquaEtAl2023], i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities. 
 
 - **Within this frontier, AI can strongly enhance knowledge work**, improving productivity and the quality of outputs. 
 - **Outside the frontier, AI can reduce performance**, especially when users rely too heavily on its outputs without verification. 
-
-
-AI progress often occurs through **algorithmic breakthroughs**, enabling machines to outperform humans in increasingly complex tasks.
 
 <!--
 https://www.agidefinition.ai/
@@ -367,7 +366,7 @@ plt.show()
 ::::
 
 ::: aside
-Figure based on @HendrycksEtAl2025.
+Figure based on the work of @HendrycksEtAl2025 on *Artificial General Intelligence*.
 :::
 
 
@@ -723,28 +722,69 @@ digraph CRISPDM {
 
 # Exercise {data-state="hide-menubar"}
 
-## Setup
+## Setup for the practical exercises
 
-TODO
+:::: {.columns}
+::: {.column width="40%"}
 
-- Why Jupyter/Codespaces? (other options?)
-- explain setup
+**Options**
 
+- Microsoft Excel
+- RapidMiner
+- RStudio
+- IBM SPSS Statistics
+- **Jupyter Notebooks**
+- Tableau
+- Microsoft Power BI
 
-Steps: 
-
-- Create a Github account [here](https://github.com/signup)
-- Start Codespace in [fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
-
-::: aside
-You can use a local setup after this session (if it works on your machine).
 :::
 
+::: {.column width="60%"}
+
+**Why this setup?**
+
+We use **Jupyter Notebooks and Python** because it supports:
+
+- data analysis and visualization
+- machine learning
+- big data analytics
+
+It is also one of the more demanding environments to learn, which helps you build skills that transfer to many other tools and setups.
+
+**GitHub Codespaces** provides a browser-based virtual environment with a common setup for everyone.
+
+:::
+::::
+
+::: aside
+A local setup may also be possible after this session, depending on your machine.
+:::
+
+## A Jupyter Notebook
+
+TODO: include screenshot, explanation of code and Markdown cells (advantages), and Kernel/Virtual Env
+
+## Starting GitHub Codespaces
+
+- Create a GitHub account and sign in: [https://github.com/signup](https://github.com/signup)
+- Open [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
+- Start a Codespace:
+
+<br>
+
+![](../images/start-codespace.png){width=60% fig-align=center}
+
+
+::: {.content-hidden when-profile="pdf"}
+
 ## Break
+
+
 
 ## Group split
 
 Each section is 30 min.
+Work in pairs of two.
 
 <br><br><br>
 
@@ -764,8 +804,6 @@ F --> H["Discussion & Comparison"]
 G --> H
 ```
 
-## TODO {data-state="hide-menubar"}
-
 <!--
   - Github advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning
   
@@ -784,12 +822,87 @@ G --> H
     -> microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
 -->
 
-Kernel: select global env
+:::
 
-TODO: download/save changes (and stop/delete codespace)
+## Reading {data-state="hide-menubar"}
 
 
-## TODO: reading/synthesis?
+## Codespace {data-state="hide-menubar"}
+
+- stop/resume (files are lost when deleting a codespace)
+
+
+
+## Jupyter Notebook {data-state="hide-menubar"}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Basic steps**
+
+- Create a new notebook: `notebook.ipynb`
+- Kernel selection → choose ``/opt/conda/bin/python``.
+
+**Modes**
+
+- Edit mode: `Enter`
+- Command mode: `Esc`
+
+**Navigating cells**
+
+- Move between cells: `↑` / `↓`
+- Create new cell: `a` (above) / `b` (below)
+
+**Cell types**
+
+- Markdown cell: `m`
+- Code cell: `y`
+
+**Run cells**
+
+- Run cell: `Ctrl + Enter` or  `Shift + Enter`
+
+:::
+
+::: {.column width="50%"}
+
+![](../images/codespace-new-notebook.png){width=100%}
+
+
+**Task:**
+
+- Create a Markdown cell explaining that this is a test notebook
+- Create a code cell to print "Hello world"
+- Run both cells
+
+:::
+
+::::
+
+
+## First Analytical Notebook {data-state="hide-menubar"}
+
+Find a dataset on https://www.kaggle.com/datasets and a corresponding business problem you could address with the data.
+
+Create a notebook `report.ipynb` and draft an **analysis structure based on CRISP-DM**:
+
+- Add Markdown sections describing what you would do in each phase
+- Indicate which parts of the analysis are **descriptive**, **predictive**, or **prescriptive**
+
+Then:
+
+- Download the dataset (CSV)
+- Import it into your notebook
+- Start exploring the data and implement as far as you get
+
+The goal is **not to finish the analysis**, but to begin working with the data.
+
+TODO: online-meeting-link for sharing
+
+
+::: aside
+If you have a question, put up the **help-needed** tag and I will come by.
+:::
 
 
 ## Survey: Session 1 {data-state="hide-menubar"}
