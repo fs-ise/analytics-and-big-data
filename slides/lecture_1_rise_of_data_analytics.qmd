@@ -816,20 +816,36 @@ Work in pairs of two.
 
 <br><br><br>
 
-```{mermaid}
-flowchart LR
+```{dot}
+digraph learning_flow {
+    rankdir=LR;
 
-B{Split} --> C[Group 1<br>Jupyter Notebook]
-B --> D[Group 2<br>Reading]
+    node [shape=box];
 
-C --> E[Switch]
-D --> E
+    B [label="Split", shape=diamond];
 
-E --> F[Group 1<br>Reading]
-E --> G[Group 2<br>Jupyter Notebook]
+    C [label="Group 1\nJupyter Notebook", width=2.6, height=0.9, fixedsize=true];
+    D [label="Group 2\nReading", width=2.6, height=0.9, fixedsize=true];
 
-F --> H["Discussion & Comparison"]
-G --> H
+    E [label="Switch"];
+
+    F [label="Group 1\nReading", width=2.6, height=0.9, fixedsize=true];
+    G [label="Group 2\nJupyter Notebook", width=2.6, height=0.9, fixedsize=true];
+
+    H [label="Discussion & Comparison"];
+
+    B -> C;
+    B -> D;
+
+    C -> E;
+    D -> E;
+
+    E -> F;
+    E -> G;
+
+    F -> H;
+    G -> H;
+}
 ```
 
 <!--
@@ -852,13 +868,48 @@ G --> H
 
 :::
 
-## Reading {data-state="hide-menubar"}
+## Group 1: Read _Competing on Analytics_ {data-state="hide-menubar"}
+
+Read the _Competing on Analytics_ paper by @Davenport2006.
+Prepare to discuss the following questions:
+
+1. **What does it mean for a company to “compete on analytics”?**  
+   How is this different from simply using data or reports in decision making?
+
+2. **What organizational capabilities are required to compete on analytics?**  
+   Consider aspects such as leadership, culture, people, and technology.
+
+3. **Which companies or industries today seem to compete on analytics?**  
+   Give examples and explain how analytics creates their competitive advantage.
 
 
-## Codespace {data-state="hide-menubar"}
 
-- stop/resume (files are lost when deleting a codespace)
 
+
+## Group 2: Developing an Analytical Notebook {data-state="hide-menubar"}
+
+Find a dataset on [https://www.kaggle.com/datasets](https://www.kaggle.com/datasets) and a corresponding business problem you could address with the data.
+
+Create a notebook `report.ipynb` and draft an **analysis structure based on CRISP-DM**:
+
+- Add Markdown sections describing what you would do in each phase
+- Add Python code sections for the analyses you intend to run
+- Indicate which parts of the analysis are **descriptive**, **predictive**, or **prescriptive**
+
+Then:
+
+- Download a suitable dataset (CSV)
+- Import it into your notebook
+- Start exploring the data and implement the analyses as far as you get
+
+The goal is **not to complete the analysis**, but to begin working with the data.
+
+TODO: online-meeting-link for sharing
+
+
+::: aside
+If you have a question, put up the **help-needed** tag and I will come by.
+:::
 
 
 ## Jupyter Notebook {data-state="hide-menubar"}
@@ -892,7 +943,7 @@ G --> H
 ![](../images/codespace-new-notebook.png){width=100%}
 
 
-**Task:**
+**Steps to get started:**
 
 - Create a new notebook: `notebook.ipynb`
 - Kernel selection → choose Python environments / ``/opt/conda/bin/python``.
@@ -905,30 +956,9 @@ G --> H
 ::::
 
 
-## First Analytical Notebook {data-state="hide-menubar"}
+## Codespace {data-state="hide-menubar"}
 
-Find a dataset on [https://www.kaggle.com/datasets](https://www.kaggle.com/datasets) and a corresponding business problem you could address with the data.
-
-Create a notebook `report.ipynb` and draft an **analysis structure based on CRISP-DM**:
-
-- Add Markdown sections describing what you would do in each phase
-- Add Python code sections for the analyses you intend to run
-- Indicate which parts of the analysis are **descriptive**, **predictive**, or **prescriptive**
-
-Then:
-
-- Download a suitable dataset (CSV)
-- Import it into your notebook
-- Start exploring the data and implement the analyses as far as you get
-
-The goal is **not to complete the analysis**, but to begin working with the data.
-
-TODO: online-meeting-link for sharing
-
-
-::: aside
-If you have a question, put up the **help-needed** tag and I will come by.
-:::
+- stop/resume (files are lost when deleting a codespace)
 
 
 ## Survey: Session 1 {data-state="hide-menubar"}
