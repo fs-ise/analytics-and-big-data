@@ -30,23 +30,16 @@ decktape-warning:
 
 # --- Slides (HTML -> PDF) ---
 
-# Convenience target: build slide PDFs (HTML first, then PDF)
-.PHONY: slides
-slides: pdfs
-
-# Quarto rendering: one qmd -> expected html in _site/slides
-# (Make sure your root _quarto.yml output-dir is _site, which it is.)
-$(SLIDES_DIR)/%.html: $(SRC_SLIDES_DIR)/%.qmd _quarto.yml
-	@echo "Quarto: rendering $<"
-	$(QUARTO) render $<
-
 # Decktape PDF generation
 .PHONY: pdfs
 pdfs: decktape-warning $(SLIDES_PDF)
 
-# Pattern rule: one PDF depends on its HTML
-$(SLIDES_DIR)/%.pdf: $(SLIDES_DIR)/%.html scripts/decktape.sh | docker-image
-	@echo "Rendering $@ (from $<)"
+# Render PDF-export HTML, run Decktape, compress, clean up
+$(SLIDES_DIR)/%.pdf: $(SRC_SLIDES_DIR)/%.qmd _quarto.yml scripts/decktape.sh | docker-image
+	@echo "Quarto: rendering $< for PDF export"
+	$(QUARTO) render $< --profile pdf -P execute=false --output-dir $(abspath _pdf-tmp)
+	mv _pdf-tmp/slides/$*.html $(SLIDES_DIR)/$*-pdf.html
+	@echo "Rendering $@"
 	docker run --rm \
 	  -e HOST_UID=$$(id -u) \
 	  -e HOST_GID=$$(id -g) \
@@ -57,7 +50,7 @@ $(SLIDES_DIR)/%.pdf: $(SLIDES_DIR)/%.html scripts/decktape.sh | docker-image
 	    python3 -m http.server 8000 --directory _site >/dev/null 2>&1 & \
 	    SERVER_PID=$$!; \
 	    sleep 2; \
-	    ./scripts/decktape.sh "http://localhost:8000/slides/$(notdir $<)" "$@" && \
+	    ./scripts/decktape.sh "http://localhost:8000/slides/$*-pdf.html" "$@" && \
 	    kill $$SERVER_PID; \
 	    \
 	    echo "Compressing PDF with Ghostscript..."; \
@@ -70,6 +63,9 @@ $(SLIDES_DIR)/%.pdf: $(SLIDES_DIR)/%.html scripts/decktape.sh | docker-image
 	    \
 	    chown $$HOST_UID:$$HOST_GID "$@" \
 	  '
+	@echo "Cleaning up"
+	rm $(SLIDES_DIR)/$*-pdf.html
+	rm -rf _pdf-tmp
 
 .PHONY: decktape-clean
 decktape-clean:
@@ -120,7 +116,7 @@ exercises: exercises-assign exercises-solution
 site-fast:
 	$(QUARTO) render --no-clean
 
-# Full site build: exercises first (to _site/assignments + _site/solutions), then main site once
+# Full site build: exercises first, then main site once
 site: exercises site-fast
 
 # One command to build everything (site + slide PDFs)

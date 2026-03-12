@@ -9,13 +9,25 @@ Overall [learning objectives](objectives.html).
 
 Teaching notes: see [overview](index.html).
 
-Setup:
+## Building Materials
 
-- Instructor: JupyterLab: TODO
-- Students: TBD (GitHub/jupyter notebooks)
+**PDFs of lecture slides**
 
+```sh
+make pdfs
+# pdfs created in _site/slides/*.pdf
+```
 
-Setup and installation of JupyterLab in venv:
+**Exercise notebooks**
+
+```sh
+make exercises
+# jupyter notebooks created in _site/exercises/*.ipynb
+```
+
+## Exercises: Setup for Jupyter notebooks
+
+Installation of JupyterLab in venv:
 
 ```sh
 sudo dnf install python3 python3-pip python3-virtualenv
@@ -25,7 +37,7 @@ pip install --upgrade pip
 pip install jupyterlab scikit-learn pandas numpy matplotlib
 ```
 
-Start
+Start JupyterLab
 
 ```sh
 source ~/venvs/jupyterlab/bin/activate
@@ -36,6 +48,7 @@ jupyter lab
 
 TODO :
 - installing libraries (pandas, ...)
-- exporting jupyter notebooks (assignments and solutions) in separate directory?
 
-Note: must call `make exercises` after `quarto render`
+## Students: Setup for exercises
+
+- Students: TBD (GitHub/jupyter notebooks)

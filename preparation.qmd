@@ -237,3 +237,19 @@ Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar
 inspiration for model choice/test/exam questions:
 
 Use Cases Quiz: ![](../images/slides_210.png)
+
+
+## Notes (Quarto/revealjs)
+
+Hide slide in PDF export:
+
+```Markdown
+
+::: {.content-hidden when-profile="pdf"}
+
+## temp
+
+:::
+
+
+```
