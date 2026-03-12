@@ -183,7 +183,7 @@ It provides:
 
 import pandas as pd
 
-USAhousing = pd.read_csv('USA_Housing.csv')
+USAhousing = pd.read_csv('../exercises/data/ames.csv')
 USAhousing.head()
 ```
 
