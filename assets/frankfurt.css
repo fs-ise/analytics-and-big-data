@@ -208,3 +208,8 @@ body,
   line-height: 1.4;
   margin-bottom: 0.4em;
 }
+
+.boxed-image {
+  border: 1.5px solid black;
+  padding: 2px;
+}

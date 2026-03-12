@@ -8,12 +8,12 @@ date: "2026-03-23"
 
 ## Why is Modern Analytics so Successful?
 
-1. [More Data](#more-data-for-the-analysis)
-2. [More Computing Power](#computing-power)
-3. [New Algorithms](#new-algorithms)
-4. [New Analytics Processes](#analytics-processes)
+1. [More data](#more-data-for-the-analysis)
+2. [More domputing power](#computing-power)
+3. [New algorithms](#new-algorithms)
+4. [New analytics processes](#analytics-processes)
 
-# More Data for the Analysis {data-stack-name="Data"}
+# More data for the analysis {data-stack-name="Data"}
 
 
 ## The Data Explosion
@@ -161,7 +161,7 @@ Moores law, Cloud computing, ...
 -->
 
 
-# Computing Power {data-stack-name="Computing Power"}
+# Computing power {data-stack-name="Computing power"}
 
 ## Growth of Computing Power
 
@@ -192,7 +192,7 @@ Advances such as extreme ultraviolet (EUV) lithography are required to continue 
 See how $400 million machines are constructed to build modern chips: [https://www.youtube.com/watch?v=MiUHjLxm3V0](https://www.youtube.com/watch?v=MiUHjLxm3V0).
 :::
 
-# New Algorithms {data-stack-name="Algorithms"}
+# New algorithms {data-stack-name="Algorithms"}
 
 ## Algorithms
 
@@ -370,7 +370,7 @@ Figure based on the work of @HendrycksEtAl2025 on *Artificial General Intelligen
 :::
 
 
-# Analytics Processes {data-stack-name="Analytics Processes"}
+# Analytics processes {data-stack-name="Analytics processes"}
 
 <!--
         ## Structure: TODO
@@ -760,9 +760,37 @@ It is also one of the more demanding environments to learn, which helps you buil
 A local setup may also be possible after this session, depending on your machine.
 :::
 
-## A Jupyter Notebook
+## A Jupyter notebook
 
-TODO: include screenshot, explanation of code and Markdown cells (advantages), and Kernel/Virtual Env
+:::: {.columns}
+::: {.column width="60%"}
+
+Jupyter Notebooks combine **context, code, output, and implications** in one interactive document.
+
+**Cells**
+
+* **Markdown cells** → text, explanations, documentation
+* **Code cells** → Python code for analysis
+
+**Output**
+
+Running a code cell produces results directly below it (text, tables, charts, etc.).
+
+**Execution environment**
+
+* **Kernel** → executes the code (Python in this course)
+* **Virtual machine (VM)** → the computer where the kernel runs
+* In this course: provided through **GitHub Codespaces**
+
+{{< iconify fluent-mdl2:insights >}} The analysis runs on a **remote machine with Python and libraries already installed**.
+:::
+
+::: {.column width="40%"}
+
+![](../images/notebook-example.png){width=70% .boxed-image fig-align=center}
+
+:::
+::::
 
 ## Starting GitHub Codespaces
 
@@ -772,7 +800,7 @@ TODO: include screenshot, explanation of code and Markdown cells (advantages), a
 
 <br>
 
-![](../images/codespace-start.png){width=60% fig-align=center}
+![](../images/codespace-start.png){width=60% fig-align=center .boxed-image}
 
 
 ::: {.content-hidden when-profile="pdf"}
@@ -838,11 +866,6 @@ G --> H
 :::: {.columns}
 ::: {.column width="50%"}
 
-**Basic steps**
-
-- Create a new notebook: `notebook.ipynb`
-- Kernel selection → choose ``/opt/conda/bin/python``.
-
 **Modes**
 
 - Edit mode: `Enter`
@@ -871,6 +894,8 @@ G --> H
 
 **Task:**
 
+- Create a new notebook: `notebook.ipynb`
+- Kernel selection → choose Python environments / ``/opt/conda/bin/python``.
 - Create a Markdown cell explaining that this is a test notebook
 - Create a code cell to print "Hello world"
 - Run both cells
@@ -882,20 +907,21 @@ G --> H
 
 ## First Analytical Notebook {data-state="hide-menubar"}
 
-Find a dataset on https://www.kaggle.com/datasets and a corresponding business problem you could address with the data.
+Find a dataset on [https://www.kaggle.com/datasets](https://www.kaggle.com/datasets) and a corresponding business problem you could address with the data.
 
 Create a notebook `report.ipynb` and draft an **analysis structure based on CRISP-DM**:
 
 - Add Markdown sections describing what you would do in each phase
+- Add Python code sections for the analyses you intend to run
 - Indicate which parts of the analysis are **descriptive**, **predictive**, or **prescriptive**
 
 Then:
 
-- Download the dataset (CSV)
+- Download a suitable dataset (CSV)
 - Import it into your notebook
-- Start exploring the data and implement as far as you get
+- Start exploring the data and implement the analyses as far as you get
 
-The goal is **not to finish the analysis**, but to begin working with the data.
+The goal is **not to complete the analysis**, but to begin working with the data.
 
 TODO: online-meeting-link for sharing
 
