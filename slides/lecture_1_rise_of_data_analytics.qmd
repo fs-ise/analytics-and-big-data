@@ -757,7 +757,7 @@ It is also one of the more demanding environments to learn, which helps you buil
 ::::
 
 ::: aside
-A local setup may also be possible after this session, depending on your machine.
+A local setup may also be possible after this session, depending on your machine. If you run into setup issues or have tips to share, please post them in this repository's issues: [github.com/fs-ise/analytics-and-big-data-notebooks/issues](https://github.com/fs-ise/analytics-and-big-data-notebooks/issues).
 :::
 
 ## A Jupyter notebook
