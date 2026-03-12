@@ -201,3 +201,10 @@ body,
 .learning-objectives li {
   margin-bottom: 0.35rem;
 }
+
+#refs,
+#refs .csl-entry {
+  font-size: calc(var(--font-size) * 0.9);
+  line-height: 1.4;
+  margin-bottom: 0.4em;
+}
