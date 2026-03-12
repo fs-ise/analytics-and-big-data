@@ -56,6 +56,8 @@ TODO: I will work with the notebook group.
 TODO: https://chatgpt.com/c/69a69645-6f10-8390-932f-440be042030d
 TBD: include examples (such as giving the mean after removing rows with NA in columns X, Y, Z), which are very hard to do in Excel (where students see the value of separating analysis from data / maybe with API data?)
 
+:::
+
 Ask students to create a GitHub account (CHECK: free student packs?)
 
 TBD: typical exam questions corresponding to the lecture? -
@@ -75,9 +77,51 @@ Introduce system (badges) - similar to https://eduki.com/de/material/306565/schi
 
 TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
 
+
+## Useful Jupyter Notebook Tricks
+
+### Autocompletion
+
+* `Tab` → autocomplete variables, functions, file paths
+* `Shift + Tab` → show function documentation
+* `Shift + Tab` (twice) → expanded documentation
+
+### Inspect objects
+
+* `variable?` → quick help
+* `variable??` → show source code (if available)
+
+Example:
+
+```
+pd.read_csv?
+```
+
+### List variables in memory
+
+* `%who` → list variables
+* `%whos` → list variables with type and size
+
+### Reset notebook variables
+
+```
+%reset
+```
+
+## Two particularly useful ones for beginners
+
+If you only show **two**, I recommend:
+
+* `Tab` → autocomplete
+* `%whos` → see all variables
+
+These immediately help students understand **what data is currently in memory**.
+
+
+## Exercise
+
 See how far you get: helps me understand how much students already know.,
 
-:::
 
 TODO: reading/synthesis?
 
