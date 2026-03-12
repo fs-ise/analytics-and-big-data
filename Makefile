@@ -113,8 +113,6 @@ exercises-solution:
 
 exercises: exercises-assign exercises-solution
 
-exercises: exercises-assign exercises-solution
-
 # --- Site build (main project renders once) ---
 
 .PHONY: site-fast site all
