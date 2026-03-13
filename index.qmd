@@ -5,7 +5,7 @@ format:
     css: assets/styles.css
 ---
 
-![Course Status](https://img.shields.io/badge/Current%20course-{{< var course.semester >}}-yellow)
+![Course Status](https://img.shields.io/badge/Current%20course-{{< var course.semester >}}-green)
 <!-- ![Course Status](https://img.shields.io/badge/Upcoming%20course-Summer%20semester%202025-green)<br> -->
 [![Level](https://img.shields.io/badge/Level-Bachelor-blue)](syllabus.html)
 [![Degree Program](https://img.shields.io/badge/Degree%20Program-BBA-blue)](syllabus.html)
