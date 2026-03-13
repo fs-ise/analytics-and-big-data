@@ -97,6 +97,8 @@ Prerequisite: Completed the "Introduction to Programming" module.
 
 **Business analytics** refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations [based on @DavenportHarris2007].
 
+::: {.fragment}
+
 Related fields:
 
 - **Business Intelligence** refers to "the techniques, technologies, systems, practices, methodologies, and applications that analyze critical business data to help an enterprise better understand its business and market and make timely business decisions." [based on @ChenEtAl2012]
@@ -105,28 +107,9 @@ Related fields:
 
 :::
 
+:::
+
 ::::
-
-<!--
-TODO (ideally referring to a textbook?)
-
-Analytics is the systematic use of data, statistical methods, and digital tools to generate insights that support better business decisions.
-
-If you want it slightly more detailed (but still accessible):
-
-Analytics refers to the process of collecting, processing, and analyzing data to identify patterns, explain outcomes, predict future developments, and improve decision-making in organizations.
-
-You can break it down into four core elements:
-
-Data – Raw facts (e.g., sales numbers, customer clicks, costs).
-
-Methods – Statistical models, algorithms, and visualizations.
-
-Technology – Software tools like spreadsheets, databases, BI systems.
-
-Decision-making – Turning insights into business action.
--->
-
 
 ## Why Analytics (and This Course) Matter
 
@@ -251,7 +234,7 @@ flowchart LR
   - Robots/agents acting on decisions
   - Reinforcement learning
 
-{{< iconify fluent-mdl2:insights >}} We will *touch* these areas where needed, but our focus is on **analytical reasoning** and **notebook-based implementations**.
+{{< iconify fluent-mdl2:insights >}} We will *touch* these areas where needed, but our focus is on **analytical reasoning for business decisions**<br> and **notebook-based implementations**.
 
 
 # Course logistics  {data-stack-name="Course logistics"}
