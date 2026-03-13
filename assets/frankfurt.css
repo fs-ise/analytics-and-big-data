@@ -213,3 +213,11 @@ body,
   border: 1.5px solid black;
   padding: 2px;
 }
+
+.slide-menu-button {
+  display: none !important;
+}
+
+.slide-menu.slide-menu--left.active {
+  width: 400px !important;
+}
