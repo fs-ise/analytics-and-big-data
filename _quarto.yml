@@ -21,6 +21,15 @@ website:
         href: teaching_notes.qmd
       - text: "⚠️ Preparation"
         href: preparation.qmd
+      - text: '{{< iconify hugeicons:github-01 title="GitHub" label="GitHub" >}}'
+        href: "https://github.com/fs-ise/analytics-and-big-data"
+        target: _blank
+        rel: noopener noreferrer
+      - text: '{{< iconify hugeicons:add-circle title="Issues" label="Issues" >}}'
+        href: https://github.com/fs-ise/analytics-and-big-data/issues
+        target: _blank
+        rel: noopener noreferrer
+
 
 format:
   html:

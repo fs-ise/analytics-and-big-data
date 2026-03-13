@@ -5,7 +5,20 @@ format:
     css: assets/styles.css
 ---
 
-{{< var course.semester >}}
+![Course Status](https://img.shields.io/badge/Current%20course-{{< var course.semester >}}-yellow)
+<!-- ![Course Status](https://img.shields.io/badge/Upcoming%20course-Summer%20semester%202025-green)<br> -->
+[![Level](https://img.shields.io/badge/Level-Bachelor-blue)](syllabus.html)
+[![Degree Program](https://img.shields.io/badge/Degree%20Program-BBA-blue)](syllabus.html)
+[![Prerequisites](https://img.shields.io/badge/Prerequisites-IntroProgramming-blue)](syllabus.html)
+![Duration](https://img.shields.io/badge/Work%20load-180h%20(6%20ECTS)-blue)<br>
+[![Language](https://img.shields.io/badge/Language-English-blue)](syllabus.html)
+[![Format](https://img.shields.io/badge/Format-Sessions%20on--site-blue)](syllabus.html)
+<!-- ![Offered by: Digital Work at Otto-Friedrich-Universität Bamberg](https://img.shields.io/badge/Offered%20by-%20Digital%20Work%20(Otto--Friedrich--Universit%C3%A4t%20Bamberg)-blue)
+[![Evaluations](https://img.shields.io/badge/Rating-★★★★★%20(4.5%20/%205)-yellow)](/evaluations.html) 
+![Completion](https://img.shields.io/badge/Enrollment-29%20students-green) 
+[![Peer-Reviewed Quality](https://img.shields.io/badge/Pedagogical%20Foundations-Peer%20Reviewed-green)](https://fs-ise.github.io/rethink-git-teaching/) 
+[![GitHub stars](https://img.shields.io/github/stars/fs-ise/analytics-and-big-data.svg?style=social&label=Star)](https://github.com/fs-ise/analytics-and-big-data/stargazers) -->
+![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green.svg)
 
 Instructor: [{{< var instructor.name >}}]({{< var instructor.url >}}), {{< var university.name >}}
 
