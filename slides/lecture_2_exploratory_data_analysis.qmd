@@ -16,7 +16,7 @@ date: "2026-03-23"
 - **Explain** the role of exploratory data analysis in business decision-making.
 :::
 
-## Table of Contents {data-state="hide-menubar"}
+## Table of contents {data-state="hide-menubar"}
 <ul class="menu"><ul>
 
 # Foundations {data-stack-name="Foundations"}
@@ -243,7 +243,7 @@ This **severely limits analysis**.
 
 ::: {.column width="50%" .fragment}
 
-Format conversions help transform raw data into representations suitable for EDA and analytical models:
+**Format conversions** help transform raw data into representations suitable for EDA and analytical models:
 
 | Representation | Example | Possible analysis |
 |---|---|---|
@@ -258,9 +258,8 @@ Format conversions help transform raw data into representations suitable for EDA
 
 . . .
 
-::: callout-note
-Data preparation transforms raw data into **formats that allow meaningful mathematical operations and analysis**.
-:::
+<br>
+{{< iconify fluent-mdl2:insights >}} Data preparation transforms raw data into **formats that allow meaningful mathematical operations and analysis**.
 
 
 ## Data quality checks
@@ -602,7 +601,7 @@ plt.show()
 # Multivariate exploratory data analysis {data-stack-name="Multivariate EDA"}
 
 
-## Multivariate Non-Graphical EDA
+## Multivariate non-graphical EDA
 
 Multivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables.
 
@@ -616,11 +615,11 @@ Multivariate non-graphical EDA techniques generally show the relationship betwee
 </div>
 
 
-## Multivariate Graphical EDA
+## Multivariate graphical EDA
 
 Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.
 
-![](../images/slides_196.png)
+![](../images/slides_196.png){fig-align=center}
 
 
 ## Bivariate statistics: Correlation
@@ -693,7 +692,7 @@ plt.show()
 
 
 
-## Correlation vs. Causality
+## Correlation vs. causality
 
 **Correlation:** Two data series behave "similar"
 
@@ -719,10 +718,12 @@ plt.show()
 
 . . . 
 
-> But: Sometimes it is better to predict something even if we cannot explain it instead of doing nothing!
+<br>
+{{< iconify fluent-mdl2:insights >}}  If causal explanations are unavailable, decisions may need to rely on predictions.
+
 
 ::: aside
-These and more online: [https://www.tylervigen.com/spurious-correlations](https://www.tylervigen.com/spurious-correlations)
+More examples are available at: [https://www.tylervigen.com/spurious-correlations](https://www.tylervigen.com/spurious-correlations)
 <!-- Note: CC-BY licensed  -->
 :::
 
@@ -851,7 +852,7 @@ In **multivariate exploratory data analysis**, we often want to understand wheth
 - **Detecting anomalies** in transactions
 
 
-## Introductory Example
+## Introductory example
 
 Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:
 
@@ -914,7 +915,7 @@ Therefore, clusters must be **evaluated and interpreted carefully**.
 
 -->
 
-## Partitioning Cluster Methods
+## Partitioning cluster methods
 
 The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.
 
@@ -932,7 +933,7 @@ The objective is to find where  is the mean of points in Si.
 > Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.
 
 
-## Example of a K-Means Cluster Analysis
+## Example of a K-Means cluster analysis
 
 ![](../images/slides_327.png)
 
@@ -958,7 +959,7 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Finding the Optimal Number of Clusters (II)
+## Finding the optimal number of clusters (II)
 
 > If you put V in on the ordinate and the number of cluster k on the abscissa, it often results in a curve with one or several kinks. At the point where exists the (first) significant kink, you can find the optimal number of clusters:
 
@@ -973,7 +974,7 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Finding the Optimal Number of Clusters (III)
+## Finding the optimal number of clusters (III)
 
 > Instead of visually identifying the optimal cluster number, we can calculate the distances from the points on the elbow curve to a straight line linking the first and the last point on the curve. The cluster number with the largest distance is then chosen as the one with the strongest kink.
 
@@ -981,7 +982,7 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Hierarchical Cluster Methods
+## Hierarchical cluster methods
 
 - There are two types of hierarchical cluster methods:
   - Agglomerative hierarchical clustering is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.
@@ -990,12 +991,12 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Process of the Hierarchical Cluster Analysis
+## Process of the hierarchical cluster analysis
 
 
 
 
-## Measuring Similarity between Clusters (I)
+## Measuring similarity between clusters (I)
 
 ![](../images/slides_328.png)
 
@@ -1014,7 +1015,7 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Measuring Similarity between Clusters (II)
+## Measuring similarity between clusters (II)
 
 > **Average Linkage:**
 
@@ -1033,7 +1034,7 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Single Linkage Example (I)
+## Single linkage example (I)
 
 ![](../images/slides_333.png)
 
@@ -1044,7 +1045,7 @@ The objective is to find where  is the mean of points in Si.
 
 
 
-## Single Linkage Example (II)
+## Single linkage example (II)
 
 ![](../images/slides_334.png)
 

@@ -25,12 +25,16 @@ After this session, students should be able to:
 Badly formatted data blocks analysis — data preparation unlocks it.
 
 
+
+Data quality: never trust data blindly. always evaluate data you receive as an input
+
 Data preparation:
 
 - Statistics traditionally relies on a controlled mode of data collection
 - Repurposing of data, analyzing transactional data is not a typical setting
 - Data quality measures are relatively limited (focused on outliers)
 - Data preparation (manual correction or the use of synthetic data) are even discarded as a questionable research practice
+
 
 Metaphor: statisticians carefully collect their data on their own (live on their own island) - business analysts have to work with existing data (which can be very messy)
 

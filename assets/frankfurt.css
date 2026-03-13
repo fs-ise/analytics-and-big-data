@@ -185,7 +185,7 @@ body,
 
 /* Title with icon */
 .learning-objectives::before {
-  content: "🎯 Learning Objectives";
+  content: "🎯 Learning objectives";
   display: block;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -221,3 +221,30 @@ body,
 .slide-menu.slide-menu--left.active {
   width: 400px !important;
 }
+
+.reveal .title-slide {
+  position: relative;
+}
+
+.reveal .title {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.reveal .subtitle {
+  font-size: 1.4em;
+  margin-top: 0.6em;
+  color: #555;
+}
+
+.reveal .author {
+  margin-top: 1.2em;
+  font-size: 1em;
+}
+
+.reveal .date {
+  color: #666;
+  font-size: 0.9em;
+}
+

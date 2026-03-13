@@ -6,17 +6,16 @@ session: "Session 1"
 date: "2026-03-23"
 ---
 
-## Why is Modern Analytics so Successful?
+## Why is modern analytics so successful?
 
 1. [More data](#more-data-for-the-analysis)
-2. [More domputing power](#computing-power)
+2. [More computing power](#computing-power)
 3. [New algorithms](#new-algorithms)
 4. [New analytics processes](#analytics-processes)
 
 # More data for the analysis {data-stack-name="Data"}
 
-
-## The Data Explosion
+## The explosion of data
 
 ::: columns
 
@@ -117,12 +116,11 @@ plt.show()
 
 :::
 
-
 :::  {.column width="50%"}
 
 <br><br>
 
-| Unit | Equivalent | Approximate Meaning |
+| Unit | Equivalent | Approximate meaning |
 |-----|------------|---------------------|
 | Gigabyte (GB) |  | A HD movie file or a few hundred photos |
 | Terabyte (TB) | 1,000 GB | Storage of a modern laptop or external drive |
@@ -136,22 +134,22 @@ plt.show()
 
 ## Data production
 
-**Enterprise and Transactional Data**  
+**Enterprise and transactional data**  
 Enterprise systems such as ERP, CRM, and supply chain platforms generate large volumes of structured data through everyday business transactions.
 
 **eCommerce**  
 Every search, click, purchase, and review creates behavioral and transactional data used for recommendations and personalized marketing.
 
-**Social Media and User-Generated Content**  
+**Social media and user-generated content**  
 Platforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live streaming.
 
-**IoT and Smart Devices**  
+**IoT and smart devices**  
 Connected devices—from wearables to industrial sensors—continuously produce real-time data across interconnected systems.
 
-**Digital Transactions**  
+**Digital transactions**  
 Online banking, mobile payments, and blockchain systems generate detailed financial records for transactions and security monitoring.
 
-**AI-Generated Data**  
+**AI-generated data**  
 Machine learning and generative AI create large datasets during training and operation, further accelerating global data growth.
 
 
@@ -163,7 +161,7 @@ Moores law, Cloud computing, ...
 
 # Computing power {data-stack-name="Computing power"}
 
-## Growth of Computing Power
+## Growth of computing power
 
 The rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets.
 
@@ -173,7 +171,7 @@ The rapid acceleration of computing power—driven by advances in hardware, clou
 
 ![](../images/slides_3.png){fig-align="center" width="70%"}
 
-## Evolution of Computing Power
+## Evolution of computing power
 
 The growth of modern analytics is enabled by **changing strategies for increasing computing power**.
 
@@ -203,12 +201,12 @@ Algorithms determine how efficiently computers can process data and solve tasks.
 
 Examples:
 
-- **Linux Scheduling Algorithms** *(1990s–present)* — Efficient process scheduling enabling operating systems to run many tasks concurrently
+- **Linux Scheduling Algorithms** *(1990s–present)* — Efficient process scheduling enabling operating systems to run tasks concurrently
 - **RSA Encryption** *(1977)* — Public-key cryptography algorithm enabling secure internet communication
 - **PageRank** *(1998)* — Algorithm ranking webpages based on link structure, enabling scalable web search
-- **Blockchain / Proof-of-Work Consensus** *(2008)* — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies
+- **Blockchain** *(2008)* — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies
 - **Deep Learning** *(2010s)* — Improved neural network training enabling major advances in vision, speech, and language AI
-- **Gradient Boosting / XGBoost** *(2014)* — High-performance ensemble learning algorithm widely used in predictive analytics and data science
+- **Gradient Boosting** *(2014)* — High-performance ensemble learning algorithm widely used in predictive analytics and data science
 - **GPT / Transformer Models** *(2017–present)* — Transformer architecture enabling large language models and generative AI
 
 
@@ -240,13 +238,10 @@ Neural Network
 :::
 
 
-## Algorithmic Breakthroughs Drive AI Progress
+## Algorithmic breakthroughs drive AI progress
 
 Recent breakthroughs in artificial intelligence (AI)^[AI systems are based on algorithms; in the following, we use the broader term AI when referring to such algorithm-based systems.] show how new algorithms can rapidly surpass human performance.
 **DeepMind** provides good examples.
-
-
-<br>
 
 ::: columns
 
@@ -458,19 +453,21 @@ Source: @Schmarzo2016, p. 88
 Source: @Schmarzo2016, p. 13
 :::
 
-## Example: Descriptive Analytics
+## Example: Descriptive analytics
 
 <br>
 
 ![](../images/slides_23.png){fig-align="center" width="45%"}
 
-## Example: Predictive Analytics
+## Example: Predictive analytics
 
 <br>
 
 ![](../images/slides_24.png){fig-align="center" width="60%"}
 
-## Example: Prescriptive Analytics
+## Example: Prescriptive analytics
+
+<!-- TODO: select an example that aligns more with prescriptive analytics (not scenario planning) -->
 
 Based on more than 300 million data records per week, Otto generates over one billion forecasts annually on the expected sales of individual products in the coming days and weeks.
 These forecasts are used to optimize inventory decisions, determining how many units of each product should be stocked or reordered across warehouses.
@@ -510,7 +507,7 @@ While these fields often focus on methodological development, business analytics
 
 <br>
 
-| Discipline          | Model Culture           | Typical Models            |
+| Discipline          | Model culture           | Typical models            |
 | ------------------- | ----------------------- | ------------------------- |
 | Statistics          | Probabilistic inference | Regression, GLM, Bayesian |
 | Econometrics        | Causal modeling         | IV, panel models          |
@@ -527,7 +524,7 @@ While these fields often focus on methodological development, business analytics
     ![](../images/slides_133_new.png)
 -->
 
-## CRISP-DM Cross-Industry Standard Process for Data Mining
+## Cross-Industry Standard Process for Data Mining (CRISP-DM)
 
 :::: {.columns}
 
@@ -715,14 +712,14 @@ digraph CRISPDM {
 ## Summary {data-state="hide-menubar"}
 
 ::: {.learning-objectives}
-- **Illustrate** how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.
+- **Illustrate** how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.
 - **Distinguish** between descriptive, predictive, and prescriptive analytics.
 - **Explore** the Python and Jupyter analytics ecosystem (*exercise*).
 :::
 
 # Exercise {data-state="hide-menubar"}
 
-## Setup for the practical exercises
+## Setup for the practical exercises  {data-state="hide-menubar"}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -739,28 +736,23 @@ digraph CRISPDM {
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="60%" .fragment}
 
 **Why this setup?**
 
-We use **Jupyter Notebooks and Python** because it supports:
+We use **Jupyter Notebooks and Python** because
 
-- data analysis and visualization
-- machine learning
-- big data analytics
+- it supports **advanced analytics**, including data analysis, visualization, machine learning, and big data analytics
+- it is a **more demanding environment to learn**, which helps us build skills that transfer easily to simpler analytics tools and interfaces
+- it is **widely used in research and large organizations**, making it a valuable and relevant skillset
+- it allows us to combine **context, code, explanations, and results in a single document**
 
-It is also one of the more demanding environments to learn, which helps you build skills that transfer to many other tools and setups.
-
-**GitHub Codespaces** provides a browser-based virtual environment with a common setup for everyone.
+<!-- **GitHub Codespaces** provides a browser-based virtual environment with a common setup for everyone. -->
 
 :::
 ::::
 
-::: aside
-A local setup may also be possible after this session, depending on your machine. If you run into setup issues or have tips to share, please post them in this repository's issues: [github.com/fs-ise/analytics-and-big-data-notebooks/issues](https://github.com/fs-ise/analytics-and-big-data-notebooks/issues).
-:::
-
-## A Jupyter notebook
+## A Jupyter notebook  {data-state="hide-menubar"}
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -792,7 +784,7 @@ Running a code cell produces results directly below it (text, tables, charts, et
 :::
 ::::
 
-## Starting GitHub Codespaces
+## Starting GitHub Codespaces  {data-state="hide-menubar"}
 
 - Create a GitHub account and sign in: [https://github.com/signup](https://github.com/signup)
 - Open [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
@@ -800,16 +792,19 @@ Running a code cell produces results directly below it (text, tables, charts, et
 
 <br>
 
-![](../images/codespace-start.png){width=60% fig-align=center .boxed-image}
+![](../images/codespace-start.png){width=50% fig-align=center .boxed-image}
+
+
+::: aside
+A local setup may also be possible after this session, depending on your machine. If you run into setup issues or have tips to share, please post them in this repository's issues: [github.com/fs-ise/analytics-and-big-data-notebooks/issues](https://github.com/fs-ise/analytics-and-big-data-notebooks/issues).
+:::
 
 
 ::: {.content-hidden when-profile="pdf"}
 
-## Break
+## Break  {data-state="hide-menubar"}
 
-
-
-## Group split
+## Group split  {data-state="hide-menubar"}
 
 Each section is 30 min.
 Work in pairs of two.
@@ -884,9 +879,7 @@ Prepare to discuss the following questions:
 
 
 
-
-
-## Group 2: Developing an Analytical Notebook {data-state="hide-menubar"}
+## Group 2: Developing an analytical notebook {data-state="hide-menubar"}
 
 Find a dataset on [https://www.kaggle.com/datasets](https://www.kaggle.com/datasets) and a corresponding business problem you could address with the data.
 
@@ -904,7 +897,11 @@ Then:
 
 The goal is **not to complete the analysis**, but to begin working with the data.
 
-TODO: online-meeting-link for sharing
+. . . 
+
+<br><br>
+
+Meeting link: [{{< var instructor.online_meeting_url >}}]({{< var instructor.online_meeting_url >}})
 
 
 ::: aside
@@ -956,10 +953,31 @@ If you have a question, put up the **help-needed** tag and I will come by.
 ::::
 
 
-## Codespace {data-state="hide-menubar"}
+## GitHub Codespaces: Stop, resume, and download your work {data-state="hide-menubar"}
 
-- stop/resume (files are lost when deleting a codespace)
+**Stopping and resuming a Codespace**
 
+- **Stop a Codespace** when you finish working  
+  - This **pauses the environment** but keeps your files and setup.
+  - You can **resume later** and continue where you left off.
+
+- **Resume a Codespace**
+  - Open the repository on GitHub.
+  - Navigate to **Code → Codespaces → Resume**.
+
+**Deleting a Codespace**
+
+- **Deleting a Codespace permanently removes the environment and all files stored in the Codespace.**
+- **Before deleting**: Download notebooks or files that you want to keep for your own reference.
+
+**Recommendation**
+
+- Prefer **Stop / Resume** if you plan to continue working later.
+- If you **delete a Codespace**, make sure you **download important notebooks** or **push your changes to GitHub** first.
+
+::: aside
+As a student, you can apply for the [GitHub Student Developer Pack](https://education.github.com/pack), which includes **free or extended GitHub Codespaces usage**.
+:::
 
 ## Survey: Session 1 {data-state="hide-menubar"}
 
@@ -975,6 +993,6 @@ If you have a question, put up the **help-needed** tag and I will come by.
 
 Link: [https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor](https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor)
 
-Note: We will use and possibly publish results (anonymously).
+Note: Responses may be analyzed and published in anonymized form.
 
 # References {data-state="hide-menubar"}

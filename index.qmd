@@ -22,7 +22,8 @@ format:
 
 Instructor: [{{< var instructor.name >}}]({{< var instructor.url >}}), {{< var university.name >}}
 
-Online Office Hours zoom link: [{{< var instructor.online_office_hours_url >}}]({{< var instructor.online_office_hours_url >}})
+Online Office Hours meeting link:  
+[{{< var instructor.online_meeting_url >}}]({{< var instructor.online_meeting_url >}})
 
 ## Sessions
 

@@ -15,7 +15,7 @@ date: "2026-03-23"
 
 Academic background
 
-- Universität Regensburg: Doctorate
+- Universität Regensburg: Doctoral Student
 - HEC Montréal: Postdoctoral Fellowship
 - Otto-Friedrich-Universität Bamberg: Assistant Professor
 - Frankfurt School of Finance & Management: Full Professor
@@ -111,9 +111,9 @@ Related fields:
 
 ::::
 
-## Why Analytics (and This Course) Matter
+## Why analytics (and this course) matter
 
-**{{< iconify solar:money-bag-bold >}} Finance — Quantitative Arbitrage at Princeton-Newport Partners**
+**{{< iconify solar:money-bag-bold >}} Finance — Quantitative arbitrage at Princeton-Newport Partners**
 
 - Early pioneer of applying the Black-Scholes option pricing model in real markets
 - Systematic identification of mispriced options through mathematical arbitrage
@@ -121,7 +121,7 @@ Related fields:
 
 . . .
 
-**{{< iconify mdi:film-open >}} Entertainment — Personalization at Scale at Netflix**
+**{{< iconify mdi:film-open >}} Entertainment — Personalization at scale at Netflix**
 
 - Recommendation systems shape what millions watch
 - Continuous A/B testing and model refinement
@@ -129,14 +129,14 @@ Related fields:
 
 . . .
 
-**{{< iconify lucide-lab:baseball >}} Sports — The Moneyball Revolution at Oakland Athletics**
+**{{< iconify lucide-lab:baseball >}} Sports — The Moneyball revolution at Oakland Athletics**
 
 - Advanced metrics replaced traditional scouting intuition
 - Data-driven player selection with limited budget
 - Competitive advantage through better measurement
 
 
-## Course Architecture
+## Course architecture
 
 <div style="text-align:center">
 
@@ -210,7 +210,7 @@ flowchart LR
 - **Assess** the operational and strategic implications of data analytics in organizations.
 
 
-## What This Course Does *Not* Cover
+## What this course does *not* cover
 
 
 - **Engineering of production-grade analytical systems**
