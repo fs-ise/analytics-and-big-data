@@ -11,8 +11,8 @@ date: "2026-03-23"
 <br><br><br><br><br>
 
 ::: {.learning-objectives}
-- **Describe** key characteristics of variables and patterns between variables.
-- **Explore** data sets by using appropriate descriptive and visual techniques in Python (*exercise*).
+- **Describe** variables, relationships between variables, and underlying structure in the data (e.g., clusters).
+- **Prepare and explore** data sets using appropriate descriptive and visual techniques.
 - **Explain** the role of exploratory data analysis in business decision-making.
 :::
 
@@ -64,7 +64,7 @@ The following forms of EDA are typically distinguished:
       histograms<br>dot plots
     </td>
     <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-      scatter plots<br>grouped dot plots
+      scatter plots<br>clustering
     </td>
   </tr>
 </table>
@@ -113,7 +113,7 @@ The following forms of EDA are typically distinguished:
 ## Data types
 
 
-Conducting EDA and representing the “real world” in computer requires us to use appropriate data types.
+Conducting EDA and representing the “real world” requires us to use appropriate data types.
 Typically, we distinguish four fundamental data types, known as measurement scales:
 
 Qualitative description of objects
@@ -215,6 +215,35 @@ Due to the different mathematical properties, not all statistical measures can b
 :::
 
 
+## Data quality checks
+
+Before conducting analysis, we must ensure that the **data is fit for use** [@StrongLeeWang1997].
+
+Common data quality issues include:
+
+- **Missing values** (e.g., incomplete historical market data)
+- **Outdated values** (e.g., customer address has changed)
+- **Outliers or implausible values** (e.g., age = 250)
+- **Inconsistent formats or units** (e.g., dates stored as text, mixed currencies)
+- **Duplicate records** (e.g., customers with multiple accounts)
+- **Measurement or data entry errors** (e.g., human data entry, broken sensors)
+
+. . .
+
+**Typical data preparation actions**
+
+TODO/TBD: also make sure that observations are in rows (features/dimensions in columns)?
+
+- **Correct** values (e.g., fix formatting or units)
+- **Remove** problematic observations
+- **Impute** missing values
+- **Collect additional data** if necessary
+
+. . .
+
+> In many real-world analytics projects, **data preparation and cleaning can take up to ~80% of the total effort.**
+
+
 ## Data preparation: Formatting
 
 ::: columns
@@ -260,33 +289,6 @@ This **severely limits analysis**.
 
 <br>
 {{< iconify fluent-mdl2:insights >}} Data preparation transforms raw data into **formats that allow meaningful mathematical operations and analysis**.
-
-
-## Data quality checks
-
-Before conducting analysis, we must ensure that the **data is fit for use** [@StrongLeeWang1997].
-
-Common data quality issues include:
-
-- **Missing values** (e.g., incomplete historical market data)
-- **Outdated values** (e.g., customer address has changed)
-- **Outliers or implausible values** (e.g., age = 250)
-- **Inconsistent formats or units** (e.g., dates stored as text, mixed currencies)
-- **Duplicate records** (e.g., customers with multiple accounts)
-- **Measurement or data entry errors** (e.g., human data entry, broken sensors)
-
-. . .
-
-**Typical data preparation actions**
-
-- **Correct** values (e.g., fix formatting or units)
-- **Remove** problematic observations
-- **Impute** missing values
-- **Collect additional data** if necessary
-
-. . .
-
-> In many real-world analytics projects, **data preparation and cleaning can take up to ~80% of the total effort.**
 
 
 # Univariate exploratory data analysis {data-stack-name="Univariate EDA"}
@@ -705,21 +707,24 @@ plt.show()
 ::: columns
 
 ::: {.column width="50%"}
-![](../images/5015_associates-degrees-_correlates-with_comments-on-oversimplified-youtube-videos.png){width=70% fig-align="center" }
+![](../images/5015_associates-degrees-_correlates-with_comments-on-oversimplified-youtube-videos.png){width=60% fig-align="center" }
 :::
 
 ::: {.column width="50%"}
-![](../images/1775_wind-power-generated-in-taiwan_correlates-with_google-searches-for-i-am-tired.png){width=70% fig-align="center" }
+![](../images/1775_wind-power-generated-in-taiwan_correlates-with_google-searches-for-i-am-tired.png){width=60% fig-align="center" }
 :::
 
 :::
 
-**Correlation does not imply causation!**
+{{< iconify fluent-mdl2:insights >}} Correlation does not imply causation.
 
 . . . 
 
-<br>
 {{< iconify fluent-mdl2:insights >}}  If causal explanations are unavailable, decisions may need to rely on predictions.
+
+. . . 
+
+{{< iconify fluent-mdl2:insights >}} Bivariate correlations are often insufficient for prediction or explanation, requiring more powerful analytical models.
 
 
 ::: aside
@@ -816,22 +821,59 @@ More examples are available at: [https://www.tylervigen.com/spurious-correlation
         </div>
 -->
 
-
 ## Clustering in EDA
 
 In **multivariate exploratory data analysis**, we often want to understand whether **observations form natural groups**.
 
-**Clustering** is a technique that automatically groups **similar observations** based on their characteristics.
+**Clustering** is an EDA technique that groups **similar observations** based on their characteristics.
 
 <br>
+Common use cases include:
 
-**Idea**: Objects within the same cluster should be **similar to each other**, but **different from objects in other clusters**.
+![](../images/clustering-use-cases.png){width=50% fig-align=center}
 
-. . .
-
-<br>
 
 <!--
+
+    * **Customer segmentation**
+
+      * identify groups of customers with similar purchasing behavior
+      * design differentiated marketing strategies
+
+    * **Product portfolio analysis**
+
+      * group products based on demand patterns
+      * identify substitutes or bundles
+
+    * **Market structure analysis**
+
+      * identify segments within a market
+      * understand competitive positioning
+-->
+
+
+::: {.notes}
+Timing: ~4 minutes.
+
+Emphasize: clustering is usually **not the final model**.
+It is used to **understand structure in the data**.
+
+Typical workflow:
+
+EDA → clustering → interpretation → downstream analytics.
+:::
+
+
+<!--
+    Instead of predicting an outcome, we **discover structure in the data**.
+    
+    
+    **Idea**: Objects within the same cluster should be **similar to each other**, but **different from objects in other clusters**.
+
+    . . .
+
+    <br>
+
     **Why clustering during EDA?**
 
     Clustering helps us:
@@ -840,66 +882,54 @@ In **multivariate exploratory data analysis**, we often want to understand wheth
     - identify **segments or groups**
     - detect **unusual observations**
     - generate **hypotheses for further analysis**
-
     . . .
+
+
+    ## Introductory example
+
+    Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:
+
+    1) FRESH: annual spending on fresh products (Continuous);
+    2) MILK: annual spending on milk products (Continuous);
+    3) GROCERY: annual spending on grocery products (Continuous);
+    4) FROZEN: annual spending on frozen products (Continuous);
+    5) DETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);
+    6) DELICATESSEN: annual spending on delicatessen products (Continuous);
+    7) CHANNEL: customers buying channel (Nominal);
+    8) REGION: customers region (Nominal)
+
+    > Your goal is to segment the users. That means finding similar types of users and bunching them together.  
+    > Why would you want to do this?  
+    > You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.  
+    > You might have a model that works better for specific groups. Or you might have different models for different groups.
 -->
 
-**Examples**
 
-- **Customer segmentation** in marketing
-- **Grouping similar products** based on purchasing patterns
-- **Identifying behavioral patterns** in users
-- **Detecting anomalies** in transactions
+## Families of clustering methods
 
+Clustering algorithms can be grouped into several **families of approaches**.
 
-## Introductory example
+| Family | Examples | Key characteristics |
+|------|------|------|
+| **Segmentation / Partitioning methods** | **k-means**, k-medoids (PAM), bisecting k-means | divide observations into *k predefined clusters*; scalable for **large datasets**; widely used for **business/customer segmentation** |
+| **Hierarchical methods** | **Agglomerative clustering**, divisive clustering | clusters formed through **successive merging or splitting**; produce **dendrograms (cluster trees)**; useful for **exploratory structure discovery** |
+| **Density-based methods** | DBSCAN, HDBSCAN | clusters defined as **regions of high density**; identify **arbitrary shapes** and **outliers/noise** |
+| **Probabilistic / model-based methods** | Gaussian mixture models | clusters modeled as **probability distributions**; allow **soft cluster membership** when groups overlap |
 
-Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:
+. . . 
 
-1) FRESH: annual spending on fresh products (Continuous);
-2) MILK: annual spending on milk products (Continuous);
-3) GROCERY: annual spending on grocery products (Continuous);
-4) FROZEN: annual spending on frozen products (Continuous);
-5) DETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);
-6) DELICATESSEN: annual spending on delicatessen products (Continuous);
-7) CHANNEL: customers buying channel (Nominal);
-8) REGION: customers region (Nominal)
+In this lecture we focus on **k-means** (segmentation) and **agglomerative hierarchical clustering**.
 
-> Your goal is to segment the users. That means finding similar types of users and bunching them together.  
-> Why would you want to do this?  
-> You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.  
-> You might have a model that works better for specific groups. Or you might have different models for different groups.
+::: {.notes}
+Timing: ~5 minutes.
 
+Goal: give students a quick mental map of clustering methods.
 
+Emphasize that many algorithms exist, but we focus on the two most intuitive and widely taught ones:
+- k-means
+- agglomerative hierarchical clustering.
+:::
 
-## Clustering: Overview
-
-Clustering groups **observations into clusters based on similarity** across **multiple variables**.
-
-**Input**
-
-- Each observation is described by **multiple attributes (multivariate data)**  
-- Example: customer spending on different product categories
-
-$$x_i = (x_{i1}, x_{i2}, ..., x_{im})$$
-
-Similarity between observations is typically measured using a **distance metric** (e.g., Euclidean distance).
-
-. . .
-
-**Types of clustering algorithms**
-
-- **Partitioning methods** (e.g., K-Means)
-- **Hierarchical methods** (agglomerative, divisive)
-- **Density-based methods** (e.g., DBSCAN)
-
-. . .
-
-⚠ **Important**
-
-Clustering algorithms will **always produce clusters**, even if the data has **no real structure**.
-
-Therefore, clusters must be **evaluated and interpreted carefully**.
 
 <!--
 
@@ -915,158 +945,547 @@ Therefore, clusters must be **evaluated and interpreted carefully**.
 
 -->
 
-## Partitioning cluster methods
+## Segmentation clustering
 
-The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.
+Segmentation methods divide observations into **k clusters**.
 
-Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).
+Goal:
 
-The objective is to find where  is the mean of points in Si.
+* maximize similarity **within clusters**
+* maximize differences **between clusters**
 
+The most widely used algorithm:
 
-> **Procedure of K-Means:**
+**k-means clustering**
 
-> Step 1: Randomly partition the data objects into k clusters.  
-> Step 2: Calculate the cluster centroids.  
-> Step 3: Calculate the distance from every data point to all centroids.  
-> Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.  
-> Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.
+Key assumption:
 
+clusters are roughly **spherical and similar in size**.
 
-## Example of a K-Means cluster analysis
+::: {.notes}
+Timing: ~2 minutes.
 
-![](../images/slides_327.png)
+Explain the intuition first before showing the algorithm.
+:::
 
 
-**Between cluster variance:**
+<!--
 
-**Within cluster variance:**
+      ## Partitioning cluster methods
 
-## Finding the Optimal Number of Clusters (I)
+      Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).
 
-> The aim of the cluster analysis is the segmentation of objects into clusters, which are preferably homogeneous in it selves and heterogeneous to each other. The less variance exists within the clusters and the more variance exists between the clusters, the better is the number of clusters.
+      The objective is to find where  is the mean of points in Si.
 
-> **Total variance:**
+-->
 
-> **Accumulated variance within the k clusters:**
+## k-means intuition
 
-> This results in the variance between the clusters:
+For a given **k**, the algorithm finds cluster centers that minimize **within-cluster sum of squares**.
 
-> with n = number of objects
+Steps:
 
-> m = number of attributes
+```{.python code-line-numbers="false"}
+Randomly assign data points to k clusters
 
+Repeat:
 
+    calculate centroids for each cluster
 
+    for each data point:
+        compute distance to all centroids
 
-## Finding the optimal number of clusters (II)
+        if x is not closest to its current centroid:
+            assign x to the nearest centroid
 
-> If you put V in on the ordinate and the number of cluster k on the abscissa, it often results in a curve with one or several kinks. At the point where exists the (first) significant kink, you can find the optimal number of clusters:
+    if no changes in centroids and cluster assignments:
+        break
+```
 
-> **Total variance V_tot**
+<!--
+        ```{.Markdown code-line-numbers="false"}
+        1. Randomly partition the data objects into k clusters.  
+        2. Calculate the cluster centroids.  
+        3. Calculate the distance from every data point to all centroids.  
+        4. If a data point is closest to its own centroid, leave it where it is.
+          If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.  
+        5. Repeat steps 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.
+        ```
+-->
 
-> **Between cluster variance V_betw**
+. . . 
 
-> **Within cluster variance V_in**
+Strengths:
 
-> **Number of clusters**
+* fast nad scalable
+* easy to interpret
 
+Limitations:
 
+* must choose **k**
+* sensitive to scaling and outliers.
 
+::: {.notes}
+Timing: ~4 minutes.
+:::
 
-## Finding the optimal number of clusters (III)
+## How cluster solutions evolve
 
-> Instead of visually identifying the optimal cluster number, we can calculate the distances from the points on the elbow curve to a straight line linking the first and the last point on the curve. The cluster number with the largest distance is then chosen as the one with the strongest kink.
+```{python}
 
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+import ipywidgets as widgets
 
+# generate synthetic data
+X, _ = make_blobs(n_samples=300, centers=4, cluster_std=1.2, random_state=42)
 
+def plot_k(k):
+    import matplotlib.pyplot as plt
+    from sklearn.cluster import KMeans
 
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    labels = kmeans.fit_predict(X)
 
-## Hierarchical cluster methods
+    plt.figure(figsize=(3.6, 2.8))
+    plt.scatter(X[:, 0], X[:, 1], c=labels, s=10)
+    plt.scatter(
+        kmeans.cluster_centers_[:, 0],
+        kmeans.cluster_centers_[:, 1],
+        c='red', marker='x', s=60, linewidth=2
+    )
+    plt.title(f"k={k}", fontsize=10)
+    plt.xticks([])
+    plt.yticks([])
+    plt.tight_layout()
+    plt.show()
+```
+
+<br>
 
-- There are two types of hierarchical cluster methods:
-  - Agglomerative hierarchical clustering is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.
-  - Divisive hierarchical clustering is a top-down clustering method. It works in a similar way to agglomerative clustering but in the opposite direction. This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.
+:::: {layout="[25,25,25,25]"}
 
+::: {.fragment}
+```{python}
+plot_k(1)
+```
+:::
 
+::: {.fragment}
+```{python}
+plot_k(2)
+```
+:::
 
+::: {.fragment}
+```{python}
+plot_k(3)
+```
+:::
 
-## Process of the hierarchical cluster analysis
+::: {.fragment}
+```{python}
+plot_k(4)
+```
+:::
 
+::: {.fragment}
+```{python}
+plot_k(5)
+```
+:::
 
+::: {.fragment}
+```{python}
+plot_k(6)
+```
+:::
 
+::: {.fragment}
+```{python}
+plot_k(7)
+```
+:::
 
-## Measuring similarity between clusters (I)
+::: {.fragment}
+<br><br><br>
+**…**
 
-![](../images/slides_328.png)
+:::
 
-> Distance between two clusters is the distance between the closest points:
+::::
 
-> **Complete Linkage:**
+## k-means in Python
 
-![](../images/slides_329.png)
+The following runs a k-means clustering analysis in Python:
+<br>
 
-> Distance between two clusters is the distance between the farthest pair of points:
+```python
+from sklearn.cluster import KMeans
 
-![](../images/slides_330.png)
+kmeans = KMeans(n_clusters=k)
+labels = kmeans.fit_predict(X)
+```
+. . .
 
-> Distance between two clusters i and j is the distance between their centroids:
+{{< iconify fluent-mdl2:insights >}}  `KMeans(...)` + `fit_predict(X)` runs the iterative algorithm we saw earlier:
 
+- initialize centroids  
+- assign points to nearest centroid  
+- update centroids  
+- repeat until convergence  
 
+. . .
 
+{{< iconify fluent-mdl2:insights >}} Input data `X` must have a specific structure, as discussed in data preparation:
 
-## Measuring similarity between clusters (II)
+- rows = observations (data points)  
+- columns = features (dimensions)  
 
-> **Average Linkage:**
+. . .
 
-> Distance between clusters is the average distance between the cluster points:
+**Example:**
 
-![](../images/slides_331.png)
+```python
+X = [
+    [1.2, 3.4],
+    [1.0, 3.0],
+    [5.5, 8.1],
+]
+```
 
-> **Ward’s Method / Minimum Variance Method (only Agglomerative):**
+<!--
+  👉 shape: `(n_samples, n_features)`
 
-![](../images/slides_332.png)
+  . . .
 
-> Ward's minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:
+  (We often generate such data synthetically for illustration.)
+-->
 
-> For a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf
+## Choosing the number of clusters
 
+A common heuristic is the **elbow method**.
 
+**Idea:**
 
+- increase k  
+- measure improvement in model fit  
+- look for point where improvement slows  
 
-## Single linkage example (I)
+. . .
 
-![](../images/slides_333.png)
+**Example metric:** within-cluster variance (inertia)
 
-::: aside
-— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
+```{python}
+#| fig-align: center
+#| out-width: 70%
+
+from sklearn.cluster import KMeans
+
+ks = range(1,10)
+inertia = []
+
+for k in ks:
+    model = KMeans(n_clusters=k, random_state=42)
+    model.fit(X)
+    inertia.append(model.inertia_)
+
+plt.figure(figsize=(5,3))
+plt.plot(ks, inertia, marker="o")
+plt.xlabel("k")
+plt.ylabel("Within-cluster variance")
+plt.title("Elbow method")
+plt.show()
+```
+
+. . .
+
+👉 Choose k at the **“elbow”** (diminishing returns)
+
+::: {.notes}
+Timing: ~3 minutes.
+
+Key point: inertia always decreases → we look for where gains flatten out.
+
+Emphasize: heuristic, not a strict rule.
+:::
+
+
+## Choosing the number of clusters
+
+An alternative is the **silhouette score**.
+
+**Idea:**
+
+- evaluate cohesion (within clusters)  
+- evaluate separation (between clusters)  
+- combine both into a single score  
+
+. . .
+
+👉 Choose k that **maximizes the score**
+
+```{python}
+#| fig-align: center
+#| out-width: 70%
+
+from sklearn.metrics import silhouette_score
+
+ks = range(2,10)
+scores = []
+
+for k in ks:
+    model = KMeans(n_clusters=k, random_state=42)
+    labels = model.fit_predict(X)
+    scores.append(silhouette_score(X, labels))
+
+plt.figure(figsize=(5,3))
+plt.plot(ks, scores, marker="o")
+plt.xlabel("k")
+plt.ylabel("Silhouette score")
+plt.title("Silhouette analysis")
+plt.show()
+```
+
+. . .
+
+👉 Higher = better separation and compactness
+
+::: {.notes}
+Contrast with elbow:
+
+- elbow → diminishing returns  
+- silhouette → clear maximum  
+
+Highlight: combines two criteria (cohesion + separation).
 :::
 
 
 
+## Hierarchical clustering
 
-## Single linkage example (II)
+Hierarchical clustering builds a **tree of clusters**.
 
-![](../images/slides_334.png)
+There are two types of hierarchical cluster methods:
 
-::: aside
-— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
-:::
+- **Agglomerative hierarchical clustering** is a bottom-up clustering method. It starts with every single data object in a single cluster.
+  Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.
+- **Divisive hierarchical clustering** is a top-down clustering method.
+  It works in a similar way to agglomerative clustering but in the opposite direction.
+  This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.
 
 
-
+<!-- https://www.bioinformaticscrashcourse.com/9.1_Clustering.html -->
 
 ## Dendrogram
 
-> A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g. euclidean distance) between the clusters.
+A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering.
+The y-axis represents the value of this distance metric (e.g. euclidean distance) between the clusters.
 
-> In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length. The red line in the graph below shows such a point:
+In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object.
+Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length.
 
-> Counting the points that cut this line might be a good answer for the number of clusters the data can have. It is the number 6 in this case.
+This allows us to explore clusters at **multiple levels of granularity**.
 
+
+```{python}
+#| fig-align: center
+#| out-width: 70%
+
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+Z = linkage(X, method='ward')
+
+plt.figure(figsize=(6,4))
+dendrogram(Z)
+plt.title("Dendrogram")
+plt.xlabel("Observations")
+plt.ylabel("Distance")
+plt.show()
+```
+
+
+## Measuring similarity between clusters
+
+When merging clusters, we must define **distance between clusters**.
+
+Common linkage choices:
+
+* **single linkage**
+
+  * nearest neighbor distance
+
+* **complete linkage**
+
+  * farthest neighbor distance
+
+* **average linkage**
+
+  * average pairwise distance
+
+* **Ward linkage**
+
+  * merges clusters minimizing variance increase.
+
+::: {.notes}
+Timing: ~3 minutes.
+
+Ward is often used with Euclidean distance.
+:::
+
+<!--
+
+      ## Measuring similarity between clusters (I)
+
+      ![](../images/slides_328.png)
+
+      > Distance between two clusters is the distance between the closest points:
+
+      > **Complete Linkage:**
+
+      ![](../images/slides_329.png)
+
+      > Distance between two clusters is the distance between the farthest pair of points:
+
+      ![](../images/slides_330.png)
+
+      > Distance between two clusters i and j is the distance between their centroids:
+
+
+      ## Measuring similarity between clusters (II)
+
+      > **Average Linkage:**
+
+      > Distance between clusters is the average distance between the cluster points:
+
+      ![](../images/slides_331.png)
+
+      > **Ward’s Method / Minimum Variance Method (only Agglomerative):**
+
+      ![](../images/slides_332.png)
+
+      > Ward's minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:
+
+      > For a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf
+
+
+      ## Single linkage example (I)
+
+      ![](../images/slides_333.png)
+
+      ::: aside
+      — Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
+      :::
+
+
+      ## Single linkage example (II)
+
+      ![](../images/slides_334.png)
+
+      ::: aside
+      — Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
+      :::
+
+-->
+
+
+## Validation and interpretation
+
+⚠ **Important**: All datasets can be clustered.
+
+Clustering algorithms will **always produce groups**, even when no meaningful structure exists.
+
+Therefore clusters must be **validated**.
+
+Common validation approaches:
+
+* **internal validation**
+
+  * silhouette score
+  * cluster stability
+
+* **external validation**
+
+  * compare with known labels or metadata
+
+* **interpretability checks**
+
+  * do cluster profiles make business sense?
+
+::: aside
+Based on @BalijepallyMangalarajIyengar2011.
+:::
+
+::: {.notes}
+Timing: ~3 minutes.
+
+Key warning:
+
+Clusters ≠ truth.
+They are hypotheses about structure in the data.
+:::
+
+
+
+## Why clustering is useful in analytics workflows
+
+Clustering often supports **later analytical steps**.
+
+For example:
+
+* **Customer segments in data warehouses**
+
+  * segments stored as features for reporting or dashboards
+
+* **Heterogeneity in regression models**
+
+  * different segments may follow different behavioral patterns
+  * subgroup analysis or separate models
+
+* **Machine learning pipelines**
+
+  * clustering can generate **features** or **latent groups**
+
+* **Hypothesis generation and model development**
+
+  * clusters can reveal **previously unnoticed patterns or structures**
+  * these patterns may suggest **new hypotheses** about behavior or relationships in the data
+  * clustering can therefore **inform model specification**, variable selection, or interaction terms
+
+::: {.notes}
+Timing: ~3 minutes.
+
+Key message:
+Clustering often produces **insights that guide later modeling**.
+:::
 
 ## Summary {data-state="hide-menubar"}
 
-TODO
+**Exploratory Data Analysis (EDA)** helps us understand data **before modeling**.
+
+
+**Key steps:**
+
+- **Prepare data**
+  - ensure data quality (missing values, outliers, formats)
+  - structure data appropriately (rows = observations, columns = features)
+
+- **Describe variables**
+  - univariate statistics (mean, variance, distributions)
+  - visualization (histograms, boxplots)
+
+- **Analyze relationships**
+  - multivariate patterns (correlation, scatterplots)
+  - ⚠ correlation ≠ causation
+
+- **Identify structure**
+  - segmentation (elbow method/silhouette score))
+  - hierarchical clustering (dendogram)
+
+
+{{< iconify fluent-mdl2:insights >}}   EDA is **not the final analysis**, but a **foundation** for model building, decision-making, and hypothesis generation.
+
 
 # References {data-state="hide-menubar"}
