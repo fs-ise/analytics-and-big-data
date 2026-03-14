@@ -46,6 +46,8 @@ See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
 
 Generally: generation of PDFs: local only?
 
+- Include "must-learn" markers: ``<!-- _class: must_learn -->``
+
 Plan to record timing (data in the repository) and data from google surveys - **TODO: session/exercise structure should be reflected in each survey**
 -> run separate surveys for the lecture/exercise to use the timestamps for the duration
 
