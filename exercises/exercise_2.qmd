@@ -1,336 +1,457 @@
 ---
-title: "Exercise 2: Structuring and preparing data"
+title: "Exercise 2: Preparing and exploring data"
 ---
 
-- repeat python data types (dict, pandas, ...)
-- what is "in memory"? (`%whos`)
-- start with a simple example of an excel spreadsheet, then check an API
-- example notebook: financial API (code for the api call should be included)
+In this notebook, we cover:
 
-**TODO: add a short exercise for downloading a dataset, and running common statistical functions (preparing a first jupyter notebook report)**
+1. Data structuring I
+2. Data structuring II
+3. Data cleansing
+4. EDA: Clustering
+5. Question Sets
 
+---
 
+# Part 1: Data structuring I
 
-::: {.learning-objectives}
-Explore data sets by using appropriate descriptive and visual techniques in Python:
-
-- Install packages (pandas / !pip install.. and requirements.txt)
-- Inspecting the structure of a dataset (variables, types, conversion)
-- Descriptive statistics
-- Visualizations (maybe even interactive?)
-
-TBD: include data preparation and data quality considerations?
-:::
-
-<!--
-You will create a small synthetic dataset, inspect it, and compute descriptive statistics with **pandas**.
--->
-
-This text will appear across all versions of the document.
+### Dataset `market_data_log.csv`
 
 ```{python}
-#| label: setup
-import numpy as np
+#| echo: false
 import pandas as pd
+from IPython.display import display
 
-rng = np.random.default_rng(42)
-
-n = 200
-df = pd.DataFrame({
-    "age": rng.integers(18, 66, size=n),
-    "department": rng.choice(["Sales", "Ops", "R&D"], size=n, p=[0.35, 0.40, 0.25]),
-    "remote_days_per_week": rng.integers(0, 6, size=n),
-})
-
-# base salary with department effects + noise
-dept_effect = df["department"].map({"Sales": 8000, "Ops": 5000, "R&D": 11000})
-df["salary_eur"] = (35000 + dept_effect + 250 * df["age"] + rng.normal(0, 6000, size=n)).round(0)
-
-# Inject a few missing values (common in real data)
-missing_idx = rng.choice(df.index, size=8, replace=False)
-df.loc[missing_idx[:4], "salary_eur"] = np.nan
-df.loc[missing_idx[4:], "remote_days_per_week"] = np.nan
-
-df.head()
+df1 = pd.read_csv("data/market_data_log.csv")
+display(df1.head())
 ```
+
+### Tasks
 
 :::{.direction}
-## Tasks
 
-1. **Inspect the data**
-   - Print `df.info()` and explain (in one sentence) what it tells you about missing values and dtypes.
+1. Identify:
 
-2. **Overall descriptive statistics**
-   - Use `df.describe()` for numeric columns.
-   - Report: mean and std of `salary_eur`, and the min/max of `age`.
+   * Values: _(your answer)_
+   * Observations: _(your answer)_
+   * Variables: _(your answer)_
+   * Units of observation: _(your answer)_
 
-3. **Group-wise descriptive statistics**
-   - Compute the **mean salary** and **median salary** by `department`.
-   - Compute the **mean remote_days_per_week** by `department` (handle missing values appropriately).
+2. Draft the **tidy structure** of the dataset by filling in the _X_:
 
-4. **One simple data-quality check**
-   - Count how many rows have **any missing value**.
-:::
+|    | _X_ | _X_ | _X_ | _X_ | _X_ | _X_ | _X_ |
+|---|---|---|---|---|---|---|---|
+| _X_ | _X_ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
+| _X_ | _X_ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
+| _..._ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
 
+3. Describe how the dataset should be transformed.
 
-::::{.sol}
+<br>
+_(your answer)_
+<br><br>
 
-:::{.callout-tip title="Solution"}
+4. **(Optional challenge)**: Implement the transformation in Python (pandas)
 
-```{python}
-print('hello world')
-```
-
-:::
-
-::::
-
-
-:::{.sol}
-## Solution
-
-### 1) Inspect the data
-```{python}
-df.info()
-```
-
-### 2) Overall descriptive statistics
-```{python}
-desc = df.describe()
-desc
-```
-
-```{python}
-salary_mean = df["salary_eur"].mean()      # skips NaN by default
-salary_std  = df["salary_eur"].std()
-age_min     = df["age"].min()
-age_max     = df["age"].max()
-
-salary_mean, salary_std, age_min, age_max
-```
-
-### 3) Group-wise descriptive statistics
-```{python}
-salary_by_dept = df.groupby("department")["salary_eur"].agg(["mean", "median", "count"])
-salary_by_dept
-```
-
-```{python}
-remote_by_dept = df.groupby("department")["remote_days_per_week"].mean()  # skips NaN
-remote_by_dept
-```
-
-### 4) Data-quality check
-```{python}
-rows_with_any_missing = df.isna().any(axis=1).sum()
-rows_with_any_missing
-```
-
-**Interpretation (example):**
-
-- `count` in the grouped salary table shows how many non-missing salary observations exist per department.
-- Group means ignore missing values unless you explicitly change that behavior.
-:::
-
-
-## Preface
-
-The purpose of this document is to give an introduction to data analytics with Python.
-We will use three main libraries for data analytics provided for Python. For special cases,
-we will use additional libraries as mentioned in the text.
-
-The three main libraries are:
-
-1. NumPy
-2. Pandas
-3. Scikit-learn
-
-## NumPy
-
-NumPy is an acronym for “Numeric Python” or “Numerical Python”. It is a library that
-provides a set of array and matrix data types which are essential for statistics, econometrics,
-and data analysis. They behave similarly to the data structures in Python. In addition,
-NumPy offers methods to manipulate and extract information from these structures.
-
-An introduction to NumPy can be found in the slides “Part 2: Introduction to Python” of
-the course “Introduction to Programming” (first semester Bachelor at Frankfurt School).
-
-## Pandas
-
-Pandas is a Python library that provides high-level data structures and a vast variety of tools
-for analysis. The great feature of this package is the ability to translate rather complex
-operations with data into one or two commands. Pandas contains many built-in methods
-for grouping, filtering, and combining data, as well as time-series functionality. All of this
-is followed by impressive speed indicators.
-
-In Chapter 1, an introduction to using DataFrames with Pandas is given.
-
-## Scikit-learn
-
-Scikit-learn provides a range of supervised and unsupervised learning algorithms via a
-consistent interface in Python. The library is focused on modeling data. It is not focused on
-loading, manipulating, and summarizing data. For these features, refer to NumPy and
-Pandas.
-
-The structure of the implementation of the algorithms always follows the same template,
-so that they can be used in the same way. Example for the implementation of a supervised
-learning algorithm:
-
-```{python}
-# Schematic example to illustrate a common estimator pattern.
-
-class ModelEstimator(object):
-    def __init__(self, param1="pvalue1"):
-        self.param1 = param1
-
-    def fit(self, X, y):
-        # X are input values, y are target values (supervised case)
-        # here the functionality for model estimation is implemented
-        return self
-
-    def predict(self, X):
-        # implementation of the predicting function
-        return X
-```
-
-
-## DataFrames with Pandas
-
-### DataFrames
-
-While a matrix is of simple structure intended for mathematical operations, a DataFrame is
-more suited to representing a table of data. It is a list of vectors of equal length. The top line
-of a DataFrame, called the header, contains the column names. Each horizontal line afterward
-denotes a data row.
-
-**TODO**: add illustration
-
-For example, the following variable df is a dataframe containing three vectors
-
-```{python}
+```python
 import pandas as pd
 
-data = {
-    "employee": ["John Doe", "Peter Gynn", "Jolie Hope"],
-    "salary": [21000, 23400, 26800],
-    "startdate": ["2010-11-1", "2008-3-25", "2007-3-14"],
-}
+df1 = pd.read_csv("data/market_data_log.csv")
 
-df = pd.DataFrame(data)
-df
+# Your solution
+```
+:::
+
+{{< iconify fluent-mdl2:insights >}} In addition to the transformation, you may need string operations
+
+:::{.sol}
+
+## Solution
+
+1. Identify:
+
+   * **Values:** Financial values encoded in the record (e.g., `150B`, `8.2B`)
+   * **Observations:** Individual logged measurements for a specific entity, period, and metric
+   * **Variables:** Timestamp, Logger system, Entity, Country, Sector, Period, Metric, Value
+   * **Units of observation:** One logged **entity–period–metric** measurement
+
+---
+
+2. Draft the **tidy structure** of the dataset:
+
+| timestamp           | logger_sys      | Entity | Country | Sector | Period | Metric    | Value |
+| ------------------- | --------------- | ------ | ------- | ------ | ------ | --------- | ----- |
+| 2023-03-15 10:22:01 | FIN-PIPELINE-V1 | SAP    | DE      | Tech   | 2023Q1 | MarketCap | 150B  |
+| 2023-03-15 10:22:01 | FIN-PIPELINE-V1 | SAP    | DE      | Tech   | 2023Q1 | Revenue   | 8.2B  |
+| 2023-06-10 08:11:45 | FIN-PIPELINE-V1 | Apple  | US      | Tech   | 2023Q2 | MarketCap | 2800B |
+| ...                 | ...             | ...    | ...     | ...    | ...    | ...       | ...   |
+
+---
+
+3. Describe how the dataset should be transformed.
+
+* **Parse encoded column:**
+
+  * The `Record` column contains multiple variables concatenated with `-`
+  * Split into: `Entity`, `Country`, `Sector`, `Period`, `Metric`, `Value`
+
+* **Handle inconsistencies:**
+
+  * Standardize period format (e.g., `2024-Q1` → `2024Q1`)
+
+* **Keep structured metadata:**
+
+  * `timestamp` and `logger_sys` are already tidy and should be retained
+
+* **Optional refinement:**
+
+  * Convert `Value` into numeric format (e.g., remove `B` and cast to float)
+
+---
+
+4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+
+```python
+import pandas as pd
+
+# Load data
+df = pd.read_csv("data/market_data_log.csv")
+
+# Step 1: clean minor inconsistencies (e.g., 2024-Q1 → 2024Q1)
+df["Record"] = df["Record"].str.replace(r"(\d{4})-Q", r"\1Q", regex=True)
+
+# Step 2: split encoded column
+split_cols = df["Record"].str.split("-", expand=True)
+split_cols.columns = ["Entity", "Country", "Sector", "Period", "Metric", "Value"]
+
+# Step 3: combine with original dataframe
+df_tidy = pd.concat([df.drop(columns=["Record"]), split_cols], axis=1)
+
+# Optional: convert Value to numeric (remove 'B')
+df_tidy["Value_numeric"] = df_tidy["Value"].str.replace("B", "", regex=False).astype(float)
+
+df_tidy.head()
 ```
 
-The result of this is a dataframe named df. The numbers on the left side of the rows are labels
-and **not** the indexes. You can inspect the structure using the dtypes property
+:::
+
+---
+
+# Part 2: Data structuring II
+
+### Dataset `sales_data_channels_full_year.csv`
 
 ```{python}
-df.dtypes
+#| echo: false
+import pandas as pd
+from IPython.display import display
+
+df2 = pd.read_csv("data/sales_data_channels_full_year.csv")
+display(df2.head())
 ```
 
-To retrieve data Pandas provide various variants in order to get purely integer based indexing.
-Like python and numpy, these are 0-based indexing. The various access variants are an integer,
-a list of integers, and a range of values. Examples
+### Tasks
+
+:::{.direction}
+
+1. Identify:
+
+   * Values: _(your answer)_
+   * Observations: _(your answer)_
+   * Variables: _(your answer)_
+   * Units of observation: _(your answer)_
+
+2. Draft the **tidy structure** of the dataset by filling in the _X_:
+
+| _X_  | _X_ | _X_ | _X_ | _X_ |
+|---|---|---|---|---|
+| _X_ | _X_ | _X_ | _..._ | _..._ |
+| _X_ | _X_ | _..._ | _..._ | _..._ |
+| _..._ | _..._ | _..._ | _..._ | _..._ |
+
+3. Describe how the dataset should be transformed.
+
+<br>
+_(your answer)_
+<br><br>
+
+4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+
+```python
+import pandas as pd
+
+df1 = pd.read_csv("data/market_data_log.csv")
+
+# Your solution
+```
+
+{{< iconify fluent-mdl2:insights >}} In addition to the transformation, you may need string operations
+
+:::
+
+:::{.sol}
+
+## Solution
+
+1. Identify:
+
+   * Values: Numerical sales values (215, 201, 240, ...)
+   * Observations: Individual sales measurements for a specific customer, month, and channel
+   * Variables: CustomerID, Region, Month, Channel, Sales
+   * Units of observation: A customer–month–channel combination
+
+2. Draft the **tidy structure** of the dataset:
+
+| Customer_ID | Region | Month | Channel | Sales |
+| ----------- | ------ | ----- | ------- | ----- |
+| CUST-AB12CD | EU     | Jan   | Online  | 120   |
+| CUST-AB12CD | EU     | Jan   | Store   | 95    |
+| CUST-AB12CD | EU     | Feb   | Online  | 135   |
+| ...         | ...    | ...   | ...     | ...   |
+
+3. Describe how the dataset should be transformed.
+
+- Reshape (wide → long): Convert all monthly/channel columns into two columns
+- Split the combined column (Month, Channel)
+
+4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+
+   * Hint: in addition to the transformation, you may need string operations
+
+```python
+import pandas as pd
+
+# Load data
+df = pd.read_csv("data/sales_data_channels_full_year.csv")
+
+# Step 1: reshape to long format
+df_long = df.melt(
+    id_vars=["Customer_ID", "Region"],
+    var_name="Month_Channel",
+    value_name="Sales"
+)
+
+# Step 2: split Month and Channel
+df_long[["Month", "Channel"]] = df_long["Month_Channel"].str.split("_", expand=True)
+
+# Step 3: drop Month_Channel
+df_tidy = df_long.drop(columns=["Month_Channel"])
+
+df_tidy.head()
+```
+
+:::
+
+---
+
+# Part 3: Data cleansing
+
+
+### Dataset `messy_customer_data.csv`
 
 ```{python}
-df.iloc[0,1] # element in first row, second column
-df.iloc[:,0] # all rows, first column
-df.iloc[1:3,1] # second to third row, second column
-df.iloc[:,-2] # all rows, second column from the end
-df.iloc[-1,:] # last row, all columns
-df.iloc[[0, 2], [1, 2]] # first and third row, second to third column
+#| echo: false
+import pandas as pd
+from IPython.display import display
+
+df3 = pd.read_csv("data/messy_customer_data.csv")
+display(df3.head(20))
 ```
 
-Pandas provides too various methods of label based indexing. The loc function takes two
-single/list/range operators separated by a comma. The first one indicates the row and the
-second one indicates columns. Examples
+---
+
+## Tasks
+
+### 1. Identify Scales of Variables
+
+* What type of scale is each variable?
+
+  * TODO
+
+* What type of scale should each variable be?
+
+---
+
+### 2. Explore Dataset Structure
+
+```python
+df3 = pd.read_csv("data/messy_customer_data.csv")
+
+df3.info()
+df3.describe()
+```
+
+* What do you observe?
+
+---
+
+### 3. Univariate Analysis
+
+#### Visual Analysis
+
+```python
+import matplotlib.pyplot as plt
+
+df["age"].hist()
+plt.title("Age Distribution")
+plt.show()
+
+df.boxplot(column="income")
+plt.title("Income Boxplot")
+plt.show()
+```
+
+* What patterns do you observe?
+
+---
+
+### 4. Identify Data Quality Issues
+
+* Missing values:
+* Outliers:
+* Inconsistencies:
+
+---
+
+### 5. Propose Data Preparation Steps
+
+* How would you handle:
+
+  * Missing values?
+  * Outliers?
+  * Data types?
+
+---
+
+### *(Optional challenge)* Implement in Python (pandas)
 
 ```{python}
-df.loc[1:2,:] # row with labels 1 and 2, all columns
-df.loc[1:2] # same as above
-df.loc[1:2, 'salary'] # row with labels 1 and 2, column with name salary
-df.loc [1:2, ['employee','salary']] # second to third row, columns with names employee and salary
-df.loc[df.loc[:,'salary']>23000] # all rows where salary>23000, all columns
-# df.loc[data['subset'] == 'train',:] # all rows where the dataframe data has the value 'train' in column subset
+# Your solution
 ```
 
-The loc function can even be used to add a new row to a dataframe
+---
+
+# Part 4: EDA: Clustering
+
+## Dataset
 
 ```{python}
-df.loc[len(df)] = ["Mike Tyson", 19400, "2018-6-27"]
-df
+from sklearn.datasets import make_blobs
+
+X, _ = make_blobs(n_samples=200, centers=4, random_state=42)
+df_cluster = pd.DataFrame(X, columns=["feature_1", "feature_2"])
+
+df_cluster.head()
 ```
 
-A new column can be added via
+---
+
+## Tasks
+
+### 1. Apply K-Means Clustering
 
 ```{python}
-df['age'] = [35, 42, 19, 43]
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Try different K values
+k_values = [2, 3, 4, 5]
+
+for k in k_values:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    labels = kmeans.fit_predict(df_cluster)
+
+    plt.scatter(df_cluster["feature_1"], df_cluster["feature_2"], c=labels)
+    plt.title(f"K-Means with K={k}")
+    plt.show()
 ```
 
-A column can be deleted via the drop command
+* Which number of clusters seems most appropriate?
+
+---
+
+### *(Optional)* Use Silhouette Score
 
 ```{python}
-df = df.drop('age', axis = 1)
+from sklearn.metrics import silhouette_score
+
+for k in k_values:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    labels = kmeans.fit_predict(df_cluster)
+    score = silhouette_score(df_cluster, labels)
+    print(f"K={k}, Silhouette Score={score}")
 ```
 
-Two dataframes can be combined using the concat function. Combining two dataframes row-wise
+* Which K is optimal?
+
+---
+
+### *(Additional Challenge)* Hierarchical Clustering
 
 ```{python}
-df1 = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})
-df2 = pd.DataFrame({'A':['CA', 'CB'], 'B':['DA', 'DB']})
-df3 = pd.concat([df1, df2])
-print(df3)
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+linked = linkage(df_cluster, method='ward')
+
+dendrogram(linked)
+plt.title("Dendrogram")
+plt.show()
 ```
 
-Combining two dataframes column-wise
+* How many clusters does the dendrogram suggest?
+
+---
+
+### 2. Add Cluster Labels
 
 ```{python}
-dfa = pd.DataFrame({'A':['AA', 'AB'], 'B':['BA', 'BB']})
-dfb = pd.DataFrame({'C':['CA', 'CB'], 'D':['DA', 'DB']})
-dfc = pd.concat([dfa, dfb], axis=1)
-print(dfc)
+kmeans = KMeans(n_clusters=3, random_state=42)
+df_cluster["cluster"] = kmeans.fit_predict(df_cluster)
+
+df_cluster.head()
 ```
 
-### Import and Export
+---
+
+### 3. Grouped Boxplots
 
 ```{python}
-# data = pd.read_csv("filename.csv")
-# data = pd.read_excel("filename.xlsx")
-# data.to_csv("output.csv", index=False)
+df_cluster.boxplot(column="feature_1", by="cluster")
+plt.title("Feature 1 by Cluster")
+plt.show()
 ```
 
-### Basic Statistical Functions for DataFrames
+* How do clusters differ?
 
-A large number of methods compute basic statistical measures on a DataFrame.
-Most of them are aggregations such as `sum` and `mean`.
+---
 
-```{python}
-# data.sum()
-```
+# Part 5: Question Sets
 
-```{python}
-# data.iloc[:, 1:7].cumsum()
-```
+## Question 1
 
-### Common statistical functions in Pandas
+**Why would we NOT create a histogram of customer names?**
 
-| Function     | Description                             |
-|-------------|------------------------------------------|
-| `count()`   | Number of non-null observations          |
-| `sum()`     | Sum of values                            |
-| `mean()`    | Mean of values                           |
-| `median()`  | Median of values                         |
-| `mode()`    | Mode of values                           |
-| `std()`     | Standard deviation of the values         |
-| `min()`     | Minimum value                            |
-| `max()`     | Maximum value                            |
-| `abs()`     | Absolute value                           |
-| `prod()`    | Product of values                        |
-| `cumsum()`  | Cumulative sum                           |
-| `cumprod()` | Cumulative product                       |
+* Discuss:
 
+  * Type of variable
+  * Mathematical operations required for histograms
 
+---
 
+## Question 2
 
-## Exam prep
+**Why is a histogram for age different?**
 
-TODO : include specific questions/tasks that could be included in the exam.
+* Why counting raw values may not be meaningful
+* Why grouping into intervals makes sense
+
+---
+
+# Summary
+
+In this notebook, you practiced:
+
+* Structuring data in a tidy format
+* Preparing and exploring datasets
+* Identifying data quality issues
+* Applying clustering methods
+* Reflecting on conceptual foundations of data analysis

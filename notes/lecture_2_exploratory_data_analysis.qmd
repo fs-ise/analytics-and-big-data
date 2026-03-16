@@ -197,8 +197,9 @@ But: Sometimes it is better to know/predict something even if we cannot explain 
 
 
 
-
 ## Exercise
 
 Note: focus on pandas df (not so much on other Python datatypes)
 Possible extension: financial API (code for the api call should be included)
+
+Implementation in Python/pandas: level of difficulty: use the library documentation vs. use ChatGPT
