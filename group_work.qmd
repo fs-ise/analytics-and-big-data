@@ -5,6 +5,10 @@ format: html
 
 ::: callout-note
 
+Written paper: 60 points (code added in separate file)
+-> project: end of module
+-> nach der letzten VL: 6 Wochen Zeit.
+
 TODO:
 
 - schedule
@@ -12,6 +16,9 @@ TODO:
 - criteria
 
 See [CS109A: Introduction to Data Science projects](https://harvard-iacs.github.io/2018-CS109A/pages/projects.html)
+
+-> complete the analyses and explain why it illustrates or complements the contents covered in the course (-> draw inspiration for teaching cases)
+
 :::
 
 # Guidelines for the Group Projects
