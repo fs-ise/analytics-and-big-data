@@ -80,6 +80,7 @@ slides-clean:
 .PHONY: exercises-assign exercises-solution exercises
 
 exercises-assign:
+	rm -f _site/exercises/*_assign.*
 	$(QUARTO) render exercises --profile assign --to ipynb --no-clean
 	$(QUARTO) render exercises --profile assign --to html --no-clean
 	for f in _site/exercises/*.ipynb; do \
@@ -92,6 +93,7 @@ exercises-assign:
 	done
 
 exercises-solution:
+	rm -f _site/exercises/*_solution.*
 	$(QUARTO) render exercises --profile solution --to ipynb --no-clean
 	$(QUARTO) render exercises --profile solution --to html --no-clean
 
