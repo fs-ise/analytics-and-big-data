@@ -19,96 +19,27 @@ date: "2026-03-23"
 ## Table of contents {data-state="hide-menubar"}
 <ul class="menu"><ul>
 
-# Foundations {data-stack-name="Foundations"}
+## Foundations {data-state="hide-menubar"}
+
+Before building analytical models, analysts typically engage in **data preparation and exploratory data analysis (EDA)**.
+
+These activities are **closely intertwined and often iterative**:
+we prepare and structure the data while simultaneously exploring it to understand its characteristics and potential issues.
+
+Typical activities include:
+
+* **Data preparation** (e.g., structuring, cleansing, integration)
+* **Descriptive statistics** (e.g., mean, variance, frequencies)
+* **Visualization techniques** (e.g., histograms, boxplots, scatterplots)
+
+**Goal:**
+develop an initial understanding of the data, detect patterns or anomalies, and ensure that the data is suitable for further analysis or modeling.
+
+
+# Data preparation {data-stack-name="Data preparation"}
 
 <br><br>
 
-> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
-
-## The role of EDA
-
-**Exploratory Data Analysis (EDA)** is the process of **examining and summarizing data to understand its main characteristics before building analytical models.**
-
-EDA typically involves:
-
-- **Descriptive statistics** (e.g., mean, variance, frequencies)
-- **Data quality checks** (e.g., missing values, outliers)
-- **Visualization techniques** (e.g., histograms, boxplots, scatterplots)
-
-**Goal:** gain intuition about the data, detect patterns or anomalies, and prepare the data for further analysis or modeling.
-
-. . . 
-
-<br>
-
-The following forms of EDA are typically distinguished:
-
-<table style="border-collapse:collapse; margin:auto; font-size:20px; text-align:center;">
-  <tr>
-    <td style="border:none; width:170px;"></td>
-    <td style="border:none; padding:10px 24px; font-weight:600;">Univariate</td>
-    <td style="border:none; padding:10px 24px; font-weight:600;">Multivariate</td>
-  </tr>
-  <tr>
-    <td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">Non-graphical</td>
-    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-      mean, median<br>frequencies
-    </td>
-    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-      cross-tabs<br>correlations
-    </td>
-  </tr>
-  <tr>
-    <td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">Graphical</td>
-    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-      histograms<br>dot plots
-    </td>
-    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-      scatter plots<br>clustering
-    </td>
-  </tr>
-</table>
-
-
-<!--
-    > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
-    
-    > In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
-
-    > Reasons for EDA:
-    - gain intuition about the data
-    - make comparisons between distributions
-    - sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
-    - find out where data is missing or if there are outliers
-    - summarize the data
-
-
-      process (pre-model), aims, techniques (graphical, non-graphical, ...)
-
-      **"Limitations of EDA"**
-
-      - Descriptive vs. inferential statistics
-      - no model/explanation/prediction (correlation vs causality)
-      - sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings)
-      -> starting point for building predictions (explanations, hypotheses, models, causality)
-
-      ## EDA / TODO
-
-      Non-graphical exploratory data analysis is the first step when beginning to analyze the data.
-      This preliminary data analysis step focuses on four points:
-
-      - measures of central tendency, i.e. mean and median^[The median, known as 50th percentile, is more resistant to outliers.].
-      - measures of spread, i.e. variance, standard deviation, and interquartile range
-      - the shape of the distribution
-      - the existence of outliers
-
-      TODO: data quality (and required preparation) instead of just outliers?!
-
-
-      > The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
-
-      ![](../images/slides_188.png)
--->
 
 ## Data types
 
@@ -210,41 +141,207 @@ Due to the different mathematical properties, not all statistical measures can b
 
 <br>
 
-::: aside
-(X) The frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low
+<p style="font-size:0.8em; color:gray;">
+\(X\) The frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low
+</p>
+
+
+::: {.learning_note .fragment}
+**Learning focus**
+
+No need to memorize the table.  
+Be able to **explain the scales and give examples of operations that are appropriate**.
 :::
 
 
-## Data quality checks
+## Data quality and preparation
 
-Before conducting analysis, we must ensure that the **data is fit for use** [@StrongLeeWang1997].
-
-Common data quality issues include:
+In business analytics, we rarely work with carefully curated datasets. Instead, data often comes from **multiple systems, processes, and teams**, where it is primarily created for **operational purposes rather than analysis**.
+Because these data sources are not always standardized or under the analyst’s control, quality issues are common:
 
 - **Missing values** (e.g., incomplete historical market data)
 - **Outdated values** (e.g., customer address has changed)
-- **Outliers or implausible values** (e.g., age = 250)
+<!--- **Outliers or implausible values** (e.g., age = 250) -->
 - **Inconsistent formats or units** (e.g., dates stored as text, mixed currencies)
 - **Duplicate records** (e.g., customers with multiple accounts)
 - **Measurement or data entry errors** (e.g., human data entry, broken sensors)
 
+
 . . .
+
+Before conducting analysis, we must ensure that the **data is fit for use** [@StrongLeeWang1997].
+
+::: {.highlight_must_learn}
 
 **Typical data preparation actions**
 
-TODO/TBD: also make sure that observations are in rows (features/dimensions in columns)?
+1. Data structuring
+2. Data cleansing
+3. Data integration
+4. Data transformation
 
-- **Correct** values (e.g., fix formatting or units)
-- **Remove** problematic observations
-- **Impute** missing values
-- **Collect additional data** if necessary
+:::
 
-. . .
+. . . 
 
-> In many real-world analytics projects, **data preparation and cleaning can take up to ~80% of the total effort.**
+{{< iconify fluent-mdl2:insights >}} In many real-world analytics projects, **data preparation and cleaning can take up to ~80% of the total effort.**
+
+## Data structuring: Example
+
+There are many ways to structure the same dataset.
+<br>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+**Option A (wide)**
+
+| Region | Year | Sales_Q1 | Sales_Q2 | Sales_Q3 | Sales_Q4 |
+|------|------|------|------|------|------|
+| Europe | 2023 | 120 | 140 | 160 | 150 |
+| Asia | 2023 | 100 | 110 | 120 | 130 |
+
+:::
+
+::: {.column width="40%"}
+
+**Option B (long)**
+
+| Region | Year | Quarter | Sales |
+|------|------|------|------|
+| Europe | 2023 | Q1 | 120 |
+| Europe | 2023 | Q2 | 140 |
+| Europe | 2023 | Q3 | 160 |
+| Europe | 2023 | Q4 | 150 |
+| Asia | 2023 | Q1 | 100 |
+| Asia | 2023 | Q2 | 110 |
+| Asia | 2023 | Q3 | 120 |
+| Asia | 2023 | Q4 | 130 |
+
+:::
+
+::::
+
+➡ **Which would you select as an input for a data analytics tool?**
+
+. . . 
+
+<br>
+
+→ Solution: **Option B**, because this is what **data analytics tools typically expect**.
 
 
-## Data preparation: Formatting
+## Data structuring: Principles
+
+Data structure typically expected by data analytics tools
+
+<br>
+
+::: {.highlight_must_learn}
+
+**Vocabulary**
+
+- A **dataset** is a collection of **values** (e.g., nominal, categorical, numeric).
+- Each value belongs to a **variable** and an **observation**
+
+**Expected data structure**
+
+- Each variable forms a column
+- Each observation forms a row
+- Each type of observational unit forms a table
+
+:::
+
+
+::: aside
+Based on @Wickham2014
+:::
+
+
+## Data structuring: Example continued
+
+**Dataset  `df` (wide)**
+
+| Region | Year | Sales_Q1 | Sales_Q2 | Sales_Q3 | Sales_Q4 |
+|------|------|------|------|------|------|
+| Europe | 2023 | 120 | 140 | 160 | 150 |
+| Asia | 2023 | 100 | 110 | 120 | 130 |
+
+
+<!--
+    ```python
+
+    import pandas as pd
+
+    df = pd.DataFrame({
+        "Region": ["Europe", "Asia"],
+        "Year": [2023, 2023],
+        "Sales_Q1": [120, 100],
+        "Sales_Q2": [140, 110],
+        "Sales_Q3": [160, 120],
+        "Sales_Q4": [150, 130],
+    })
+
+    df
+    ```
+-->
+
+Convert wide → long (tidy)
+
+```python
+long_df = df.melt(
+    id_vars=["Region", "Year"],
+    var_name="Quarter",
+    value_name="Sales"
+)
+
+long_df
+```
+
+. . . 
+
+Result:
+
+| Region | Year | Quarter  | Sales |
+| ------ | ---- | -------- | ----- |
+| Europe | 2023 | Sales_Q1 | 120   |
+| Asia   | 2023 | Sales_Q1 | 100   |
+| Europe | 2023 | Sales_Q2 | 140   |
+| Asia   | 2023 | Sales_Q2 | 110   |
+| ...    | ...  | ...      | ...   |
+
+## Data structuring: Example continued
+
+As a last step, we need to clean the `Quarter` column by removing the `"Sales_"` prefix:
+
+```python
+long_df["Quarter"] = long_df["Quarter"].str.replace("Sales_", "")
+```
+
+. . . 
+
+<br>
+
+Final tidy dataset:
+
+| Region | Year | Quarter | Sales |
+| ------ | ---- | ------- | ----- |
+| Europe | 2023 | Q1      | 120   |
+| Europe | 2023 | Q2      | 140   |
+| Europe | 2023 | Q3      | 160   |
+| Europe | 2023 | Q4      | 150   |
+| Asia   | 2023 | Q1      | 100   |
+| Asia   | 2023 | Q2      | 110   |
+| Asia   | 2023 | Q3      | 120   |
+| Asia   | 2023 | Q4      | 130   |
+
+
+::: aside
+Note: we will cover selected transformation operations like melt in the exercises.
+:::
+
+## Data structuring: Formatting
 
 ::: columns
 
@@ -291,7 +388,153 @@ This **severely limits analysis**.
 {{< iconify fluent-mdl2:insights >}} Data preparation transforms raw data into **formats that allow meaningful mathematical operations and analysis**.
 
 
+## Data Cleansing
+
+| Data issue                    | Example                                         | Data cleansing action                                                          |
+| ----------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------ |
+| Missing values                | Historical market data missing for some days    | Impute values (e.g., interpolate prices), fill with mean/median, or mark as NA |
+| Outdated values               | Customer moved but old address still stored     | Update records from CRM, external address verification service                 |
+| Outliers / implausible values | Age = 250, salary = −5000                       | Detect and remove, cap values, or replace with plausible values                |
+| Inconsistent formats          | Dates stored as `"03/01/23"` and `"2023-01-03"` | Standardize to a single format (e.g., ISO date `YYYY-MM-DD`)                   |
+| Inconsistent units            | Revenue in USD and EUR mixed in one column      | Convert to common currency                                                     |
+| Duplicate records             | Same customer registered twice                  | Identify duplicates and merge records                                          |
+| Data entry errors             | `"Munich"` vs `"Munch"`                         | Correct spelling using reference tables                                        |
+| Sensor errors                 | Temperature sensor reports `9999`               | Remove invalid values or replace with interpolated measurements                |
+
+## Data integration
+
+Organizations often store data in **different systems** (e.g., CRM, sales systems, web analytics).  
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Customer database (CRM)**
+
+| Customer_ID | Name | Country | Email |
+|---|---|---|---|
+| 101 | Alice | Germany | alice@example.com |
+| 102 | Bob | France | bob@example.com |
+| 103 | Clara | Germany | clara@example.com |
+
+:::
+
+::: {.column width="50%"}
+
+**Sales transactions**
+
+| Customer_ID | Order_ID | Revenue |
+|---|---|---|
+| 101 | 5001 | 200 |
+| 101 | 5002 | 150 |
+| 103 | 5003 | 300 |
+
+:::
+
+::::
+
+For analysis, we can **integrate these datasets** using the shared key `Customer_ID`.
+
+```python
+integrated_data = customers.merge(sales, on="Customer_ID")
+```
+
+. . . 
+
+This creates a combined dataset that links customer information with sales.
+
+| Customer_ID | Name  | Country | Email                                         | Order_ID | Revenue |
+| ----------- | ----- | ------- | --------------------------------------------- | -------- | ------- |
+| 101         | Alice | Germany | [alice@example.com](mailto:alice@example.com) | 5001     | 200     |
+| 101         | Alice | Germany | [alice@example.com](mailto:alice@example.com) | 5002     | 150     |
+| 103         | Clara | Germany | [clara@example.com](mailto:clara@example.com) | 5003     | 300     |
+
+
+. . . 
+
+{{< iconify fluent-mdl2:insights >}} For analytical purposes, **redundant values are often acceptable**. The goal is to organize data into a **tidy structure**, where **each row represents one observation** and all relevant variables are available for analysis.
+
+::: aside
+Note: We will cover data integration in more detail in the next lecture.
+:::
+
+
 # Univariate exploratory data analysis {data-stack-name="Univariate EDA"}
+
+
+<br>
+
+The following forms of EDA are typically distinguished:
+
+<table style="border-collapse:collapse; margin:auto; font-size:20px; text-align:center;">
+  <tr>
+    <td style="border:none; width:170px;"></td>
+    <td style="border:none; padding:10px 24px; font-weight:600;">Univariate</td>
+    <td style="border:none; padding:10px 24px; font-weight:600;">Multivariate</td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">Non-graphical</td>
+    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+      mean, median<br>frequencies
+    </td>
+    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+      cross-tabs<br>correlations
+    </td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">Graphical</td>
+    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+      histograms<br>dot plots
+    </td>
+    <td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+      scatter plots<br>clustering
+    </td>
+  </tr>
+</table>
+
+> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
+
+<!--
+    > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
+    
+    > In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
+
+    > Reasons for EDA:
+    - gain intuition about the data
+    - make comparisons between distributions
+    - sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
+    - find out where data is missing or if there are outliers
+    - summarize the data
+
+
+      process (pre-model), aims, techniques (graphical, non-graphical, ...)
+
+      **"Limitations of EDA"**
+
+      - Descriptive vs. inferential statistics
+      - no model/explanation/prediction (correlation vs causality)
+      - sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings)
+      -> starting point for building predictions (explanations, hypotheses, models, causality)
+
+      ## EDA / TODO
+
+      Non-graphical exploratory data analysis is the first step when beginning to analyze the data.
+      This preliminary data analysis step focuses on four points:
+
+      - measures of central tendency, i.e. mean and median^[The median, known as 50th percentile, is more resistant to outliers.].
+      - measures of spread, i.e. variance, standard deviation, and interquartile range
+      - the shape of the distribution
+      - the existence of outliers
+
+      TODO: data quality (and required preparation) instead of just outliers?!
+
+
+      > The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
+
+      ![](../images/slides_188.png)
+-->
+
+
 
 ## Descriptive statistics
 
@@ -979,7 +1222,7 @@ Explain the intuition first before showing the algorithm.
 
 -->
 
-## k-means intuition
+## k-means algorithm
 
 For a given **k**, the algorithm finds cluster centers that minimize **within-cluster sum of squares**.
 
@@ -988,7 +1231,7 @@ Steps:
 ```{.python code-line-numbers="false"}
 Randomly assign data points to k clusters
 
-Repeat:
+Loop:
 
     calculate centroids for each cluster
 
@@ -1017,7 +1260,7 @@ Repeat:
 
 Strengths:
 
-* fast nad scalable
+* fast and scalable
 * easy to interpret
 
 Limitations:
@@ -1117,6 +1360,10 @@ plot_k(7)
 
 ::::
 
+::: aside
+**Note:** The plots show the final result after the algorithm has converged, i.e., once observation assignments and cluster centroids no longer change.
+:::
+
 ## k-means in Python
 
 The following runs a k-means clustering analysis in Python:
@@ -1143,8 +1390,6 @@ labels = kmeans.fit_predict(X)
 
 - rows = observations (data points)  
 - columns = features (dimensions)  
-
-. . .
 
 **Example:**
 

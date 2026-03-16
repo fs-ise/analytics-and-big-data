@@ -9,6 +9,11 @@ TODO
 
 Contents based on: [EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf](/home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf)
 
+<!--
+        https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/pages/clustering/assignment-6/
+        https://archive.ics.uci.edu/dataset/292/wholesale+customers
+-->
+
 ## Learning Objectives
 
 After this session, students should be able to:
@@ -35,6 +40,17 @@ Data preparation:
 - Data quality measures are relatively limited (focused on outliers)
 - Data preparation (manual correction or the use of synthetic data) are even discarded as a questionable research practice
 
+
+## Data structuring
+
+- Need to develop the intuition and clear understanding of how data should be structured.
+- Go back to the examples: and highlight values, variables, observations. Define observational unit. The wide format is an output in a report, not an input.
+Observational unit: **Quarterly sales per region** (implicitly: across years)
+
+
+## Data integration
+
+Question: what does the "merge()" method correspond to in SQL?
 
 Metaphor: statisticians carefully collect their data on their own (live on their own island) - business analysts have to work with existing data (which can be very messy)
 
@@ -177,3 +193,12 @@ But: Sometimes it is better to know/predict something even if we cannot explain 
 - Start simple: univariate → multivariate → visual
 - Focus on business questions, not just techniques
 - Visualization is a core analytical skill, not just decoration
+
+
+
+
+
+## Exercise
+
+Note: focus on pandas df (not so much on other Python datatypes)
+Possible extension: financial API (code for the api call should be included)

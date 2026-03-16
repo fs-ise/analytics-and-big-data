@@ -41,16 +41,16 @@ date: "2026-03-30"
 
 <br><br>
 
-|                           | Operational Data        | Analytical Data                          |
-|---------------------------|-------------------------|------------------------------------------|
-| Target group              | Operational employees   | Management, Analysts                     |
-| Access frequency          | High                    | Slow to medium                           |
-| Data volume per access    | Low to medium volume    | High volume                              |
-| Required response time    | Very short              | Short to medium                          |
-| Level of data             | Detailed                | Aggregated, processed                    |
-| Queries                   | Predictable, periodic   | Unpredictable, ad hoc                    |
-| Given period              | Current                 | Past to future                           |
-| Time horizon              | 1–3 months              | Years or decades                         |
+|                           | Operational database    | Analytical database         |
+|---------------------------|-------------------------|-----------------------------|
+| Target group              | Operational employees   | Management, Analysts        |
+| Access frequency          | High                    | Slow to medium              |
+| Data volume per access    | Low to medium volume    | High volume                 |
+| Required response time    | Very short              | Short to medium             |
+| Level of data             | Detailed                | Aggregated, processed       |
+| Queries                   | Predictable, periodic   | Unpredictable, ad hoc       |
+| Given period              | Current                 | Past to future              |
+| Time horizon              | 1–3 months              | Years or decades            |
 
 
 ## Contradiction between operational data architecture and analytical information needs
