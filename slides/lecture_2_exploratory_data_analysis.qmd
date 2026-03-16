@@ -234,7 +234,7 @@ There are many ways to structure the same dataset.
 
 ## Data structuring: Principles
 
-Data structure typically expected by data analytics tools
+Data structure *typically* expected by data analytics tools
 
 <br>
 
@@ -253,9 +253,15 @@ Data structure typically expected by data analytics tools
 
 :::
 
+. . . 
+
+<br>
+
+{{< iconify fluent-mdl2:insights >}} Data must be structured according to the expectations of the analytical tool being used.
+Reviewing the tool’s documentation and example datasets can help clarify the required format.
 
 ::: aside
-Based on @Wickham2014
+Based on the Tidyverse and the work of @Wickham2014.
 :::
 
 
@@ -341,54 +347,9 @@ Final tidy dataset:
 Note: we will cover selected transformation operations like melt in the exercises.
 :::
 
-## Data structuring: Formatting
+## Data cleansing
 
-::: columns
-
-::: {.column width="50%"}
-
-Often, the way data is **stored** determines which mathematical operations are possible.
-
-**Example: timestamps stored as strings**
-
-| user_id | timestamp |
-|---|---|
-| 101 | "2025-03-12 14:23:05" |
-| 102 | "2025-03-12 18:02:11" |
-| 103 | "2025-03-13 09:15:42" |
-
-
-If treated as a **string**, we can only perform operations such as:
-
-- equality checks (`=` / `≠`)
-- simple filtering or sorting
-
-This **severely limits analysis**.
-
-:::
-
-::: {.column width="50%" .fragment}
-
-**Format conversions** help transform raw data into representations suitable for EDA and analytical models:
-
-| Representation | Example | Possible analysis |
-|---|---|---|
-| Numeric timestamp | 1741789385 | time differences, time series |
-| Hour of day | 14 | activity patterns during the day |
-| Day of week | Wednesday | weekday vs. weekend behavior |
-| Day of year | 71 | seasonal patterns |
-
-:::
-
-:::
-
-. . .
-
-<br>
-{{< iconify fluent-mdl2:insights >}} Data preparation transforms raw data into **formats that allow meaningful mathematical operations and analysis**.
-
-
-## Data Cleansing
+::: {.highlight_must_learn}
 
 | Data issue                    | Example                                         | Data cleansing action                                                          |
 | ----------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------ |
@@ -400,6 +361,8 @@ This **severely limits analysis**.
 | Duplicate records             | Same customer registered twice                  | Identify duplicates and merge records                                          |
 | Data entry errors             | `"Munich"` vs `"Munch"`                         | Correct spelling using reference tables                                        |
 | Sensor errors                 | Temperature sensor reports `9999`               | Remove invalid values or replace with interpolated measurements                |
+
+:::
 
 ## Data integration
 
@@ -459,8 +422,58 @@ Note: We will cover data integration in more detail in the next lecture.
 :::
 
 
+## Data transformation: Example
+
+::: columns
+
+::: {.column width="50%"}
+
+Often, the way data is **stored** determines which mathematical operations are possible.
+
+**Example: timestamps stored as strings**
+
+| user_id | timestamp |
+|---|---|
+| 101 | "2025-03-12 14:23:05" |
+| 102 | "2025-03-12 18:02:11" |
+| 103 | "2025-03-13 09:15:42" |
+
+
+If treated as a **string**, we can only perform operations such as:
+
+- equality checks (`=` / `≠`)
+- simple filtering or sorting
+
+This **severely limits analysis**.
+
+:::
+
+::: {.column width="50%" .fragment}
+
+**Format conversions** help transform raw data into representations suitable for EDA and analytical models:
+
+| Representation | Example | Possible analysis |
+|---|---|---|
+| Numeric timestamp | 1741789385 | time differences, time series |
+| Hour of day | 14 | activity patterns during the day |
+| Day of week | Wednesday | weekday vs. weekend behavior |
+| Day of year | 71 | seasonal patterns |
+
+:::
+
+:::
+
+. . .
+
+<br>
+{{< iconify fluent-mdl2:insights >}} Data preparation transforms raw data into **formats that allow meaningful mathematical operations and analysis**.
+
+
 # Univariate exploratory data analysis {data-stack-name="Univariate EDA"}
 
+## Foundations
+
+> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
 
 <br>
 
@@ -491,8 +504,6 @@ The following forms of EDA are typically distinguished:
     </td>
   </tr>
 </table>
-
-> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
 
 <!--
     > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
@@ -959,16 +970,17 @@ plt.show()
 
 :::
 
-{{< iconify fluent-mdl2:insights >}} Correlation does not imply causation.
-
 . . . 
 
-{{< iconify fluent-mdl2:insights >}}  If causal explanations are unavailable, decisions may need to rely on predictions.
+{{< iconify fluent-mdl2:insights >}} Correlation does not imply causation.
 
 . . . 
 
 {{< iconify fluent-mdl2:insights >}} Bivariate correlations are often insufficient for prediction or explanation, requiring more powerful analytical models.
 
+. . . 
+
+{{< iconify fluent-mdl2:insights >}}  If causal explanations are unavailable, decisions may need to rely on predictions.
 
 ::: aside
 More examples are available at: [https://www.tylervigen.com/spurious-correlations](https://www.tylervigen.com/spurious-correlations)
@@ -1224,6 +1236,8 @@ Explain the intuition first before showing the algorithm.
 
 ## k-means algorithm
 
+::: {.highlight_must_learn}
+
 For a given **k**, the algorithm finds cluster centers that minimize **within-cluster sum of squares**.
 
 Steps:
@@ -1244,6 +1258,7 @@ Loop:
     if no changes in centroids and cluster assignments:
         break
 ```
+:::
 
 <!--
         ```{.Markdown code-line-numbers="false"}
