@@ -1,12 +1,12 @@
 ---
 title: "Analytics & Big Data"
-subtitle: "Exploratory data analysis"
+subtitle: "Data preparation and exploration"
 section_label: "Data foundations"
 session: "Session 2"
 date: "2026-03-23"
 ---
 
-## {data-state="hide-menubar"}
+## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
 
@@ -71,18 +71,17 @@ Examples:
 
 . . . 
 
-Special case of the nominal scale: Binary scale
+Special case of the nominal scale: Binary scale – also called Boolean
 
-- Nominal attribute with only 2 states (0/1, or TRUE / FALSE) – also called Boolean
-- 0/FALSE typically means absence and 1/TRUE presence
-
-It is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g. people that purchase a product, have a disease)
+- Nominal attribute with only 2 states
+- 0/FALSE typically means absence and 1/TRUE presence.
 
 Examples:
 
 - Smoking: 1 indicates patients in a trial that smoke, 0 otherwise.
 - Purchase: 1 indicates that a person purchased a product, 0 otherwise.
 
+<!-- It is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g. people that purchase a product, have a disease) -->
 
 ## Qualitative: Ordinal scale^[Also known as a "rank scale".]
 
@@ -1236,10 +1235,9 @@ Explain the intuition first before showing the algorithm.
 
 ## k-means algorithm
 
-::: {.highlight_must_learn}
-
 For a given **k**, the algorithm finds cluster centers that minimize **within-cluster sum of squares**.
 
+::: {.highlight_must_learn}
 Steps:
 
 ```{.python code-line-numbers="false"}

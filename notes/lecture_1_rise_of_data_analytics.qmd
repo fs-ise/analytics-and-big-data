@@ -76,6 +76,8 @@ Introduce system (badges) - similar to https://eduki.com/de/material/306565/schi
 - yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.
 
 TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
+-> LLMs are language models: they are good at handling language (not necessarily at handling data) - so if we use a _programming_ language to analyze data, LLMs can help us. More than they could help us operate a GUI.
+-> LLMs are not directly trained with user-GUI interactions (workflows are weakly documented and harder to analyze/version/control)
 
 
 ## Useful Jupyter Notebook Tricks
@@ -101,6 +103,8 @@ pd.read_csv?
 
 * `%who` → list variables
 * `%whos` → list variables with type and size
+
+Similarly: "Jupyter variables" button
 
 ### Reset notebook variables
 

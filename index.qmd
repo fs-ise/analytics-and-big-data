@@ -22,7 +22,7 @@ format:
 
 Instructor: [{{< var instructor.name >}}]({{< var instructor.url >}}), {{< var university.name >}}
 
-Online Office Hours meeting link:  
+Online office hours meeting link:  
 [{{< var instructor.online_meeting_url >}}]({{< var instructor.online_meeting_url >}})
 
 ## Sessions

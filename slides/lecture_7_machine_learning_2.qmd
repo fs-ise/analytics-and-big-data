@@ -6,7 +6,7 @@ session: "Session 7"
 date: "2026-04-20"
 ---
 
-## {data-state="hide-menubar"}
+## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
 
