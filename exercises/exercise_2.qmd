@@ -1139,6 +1139,7 @@ This ensures that they have approximately equal influence on the clusters.
 Run the following code and observe how the scale of both variables changes:
 
 ```{python}
+#| eval: false
 from sklearn.preprocessing import StandardScaler
 
 # Scale
@@ -1151,6 +1152,7 @@ X.head()
 Before running a clustering algorithm, lets's view the data in a scatterplot:
 
 ```{python}
+#| eval: false
 plt.scatter(X[:, 0], X[:, 1], s=10)
 plt.title("Raw data (no clustering)")
 plt.show()
@@ -1163,6 +1165,7 @@ How many clusters would you expect?
 ### 2. Apply K-Means Clustering
 
 ```{python}
+#| eval: false
 from sklearn.cluster import KMeans
 
 # Your solution (in Jupyter notebook)
@@ -1272,6 +1275,7 @@ for k in k_values:
 ### 3. Add Cluster Labels
 
 ```{python}
+#| eval: false
 data_df["cluster"] = labels
 
 data_df.head()
@@ -1282,6 +1286,7 @@ data_df.head()
 ### 4. Grouped Boxplots
 
 ```{python}
+#| eval: false
 import matplotlib.pyplot as plt
 
 # Profit margin by cluster

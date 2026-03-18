@@ -38,11 +38,7 @@ develop an initial understanding of the data, detect patterns or anomalies, and 
 
 # Data preparation {data-stack-name="Data preparation"}
 
-<br><br>
-
-
 ## Data types
-
 
 Conducting EDA and representing the “real world” requires us to use appropriate data types.
 Typically, we distinguish four fundamental data types, known as measurement scales:
@@ -81,10 +77,7 @@ Examples:
 - Smoking: 1 indicates patients in a trial that smoke, 0 otherwise.
 - Purchase: 1 indicates that a person purchased a product, 0 otherwise.
 
-<!-- It is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g. people that purchase a product, have a disease) -->
-
 ## Qualitative: Ordinal scale^[Also known as a "rank scale".]
-
 
 - A categorical attribute with values that have a meaningful order, but the magnitude between successive values is not known
 - The ordinal scale is useful for registering subjective assessments and things that cannot be measured objectively (often used in surveys for ratings)
@@ -101,7 +94,7 @@ Examples:
 - School grades = {A < B < C < D < E < F} or {1 < 2 < 3 < 4 < 5 < 6}
 - Places in a competition = {1st, 2nd, 3rd, 4th, …}
 
-## Interval scale (quantitative)
+## Quantitative: Interval scale
 
 - A numeric measureable attribute in the form of integer or real values.
   The distance between the numbers or units on this scale is equal over all levels of the scale.
@@ -114,7 +107,7 @@ Examples:
 - Celsius scale of temperature (there is no natural zero, 0°C is arbitrarily defined), a Celsius value 𝑐 can be linearly transformed to a Fahrenheit value 𝑓: 𝑓 = 9/5 ∗ 𝑐 + 32
 - Dates and time (e.g., conversion from Julian to Gregorian calendar is possible)
 
-## Ratio scale (quantitative)
+## Quantitative: Ratio scale
 
 - Numeric values with a meaningful zero point (e.g., “zero” means absence)
 - All arithmetic rules and functions can be applied (addition, subtraction)
@@ -124,8 +117,7 @@ Examples:
 - Money, person’s age, market share, quantities purchased, speed, …
 - Kelvin (K) temperature (has a true zero-point (0 °K=− 273.15 ℃): It is the point at which the particles that comprise matter have zero kinetic energy
 
-
-## Possible mathematical operations for each scale type
+## Scales and mathematical operations
 
 Due to the different mathematical properties, not all statistical measures can be computed on different measurement scales:
 
@@ -144,14 +136,12 @@ Due to the different mathematical properties, not all statistical measures can b
 \(X\) The frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low
 </p>
 
-
 ::: {.learning_note .fragment}
 **Learning focus**
 
 No need to memorize the table.  
 Be able to **explain the scales and give examples of operations that are appropriate**.
 :::
-
 
 ## Data quality and preparation
 
@@ -160,11 +150,9 @@ Because these data sources are not always standardized or under the analyst’s 
 
 - **Missing values** (e.g., incomplete historical market data)
 - **Outdated values** (e.g., customer address has changed)
-<!--- **Outliers or implausible values** (e.g., age = 250) -->
 - **Inconsistent formats or units** (e.g., dates stored as text, mixed currencies)
 - **Duplicate records** (e.g., customers with multiple accounts)
 - **Measurement or data entry errors** (e.g., human data entry, broken sensors)
-
 
 . . .
 
@@ -196,16 +184,22 @@ There are many ways to structure the same dataset.
 
 **Option A (wide)**
 
+<div class="smaller">
+
 | Region | Year | Sales_Q1 | Sales_Q2 | Sales_Q3 | Sales_Q4 |
 |------|------|------|------|------|------|
 | Europe | 2023 | 120 | 140 | 160 | 150 |
 | Asia | 2023 | 100 | 110 | 120 | 130 |
+
+</div>
 
 :::
 
 ::: {.column width="40%"}
 
 **Option B (long)**
+
+<div class="smaller">
 
 | Region | Year | Quarter | Sales |
 |------|------|------|------|
@@ -218,6 +212,8 @@ There are many ways to structure the same dataset.
 | Asia | 2023 | Q3 | 120 |
 | Asia | 2023 | Q4 | 130 |
 
+</div>
+
 :::
 
 ::::
@@ -229,7 +225,6 @@ There are many ways to structure the same dataset.
 <br>
 
 → Solution: **Option B**, because this is what **data analytics tools typically expect**.
-
 
 ## Data structuring: Principles
 
@@ -263,36 +258,20 @@ Reviewing the tool’s documentation and example datasets can help clarify the r
 Based on the Tidyverse and the work of @Wickham2014.
 :::
 
-
 ## Data structuring: Example continued
 
 **Dataset  `df` (wide)**
+
+<div class="smaller">
 
 | Region | Year | Sales_Q1 | Sales_Q2 | Sales_Q3 | Sales_Q4 |
 |------|------|------|------|------|------|
 | Europe | 2023 | 120 | 140 | 160 | 150 |
 | Asia | 2023 | 100 | 110 | 120 | 130 |
 
+</div>
 
-<!--
-    ```python
-
-    import pandas as pd
-
-    df = pd.DataFrame({
-        "Region": ["Europe", "Asia"],
-        "Year": [2023, 2023],
-        "Sales_Q1": [120, 100],
-        "Sales_Q2": [140, 110],
-        "Sales_Q3": [160, 120],
-        "Sales_Q4": [150, 130],
-    })
-
-    df
-    ```
--->
-
-Convert wide → long (tidy)
+Convert wide → long
 
 ```python
 long_df = df.melt(
@@ -308,6 +287,8 @@ long_df
 
 Result:
 
+<div class="smaller">
+
 | Region | Year | Quarter  | Sales |
 | ------ | ---- | -------- | ----- |
 | Europe | 2023 | Sales_Q1 | 120   |
@@ -315,6 +296,8 @@ Result:
 | Europe | 2023 | Sales_Q2 | 140   |
 | Asia   | 2023 | Sales_Q2 | 110   |
 | ...    | ...  | ...      | ...   |
+
+</div>
 
 ## Data structuring: Example continued
 
@@ -330,6 +313,8 @@ long_df["Quarter"] = long_df["Quarter"].str.replace("Sales_", "")
 
 Final tidy dataset:
 
+<div class="smaller">
+
 | Region | Year | Quarter | Sales |
 | ------ | ---- | ------- | ----- |
 | Europe | 2023 | Q1      | 120   |
@@ -341,12 +326,15 @@ Final tidy dataset:
 | Asia   | 2023 | Q3      | 120   |
 | Asia   | 2023 | Q4      | 130   |
 
+</div>
 
 ::: aside
 Note: we will cover selected transformation operations like melt in the exercises.
 :::
 
 ## Data cleansing
+
+<br>
 
 ::: {.highlight_must_learn}
 
@@ -373,11 +361,15 @@ Organizations often store data in **different systems** (e.g., CRM, sales system
 
 **Customer database (CRM)**
 
+<div class="smaller">
+
 | Customer_ID | Name | Country | Email |
 |---|---|---|---|
 | 101 | Alice | Germany | alice@example.com |
 | 102 | Bob | France | bob@example.com |
 | 103 | Clara | Germany | clara@example.com |
+
+</div>
 
 :::
 
@@ -385,11 +377,15 @@ Organizations often store data in **different systems** (e.g., CRM, sales system
 
 **Sales transactions**
 
+<div class="smaller">
+
 | Customer_ID | Order_ID | Revenue |
 |---|---|---|
 | 101 | 5001 | 200 |
 | 101 | 5002 | 150 |
 | 103 | 5003 | 300 |
+
+</div>
 
 :::
 
@@ -405,16 +401,22 @@ integrated_data = customers.merge(sales, on="Customer_ID")
 
 This creates a combined dataset that links customer information with sales.
 
+<div class="smaller">
+
 | Customer_ID | Name  | Country | Email                                         | Order_ID | Revenue |
 | ----------- | ----- | ------- | --------------------------------------------- | -------- | ------- |
 | 101         | Alice | Germany | [alice@example.com](mailto:alice@example.com) | 5001     | 200     |
 | 101         | Alice | Germany | [alice@example.com](mailto:alice@example.com) | 5002     | 150     |
 | 103         | Clara | Germany | [clara@example.com](mailto:clara@example.com) | 5003     | 300     |
 
+</div>
 
 . . . 
 
-{{< iconify fluent-mdl2:insights >}} For analytical purposes, **redundant values are often acceptable**. The goal is to organize data into a **tidy structure**, where **each row represents one observation** and all relevant variables are available for analysis.
+<br>
+
+{{< iconify fluent-mdl2:insights >}} For analytical purposes, **redundant values are often acceptable**.
+  The goal is to organize data into a **tidy structure**, where **each row represents one observation** and all relevant variables are available for analysis.
 
 ::: aside
 Note: We will cover data integration in more detail in the next lecture.
@@ -431,12 +433,15 @@ Often, the way data is **stored** determines which mathematical operations are p
 
 **Example: timestamps stored as strings**
 
+<div class="smaller">
+
 | user_id | timestamp |
 |---|---|
 | 101 | "2025-03-12 14:23:05" |
 | 102 | "2025-03-12 18:02:11" |
 | 103 | "2025-03-13 09:15:42" |
 
+</div>
 
 If treated as a **string**, we can only perform operations such as:
 
@@ -451,12 +456,16 @@ This **severely limits analysis**.
 
 **Format conversions** help transform raw data into representations suitable for EDA and analytical models:
 
+<div class="smaller">
+
 | Representation | Example | Possible analysis |
 |---|---|---|
 | Numeric timestamp | 1741789385 | time differences, time series |
 | Hour of day | 14 | activity patterns during the day |
 | Day of week | Wednesday | weekday vs. weekend behavior |
 | Day of year | 71 | seasonal patterns |
+
+</div>
 
 :::
 
@@ -472,7 +481,8 @@ This **severely limits analysis**.
 
 ## Foundations
 
-> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.
+> People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data.
+  EDA techniques have been devised as an aid in this situation.
 
 <br>
 
@@ -503,48 +513,6 @@ The following forms of EDA are typically distinguished:
     </td>
   </tr>
 </table>
-
-<!--
-    > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
-    
-    > In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
-
-    > Reasons for EDA:
-    - gain intuition about the data
-    - make comparisons between distributions
-    - sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
-    - find out where data is missing or if there are outliers
-    - summarize the data
-
-
-      process (pre-model), aims, techniques (graphical, non-graphical, ...)
-
-      **"Limitations of EDA"**
-
-      - Descriptive vs. inferential statistics
-      - no model/explanation/prediction (correlation vs causality)
-      - sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings)
-      -> starting point for building predictions (explanations, hypotheses, models, causality)
-
-      ## EDA / TODO
-
-      Non-graphical exploratory data analysis is the first step when beginning to analyze the data.
-      This preliminary data analysis step focuses on four points:
-
-      - measures of central tendency, i.e. mean and median^[The median, known as 50th percentile, is more resistant to outliers.].
-      - measures of spread, i.e. variance, standard deviation, and interquartile range
-      - the shape of the distribution
-      - the existence of outliers
-
-      TODO: data quality (and required preparation) instead of just outliers?!
-
-
-      > The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
-
-      ![](../images/slides_188.png)
--->
-
-
 
 ## Descriptive statistics
 
@@ -622,9 +590,7 @@ plt.show()
 ::: {.column width="50%"}
 
 - The mode is the value that appears most in a set of data values
-
 - The highest mode also has the highest relative frequency (see next slide)
-
 - Example: On a party, you meet many other students, and you ask what they are studying.
 
 :::
@@ -655,102 +621,6 @@ plt.show()
 :::
 
 :::
-
-<!--
-
-          ## The relative frequency
-
-          ::: columns
-
-          ::: {.column width="55%"}
-
-          Your company purchases fancy retro light bulbs from overseas.
-          Because of the transport or the low quality of the supplier, 80 of 200 light bulbs are defect.
-          The relative frequency of defect light bulbs in the shipment is
-
-          \[
-          p = \frac{\text{Number of outcomes representing the event}}
-                  {\text{Total number of possible outcomes}}
-          \]
-
-          \[
-          p = \frac{80}{200} = 0.4
-          \]
-
-          The relative frequency approach can be used as a probability assessment.
-          However, larger samples must be used, the probability should be observed over longer time, and potential sampling issues must be considered.
-
-          :::
-
-          ::: {.column width="45%"}
-
-          TODO
-
-          ![](lightbulb.jpg)
-
-          :::
-
-          :::
-
-
-
-          ## The mean / expected value
-
-          ::: columns
-
-          ::: {.column width="55%"}
-
-          The *arithmetic* mean is calculated as
-
-          \[
-          \bar{x} = \sum_{i=1}^{n} \frac{x_i}{n}
-          = \frac{x_1 + x_2 + \dots + x_n}{n}
-          \]
-
-          where \(x_1, x_2, \dots, x_n\) is a set of \(n\) observations.
-          The mean is often denoted as \(\mu\) or with the symbol \(\bar{x}\).
-
-          Treating the empirical distribution as a probability function of a random variable, the **expected value** can be **estimated by the mean**:
-
-          \[
-          E(X) = \bar{x}
-          \]
-
-          **Interpretation:** If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967.
-
-          :::
-
-          ::: {.column width="45%"}
-
-          ```{python}
-          import numpy as np
-          import matplotlib.pyplot as plt
-
-          # Simulated year-of-birth data
-          np.random.seed(42)
-          years = np.concatenate([
-              np.random.normal(1965, 15, 40000),
-              np.random.normal(1980, 8, 20000)
-          ])
-
-          years = years[(years > 1920) & (years < 2020)]
-
-          mean_year = np.mean(years)
-
-          plt.figure()
-          plt.hist(years, bins=20)
-          plt.axvline(mean_year)
-          plt.title("Year of birth - Histogram")
-          plt.xlabel("Year of birth")
-          plt.ylabel("Frequency")
-          plt.text(mean_year, plt.ylim()[1]*0.95, f"x̄ = {mean_year:.3f}")
-          plt.show()
-          ```
-          :::
-
-          :::
--->
-
 
 ## Boxplot
 
@@ -852,9 +722,7 @@ plt.show()
 
 :::
 
-
 # Multivariate exploratory data analysis {data-stack-name="Multivariate EDA"}
-
 
 ## Multivariate non-graphical EDA
 
@@ -869,18 +737,17 @@ Multivariate non-graphical EDA techniques generally show the relationship betwee
 </div>
 </div>
 
-
 ## Multivariate graphical EDA
 
 Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.
 
 ![](../images/slides_196.png){fig-align=center}
 
-
 ## Bivariate statistics: Correlation
 
 <!--
-So far, we focused on the description of one variable (univariate statistics). But in many cases, we are interested in the interactions between variables.
+So far, we focused on the description of one variable (univariate statistics).
+But in many cases, we are interested in the interactions between variables.
 -->
 
 **Correlation** measures how strongly two variables move together.
@@ -891,7 +758,6 @@ $$X = (x_1, x_2, ..., x_n)$$
 $$Y = (y_1, y_2, ..., y_n)$$
 
 The **Pearson correlation coefficient** is calculated as:
-
 
 $$r =
 \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
@@ -946,7 +812,6 @@ plt.show()
 :::
 
 
-
 ## Correlation vs. causality
 
 **Correlation:** Two data series behave "similar"
@@ -986,95 +851,6 @@ More examples are available at: [https://www.tylervigen.com/spurious-correlation
 <!-- Note: CC-BY licensed  -->
 :::
 
-<!--
-      ## Correlation
-
-      ![](../images/slides_112.png)
-
-      ::: aside
-      — Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)
-      :::
-
-      > Organic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!
-
-
-      ## Correlation vs. Causality (I)
-
-      ![](../images/slides_107_new.png)
-
-
-
-      ## Correlation vs. Causality (II)
-
-      ![](../images/slides_114.png)
-
-
-        ## Statistical Estimation
-
-        TODO: TBD whether we cover it here!
-
-        ![](../images/slides_116.png)
-
-        ::: aside
-        — Source: http://www.dxbydt.com/the-size-of-your-sample
-        :::
-
-
-
-        ## Tests on Outliers
-
-        > Outlier are data objects, which are clearly different from the others.
-
-        > Usually, the detection of outliers is an unsupervised process, because they are not known before analyses.
-
-        > In the case of **numerical attributes** the Interquartil Range can be used. Here, an outlier is defined if the attribute lies outside the interval.
-
-        ![](../images/slides_187_new.png)
-
-        > Usually, k has a value between 1.5 and 3. The bigger k, the more different the values must be to be classified as outliers.
-
-        > Can be visualized by a Box-and-Whisker Plot:
-
-        ![](../images/slides_189.png)
-
-
-
-
-        ## Handling Outliers
-
-        - Outlier have to be **eliminated** if they
-          - would bias the analysis, e.g. if 9 persons have an age between 20 and 30 and the 10th person is 80 years old.
-          - are erogenous data, e.g. as a result of input errors or a defect sensor.
-        - It is not always acceptable to drop an observation just because it is an outlier. They can be legitimate observations and are sometimes interesting ones. It’s important to investigate the nature of the outlier before deciding.
-        - In those cases where you shouldn’t drop the outlier, one option is to try a transformation. **Log transformations** pull in high numbers. This can reduce the impact of a single point if the outlier is an independent variable.
-
-        ![](../images/slides_190.png)
-
-
-
-
-        ## Univariate Graphical EDA
-
-        > Non-graphical and graphical EDA methods complement each other, they have the same focus. While the non-graphical methods are quantitative and objective, they do not give a full picture of the data. The distribution of a variable tells us what values the variable takes and how often each value occurs.
-
-        > Types of displays:
-
-        - for numerical variables: Histograms, Boxplots, Quantile-normal plots, …
-        - for categorical variables: Pie charts, Bar graphs, …
-
-        <div style="display:flex;justify-content:center">
-        <div style="height:600px;width:400px">
-        ![](../images/slides_193.png)
-        </div>
-        <div style="height:600px;width:400px">
-        ![](../images/slides_191.png)
-        </div>
-        <div style="height:600px;width:400px">
-        ![](../images/slides_192.png)
-        </div>
-        </div>
--->
-
 ## Clustering in EDA
 
 In **multivariate exploratory data analysis**, we often want to understand whether **observations form natural groups**.
@@ -1085,26 +861,6 @@ In **multivariate exploratory data analysis**, we often want to understand wheth
 Common use cases include:
 
 ![](../images/clustering-use-cases.png){width=50% fig-align=center}
-
-
-<!--
-
-    * **Customer segmentation**
-
-      * identify groups of customers with similar purchasing behavior
-      * design differentiated marketing strategies
-
-    * **Product portfolio analysis**
-
-      * group products based on demand patterns
-      * identify substitutes or bundles
-
-    * **Market structure analysis**
-
-      * identify segments within a market
-      * understand competitive positioning
--->
-
 
 ::: {.notes}
 Timing: ~4 minutes.
@@ -1117,51 +873,13 @@ Typical workflow:
 EDA → clustering → interpretation → downstream analytics.
 :::
 
-
-<!--
-    Instead of predicting an outcome, we **discover structure in the data**.
-    
-    
-    **Idea**: Objects within the same cluster should be **similar to each other**, but **different from objects in other clusters**.
-
-    . . .
-
-    <br>
-
-    **Why clustering during EDA?**
-
-    Clustering helps us:
-
-    - discover **hidden structure** in the data
-    - identify **segments or groups**
-    - detect **unusual observations**
-    - generate **hypotheses for further analysis**
-    . . .
-
-
-    ## Introductory example
-
-    Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:
-
-    1) FRESH: annual spending on fresh products (Continuous);
-    2) MILK: annual spending on milk products (Continuous);
-    3) GROCERY: annual spending on grocery products (Continuous);
-    4) FROZEN: annual spending on frozen products (Continuous);
-    5) DETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);
-    6) DELICATESSEN: annual spending on delicatessen products (Continuous);
-    7) CHANNEL: customers buying channel (Nominal);
-    8) REGION: customers region (Nominal)
-
-    > Your goal is to segment the users. That means finding similar types of users and bunching them together.  
-    > Why would you want to do this?  
-    > You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.  
-    > You might have a model that works better for specific groups. Or you might have different models for different groups.
--->
-
-
 ## Families of clustering methods
 
 Clustering algorithms can be grouped into several **families of approaches**.
+
+<br>
+
+<div class="smaller">
 
 | Family | Examples | Key characteristics |
 |------|------|------|
@@ -1170,6 +888,7 @@ Clustering algorithms can be grouped into several **families of approaches**.
 | **Density-based methods** | DBSCAN, HDBSCAN | clusters defined as **regions of high density**; identify **arbitrary shapes** and **outliers/noise** |
 | **Probabilistic / model-based methods** | Gaussian mixture models | clusters modeled as **probability distributions**; allow **soft cluster membership** when groups overlap |
 
+</div>
 . . . 
 
 In this lecture we focus on **k-means** (segmentation) and **agglomerative hierarchical clustering**.
@@ -1183,21 +902,6 @@ Emphasize that many algorithms exist, but we focus on the two most intuitive and
 - k-means
 - agglomerative hierarchical clustering.
 :::
-
-
-<!--
-
-          ## Cluster Analysis
-
-          Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.
-
-          There are different types of cluster analysis methods:
-
-          - Clustering Methods
-
-          TODO: fix missing?
-
--->
 
 ## Segmentation clustering
 
@@ -1222,9 +926,7 @@ Timing: ~2 minutes.
 Explain the intuition first before showing the algorithm.
 :::
 
-
 <!--
-
       ## Partitioning cluster methods
 
       Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).
@@ -1258,28 +960,13 @@ Loop:
 ```
 :::
 
-<!--
-        ```{.Markdown code-line-numbers="false"}
-        1. Randomly partition the data objects into k clusters.  
-        2. Calculate the cluster centroids.  
-        3. Calculate the distance from every data point to all centroids.  
-        4. If a data point is closest to its own centroid, leave it where it is.
-          If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.  
-        5. Repeat steps 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.
-        ```
--->
-
 . . . 
 
-Strengths:
+<br>
 
-* fast and scalable
-* easy to interpret
+Strengths: fast and scalable, easy to interpret
 
-Limitations:
-
-* must choose **k**
-* sensitive to scaling and outliers.
+Limitations: must choose **k**, sensitive to scaling and outliers.
 
 ::: {.notes}
 Timing: ~4 minutes.
@@ -1392,11 +1079,9 @@ labels = kmeans.fit_predict(X)
 
 {{< iconify fluent-mdl2:insights >}}  `KMeans(...)` + `fit_predict(X)` runs the iterative algorithm we saw earlier:
 
-- initialize centroids  
-- assign points to nearest centroid  
-- update centroids  
-- repeat until convergence  
+- initialize centroids, assign points to nearest centroid, update centroids (repeat until convergence)  
 
+It returns an array of cluster labels (corresponding to each observation).
 . . .
 
 {{< iconify fluent-mdl2:insights >}} Input data `X` must have a specific structure, as discussed in data preparation:
@@ -1413,14 +1098,6 @@ X = [
     [5.5, 8.1],
 ]
 ```
-
-<!--
-  👉 shape: `(n_samples, n_features)`
-
-  . . .
-
-  (We often generate such data synthetically for illustration.)
--->
 
 ## Choosing the number of clusters
 
@@ -1457,10 +1134,9 @@ plt.ylabel("Within-cluster variance")
 plt.title("Elbow method")
 plt.show()
 ```
-
 . . .
 
-👉 Choose k at the **“elbow”** (diminishing returns)
+Choose k at the **“elbow”** (diminishing returns)
 
 ::: {.notes}
 Timing: ~3 minutes.
@@ -1469,7 +1145,6 @@ Key point: inertia always decreases → we look for where gains flatten out.
 
 Emphasize: heuristic, not a strict rule.
 :::
-
 
 ## Choosing the number of clusters
 
@@ -1483,7 +1158,7 @@ An alternative is the **silhouette score**.
 
 . . .
 
-👉 Choose k that **maximizes the score**
+Choose k that **maximizes the score**
 
 ```{python}
 #| fig-align: center
@@ -1509,7 +1184,7 @@ plt.show()
 
 . . .
 
-👉 Higher = better separation and compactness
+Higher = better separation and compactness
 
 ::: {.notes}
 Contrast with elbow:
@@ -1519,8 +1194,6 @@ Contrast with elbow:
 
 Highlight: combines two criteria (cohesion + separation).
 :::
-
-
 
 ## Hierarchical clustering
 
@@ -1534,7 +1207,6 @@ There are two types of hierarchical cluster methods:
   It works in a similar way to agglomerative clustering but in the opposite direction.
   This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.
 
-
 <!-- https://www.bioinformaticscrashcourse.com/9.1_Clustering.html -->
 
 ## Dendrogram
@@ -1546,7 +1218,6 @@ In a dendrogram the widths of the horizontal lines give an impression about the 
 Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length.
 
 This allows us to explore clusters at **multiple levels of granularity**.
-
 
 ```{python}
 #| fig-align: center
@@ -1563,7 +1234,6 @@ plt.xlabel("Observations")
 plt.ylabel("Distance")
 plt.show()
 ```
-
 
 ## Measuring similarity between clusters
 
@@ -1594,7 +1264,6 @@ Ward is often used with Euclidean distance.
 :::
 
 <!--
-
       ## Measuring similarity between clusters (I)
 
       ![](../images/slides_328.png)
@@ -1637,7 +1306,6 @@ Ward is often used with Euclidean distance.
       — Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
       :::
 
-
       ## Single linkage example (II)
 
       ![](../images/slides_334.png)
@@ -1645,15 +1313,11 @@ Ward is often used with Euclidean distance.
       ::: aside
       — Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
       :::
-
 -->
-
 
 ## Validation and interpretation
 
-⚠ **Important**: All datasets can be clustered.
-
-Clustering algorithms will **always produce groups**, even when no meaningful structure exists.
+⚠ Clustering algorithms will **always produce groups**, even when no meaningful structure exists.
 
 Therefore clusters must be **validated**.
 
@@ -1684,8 +1348,6 @@ Key warning:
 Clusters ≠ truth.
 They are hypotheses about structure in the data.
 :::
-
-
 
 ## Why clustering is useful in analytics workflows
 
@@ -1723,7 +1385,6 @@ Clustering often produces **insights that guide later modeling**.
 
 **Exploratory Data Analysis (EDA)** helps us understand data **before modeling**.
 
-
 **Key steps:**
 
 - **Prepare data**
@@ -1742,8 +1403,6 @@ Clustering often produces **insights that guide later modeling**.
   - segmentation (elbow method/silhouette score))
   - hierarchical clustering (dendogram)
 
-
 {{< iconify fluent-mdl2:insights >}}   EDA is **not the final analysis**, but a **foundation** for model building, decision-making, and hypothesis generation.
-
 
 # References {data-state="hide-menubar"}

@@ -153,12 +153,6 @@ Online banking, mobile payments, and blockchain systems generate detailed financ
 Machine learning and generative AI create large datasets during training and operation, further accelerating global data growth.
 
 
-<!--
-## Data storage
-Moores law, Cloud computing, ...
--->
-
-
 # Computing power {data-stack-name="Computing power"}
 
 ## Growth of computing power
@@ -177,7 +171,7 @@ The growth of modern analytics is enabled by **changing strategies for increasin
 
 <br>
 
-| Era | Main Strategy | Explanation |
+| Era | Main strategy | Explanation |
 |-----|---------------|-------------|
 | 1970s–2000s (*) | **Moore’s Law & miniaturization** | Smaller transistors → more components per chip → faster processors |
 | 2005–today | **Parallel computing** | Performance increases by using multiple processors simultaneously |
@@ -198,7 +192,6 @@ An algorithm is a step-by-step procedure for performing a computation and thereb
 
 Algorithms determine how efficiently computers can process data and solve tasks.
 
-
 Examples:
 
 - **Linux Scheduling Algorithms** *(1990s–present)* — Efficient process scheduling enabling operating systems to run tasks concurrently
@@ -209,6 +202,15 @@ Examples:
 - **Gradient Boosting** *(2014)* — High-performance ensemble learning algorithm widely used in predictive analytics and data science
 - **GPT / Transformer Models** *(2017–present)* — Transformer architecture enabling large language models and generative AI
 
+::: {.learning_note}
+
+**Learning note**
+
+No need to memorize everything.  
+Be able to give a few illustrative examples.  
+This also applies to the data production areas.
+
+:::
 
 ## Algorithms enable more powerful analytical models
 
@@ -278,21 +280,6 @@ Predicting protein folding had been a major unsolved problem in biology for deca
 
 :::: {.columns}
 
-::: {.column width="40%"}
-AI progress often occurs through **algorithmic breakthroughs**, enabling machines to outperform humans in increasingly complex tasks.
-
-Recent studies suggest that AI creates a **“jagged frontier.”** [@DellAcquaEtAl2023], i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities. 
-
-- **Within this frontier, AI can strongly enhance knowledge work**, improving productivity and the quality of outputs. 
-- **Outside the frontier, AI can reduce performance**, especially when users rely too heavily on its outputs without verification. 
-
-<!--
-https://www.agidefinition.ai/
-https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
--->
-
-:::
-
 ::: {.column width="60%"}
 
 <br><br>
@@ -358,69 +345,85 @@ plt.show()
 ```
 :::
 
+
+::: {.column width="40%"}
+<br><br>
+
+::: {.highlight_must_learn}
+
+AI progress often occurs through **algorithmic breakthroughs**, enabling machines to outperform humans in increasingly complex tasks.
+
+Recent studies suggest that AI creates a **“jagged frontier.”** [@DellAcquaEtAl2023], i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities. 
+
+- **Within this frontier, AI can strongly enhance knowledge work**, improving productivity and the quality of outputs. 
+- **Outside the frontier, AI can reduce performance**, especially when users rely too heavily on its outputs without verification. 
+
+:::
+
+<!--
+https://www.agidefinition.ai/
+https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
+-->
+
+:::
+
 ::::
 
 ::: aside
 Figure based on the work of @HendrycksEtAl2025 on *Artificial General Intelligence*.
 :::
 
-
 # Analytics processes {data-stack-name="Analytics processes"}
-
-<!--
-        ## Structure: TODO
-
-        - start with epistemic goals (describing, predicting, prescribing)
-        - introduce CRISP-DM
-        - distinguish different analytical models and disciplines (referring to the epistemic goals - example: statistician would not be happy with an ML model because it does not support inference/explanation. ML engineer is not happy with a regression model - it may support inference/explanation better, but its predictions may be less accurate)
-
-        ![](../images/dispute-statistician-ml-engineer.png){fig-align="center" width="40%"}
-
-        ## Traditional vs. Modern Analytics Process
-
-
-        **Traditional Analytics Process:**
-
-        ![](../images/slide-13.1.png){fig-align="center" width="40%"}
-
-
-        **Modern Analytics Process:**
-
-        ![](../images/slide-13.2.png){fig-align="center" width="40%"}
-
-
-        ## From the Past to the Present
-
-        ![](../images/slide-14-new.png){fig-align="center" width="60%"}
-
-
-        ## Evolution of Analytics
-
-
-        ![](../images/slides_20.jpg){fig-align="center"  width="70%"}
-
-
-        ::: aside
-        Source: http://juxt.pro/blog/posts/machine-learning-with-clojure.html
-        :::
--->
 
 ## Maturing analytical capabilities
 
-<br><br>
 
-![](../images/analytics_maturity.png){width=60% fig-align=center}
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.highlight_must_learn}
+
+
+**Descriptive analytics: What happened?**  
+
+- Summarizes historical data to understand patterns and trends.  
+- *Example: Sales reports, dashboards, KPIs*
+
+**Predictive analytics: What will happen?**  
+
+- Uses statistical models and machine learning to forecast future outcomes.  
+- *Example: Demand forecasting, churn prediction*
+
+**Prescriptive analytics: What should we do?**  
+
+- Recommends actions based on predictions and optimization.  
+- *Example: Pricing optimization, recommendation systems*
+
+:::
+
+:::
+
+
+::: {.column width="50%"}
+
+<br><br>
+![](../images/analytics_maturity.png){width=100% fig-align=center}
+
+:::
+
+::::
 
 <!--
-https://medium.com/aimonks/key-types-of-analytics-according-to-gartner-9dd5861debe2
+      https://medium.com/aimonks/key-types-of-analytics-according-to-gartner-9dd5861debe2
 
-Types of Analytics (I)
+      Types of Analytics (I)
 
-![](../images/slides_21.png){fig-align="center" width="60%"}
+      ![](../images/slides_21.png){fig-align="center" width="60%"}
 
-::: aside
-Source: @Schmarzo2016, p. 88
-:::
+      ::: aside
+      Source: @Schmarzo2016, p. 88
+      :::
 -->
 
 ## Analytical purposes
@@ -530,12 +533,16 @@ While these fields often focus on methodological development, business analytics
 
 ::: {.column width="45%"}
 
+::: {.highlight_must_learn}
+
 **CRISP-DM** is a widely used framework that structures data mining and analytics projects [@WirthHipp2000].
 
 - Developed by an **industry consortium** (e.g., DaimlerChrysler, SPSS, NCR) to create a common methodology for data mining projects.
 - Designed to be **independent of specific industries and technologies**, making it applicable across many domains.
 - Integrates **best practices from real-world projects**, helping teams plan, communicate, and document analytics work.
 - Became popular because it provides a **reliable and repeatable standard process** for managing complex data mining projects.
+
+:::
 
 :::
 
@@ -709,7 +716,9 @@ digraph CRISPDM {
 
 > Analytics is not a linear pipeline. We constantly move between business problems, data, modeling, and evaluation.
 
-## Summary {data-state="hide-menubar"}
+## {data-menu-title="Learning objectives" data-state="hide-menubar"}
+
+<br><br><br><br><br>
 
 ::: {.learning-objectives}
 - **Illustrate** how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.
@@ -796,13 +805,21 @@ Running a code cell produces results directly below it (text, tables, charts, et
 
 
 ::: aside
-A local setup may also be possible after this session, depending on your machine. If you run into setup issues or have tips to share, please post them in this repository's issues: [github.com/fs-ise/analytics-and-big-data-notebooks/issues](https://github.com/fs-ise/analytics-and-big-data-notebooks/issues).
+A local setup may also be possible after this session, depending on your machine. If you run into setup issues or have tips to share, please post them in this repository's issues:  
+[github.com/fs-ise/analytics-and-big-data-notebooks/issues](https://github.com/fs-ise/analytics-and-big-data-notebooks/issues).
 :::
 
 
 ::: {.content-hidden when-profile="pdf"}
 
-## Break  {data-state="hide-menubar"}
+## ☕ Short Break {data-state="hide-menubar"}
+
+Take 5–10 minutes
+
+Stretch, grab a coffee, or chat with others.
+
+We’ll continue shortly
+
 
 ## Group split  {data-state="hide-menubar"}
 
@@ -827,7 +844,7 @@ digraph learning_flow {
     F [label="Group 1\nReading", width=2.6, height=0.9, fixedsize=true];
     G [label="Group 2\nJupyter Notebook", width=2.6, height=0.9, fixedsize=true];
 
-    H [label="Discussion & Comparison"];
+    H [label="Discussion"];
 
     B -> C;
     B -> D;
@@ -991,8 +1008,10 @@ As a student, you can apply for the [GitHub Student Developer Pack](https://educ
 
 <br><br>
 
-Link: [https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor](https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor)
+[https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor](https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor)
 
+::: aside
 Note: Responses may be analyzed and published in anonymized form.
+:::
 
 # References {data-state="hide-menubar"}

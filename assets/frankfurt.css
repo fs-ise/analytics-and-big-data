@@ -102,7 +102,7 @@ body,
   left: 0;
   width: 100%;
   text-align: left;   /* or left/right, as you prefer */
-  font-size: 0.5em;     /* optional: make it a bit smaller */
+  font-size: 0.7em;     /* optional: make it a bit smaller */
 }
 
 .reveal h2 {
@@ -267,4 +267,13 @@ body,
   opacity: 1;
   transform: translateY(10px);
   animation: sidenote-fade-in 0.6s ease-out forwards;
+}
+
+.reveal blockquote {
+  border-left: 5px solid var(--brand-color);
+  padding-left: 0.8em;
+}
+
+.reveal pre.sourceCode {
+  font-size: 0.9em;   /* try 1.1–1.4 */
 }
