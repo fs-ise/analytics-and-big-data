@@ -1663,6 +1663,5 @@ In this notebook, we have learned to
 
 
 ::: {.callout-note title="Stop the Codespace"}
-To continue using your work in the next session, <b>stop</b> your Codespace [here](https://github.com/codespaces).
-Stopping the Codespace preserves the current state of your work and does not consume computational resources.
+Remember to <b>stop</b> your Codespace [here](https://github.com/codespaces).
 :::
