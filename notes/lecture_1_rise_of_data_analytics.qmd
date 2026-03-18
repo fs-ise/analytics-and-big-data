@@ -143,6 +143,32 @@ TODO: reading/synthesis?
 **Before starting with the question sets: throw your help-card back into the bucket.**
 
 
+<!--
+TODO : possible extension for first question sets:
+## Exam prep
+
+TODO : include specific questions/tasks that could be included in the exam.
+
+- "Simple question" (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
+- table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
+- TBD: questions related to the jupyter ecosystem?
+
+**TODO: add a setup explanation + tests for available python version and packages**
+
+
+See https://www.codecademy.com/article/how-to-use-jupyter-notebooks
+https://www.codecademy.com/article/getting-started-with-jupyter
+-> variable? + tab-completion, shift-tab for function arguments
+
+::: {.learning-objectives}
+Explore the Python and Jupyter analytics ecosystem:
+
+- Start Jupyter in a VM (GitHub Codespace)
+- Write a first notebook
+:::
+
+-->
+
 ## Survey
 
 - You have seen other courses. Let me know if there is anything (practice, tool, ...) that I could learn from one of my colleagues.
