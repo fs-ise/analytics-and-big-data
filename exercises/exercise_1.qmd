@@ -2,61 +2,55 @@
 title: "Exercise 1: The rise of analytics"
 ---
 
+:::{.direction}
+
 In this session, we split into two groups.
-You have approx. 30 mins for each part.
+You have approx. 30 mins for each task.
 
-## Group 1: Read _Competing on Analytics_
+| Exercise part                             | Time (min) |
+| ----------------------------------------- | ---------- |
+| [Task 1: Competing on Analytics](#task-1) | 30         |
+| [Task 2: Jupyter Notebook Setup](#task-2) | 30         |
+| [Discussion](#discussion)                 | 20         |
+| [Wrap-up](#wrap-up)                       | 5          |
+| **Overall**                               | 85         |
 
+:::
+
+## Task 1: Read _Competing on Analytics_ <a id="task_1"></a>
+
+:::{.direction}
 Read the _Competing on Analytics_ paper by @Davenport2006.
 Prepare to discuss the following questions:
+:::
 
 1. **What does it mean for a company to “compete on analytics”?**  
    How is this different from simply using data or reports in decision making?
 
+:::{.sol}
+TODO
+:::
+
 2. **What organizational capabilities are required to compete on analytics?**  
    Consider aspects such as leadership, culture, people, and technology.
+
+:::{.sol}
+TODO
+:::
 
 3. **Which companies or industries today seem to compete on analytics?**  
    Give examples and explain how analytics creates their competitive advantage.
 
-
-## Group 2: Create an analytical notebook in Jupyter
-
-::: {.learning-objectives}
-Explore the Python and Jupyter analytics ecosystem:
-
-- Start Jupyter in a VM (GitHub Codespace)
-- Write a first notebook
-:::
-
-::: {.callout-note title="TODO"}
-See https://www.codecademy.com/article/how-to-use-jupyter-notebooks
-https://www.codecademy.com/article/getting-started-with-jupyter
--> variable? + tab-completion, shift-tab for function arguments
-
-- test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)
-- understand the elements of a jupyter notebook
-
-- shortcuts: run individual lines with shift+ENTER ??, press a, b, x, ...
-
-- extend slide-deck?
-
+:::{.sol}
+TODO
 :::
 
 
+## Task 2: Create an analytical notebook in Jupyter <a id="task_2"></a>
 
-## Preface
+:::{.direction}
 
-The purpose of this document is to give an introduction to data analytics with Python.
-
-+ jupyter notebooks and libraries
-
-
-
-
-## Example case
-
-1. Select a case (business problem and dataset)
+1. Select an example case (business problem and dataset)
 
 Kaggle: [Retail and shopping](https://www.kaggle.com/datasets?topic=retailAndShoppingDataset), [financial](https://www.kaggle.com/datasets?search=financial) or [trending](https://www.kaggle.com/datasets?topic=trendingDataset).
 
@@ -73,32 +67,37 @@ Kaggle: [Retail and shopping](https://www.kaggle.com/datasets?topic=retailAndSho
 
 See how far you get:
 
-- import the CSV, create a descriptive overview of the data, select a model to make predictions
+- Import the CSV, create a descriptive overview of the data, select a model to make predictions
 
 Consult the documentation of Python libraries such as pandas or scikit-learn.
 
-- Get a dataset (nice datasource)
-- Import and prepare
-- Produce a notebook
-
-
-::: {.callout-note title="TODO"}
-**TODO: add a setup explanation + tests for available python version and packages**
 :::
 
+:::{.sol}
+TODO (TBD: shared notebooks by fellow students?)
+:::
 
+:::{.direction}
 
+## Wrap-up <a id="wrap-up"></a>
 
-## Exam prep
+🎉🎈 You have completed the first notebook - good work! 🎈🎉
 
-TODO : include specific questions/tasks that could be included in the exam.
+In this notebook, we have learned to
 
-- "Simple question" (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
-- table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
-- TBD: questions related to the jupyter ecosystem?
+* Explain what it means to compete on analytics and why it creates competitive advantage
+* Set up and use Jupyter notebooks in a Python-based analytics environment
+* Structure an analytical workflow following CRISP-DM principles
+* Distinguish between descriptive, predictive, and prescriptive analytics
+* Begin implementing a basic data analysis workflow in Python
 
+::: {.callout-note title="Stop the Codespace"}
+To continue using your work in the next session, <b>stop</b> your Codespace [here](https://github.com/codespaces).
+Stopping the Codespace preserves the current state of your work and does not consume computational resources.
+:::
 
-## Survey
+:::
 
-
+:::{.direction}
 # References
+:::
