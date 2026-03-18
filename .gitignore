@@ -7,4 +7,4 @@ _site/
 
 /.quarto/
 **/*.quarto_ipynb
-exercises/data/.ipynb_checkpoints/*
+data/.ipynb_checkpoints/*
