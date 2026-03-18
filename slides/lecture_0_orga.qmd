@@ -28,8 +28,8 @@ Research interests
 Teaching interests
 
 - Analytics and big data
-- Programming and software engineering
 - IT security
+- Programming and software engineering
 - Digital knowledge-intensive and platform-based work
 - Literature review methods
 
@@ -43,19 +43,26 @@ Teaching interests
 
 ## About you
 
+<!--
+For smaller courses (approx. 15 students):
+
 Please answer the three questions.
 Then choose **one** optional area where you would like to share a bit more.
 
-**1. Have you worked in an industry role or completed an internship with an analytics focus?**
+HIGHLIGHT items as optional
+-->
 
-Optional:
+Please take a moment to think about the following questions.
+For each question, I’ll invite a few of you to briefly share your thoughts.
+
+<br>
+
+**1. Have you worked in an industry role or completed an internship with an analytics focus?**
 
 - What was something that felt **very useful** in your analytics work?
 - Or where would you have liked to be **better prepared** for a data-related task?
 
 **2. Which analytics tools or programming languages have you used?**
-
-Optional:
 
 - What was a particularly interesting analytics **challenge** you encountered?
 - Or a tool you found especially powerful or **surprising**?
@@ -101,7 +108,7 @@ Prerequisite: Completed the "Introduction to Programming" module.
 
 Related fields:
 
-- **Business Intelligence** refers to "the techniques, technologies, systems, practices, methodologies, and applications that analyze critical business data to help an enterprise better understand its business and market and make timely business decisions." [based on @ChenEtAl2012]
+- **Business intelligence** refers to "the techniques, technologies, systems, practices, methodologies, and applications that analyze critical business data to help an enterprise better understand its business and market and make timely business decisions." [based on @ChenEtAl2012]
 - **Data mining** refers to algorithmic techniques used to discover patterns, relationships, and knowledge from large datasets [@ChenEtAl2012].
 - **Data science** is the interdisciplinary field that combines statistical methods, data mining, machine learning, and database technologies to extract knowledge and insights from large and complex datasets.
 
@@ -189,25 +196,29 @@ flowchart LR
 
 </div>
 
-## Learning objectives
+<!--
+    Update before including:
 
-**Knowledge**
+    ## Learning objectives
 
-- **Differentiate** between descriptive, predictive, and prescriptive analytics approaches.
-- **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
-- **Explain** fundamental concepts of data analytics, and its role in data-driven organizations.
+    **Knowledge**
 
-**Skills**
+    - **Differentiate** between descriptive, predictive, and prescriptive analytics approaches.
+    - **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
+    - **Explain** fundamental concepts of data analytics, and its role in data-driven organizations.
 
-- **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
-- **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
-- **Implement** analytical procedures in Python, using standard data science libraries (`pandas`, `scikit-learn`, `matplotlib`).
+    **Skills**
 
-**Competence**
+    - **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
+    - **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
+    - **Implement** analytical procedures in Python, using standard data science libraries (`pandas`, `scikit-learn`, `matplotlib`).
 
-- **Design** analytics solutions aligned with business goals and governance principles.
-- **Integrate** analytical technologies into organizational decision-making processes
-- **Assess** the operational and strategic implications of data analytics in organizations.
+    **Competence**
+
+    - **Design** analytics solutions aligned with business goals and governance principles.
+    - **Integrate** analytical technologies into organizational decision-making processes
+    - **Assess** the operational and strategic implications of data analytics in organizations.
+-->
 
 
 ## What this course does *not* cover
@@ -241,7 +252,9 @@ flowchart LR
 
 ## Course logistics
 
-Workload: 150h total (44h in class, remaining: self-study and group project)
+Workload:
+
+- 150h total (44h in class, remaining: self-study and group project)
 
 Assessment
 
@@ -321,7 +334,44 @@ We will work together to find a fair and workable solution.
 
 Slides and materials
 
-- Presentation slides will be made available for download.
+- Presentation slides and notebooks will be made available for download.
+
+Short surveys at the end of each session
+
+- If you notice anything that could benefit from further clarification or improvement, please take a note and let me know there.
+
+Your input makes a real difference 🙏
+
+. . . 
+
+<br>
+
+Learning markers
+
+- Facilitate learning and exam preparation.
+- Help distinguish between illustrative material and key concepts and skills to prioritize.
+
+::: {.highlight_must_learn}
+
+**Key concepts**
+
+These markers highlight key skills and knowledge areas that you should prioritize when preparing for the exam.
+<br>
+*Note*: This does not mean that other contents are excluded—they remain relevant for a complete understanding.
+
+:::
+
+
+::: {.learning_note}
+
+**Learning focus**
+
+These notes indicate how the content may be addressed in the exam and how you can prepare effectively.
+
+:::
+
+## Literature
+
 - You are expected to take complementary notes and read the recommended literature.
 <!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. -->
 - Literature and complementary materials will be listed at the end of each lecture.
