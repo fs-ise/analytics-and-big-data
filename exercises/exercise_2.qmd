@@ -2,66 +2,231 @@
 title: "Exercise 2: Data preparation and exploration"
 ---
 
+:::{.direction}
+
 In this notebook, we cover:
 
 1. Data structuring I
 2. Data structuring II
 3. Data cleansing
 4. EDA: Clustering
-5. Question Sets
+5. Question sets
+
+> **Note on materials:**
+> 
+> - Use the **PDF version** of this exercise for written solutions and notes  
+> - Use the **Jupyter Notebook** for implementing all coding tasks  
+> - We recommend working with both side-by-side (e.g., open the PDF separately while coding)
+> 
+> **For the Jupyter Notebook, start a Codespace here:**  
+> [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
+
+:::
 
 ---
 
 # Part 1: Data structuring I
 
-### Dataset `market_data_log.csv`
+We start with the `market_data_log.csv` dataset.
 
 ```{python}
-#| echo: false
-import pandas as pd
-from IPython.display import display
+#| output: false
 
-df1 = pd.read_csv("data/market_data_log.csv")
-display(df1.head())
+import pandas as pd
+market_data_log_df = pd.read_csv("data/market_data_log.csv")
+market_data_log_df.head()
 ```
 
-### Tasks
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">timestamp</th>
+<th data-quarto-table-cell-role="th">logger_sys</th>
+<th data-quarto-table-cell-role="th">Record</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2024-10-16 00:00:00</td>
+<td>FIN-PIPE-V1</td>
+<td>SAP-DE-Tech-2023Q1-MarketCap-1154.9B</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2023-04-25 00:00:00</td>
+<td>FIN-PIPE-V1</td>
+<td>SAP-DE-Tech-2023Q1-Revenue-475.6B</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2023-01-26 00:00:00</td>
+<td>FIN-PIPE-V1</td>
+<td>SAP-DE-Tech-2023Q1-EBITDA-146.7B</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2023-10-09 00:00:00</td>
+<td>FIN-PIPE-V1</td>
+<td>SAP-DE-Tech-2023Q2-MarketCap-1816.0B</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2023-09-08 00:00:00</td>
+<td>FIN-PIPE-V1</td>
+<td>SAP-DE-Tech-2023Q2-Revenue-82.2B</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 
 :::{.direction}
 
+### Tasks
+
 1. Identify:
 
-   * Values: _(your answer)_
-   * Observations: _(your answer)_
-   * Variables: _(your answer)_
-   * Units of observation: _(your answer)_
+   * Values: ________________
+   * Observations: ________________
+   * Variables: ________________
+   * Units of observation: ________________
 
-2. Draft the **tidy structure** of the dataset by filling in the _X_:
+2. Draft the **tidy structure** of the dataset:
 
-|    | _X_ | _X_ | _X_ | _X_ | _X_ | _X_ | _X_ |
-|---|---|---|---|---|---|---|---|
-| _X_ | _X_ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
-| _X_ | _X_ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
-| _..._ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ | _..._ |
+
+<div class="cell-output cell-output-display">
+<div>
+<table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif; color:#222;">
+  <thead>
+    <tr>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 
 3. Describe how the dataset should be transformed.
 
-<br>
-_(your answer)_
-<br><br>
+<br><br><br><br>
 
 4. **(Optional challenge)**: Implement the transformation in Python (pandas)
 
-```python
+```{python}
 import pandas as pd
 
-df1 = pd.read_csv("data/market_data_log.csv")
+market_data_df = pd.read_csv("data/market_data_log.csv")
 
-# Your solution
+# Your solution (in Jupyter notebook)
+# Note: you may need string operations
 ```
+
+{{< iconify fluent-mdl2:insights >}} If you didn’t get to this part in class, try working through it at home.
+
+
+::: {.callout-note title="Expectations in the exam"}
+<br>
+
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="border: 1px solid #ccc; padding: 8px;">Grade</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Expectations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><strong>1 (Best)</strong></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        <strong>Recommend</strong> how to fix the dataset using appropriate transformations, e.g., describe restructuring steps, select the correct method from examples, or provide pseudocode.
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><strong>2</strong></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        <strong>Evaluate</strong> and justify the decision using tidy data principles, e.g., "This is not tidy because column 2 contains two variables instead of one."
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><strong>3</strong></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        <strong>Apply</strong> tidy data principles to evaluate a dataset (correctly identify whether it is tidy or not).
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><strong>4 (Pass)</strong></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        <strong>Understand</strong> and reproduce the principles of tidy data (e.g., each variable in a column, each observation in a row).
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-family: Arial, sans-serif; margin-top: 10px;">
+  <strong>Note:</strong> Even for the best grade, you are not expected to write fully functional code from memory. Still, practicing with code will help you build a deeper conceptual understanding.
+</p>
+
 :::
 
-{{< iconify fluent-mdl2:insights >}} In addition to the transformation, you may need string operations
+:::
+
+
 
 :::{.sol}
 
@@ -69,16 +234,19 @@ df1 = pd.read_csv("data/market_data_log.csv")
 
 1. Identify:
 
-   * **Values:** Financial values encoded in the record (e.g., `150B`, `8.2B`)
-   * **Observations:** Individual logged measurements for a specific entity, period, and metric
-   * **Variables:** Timestamp, Logger system, Entity, Country, Sector, Period, Metric, Value
-   * **Units of observation:** One logged **entity–period–metric** measurement
+   * **Values:** Examples: 2024-10-16 00:00:00, FIN-PIPE-V1, SAP, DE, 2023Q1, 1154.9
+   * **Observations:** Individual logged measurements for a specific firm, period, and metric
+   * **Variables:** Timestamp, Logger system, Firm, Country, Sector, Period, Metric, Value
+   * **Units of observation:** One logged **firm–period–metric** measurement
+
+
+TODO: why is it not tidy?
 
 ---
 
 2. Draft the **tidy structure** of the dataset:
 
-| timestamp           | logger_sys      | Entity | Country | Sector | Period | Metric    | Value |
+| timestamp           | logger_sys      | Firm | Country | Sector | Period | Metric    | Value |
 | ------------------- | --------------- | ------ | ------- | ------ | ------ | --------- | ----- |
 | 2023-03-15 10:22:01 | FIN-PIPELINE-V1 | SAP    | DE      | Tech   | 2023Q1 | MarketCap | 150B  |
 | 2023-03-15 10:22:01 | FIN-PIPELINE-V1 | SAP    | DE      | Tech   | 2023Q1 | Revenue   | 8.2B  |
@@ -92,42 +260,31 @@ df1 = pd.read_csv("data/market_data_log.csv")
 * **Parse encoded column:**
 
   * The `Record` column contains multiple variables concatenated with `-`
-  * Split into: `Entity`, `Country`, `Sector`, `Period`, `Metric`, `Value`
-
-* **Handle inconsistencies:**
-
-  * Standardize period format (e.g., `2024-Q1` → `2024Q1`)
-
-* **Keep structured metadata:**
-
-  * `timestamp` and `logger_sys` are already tidy and should be retained
+  * Split into: `Firm`, `Country`, `Sector`, `Period`, `Metric`, `Value`
 
 * **Optional refinement:**
 
+  * Columns `timestamp` and `logger_sys` could be removed for the analysis.
   * Convert `Value` into numeric format (e.g., remove `B` and cast to float)
 
 ---
 
 4. **(Optional challenge)**: Implement the transformation in Python (pandas)
 
-```python
+```{python}
 import pandas as pd
 
-# Load data
-df = pd.read_csv("data/market_data_log.csv")
+market_data_df = pd.read_csv("data/market_data_log.csv")
 
-# Step 1: clean minor inconsistencies (e.g., 2024-Q1 → 2024Q1)
-df["Record"] = df["Record"].str.replace(r"(\d{4})-Q", r"\1Q", regex=True)
+# Split encoded column
+split_cols = market_data_df["Record"].str.split("-", expand=True)
+split_cols.columns = ["Firm", "Country", "Sector", "Period", "Metric", "Value"]
 
-# Step 2: split encoded column
-split_cols = df["Record"].str.split("-", expand=True)
-split_cols.columns = ["Entity", "Country", "Sector", "Period", "Metric", "Value"]
+# Combine with original dataframe
+df_tidy = pd.concat([market_data_df, split_cols], axis=1)
 
-# Step 3: combine with original dataframe
-df_tidy = pd.concat([df.drop(columns=["Record"]), split_cols], axis=1)
-
-# Optional: convert Value to numeric (remove 'B')
-df_tidy["Value_numeric"] = df_tidy["Value"].str.replace("B", "", regex=False).astype(float)
+# Drop Record column
+df_tidy.drop(columns=["Record"], inplace=True)
 
 df_tidy.head()
 ```
@@ -138,16 +295,173 @@ df_tidy.head()
 
 # Part 2: Data structuring II
 
-### Dataset `sales_data_channels_full_year.csv`
+Dataset `sales_data_channels_full_year.csv`
 
 ```{python}
-#| echo: false
-import pandas as pd
-from IPython.display import display
+#| output: false
 
-df2 = pd.read_csv("data/sales_data_channels_full_year.csv")
-display(df2.head())
+import pandas as pd
+sales_data_df = pd.read_csv("data/sales_data_channels_full_year.csv")
+sales_data_df.head()
 ```
+
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Customer_ID</th>
+<th data-quarto-table-cell-role="th">Region</th>
+<th data-quarto-table-cell-role="th">Jan_Online</th>
+<th data-quarto-table-cell-role="th">Jan_Store</th>
+<th data-quarto-table-cell-role="th">Feb_Online</th>
+<th data-quarto-table-cell-role="th">Feb_Store</th>
+<th data-quarto-table-cell-role="th">Mar_Online</th>
+<th data-quarto-table-cell-role="th">Mar_Store</th>
+<th data-quarto-table-cell-role="th">Apr_Online</th>
+<th data-quarto-table-cell-role="th">Apr_Store</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Aug_Online</th>
+<th data-quarto-table-cell-role="th">Aug_Store</th>
+<th data-quarto-table-cell-role="th">Sep_Online</th>
+<th data-quarto-table-cell-role="th">Sep_Store</th>
+<th data-quarto-table-cell-role="th">Oct_Online</th>
+<th data-quarto-table-cell-role="th">Oct_Store</th>
+<th data-quarto-table-cell-role="th">Nov_Online</th>
+<th data-quarto-table-cell-role="th">Nov_Store</th>
+<th data-quarto-table-cell-role="th">Dec_Online</th>
+<th data-quarto-table-cell-role="th">Dec_Store</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>ACC-E0IFD0</td>
+<td>APAC</td>
+<td>215</td>
+<td>201</td>
+<td>240</td>
+<td>73</td>
+<td>80</td>
+<td>184</td>
+<td>224</td>
+<td>240</td>
+<td>...</td>
+<td>182</td>
+<td>180</td>
+<td>108</td>
+<td>154</td>
+<td>278</td>
+<td>76</td>
+<td>85</td>
+<td>211</td>
+<td>148</td>
+<td>132</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>ACC-DPBHSA</td>
+<td>EU</td>
+<td>315</td>
+<td>108</td>
+<td>251</td>
+<td>163</td>
+<td>133</td>
+<td>245</td>
+<td>170</td>
+<td>194</td>
+<td>...</td>
+<td>300</td>
+<td>157</td>
+<td>289</td>
+<td>233</td>
+<td>173</td>
+<td>121</td>
+<td>172</td>
+<td>213</td>
+<td>260</td>
+<td>158</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>CUST-ZZPQK5</td>
+<td>APAC</td>
+<td>142</td>
+<td>167</td>
+<td>195</td>
+<td>81</td>
+<td>175</td>
+<td>107</td>
+<td>296</td>
+<td>210</td>
+<td>...</td>
+<td>101</td>
+<td>221</td>
+<td>141</td>
+<td>116</td>
+<td>142</td>
+<td>109</td>
+<td>182</td>
+<td>55</td>
+<td>258</td>
+<td>124</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>CUST-ZMF8MD</td>
+<td>APAC</td>
+<td>218</td>
+<td>209</td>
+<td>154</td>
+<td>224</td>
+<td>205</td>
+<td>163</td>
+<td>124</td>
+<td>206</td>
+<td>...</td>
+<td>83</td>
+<td>228</td>
+<td>264</td>
+<td>172</td>
+<td>235</td>
+<td>223</td>
+<td>239</td>
+<td>88</td>
+<td>285</td>
+<td>178</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CUST-MMJBQE</td>
+<td>EU</td>
+<td>180</td>
+<td>145</td>
+<td>212</td>
+<td>135</td>
+<td>217</td>
+<td>124</td>
+<td>231</td>
+<td>190</td>
+<td>...</td>
+<td>253</td>
+<td>151</td>
+<td>115</td>
+<td>78</td>
+<td>159</td>
+<td>194</td>
+<td>140</td>
+<td>219</td>
+<td>111</td>
+<td>137</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 26 columns</p>
+</div>
+</div>
+
 
 ### Tasks
 
@@ -155,33 +469,76 @@ display(df2.head())
 
 1. Identify:
 
-   * Values: _(your answer)_
-   * Observations: _(your answer)_
-   * Variables: _(your answer)_
-   * Units of observation: _(your answer)_
+   * Values: ________________
+   * Observations: ________________
+   * Variables: ________________
+   * Units of observation: ________________
 
-2. Draft the **tidy structure** of the dataset by filling in the _X_:
+2. Draft the **tidy structure** of the dataset:
 
-| _X_  | _X_ | _X_ | _X_ | _X_ |
-|---|---|---|---|---|
-| _X_ | _X_ | _X_ | _..._ | _..._ |
-| _X_ | _X_ | _..._ | _..._ | _..._ |
-| _..._ | _..._ | _..._ | _..._ | _..._ |
+
+<div class="cell-output cell-output-display">
+<div>
+<table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif; color:#222;">
+  <thead>
+    <tr>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+      <th style="background:#f2f2f2; border:1px solid #ccc; padding:10px;">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+      <td contenteditable="true" style="border:1px solid #ccc; padding:10px;">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 
 3. Describe how the dataset should be transformed.
 
-<br>
-_(your answer)_
-<br><br>
+<br><br><br>
 
 4. **(Optional challenge)**: Implement the transformation in Python (pandas)
 
-```python
+```{python}
 import pandas as pd
 
-df1 = pd.read_csv("data/market_data_log.csv")
+market_data_df = pd.read_csv("data/market_data_log.csv")
 
-# Your solution
+# Your solution (in Jupyter notebook)
 ```
 
 {{< iconify fluent-mdl2:insights >}} In addition to the transformation, you may need string operations
@@ -215,28 +572,27 @@ df1 = pd.read_csv("data/market_data_log.csv")
 
 4. **(Optional challenge)**: Implement the transformation in Python (pandas)
 
-   * Hint: in addition to the transformation, you may need string operations
 
-```python
+```{python}
 import pandas as pd
 
 # Load data
-df = pd.read_csv("data/sales_data_channels_full_year.csv")
+sales_data_df = pd.read_csv("data/sales_data_channels_full_year.csv")
 
 # Step 1: reshape to long format
-df_long = df.melt(
+tidy_df = sales_data_df.melt(
     id_vars=["Customer_ID", "Region"],
     var_name="Month_Channel",
     value_name="Sales"
 )
 
 # Step 2: split Month and Channel
-df_long[["Month", "Channel"]] = df_long["Month_Channel"].str.split("_", expand=True)
+tidy_df[["Month", "Channel"]] = tidy_df["Month_Channel"].str.split("_", expand=True)
 
 # Step 3: drop Month_Channel
-df_tidy = df_long.drop(columns=["Month_Channel"])
+tidy_df.drop(columns=["Month_Channel"], inplace=True)
 
-df_tidy.head()
+tidy_df.head()
 ```
 
 :::
@@ -245,186 +601,727 @@ df_tidy.head()
 
 # Part 3: Data cleansing
 
-
-### Dataset `messy_customer_data.csv`
+Dataset `messy_customer_data.csv`
 
 ```{python}
-#| echo: false
-import pandas as pd
-from IPython.display import display
+#| output: false
 
-df3 = pd.read_csv("data/messy_customer_data.csv")
-display(df3.head(20))
+import pandas as pd
+customers_df = pd.read_csv("data/messy_customer_data.csv")
+customers_df.head()
 ```
 
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">customer_id</th>
+<th data-quarto-table-cell-role="th">date_of_birth</th>
+<th data-quarto-table-cell-role="th">income</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">signup_date</th>
+<th data-quarto-table-cell-role="th">country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>CUST_00000001809</td>
+<td>1980-04-09</td>
+<td>4896 USD</td>
+<td>M</td>
+<td>2026-12-14</td>
+<td>USA</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>CUST_00000000695</td>
+<td>1945-08-02</td>
+<td>7029</td>
+<td>F</td>
+<td>2023-11-26</td>
+<td>BR</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>CUST_00000000907</td>
+<td>1971-07-25</td>
+<td>6432</td>
+<td>F</td>
+<td>2024-06-25</td>
+<td>Austria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>CUST_00000000545</td>
+<td>2000-03-01</td>
+<td>6107</td>
+<td>M</td>
+<td>2023-06-29</td>
+<td>JP</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CUST_00000001848</td>
+<td>1943-09-06</td>
+<td>7655</td>
+<td>F</td>
+<td>2027-01-22</td>
+<td>Italy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>CUST_00000001567</td>
+<td>1980-09-14</td>
+<td>2244</td>
+<td>F</td>
+<td>2026-04-16</td>
+<td>CH</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>CUST_00000001573</td>
+<td>1950-04-07</td>
+<td>3262</td>
+<td>F</td>
+<td>2026-04-22</td>
+<td>India</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>CUST_00000000945</td>
+<td>1989-08-23</td>
+<td>3976</td>
+<td>M</td>
+<td>2024-08-02</td>
+<td>BR</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>CUST_00000000819</td>
+<td>1946-03-09</td>
+<td>3077 USD</td>
+<td>F</td>
+<td>2024-03-29</td>
+<td>NL</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>CUST_00000000830</td>
+<td>1981-03-30</td>
+<td>NaN</td>
+<td>M</td>
+<td>2024-04-09</td>
+<td>BR</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>CUST_00000001531</td>
+<td>1995-03-08</td>
+<td>4667</td>
+<td>F</td>
+<td>2026-03-11</td>
+<td>DE</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>CUST_00000000979</td>
+<td>1990-01-24</td>
+<td>NaN</td>
+<td>F</td>
+<td>2024-09-05</td>
+<td>Switzerland</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>CUST_00000001576</td>
+<td>1989-06-18</td>
+<td>2920</td>
+<td>F</td>
+<td>2026-04-25</td>
+<td>Brazil</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>CUST_00000000786</td>
+<td>1994-06-24</td>
+<td>6613</td>
+<td>F</td>
+<td>2024-02-25</td>
+<td>IT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>CUST_00000000071</td>
+<td>1960-11-19</td>
+<td>4613</td>
+<td>F</td>
+<td>2022-03-12</td>
+<td>FR</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>CUST_00000001007</td>
+<td>1989-07-09</td>
+<td>4551</td>
+<td>F</td>
+<td>2024-10-03</td>
+<td>BR</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>CUST_00000000189</td>
+<td>1969-01-29</td>
+<td>6779</td>
+<td>M</td>
+<td>2022-07-08</td>
+<td>China</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>CUST_00000001670</td>
+<td>1987-08-04</td>
+<td>7295</td>
+<td>M</td>
+<td>2026-07-28</td>
+<td>Munch</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>CUST_00000001270</td>
+<td>1969-02-06</td>
+<td>4717</td>
+<td>F</td>
+<td>2025-06-23</td>
+<td>USA</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>CUST_00000001305</td>
+<td>1989-01-13</td>
+<td>7954</td>
+<td>F</td>
+<td>2025-07-28</td>
+<td>ES</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
 ---
+
+:::{.direction}
 
 ## Tasks
 
-### 1. Identify Scales of Variables
+### 1. Identify scales of variables
 
 * What type of scale is each variable?
+  Run the following and assign `nominal`, `ordinal`, `interval`, or `ratio`.
 
-  * TODO
+```{python}
+#| output: false
+
+customer_df = pd.read_csv("data/messy_customer_data.csv")
+
+customer_df.info()
+```
+
 
 * What type of scale should each variable be?
+  Assign `nominal`, `ordinal`, `interval`, or `ratio`.
+
+  - customer_id: ________________
+  - date_of_birth: ________________
+  - income: ________________
+  - gender: ________________
+  - signup_date: ________________
+  - country: ________________
 
 ---
 
-### 2. Explore Dataset Structure
+### 2. Analyze data quality
 
-```python
-df3 = pd.read_csv("data/messy_customer_data.csv")
+Examine the dataset `data/messy_customer_data.csv` and run the following:
 
-df3.info()
-df3.describe()
+```{python}
+customer_df.describe()
 ```
 
-* What do you observe?
+* Summarize all data quality issues you observe.
 
 ---
 
-### 3. Univariate Analysis
+### 3. Propose data preparation steps
 
-#### Visual Analysis
-
-```python
-import matplotlib.pyplot as plt
-
-df["age"].hist()
-plt.title("Age Distribution")
-plt.show()
-
-df.boxplot(column="income")
-plt.title("Income Boxplot")
-plt.show()
-```
-
-* What patterns do you observe?
-
----
-
-### 4. Identify Data Quality Issues
-
-* Missing values:
-* Outliers:
-* Inconsistencies:
-
----
-
-### 5. Propose Data Preparation Steps
-
-* How would you handle:
-
-  * Missing values?
-  * Outliers?
-  * Data types?
+* For each data quality issue, suggest how you would address it.
 
 ---
 
 ### *(Optional challenge)* Implement in Python (pandas)
 
 ```{python}
-# Your solution
+# Your solution (in Jupyter notebook)
 ```
+
+:::
+
+
+:::{.sol}
+
+## Solution
+
+### 1. Identify scales of variables
+
+* What type of scale is each variable?
+  
+  All are `nominal` (strings).
+
+
+* What type of scale should each variable be?
+  Assign `nominal`, `ordinal`, `interval`, or `ratio`.
+
+  - customer_id: **nominal**
+  - date_of_birth: **interval**
+  - income: **ratio**
+  - gender: **nominal**
+  - signup_date: **interval**
+  - country: **nominal**
+
+---
+
+### 2. Analyze data quality
+
+Examine the dataset `data/messy_customer_data.csv` and run the following:
+
+```{python}
+customer_df.describe()
+```
+
+* Summarize all data quality issues you observe.
+
+- **Missing values**
+  - `date_of_birth`
+  - `income`
+  - `signup_date`
+
+- **Implausible / invalid values**
+  - `date_of_birth` (e.g., 1890, future dates like 2030)
+  - `signup_date` (e.g., invalid dates like 2023-13-01)
+  - `income` (e.g., negative values)
+
+- **Inconsistent formats**
+  - `income` (e.g., "5000", "5000 EUR", "5000 USD")
+  - `signup_date` (multiple date formats)
+
+- **Outliers**
+  - `income` (e.g., very high values like 200000)
+
+- **Inconsistent categorical values**
+  - `gender` (M, F, Male, Female, m, f)
+  - `country` (codes, names, typos: DE, Germany, Ger, U.S., Brasil, etc.)
+
+- **Duplicates**
+  - Duplicate records identifiable via repeated `customer_id` (high frequency)
+
+---
+
+### 3. Propose data preparation steps
+
+* For each data quality issue, suggest how you would address it.
+
+* **Missing values:** impute (e.g., median for income) or remove rows
+* **Implausible / invalid values:** filter out or correct (e.g., future DOB, negative income, invalid dates)
+* **Inconsistent formats:** standardize (convert income to numeric, parse dates to datetime)
+* **Outliers:** inspect and cap or remove extreme values
+* **Inconsistent categorical values:** unify categories (e.g., gender labels, country formats)
+* **Duplicates:** remove duplicates based on `customer_id`
+
+---
+
+### *(Optional challenge)* Implement in Python (pandas)
+
+```{python}
+import pandas as pd
+
+customer_df = pd.read_csv("data/messy_customer_data.csv")
+
+# --- Income: clean + numeric ---
+customer_df["income"] = (
+    customer_df["income"]
+    .astype(str)
+    .str.replace(r"\s*(USD|EUR)", "", regex=True)
+)
+customer_df["income"] = pd.to_numeric(customer_df["income"], errors="coerce")
+
+# --- Missing values (income) ---
+customer_df["income"] = customer_df["income"].fillna(customer_df["income"].median())
+
+# --- Dates: parse ---
+customer_df["date_of_birth"] = pd.to_datetime(customer_df["date_of_birth"], errors="coerce")
+customer_df["signup_date"] = pd.to_datetime(customer_df["signup_date"], errors="coerce")
+
+# --- Invalid / implausible values ---
+today = pd.Timestamp.today()
+
+# remove future DOB and very old values
+customer_df = customer_df[
+    (customer_df["date_of_birth"] < today) &
+    (customer_df["date_of_birth"] > pd.Timestamp("1900-01-01"))
+]
+
+# remove invalid signup dates (future or NaT)
+customer_df = customer_df[
+    (customer_df["signup_date"] <= today)
+]
+
+# remove negative income
+customer_df = customer_df[customer_df["income"] >= 0]
+
+# --- Outliers (simple cap) ---
+upper_cap = customer_df["income"].quantile(0.99)
+customer_df["income"] = customer_df["income"].clip(upper=upper_cap)
+
+# --- Gender standardization ---
+customer_df["gender"] = customer_df["gender"].replace({
+    "M": "Male", "m": "Male",
+    "F": "Female", "f": "Female"
+})
+
+# --- Country standardization ---
+country_map = {
+    "Germany": "DE", "Ger": "DE", "DEU": "DE",
+    "USA": "US", "U.S.": "US",
+    "UK ": "UK",
+    "France": "FR",
+    "Spain": "ES",
+    "Italy": "IT",
+    "Netherlands": "NL",
+    "Switzerland": "CH",
+    "Austria": "AT",
+    "China": "CN",
+    "Japan": "JP",
+    "India": "IN",
+    "Brazil": "BR", "Brasil": "BR",
+    "Canada": "CA",
+    "Munch": "DE"
+}
+customer_df["country"] = customer_df["country"].replace(country_map)
+
+# --- Remove duplicates ---
+customer_df = customer_df.drop_duplicates(subset=["customer_id"])
+
+customer_df.head()
+```
+
+Note: Check how the `customer_df` changes after each preparation step!
+
+:::
+
 
 ---
 
 # Part 4: EDA: Clustering
 
-## Dataset
+Dataset: `firm_data.csv`
 
 ```{python}
-from sklearn.datasets import make_blobs
+#| output: false
 
-X, _ = make_blobs(n_samples=200, centers=4, random_state=42)
-df_cluster = pd.DataFrame(X, columns=["feature_1", "feature_2"])
-
-df_cluster.head()
+import pandas as pd
+firm_data_df = pd.read_csv("data/firm_data.csv")
+firm_data_df.head()
 ```
+
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">company_id</th>
+<th data-quarto-table-cell-role="th">sector</th>
+<th data-quarto-table-cell-role="th">revenue</th>
+<th data-quarto-table-cell-role="th">profit_margin</th>
+<th data-quarto-table-cell-role="th">growth_rate</th>
+<th data-quarto-table-cell-role="th">debt_ratio</th>
+<th data-quarto-table-cell-role="th">market_cap</th>
+<th data-quarto-table-cell-role="th">rd_intensity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>FIRM-0095</td>
+<td>Healthcare</td>
+<td>2117.569743</td>
+<td>13.382162</td>
+<td>6.053507</td>
+<td>0.555974</td>
+<td>12426.889897</td>
+<td>3.308879</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>FIRM-0015</td>
+<td>Healthcare</td>
+<td>457.538045</td>
+<td>10.139487</td>
+<td>21.504950</td>
+<td>0.350252</td>
+<td>5779.074618</td>
+<td>8.710809</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>FIRM-0030</td>
+<td>Industry</td>
+<td>463.847307</td>
+<td>4.131422</td>
+<td>13.237034</td>
+<td>0.356084</td>
+<td>4451.965515</td>
+<td>15.719744</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>FIRM-0158</td>
+<td>Finance</td>
+<td>347.980562</td>
+<td>9.573304</td>
+<td>16.117482</td>
+<td>0.472141</td>
+<td>3256.609038</td>
+<td>31.989645</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>FIRM-0128</td>
+<td>Tech</td>
+<td>804.239654</td>
+<td>0.165357</td>
+<td>-3.346796</td>
+<td>0.761088</td>
+<td>1825.004761</td>
+<td>2.082579</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 ---
 
 ## Tasks
 
-### 1. Apply K-Means Clustering
+:::{.direction}
+
+### 1. Prepare the Data for Clustering
+
+We decide to use `profit_margin` and `rd_intensity` to cluster firms.
+In a first step, create a dataframe `X` consisting of values for these two variables:
+
+```{python}
+import pandas as pd
+
+df_firm_data = pd.read_csv("data/firm_data.csv")
+
+# Your solution (in Jupyter notebook)
+```
+
+Considering that k-means is sensitive to different measurement scale, we standardize the values.
+This ensures that they have approximately equal influence on the clusters.
+
+Run the following code and observe how the scale of both variables changes:
+
+```{python}
+from sklearn.preprocessing import StandardScaler
+
+# Scale
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+X.head()
+```
+
+
+Before running a clustering algorithm, lets's view the data in a scatterplot:
+
+```{python}
+plt.scatter(X[:, 0], X[:, 1], s=10)
+plt.title("Raw data (no clustering)")
+plt.show()
+```
+
+How many clusters would you expect?
+
+---
+
+### 2. Apply K-Means Clustering
+
+```{python}
+from sklearn.cluster import KMeans
+
+# Your solution (in Jupyter notebook)
+# Fill in the KMeans, predicting the labels:
+
+
+# Run the whole code cell to fit KMeans and plot it
+plt.figure(figsize=(3.6, 2.8))
+plt.scatter(X[:, 0], X[:, 1], c=labels, s=10)
+plt.scatter(
+    kmeans.cluster_centers_[:, 0],
+    kmeans.cluster_centers_[:, 1],
+    c='red', marker='x', s=60, linewidth=2
+)
+plt.title(f"k={k}", fontsize=10)
+plt.xticks([])
+plt.yticks([])
+plt.tight_layout()
+plt.show()
+```
+
+* Try different values of K (e.g., 2–5)
+* Which number of clusters seems appropriate?
+
+---
+
+### 3. Add Cluster Labels to the Dataset
+
+```{python}
+# Your solution (in Jupyter notebook)
+```
+
+---
+
+### 4. Create Grouped Boxplots
 
 ```{python}
 import matplotlib.pyplot as plt
+
+# Your solution (in Jupyter notebook)
+```
+
+* Compare distributions of:
+
+  * profit_margin
+  * revenue
+  * growth_rate
+
+---
+
+### 5. Interpretation
+
+* How would you describe the clusters?
+* What types of firms do they represent?
+
+:::
+
+---
+
+
+
+:::{.sol}
+
+## Solution
+
+### 1. Prepare the Data for Clustering
+
+We exclude non-numeric and identifier variables:
+
+```{python}
+features = [
+    "revenue",
+    "profit_margin",
+    "growth_rate",
+    "debt_ratio",
+    "market_cap",
+    "rd_intensity"
+]
+
+X = df_firm_data[features]
+```
+
+👉 Excluded:
+
+* `company_id` (identifier)
+* `sector` (categorical)
+
+---
+
+### 2. Apply K-Means Clustering
+
+```{python}
 from sklearn.cluster import KMeans
 
-# Try different K values
 k_values = [2, 3, 4, 5]
 
 for k in k_values:
     kmeans = KMeans(n_clusters=k, random_state=42)
-    labels = kmeans.fit_predict(df_cluster)
-
-    plt.scatter(df_cluster["feature_1"], df_cluster["feature_2"], c=labels)
-    plt.title(f"K-Means with K={k}")
-    plt.show()
+    labels = kmeans.fit_predict(X)
+    print(f"K={k}, Inertia={kmeans.inertia_}")
 ```
 
-* Which number of clusters seems most appropriate?
+👉 Typically, **K = 4** is appropriate (reflecting the data-generating process)
 
 ---
 
-### *(Optional)* Use Silhouette Score
+### 3. Add Cluster Labels
 
 ```{python}
-from sklearn.metrics import silhouette_score
+data_df["cluster"] = labels
 
-for k in k_values:
-    kmeans = KMeans(n_clusters=k, random_state=42)
-    labels = kmeans.fit_predict(df_cluster)
-    score = silhouette_score(df_cluster, labels)
-    print(f"K={k}, Silhouette Score={score}")
+data_df.head()
 ```
-
-* Which K is optimal?
 
 ---
 
-### *(Additional Challenge)* Hierarchical Clustering
+### 4. Grouped Boxplots
 
 ```{python}
-from scipy.cluster.hierarchy import dendrogram, linkage
+import matplotlib.pyplot as plt
 
-linked = linkage(df_cluster, method='ward')
+# Profit margin by cluster
+df_firm_data.boxplot(column="profit_margin", by="cluster")
+plt.title("Profit Margin by Cluster")
+plt.suptitle("")
+plt.show()
 
-dendrogram(linked)
-plt.title("Dendrogram")
+# Revenue by cluster
+df_firm_data.boxplot(column="revenue", by="cluster")
+plt.title("Revenue by Cluster")
+plt.suptitle("")
+plt.show()
+
+# Growth rate by cluster
+df_firm_data.boxplot(column="growth_rate", by="cluster")
+plt.title("Growth Rate by Cluster")
+plt.suptitle("")
 plt.show()
 ```
 
-* How many clusters does the dendrogram suggest?
+---
+
+### 5. Interpretation
+
+Typical patterns:
+
+* **Cluster 0:** High growth, low profit → growth-oriented firms
+* **Cluster 1:** High revenue, stable margins → mature firms
+* **Cluster 2:** Negative margins, high debt → distressed firms
+* **Cluster 3:** High R&D intensity → innovation-driven firms
+
+👉 Clusters reflect **distinct financial profiles** and business strategies.
+
+:::
+
 
 ---
 
-### 2. Add Cluster Labels
-
-```{python}
-kmeans = KMeans(n_clusters=3, random_state=42)
-df_cluster["cluster"] = kmeans.fit_predict(df_cluster)
-
-df_cluster.head()
-```
-
----
-
-### 3. Grouped Boxplots
-
-```{python}
-df_cluster.boxplot(column="feature_1", by="cluster")
-plt.title("Feature 1 by Cluster")
-plt.show()
-```
-
-* How do clusters differ?
-
----
-
-# Part 5: Question Sets
+# Part 5: Question sets
 
 ## Question 1
 
@@ -454,4 +1351,3 @@ In this notebook, you practiced:
 * Preparing and exploring datasets
 * Identifying data quality issues
 * Applying clustering methods
-* Reflecting on conceptual foundations of data analysis

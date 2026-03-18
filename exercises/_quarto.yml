@@ -8,6 +8,7 @@ csl: ../assets/apa.csl
 
 filters:
   - assign
+  - custom-callout
 
 jupyter: python3
 
