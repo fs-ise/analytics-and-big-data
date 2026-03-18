@@ -206,6 +206,14 @@ Implementation in Python/pandas: level of difficulty: use the library documentat
 
 Possible extensions: data structuring with tables requiring transpose
 
+<!--
+    TODO: possible extension of the clustering exercise:
+    ### 5. Interpretation
+
+    * How would you describe the clusters?
+* What types of firms do they represent?
+-->
+
 ## Survey
 
 - Generally: indicate when notes on learning focus or expectations would be helpful.
