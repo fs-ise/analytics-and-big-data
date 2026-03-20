@@ -17,7 +17,7 @@ execute:
 
 ::: {.learning-objectives}
 - **Explain** the stages of a model-based analytics workflow using linear regression as an example.
-- **Interpret** linear regression models, including coefficient meaning, OLS estimation, and model evaluation.
+- **Interpret** linear regression models, including coefficients, OLS estimation, and model evaluation.
 - **Describe** how regression models are implemented in Python.
 :::
 
@@ -96,7 +96,7 @@ digraph CRISPDM {
 # Business understanding {data-stack-name="Business understanding"}
 
 
-## Case: House Prices — What Drives Property Value?
+## Case: House prices — What drives property value?
 
 :::: {.columns}
 
@@ -159,23 +159,47 @@ How could we use analytical models, such as regression models, to understand the
 
 ## Dataset: Ames Housing (Kaggle)
 
-**Resources:**
-[Competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview) and [dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset/data)
+To answer our question, we need a dataset that includes:
 
-<!-- https://www.kaggle.com/datasets/prevek18/ames-housing-dataset -->
+* Sale prices
+* Physical attributes (e.g., size, rooms)
+* Quality indicators
+* Location characteristics
 
-**Kaggle** is a widely-used online platform for data science and machine learning.
-It provides:
+. . . 
 
-- Public datasets
-- Notebooks for analysis
-- Competitions and community discussions
+To address this, we turn to a **publicly available dataset** on Kaggle: the **Ames Housing dataset**, which provides detailed information on residential properties and their sale prices.
+
+<br>
+
+::: {.callout-note title="About Kaggle"}
+**Kaggle** is a popular data science platform offering:
+
+* Public datasets
+* Notebooks for analysis
+* Competitions
+* An active community
+:::
+
+<!--
+
+This makes it well suited for **regression analysis**.
+
+### Resources
+
+* House Prices: Advanced Regression Techniques
+* Ames Housing Dataset
+
+[Competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview) · [Dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset/data)
 
 
-# Data preparation {data-stack-name="Data preparation"}
+ https://www.kaggle.com/datasets/prevek18/ames-housing-dataset -->
+
+
 
 ## Load the data
 
+As a first step, we retrieve the dataset and load it into our Python environment for analysis.
 
 ```{python}
 #| echo: true     # show code
@@ -187,67 +211,197 @@ USAhousing = pd.read_csv('../exercises/data/ames.csv')
 USAhousing.head()
 ```
 
-https://www.kaggle.com/code/faressayah/practical-introduction-to-10-regression-algorithm
+. . . 
 
-## Explore the data 
+<br>
+
+> An important step is to **understand the meaning of the variables**—that is, what each column represents and how the data was collected.
+
+
+<!--
+https://www.kaggle.com/code/faressayah/practical-introduction-to-10-regression-algorithm
+-->
+
+## Understanding the variables
+
+To understand the variables, we consult the **dataset documentation** and create a structured overview.
+
+We create a small table that summarizes key variables:
+
+<!--
+      | Variable              | Meaning                                            | Unit / Values                      |
+      | --------------------- | -------------------------------------------------- | ---------------------------------- |
+      | `Order`               | Observation number                                 | —                                  |
+      | `PID`                 | Parcel identification number                       | —                                  |
+      | `area`                | Above-ground living area                           | Square feet                        |
+      | `price`               | Sale price of the property (target variable)       | USD                                |
+      | `MS.SubClass`         | Type of dwelling (e.g., 1-story, 2-story, duplex)  | Categorical codes (e.g., 020, 060) |
+      | `MS.Zoning`           | General zoning classification                      | Categorical (e.g., RL, RM, FV)     |
+      | `...`                 | Additional variables (e.g., lot size, street type) | —                                  |
+-->
+
+<div class="smaller">
+
+| Variable      | Meaning                                            | Unit / Values                      | Notes                                                                    |
+| ------------- | -------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------------ |
+| `Order`       | Unique order number                                | —                                  | Check for duplicates, NA not allowed                                     |
+| `PID`         | Parcel identification number                       | —                                  | Same property can appear multiple times (e.g., repeated sales)           |
+| `area`        | Above-ground living area                           | Square feet                        | Check for **plausible ranges and consistency** (e.g., no extreme values) |
+| `price`       | Sale price of the property (target variable)       | USD                                | Check **format, missing values, and outliers**                           |
+| `MS.SubClass` | Type of dwelling                                   | Categorical codes (e.g., 020, 060) | Retrieve **code definitions** and check consistency with other variables |
+| `MS.Zoning`   | General zoning classification                      | Categorical (e.g., RL, RM, FV)     | TODO: Understand categories (may require **external expertise**)         |
+| `...`         | Additional variables (e.g., lot size, street type) | —                                  | ...                                                                      |
+
+</div>
+
+. . . 
+
+<br>
+
+> For the Housing dataset, this overview is already available.
+> In practice, however—especially in organizational contexts—this step often involves **acquiring access to data, extracting it from systems, consulting documentation, talking to domain experts, and making sense of how the data was collected and defined**.
+
+::: aside
+For the Ames Housing dataset, we rely on this data description:
+ [http://jse.amstat.org/v19n3/decock/DataDocumentation.txt](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt)
+:::
+
+# Data preparation {data-stack-name="Data preparation"}
+
+## Prepare and explore the data 
 
 <!--
 TODO: typically involves: identifying and formatting variables (as already discussed) + assumptions of the model (state, mention that some assumptions are more important for inference than for prediction, infobox: no need to memorize the assumptions)
 -->
 
-Before estimating a regression model, we first **explore and prepare the data**.
+Before estimating a regression model, we first **prepare and explore the data**.
+Key steps include:
 
-Typical steps include
+* **Check data quality**
 
-- **Identify variables**
+  * What are the units and possible values?
+  * Missing values, duplicates, inconsistencies
+  * Plausibility of values (e.g., extreme prices or sizes)
 
-  * Which variable is the **outcome (dependent variable)**?
-  * Which variables are **predictors (independent variables)**?
+* **Format and transform variables**
 
-- **Check variable formats**
+  * Numeric vs. categorical variables
+  * Encoding categories, scaling if needed
 
-  * Numeric variables (e.g., *price*, *square footage*)
-  * Categorical variables (e.g., *neighborhood*, *house type*)
-
-- **Explore the data visually**
+* **Explore relationships**
 
   * Summary statistics
-  * Scatter plots
-  * Distributions
+  * Distributions and scatter plots
 
-## Model assumptions
+::: {.callout-note title="Note"}
+These steps were covered in detail in the **data preparation lecture**.
+Here, we focus on the **analytical modeling**.
+:::
 
-Regression models rely on several **statistical assumptions**, for example:
+
+# Modeling {data-stack-name="Modeling"}
+
+## Model choice
+
+::: {.highlight_must_learn}
+
+**1. Specify prediction task**
+
+- Define the **target variable** (e.g., price as a continuous variable)
+
+:::
+
+. . .
+
+::: {.highlight_must_learn}
+
+**2. Collect candidate models** *(selective overview)*
+
+<!--
+    <div class="smaller">
+
+    | Model family | Strengths | Limitations |
+    |-------------|----------|------------|
+    | **Regression** | Interpretable, simple | Limited flexibility |
+    | **Clustering** | Finds structure | Not for prediction |
+    | **ML models** | High performance, flexible | Less interpretable, risk of overfitting |
+
+    </div>
+-->
+
+<div class="smaller">
+
+| Model family (examples)                               | Strengths                              | Limitations                                       |
+| ----------------------------------------------------- | -------------------------------------- | ------------------------------------------------- |
+| **Regression models** (Linear, Ridge, Lasso)          | Interpretable, simple, well understood | Limited prediction performance, few predictors |
+| **Clustering** (e.g., k-means)                        | Identifies structure in data           | Not designed for prediction tasks |
+| **Machine learning models** (e.g., Neural Networks) | Strong predictive performance, flexible | Less interpretable, require tuning, can overfit |
+
+</div>
+
+:::
+
+. . .
+
+::: {.highlight_must_learn}
+
+**3. Select model**
+
+- **Trade-offs:** interpretability vs. performance; simplicity vs. flexibility  
+- **Model complexity:** flexible models capture patterns but may overfit  
+- **Performance:** unknown → must be **tested empirically**
+
+:::
+
+. . .
+
+::: {.highlight_must_learn}
+
+**4. Test and compare**
+
+→ Start with a  **simple, interpretable baseline** (e.g., linear regression)  
+→ Then implement **more complex models for comparison**
+
+:::
+
+::: aside
+See @ProvostFawcett2013, chapter 3 and 4.
+:::
+
+
+
+## Regression: Model assumptions
+
+Regression models rely the following **statistical assumptions**:
 
 * Linear relationship between predictors and outcome
 * Independent observations
 * Constant variance of errors (*homoscedasticity*)
-* Errors roughly normally distributed
+* Errors normally distributed
 
-::: {.callout-note}
-
-### Important
-
-You **do not need to memorize all regression assumptions**.
+::: {.callout-important}
 
 For many **prediction tasks**, violations are often less problematic.
 Assumptions become **more important when doing statistical inference** (e.g., interpreting p-values or confidence intervals).
 
 :::
 
+<!--
+  ::: {.learning_note .fragment}
+  **Learning focus**
+  You **do not need to memorize all regression assumptions**.
+  :::
+-->
+
+## Regression models: A visual illustration
 
 
-# Modeling {data-stack-name="Modeling"}
+Model formula: $$price = \beta_0 + \beta_1*squarefoot$$
 
-
-## Regression models: a visual illustration
-
-Model formula: $$Price = \beta_0 + \beta_1*SquareFootage$$
 
 ```{ojs}
 n = 40
 
-// deterministic pseudo-random generator (so the dots don't change on refresh)
 mulberry32 = (a) => () => {
   a |= 0; a = a + 0x6D2B79F5 | 0
   let t = Math.imul(a ^ a >>> 15, 1 | a)
@@ -256,7 +410,6 @@ mulberry32 = (a) => () => {
 }
 rand = mulberry32(12345)
 
-// generate synthetic housing data
 data = Array.from({length: n}, () => {
   const squarefoot = 500 + rand() * 3000
   const noise = (rand() - 0.5) * 100000
@@ -264,7 +417,6 @@ data = Array.from({length: n}, () => {
   return {squarefoot, price}
 })
 
-// handy extents
 xmin = Math.min(...data.map(d => d.squarefoot))
 xmax = Math.max(...data.map(d => d.squarefoot))
 
@@ -274,34 +426,56 @@ fitLine = [
 ]
 ```
 
-::: {.panel-tabset}
+:::: {.columns}
 
-### Data
+::: {.column width="30%"}
 
-```{ojs}
-Inputs.table(data, {columns: ["squarefoot", "price"]})
-```
-
-### Plot
+**Data**
 
 ```{ojs}
-////| panel: input
-////| layout-ncol: 2
-
-viewof beta0 = Inputs.range([0, 300000], {value: 50000, step: 5000, label: "β₀ (base price)"})
-viewof beta1 = Inputs.range([50, 400], {value: 180, step: 5, label: "β₁ (price per sq ft)"})
+Inputs.table(data, {
+  columns: ["squarefoot", "price"],
+  height: 420
+})
 ```
 
-<!--
-**β₀ and β₁ move the line**
--->
+:::
+
+::: {.column width="70%" .fragment}
+
+**Visualization**
+
+```{ojs}
+viewof combinedSliders = {
+  const b0 = Inputs.range([0, 300000], {value: 50000, step: 5000, label: "β₀ (base price)"})
+  const b1 = Inputs.range([50, 400], {value: 180, step: 5, label: "β₁ (price per sq ft)"})
+  const div = html`<div style="display:flex; gap:2rem; align-items:center;">${b0}${b1}</div>`
+  div.value = {beta0: b0.value, beta1: b1.value}
+  b0.addEventListener("input", () => {
+    div.value = {beta0: b0.value, beta1: b1.value}
+    div.dispatchEvent(new Event("input"))
+  })
+  b1.addEventListener("input", () => {
+    div.value = {beta0: b0.value, beta1: b1.value}
+    div.dispatchEvent(new Event("input"))
+  })
+  return div
+}
+
+beta0 = combinedSliders.beta0
+beta1 = combinedSliders.beta1
+```
 
 ```{ojs}
 Plot.plot({
-  height: 420,
+  height: 480,
+  marginLeft: 70,
   grid: true,
-  x: { label: "Square Footage" },
-  y: { label: "House Price ($)" },
+  x: { label: "squarefoot" },
+  y: {
+    label: "price ($)",
+    domain: [0, Math.max(...data.map(d => d.price)) * 1.1]
+  },
   marks: [
     Plot.dot(data, {x: "squarefoot", y: "price", r: 3}),
     Plot.line(fitLine, {x: "squarefoot", y: "price", stroke: "crimson", strokeWidth: 3})
@@ -311,10 +485,97 @@ Plot.plot({
 
 :::
 
+::::
+
+
+## Interpreting the regression model
+
+```{ojs}
+exampleData = [
+  {squarefoot: 800,  price: 196000},
+  {squarefoot: 1200, price: 272000},
+  {squarefoot: 1500, price: 322000},
+  {squarefoot: 1900, price: 394000},
+  {squarefoot: 2300, price: 466000},
+  {squarefoot: 2700, price: 538000},
+]
+
+exampleFit = [
+  {squarefoot: 800,  price: 50000 + 180 * 800},
+  {squarefoot: 2700, price: 50000 + 180 * 2700}
+]
+```
+
+:::: {.columns}
+
+::: {.column width="48%"}
+
+**The model**
+
+$$\hat{y} = \beta_0 + \beta_1 \cdot x$$
+
+$$\hat{\text{price}} = 50{,}000 + 180 \cdot \text{squarefoot}$$
+
+<br>
+
+**β₀ = 50,000** — *intercept*
+: The predicted price for a house with 0 sq ft. Rarely meaningful on its own — it anchors the line.
+
+**β₁ = 180** — *slope*
+: Each additional square foot is associated with **+$180** in predicted price, on average.
+
+:::
+
+::: {.column width="52%" .fragment}
+
+**Prediction example**
+
+> *How much would a **1,500 sq ft** house cost?*
+
+$$\hat{y} = 50{,}000 + 180 \times 1{,}500 = \$322{,}000$$
+```{ojs}
+Plot.plot({
+  height: 320,
+  marginLeft: 70,
+  grid: true,
+  x: { label: "squarefoot", domain: [600, 2900] },
+  y: { label: "price ($)", domain: [100000, 550000] },
+  marks: [
+    Plot.dot(exampleData, {x: "squarefoot", y: "price", r: 5, fill: "#334155"}),
+    Plot.line(exampleFit,  {x: "squarefoot", y: "price", stroke: "crimson", strokeWidth: 2.5}),
+
+    // vertical dashed line at x = 1500
+    Plot.ruleX([1500], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "6,4"}),
+    // horizontal dashed line at y = 322000
+    Plot.ruleY([322000], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "6,4"}),
+
+    // annotation dot at prediction point
+    Plot.dot([{squarefoot: 1500, price: 322000}], {
+      x: "squarefoot", y: "price", r: 7,
+      fill: "#f59e0b", stroke: "white", strokeWidth: 2
+    }),
+
+    // label
+    Plot.text([{squarefoot: 1560, price: 335000}], {
+      x: "squarefoot", y: "price",
+      text: ["$322,000"],
+      fill: "#f59e0b",
+      fontSize: 13,
+      fontWeight: "bold"
+    })
+  ]
+})
+```
+
+:::
+
+::::
+
+
 ## Including multiple predictor variables
 
 We can include many additional variables to predict the price of a house.
-Each coefficient (β) captures the differential effect of a variable—that is, how much the price is expected to change when that variable increases while the others are held constant.
+Each coefficient (β) captures the **differential effect of a variable**—that is, how much the price is expected to change when that variable increases while the others are held constant.
 
 <br>
 
@@ -365,32 +626,29 @@ As we add more predictors, the model becomes multidimensional, making it increas
 
 ## Ordinary Least Squares Regression (OLS)
 
-TODO: should the residual error be $\epsilon$?
-
 OLS is a **linear approach for predicting a quantitative response** $(Y)$ based on a set of predictor variables $X_j$.
 
-$$ y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + u_i $$
+$$ y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + \epsilon_i $$
 
 or in vector form
 
-$$ y_i = \beta_0 + \beta' x_i + u_i $$
+$$ y_i = \beta_0 + \beta' x_i + \epsilon_i $$
 
-**Key idea**
-
-OLS assumes there is **approximately a linear relationship between \(X\) and \(Y\)**.
+<!-- OLS assumes there is **approximately a linear relationship between \(X\) and \(Y\)**. -->
 
 The optimal **regression line** minimizes the **Residual Sum of Squares (RSS)**:
 
 $$
-RSS = \sum_{i=1}^{n} u_i^2
+RSS = \sum_{i=1}^{n} \epsilon_i^2
     = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
     = \sum_{i=1}^{n} (y_i - \beta_0 - \beta' x_i)^2
 $$
 
+![](../images/regression_epsilon.png){width="20%" fig-align="center"}
 
 ## Matrix representation
 
-$$ y = X\beta + u $$
+$$ y = X\beta + \epsilon $$
 
 where
 
@@ -418,13 +676,20 @@ The parameter vector can be estimated by
 
 $$ \beta = (X'X)^{-1}X'y $$
 
+::: {.learning_note .fragment}
+**Learning focus**
+
+Aim to **understand and explain** the OLS procedure.  
+You are **not required to memorize** the formulas for RSS or the closed-form OLS solution.
+:::
+
 ## Implementation in Python
 
+<!--
 Live demo: see [notebook](TODO).
-
 . . . 
-
 <br>
+-->
 
 ```python
 import pandas as pd                      
@@ -445,20 +710,13 @@ model.fit(X, y)                          # <5>
 4. Create the regression model
 5. Estimate the model on the data
 
+TODO: access coefficient estimates (and R^2 -> connecting to next part)
+
 **TODO: clarify expectations (TBD: what is reasonable when ChatGPT would be available? - knowing code structure, reproducing? - add example exam questions)**
 
 ::: aside
 Data available at [https://www.openintro.org/data/index.php?data=ames](https://www.openintro.org/data/index.php?data=ames)
 :::
-
-## Model results
-
-interpret coefficients....
-
-| Feature       |  Coefficient |
-| ------------- | -----------: |
-| area          |    58.754027 |
-| Overall.Qual  | 33241.400060 |
 
 
 <!--
@@ -502,11 +760,14 @@ interpret coefficients....
 
 # Evaluation {data-stack-name="Evaluation"}
 
-## $R^2$
+## Overall model
 
-- does it help to predict?
+- R^2: does it help to predict?
+- Other measures
 
-TBD: illustrate overfitting?!
+## Coefficients
+
+- statistical and practical significance of beta coefficients
 
 ## Next steps
 
@@ -536,6 +797,8 @@ In the given context, a **model** is the description of the relationship between
 **Fitting a model** means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.
 
 **Overfitting** is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.
+
+TOOD: DV, IV, predictor, target, explaining/explained
 
 ::: aside
 — Source: @SchuttONeil2014

@@ -121,6 +121,10 @@ If you only show **two**, I recommend:
 
 These immediately help students understand **what data is currently in memory**.
 
+## Line-by-line execution:
+
+right-click, create console
+
 
 ## Benefits of jupyter notebooks
 
@@ -171,4 +175,5 @@ Explore the Python and Jupyter analytics ecosystem:
 
 ## Survey
 
+- Use the last field to give feedback on the setup - did Codespaces work for you? Would you prefer to work locally?
 - You have seen other courses. Let me know if there is anything (practice, tool, ...) that I could learn from one of my colleagues.
