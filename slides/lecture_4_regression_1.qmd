@@ -810,7 +810,22 @@ TOOD: DV, IV, predictor, target, explaining/explained
 - Linear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.
 - In practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.
 
+## Survey: Session 4 {data-state="hide-menubar"}
 
-Note: more on python in the exercises
+<br><br>
+
+::: {style="display:flex; justify-content:center;"}
+
+{{< qrcode https://forms.gle/GtBNSMdCTZ92ix549 width=400 height=400 >}}
+
+:::
+
+<br><br>
+
+[https://forms.gle/GtBNSMdCTZ92ix549](https://forms.gle/GtBNSMdCTZ92ix549)
+
+::: aside
+Note: Responses may be analyzed and published in anonymized form.
+:::
 
 # References {data-state="hide-menubar"}
