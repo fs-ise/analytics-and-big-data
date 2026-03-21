@@ -646,6 +646,10 @@ $$
 
 ![](../images/regression_epsilon.png){width="20%" fig-align="center"}
 
+::: notes
+$\hat{y}$ is the fitted/predicted value (without $\epsilon$)
+:::
+
 ## Matrix representation
 
 $$ y = X\beta + \epsilon $$
@@ -679,8 +683,13 @@ $$ \beta = (X'X)^{-1}X'y $$
 ::: {.learning_note .fragment}
 **Learning focus**
 
-Aim to **understand and explain** the OLS procedure.  
+Aim to **understand and explain** the OLS procedure.
 You are **not required to memorize** the formulas for RSS or the closed-form OLS solution.
+:::
+
+::: notes
+In a statistics lecture, we would derive the closed form solution mathematically.  
+Here, we simply take away that it exists and that it can be computed efficiently.
 :::
 
 ## Implementation in Python
@@ -688,8 +697,9 @@ You are **not required to memorize** the formulas for RSS or the closed-form OLS
 <!--
 Live demo: see [notebook](TODO).
 . . . 
-<br>
 -->
+
+<br>
 
 ```python
 import pandas as pd                      
@@ -697,7 +707,7 @@ from sklearn.linear_model import LinearRegression  # <1>
 
 df = pd.read_csv("data/ames.csv")        # <2>
 
-predictors = ["area", "Overall.Qual"]      # <3>
+predictors = ["squarefoot", "Overall.Qual"]      # <3>
 X = df[predictors]
 y = df["price"]
 
@@ -710,13 +720,45 @@ model.fit(X, y)                          # <5>
 4. Create the regression model
 5. Estimate the model on the data
 
-TODO: access coefficient estimates (and R^2 -> connecting to next part)
-
+<!--
 **TODO: clarify expectations (TBD: what is reasonable when ChatGPT would be available? - knowing code structure, reproducing? - add example exam questions)**
 
 ::: aside
 Data available at [https://www.openintro.org/data/index.php?data=ames](https://www.openintro.org/data/index.php?data=ames)
 :::
+-->
+
+## Implementation in Python
+
+```python
+# Coefficient estimates (β̂)
+print("Intercept:", model.intercept_)     # β0
+
+# Map coefficients to variable names
+coef_df = pd.DataFrame({
+    "Predictor": predictors,
+    "Coefficient": model.coef_           # β1, β2, ...
+})
+print(coef_df)
+
+# Model fit (R²)
+r2 = model.score(X, y)
+print("R^2:", r2)
+```
+
+. . . 
+
+<br>
+
+```{.text code-line-numbers="false"}
+Intercept: 180,921
+
+Predictor        Coefficient
+squarefoot        110.85
+Overall.Qual   28,567.43
+
+R^2: 0.56
+```
 
 
 <!--
@@ -760,31 +802,276 @@ Data available at [https://www.openintro.org/data/index.php?data=ames](https://w
 
 # Evaluation {data-stack-name="Evaluation"}
 
+
 ## Overall model
 
-- R^2: does it help to predict?
-- Other measures
+<!--
+    When we evaluate a regression model, we ask:
+
+    * **How well does the model explain variation in the target variable?**
+    * **How accurate are its predictions?**
+    * **Does it generalize beyond the sample used to estimate it?**
+-->
+
+::: {.highlight_must_learn}
+
+A common measure to assess the performance of a regression model is **$R^2$** (the coefficient of determination):
+
+$$ R^2 = 1 - \frac{RSS}{TSS} $$
+
+* Measures the **share of variance in the target variable explained by the model**
+* Example: **($R^2$ = 0.56)** means the model explains **56% of the variation in house prices**
+* Values range from **0 to 1**, with **higher $R^2$** generally indicating a better fit
+* But a high $R^2$ **does not automatically mean** the model is useful in practice. $R^2$ says little about:
+
+  * whether predictions are accurate enough for decisions
+  * whether the model generalizes to new data
+  * whether coefficients should be interpreted causally
+
+:::
+
+. . .
+
+**Other evaluation measures**
+
+* **MAE (Mean Absolute Error)**
+  Average absolute prediction error
+  → easy to interpret in the unit of the target variable
+
+* **RMSE (Root Mean Squared Error)**
+  Penalizes large errors more strongly
+  → useful when large mistakes are especially costly
+
+* **Out-of-sample performance**
+  Evaluate on test data, not only on training data
+  → helps detect **overfitting**
+
+::: notes
+Main takeaway: students should understand R² well.
+Other measures can be introduced as complementary metrics, especially because they are in the original unit of the target variable.
+Emphasize that model evaluation is not just “how well did it fit the training data?”
+:::
+
 
 ## Coefficients
 
-- statistical and practical significance of beta coefficients
+::: {.highlight_must_learn}
+
+Regression coefficients tell us how the predicted outcome changes when a predictor changes, **holding the other predictors constant**.
+
+For a coefficient $\beta_j$:
+
+* **Sign**
+  Positive: higher $x_j$ is associated with higher predicted price
+  Negative: higher $x_j$ is associated with lower predicted price
+
+* **Magnitude**
+  Indicates the expected change in the target variable for a one-unit increase in $x_j$
+
+Example:
+
+* $\beta_\text{squarefoot}$ = 110.85
+  → one additional square foot is associated with about **+$110.85** in predicted price
+
+* $\beta_{\text{Overall.Qual}}$ = 28,567.43
+  → one additional quality point is associated with about **+$28,567** in predicted price
+
+:::
+
+. . .
+
+**When evaluating coefficients, consider both:**
+
+**1. Statistical significance**
+
+* Asks whether the estimated relationship is likely different from zero
+* Commonly assessed with **standard errors**, **t-tests**, **p-values**, **confidence intervals**
+
+**2. Practical significance**
+
+* Asks whether the effect is **large enough to matter in practice**
+* A coefficient can be statistically significant but still have little managerial or business relevance
+
+::: notes
+This slide should distinguish clearly between “is there evidence of an effect?” and “does the effect matter?”
+Since you use scikit-learn, you may want to note orally that p-values are not directly provided there.
+That helps avoid confusion when students compare packages like statsmodels and sklearn.
+:::
+
+<!--
+
+    ## Overall model
+
+    - R^2: does it help to predict? + interpretation (must-learn)
+    - Other measures
+
+    ## Coefficients
+
+    - statistical and practical significance of beta coefficients
+-->
+
 
 ## Next steps
 
-TODO
+Once we move beyond a simple regression model, two practical questions arise:
 
-- Forward / Backward selection
-- What if we "throw all variables available" into the model?
+* **Which predictors should we include?**
+
+  → Approaches such as **forward selection** and **backward selection** help identify a useful subset of variables  
+  → **Forward selection** starts with a very simple model and **adds predictors step by step** if they improve the model  
+  → **Backward selection** starts with a model containing many predictors and **removes the least useful ones step by step**
+
+* **Why not include all available variables?**
+
+  → Adding too many predictors can create problems such as:
+
+  * **dependence between predictors**: predictors overlap strongly, making coefficients unstable
+  * **overfitting**: the model fits the training data well but performs poorly on new data
+
+. . .
+
+::: {.callout-note title="Takeaway"}
+A good regression model is usually not the one with the **most variables**, but the one that achieves a good balance between **interpretability**, **stability**, and **predictive performance**.
+:::
 
 
 # Deployment {data-stack-name="Deployment"}
 
-## TODO / TBD.
+## From model to use in practice
 
-- Include a prediction example (based on a formula, python code).
-- Also refer to the describe/predict/prescribe
-- TBD: how can it be used to prescribe?
-- TBD: other considerations? (generalization/robustness, ethics, ...)
+Once a regression model has been estimated and evaluated, it can be **deployed** to support decisions in practice.
+
+Typical uses include:
+
+* **Describe**
+  Identify which factors are associated with higher or lower prices
+
+* **Predict**
+  Estimate the expected price for a new house based on its characteristics
+
+* **Prescribe**
+  Use predictions as input for action, for example:
+
+  * setting an asking price
+  * prioritizing properties for review
+  * comparing renovation options
+
+. . .
+
+::: {.callout-note title="Key idea"}
+A regression model does not only help us **understand** the data.
+It can also be embedded in workflows to support **future decisions**.
+:::
+
+::: notes
+This is a good place to connect back to the broader analytics logic:
+describe = understand patterns,
+predict = estimate future/unknown outcomes,
+prescribe = support action.
+Prescriptive use is indirect here: the regression itself predicts, and decisions build on top of those predictions.
+:::
+
+---
+
+## Deployment example: Making a prediction
+
+Suppose our fitted model is:
+
+$$ \widehat{\text{price}} = 180{,}921 + 110.85 \cdot \text{squarefoot} + 28{,}567.43 \cdot \text{Overall.Qual} $$
+
+For a house with:
+
+* `squarefoot = 1500`
+* `Overall.Qual = 7`
+
+the predicted price is:
+
+$$ \widehat{\text{price}} = 180{,}921 + 110.85 \cdot 1500 + 28{,}567.43 \cdot 7 $$
+
+$$
+\widehat{\text{price}} \approx 547{,}150
+$$
+
+. . .
+
+This prediction could be used to:
+
+* compare a listing price to the model-based estimate
+* flag unusually overpriced or underpriced houses
+* support pricing decisions together with human judgment
+
+<!--
+    ::: {.callout-important title="Important"}
+    Predictions should be used with care:
+    they depend on the quality of the data, the validity of the model, and whether new cases are similar to the data used for training.
+    :::
+-->
+
+ 
+## Deployment example in Python
+
+A fitted model can be **saved** and **loaded** for later use.
+
+```python
+import joblib
+
+# Save trained model
+joblib.dump(model, "house_price_model.joblib")
+
+# Load trained model later
+loaded_model = joblib.load("house_price_model.joblib")
+
+# New data for prediction
+new_house = pd.DataFrame([{
+    "squarefoot": 1500,
+    "Overall.Qual": 7
+}])
+
+predicted_price = loaded_model.predict(new_house)
+```
+
+. . .
+
+<!--
+    ```{.text code-line-numbers="false"}
+    [547149.51]
+    ```
+-->
+
+::: {.callout-note title="Why save the model?"}
+Saving a model makes it possible to reuse it in applications, dashboards, scripts, or decision-support systems without fitting it again each time.
+:::
+
+::: notes
+You may mention that joblib is commonly used for scikit-learn objects.
+Also useful to note that deployment requires the same variable names and preprocessing steps as in training.
+:::
+
+---
+
+## Deployment considerations
+
+Before using a regression model in practice, we should ask:
+
+* **Does it generalize?**
+  Does it still perform well on new data?
+
+* **Is it robust?**
+  Are predictions stable when conditions change?
+
+* **Is it interpretable?**
+  Can decision makers understand how outputs are generated?
+
+* **Is it used responsibly?**
+  Could predictions reinforce bias or lead to unfair decisions?
+
+. . .
+
+::: {.callout-note title="Takeaway"}
+Deployment is not the end of the analytics process.
+Models should be **monitored, reviewed, and updated** as data, environments, and decision needs change.
+:::
+
 
 ## Vocabulary {data-state="hide-menubar"}
 
