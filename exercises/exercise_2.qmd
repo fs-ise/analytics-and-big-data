@@ -22,7 +22,7 @@ In this notebook, we cover:
 > 1. ✏️ **Think & plan first:** In the **PDF**, draft your answers and outline the transformation steps before coding  
 > 2. 💻 **Then code:** Implement your solution in the **Jupyter Notebook**  
 > 
-> Work with both side-by-side to connect your conceptual solution with the implementation> 
+> Work with both side-by-side to connect your conceptual solution with the implementation.  
 > **For the Jupyter Notebook, start a Codespace here:**  
 > [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
 >
@@ -105,6 +105,7 @@ market_data_log_df.head()
 
 2. Draft the **tidy structure** of the dataset:
 
+   * Fill in the column names and at least 3 example rows.
 
 <div class="cell-output cell-output-display">
 <div>
@@ -826,6 +827,8 @@ customers_df.head()
 
 ## Tasks
 
+In this part, move from **detecting problems** to **making the dataset analysis-ready**. The goal is not only to spot errors, but also to document a reproducible cleaning strategy.
+
 ### 1. Identify scales of variables
 
 * What type of scale is each variable?
@@ -1045,6 +1048,9 @@ Note: Check how the `customer_df` changes after each preparation step!
 
 # Part 4: EDA: Clustering <a id="clustering"></a>
 
+Now that the data is structured and cleaned, we explore whether companies group into similar patterns.
+Clustering helps us move from preparation to insight generation: instead of looking at firms one by one, we ask whether there are recurring profiles in the data.
+
 Dataset: `firm_data.csv`
 
 ```{python}
@@ -1153,6 +1159,18 @@ df_firm_data = pd.read_csv("data/firm_data.csv")
 # Print X at the end
 ```
 
+Before clustering, do a quick exploratory check so you know what kind of patterns you are looking for.
+
+```{python}
+#| eval: false
+X.describe()
+```
+
+```{python}
+#| eval: false
+df_firm_data[["profit_margin", "rd_intensity"]].hist(figsize=(6, 3))
+```
+
 Considering that k-means is sensitive to different measurement scale, we need to standardize the values.
 This ensures that they have approximately equal influence on the clusters.
 
@@ -1181,6 +1199,7 @@ plt.show()
 ```
 
 How many clusters would you expect?
+Briefly justify your answer based on the plot.
 
 <br><br><br>
 

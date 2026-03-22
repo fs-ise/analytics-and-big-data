@@ -9,7 +9,7 @@ In this session, we split into two groups.
 | Exercise part                             | Time (min) |
 | ----------------------------------------- | ---------- |
 | [Task 1: Competing on Analytics](#task-1) | 30         |
-| [Task 2: Jupyter Notebook Setup](#task-2) | 30         |
+| [Task 2: Jupyter notebook](#task-2)       | 30         |
 | [Discussion](#discussion)                 | 20         |
 | [Wrap-up](#wrap-up)                       | 5          |
 | **Overall**                               | 85         |
@@ -111,26 +111,46 @@ More broadly, industries that seem especially suited to competing on analytics a
 
 :::{.direction}
 
-1. Select an example case (business problem and dataset)
+Navigate to your Codespace in the [analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks){target="_blank"} repository and create your first analytical notebook in Jupyter.
 
-Kaggle: [Retail and shopping](https://www.kaggle.com/datasets?topic=retailAndShoppingDataset), [financial](https://www.kaggle.com/datasets?search=financial) or [trending](https://www.kaggle.com/datasets?topic=trendingDataset).
+### 1. Select an example case (business problem and dataset)
 
-2. Draft an analytical notebook
+Choose a dataset from Kaggle, for example:
 
-- writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is.
--> Create a new notebook: create a skeleton (following CRISP-DM). explain the business problem, import a dataset from kaggle, explain what you would do in the different steps, include code cells and add notes on how you would analyze the data, which parts would be  (if you are not sure about a particular part, you can leave it as TODO, say probably XY, or list two or three options that could be tried)
+* [Retail and shopping](https://www.kaggle.com/datasets?topic=retailAndShoppingDataset)
+* [Financial datasets](https://www.kaggle.com/datasets?search=financial)
+* [Trending datasets](https://www.kaggle.com/datasets?topic=trendingDataset)
 
-3. Refine the notebook
+Define a clear business problem that can be addressed using the selected dataset.
 
-- Go over the notebook and annotate: which parts would be descriptive, predictive, prescriptive?
+### 2. Draft the analytical notebook
 
-4. Start implementing 
+Create a new notebook and structure it according to the CRISP-DM framework.
 
-See how far you get:
+Start with a structured skeleton:
 
-- Import the CSV, create a descriptive overview of the data, select a model to make predictions
+* Include both markdown and code cells
+* Import a dataset (e.g., from Kaggle)
+* Describe planned steps and analytical approaches
+* If unsure about specific steps, clearly mark them as `TODO`, suggest likely approaches, or outline alternative options
 
-Consult the documentation of Python libraries such as pandas or scikit-learn.
+### 3. Refine the notebook
+
+Review your notebook and annotate each part by indicating whether it is:
+
+* **Descriptive** (what happened?)
+* **Predictive** (what will happen?)
+* **Prescriptive** (what should be done?)
+
+### 4. Begin with the implementation
+
+Proceed with initial implementation steps:
+
+* Import the dataset (e.g., CSV file)
+* Create a descriptive overview of the data
+* Select and implement a basic predictive model
+
+Consult the documentation of relevant Python libraries such as *pandas* and *scikit-learn* as needed.
 
 :::
 
@@ -183,7 +203,9 @@ The goal is to demonstrate a structured analytics workflow and familiarize yours
 In class, we will discuss
 
 - Solutions for Task 1 (*Competing on Analytics*)
-- Solutions for Task 2 (Jupyter Notebooks) - share your notebook 🔴 LIVE: [in this meeting]({{< var instructor.online_meeting_url >}}){target="_blank"}
+- Solutions for Task 2 (Jupyter Notebooks)
+
+You can share your notebook 🔴 LIVE: [in this meeting]({{< var instructor.online_meeting_url >}}){target="_blank"}.
 
 ## Wrap-up <a id="wrap-up"></a>
 
