@@ -3,16 +3,19 @@ title: "Notes: Session 3: Exploratory data analysis"
 format: html
 ---
 
-::: callout-note
-TODO
-:::
-
-Contents based on: [EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf](/home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf)
+| Time (min) | Duration | Topic                                      | Additional materials |
+|------------|----------|--------------------------------------------|----------------------|
+| 0–10       | 10       | Foundations                                |                      |
+| 10–40      | 30       | Data preparation                           |                      |
+| 40–55      | 15       | Univariate exploratory data analysis        |                      |
+| 55–65      | 10       | Multivariate exploratory data analysis      |                      |
+| 65–90      | 25       | Clustering in EDA                          |                      |
 
 <!--
+Contents based on: [EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf](/home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf)
+
         https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/pages/clustering/assignment-6/
         https://archive.ics.uci.edu/dataset/292/wholesale+customers
--->
 
 ## Learning Objectives
 
@@ -24,12 +27,9 @@ After this session, students should be able to:
 - Use visualizations to explore and communicate insights
 - Understand the basic idea of the grammar of graphics in Python (Plotly)
 
-
----
+-->
 
 Badly formatted data blocks analysis — data preparation unlocks it.
-
-
 
 Data quality: never trust data blindly. always evaluate data you receive as an input
 
@@ -47,8 +47,11 @@ Data preparation:
 - Go back to the examples: and highlight values, variables, observations. Define observational unit. The wide format is an output in a report, not an input.
 Observational unit: **Quarterly sales per region** (implicitly: across years)
 
+{{< pagebreak >}}
 
 ## Data integration
+
+Remember the @Davenport2006 case: competing on analytics means pooling data that was generated in-house and data acquired from outside data sources.
 
 Question: what does the "merge()" method correspond to in SQL?
 
@@ -60,140 +63,6 @@ But: Sometimes it is better to know/predict something even if we cannot explain 
 - Recommendation systems: Which movie are you likely to watch next? thousands of variables may be available; we may never know why exactly a particular recommendation works, but recommendations generally improve engagement/revenue. ("We don't know/don't give a recommendation" is the worst option)
  -> Business decision to recommend anything is always better than no recommendation at all
 - Fraud detection: prediction of irregular and fraudulent transactions can be very accurate, but the attackers goal is to behave in a way that is hard to anticipate. Prediction may focus on identifying cases that are "not behaving regularly" (rather than identifying generalizable patterns)
-
----
-
-## 0. Why Exploratory Data Analysis?
-- What is EDA and why it matters in business decision-making
-- EDA vs. confirmatory analysis (hypotheses, models)
-- Typical business use cases:
-  - Understanding customers
-  - Exploring sales and performance data
-  - Detecting anomalies and outliers
-- EDA as an *iterative* and *question-driven* process
-
----
-
-## 1. Univariate Exploratory Data Analysis
-### “What’s in my data?”
-
-### 1.1 Types of Variables
-- Numerical (continuous, discrete)
-- Categorical (nominal, ordinal)
-- Why variable types matter for analysis and visualization
-
-### 1.2 Descriptive Statistics
-- Central tendency: mean, median, mode
-- Dispersion: range, variance, standard deviation
-- Quantiles and interquartile range (IQR)
-- Interpreting statistics in a business context
-
-### 1.3 Distribution Analysis
-- Histograms and density plots
-- Boxplots and outliers
-- Skewness and heavy tails
-- Typical business examples:
-  - Income and revenue distributions
-  - Customer activity and usage data
-
-### 1.4 Categorical Variables
-- Frequency tables
-- Relative frequencies and percentages
-- Bar charts
-- Business questions:
-  - Which customer segment is largest?
-  - How are products distributed across categories?
-
----
-
-## 2. Multivariate Exploratory Data Analysis
-### “How do variables relate to each other?”
-
-### 2.1 Relationships Between Numerical Variables
-- Scatterplots
-- Correlation (Pearson, Spearman – intuition only)
-- Interpreting correlation (and common pitfalls)
-- Business examples:
-  - Price and demand
-  - Marketing spend and sales
-
-### 2.2 Numerical and Categorical Variables
-- Grouped summaries (means by category)
-- Boxplots by group
-- Comparing distributions across segments
-- Business examples:
-  - Revenue by customer segment
-  - Satisfaction scores by region
-
-### 2.3 Relationships Between Categorical Variables
-- Contingency tables
-- Percentages and conditional distributions
-- Simple association analysis
-- Business examples:
-  - Product category × return behavior
-  - Channel × conversion outcome
-
-### 2.4 From Patterns to Questions
-- EDA does not “prove” causality
-- Using EDA to generate hypotheses
-- Deciding what to analyze next
-
----
-
-## 3. Visual Exploratory Data Analysis
-### “Seeing and communicating patterns”
-
-### 3.1 Why Visualization Matters
-- Human pattern recognition
-- Visualization for exploration vs. presentation
-- Common visualization mistakes in business reports
-
-### 3.2 Choosing the Right Chart
-- When to use:
-  - Bar charts
-  - Line charts
-  - Scatterplots
-  - Boxplots
-- Matching chart types to questions and data types
-
-### 3.3 Grammar of Graphics (Conceptual)
-- Data
-- Aesthetics (x, y, color, size)
-- Geometries (points, lines, bars)
-- Facets (small multiples)
-- Why this idea scales well for complex analyses
-
-### 3.4 Visual EDA in Python with Plotly
-- Why Plotly for business analytics:
-  - Interactivity
-  - Easy exploration of subgroups
-- Example visual analyses:
-  - Scatterplot with color by category
-  - Distribution plots by segment
-  - Interactive filtering and hover information
-
----
-
-## 4. Putting It All Together
-- EDA as an iterative workflow:
-  1. Summarize variables
-  2. Explore relationships
-  3. Visualize and refine questions
-- From raw data to business insight
-- Limitations of EDA
-- Transition to:
-  - Statistical modeling
-  - Machine learning
-  - Dashboards and reporting
-
----
-
-## Key Takeaways
-- EDA helps you *understand* data before modeling it
-- Start simple: univariate → multivariate → visual
-- Focus on business questions, not just techniques
-- Visualization is a core analytical skill, not just decoration
-
 
 
 

@@ -6,6 +6,9 @@ format: html
 ::: callout-note
 TODO
 
+Refer to the @Davenport2006 case: competing on analytics requires organizations to go beyond simple descriptive statistics.
+As such, traditional DWH may be the (historical) foundation for analytics.
+
 Clarify: OLTP <-> OLAP
 OLTP -> ETL -> DWH -> OLAP
 

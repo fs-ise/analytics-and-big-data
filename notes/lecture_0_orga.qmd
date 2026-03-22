@@ -7,18 +7,19 @@ format: html
 - Check room
 - Print student list
 - Prepare/bring tags to form groups
-- - Prepare a zoom session for students to share their work (TODO: INCLUDE THE LINK AT XXXXXX????)
+- Prepare a teams session for students to share their work (update link in `_variables.yml` - `instructor.online_meeting_url`).
 :::
 
 | Time (min)  | Duration  | Topic                   |
 |-------------|-----------|-------------------------|
-| 00-30       | 30        | Orga                    |
+| 00-20       | 20        | Orga                    |
 
 ## Myself
 
 I do not know everything. I make mistakes. ...
 
 My Story as a teacher. Copy Stanford slides for CS vs. Evolved role...
+
 - theoretische Informatik: just reusing stanford slides (reputable instiution: good, but no own contribution)
 Also Connect to Student expectations: broad knowledge (by Heart, being able to discuss immediately instead of asking chatgpt) plus deep expertise
 
@@ -28,10 +29,12 @@ Also Connect to Student expectations: broad knowledge (by Heart, being able to d
 Mention surveys after each session (voluntary, but help me assess and prioritize)
 
 Mention (without bullets on the slide)
+
 - What I expect from students
 - What students can expect from me
 
 First round
+
 - Lot of unknowns: how long session will take, how much you already know, what is challenging or easy
 - I will learn as much as you will.
 - I will ask for your feedback **very** regularly (at the end of each session)
@@ -45,7 +48,7 @@ First round
 
 ## About you
 
-TODO
+Maybe:
 
 - prior experience (e.g., python)?
 - Ask students how they learn (PDF, ...) whether they use a knowledge management system (which one), ...
@@ -86,6 +89,7 @@ It changes **who wins, how decisions are made, and how organizations compete.**
 
 ## Materials
 
+- You always have the slides available (especially if you sit in the back, some slides may be hard to read)
 
 ## Theses
 

@@ -70,46 +70,36 @@ For each question, I’ll invite a few of you to briefly share your thoughts.
 **3. What are your expectations for the course?**
 
 <!--
-- What do you want to be able to do by the end of this course?
-- What would make this course “worth it” for you?
+  - What do you want to be able to do by the end of this course?
+  - What would make this course “worth it” for you?
 -->
-
 
 # Analytics & Big Data {data-stack-name="Analytics & Big Data"}
 
-
 ## Analytics & Big Data in the curriculum
 
-<div style="text-align:center">
-  ![](../images/curriculum.png){width=40%}
-</div>
-
-
-<!--
-<img src="../images/curriculum.png" width="600" style="display:block; margin:auto;">
-Prerequisite: Completed the "Introduction to Programming" module.
--->
+![](../images/curriculum.png){.absolute top=10 left=300 width="1000" height="1000"}
 
 ## What exactly is "analytics"?
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 <br><br>
 ![](../images/deng-xiang--WXQm_NTK0U-unsplash.jpg){width=100% fig-align="center"}
 :::
 
-::: {.column width="50%"}
+::: {.column width="55%"}
 <br><br>
 
 **Business analytics** refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations [based on @DavenportHarris2007].
 
 ::: {.fragment}
 
-Related fields:
+Related fields [based on @ChenEtAl2012]:
 
-- **Business intelligence** refers to "the techniques, technologies, systems, practices, methodologies, and applications that analyze critical business data to help an enterprise better understand its business and market and make timely business decisions." [based on @ChenEtAl2012]
-- **Data mining** refers to algorithmic techniques used to discover patterns, relationships, and knowledge from large datasets [@ChenEtAl2012].
+- **Business intelligence** refers to "the techniques, technologies, systems, practices, methodologies, and applications that analyze critical business data to help an enterprise better understand its business and market and make timely business decisions."
+- **Data mining** refers to algorithmic techniques used to discover patterns, relationships, and knowledge from large datasets.
 - **Data science** is the interdisciplinary field that combines statistical methods, data mining, machine learning, and database technologies to extract knowledge and insights from large and complex datasets.
 
 :::
@@ -149,7 +139,7 @@ Related fields:
 
 <div style="text-align:center">
 
-![](../images/overview_structure.png){width=60%}
+![](../images/overview_structure.png){width=80%}
 
 <!--
 ```{mermaid}
@@ -303,7 +293,6 @@ We will work together to find a fair and workable solution.
 
       TODO: `group-projects/Guidelines for the GroupProjects.pdf`
 -->
-
 
 ## Materials
 

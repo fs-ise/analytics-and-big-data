@@ -18,14 +18,16 @@ In this notebook, we cover:
 
 <br>
 
-> **Note on materials:**
+> **Recommended workflow:**
 > 
-> - Use the **PDF version** of this exercise for written solutions and notes  
-> - Use the **Jupyter Notebook** for implementing all coding tasks  
-> - We recommend working with both side-by-side (e.g., open the PDF separately while coding)
+> 1. ✏️ **Think & plan first:** In the **PDF**, draft your answers and outline the transformation steps before coding  
+> 2. 💻 **Then code:** Implement your solution in the **Jupyter Notebook**  
 > 
+> Work with both side-by-side to connect your conceptual solution with the implementation> 
 > **For the Jupyter Notebook, start a Codespace here:**  
 > [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
+>
+> For the *pandas* library, refer to [this cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
 
 {{< pagebreak >}}
 

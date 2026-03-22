@@ -5,7 +5,7 @@ format: html
 
 ::: {.callout-note title="Preparation"}
 - Prepare/bring tags for groups
-- Prepare a zoom session for students to share their work
+- Prepare a teams session for students to share their work
 :::
 
 ## Lecture
@@ -28,6 +28,8 @@ Focus on algorithms (enable more elaborate models and analyses)
 - AlphaFold: also illustrates how science and algorithmic competitions drive progress
 - AlphaFold enables a range of commercial use cases in the pharmaceutical and biotech industries ()
 
+{{< pagebreak >}}
+
 ## Analytical processes
 
 Key trends of improvement:
@@ -40,6 +42,8 @@ CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabro
 
 Transition: CRISP-DM is a well-established model for data analytics, so it also serves as a structure for this course...
 
+{{< pagebreak >}}
+
 ## Exercise
 
 | Time (min) | Duration  | Topic                              | Additional materials                           |
@@ -47,20 +51,28 @@ Transition: CRISP-DM is a well-established model for data analytics, so it also 
 | 0-30       | 30        | Introduction and setup             |                                                |
 | 30-90      | 60        | Data handling in Python            |                                                |
 
-
 Distribute tags (1.1, 1.1, 1.2, 1.2, 2.1, 2.1, 2.2, 2.2) -> work in pairs.
 
-TODO: I will work with the notebook group. 
+I will work with the notebook group. 
 
-::: objective
-TODO: https://chatgpt.com/c/69a69645-6f10-8390-932f-440be042030d
-TBD: include examples (such as giving the mean after removing rows with NA in columns X, Y, Z), which are very hard to do in Excel (where students see the value of separating analysis from data / maybe with API data?)
+<!--
+        ::: objective
+        TODO: https://chatgpt.com/c/69a69645-6f10-8390-932f-440be042030d
+        TBD: include examples (such as giving the mean after removing rows with NA in columns X, Y, Z), which are very hard to do in Excel (where students see the value of separating analysis from data / maybe with API data?)
+        :::
+-->
 
-:::
+## Benefits of jupyter notebooks
 
-Ask students to create a GitHub account (CHECK: free student packs?)
+- one document instead of multiple (easier to keep in sync, harder for files to get lost / matters more if the analyses are more complex, if there are more "moving parts")
+- option to collapse/hide cells (communicating with business stakeholders)
 
-TBD: typical exam questions corresponding to the lecture? -
+Jupyter notebooks are the standard environment in data science courses worldwide.
+
+
+## Setup
+
+Ask students to create a GitHub account
 
 Explain the Jupyter notebooks, GitHub setup. Mention that students can always use software like Spyder (see Tipps im `Umgang mit Spyder.docx`).
 
@@ -71,14 +83,15 @@ Introduce system (badges) - similar to https://eduki.com/de/material/306565/schi
 
 
 "simple" amazon question: you could say yes, but you will get no points for it. All exam questions are about selecting the appropriate concepts from the lecture and applying them to the case. Explain: signals the need for a rationale
+
 - yes: 0 points
 - no - it is about data/computation/algorithms/processes. 2 points
 - yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.
 
 TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
+
 -> LLMs are language models: they are good at handling language (not necessarily at handling data) - so if we use a _programming_ language to analyze data, LLMs can help us. More than they could help us operate a GUI.
 -> LLMs are not directly trained with user-GUI interactions (workflows are weakly documented and harder to analyze/version/control)
-
 
 ## Useful Jupyter Notebook Tricks
 
@@ -125,15 +138,7 @@ These immediately help students understand **what data is currently in memory**.
 
 right-click, create console
 
-
-## Benefits of jupyter notebooks
-
-- one document instead of multiple (easier to keep in sync, harder for files to get lost / matters more if the analyses are more complex, if there are more "moving parts")
-- option to collapse/hide cells (communicating with business stakeholders)
-
-Jupyter notebooks are the standard environment in data science courses worldwide.
-
-## Exercise
+## Notebook exercise
 
 See how far you get: helps me understand how much students already know.,
 
@@ -142,35 +147,34 @@ Ask students who shared their solutions whether they can send them to me / that 
 Expectation management: you bring different levels of experience with Jupyter Notebooks. So we can also learn from each other and I believe we should all be very comfortable with Jupyter notebooks at the end of the course.
 
 
-TODO: reading/synthesis?
+Jupyter notebooks: Zoom in a lot (close the left sidebar)
+
 
 **Before starting with the question sets: throw your help-card back into the bucket.**
 
-
 <!--
-TODO : possible extension for first question sets:
-## Exam prep
+        TODO : possible extension for first question sets:
+        ## Exam prep
 
-TODO : include specific questions/tasks that could be included in the exam.
+        TODO : include specific questions/tasks that could be included in the exam.
 
-- "Simple question" (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
-- table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
-- TBD: questions related to the jupyter ecosystem?
+        - "Simple question" (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
+        - table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
+        - TBD: questions related to the jupyter ecosystem?
 
-**TODO: add a setup explanation + tests for available python version and packages**
+        **TODO: add a setup explanation + tests for available python version and packages**
 
 
-See https://www.codecademy.com/article/how-to-use-jupyter-notebooks
-https://www.codecademy.com/article/getting-started-with-jupyter
--> variable? + tab-completion, shift-tab for function arguments
+        See https://www.codecademy.com/article/how-to-use-jupyter-notebooks
+        https://www.codecademy.com/article/getting-started-with-jupyter
+        -> variable? + tab-completion, shift-tab for function arguments
 
-::: {.learning-objectives}
-Explore the Python and Jupyter analytics ecosystem:
+        ::: {.learning-objectives}
+        Explore the Python and Jupyter analytics ecosystem:
 
-- Start Jupyter in a VM (GitHub Codespace)
-- Write a first notebook
-:::
-
+        - Start Jupyter in a VM (GitHub Codespace)
+        - Write a first notebook
+        :::
 -->
 
 ## Survey
