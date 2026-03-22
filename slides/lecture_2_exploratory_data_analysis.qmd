@@ -1411,16 +1411,18 @@ Clustering often produces **insights that guide later modeling**.
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode https://forms.gle/XfRmmVbf1yaBwrky9 width=400 height=400 >}}
+{{< qrcode {{< var sessions.session_2.survey_url >}} width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[https://forms.gle/XfRmmVbf1yaBwrky9](https://forms.gle/XfRmmVbf1yaBwrky9)
+[{{< var sessions.session_2.survey_url >}}]({{< var sessions.session_2.survey_url >}})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.
+
+Please complete the survey before you leave today — thank you 🙏
 :::
 
 # References {data-state="hide-menubar"}

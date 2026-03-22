@@ -35,3 +35,7 @@ Highlight:
 ## Exam prep
 
 TODO : include specific questions/tasks that could be included in the exam.
+
+::: {.callout-tip title="Session 6 survey"}
+Before you wrap up, please complete the Session 6 survey here: [{{< var sessions.session_6.survey_url >}}]({{< var sessions.session_6.survey_url >}}){target="_blank"}. Thank you 🙏
+:::

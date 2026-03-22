@@ -1003,16 +1003,18 @@ As a student, you can apply for the [GitHub Student Developer Pack](https://educ
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode https://forms.gle/Jna4dmyEvcw3cjRPA width=400 height=400 >}}
+{{< qrcode {{< var sessions.session_1.survey_url >}} width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[https://forms.gle/Jna4dmyEvcw3cjRPA](https://forms.gle/Jna4dmyEvcw3cjRPA)
+[{{< var sessions.session_1.survey_url >}}]({{< var sessions.session_1.survey_url >}})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.
+
+Please complete the survey before you leave today — thank you 🙏
 :::
 
 # References {data-state="hide-menubar"}

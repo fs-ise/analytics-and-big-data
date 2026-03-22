@@ -202,5 +202,9 @@ To continue using your work in the next session, <b>stop</b> your Codespace [her
 Stopping the Codespace preserves the current state of your work and does not consume computational resources.
 :::
 
+::: {.callout-tip title="Session 1 survey"}
+Before you wrap up, please complete the Session 1 survey here: [{{< var sessions.session_1.survey_url >}}]({{< var sessions.session_1.survey_url >}}){target="_blank"}. Thank you 🙏
+:::
+
 # References
 :::

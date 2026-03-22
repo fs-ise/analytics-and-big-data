@@ -1667,3 +1667,7 @@ In this notebook, we have learned to
 ::: {.callout-note title="Stop the Codespace"}
 Remember to <b>stop</b> your Codespace [here](https://github.com/codespaces).
 :::
+
+::: {.callout-tip title="Session 2 survey"}
+Before you wrap up, please complete the Session 2 survey here: [{{< var sessions.session_2.survey_url >}}]({{< var sessions.session_2.survey_url >}}){target="_blank"}. Thank you 🙏
+:::

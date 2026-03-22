@@ -24,16 +24,18 @@ date: "2026-05-11"
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode https://forms.gle/K4wGvwchWkBsQdhc9 width=400 height=400 >}}
+{{< qrcode {{< var sessions.session_11.survey_url >}} width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[https://forms.gle/K4wGvwchWkBsQdhc9](https://forms.gle/K4wGvwchWkBsQdhc9)
+[{{< var sessions.session_11.survey_url >}}]({{< var sessions.session_11.survey_url >}})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.
+
+Please complete the survey before you leave today — thank you 🙏
 :::
 
 # References {data-state="hide-menubar"}

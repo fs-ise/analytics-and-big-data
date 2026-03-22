@@ -153,3 +153,7 @@ Create the logical data warehouse schema!
 ## Exam prep
 
 TODO : include specific questions/tasks that could be included in the exam.
+
+::: {.callout-tip title="Session 3 survey"}
+Before you wrap up, please complete the Session 3 survey here: [{{< var sessions.session_3.survey_url >}}]({{< var sessions.session_3.survey_url >}}){target="_blank"}. Thank you 🙏
+:::

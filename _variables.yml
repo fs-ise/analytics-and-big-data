@@ -11,3 +11,27 @@ university:
 
 course:
   semester: "Summer 2026"
+
+sessions:
+  session_1:
+    survey_url: https://forms.gle/Jna4dmyEvcw3cjRPA
+  session_2:
+    survey_url: https://forms.gle/XfRmmVbf1yaBwrky9
+  session_3:
+    survey_url: https://forms.gle/dkwMZN4zPT7N3qbx5
+  session_4:
+    survey_url: https://forms.gle/GtBNSMdCTZ92ix549
+  session_5:
+    survey_url: https://forms.gle/mVWw3z7ftFn48gDY6
+  session_6:
+    survey_url: https://forms.gle/AFmpWcopjMtGfNif6
+  session_7:
+    survey_url: https://forms.gle/LghfTrCChfNMLzbJ6
+  session_8:
+    survey_url: https://forms.gle/hNuAD8UZvC8KYo4a8
+  session_9:
+    survey_url: https://forms.gle/1vsCsqc3SzWfSX1f6
+  session_10:
+    survey_url: https://forms.gle/Rhr4C47jsAZJyumN6
+  session_11:
+    survey_url: https://forms.gle/K4wGvwchWkBsQdhc9

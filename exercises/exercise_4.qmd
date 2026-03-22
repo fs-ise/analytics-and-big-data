@@ -26,3 +26,7 @@ https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/pages/linear-r
 ## Exam prep
 
 TODO : include specific questions/tasks that could be included in the exam.
+
+::: {.callout-tip title="Session 4 survey"}
+Before you wrap up, please complete the Session 4 survey here: [{{< var sessions.session_4.survey_url >}}]({{< var sessions.session_4.survey_url >}}){target="_blank"}. Thank you 🙏
+:::
