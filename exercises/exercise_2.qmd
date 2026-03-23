@@ -22,8 +22,7 @@ In this notebook, we cover:
 > 1. ✏️ **Think & plan first:** In the **PDF**, draft your answers and outline the transformation steps before coding  
 > 2. 💻 **Then code:** Implement your solution in the **Jupyter Notebook**  
 > 
-> Work with both side-by-side to connect your conceptual solution with the implementation.  
-> **For the Jupyter Notebook, start a Codespace here:**  
+> **The Jupyter Notebook is available in the Codespace (repository) here:**  
 > [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
 >
 > For the *pandas* library, refer to [this cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
@@ -852,7 +851,7 @@ customer_df.info()
   - signup_date: ________________
   - country: ________________
 
----
+{{< pagebreak >}}
 
 ### 2. Analyze data quality
 
@@ -865,8 +864,6 @@ customer_df.describe()
 * Summarize all data quality issues you observe (open the [data/messy_customer_data.csv](data/messy_customer_data.csv)).
 
 <br><br><br><br><br><br><br>
-
----
 
 {{< pagebreak >}}
 
@@ -1185,8 +1182,6 @@ X = scaler.fit_transform(X)
 X
 ```
 
-{{< pagebreak >}}
-
 Before running a clustering algorithm, lets's view the data in a scatterplot:
 
 ```{python}
@@ -1201,10 +1196,8 @@ plt.show()
 How many clusters would you expect?
 Briefly justify your answer based on the plot.
 
-<br><br><br>
+<br>
 
-
----
 
 ### 2. Apply K-Means clustering
 
@@ -1216,7 +1209,6 @@ from sklearn.cluster import KMeans
 
 # Your solution (in Jupyter notebook)
 # Note: consider the names of variables and objects used in the rest of the code
-
 
 # Run the whole code cell to fit KMeans and plot it
 plt.figure(figsize=(3.6, 2.8))
@@ -1233,13 +1225,8 @@ plt.tight_layout()
 plt.show()
 ```
 
-* Try different values of K (e.g., 2–10)
-* Which number of clusters seems appropriate?
+* Try different values of K (e.g., 2–10). Which number of clusters seems appropriate?
 
-<br><br>
-
-
----
 
 {{< pagebreak >}}
 

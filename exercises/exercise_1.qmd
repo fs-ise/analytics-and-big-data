@@ -103,9 +103,9 @@ Davenport also points to **sports organizations** such as the Boston Red Sox, th
 Their advantage came from applying statistical analysis to player selection, performance evaluation, and other decisions that were traditionally based more heavily on intuition.
 
 More broadly, industries that seem especially suited to competing on analytics are finance, retail, hospitality, logistics, insurance, and professional sports, because they generate rich data and make many repeatable decisions that can be improved through modeling and experimentation.
-:::
 
 {{< pagebreak >}}
+:::
 
 ## Task 2: Create an analytical notebook in Jupyter <a id="task_2"></a>
 
