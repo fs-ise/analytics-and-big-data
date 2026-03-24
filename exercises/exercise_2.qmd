@@ -235,49 +235,55 @@ market_data_df = pd.read_csv("data/market_data_log.csv")
 
 
 
-:::{.sol}
+
+::: {.sol}
 
 ## Solution
 
-1. Identify:
+### 1. Identify:
 
-   * **Values:** Examples: 2024-10-16 00:00:00, FIN-PIPE-V1, SAP, DE, 2023Q1, 1154.9
-   * **Observations:** Individual logged measurements for a specific firm, period, and metric
-   * **Variables:** Timestamp, Logger system, Firm, Country, Sector, Period, Metric, Value
-   * **Units of observation:** One logged **firm–period–metric** measurement
-
----
-
-2. Draft the **tidy structure** of the dataset:
-
-| timestamp           | logger_sys      | Firm | Country | Sector | Period | Metric    | Value |
-| ------------------- | --------------- | ------ | ------- | ------ | ------ | --------- | ----- |
-| 2023-03-15 10:22:01 | FIN-PIPELINE-V1 | SAP    | DE      | Tech   | 2023Q1 | MarketCap | 150B  |
-| 2023-03-15 10:22:01 | FIN-PIPELINE-V1 | SAP    | DE      | Tech   | 2023Q1 | Revenue   | 8.2B  |
-| 2023-06-10 08:11:45 | FIN-PIPELINE-V1 | Apple  | US      | Tech   | 2023Q2 | MarketCap | 2800B |
-| ...                 | ...             | ...    | ...     | ...    | ...    | ...       | ...   |
+* **Values:** Examples: 2024-10-16 00:00:00, FIN-PIPE-V1, SAP, DE, 2023Q1, 1154.9
+* **Observations:** Individual logged measurements for a specific firm and period
+* **Variables:** Timestamp, Logger system, Firm, Country, Sector, Period, MarketCap, Revenue, EBITDA
+* **Units of observation:** One logged **firm–period** record (aggregating multiple metrics)
 
 ---
 
-3. Describe how the dataset should be transformed.
+### 2. Draft the **tidy structure** of the dataset (wide format):
+
+| timestamp           | logger_sys  | Firm | Country | Sector | Period | MarketCap | Revenue | EBITDA |
+| ------------------- | ----------- | ---- | ------- | ------ | ------ | --------- | ------- | ------ |
+| 2024-10-16 00:00:00 | FIN-PIPE-V1 | SAP  | DE      | Tech   | 2023Q1 | 1154.9B   | 475.6B  | 146.7B |
+| 2023-10-09 00:00:00 | FIN-PIPE-V1 | SAP  | DE      | Tech   | 2023Q2 | 1816.0B   | 82.2B   |        |
+| ...                 | ...         | ...  | ...     | ...    | ...    | ...       | ...     | ...    |
+
+---
+
+### 3. Describe how the dataset should be transformed.
 
 * **Parse encoded column:**
 
   * The `Record` column contains multiple variables concatenated with `-`
   * Split into: `Firm`, `Country`, `Sector`, `Period`, `Metric`, `Value`
 
+* **Reshape (long → wide):**
+
+  * Pivot the `Metric` column into separate columns (`MarketCap`, `Revenue`, `EBITDA`, …)
+  * Use `Value` as cell entries
+
 * **Optional refinement:**
 
-  * Columns `timestamp` and `logger_sys` could be removed for the analysis.
   * Convert `Value` into numeric format (e.g., remove `B` and cast to float)
+  * Keep or drop `timestamp` depending on whether it represents data collection or observation time
 
 ---
 
-4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+### 4. (Optional challenge): Implement the transformation in Python (pandas)
 
 ```{python}
 import pandas as pd
 
+# Load data
 market_data_df = pd.read_csv("data/market_data_log.csv")
 
 # Split encoded column
@@ -285,15 +291,24 @@ split_cols = market_data_df["Record"].str.split("-", expand=True)
 split_cols.columns = ["Firm", "Country", "Sector", "Period", "Metric", "Value"]
 
 # Combine with original dataframe
-df_tidy = pd.concat([market_data_df, split_cols], axis=1)
+df = pd.concat([market_data_df, split_cols], axis=1)
 
-# Drop Record column
-df_tidy.drop(columns=["Record"], inplace=True)
+# Pivot to wide format
+df_wide = (
+    df.pivot_table(
+        index=["timestamp", "logger_sys", "Firm", "Country", "Sector", "Period"],
+        columns="Metric",
+        values="Value",
+        aggfunc="first"
+    )
+    .reset_index()
+)
 
-df_tidy.head()
+df_wide.head()
 ```
 
 :::
+
 
 ---
 
@@ -554,14 +569,14 @@ market_data_df = pd.read_csv("data/market_data_log.csv")
 
 ## Solution
 
-1. Identify:
+### 1. Identify:
 
    * Values: Numerical sales values (215, 201, 240, ...)
    * Observations: Individual sales measurements for a specific customer, month, and channel
    * Variables: CustomerID, Region, Month, Channel, Sales
    * Units of observation: A customer–month–channel combination
 
-2. Draft the **tidy structure** of the dataset:
+### 2. Draft the **tidy structure** of the dataset:
 
 | Customer_ID | Region | Month | Channel | Sales |
 | ----------- | ------ | ----- | ------- | ----- |
@@ -569,12 +584,12 @@ market_data_df = pd.read_csv("data/market_data_log.csv")
 | CUST-AB12CD | EU     | Jan   | Store   | 95    |
 | CUST-AB12CD | EU     | Feb   | Online  | 135   |
 
-3. Describe how the dataset should be transformed.
+### 3. Describe how the dataset should be transformed.
 
 - Reshape (wide → long): Convert all monthly/channel columns into two columns
 - Split the combined column (Month, Channel)
 
-4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+### 4. **(Optional challenge)**: Implement the transformation in Python (pandas)
 
 
 ```{python}
