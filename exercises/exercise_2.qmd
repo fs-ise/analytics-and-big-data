@@ -966,7 +966,7 @@ customer_df.describe()
 * For each data quality issue, suggest how you would address it.
 
 * **Missing values:** impute (e.g., median for income) or remove rows
-* **Implausible / invalid values:** filter out or correct (e.g., future DOB, negative income, invalid dates)
+* **Implausible / invalid values:** filter out or correct (e.g., negative income, invalid dates)
 * **Inconsistent formats:** standardize (convert income to numeric, parse dates to datetime)
 * **Outliers:** inspect and cap or remove extreme values
 * **Inconsistent categorical values:** unify categories (e.g., gender labels, country formats)
