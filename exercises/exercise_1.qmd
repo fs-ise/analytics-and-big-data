@@ -156,12 +156,7 @@ Consult the documentation of relevant Python libraries such as *pandas* and *sci
 
 :::{.sol}
 
-A good solution starts by selecting a concrete business problem and a matching Kaggle dataset, for example:
-
-- **Retail/shopping:** predict customer purchases, sales, or product demand
-- **Financial:** predict loan default, fraud, or customer churn
-
-The notebook should then be structured according to **CRISP-DM**:
+A good notebook solution should be structured according to **CRISP-DM**:
 
 1. **Business understanding**  
    Clearly describe the business problem, explain why it is relevant, and define the target of the analysis.
@@ -191,7 +186,7 @@ In the notebook, students should also indicate which parts are:
 - **prescriptive** (discussing what actions could follow from the results).
 
 A complete solution does not need to finish every step perfectly.
-It is acceptable to leave key coding parts as **TODO**, propose likely next steps, or discuss two or three modeling options that could be tried.
+It is acceptable to leave key coding parts as **TODO**, propose likely next steps, or discuss modeling options that could be tried.
 The goal is to demonstrate a structured analytics workflow and familiarize yourself with Jupyter Notebooks.
 
 :::
