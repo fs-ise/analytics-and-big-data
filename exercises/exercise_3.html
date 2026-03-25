@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Exercise 3: Analytical data architecture – Analytics &amp; Big Data</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,15 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc75b09f5250c27d17e89c6d0d56fedc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,6 +83,17 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '🔗';
   background-image: none;
 }
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -100,17 +114,6 @@ div.callout-self-service.callout-style-default > .callout-header {
 div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
   content: '🛠️';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
   background-image: none;
 }
 </style>
@@ -155,6 +158,18 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
     <a class="nav-link" href="../preparation.html"> 
 <span class="menu-text">⚠️ Preparation</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../evaluations.html"> 
+<span class="menu-text">Evaluations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data" rel="noopener noreferrer" target="_blank"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:github-01" aria-label="GitHub" title="GitHub"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data/issues" rel="noopener noreferrer" target="_blank"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:add-circle" aria-label="Issues" title="Issues"></iconify-icon></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -189,19 +204,60 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
+<section id="todo-check-correctness" class="level1">
+<h1>TODO : check correctness</h1>
 <div class="learning-objectives">
-<p>Design fact/dimension schemata from business questions and operational data.</p>
+<p>Design fact and dimension schemata from business questions and operational data.</p>
 </div>
-<!--
-::: callout-note
-See /home/gerit/workspace/projects/abd/nextcloud/Material/ABD/exercises/Solutions_DW-Modelling.pdf
-TODO: existing exercise sheet?
-https://github.com/ShantanilBagchi/DataCamp/blob/master/SQL%20Courses/Database%20Design/Solutions.md
-https://gitlab.ost.ch/db/datana/-/blob/master/Uebungen/02_DW_OLAP/README.adoc
-:::
--->
 <section id="part-1" class="level2">
 <h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<p>You are working as a data analytics consultant for a bank. The bank plans to build a data warehouse to support management reporting and analytical queries. A common starting point in data warehouse design is to consider the analytical questions that decision-makers want to answer. These questions help determine:</p>
+<ul>
+<li><strong>the facts</strong> that should be stored in the warehouse (typically derived from transaction data, e.g., transaction amounts or volumes), and</li>
+<li><strong>the dimensions</strong> that provide perspectives for analyzing these facts (typically derived from master data or attributes of master data, such as customer characteristics or product categories).</li>
+</ul>
+<p>Below is a selection of analytical questions that bank managers might ask.</p>
+<ul>
+<li>What is the ratio of individual customers to business clients- in the bank’s portfolio?</li>
+<li>Does this customer distribution- correspond to the share of total transaction volume or revenue- generated by each group?</li>
+<li>Do customer attributes- (e.g., profession, household status, education level, income group) influence the volume or value of financial transactions?</li>
+<li>Which customers generate the highest transaction volumes or fee revenues?</li>
+<li>How does transaction volume evolve over time? Are there noticeable shifts when analyzed by customer segments?</li>
+<li>Can new customer segments- be identified by combining multiple attributes (e.g., income level, profession, and household structure)?</li>
+<li>Are there geographic patterns- in customer behavior or transaction activity across different regions?</li>
+<li>Are certain financial products or service categories- particularly prominent in specific regions?</li>
+<li>Are there relationships between customer profiles and the financial products they use?</li>
+<li>Which financial products or services generate the highest transaction volumes or revenues? Which products are rarely used?</li>
+<li>Are there seasonal patterns- in transaction activity depending on the type of financial product or customer segment?</li>
+</ul>
+<p>Your task</p>
+<ul>
+<li>Read the questions and highlight the elements referring to facts (e.g., transaction volume, revenue, number of transactions). Highlight the elements referring to dimensions (e.g., customer characteristics, product categories, regions, time).</li>
+<li>Based on these observations, derive a possible star schema, identifying: the fact table and the relevant dimension tables.</li>
+</ul>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
+<section id="solution-identifying-facts-and-dimensions" class="level3 sol">
+<h3 class="anchored" data-anchor-id="solution-identifying-facts-and-dimensions">Solution: Identifying Facts and Dimensions</h3>
+<ul>
+<li>What is the ratio of <strong><span style="color:#2ca02c;">individual customers</span></strong> to <strong><span style="color:#2ca02c;">business clients</span></strong> in the bank’s portfolio?</li>
+<li>Does this <strong><span style="color:#2ca02c;">customer distribution</span></strong> correspond to the share of total <strong><span style="color:#d62728;">transaction volume</span></strong> or <strong><span style="color:#d62728;">revenue</span></strong> generated by each group?</li>
+<li>Do <strong><span style="color:#2ca02c;">customer attributes</span></strong> such as <strong><span style="color:#2ca02c;">profession</span></strong>, <strong><span style="color:#2ca02c;">household status</span></strong>, <strong><span style="color:#2ca02c;">education level</span></strong>, or <strong><span style="color:#2ca02c;">income group</span></strong> influence <strong><span style="color:#d62728;">transaction volume</span></strong> or <strong><span style="color:#d62728;">revenue</span></strong>?</li>
+<li>Which <strong><span style="color:#2ca02c;">customers</span></strong> generate the highest <strong><span style="color:#d62728;">transaction volumes</span></strong> or <strong><span style="color:#d62728;">fee revenues</span></strong>?</li>
+<li>How does <strong><span style="color:#d62728;">transaction volume</span></strong> develop over <strong><span style="color:#2ca02c;">time</span></strong>? Are there shifts when analyzing different <strong><span style="color:#2ca02c;">customer segments</span></strong>?</li>
+<li>Can additional <strong><span style="color:#2ca02c;">customer segments</span></strong> be identified when combining multiple <strong><span style="color:#2ca02c;">customer attributes</span></strong>?</li>
+<li>Are there <strong><span style="color:#2ca02c;">regional patterns</span></strong> in <strong><span style="color:#2ca02c;">customer activity</span></strong> or <strong><span style="color:#d62728;">transaction volumes</span></strong>?</li>
+<li>Are certain <strong><span style="color:#2ca02c;">financial products</span></strong> or <strong><span style="color:#2ca02c;">service categories</span></strong> particularly prominent in specific <strong><span style="color:#2ca02c;">regions</span></strong>?</li>
+<li>Are there relationships between <strong><span style="color:#2ca02c;">customer profiles</span></strong> and <strong><span style="color:#2ca02c;">financial products</span></strong> used?</li>
+<li>Which <strong><span style="color:#2ca02c;">financial products</span></strong> or <strong><span style="color:#2ca02c;">service categories</span></strong> generate the highest or lowest <strong><span style="color:#d62728;">transaction volumes</span></strong> or <strong><span style="color:#d62728;">revenues</span></strong>?</li>
+<li>Are there <strong><span style="color:#2ca02c;">seasonal patterns</span></strong> in <strong><span style="color:#d62728;">transaction activity</span></strong> depending on the <strong><span style="color:#2ca02c;">financial product</span></strong> or <strong><span style="color:#2ca02c;">customer segment</span></strong>?</li>
+</ul>
+<p><img src="images/schema_solution_1.png" width="1200"></p>
+</section>
+</section>
+<section id="part-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
 <p>An online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:</p>
 <p><strong>CUSTOMER</strong> (ID, name, address, telephone, birthday, gender)<br>
 <strong>WINE</strong> (ID, name, type, year, bottle_price, class)<br>
@@ -209,42 +265,349 @@ https://gitlab.ost.ch/db/datana/-/blob/master/Uebungen/02_DW_OLAP/README.adoc
 <strong>TIME</strong> (timestamp, date, year)<br>
 <strong>ORDER</strong> (customer, wine, time, bottles)</p>
 <p>Create the star schema for the data warehouse.</p>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
 </section>
 <section id="solution" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<p><img src="../images/schema_solution_1.png" class="img-fluid" width="100"></p>
-</section>
-<section id="part-1a" class="level2">
-<h2 class="anchored" data-anchor-id="part-1a">Part 1a</h2>
-<p>An online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:</p>
-<p>CUSTOMER (ID, name, address, telephone, birthday, gender) WINE (ID, name, type, year, bottle_price, purchase_price, class) CLASS (ID, name, region) TIME (timestamp, date, year) ORDER (customer, wine, time, bottles)</p>
-<p>Create the star schema for the data warehouse.</p>
-</section>
-<section id="solution-1" class="level2 sol">
-<h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
-<p>TODO</p>
-</section>
-<section id="part-2" class="level2">
-<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
-<p>A restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation. The company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status. The menu items of the restaurants are divided into the classes “Starters”, “Main courses”, “Desserts”, “Beverages” and “Other”. Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.</p>
-<p>Create the logical data warehouse schema!</p>
-</section>
-<section id="solution-2" class="level2 sol">
-<h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<p>TODO</p>
+<p><img src="images/schema_solution_2.png" width="1200"></p>
 </section>
 <section id="part-3" class="level2">
 <h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
+<p>A restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation. The company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status. The menu items of the restaurants are divided into the classes “Starters”, “Main courses”, “Desserts”, “Beverages” and “Other”. Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.</p>
+<p>Create the logical data warehouse schema!</p>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
+</section>
+<section id="solution-1" class="level2 sol">
+<h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
+<p><img src="images/schema_solution_3.png" width="1200"></p>
+</section>
+<section id="part-4" class="level2">
+<h2 class="anchored" data-anchor-id="part-4">Part 4</h2>
 <p>As an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses. Flowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available. The DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports. The key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs. Employees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.</p>
 <p>Create the logical data warehouse schema!</p>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
 </section>
-<section id="solution-3" class="level2 sol">
-<h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
+<section id="solution-2" class="level2 sol">
+<h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
+<p><img src="images/schema_solution_4.png" width="1200"></p>
+</section>
+<section id="olap" class="level2">
+<h2 class="anchored" data-anchor-id="olap">OLAP</h2>
 <p>TODO</p>
 </section>
-<section id="exam-prep" class="level2">
-<h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
-<p>TODO : include specific questions/tasks that could be included in the exam.</p>
+</section>
+<section id="part-xxx-question-sets" class="level1">
+<h1>Part xxx: Question sets <a id="questions"></a></h1>
+<p>TODO: add questions on DWH/OLAP (question sets for the whole part on data foundations)</p>
+<div class="direction">
+<div class=".callout-note">
+<p>Work on these questions as far as you get during the session. There is no expectation to complete everything — you can continue with the rest after the session.</p>
+</div>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p><strong>Explain the role of exploratory data analysis in business decision-making.</strong></p>
+<p>Address the following points:</p>
+<ul>
+<li>Why analysts do not jump directly to modeling</li>
+<li>How data preparation and EDA are connected</li>
+<li>Which kinds of insights EDA can provide before formal modeling</li>
+</ul>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p><strong>Measurement scales determine which analyses are meaningful. Why?</strong></p>
+<p>For each of the following variables, identify the scale (<code>nominal</code>, <code>ordinal</code>, <code>interval</code>, <code>ratio</code>) and name one appropriate descriptive statistic or visualization:</p>
+<ul>
+<li>customer_id</li>
+<li>customer satisfaction (low / medium / high)</li>
+<li>date_of_birth</li>
+<li>income</li>
+<li>country</li>
+</ul>
+<p>Then explain why the mean is appropriate for some variables but not for others.</p>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p><strong>A histogram is useful for some variables, but not for all. Explain why.</strong></p>
+<p>Use the examples below:</p>
+<ul>
+<li>customer names</li>
+<li>age</li>
+<li>date_of_birth</li>
+<li>country</li>
+</ul>
+<p>In your answer, refer to:</p>
+<ul>
+<li>variable type / scale</li>
+<li>whether grouping into intervals makes sense</li>
+<li>which mathematical operations are meaningful</li>
+</ul>
+</section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p><strong>Why is the following dataset not tidy?</strong></p>
+<p>A table contains the columns:</p>
+<p><code>Region | Year | Sales_Q1 | Sales_Q2 | Sales_Q3 | Sales_Q4</code></p>
+<p>Answer the following:</p>
+<ol type="1">
+<li>Identify values, variables, observations, and the unit of observation.</li>
+<li>Explain why the structure is problematic for analytics tools.</li>
+<li>Propose the tidy target structure.</li>
+<li>Describe the transformation needed.</li>
+</ol>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p><strong>Different data quality issues require different cleansing actions.</strong></p>
+<p>Match each issue with a suitable cleansing action and justify your choice:</p>
+<ul>
+<li>missing values</li>
+<li>outdated values</li>
+<li>outliers / implausible values</li>
+<li>inconsistent date formats</li>
+<li>inconsistent units</li>
+<li>duplicate records</li>
+<li>data entry errors</li>
+</ul>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p><strong>Why can data transformation change which analyses are possible?</strong></p>
+<p>Use the example of timestamps stored as strings.</p>
+<p>Discuss:</p>
+<ul>
+<li>which operations are possible before transformation</li>
+<li>which analyses become possible after transforming timestamps</li>
+<li>examples such as hour of day, day of week, or numeric timestamps</li>
+</ul>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p><strong>Classify the following EDA methods.</strong></p>
+<p>For each method, classify it as:</p>
+<ul>
+<li>univariate or multivariate</li>
+<li>graphical or non-graphical</li>
+</ul>
+<p>Methods:</p>
+<ul>
+<li>histogram</li>
+<li>boxplot</li>
+<li>frequency table</li>
+<li>correlation</li>
+<li>scatterplot</li>
+<li>clustering</li>
+</ul>
+</section>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p><strong>Explain the logic of the k-means algorithm in your own words.</strong></p>
+<p>Your answer should include:</p>
+<ul>
+<li>the role of <code>k</code></li>
+<li>initial assignment / initialization</li>
+<li>centroids</li>
+<li>reassignment to the nearest centroid</li>
+<li>stopping criterion</li>
+<li>one strength and one limitation of k-means</li>
+</ul>
+</section>
+<section id="question-9" class="level2">
+<h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p><strong>Why is scaling important before k-means clustering?</strong></p>
+<p>Discuss:</p>
+<ul>
+<li>what happens if one variable has a much larger scale than another</li>
+<li>why k-means is sensitive to scaling</li>
+<li>what standardization is intended to achieve</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="question-10" class="level2">
+<h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<p><strong>How can a dendrogram support the choice of the number of clusters for k-means?</strong></p>
+<p>In your answer, explain:</p>
+<ul>
+<li>what a dendrogram shows</li>
+<li>how large vertical gaps can help suggest a reasonable number of clusters</li>
+<li>why this can be useful before running k-means</li>
+<li>why the dendrogram does not itself perform k-means clustering</li>
+</ul>
+</section>
+</div>
+<div class="sol">
+<section id="question-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-1">Question 1</h2>
+<p><strong>Explain the role of exploratory data analysis in business decision-making.</strong></p>
+<p><strong>Answer:</strong><br>
+Exploratory data analysis helps analysts understand the structure, quality, and patterns of data before building models or making decisions. It helps reveal distributions, unusual values, missing data, relationships between variables, and possible groupings. In business decision-making, this is important because decisions based on poorly understood or low-quality data can be misleading. EDA is closely connected to data preparation because restructuring, cleansing, and transforming data are often necessary before meaningful exploration is possible.</p>
+<hr>
+</section>
+<section id="question-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-1">Question 2</h2>
+<p><strong>Measurement scales determine which analyses are meaningful. Why?</strong></p>
+<p><strong>Answer:</strong><br>
+Different scales allow different kinds of comparisons and calculations.</p>
+<ul>
+<li><code>customer_id</code>: <strong>nominal</strong>; appropriate summary: frequency count</li>
+<li><code>customer satisfaction (low / medium / high)</code>: <strong>ordinal</strong>; appropriate summary: mode or ordered bar chart</li>
+<li><code>date_of_birth</code>: <strong>interval</strong>; appropriate summary: histogram or median date</li>
+<li><code>income</code>: <strong>ratio</strong>; appropriate summary: mean, median, histogram, boxplot</li>
+<li><code>country</code>: <strong>nominal</strong>; appropriate summary: frequency table or bar chart</li>
+</ul>
+<p>The mean is only appropriate when numerical differences are meaningful. That is the case for variables like income. It is not meaningful for nominal variables such as country or customer_id. For ordinal variables, order matters, but distances between categories are not clearly defined, so the mean is usually not appropriate.</p>
+<hr>
+</section>
+<section id="question-3-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-1">Question 3</h2>
+<p><strong>A histogram is useful for some variables, but not for all. Explain why.</strong></p>
+<p><strong>Answer:</strong><br>
+A histogram is suitable for quantitative variables where values can be grouped into intervals. It shows how often observations fall into numeric ranges.</p>
+<ul>
+<li><strong>Customer names:</strong> not suitable, because names are nominal categories and cannot be meaningfully grouped into numeric intervals.</li>
+<li><strong>Age:</strong> suitable, because age is quantitative and grouping into intervals such as 20–29 or 30–39 is meaningful.</li>
+<li><strong>Date of birth:</strong> can be suitable if treated as a time variable and grouped into intervals such as years or decades.</li>
+<li><strong>Country:</strong> not suitable, because country is a nominal variable. A bar chart or frequency table is better.</li>
+</ul>
+<p>So the key issue is whether the variable has a numeric or interval-like structure that supports binning into ranges.</p>
+<hr>
+</section>
+<section id="question-4-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-1">Question 4</h2>
+<p><strong>Why is the following dataset not tidy?</strong></p>
+<p>A table contains the columns:</p>
+<p><code>Region | Year | Sales_Q1 | Sales_Q2 | Sales_Q3 | Sales_Q4</code></p>
+<p><strong>Answer:</strong><br>
+This dataset is not tidy because quarters are stored in separate columns instead of in a single variable.</p>
+<ul>
+<li><strong>Values:</strong> Germany, France, 2020, 2021, Q1, Q2, and sales numbers such as 120, 150, or 210</li>
+<li><strong>Variables:</strong> Region, Year, Quarter, Sales</li>
+<li><strong>Observations:</strong> one sales measurement for a specific region, year, and quarter</li>
+<li><strong>Unit of observation:</strong> a region–year–quarter combination</li>
+</ul>
+<p>The structure is problematic because one variable, quarter, is spread across multiple columns. Many analytics tools work better when each variable has its own column and each observation has its own row.</p>
+<p>A tidy structure would look like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Year</th>
+<th>Quarter</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EU</td>
+<td>2024</td>
+<td>Q1</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>EU</td>
+<td>2024</td>
+<td>Q2</td>
+<td>150</td>
+</tr>
+</tbody>
+</table>
+<p>The transformation needed is a <strong>wide-to-long reshape</strong>, for example by melting the quarter columns into one <code>Quarter</code> column and one <code>Sales</code> column.</p>
+<hr>
+</section>
+<section id="question-5-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-5-1">Question 5</h2>
+<p><strong>Different data quality issues require different cleansing actions.</strong></p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong>Missing values:</strong> impute them where appropriate, or remove affected rows if necessary.</li>
+<li><strong>Outdated values:</strong> update them if a correct value is available, or flag/remove them if they are no longer valid.</li>
+<li><strong>Outliers / implausible values:</strong> inspect them, then correct, cap, or remove depending on whether they are errors or valid extreme cases.</li>
+<li><strong>Inconsistent date formats:</strong> standardize all values into one consistent date format.</li>
+<li><strong>Inconsistent units:</strong> convert values into one common unit before analysis.</li>
+<li><strong>Duplicate records:</strong> identify duplicates and remove or merge them.</li>
+<li><strong>Data entry errors:</strong> correct obvious mistakes where possible, otherwise flag them as invalid or missing.</li>
+</ul>
+<p>Different actions are needed because not all quality problems have the same cause or impact. Some require standardization, others correction, removal, or imputation.</p>
+<hr>
+</section>
+<section id="question-6-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-6-1">Question 6</h2>
+<p><strong>Why can data transformation change which analyses are possible?</strong></p>
+<p><strong>Answer:</strong><br>
+Data transformation changes the format or type of a variable so that it becomes analytically usable.</p>
+<p>If timestamps are stored as strings, only limited operations are possible. They can be displayed or counted as text, but time-based operations are difficult or unreliable.</p>
+<p>After transforming them into a datetime format, analysts can:</p>
+<ul>
+<li>sort observations chronologically</li>
+<li>calculate time differences</li>
+<li>extract hour, weekday, month, or year</li>
+<li>aggregate by day, week, or month</li>
+<li>create time series visualizations</li>
+</ul>
+<p>So transformation expands what can be computed and analyzed. A variable stored in the wrong format may contain useful information, but that information is not fully accessible until the variable is transformed.</p>
+<hr>
+</section>
+<section id="question-7-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-7-1">Question 7</h2>
+<p><strong>Classify the following EDA methods.</strong></p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong>Histogram:</strong> univariate, graphical</li>
+<li><strong>Boxplot:</strong> usually univariate, graphical</li>
+<li><strong>Frequency table:</strong> univariate, non-graphical</li>
+<li><strong>Correlation:</strong> multivariate, non-graphical</li>
+<li><strong>Scatterplot:</strong> multivariate, graphical</li>
+<li><strong>Clustering:</strong> multivariate, usually non-graphical as a method itself, though results are often shown graphically</li>
+</ul>
+<p>These methods differ in whether they focus on one variable or multiple variables and whether they summarize results numerically or visually.</p>
+<hr>
+</section>
+<section id="question-8-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-8-1">Question 8</h2>
+<p><strong>Explain the logic of the k-means algorithm in your own words.</strong></p>
+<p><strong>Answer:</strong><br>
+K-means groups observations into <code>k</code> clusters.</p>
+<p>First, the number of clusters <code>k</code> is chosen in advance. Then the algorithm starts with initial cluster centers, called centroids, which are placed at random. Each observation is assigned to the nearest centroid. After that, new centroids are computed based on the observations currently assigned to each cluster. The observations are then reassigned to the nearest updated centroid. This process repeats until the assignments no longer change much or the centroids become stable.</p>
+<p>A strength of k-means is that it is simple, efficient, and easy to interpret. A limitation is that the number of clusters must be chosen beforehand, and the result can depend on scaling and initialization.</p>
+<hr>
+</section>
+<section id="question-9-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-9-1">Question 9</h2>
+<p><strong>Why is scaling important before k-means clustering?</strong></p>
+<p><strong>Answer:</strong><br>
+Scaling is important because k-means relies on distances between observations. If one variable has a much larger numerical scale than another, it will dominate the distance calculation.</p>
+<p>For example, if one variable ranges from 0 to 1 and another from 0 to 10,000, the larger-scale variable will have much more influence on the clusters, even if both variables are conceptually equally important.</p>
+<p>Standardization puts variables on a comparable scale, often with mean 0 and standard deviation 1. This helps ensure that each variable contributes more equally to the clustering result.</p>
+<hr>
+</section>
+<section id="question-10-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-10-1">Question 10</h2>
+<p><strong>How can a dendrogram support the choice of the number of clusters for k-means?</strong></p>
+<p><strong>Answer:</strong><br>
+A dendrogram is a tree-like diagram produced by hierarchical clustering. It shows how observations or groups are merged step by step and at what dissimilarity level those merges occur.</p>
+<p>Large vertical gaps in the dendrogram suggest that combining clusters beyond that point would merge relatively dissimilar groups. This can provide a useful hint about a reasonable number of clusters.</p>
+<p>This is helpful before running k-means because it offers an exploratory view of possible cluster structure in the data. However, the dendrogram itself does not perform k-means clustering. It is a separate hierarchical method that can help inform the choice of <code>k</code>.</p>
+</section>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Session 3 survey">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Session 3 survey
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up, please complete the Session 3 survey here: <a href="https://forms.gle/dkwMZN4zPT7N3qbx5" target="_blank">https://forms.gle/dkwMZN4zPT7N3qbx5</a>. Thank you 🙏</p>
+</div>
+</div>
 
 
 </section>

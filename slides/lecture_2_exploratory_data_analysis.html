@@ -6,8 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-23">
@@ -18,6 +19,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -29,6 +33,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -50,7 +120,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -202,127 +272,48 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 2: Exploratory data analysis <p></p>
+  <p></p> Session 2: Data preparation and exploration <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
     <p class="date">(2026-03-23)</p>
 
 </section>
-<section id="section" class="slide level2" data-state="hide-menubar">
+<section id="section" class="slide level2" data-menu-title="Learning objectives" data-state="hide-menubar">
 <h2></h2>
 <p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
-<li><strong>Describe</strong> key characteristics of variables and patterns between variables.</li>
-<li><strong>Explore</strong> data sets by using appropriate descriptive and visual techniques in Python (<em>exercise</em>).</li>
+<li><strong>Describe</strong> variables, relationships between variables, and underlying structure in the data (e.g., clusters).</li>
+<li><strong>Prepare and explore</strong> data sets using appropriate descriptive and visual techniques.</li>
 <li><strong>Explain</strong> the role of exploratory data analysis in business decision-making.</li>
 </ul>
 </div>
 </section>
 <section id="table-of-contents" class="slide level2" data-state="hide-menubar">
-<h2>Table of Contents</h2>
+<h2>Table of contents</h2>
 <ul class="menu">
 <ul>
 </ul></ul></section>
-<section>
-<section id="foundations" class="title-slide slide level1 center" data-stack-name="Foundations">
-<h1>Foundations</h1>
-<p><br><br></p>
-<blockquote>
-<p>People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.</p>
-</blockquote>
-</section>
-<section id="the-role-of-eda" class="slide level2">
-<h2>The role of EDA</h2>
-<p><strong>Exploratory Data Analysis (EDA)</strong> is the process of <strong>examining and summarizing data to understand its main characteristics before building analytical models.</strong></p>
-<p>EDA typically involves:</p>
+<section id="foundations" class="slide level2" data-state="hide-menubar">
+<h2>Foundations</h2>
+<p>Before building analytical models, analysts typically engage in <strong>data preparation and exploratory data analysis (EDA)</strong>.</p>
+<p>These activities are <strong>closely intertwined and often iterative</strong>: we prepare and structure the data while simultaneously exploring it to understand its characteristics and potential issues.</p>
+<p>Typical activities include:</p>
 <ul>
+<li><strong>Data preparation</strong> (e.g., structuring, cleansing, integration)</li>
 <li><strong>Descriptive statistics</strong> (e.g., mean, variance, frequencies)</li>
-<li><strong>Data quality checks</strong> (e.g., missing values, outliers)</li>
 <li><strong>Visualization techniques</strong> (e.g., histograms, boxplots, scatterplots)</li>
 </ul>
-<p><strong>Goal:</strong> gain intuition about the data, detect patterns or anomalies, and prepare the data for further analysis or modeling.</p>
-<div class="fragment">
-<p><br></p>
-<p>The following forms of EDA are typically distinguished:</p>
-<table style="border-collapse:collapse; margin:auto; font-size:20px; text-align:center;">
-<tbody><tr>
-<td style="border:none; width:170px;">
-</td>
-<td style="border:none; padding:10px 24px; font-weight:600;">
-Univariate
-</td>
-<td style="border:none; padding:10px 24px; font-weight:600;">
-Multivariate
-</td>
-</tr>
-<tr>
-<td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">
-Non-graphical
-</td>
-<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-mean, median<br>frequencies
-</td>
-<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-cross-tabs<br>correlations
-</td>
-</tr>
-<tr>
-<td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">
-Graphical
-</td>
-<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-histograms<br>dot plots
-</td>
-<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
-scatter plots<br>grouped dot plots
-</td>
-</tr>
-</tbody></table>
-<!--
-    > Exploratory data analysis is generally cross-classed in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate.
-    
-    > In Exploratory Data Analysis (EDA), there is no hypothesis and there is no model.
+<p><strong>Goal:</strong> develop an initial understanding of the data, detect patterns or anomalies, and ensure that the data is suitable for further analysis or modeling.</p>
+</section>
+<section>
+<section id="data-preparation" class="title-slide slide level1 center" data-stack-name="Data preparation">
+<h1>Data preparation</h1>
 
-    > Reasons for EDA:
-    - gain intuition about the data
-    - make comparisons between distributions
-    - sanity checking (making sure the data is on the scale you expect, in the format you thought it should be)
-    - find out where data is missing or if there are outliers
-    - summarize the data
-
-
-      process (pre-model), aims, techniques (graphical, non-graphical, ...)
-
-      **"Limitations of EDA"**
-
-      - Descriptive vs. inferential statistics
-      - no model/explanation/prediction (correlation vs causality)
-      - sampling error, unless EDA is run on the whole population (e.g., in some Big Data settings)
-      -> starting point for building predictions (explanations, hypotheses, models, causality)
-
-      ## EDA / TODO
-
-      Non-graphical exploratory data analysis is the first step when beginning to analyze the data.
-      This preliminary data analysis step focuses on four points:
-
-      - measures of central tendency, i.e. mean and median^[The median, known as 50th percentile, is more resistant to outliers.].
-      - measures of spread, i.e. variance, standard deviation, and interquartile range
-      - the shape of the distribution
-      - the existence of outliers
-
-      TODO: data quality (and required preparation) instead of just outliers?!
-
-
-      > The characteristics of interest for a categorical variable are simply the range of values and the frequency of occurrence for each value.
-
-      ![](../images/slides_188.png)
--->
-</div>
 </section>
 <section id="data-types" class="slide level2">
 <h2>Data types</h2>
-<p>Conducting EDA and representing the “real world” in computer requires us to use appropriate data types. Typically, we distinguish four fundamental data types, known as measurement scales:</p>
+<p>Conducting EDA and representing the “real world” requires us to use appropriate data types. Typically, we distinguish four fundamental data types, known as measurement scales:</p>
 <p>Qualitative description of objects</p>
 <ul>
 <li>Nominal (special case: binary)</li>
@@ -348,12 +339,11 @@ scatter plots<br>grouped dot plots
 <li>Postal codes = {96047, 96048, …}</li>
 </ul>
 <div class="fragment">
-<p>Special case of the nominal scale: Binary scale</p>
+<p>Special case of the nominal scale: Binary scale – also called Boolean</p>
 <ul>
-<li>Nominal attribute with only 2 states (0/1, or TRUE / FALSE) – also called Boolean</li>
-<li>0/FALSE typically means absence and 1/TRUE presence</li>
+<li>Nominal attribute with only 2 states</li>
+<li>0/FALSE typically means absence and 1/TRUE presence.</li>
 </ul>
-<p>It is recommended to assign 1 to the most important, and often rare, outcome that is subject to investigation (e.g.&nbsp;people that purchase a product, have a disease)</p>
 <p>Examples:</p>
 <ul>
 <li>Smoking: 1 indicates patients in a trial that smoke, 0 otherwise.</li>
@@ -379,8 +369,8 @@ scatter plots<br>grouped dot plots
 <li>Places in a competition = {1st, 2nd, 3rd, 4th, …}</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Also known as a “rank scale”.</p></li></ol></aside></section>
-<section id="interval-scale-quantitative" class="slide level2">
-<h2>Interval scale (quantitative)</h2>
+<section id="quantitative-interval-scale" class="slide level2">
+<h2>Quantitative: Interval scale</h2>
 <ul>
 <li>A numeric measureable attribute in the form of integer or real values. The distance between the numbers or units on this scale is equal over all levels of the scale. Values of the interval scale have no natural “zero” point.</li>
 <li>Invariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 &gt; 0, 𝑏 ≥ 0</li>
@@ -392,8 +382,8 @@ scatter plots<br>grouped dot plots
 <li>Dates and time (e.g., conversion from Julian to Gregorian calendar is possible)</li>
 </ul>
 </section>
-<section id="ratio-scale-quantitative" class="slide level2">
-<h2>Ratio scale (quantitative)</h2>
+<section id="quantitative-ratio-scale" class="slide level2">
+<h2>Quantitative: Ratio scale</h2>
 <ul>
 <li>Numeric values with a meaningful zero point (e.g., “zero” means absence)</li>
 <li>All arithmetic rules and functions can be applied (addition, subtraction)</li>
@@ -404,8 +394,8 @@ scatter plots<br>grouped dot plots
 <li>Kelvin (K) temperature (has a true zero-point (0 °K=− 273.15 ℃): It is the point at which the particles that comprise matter have zero kinetic energy</li>
 </ul>
 </section>
-<section id="possible-mathematical-operations-for-each-scale-type" class="slide level2">
-<h2>Possible mathematical operations for each scale type</h2>
+<section id="scales-and-mathematical-operations" class="slide level2">
+<h2>Scales and mathematical operations</h2>
 <p>Due to the different mathematical properties, not all statistical measures can be computed on different measurement scales:</p>
 <p><br><br></p>
 <table class="caption-top" style="width:100%;">
@@ -463,18 +453,531 @@ scatter plots<br>grouped dot plots
 </tbody>
 </table>
 <p><br></p>
-
-<aside><div>
-<ol start="24" type="A">
-<li>The frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low</li>
+<p style="font-size:0.8em; color:gray;">
+(X) The frequency (relative / absolute) may be calculated for a numeric variable, but makes only sense when the number of possible values is low
+</p>
+<div class="learning_note fragment">
+<p><strong>Learning focus</strong></p>
+<p>No need to memorize the table.<br>
+Be able to <strong>explain the scales and give examples of operations that are appropriate</strong>.</p>
+</div>
+</section>
+<section id="data-quality-and-preparation" class="slide level2">
+<h2>Data quality and preparation</h2>
+<p>In business analytics, we rarely work with carefully curated datasets. Instead, data often comes from <strong>multiple systems, processes, and teams</strong>, where it is primarily created for <strong>operational purposes rather than analysis</strong>. Because these data sources are not always standardized or under the analyst’s control, quality issues are common:</p>
+<ul>
+<li><strong>Missing values</strong> (e.g., incomplete historical market data)</li>
+<li><strong>Outdated values</strong> (e.g., customer address has changed)</li>
+<li><strong>Inconsistent formats or units</strong> (e.g., dates stored as text, mixed currencies)</li>
+<li><strong>Duplicate records</strong> (e.g., customers with multiple accounts)</li>
+<li><strong>Measurement or data entry errors</strong> (e.g., human data entry, broken sensors)</li>
+</ul>
+<div class="fragment">
+<p>Before conducting analysis, we must ensure that the <strong>data is fit for use</strong> <span class="citation" data-cites="StrongLeeWang1997">(<a href="#/survey-session-2" role="doc-biblioref" onclick="">Strong et al., 1997</a>)</span>.</p>
+<div class="highlight_must_learn">
+<p><strong>Typical data preparation actions</strong></p>
+<ol type="1">
+<li>Data structuring</li>
+<li>Data cleansing</li>
+<li>Data integration</li>
+<li>Data transformation</li>
 </ol>
+</div>
+</div>
+<div class="fragment">
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> In many real-world analytics projects, <strong>data preparation and cleaning can take up to ~80% of the total effort.</strong></p>
+</div>
+</section>
+<section id="data-structuring-example" class="slide level2">
+<h2>Data structuring: Example</h2>
+<p>There are many ways to structure the same dataset. <br></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Option A (wide)</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Year</th>
+<th>Sales_Q1</th>
+<th>Sales_Q2</th>
+<th>Sales_Q3</th>
+<th>Sales_Q4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>120</td>
+<td>140</td>
+<td>160</td>
+<td>150</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>100</td>
+<td>110</td>
+<td>120</td>
+<td>130</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:40%;">
+<p><strong>Option B (long)</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Year</th>
+<th>Quarter</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>Q1</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Europe</td>
+<td>2023</td>
+<td>Q2</td>
+<td>140</td>
+</tr>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>Q3</td>
+<td>160</td>
+</tr>
+<tr class="even">
+<td>Europe</td>
+<td>2023</td>
+<td>Q4</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>Asia</td>
+<td>2023</td>
+<td>Q1</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>Q2</td>
+<td>110</td>
+</tr>
+<tr class="odd">
+<td>Asia</td>
+<td>2023</td>
+<td>Q3</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>Q4</td>
+<td>130</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<p>➡ <strong>Which would you select as an input for a data analytics tool?</strong></p>
+<div class="fragment">
+<p><br></p>
+<p>→ Solution: <strong>Option B</strong>, because this is what <strong>data analytics tools typically expect</strong>.</p>
+</div>
+</section>
+<section id="data-structuring-principles" class="slide level2">
+<h2>Data structuring: Principles</h2>
+<p>Data structure <em>typically</em> expected by data analytics tools</p>
+<p><br></p>
+<div class="highlight_must_learn">
+<p><strong>Vocabulary</strong></p>
+<ul>
+<li>A <strong>dataset</strong> is a collection of <strong>values</strong> (e.g., nominal, categorical, numeric).</li>
+<li>Each value belongs to a <strong>variable</strong> and an <strong>observation</strong></li>
+</ul>
+<p><strong>Expected data structure</strong></p>
+<ul>
+<li>Each variable forms a column</li>
+<li>Each observation forms a row</li>
+<li>Each type of observational unit forms a table</li>
+</ul>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> Data must be structured according to the expectations of the analytical tool being used. Reviewing the tool’s documentation and example datasets can help clarify the required format.</p>
+
+</div>
+<aside><div>
+<p>Based on the Tidyverse and the work of <span class="citation" data-cites="Wickham2014">Wickham (<a href="#/survey-session-2" role="doc-biblioref" onclick="">2014</a>)</span>.</p>
 </div></aside></section>
-<section id="data-preparation-formatting" class="slide level2">
-<h2>Data preparation: Formatting</h2>
+<section id="data-structuring-example-continued" class="slide level2">
+<h2>Data structuring: Example continued</h2>
+<p><strong>Dataset <code>df</code> (wide)</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Year</th>
+<th>Sales_Q1</th>
+<th>Sales_Q2</th>
+<th>Sales_Q3</th>
+<th>Sales_Q4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>120</td>
+<td>140</td>
+<td>160</td>
+<td>150</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>100</td>
+<td>110</td>
+<td>120</td>
+<td>130</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Convert wide → long</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>long_df <span class="op">=</span> df.melt(</span>
+<span id="cb1-2"><a></a>    id_vars<span class="op">=</span>[<span class="st">"Region"</span>, <span class="st">"Year"</span>],</span>
+<span id="cb1-3"><a></a>    var_name<span class="op">=</span><span class="st">"Quarter"</span>,</span>
+<span id="cb1-4"><a></a>    value_name<span class="op">=</span><span class="st">"Sales"</span></span>
+<span id="cb1-5"><a></a>)</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a>long_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>Result:</p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Year</th>
+<th>Quarter</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>Sales_Q1</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>Sales_Q1</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>Sales_Q2</td>
+<td>140</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>Sales_Q2</td>
+<td>110</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-structuring-example-continued-1" class="slide level2">
+<h2>Data structuring: Example continued</h2>
+<p>As a last step, we need to clean the <code>Quarter</code> column by removing the <code>"Sales_"</code> prefix:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>long_df[<span class="st">"Quarter"</span>] <span class="op">=</span> long_df[<span class="st">"Quarter"</span>].<span class="bu">str</span>.replace(<span class="st">"Sales_"</span>, <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><br></p>
+<p>Final tidy dataset:</p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Year</th>
+<th>Quarter</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>Q1</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Europe</td>
+<td>2023</td>
+<td>Q2</td>
+<td>140</td>
+</tr>
+<tr class="odd">
+<td>Europe</td>
+<td>2023</td>
+<td>Q3</td>
+<td>160</td>
+</tr>
+<tr class="even">
+<td>Europe</td>
+<td>2023</td>
+<td>Q4</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>Asia</td>
+<td>2023</td>
+<td>Q1</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>Q2</td>
+<td>110</td>
+</tr>
+<tr class="odd">
+<td>Asia</td>
+<td>2023</td>
+<td>Q3</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Asia</td>
+<td>2023</td>
+<td>Q4</td>
+<td>130</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<aside><div>
+<p>Note: we will cover selected transformation operations like melt in the exercises.</p>
+</div></aside></section>
+<section id="data-cleansing" class="slide level2">
+<h2>Data cleansing</h2>
+<p><br></p>
+<div class="highlight_must_learn">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data issue</th>
+<th>Example</th>
+<th>Data cleansing action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Missing values</td>
+<td>Historical market data missing for some days</td>
+<td>Impute values (e.g., interpolate prices), fill with mean/median, or mark as NA</td>
+</tr>
+<tr class="even">
+<td>Outdated values</td>
+<td>Customer moved but old address still stored</td>
+<td>Update records from CRM, external address verification service</td>
+</tr>
+<tr class="odd">
+<td>Outliers / implausible values</td>
+<td>Age = 250, salary = −5000</td>
+<td>Detect and remove, cap values, or replace with plausible values</td>
+</tr>
+<tr class="even">
+<td>Inconsistent formats</td>
+<td>Dates stored as <code>"03/01/23"</code> and <code>"2023-01-03"</code></td>
+<td>Standardize to a single format (e.g., ISO date <code>YYYY-MM-DD</code>)</td>
+</tr>
+<tr class="odd">
+<td>Inconsistent units</td>
+<td>Revenue in USD and EUR mixed in one column</td>
+<td>Convert to common currency</td>
+</tr>
+<tr class="even">
+<td>Duplicate records</td>
+<td>Same customer registered twice</td>
+<td>Identify duplicates and merge records</td>
+</tr>
+<tr class="odd">
+<td>Data entry errors</td>
+<td><code>"Munich"</code> vs <code>"Munch"</code></td>
+<td>Correct spelling using reference tables</td>
+</tr>
+<tr class="even">
+<td>Sensor errors</td>
+<td>Temperature sensor reports <code>9999</code></td>
+<td>Remove invalid values or replace with interpolated measurements</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-integration" class="slide level2">
+<h2>Data integration</h2>
+<p>Organizations often store data in <strong>different systems</strong> (e.g., CRM, sales systems, web analytics).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Customer database (CRM)</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Customer_ID</th>
+<th>Name</th>
+<th>Country</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>101</td>
+<td>Alice</td>
+<td>Germany</td>
+<td>alice@example.com</td>
+</tr>
+<tr class="even">
+<td>102</td>
+<td>Bob</td>
+<td>France</td>
+<td>bob@example.com</td>
+</tr>
+<tr class="odd">
+<td>103</td>
+<td>Clara</td>
+<td>Germany</td>
+<td>clara@example.com</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Sales transactions</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Customer_ID</th>
+<th>Order_ID</th>
+<th>Revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>101</td>
+<td>5001</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>101</td>
+<td>5002</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>103</td>
+<td>5003</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<p>For analysis, we can <strong>integrate these datasets</strong> using the shared key <code>Customer_ID</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>integrated_data <span class="op">=</span> customers.merge(sales, on<span class="op">=</span><span class="st">"Customer_ID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>This creates a combined dataset that links customer information with sales.</p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Customer_ID</th>
+<th>Name</th>
+<th>Country</th>
+<th>Email</th>
+<th>Order_ID</th>
+<th>Revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>101</td>
+<td>Alice</td>
+<td>Germany</td>
+<td><a href="mailto:alice@example.com">alice@example.com</a></td>
+<td>5001</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>101</td>
+<td>Alice</td>
+<td>Germany</td>
+<td><a href="mailto:alice@example.com">alice@example.com</a></td>
+<td>5002</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>103</td>
+<td>Clara</td>
+<td>Germany</td>
+<td><a href="mailto:clara@example.com">clara@example.com</a></td>
+<td>5003</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> For analytical purposes, <strong>redundant values are often acceptable</strong>. The goal is to organize data into a <strong>tidy structure</strong>, where <strong>each row represents one observation</strong> and all relevant variables are available for analysis.</p>
+
+</div>
+<aside><div>
+<p>Note: We will cover data integration in more detail in the next lecture.</p>
+</div></aside></section>
+<section id="data-transformation-example" class="slide level2">
+<h2>Data transformation: Example</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Often, the way data is <strong>stored</strong> determines which mathematical operations are possible.</p>
 <p><strong>Example: timestamps stored as strings</strong></p>
+<div class="smaller">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -497,6 +1000,7 @@ scatter plots<br>grouped dot plots
 </tr>
 </tbody>
 </table>
+</div>
 <p>If treated as a <strong>string</strong>, we can only perform operations such as:</p>
 <ul>
 <li>equality checks (<code>=</code> / <code>≠</code>)</li>
@@ -504,7 +1008,8 @@ scatter plots<br>grouped dot plots
 </ul>
 <p>This <strong>severely limits analysis</strong>.</p>
 </div><div class="column fragment" style="width:50%;">
-<p>Format conversions help transform raw data into representations suitable for EDA and analytical models:</p>
+<p><strong>Format conversions</strong> help transform raw data into representations suitable for EDA and analytical models:</p>
+<div class="smaller">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -536,54 +1041,58 @@ scatter plots<br>grouped dot plots
 </tr>
 </tbody>
 </table>
+</div>
 </div></div>
 <div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Data preparation transforms raw data into <strong>formats that allow meaningful mathematical operations and analysis</strong>.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="data-quality-checks" class="slide level2">
-<h2>Data quality checks</h2>
-<p>Before conducting analysis, we must ensure that the <strong>data is fit for use</strong> <span class="citation" data-cites="StrongLeeWang1997">(<a href="#/references" role="doc-biblioref" onclick="">Strong et al., 1997</a>)</span>.</p>
-<p>Common data quality issues include:</p>
-<ul>
-<li><strong>Missing values</strong> (e.g., incomplete historical market data)</li>
-<li><strong>Outdated values</strong> (e.g., customer address has changed)</li>
-<li><strong>Outliers or implausible values</strong> (e.g., age = 250)</li>
-<li><strong>Inconsistent formats or units</strong> (e.g., dates stored as text, mixed currencies)</li>
-<li><strong>Duplicate records</strong> (e.g., customers with multiple accounts)</li>
-<li><strong>Measurement or data entry errors</strong> (e.g., human data entry, broken sensors)</li>
-</ul>
-<div class="fragment">
-<p><strong>Typical data preparation actions</strong></p>
-<ul>
-<li><strong>Correct</strong> values (e.g., fix formatting or units)</li>
-<li><strong>Remove</strong> problematic observations</li>
-<li><strong>Impute</strong> missing values</li>
-<li><strong>Collect additional data</strong> if necessary</li>
-</ul>
-</div>
-<div class="fragment">
-<blockquote>
-<p>In many real-world analytics projects, <strong>data preparation and cleaning can take up to ~80% of the total effort.</strong></p>
-</blockquote>
+<p><br> <iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> Data preparation transforms raw data into <strong>formats that allow meaningful mathematical operations and analysis</strong>.</p>
 </div>
 </section></section>
 <section>
 <section id="univariate-exploratory-data-analysis" class="title-slide slide level1 center" data-stack-name="Univariate EDA">
 <h1>Univariate exploratory data analysis</h1>
 
+</section>
+<section id="foundations-1" class="slide level2">
+<h2>Foundations</h2>
+<blockquote>
+<p>People are not very good at looking at a column of numbers or a whole data table and then determining important characteristics of the data. EDA techniques have been devised as an aid in this situation.</p>
+</blockquote>
+<p><br></p>
+<p>The following forms of EDA are typically distinguished:</p>
+<table style="border-collapse:collapse; margin:auto; font-size:20px; text-align:center;">
+<tbody><tr>
+<td style="border:none; width:170px;">
+</td>
+<td style="border:none; padding:10px 24px; font-weight:600;">
+Univariate
+</td>
+<td style="border:none; padding:10px 24px; font-weight:600;">
+Multivariate
+</td>
+</tr>
+<tr>
+<td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">
+Non-graphical
+</td>
+<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+mean, median<br>frequencies
+</td>
+<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+cross-tabs<br>correlations
+</td>
+</tr>
+<tr>
+<td style="border:none; padding:18px 14px; font-weight:600; text-align:right;">
+Graphical
+</td>
+<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+histograms<br>dot plots
+</td>
+<td style="border:3px solid #444; padding:22px 28px; background:#f8f8f8;">
+scatter plots<br>clustering
+</td>
+</tr>
+</tbody></table>
 </section>
 <section id="descriptive-statistics" class="slide level2">
 <h2>Descriptive statistics</h2>
@@ -659,7 +1168,7 @@ scatter plots<br>grouped dot plots
 <li><p>The graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="185df46b" class="cell" data-execution_count="1">
+<div id="0b7c1e1e" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -675,12 +1184,12 @@ scatter plots<br>grouped dot plots
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>The mode is the value that appears most in a set of data values</p></li>
-<li><p>The highest mode also has the highest relative frequency (see next slide)</p></li>
-<li><p>Example: On a party, you meet many other students, and you ask what they are studying.</p></li>
+<li>The mode is the value that appears most in a set of data values</li>
+<li>The highest mode also has the highest relative frequency (see next slide)</li>
+<li>Example: On a party, you meet many other students, and you ask what they are studying.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="81ecaa6c" class="cell" data-execution_count="2">
+<div id="838fb00c" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -690,85 +1199,6 @@ scatter plots<br>grouped dot plots
 </div>
 </div>
 </div></div>
-<!--
-
-          ## The relative frequency
-
-          ::: columns
-
-          ::: {.column width="55%"}
-
-          Your company purchases fancy retro light bulbs from overseas.
-          Because of the transport or the low quality of the supplier, 80 of 200 light bulbs are defect.
-          The relative frequency of defect light bulbs in the shipment is
-
-          \[
-          p = \frac{\text{Number of outcomes representing the event}}
-                  {\text{Total number of possible outcomes}}
-          \]
-
-          \[
-          p = \frac{80}{200} = 0.4
-          \]
-
-          The relative frequency approach can be used as a probability assessment.
-          However, larger samples must be used, the probability should be observed over longer time, and potential sampling issues must be considered.
-
-          :::
-
-          ::: {.column width="45%"}
-
-          TODO
-
-          ![](lightbulb.jpg)
-
-          :::
-
-          :::
-
-
-
-          ## The mean / expected value
-
-          ::: columns
-
-          ::: {.column width="55%"}
-
-          The *arithmetic* mean is calculated as
-
-          \[
-          \bar{x} = \sum_{i=1}^{n} \frac{x_i}{n}
-          = \frac{x_1 + x_2 + \dots + x_n}{n}
-          \]
-
-          where \(x_1, x_2, \dots, x_n\) is a set of \(n\) observations.
-          The mean is often denoted as \(\mu\) or with the symbol \(\bar{x}\).
-
-          Treating the empirical distribution as a probability function of a random variable, the **expected value** can be **estimated by the mean**:
-
-          \[
-          E(X) = \bar{x}
-          \]
-
-          **Interpretation:** If you (randomly) select customers from the sample depicted right, you can expect that they have a mean year of birth of approximately 1967.
-
-          :::
-
-          ::: {.column width="45%"}
-
-
-          ::: {#1b1767b8 .cell execution_count=3}
-          
-          ::: {.cell-output .cell-output-display}
-          ![](lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-4-output-1.png){width=825 height=449}
-          :::
-          :::
-          
-          
-          :::
-
-          :::
--->
 </section>
 <section id="boxplot" class="slide level2">
 <h2>Boxplot</h2>
@@ -785,11 +1215,11 @@ scatter plots<br>grouped dot plots
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="c144f712" class="cell" data-execution_count="4">
+<div id="44818379" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-5-output-1.png" width="566" height="566"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-4-output-1.png" width="566" height="566"></p>
 </figure>
 </div>
 </div>
@@ -808,11 +1238,11 @@ scatter plots<br>grouped dot plots
 <li><p>One can – for example – see that there is a higher spread in group 2A compared to the others</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="e7e0f395" class="cell" data-execution_count="5">
+<div id="3ab81603" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-6-output-1.png" width="810" height="449"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-5-output-1.png" width="810" height="449"></p>
 </figure>
 </div>
 </div>
@@ -825,7 +1255,7 @@ scatter plots<br>grouped dot plots
 
 </section>
 <section id="multivariate-non-graphical-eda" class="slide level2">
-<h2>Multivariate Non-Graphical EDA</h2>
+<h2>Multivariate non-graphical EDA</h2>
 <p>Multivariate non-graphical EDA techniques generally show the relationship between two or more variables in the form of either cross-tabulation for categorical variables or correlation statistics for numerical variables.</p>
 <div style="display:flex;justify-content:center;margin-top:4em">
 <div class="Multivariate-wrapper">
@@ -837,14 +1267,19 @@ scatter plots<br>grouped dot plots
 </div>
 </section>
 <section id="multivariate-graphical-eda" class="slide level2">
-<h2>Multivariate Graphical EDA</h2>
+<h2>Multivariate graphical EDA</h2>
 <p>Multivariate graphical EDA techniques are scatterplots for numerical variables, Barcharts for categorical variables, or Boxplots for mixed types.</p>
-<p><img data-src="../images/slides_196.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_196.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 </section>
 <section id="bivariate-statistics-correlation" class="slide level2">
 <h2>Bivariate statistics: Correlation</h2>
 <!--
-So far, we focused on the description of one variable (univariate statistics). But in many cases, we are interested in the interactions between variables.
+So far, we focused on the description of one variable (univariate statistics).
+But in many cases, we are interested in the interactions between variables.
 -->
 <p><strong>Correlation</strong> measures how strongly two variables move together. Suppose we observe two variables for the same observations:</p>
 <p><span class="math display">\[X = (x_1, x_2, ..., x_n)\]</span></p>
@@ -855,7 +1290,17 @@ So far, we focused on the description of one variable (univariate statistics). B
 {\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}\]</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="b3ecda0b" class="cell" data-execution_count="6">
+<div id="a5ec1d1d" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-6-output-1.png" width="587" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="cb12c37d" class="cell" data-fig-height="1" data-fig-width="4" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -864,20 +1309,10 @@ So far, we focused on the description of one variable (univariate statistics). B
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div id="095d7ae3" class="cell" data-fig-height="1" data-fig-width="4" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-8-output-1.png" width="587" height="376"></p>
-</figure>
-</div>
-</div>
-</div>
 </div></div>
 </section>
 <section id="correlation-vs.-causality" class="slide level2">
-<h2>Correlation vs.&nbsp;Causality</h2>
+<h2>Correlation vs.&nbsp;causality</h2>
 <p><strong>Correlation:</strong> Two data series behave “similar”</p>
 <p><strong>Causality:</strong> Principle of cause and effect</p>
 <div class="fragment">
@@ -886,368 +1321,641 @@ So far, we focused on the description of one variable (univariate statistics). B
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/5015_associates-degrees-_correlates-with_comments-on-oversimplified-youtube-videos.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="../images/5015_associates-degrees-_correlates-with_comments-on-oversimplified-youtube-videos.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/1775_wind-power-generated-in-taiwan_correlates-with_google-searches-for-i-am-tired.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="../images/1775_wind-power-generated-in-taiwan_correlates-with_google-searches-for-i-am-tired.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </div></div>
-<p><strong>Correlation does not imply causation!</strong></p>
 </div>
 <div class="fragment">
-<blockquote>
-<p>But: Sometimes it is better to predict something even if we cannot explain it instead of doing nothing!</p>
-</blockquote>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> Correlation does not imply causation.</p>
+</div>
+<div class="fragment">
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> Bivariate correlations are often insufficient for prediction or explanation, requiring more powerful analytical models.</p>
+</div>
+<div class="fragment">
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> If causal explanations are unavailable, decisions may need to rely on predictions.</p>
 
-<!--
-      ## Correlation
-
-      ![](../images/slides_112.png)
-
-      ::: aside
-      — Source: Organic Trade Association, 2011 Organic Industry Survey, U.P. Department of Education, Office of Special Education Programs, Data Analysis System (DANS)
-      :::
-
-      > Organic food sales and the rate of autism seem to have a very strong correlation, but no one is suggesting that one causes the other!
-
-
-      ## Correlation vs. Causality (I)
-
-      ![](../images/slides_107_new.png)
-
-
-
-      ## Correlation vs. Causality (II)
-
-      ![](../images/slides_114.png)
-
-
-        ## Statistical Estimation
-
-        TODO: TBD whether we cover it here!
-
-        ![](../images/slides_116.png)
-
-        ::: aside
-        — Source: http://www.dxbydt.com/the-size-of-your-sample
-        :::
-
-
-
-        ## Tests on Outliers
-
-        > Outlier are data objects, which are clearly different from the others.
-
-        > Usually, the detection of outliers is an unsupervised process, because they are not known before analyses.
-
-        > In the case of **numerical attributes** the Interquartil Range can be used. Here, an outlier is defined if the attribute lies outside the interval.
-
-        ![](../images/slides_187_new.png)
-
-        > Usually, k has a value between 1.5 and 3. The bigger k, the more different the values must be to be classified as outliers.
-
-        > Can be visualized by a Box-and-Whisker Plot:
-
-        ![](../images/slides_189.png)
-
-
-
-
-        ## Handling Outliers
-
-        - Outlier have to be **eliminated** if they
-          - would bias the analysis, e.g. if 9 persons have an age between 20 and 30 and the 10th person is 80 years old.
-          - are erogenous data, e.g. as a result of input errors or a defect sensor.
-        - It is not always acceptable to drop an observation just because it is an outlier. They can be legitimate observations and are sometimes interesting ones. It’s important to investigate the nature of the outlier before deciding.
-        - In those cases where you shouldn’t drop the outlier, one option is to try a transformation. **Log transformations** pull in high numbers. This can reduce the impact of a single point if the outlier is an independent variable.
-
-        ![](../images/slides_190.png)
-
-
-
-
-        ## Univariate Graphical EDA
-
-        > Non-graphical and graphical EDA methods complement each other, they have the same focus. While the non-graphical methods are quantitative and objective, they do not give a full picture of the data. The distribution of a variable tells us what values the variable takes and how often each value occurs.
-
-        > Types of displays:
-
-        - for numerical variables: Histograms, Boxplots, Quantile-normal plots, …
-        - for categorical variables: Pie charts, Bar graphs, …
-
-        <div style="display:flex;justify-content:center">
-        <div style="height:600px;width:400px">
-        ![](../images/slides_193.png)
-        </div>
-        <div style="height:600px;width:400px">
-        ![](../images/slides_191.png)
-        </div>
-        <div style="height:600px;width:400px">
-        ![](../images/slides_192.png)
-        </div>
-        </div>
--->
 </div>
 <aside><div>
-<p>These and more online: <a href="https://www.tylervigen.com/spurious-correlations">https://www.tylervigen.com/spurious-correlations</a> <!-- Note: CC-BY licensed  --></p>
+<p>More examples are available at: <a href="https://www.tylervigen.com/spurious-correlations">https://www.tylervigen.com/spurious-correlations</a> <!-- Note: CC-BY licensed  --></p>
 </div></aside></section>
 <section id="clustering-in-eda" class="slide level2">
 <h2>Clustering in EDA</h2>
 <p>In <strong>multivariate exploratory data analysis</strong>, we often want to understand whether <strong>observations form natural groups</strong>.</p>
-<p><strong>Clustering</strong> is a technique that automatically groups <strong>similar observations</strong> based on their characteristics.</p>
+<p><strong>Clustering</strong> is an EDA technique that groups <strong>similar observations</strong> based on their characteristics.</p>
+<p><br> Common use cases include:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/clustering-use-cases.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Timing: ~4 minutes.</p>
+<p>Emphasize: clustering is usually <strong>not the final model</strong>. It is used to <strong>understand structure in the data</strong>.</p>
+<p>Typical workflow:</p>
+<p>EDA → clustering → interpretation → downstream analytics.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="families-of-clustering-methods" class="slide level2">
+<h2>Families of clustering methods</h2>
+<p>Clustering algorithms can be grouped into several <strong>families of approaches</strong>.</p>
 <p><br></p>
-<p><strong>Idea</strong>: Objects within the same cluster should be <strong>similar to each other</strong>, but <strong>different from objects in other clusters</strong>.</p>
+<div class="smaller">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Examples</th>
+<th>Key characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Segmentation / Partitioning methods</strong></td>
+<td><strong>k-means</strong>, k-medoids (PAM), bisecting k-means</td>
+<td>divide observations into <em>k predefined clusters</em>; scalable for <strong>large datasets</strong>; widely used for <strong>business/customer segmentation</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Hierarchical methods</strong></td>
+<td><strong>Agglomerative clustering</strong>, divisive clustering</td>
+<td>clusters formed through <strong>successive merging or splitting</strong>; produce <strong>dendrograms (cluster trees)</strong>; useful for <strong>exploratory structure discovery</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Density-based methods</strong></td>
+<td>DBSCAN, HDBSCAN</td>
+<td>clusters defined as <strong>regions of high density</strong>; identify <strong>arbitrary shapes</strong> and <strong>outliers/noise</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Probabilistic / model-based methods</strong></td>
+<td>Gaussian mixture models</td>
+<td>clusters modeled as <strong>probability distributions</strong>; allow <strong>soft cluster membership</strong> when groups overlap</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="fragment">
-<p><br></p>
-<!--
-    **Why clustering during EDA?**
-
-    Clustering helps us:
-
-    - discover **hidden structure** in the data
-    - identify **segments or groups**
-    - detect **unusual observations**
-    - generate **hypotheses for further analysis**
-
-    . . .
--->
-<p><strong>Examples</strong></p>
-<ul>
-<li><strong>Customer segmentation</strong> in marketing</li>
-<li><strong>Grouping similar products</strong> based on purchasing patterns</li>
-<li><strong>Identifying behavioral patterns</strong> in users</li>
-<li><strong>Detecting anomalies</strong> in transactions</li>
-</ul>
+<p>In this lecture we focus on <strong>k-means</strong> (segmentation) and <strong>agglomerative hierarchical clustering</strong>.</p>
+<aside class="notes">
+<p>Timing: ~5 minutes.</p>
+<p>Goal: give students a quick mental map of clustering methods.</p>
+<p>Emphasize that many algorithms exist, but we focus on the two most intuitive and widely taught ones: - k-means - agglomerative hierarchical clustering.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="introductory-example" class="slide level2">
-<h2>Introductory Example</h2>
-<p>Assume you are a wholesale distributor and each row of your dataset corresponds to a customer showing the following attributes:</p>
-<ol type="1">
-<li>FRESH: annual spending on fresh products (Continuous);</li>
-<li>MILK: annual spending on milk products (Continuous);</li>
-<li>GROCERY: annual spending on grocery products (Continuous);</li>
-<li>FROZEN: annual spending on frozen products (Continuous);</li>
-<li>DETERGENTS_PAPER: annual spending on detergents and paper products (Continuous);</li>
-<li>DELICATESSEN: annual spending on delicatessen products (Continuous);</li>
-<li>CHANNEL: customers buying channel (Nominal);</li>
-<li>REGION: customers region (Nominal)</li>
-</ol>
-<blockquote>
-<p>Your goal is to segment the users. That means finding similar types of users and bunching them together.<br>
-Why would you want to do this?<br>
-You might want to give different users different experiences. Marketing often does this; for example, to offer toner to people who are known to own printers.<br>
-You might have a model that works better for specific groups. Or you might have different models for different groups.</p>
-</blockquote>
-</section>
-<section id="clustering-overview" class="slide level2">
-<h2>Clustering: Overview</h2>
-<p>Clustering groups <strong>observations into clusters based on similarity</strong> across <strong>multiple variables</strong>.</p>
-<p><strong>Input</strong></p>
+<section id="segmentation-clustering" class="slide level2">
+<h2>Segmentation clustering</h2>
+<p>Segmentation methods divide observations into <strong>k clusters</strong>.</p>
+<p>Goal:</p>
 <ul>
-<li>Each observation is described by <strong>multiple attributes (multivariate data)</strong><br>
+<li>maximize similarity <strong>within clusters</strong></li>
+<li>maximize differences <strong>between clusters</strong></li>
+</ul>
+<p>The most widely used algorithm:</p>
+<p><strong>k-means clustering</strong></p>
+<p>Key assumption:</p>
+<p>clusters are roughly <strong>spherical and similar in size</strong>.</p>
+<aside class="notes">
+<p>Timing: ~2 minutes.</p>
+<p>Explain the intuition first before showing the algorithm.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+      ## Partitioning cluster methods
+
+      Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).
+
+      The objective is to find where  is the mean of points in Si.
+
+-->
+</section>
+<section id="k-means-algorithm" class="slide level2">
+<h2>k-means algorithm</h2>
+<p>For a given <strong>k</strong>, the algorithm finds cluster centers that minimize <strong>within-cluster sum of squares</strong>.</p>
+<div class="highlight_must_learn">
+<p>Steps:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>Randomly assign data points to k clusters</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>Loop:</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    calculate centroids <span class="cf">for</span> each cluster</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each data point:</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>        compute distance to <span class="bu">all</span> centroids</span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> closest to its current centroid:</span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>            assign x to the nearest centroid</span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> no changes <span class="kw">in</span> centroids <span class="kw">and</span> cluster assignments:</span>
+<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>Strengths: fast and scalable, easy to interpret</p>
+<p>Limitations: must choose <strong>k</strong>, sensitive to scaling and outliers.</p>
+<aside class="notes">
+<p>Timing: ~4 minutes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="how-cluster-solutions-evolve" class="slide level2">
+<h2>How cluster solutions evolve</h2>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout="[25,25,25,25]">
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="d3655d16" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-9-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="e2f69ebd" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-10-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="3420b81c" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-11-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="2ff84963" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-12-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="bf3a910e" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-13-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="46fa7d13" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-14-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="1ebcffc0" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-15-output-1.png" width="336" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<p><br><br><br> <strong>…</strong></p>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p><strong>Note:</strong> The plots show the final result after the algorithm has converged, i.e., once observation assignments and cluster centroids no longer change.</p>
+</div></aside></section>
+<section id="k-means-in-python" class="slide level2">
+<h2>k-means in Python</h2>
+<p>The following runs a k-means clustering analysis in Python: <br></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k)</span>
+<span id="cb5-4"><a></a>labels <span class="op">=</span> kmeans.fit_predict(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> <code>KMeans(...)</code> + <code>fit_predict(X)</code> runs the iterative algorithm we saw earlier:</p>
+<ul>
+<li>initialize centroids, assign points to nearest centroid, update centroids (repeat until convergence)</li>
+</ul>
+<p>It returns an array of cluster labels (corresponding to each observation). . . .</p>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> Input data <code>X</code> must have a specific structure, as discussed in data preparation:</p>
+<ul>
+<li>rows = observations (data points)<br>
 </li>
-<li>Example: customer spending on different product categories</li>
+<li>columns = features (dimensions)</li>
 </ul>
-<p><span class="math display">\[x_i = (x_{i1}, x_{i2}, ..., x_{im})\]</span></p>
-<p>Similarity between observations is typically measured using a <strong>distance metric</strong> (e.g., Euclidean distance).</p>
-<div class="fragment">
-<p><strong>Types of clustering algorithms</strong></p>
-<ul>
-<li><strong>Partitioning methods</strong> (e.g., K-Means)</li>
-<li><strong>Hierarchical methods</strong> (agglomerative, divisive)</li>
-<li><strong>Density-based methods</strong> (e.g., DBSCAN)</li>
-</ul>
-</div>
-<div class="fragment">
-<p>⚠ <strong>Important</strong></p>
-<p>Clustering algorithms will <strong>always produce clusters</strong>, even if the data has <strong>no real structure</strong>.</p>
-<p>Therefore, clusters must be <strong>evaluated and interpreted carefully</strong>.</p>
-<!--
-
-          ## Cluster Analysis
-
-          Cluster analysis is a type of multivariate statistical analysis. It is used to group data into separate clusters. The main objective of clustering is to find similarities between data objects, and then group similar objects together to assist in understanding relationships that might exist among them. Cluster analysis is based on a mathematical formulation of a measure of similarity.
-
-          There are different types of cluster analysis methods:
-
-          - Clustering Methods
-
-          TODO: fix missing?
-
--->
+<p><strong>Example:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>X <span class="op">=</span> [</span>
+<span id="cb6-2"><a></a>    [<span class="fl">1.2</span>, <span class="fl">3.4</span>],</span>
+<span id="cb6-3"><a></a>    [<span class="fl">1.0</span>, <span class="fl">3.0</span>],</span>
+<span id="cb6-4"><a></a>    [<span class="fl">5.5</span>, <span class="fl">8.1</span>],</span>
+<span id="cb6-5"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="partitioning-cluster-methods" class="slide level2">
-<h2>Partitioning Cluster Methods</h2>
-<p>The partitioning cluster methods divide the data into a predetermined number of clusters. The most popular technique is the K-Means algorithm.</p>
-<p>Given a set of observations (x1, x2,…, xn), where each observation is a m-dimensional real vector, k-means clustering aims to partition the n observations into k ≤ n segments S = {S1, S2,…, Sk} so as to minimize the within-cluster sum of squares (WCSS).</p>
-<p>The objective is to find where is the mean of points in Si.</p>
-<blockquote>
-<p><strong>Procedure of K-Means:</strong></p>
-</blockquote>
-<blockquote>
-<p>Step 1: Randomly partition the data objects into k clusters.<br>
-Step 2: Calculate the cluster centroids.<br>
-Step 3: Calculate the distance from every data point to all centroids.<br>
-Step 4: If a data point is closest to its own centroid, leave it where it is. If the data point is not closest to its own centroid, assign it to the cluster with the closest centroid.<br>
-Step 5: Repeat the step 2 to 4 until a complete pass through of all the data points results in no data point changing from one cluster to another.</p>
-</blockquote>
-</section>
-<section id="example-of-a-k-means-cluster-analysis" class="slide level2">
-<h2>Example of a K-Means Cluster Analysis</h2>
-<p><img data-src="../images/slides_327.png"></p>
-<p><strong>Between cluster variance:</strong></p>
-<p><strong>Within cluster variance:</strong></p>
-</section>
-<section id="finding-the-optimal-number-of-clusters-i" class="slide level2">
-<h2>Finding the Optimal Number of Clusters (I)</h2>
-<blockquote>
-<p>The aim of the cluster analysis is the segmentation of objects into clusters, which are preferably homogeneous in it selves and heterogeneous to each other. The less variance exists within the clusters and the more variance exists between the clusters, the better is the number of clusters.</p>
-</blockquote>
-<blockquote>
-<p><strong>Total variance:</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Accumulated variance within the k clusters:</strong></p>
-</blockquote>
-<blockquote>
-<p>This results in the variance between the clusters:</p>
-</blockquote>
-<blockquote>
-<p>with n = number of objects</p>
-</blockquote>
-<blockquote>
-<p>m = number of attributes</p>
-</blockquote>
-</section>
-<section id="finding-the-optimal-number-of-clusters-ii" class="slide level2">
-<h2>Finding the Optimal Number of Clusters (II)</h2>
-<blockquote>
-<p>If you put V in on the ordinate and the number of cluster k on the abscissa, it often results in a curve with one or several kinks. At the point where exists the (first) significant kink, you can find the optimal number of clusters:</p>
-</blockquote>
-<blockquote>
-<p><strong>Total variance V_tot</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Between cluster variance V_betw</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Within cluster variance V_in</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Number of clusters</strong></p>
-</blockquote>
-</section>
-<section id="finding-the-optimal-number-of-clusters-iii" class="slide level2">
-<h2>Finding the Optimal Number of Clusters (III)</h2>
-<blockquote>
-<p>Instead of visually identifying the optimal cluster number, we can calculate the distances from the points on the elbow curve to a straight line linking the first and the last point on the curve. The cluster number with the largest distance is then chosen as the one with the strongest kink.</p>
-</blockquote>
-</section>
-<section id="hierarchical-cluster-methods" class="slide level2">
-<h2>Hierarchical Cluster Methods</h2>
+<section id="choosing-the-number-of-clusters" class="slide level2">
+<h2>Choosing the number of clusters</h2>
+<p>A common heuristic is the <strong>elbow method</strong>.</p>
+<p><strong>Idea:</strong></p>
 <ul>
-<li>There are two types of hierarchical cluster methods:
-<ul>
-<li>Agglomerative hierarchical clustering is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.</li>
-<li>Divisive hierarchical clustering is a top-down clustering method. It works in a similar way to agglomerative clustering but in the opposite direction. This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.</li>
-</ul></li>
+<li>increase k<br>
+</li>
+<li>measure improvement in model fit<br>
+</li>
+<li>look for point where improvement slows</li>
 </ul>
+<div class="fragment">
+<p><strong>Example metric:</strong> within-cluster variance (inertia)</p>
+<div id="cd4a6ea8" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-16-output-1.png" class="quarto-figure quarto-figure-center" width="461" height="302"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Choose k at the <strong>“elbow”</strong> (diminishing returns)</p>
+<aside class="notes">
+<p>Timing: ~3 minutes.</p>
+<p>Key point: inertia always decreases → we look for where gains flatten out.</p>
+<p>Emphasize: heuristic, not a strict rule.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
-<section id="process-of-the-hierarchical-cluster-analysis" class="slide level2">
-<h2>Process of the Hierarchical Cluster Analysis</h2>
+<section id="choosing-the-number-of-clusters-1" class="slide level2">
+<h2>Choosing the number of clusters</h2>
+<p>An alternative is the <strong>silhouette score</strong>.</p>
+<p><strong>Idea:</strong></p>
+<ul>
+<li>evaluate cohesion (within clusters)<br>
+</li>
+<li>evaluate separation (between clusters)<br>
+</li>
+<li>combine both into a single score</li>
+</ul>
+<div class="fragment">
+<p>Choose k that <strong>maximizes the score</strong></p>
+<div id="2f0af750" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-17-output-1.png" class="quarto-figure quarto-figure-center" width="440" height="302"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Higher = better separation and compactness</p>
+<aside class="notes">
+<p>Contrast with elbow:</p>
+<ul>
+<li>elbow → diminishing returns<br>
+</li>
+<li>silhouette → clear maximum</li>
+</ul>
+<p>Highlight: combines two criteria (cohesion + separation).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
-<section id="measuring-similarity-between-clusters-i" class="slide level2">
-<h2>Measuring Similarity between Clusters (I)</h2>
-<p><img data-src="../images/slides_328.png"></p>
-<blockquote>
-<p>Distance between two clusters is the distance between the closest points:</p>
-</blockquote>
-<blockquote>
-<p><strong>Complete Linkage:</strong></p>
-</blockquote>
-<p><img data-src="../images/slides_329.png"></p>
-<blockquote>
-<p>Distance between two clusters is the distance between the farthest pair of points:</p>
-</blockquote>
-<p><img data-src="../images/slides_330.png"></p>
-<blockquote>
-<p>Distance between two clusters i and j is the distance between their centroids:</p>
-</blockquote>
+<section id="hierarchical-clustering" class="slide level2">
+<h2>Hierarchical clustering</h2>
+<p>Hierarchical clustering builds a <strong>tree of clusters</strong>.</p>
+<p>There are two types of hierarchical cluster methods:</p>
+<ul>
+<li><strong>Agglomerative hierarchical clustering</strong> is a bottom-up clustering method. It starts with every single data object in a single cluster. Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all of the data is in one cluster.</li>
+<li><strong>Divisive hierarchical clustering</strong> is a top-down clustering method. It works in a similar way to agglomerative clustering but in the opposite direction. This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.</li>
+</ul>
+<!-- https://www.bioinformaticscrashcourse.com/9.1_Clustering.html -->
 </section>
-<section id="measuring-similarity-between-clusters-ii" class="slide level2">
-<h2>Measuring Similarity between Clusters (II)</h2>
-<blockquote>
-<p><strong>Average Linkage:</strong></p>
-</blockquote>
-<blockquote>
-<p>Distance between clusters is the average distance between the cluster points:</p>
-</blockquote>
-<p><img data-src="../images/slides_331.png"></p>
-<blockquote>
-<p><strong>Ward’s Method / Minimum Variance Method (only Agglomerative):</strong></p>
-</blockquote>
-<p><img data-src="../images/slides_332.png"></p>
-<blockquote>
-<p>Ward’s minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:</p>
-</blockquote>
-<blockquote>
-<p>For a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf</p>
-</blockquote>
-</section>
-<section id="single-linkage-example-i" class="slide level2">
-<h2>Single Linkage Example (I)</h2>
-<p><img data-src="../images/slides_333.png"></p>
-
-<aside><div>
-<p>— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa</p>
-</div></aside></section>
-<section id="single-linkage-example-ii" class="slide level2">
-<h2>Single Linkage Example (II)</h2>
-<p><img data-src="../images/slides_334.png"></p>
-
-<aside><div>
-<p>— Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa</p>
-</div></aside></section>
 <section id="dendrogram" class="slide level2">
 <h2>Dendrogram</h2>
-<blockquote>
 <p>A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g.&nbsp;euclidean distance) between the clusters.</p>
-</blockquote>
-<blockquote>
-<p>In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length. The red line in the graph below shows such a point:</p>
-</blockquote>
-<blockquote>
-<p>Counting the points that cut this line might be a good answer for the number of clusters the data can have. It is the number 6 in this case.</p>
-</blockquote>
+<p>In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length.</p>
+<p>This allows us to explore clusters at <strong>multiple levels of granularity</strong>.</p>
+<div id="5c053fc3" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-18-output-1.png" class="quarto-figure quarto-figure-center" width="521" height="375"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="measuring-similarity-between-clusters" class="slide level2">
+<h2>Measuring similarity between clusters</h2>
+<p>When merging clusters, we must define <strong>distance between clusters</strong>.</p>
+<p>Common linkage choices:</p>
+<ul>
+<li><p><strong>single linkage</strong></p>
+<ul>
+<li>nearest neighbor distance</li>
+</ul></li>
+<li><p><strong>complete linkage</strong></p>
+<ul>
+<li>farthest neighbor distance</li>
+</ul></li>
+<li><p><strong>average linkage</strong></p>
+<ul>
+<li>average pairwise distance</li>
+</ul></li>
+<li><p><strong>Ward linkage</strong></p>
+<ul>
+<li>merges clusters minimizing variance increase.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Timing: ~3 minutes.</p>
+<p>Ward is often used with Euclidean distance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+      ## Measuring similarity between clusters (I)
+
+      ![](../images/slides_328.png)
+
+      > Distance between two clusters is the distance between the closest points:
+
+      > **Complete Linkage:**
+
+      ![](../images/slides_329.png)
+
+      > Distance between two clusters is the distance between the farthest pair of points:
+
+      ![](../images/slides_330.png)
+
+      > Distance between two clusters i and j is the distance between their centroids:
+
+
+      ## Measuring similarity between clusters (II)
+
+      > **Average Linkage:**
+
+      > Distance between clusters is the average distance between the cluster points:
+
+      ![](../images/slides_331.png)
+
+      > **Ward’s Method / Minimum Variance Method (only Agglomerative):**
+
+      ![](../images/slides_332.png)
+
+      > Ward's minimum variance criterion minimizes the total within-cluster variance. At each step the pair of clusters is merged that leads to minimum increase in total within-cluster variance after merging. This can be calculated as the square of the distance between cluster means divided by the sum of the reciprocals of the number of observations in each cluster:
+
+      > For a comparison of the methods see: Ferreira, L.; Hitchcock, D. B. (2009): A Comparison of Hierarchical Methods for Clustering Functional Data, http://people.stat.sc.edu/Hitchcock/compare_hier_fda.pdf
+
+
+      ## Single linkage example (I)
+
+      ![](../images/slides_333.png)
+
+      ::: aside
+      — Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
+      :::
+
+      ## Single linkage example (II)
+
+      ![](../images/slides_334.png)
+
+      ::: aside
+      — Source: Fred, Ana: Unsupervised Learning, Universidade Técnica de Lisboa
+      :::
+-->
+</section>
+<section id="validation-and-interpretation" class="slide level2">
+<h2>Validation and interpretation</h2>
+<p>⚠ Clustering algorithms will <strong>always produce groups</strong>, even when no meaningful structure exists.</p>
+<p>Therefore clusters must be <strong>validated</strong>.</p>
+<p>Common validation approaches:</p>
+<ul>
+<li><p><strong>internal validation</strong></p>
+<ul>
+<li>silhouette score</li>
+<li>cluster stability</li>
+</ul></li>
+<li><p><strong>external validation</strong></p>
+<ul>
+<li>compare with known labels or metadata</li>
+</ul></li>
+<li><p><strong>interpretability checks</strong></p>
+<ul>
+<li>do cluster profiles make business sense?</li>
+</ul></li>
+</ul>
+
+<aside class="notes">
+<p>Timing: ~3 minutes.</p>
+<p>Key warning:</p>
+<p>Clusters ≠ truth. They are hypotheses about structure in the data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Based on <span class="citation" data-cites="BalijepallyMangalarajIyengar2011">Balijepally et al. (<a href="#/survey-session-2" role="doc-biblioref" onclick="">2011</a>)</span>.</p>
+</div></aside></section>
+<section id="why-clustering-is-useful-in-analytics-workflows" class="slide level2">
+<h2>Why clustering is useful in analytics workflows</h2>
+<p>Clustering often supports <strong>later analytical steps</strong>.</p>
+<p>For example:</p>
+<ul>
+<li><p><strong>Customer segments in data warehouses</strong></p>
+<ul>
+<li>segments stored as features for reporting or dashboards</li>
+</ul></li>
+<li><p><strong>Heterogeneity in regression models</strong></p>
+<ul>
+<li>different segments may follow different behavioral patterns</li>
+<li>subgroup analysis or separate models</li>
+</ul></li>
+<li><p><strong>Machine learning pipelines</strong></p>
+<ul>
+<li>clustering can generate <strong>features</strong> or <strong>latent groups</strong></li>
+</ul></li>
+<li><p><strong>Hypothesis generation and model development</strong></p>
+<ul>
+<li>clusters can reveal <strong>previously unnoticed patterns or structures</strong></li>
+<li>these patterns may suggest <strong>new hypotheses</strong> about behavior or relationships in the data</li>
+<li>clustering can therefore <strong>inform model specification</strong>, variable selection, or interaction terms</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Timing: ~3 minutes.</p>
+<p>Key message: Clustering often produces <strong>insights that guide later modeling</strong>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
-<p>TODO</p>
-</section></section>
-<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
-<h1>References</h1>
+<p><strong>Exploratory Data Analysis (EDA)</strong> helps us understand data <strong>before modeling</strong>.</p>
+<p><strong>Key steps:</strong></p>
+<ul>
+<li><strong>Prepare data</strong>
+<ul>
+<li>ensure data quality (missing values, outliers, formats)</li>
+<li>structure data appropriately (rows = observations, columns = features)</li>
+</ul></li>
+<li><strong>Describe variables</strong>
+<ul>
+<li>univariate statistics (mean, variance, distributions)</li>
+<li>visualization (histograms, boxplots)</li>
+</ul></li>
+<li><strong>Analyze relationships</strong>
+<ul>
+<li>multivariate patterns (correlation, scatterplots)</li>
+<li>⚠ correlation ≠ causation</li>
+</ul></li>
+<li><strong>Identify structure</strong>
+<ul>
+<li>segmentation (elbow method/silhouette score))</li>
+<li>hierarchical clustering (dendogram)</li>
+</ul></li>
+</ul>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> EDA is <strong>not the final analysis</strong>, but a <strong>foundation</strong> for model building, decision-making, and hypothesis generation.</p>
+</section>
+<section id="survey-session-2" class="slide level2 smaller scrollable" data-state="hide-menubar">
+<h2>Survey: Session 2</h2>
+<p><br><br></p>
+<div style="display:flex; justify-content:center;">
 
-
+</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-BalijepallyMangalarajIyengar2011" class="csl-entry" role="listitem">
+Balijepally, V., Mangalaraj, G., &amp; Iyengar, K. (2011). Are we wielding this hammer correctly? A reflective review of the application of cluster analysis in information systems research. <em>Journal of the Association for Information Systems</em>, <em>12</em>(5), 1. <a href="https://doi.org/10.17705/1jais.00266">https://doi.org/10.17705/1jais.00266</a>
+</div>
 <div id="ref-StrongLeeWang1997" class="csl-entry" role="listitem">
 Strong, D. M., Lee, Y. W., &amp; Wang, R. Y. (1997). Data quality in context. <em>Communications of the ACM</em>, <em>40</em>(5), 103–110. <a href="https://doi.org/10.1145/253769.253804">https://doi.org/10.1145/253769.253804</a>
 </div>
+<div id="ref-Wickham2014" class="csl-entry" role="listitem">
+Wickham, H. (2014). Tidy data. <em>Journal of Statistical Software</em>, <em>59</em>, 1–23.
 </div>
-</section>
-
+</div>
+</section></section>
 
     </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<div class="footer footer-default">
-
-</div>
-</div></div>
+  </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>

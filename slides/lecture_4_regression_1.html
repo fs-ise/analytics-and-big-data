@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-30">
@@ -20,6 +18,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -118,7 +119,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -214,6 +215,9 @@
   </style>
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
   <style>
   div.callout-objective.callout {
     border-left-color: #0d6efd;
@@ -224,6 +228,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -248,17 +263,6 @@
     content: '🔒';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
   </style>
 </head>
 <body class="quarto-light">
@@ -278,13 +282,13 @@
     <p class="date">(2026-03-30)</p>
 
 </section>
-<section id="section" class="slide level2" data-state="hide-menubar">
+<section id="section" class="slide level2" data-menu-title="Learning objectives" data-state="hide-menubar">
 <h2></h2>
 <p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
 <li><strong>Explain</strong> the stages of a model-based analytics workflow using linear regression as an example.</li>
-<li><strong>Interpret</strong> linear regression models, including coefficient meaning, OLS estimation, and model evaluation.</li>
+<li><strong>Interpret</strong> linear regression models, including coefficients, OLS estimation, and model evaluation.</li>
 <li><strong>Describe</strong> how regression models are implemented in Python.</li>
 </ul>
 </div>
@@ -294,6 +298,9 @@
 </section>
 <section id="process" class="slide level2" data-state="hide-menubar">
 <h2>Process</h2>
+<p><br></p>
+<p>In this session, we follow the CRISP-DM process:</p>
+<p><br><br></p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -429,7 +436,7 @@
 
 </section>
 <section id="case-house-prices-what-drives-property-value" class="slide level2">
-<h2>Case: House Prices — What Drives Property Value?</h2>
+<h2>Case: House prices — What drives property value?</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
 <p><img data-src="../images/dan-cutler-hBNuXfc44qs-unsplash.jpg" width="480"></p>
@@ -441,12 +448,12 @@
 <li><strong>Banks</strong> rely on valuation models to assess collateral and manage mortgage risk.</li>
 <li><strong>Insurers and policymakers</strong> use property data for risk assessment, taxation, and urban planning.</li>
 </ul>
-<p>This case illustrates how regression analysis transforms intuition about property value into systematic, evidence-based decision support across the housing ecosystem.</p>
+<p>How could we use analytical models, such as regression models, to understand the drivers of prices?</p>
 </div></div>
 <!--
 
-## Use cases
-# Motivation {data-stack-name="Motivation"}
+    ## Use cases
+    # Motivation {data-stack-name="Motivation"}
 
           ## Example 1: House Prices — Introducing Regression
 
@@ -483,53 +490,515 @@
 </section>
 <section id="dataset-ames-housing-kaggle" class="slide level2">
 <h2>Dataset: Ames Housing (Kaggle)</h2>
-<p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/prevek18/ames-housing-dataset">Ames Housing Dataset</a></p>
-<p><strong>Kaggle</strong> is a widely-used online platform for data science and machine learning. It provides:</p>
+<p>To answer our question, we need a dataset that includes:</p>
+<ul>
+<li>Sale prices</li>
+<li>Physical attributes (e.g., size, rooms)</li>
+<li>Quality indicators</li>
+<li>Location characteristics</li>
+</ul>
+<div class="fragment">
+<p>To address this, we turn to a <strong>publicly available dataset</strong> on Kaggle: the <strong>Ames Housing dataset</strong>, which provides detailed information on residential properties and their sale prices.</p>
+<p><br></p>
+<div title="About Kaggle">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>About Kaggle</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Kaggle</strong> is a popular data science platform offering:</p>
 <ul>
 <li>Public datasets</li>
 <li>Notebooks for analysis</li>
-<li>Competitions and community discussions</li>
-</ul>
-<div class="fragment">
-<countdown-timer id="timer_3f2eb437328893f88036996dcc588b7cc14bd8e6" minutes="05" seconds="30" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 10;">
- </countdown-timer>
-<p><strong>Task (5–7 minutes)</strong></p>
-<ol type="1">
-<li>Navigate to the dataset page on Kaggle.</li>
-<li>Skim the dataset description.</li>
-<li>Inspect the list of variables (features).</li>
-<li>Open the data preview and:
-<ul>
-<li>Identify the target variable.</li>
-<li>Find at least three potential explanatory variables. <!--   - Look for variables that may require cleaning or transformation. --></li>
-</ul></li>
-</ol>
-<p>Be prepared to briefly discuss:</p>
-<ul>
-<li>Which variables you expect to be strong predictors of price.</li>
+<li>Competitions</li>
+<li>An active community</li>
 </ul>
 </div>
-</section></section>
+</div>
+</div>
+</div>
+<!--
+
+This makes it well suited for **regression analysis**.
+
+### Resources
+
+* House Prices: Advanced Regression Techniques
+* Ames Housing Dataset
+
+[Competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview) · [Dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset/data)
+
+
+ https://www.kaggle.com/datasets/prevek18/ames-housing-dataset -->
+</div>
+</section>
+<section id="load-the-data" class="slide level2">
+<h2>Load the data</h2>
+<p>As a first step, we retrieve the dataset and load it into our Python environment for analysis.</p>
+<div id="d5e233ad" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>USAhousing <span class="op">=</span> pd.read_csv(<span class="st">'../exercises/data/ames.csv'</span>)</span>
+<span id="cb1-4"><a></a>USAhousing.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Order</th>
+<th data-quarto-table-cell-role="th">PID</th>
+<th data-quarto-table-cell-role="th">area</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">MS.SubClass</th>
+<th data-quarto-table-cell-role="th">MS.Zoning</th>
+<th data-quarto-table-cell-role="th">Lot.Frontage</th>
+<th data-quarto-table-cell-role="th">Lot.Area</th>
+<th data-quarto-table-cell-role="th">Street</th>
+<th data-quarto-table-cell-role="th">Alley</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Screen.Porch</th>
+<th data-quarto-table-cell-role="th">Pool.Area</th>
+<th data-quarto-table-cell-role="th">Pool.QC</th>
+<th data-quarto-table-cell-role="th">Fence</th>
+<th data-quarto-table-cell-role="th">Misc.Feature</th>
+<th data-quarto-table-cell-role="th">Misc.Val</th>
+<th data-quarto-table-cell-role="th">Mo.Sold</th>
+<th data-quarto-table-cell-role="th">Yr.Sold</th>
+<th data-quarto-table-cell-role="th">Sale.Type</th>
+<th data-quarto-table-cell-role="th">Sale.Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>526301100</td>
+<td>1656</td>
+<td>215000</td>
+<td>20</td>
+<td>RL</td>
+<td>141.0</td>
+<td>31770</td>
+<td>Pave</td>
+<td>NaN</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>5</td>
+<td>2010</td>
+<td>WD</td>
+<td>Normal</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>526350040</td>
+<td>896</td>
+<td>105000</td>
+<td>20</td>
+<td>RH</td>
+<td>80.0</td>
+<td>11622</td>
+<td>Pave</td>
+<td>NaN</td>
+<td>...</td>
+<td>120</td>
+<td>0</td>
+<td>NaN</td>
+<td>MnPrv</td>
+<td>NaN</td>
+<td>0</td>
+<td>6</td>
+<td>2010</td>
+<td>WD</td>
+<td>Normal</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>526351010</td>
+<td>1329</td>
+<td>172000</td>
+<td>20</td>
+<td>RL</td>
+<td>81.0</td>
+<td>14267</td>
+<td>Pave</td>
+<td>NaN</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Gar2</td>
+<td>12500</td>
+<td>6</td>
+<td>2010</td>
+<td>WD</td>
+<td>Normal</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>526353030</td>
+<td>2110</td>
+<td>244000</td>
+<td>20</td>
+<td>RL</td>
+<td>93.0</td>
+<td>11160</td>
+<td>Pave</td>
+<td>NaN</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>4</td>
+<td>2010</td>
+<td>WD</td>
+<td>Normal</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>527105010</td>
+<td>1629</td>
+<td>189900</td>
+<td>60</td>
+<td>RL</td>
+<td>74.0</td>
+<td>13830</td>
+<td>Pave</td>
+<td>NaN</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>MnPrv</td>
+<td>NaN</td>
+<td>0</td>
+<td>3</td>
+<td>2010</td>
+<td>WD</td>
+<td>Normal</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 82 columns</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<blockquote>
+<p>An important step is to <strong>understand the meaning of the variables</strong>—that is, what each column represents and how the data was collected.</p>
+</blockquote>
+<!--
+https://www.kaggle.com/code/faressayah/practical-introduction-to-10-regression-algorithm
+-->
+</div>
+</section>
+<section id="understanding-the-variables" class="slide level2">
+<h2>Understanding the variables</h2>
+<p>To understand the variables, we consult the <strong>dataset documentation</strong> and create a structured overview.</p>
+<p>We create a small table that summarizes key variables:</p>
+<!--
+      | Variable              | Meaning                                            | Unit / Values                      |
+      | --------------------- | -------------------------------------------------- | ---------------------------------- |
+      | `Order`               | Observation number                                 | —                                  |
+      | `PID`                 | Parcel identification number                       | —                                  |
+      | `area`                | Above-ground living area                           | Square feet                        |
+      | `price`               | Sale price of the property (target variable)       | USD                                |
+      | `MS.SubClass`         | Type of dwelling (e.g., 1-story, 2-story, duplex)  | Categorical codes (e.g., 020, 060) |
+      | `MS.Zoning`           | General zoning classification                      | Categorical (e.g., RL, RM, FV)     |
+      | `...`                 | Additional variables (e.g., lot size, street type) | —                                  |
+-->
+<div class="smaller">
+<table class="caption-top">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 29%">
+<col style="width: 20%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+<th>Unit / Values</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Order</code></td>
+<td>Unique order number</td>
+<td>—</td>
+<td>Check for duplicates, NA not allowed</td>
+</tr>
+<tr class="even">
+<td><code>PID</code></td>
+<td>Parcel identification number</td>
+<td>—</td>
+<td>Same property can appear multiple times (e.g., repeated sales)</td>
+</tr>
+<tr class="odd">
+<td><code>area</code></td>
+<td>Above-ground living area</td>
+<td>Square feet</td>
+<td>Check for <strong>plausible ranges and consistency</strong> (e.g., no extreme values)</td>
+</tr>
+<tr class="even">
+<td><code>price</code></td>
+<td>Sale price of the property (target variable)</td>
+<td>USD</td>
+<td>Check <strong>format, missing values, and outliers</strong></td>
+</tr>
+<tr class="odd">
+<td><code>MS.SubClass</code></td>
+<td>Type of dwelling</td>
+<td>Categorical codes (e.g., 020, 060)</td>
+<td>Retrieve <strong>code definitions</strong> and check consistency with other variables</td>
+</tr>
+<tr class="even">
+<td><code>MS.Zoning</code></td>
+<td>General zoning classification</td>
+<td>Categorical (e.g., RL, RM, FV)</td>
+<td>TODO: Understand categories (may require <strong>external expertise</strong>)</td>
+</tr>
+<tr class="odd">
+<td><code>...</code></td>
+<td>Additional variables (e.g., lot size, street type)</td>
+<td>—</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><br></p>
+<blockquote>
+<p>For the Housing dataset, this overview is already available. In practice, however—especially in organizational contexts—this step often involves <strong>acquiring access to data, extracting it from systems, consulting documentation, talking to domain experts, and making sense of how the data was collected and defined</strong>.</p>
+</blockquote>
+
+</div>
+<aside><div>
+<p>For the Ames Housing dataset, we rely on this data description: <a href="http://jse.amstat.org/v19n3/decock/DataDocumentation.txt">http://jse.amstat.org/v19n3/decock/DataDocumentation.txt</a></p>
+</div></aside></section></section>
 <section>
-<section id="data-preparation" class="title-slide slide level1 center" data-stack-name="Data understanding">
+<section id="data-preparation" class="title-slide slide level1 center" data-stack-name="Data preparation">
 <h1>Data preparation</h1>
 
 </section>
-<section id="section-1" class="slide level2">
-<h2>…</h2>
-<p>We skip data preparation for now…</p>
+<section id="prepare-and-explore-the-data" class="slide level2">
+<h2>Prepare and explore the data</h2>
+<!--
+TODO: typically involves: identifying and formatting variables (as already discussed) + assumptions of the model (state, mention that some assumptions are more important for inference than for prediction, infobox: no need to memorize the assumptions)
+-->
+<p>Before estimating a regression model, we first <strong>prepare and explore the data</strong>. Key steps include:</p>
+<ul>
+<li><p><strong>Check data quality</strong></p>
+<ul>
+<li>What are the units and possible values?</li>
+<li>Missing values, duplicates, inconsistencies</li>
+<li>Plausibility of values (e.g., extreme prices or sizes)</li>
+</ul></li>
+<li><p><strong>Format and transform variables</strong></p>
+<ul>
+<li>Numeric vs.&nbsp;categorical variables</li>
+<li>Encoding categories, scaling if needed</li>
+</ul></li>
+<li><p><strong>Explore relationships</strong></p>
+<ul>
+<li>Summary statistics</li>
+<li>Distributions and scatter plots</li>
+</ul></li>
+</ul>
+<div title="Note">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>These steps were covered in detail in the <strong>data preparation lecture</strong>. Here, we focus on the <strong>analytical modeling</strong>.</p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="modeling" class="title-slide slide level1 center" data-stack-name="Modeling">
 <h1>Modeling</h1>
 
 </section>
+<section id="model-choice" class="slide level2">
+<h2>Model choice</h2>
+<div class="highlight_must_learn">
+<p><strong>1. Specify prediction task</strong></p>
+<ul>
+<li>Define the <strong>target variable</strong> (e.g., price as a continuous variable)</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="highlight_must_learn">
+<p><strong>2. Collect candidate models</strong> <em>(selective overview)</em></p>
+<!--
+    <div class="smaller">
+
+    | Model family | Strengths | Limitations |
+    |-------------|----------|------------|
+    | **Regression** | Interpretable, simple | Limited flexibility |
+    | **Clustering** | Finds structure | Not for prediction |
+    | **ML models** | High performance, flexible | Less interpretable, risk of overfitting |
+
+    </div>
+-->
+<div class="smaller">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 27%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model family (examples)</th>
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Regression models</strong> (Linear, Ridge, Lasso)</td>
+<td>Interpretable, simple, well understood</td>
+<td>Limited prediction performance, few predictors</td>
+</tr>
+<tr class="even">
+<td><strong>Clustering</strong> (e.g., k-means)</td>
+<td>Identifies structure in data</td>
+<td>Not designed for prediction tasks</td>
+</tr>
+<tr class="odd">
+<td><strong>Machine learning models</strong> (e.g., Neural Networks)</td>
+<td>Strong predictive performance, flexible</td>
+<td>Less interpretable, require tuning, can overfit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="highlight_must_learn">
+<p><strong>3. Select model</strong></p>
+<ul>
+<li><strong>Trade-offs:</strong> interpretability vs.&nbsp;performance; simplicity vs.&nbsp;flexibility<br>
+</li>
+<li><strong>Model complexity:</strong> flexible models capture patterns but may overfit<br>
+</li>
+<li><strong>Performance:</strong> unknown → must be <strong>tested empirically</strong></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="highlight_must_learn">
+<p><strong>4. Test and compare</strong></p>
+<p>→ Start with a <strong>simple, interpretable baseline</strong> (e.g., linear regression)<br>
+→ Then implement <strong>more complex models for comparison</strong></p>
+</div>
+
+</div>
+<aside><div>
+<p>See <span class="citation" data-cites="ProvostFawcett2013">Provost &amp; Fawcett (<a href="#/survey-session-4" role="doc-biblioref" onclick="">2013</a>)</span>, chapter 3 and 4.</p>
+</div></aside></section>
+<section id="regression-model-assumptions" class="slide level2">
+<h2>Regression: Model assumptions</h2>
+<p>Regression models rely the following <strong>statistical assumptions</strong>:</p>
+<ul>
+<li>Linear relationship between predictors and outcome</li>
+<li>Independent observations</li>
+<li>Constant variance of errors (<em>homoscedasticity</em>)</li>
+<li>Errors normally distributed</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>For many <strong>prediction tasks</strong>, violations are often less problematic. Assumptions become <strong>more important when doing statistical inference</strong> (e.g., interpreting p-values or confidence intervals).</p>
+</div>
+</div>
+</div>
+<!--
+  ::: {.learning_note .fragment}
+  **Learning focus**
+  You **do not need to memorize all regression assumptions**.
+  :::
+-->
+</section>
 <section id="regression-models-a-visual-illustration" class="slide level2">
-<h2>Regression models: a visual illustration</h2>
-<p><strong>β₀ and β₁ move the line</strong></p>
+<h2>Regression models: A visual illustration</h2>
+<p>Model formula: <span class="math display">\[price = \beta_0 + \beta_1*squarefoot\]</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="207" data-source-offset="-41"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 206;"><span id="cb1-207"><a></a>viewof beta0 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₀ (intercept)"</span>})</span>
-<span id="cb1-208"><a></a>viewof beta1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₁ (slope)"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="403" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 402;"><span id="cb2-403"><a></a>n <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb2-404"><a></a></span>
+<span id="cb2-405"><a></a>mulberry32 <span class="op">=</span> (a) <span class="kw">=&gt;</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-406"><a></a>  a <span class="op">|=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">=</span> a <span class="op">+</span> <span class="bn">0x6D2B79F5</span> <span class="op">|</span> <span class="dv">0</span></span>
+<span id="cb2-407"><a></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(a <span class="op">^</span> a <span class="op">&gt;&gt;&gt;</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">1</span> <span class="op">|</span> a)</span>
+<span id="cb2-408"><a></a>  t <span class="op">=</span> t <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">61</span> <span class="op">|</span> t) <span class="op">^</span> t</span>
+<span id="cb2-409"><a></a>  <span class="cf">return</span> ((t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">14</span>) <span class="op">&gt;&gt;&gt;</span> <span class="dv">0</span>) <span class="op">/</span> <span class="dv">4294967296</span></span>
+<span id="cb2-410"><a></a>}</span>
+<span id="cb2-411"><a></a>rand <span class="op">=</span> <span class="fu">mulberry32</span>(<span class="dv">12345</span>)</span>
+<span id="cb2-412"><a></a></span>
+<span id="cb2-413"><a></a>data <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-414"><a></a>  <span class="kw">const</span> squarefoot <span class="op">=</span> <span class="dv">500</span> <span class="op">+</span> <span class="fu">rand</span>() <span class="op">*</span> <span class="dv">3000</span></span>
+<span id="cb2-415"><a></a>  <span class="kw">const</span> noise <span class="op">=</span> (<span class="fu">rand</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">100000</span></span>
+<span id="cb2-416"><a></a>  <span class="kw">const</span> price <span class="op">=</span> <span class="dv">50000</span> <span class="op">+</span> squarefoot <span class="op">*</span> <span class="dv">180</span> <span class="op">+</span> noise</span>
+<span id="cb2-417"><a></a>  <span class="cf">return</span> {squarefoot<span class="op">,</span> price}</span>
+<span id="cb2-418"><a></a>})</span>
+<span id="cb2-419"><a></a></span>
+<span id="cb2-420"><a></a>xmin <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">squarefoot</span>))</span>
+<span id="cb2-421"><a></a>xmax <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">squarefoot</span>))</span>
+<span id="cb2-422"><a></a></span>
+<span id="cb2-423"><a></a>fitLine <span class="op">=</span> [</span>
+<span id="cb2-424"><a></a>  { <span class="dt">squarefoot</span><span class="op">:</span> xmin<span class="op">,</span> <span class="dt">price</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmin }<span class="op">,</span></span>
+<span id="cb2-425"><a></a>  { <span class="dt">squarefoot</span><span class="op">:</span> xmax<span class="op">,</span> <span class="dt">price</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmax }</span>
+<span id="cb2-426"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -544,134 +1013,448 @@
 </div>
 </div>
 </div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><strong>Data</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="435" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 434;"><span id="cb3-435"><a></a>Inputs<span class="op">.</span><span class="fu">table</span>(data<span class="op">,</span> {</span>
+<span id="cb3-436"><a></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"squarefoot"</span><span class="op">,</span> <span class="st">"price"</span>]<span class="op">,</span></span>
+<span id="cb3-437"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">420</span></span>
+<span id="cb3-438"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:70%;">
+<p><strong>Visualization</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="449" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 448;"><span id="cb4-449"><a></a>viewof combinedSliders <span class="op">=</span> {</span>
+<span id="cb4-450"><a></a>  <span class="kw">const</span> b0 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">300000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">50000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₀ (base price)"</span>})</span>
+<span id="cb4-451"><a></a>  <span class="kw">const</span> b1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">400</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">180</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₁ (price per sq ft)"</span>})</span>
+<span id="cb4-452"><a></a>  <span class="kw">const</span> div <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="display:flex; gap:2rem; align-items:center;"&gt;</span><span class="sc">${</span>b0<span class="sc">}${</span>b1<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
+<span id="cb4-453"><a></a>  div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
+<span id="cb4-454"><a></a>  b0<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb4-455"><a></a>    div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
+<span id="cb4-456"><a></a>    div<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span>))</span>
+<span id="cb4-457"><a></a>  })</span>
+<span id="cb4-458"><a></a>  b1<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb4-459"><a></a>    div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
+<span id="cb4-460"><a></a>    div<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span>))</span>
+<span id="cb4-461"><a></a>  })</span>
+<span id="cb4-462"><a></a>  <span class="cf">return</span> div</span>
+<span id="cb4-463"><a></a>}</span>
+<span id="cb4-464"><a></a></span>
+<span id="cb4-465"><a></a>beta0 <span class="op">=</span> combinedSliders<span class="op">.</span><span class="at">beta0</span></span>
+<span id="cb4-466"><a></a>beta1 <span class="op">=</span> combinedSliders<span class="op">.</span><span class="at">beta1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="212" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 211;"><span id="cb2-212"><a></a>n <span class="op">=</span> <span class="dv">40</span></span>
-<span id="cb2-213"><a></a></span>
-<span id="cb2-214"><a></a><span class="co">// deterministic pseudo-random generator (so the dots don't change on refresh)</span></span>
-<span id="cb2-215"><a></a>mulberry32 <span class="op">=</span> (a) <span class="kw">=&gt;</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb2-216"><a></a>  a <span class="op">|=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">=</span> a <span class="op">+</span> <span class="bn">0x6D2B79F5</span> <span class="op">|</span> <span class="dv">0</span></span>
-<span id="cb2-217"><a></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(a <span class="op">^</span> a <span class="op">&gt;&gt;&gt;</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">1</span> <span class="op">|</span> a)</span>
-<span id="cb2-218"><a></a>  t <span class="op">=</span> t <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">61</span> <span class="op">|</span> t) <span class="op">^</span> t</span>
-<span id="cb2-219"><a></a>  <span class="cf">return</span> ((t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">14</span>) <span class="op">&gt;&gt;&gt;</span> <span class="dv">0</span>) <span class="op">/</span> <span class="dv">4294967296</span></span>
-<span id="cb2-220"><a></a>}</span>
-<span id="cb2-221"><a></a>rand <span class="op">=</span> <span class="fu">mulberry32</span>(<span class="dv">12345</span>)</span>
-<span id="cb2-222"><a></a></span>
-<span id="cb2-223"><a></a><span class="co">// dataset: y = 2 + 0.7x + noise</span></span>
-<span id="cb2-224"><a></a>xs <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="op">-</span><span class="dv">5</span> <span class="op">+</span> i <span class="op">*</span> (<span class="dv">10</span><span class="op">/</span>(n<span class="op">-</span><span class="dv">1</span>)))</span>
-<span id="cb2-225"><a></a>data <span class="op">=</span> xs<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> {</span>
-<span id="cb2-226"><a></a>  <span class="kw">const</span> noise <span class="op">=</span> (<span class="fu">rand</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">6</span></span>
-<span id="cb2-227"><a></a>  <span class="cf">return</span> { x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span> <span class="op">+</span> <span class="fl">0.7</span> <span class="op">*</span> x <span class="op">+</span> noise }</span>
-<span id="cb2-228"><a></a>})</span>
-<span id="cb2-229"><a></a></span>
-<span id="cb2-230"><a></a><span class="co">// handy extents</span></span>
-<span id="cb2-231"><a></a>xmin <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb2-232"><a></a>xmax <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb2-233"><a></a></span>
-<span id="cb2-234"><a></a>fitLine <span class="op">=</span> [</span>
-<span id="cb2-235"><a></a>  { <span class="dt">x</span><span class="op">:</span> xmin<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmin }<span class="op">,</span></span>
-<span id="cb2-236"><a></a>  { <span class="dt">x</span><span class="op">:</span> xmax<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmax }</span>
-<span id="cb2-237"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-7" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Data</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="244" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 243;"><span id="cb3-244"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb3-245"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">420</span><span class="op">,</span></span>
-<span id="cb3-246"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb3-247"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"x"</span> }<span class="op">,</span></span>
-<span id="cb3-248"><a></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"y"</span> }<span class="op">,</span></span>
-<span id="cb3-249"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb3-250"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
-<span id="cb3-251"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(fitLine<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
-<span id="cb3-252"><a></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
-<span id="cb3-253"><a></a>  ]</span>
-<span id="cb3-254"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="260" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 259;"><span id="cb4-260"><a></a>Inputs<span class="op">.</span><span class="fu">table</span>(data<span class="op">,</span> {<span class="dt">columns</span><span class="op">:</span> [<span class="st">"x"</span><span class="op">,</span> <span class="st">"y"</span>]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="469" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 468;"><span id="cb5-469"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-470"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">480</span><span class="op">,</span></span>
+<span id="cb5-471"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb5-472"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb5-473"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"squarefoot"</span> }<span class="op">,</span></span>
+<span id="cb5-474"><a></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb5-475"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"price ($)"</span><span class="op">,</span></span>
+<span id="cb5-476"><a></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">price</span>)) <span class="op">*</span> <span class="fl">1.1</span>]</span>
+<span id="cb5-477"><a></a>  }<span class="op">,</span></span>
+<span id="cb5-478"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-479"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
+<span id="cb5-480"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(fitLine<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})</span>
+<span id="cb5-481"><a></a>  ]</span>
+<span id="cb5-482"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</div></div>
 </section>
-<section id="model-ols" class="slide level2">
-<h2>Model (OLS)</h2>
-<p>illustrate the optimization process</p>
+<section id="interpreting-the-regression-model" class="slide level2">
+<h2>Interpreting the regression model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="494" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 493;"><span id="cb6-494"><a></a>exampleData <span class="op">=</span> [</span>
+<span id="cb6-495"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span>  <span class="dt">price</span><span class="op">:</span> <span class="dv">196000</span>}<span class="op">,</span></span>
+<span id="cb6-496"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1200</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">272000</span>}<span class="op">,</span></span>
+<span id="cb6-497"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1500</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">322000</span>}<span class="op">,</span></span>
+<span id="cb6-498"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1900</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">394000</span>}<span class="op">,</span></span>
+<span id="cb6-499"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2300</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">466000</span>}<span class="op">,</span></span>
+<span id="cb6-500"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2700</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">538000</span>}<span class="op">,</span></span>
+<span id="cb6-501"><a></a>]</span>
+<span id="cb6-502"><a></a></span>
+<span id="cb6-503"><a></a>exampleFit <span class="op">=</span> [</span>
+<span id="cb6-504"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span>  <span class="dt">price</span><span class="op">:</span> <span class="dv">50000</span> <span class="op">+</span> <span class="dv">180</span> <span class="op">*</span> <span class="dv">800</span>}<span class="op">,</span></span>
+<span id="cb6-505"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2700</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">50000</span> <span class="op">+</span> <span class="dv">180</span> <span class="op">*</span> <span class="dv">2700</span>}</span>
+<span id="cb6-506"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>The model</strong></p>
+<p><span class="math display">\[\hat{y} = \beta_0 + \beta_1 \cdot x\]</span></p>
+<p><span class="math display">\[\hat{\text{price}} = 50{,}000 + 180 \cdot \text{squarefoot}\]</span></p>
+<p><br></p>
+<dl>
+<dt><strong>β₀ = 50,000</strong> — <em>intercept</em></dt>
+<dd>
+The predicted price for a house with 0 sq ft. Rarely meaningful on its own — it anchors the line.
+</dd>
+<dt><strong>β₁ = 180</strong> — <em>slope</em></dt>
+<dd>
+Each additional square foot is associated with <strong>+$180</strong> in predicted price, on average.
+</dd>
+</dl>
+</div><div class="column fragment" style="width:52%;">
+<p><strong>Prediction example</strong></p>
+<blockquote>
+<p><em>How much would a <strong>1,500 sq ft</strong> house cost?</em></p>
+</blockquote>
+<p><span class="math display">\[\hat{y} = 50{,}000 + 180 \times 1{,}500 = \$322{,}000\]</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="536" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 535;"><span id="cb7-536"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb7-537"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">320</span><span class="op">,</span></span>
+<span id="cb7-538"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb7-539"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb7-540"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">600</span><span class="op">,</span> <span class="dv">2900</span>] }<span class="op">,</span></span>
+<span id="cb7-541"><a></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"price ($)"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">100000</span><span class="op">,</span> <span class="dv">550000</span>] }<span class="op">,</span></span>
+<span id="cb7-542"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb7-543"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(exampleData<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#334155"</span>})<span class="op">,</span></span>
+<span id="cb7-544"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(exampleFit<span class="op">,</span>  {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">2.5</span>})<span class="op">,</span></span>
+<span id="cb7-545"><a></a></span>
+<span id="cb7-546"><a></a>    <span class="co">// vertical dashed line at x = 1500</span></span>
+<span id="cb7-547"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">1500</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"6,4"</span>})<span class="op">,</span></span>
+<span id="cb7-548"><a></a>    <span class="co">// horizontal dashed line at y = 322000</span></span>
+<span id="cb7-549"><a></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">322000</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"6,4"</span>})<span class="op">,</span></span>
+<span id="cb7-550"><a></a></span>
+<span id="cb7-551"><a></a>    <span class="co">// annotation dot at prediction point</span></span>
+<span id="cb7-552"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>([{<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1500</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">322000</span>}]<span class="op">,</span> {</span>
+<span id="cb7-553"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span></span>
+<span id="cb7-554"><a></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb7-555"><a></a>    })<span class="op">,</span></span>
+<span id="cb7-556"><a></a></span>
+<span id="cb7-557"><a></a>    <span class="co">// label</span></span>
+<span id="cb7-558"><a></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1560</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">335000</span>}]<span class="op">,</span> {</span>
+<span id="cb7-559"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span></span>
+<span id="cb7-560"><a></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"$322,000"</span>]<span class="op">,</span></span>
+<span id="cb7-561"><a></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span></span>
+<span id="cb7-562"><a></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">13</span><span class="op">,</span></span>
+<span id="cb7-563"><a></a>      <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span></span>
+<span id="cb7-564"><a></a>    })</span>
+<span id="cb7-565"><a></a>  ]</span>
+<span id="cb7-566"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="model-results" class="slide level2">
-<h2>Model results</h2>
-<p>interpret coefficients….</p>
+<section id="including-multiple-predictor-variables" class="slide level2">
+<h2>Including multiple predictor variables</h2>
+<p>We can include many additional variables to predict the price of a house. Each coefficient (β) captures the <strong>differential effect of a variable</strong>—that is, how much the price is expected to change when that variable increases while the others are held constant.</p>
+<p><br></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 357.00 692.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 688)">
+<title>regression_model</title>
+<!-- sqft -->
+<g id="node1" class="node">
+<title>sqft</title>
+<ellipse fill="#0b2a66" stroke="black" cx="72" cy="-612" rx="72" ry="72"></ellipse>
+<text text-anchor="middle" x="72" y="-618.6" font-family="Times,serif" font-size="22.00" fill="white">Square</text>
+<text text-anchor="middle" x="72" y="-592.2" font-family="Times,serif" font-size="22.00" fill="white">footage</text>
+</g>
+<!-- beds -->
+<g id="node2" class="node">
+<title>beds</title>
+<ellipse fill="#0b2a66" stroke="black" cx="72" cy="-432" rx="72" ry="72"></ellipse>
+<text text-anchor="middle" x="72" y="-438.6" font-family="Times,serif" font-size="22.00" fill="white">Bed-</text>
+<text text-anchor="middle" x="72" y="-412.2" font-family="Times,serif" font-size="22.00" fill="white">rooms</text>
+</g>
+<!-- sqft&#45;&gt;beds -->
+<!-- price -->
+<g id="node5" class="node">
+<title>price</title>
+<ellipse fill="#0b2a66" stroke="black" cx="277" cy="-341" rx="72" ry="72"></ellipse>
+<text text-anchor="middle" x="277" y="-334.4" font-family="Times,serif" font-size="22.00" fill="white">Price</text>
+</g>
+<!-- sqft&#45;&gt;price -->
+<g id="edge1" class="edge">
+<title>sqft-&gt;price</title>
+<path fill="none" stroke="black" d="M116.05,-554.53C148.48,-511.23 192.99,-451.82 226.82,-406.65"></path>
+<polygon fill="black" stroke="black" points="229.82,-408.49 233.01,-398.39 224.21,-404.29 229.82,-408.49"></polygon>
+<text text-anchor="middle" x="174.5" y="-498" font-family="Times,serif" font-size="20.00">β₁</text>
+</g>
+<!-- age -->
+<g id="node3" class="node">
+<title>age</title>
+<ellipse fill="#0b2a66" stroke="black" cx="72" cy="-252" rx="72" ry="72"></ellipse>
+<text text-anchor="middle" x="72" y="-245.4" font-family="Times,serif" font-size="22.00" fill="white">Age</text>
+</g>
+<!-- beds&#45;&gt;age -->
+<!-- beds&#45;&gt;price -->
+<g id="edge2" class="edge">
+<title>beds-&gt;price</title>
+<path fill="none" stroke="black" d="M138.07,-402.83C158.37,-393.73 180.92,-383.62 201.8,-374.26"></path>
+<polygon fill="black" stroke="black" points="203.26,-377.44 210.95,-370.16 200.4,-371.06 203.26,-377.44"></polygon>
+<text text-anchor="middle" x="174.5" y="-397" font-family="Times,serif" font-size="20.00">β₂</text>
+</g>
+<!-- school -->
+<g id="node4" class="node">
+<title>school</title>
+<ellipse fill="#0b2a66" stroke="black" cx="72" cy="-72" rx="72" ry="72"></ellipse>
+<text text-anchor="middle" x="72" y="-78.6" font-family="Times,serif" font-size="22.00" fill="white">School</text>
+<text text-anchor="middle" x="72" y="-52.2" font-family="Times,serif" font-size="22.00" fill="white">Rating</text>
+</g>
+<!-- age&#45;&gt;school -->
+<!-- age&#45;&gt;price -->
+<g id="edge3" class="edge">
+<title>age-&gt;price</title>
+<path fill="none" stroke="black" d="M138.35,-280.65C158.45,-289.46 180.73,-299.23 201.4,-308.29"></path>
+<polygon fill="black" stroke="black" points="200.21,-311.59 210.77,-312.4 203.02,-305.18 200.21,-311.59"></polygon>
+<text text-anchor="middle" x="174.5" y="-307" font-family="Times,serif" font-size="20.00">β₃</text>
+</g>
+<!-- school&#45;&gt;price -->
+<g id="edge4" class="edge">
+<title>school-&gt;price</title>
+<path fill="none" stroke="black" d="M116.05,-129.05C148.37,-171.88 192.69,-230.6 226.48,-275.38"></path>
+<polygon fill="black" stroke="black" points="223.84,-277.7 232.66,-283.57 229.43,-273.48 223.84,-277.7"></polygon>
+<text text-anchor="middle" x="174.5" y="-228" font-family="Times,serif" font-size="20.00">β₄</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>As we add more predictors, the model becomes multidimensional, making it increasingly difficult to visualize.</p>
+</section>
+<section id="ordinary-least-squares-regression-ols" class="slide level2">
+<h2>Ordinary Least Squares Regression (OLS)</h2>
+<p>OLS is a <strong>linear approach for predicting a quantitative response</strong> <span class="math inline">\((Y)\)</span> based on a set of predictor variables <span class="math inline">\(X_j\)</span>.</p>
+<p><span class="math display">\[ y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + \epsilon_i \]</span></p>
+<p>or in vector form</p>
+<p><span class="math display">\[ y_i = \beta_0 + \beta' x_i + \epsilon_i \]</span></p>
+<!-- OLS assumes there is **approximately a linear relationship between \(X\) and \(Y\)**. -->
+<p>The optimal <strong>regression line</strong> minimizes the <strong>Residual Sum of Squares (RSS)</strong>:</p>
+<p><span class="math display">\[
+RSS = \sum_{i=1}^{n} \epsilon_i^2
+    = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+    = \sum_{i=1}^{n} (y_i - \beta_0 - \beta' x_i)^2
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/regression_epsilon.png" class="quarto-figure quarto-figure-center" style="width:20.0%"></p>
+</figure>
+</div>
+<aside class="notes">
+<p><span class="math inline">\(\hat{y}\)</span> is the fitted/predicted value (without <span class="math inline">\(\epsilon\)</span>)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="matrix-representation" class="slide level2">
+<h2>Matrix representation</h2>
+<p><span class="math display">\[ y = X\beta + \epsilon \]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+y =
+\begin{bmatrix}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_n
+\end{bmatrix}
+\quad
+X =
+\begin{bmatrix}
+1 &amp; x_{1,1} &amp; \dots &amp; x_{m,1} \\
+1 &amp; x_{1,2} &amp; \dots &amp; x_{m,2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_{1,n} &amp; \dots &amp; x_{m,n}
+\end{bmatrix}
+\]</span></p>
+<p><strong>Closed-form solution</strong></p>
+<p>The parameter vector can be estimated by</p>
+<p><span class="math display">\[ \beta = (X'X)^{-1}X'y \]</span></p>
+<div class="learning_note fragment">
+<p><strong>Learning focus</strong></p>
+<p>Aim to <strong>understand and explain</strong> the OLS procedure. You are <strong>not required to memorize</strong> the formulas for RSS or the closed-form OLS solution.</p>
+</div>
+<aside class="notes">
+<p>In a statistics lecture, we would derive the closed form solution mathematically.<br>
+Here, we simply take away that it exists and that it can be computed efficiently.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implementation-in-python" class="slide level2">
+<h2>Implementation in Python</h2>
+<!--
+Live demo: see [notebook](TODO).
+. . . 
+-->
+<p><br></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd                      </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/ames.csv"</span>)</span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6"></a>predictors <span class="op">=</span> [<span class="st">"squarefoot"</span>, <span class="st">"Overall.Qual"</span>]</span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7"></a>X <span class="op">=</span> df[predictors]</span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8"></a>y <span class="op">=</span> df[<span class="st">"price"</span>]</span>
+<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10"></a>model <span class="op">=</span> LinearRegression()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-11" class="code-annotation-target"><a href="#annotated-cell-4-11"></a>model.fit(X, y)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Import relevant libraries</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="2">Load the Ames housing dataset</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="3">Select predictor variables</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="10" data-code-annotation="4">Create the regression model</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="11" data-code-annotation="5">Estimate the model on the data</span>
+</dd>
+</dl>
+<!--
+**TODO: clarify expectations (TBD: what is reasonable when ChatGPT would be available? - knowing code structure, reproducing? - add example exam questions)**
+
+::: aside
+Data available at [https://www.openintro.org/data/index.php?data=ames](https://www.openintro.org/data/index.php?data=ames)
+:::
+-->
+</section>
+<section id="implementation-in-python-1" class="slide level2">
+<h2>Implementation in Python</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># Coefficient estimates (β̂)</span></span>
+<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="st">"Intercept:"</span>, model.intercept_)     <span class="co"># β0</span></span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="co"># Map coefficients to variable names</span></span>
+<span id="cb8-5"><a></a>coef_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb8-6"><a></a>    <span class="st">"Predictor"</span>: predictors,</span>
+<span id="cb8-7"><a></a>    <span class="st">"Coefficient"</span>: model.coef_           <span class="co"># β1, β2, ...</span></span>
+<span id="cb8-8"><a></a>})</span>
+<span id="cb8-9"><a></a><span class="bu">print</span>(coef_df)</span>
+<span id="cb8-10"><a></a></span>
+<span id="cb8-11"><a></a><span class="co"># Model fit (R²)</span></span>
+<span id="cb8-12"><a></a>r2 <span class="op">=</span> model.score(X, y)</span>
+<span id="cb8-13"><a></a><span class="bu">print</span>(<span class="st">"R^2:"</span>, r2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><br></p>
+<pre class="text"><code>Intercept: 180,921
+
+Predictor        Coefficient
+squarefoot        110.85
+Overall.Qual   28,567.43
+
+R^2: 0.56</code></pre>
 <!--
 # Simple regression {data-stack-name="Simple regression"}
 
@@ -709,29 +1492,304 @@
 
       ## scikit learn
 -->
+</div>
 </section></section>
 <section>
 <section id="evaluation" class="title-slide slide level1 center" data-stack-name="Evaluation">
 <h1>Evaluation</h1>
 
 </section>
-<section id="r2-does-it-help-to-predict" class="slide level2">
-<h2>R^2 (does it help to predict?)</h2>
-<p>TBD: illustrate overfitting?!</p>
-<p>TBD: other considerations? (generalization/robustness, ethics, …)</p>
+<section id="overall-model" class="slide level2">
+<h2>Overall model</h2>
+<!--
+    When we evaluate a regression model, we ask:
+
+    * **How well does the model explain variation in the target variable?**
+    * **How accurate are its predictions?**
+    * **Does it generalize beyond the sample used to estimate it?**
+-->
+<div class="highlight_must_learn">
+<p>A common measure to assess the performance of a regression model is <strong><span class="math inline">\(R^2\)</span></strong> (the coefficient of determination):</p>
+<p><span class="math display">\[ R^2 = 1 - \frac{RSS}{TSS} \]</span></p>
+<ul>
+<li><p>Measures the <strong>share of variance in the target variable explained by the model</strong></p></li>
+<li><p>Example: <strong>(<span class="math inline">\(R^2\)</span> = 0.56)</strong> means the model explains <strong>56% of the variation in house prices</strong></p></li>
+<li><p>Values range from <strong>0 to 1</strong>, with <strong>higher <span class="math inline">\(R^2\)</span></strong> generally indicating a better fit</p></li>
+<li><p>But a high <span class="math inline">\(R^2\)</span> <strong>does not automatically mean</strong> the model is useful in practice. <span class="math inline">\(R^2\)</span> says little about:</p>
+<ul>
+<li>whether predictions are accurate enough for decisions</li>
+<li>whether the model generalizes to new data</li>
+<li>whether coefficients should be interpreted causally</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Other evaluation measures</strong></p>
+<ul>
+<li><p><strong>MAE (Mean Absolute Error)</strong> Average absolute prediction error → easy to interpret in the unit of the target variable</p></li>
+<li><p><strong>RMSE (Root Mean Squared Error)</strong> Penalizes large errors more strongly → useful when large mistakes are especially costly</p></li>
+<li><p><strong>Out-of-sample performance</strong> Evaluate on test data, not only on training data → helps detect <strong>overfitting</strong></p></li>
+</ul>
+<aside class="notes">
+<p>Main takeaway: students should understand R² well. Other measures can be introduced as complementary metrics, especially because they are in the original unit of the target variable. Emphasize that model evaluation is not just “how well did it fit the training data?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="coefficients" class="slide level2">
+<h2>Coefficients</h2>
+<div class="highlight_must_learn">
+<p>Regression coefficients tell us how the predicted outcome changes when a predictor changes, <strong>holding the other predictors constant</strong>.</p>
+<p>For a coefficient <span class="math inline">\(\beta_j\)</span>:</p>
+<ul>
+<li><p><strong>Sign</strong> Positive: higher <span class="math inline">\(x_j\)</span> is associated with higher predicted price Negative: higher <span class="math inline">\(x_j\)</span> is associated with lower predicted price</p></li>
+<li><p><strong>Magnitude</strong> Indicates the expected change in the target variable for a one-unit increase in <span class="math inline">\(x_j\)</span></p></li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><p><span class="math inline">\(\beta_\text{squarefoot}\)</span> = 110.85 → one additional square foot is associated with about <strong>+$110.85</strong> in predicted price</p></li>
+<li><p><span class="math inline">\(\beta_{\text{Overall.Qual}}\)</span> = 28,567.43 → one additional quality point is associated with about <strong>+$28,567</strong> in predicted price</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>When evaluating coefficients, consider both:</strong></p>
+<p><strong>1. Statistical significance</strong></p>
+<ul>
+<li>Asks whether the estimated relationship is likely different from zero</li>
+<li>Commonly assessed with <strong>standard errors</strong>, <strong>t-tests</strong>, <strong>p-values</strong>, <strong>confidence intervals</strong></li>
+</ul>
+<p><strong>2. Practical significance</strong></p>
+<ul>
+<li>Asks whether the effect is <strong>large enough to matter in practice</strong></li>
+<li>A coefficient can be statistically significant but still have little managerial or business relevance</li>
+</ul>
+<aside class="notes">
+<p>This slide should distinguish clearly between “is there evidence of an effect?” and “does the effect matter?” Since you use scikit-learn, you may want to note orally that p-values are not directly provided there. That helps avoid confusion when students compare packages like statsmodels and sklearn.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+
+    ## Overall model
+
+    - R^2: does it help to predict? + interpretation (must-learn)
+    - Other measures
+
+    ## Coefficients
+
+    - statistical and practical significance of beta coefficients
+-->
+</div>
+</section>
+<section id="next-steps" class="slide level2">
+<h2>Next steps</h2>
+<p>Once we move beyond a simple regression model, two practical questions arise:</p>
+<ul>
+<li><p><strong>Which predictors should we include?</strong></p>
+<p>→ Approaches such as <strong>forward selection</strong> and <strong>backward selection</strong> help identify a useful subset of variables<br>
+→ <strong>Forward selection</strong> starts with a very simple model and <strong>adds predictors step by step</strong> if they improve the model<br>
+→ <strong>Backward selection</strong> starts with a model containing many predictors and <strong>removes the least useful ones step by step</strong></p></li>
+<li><p><strong>Why not include all available variables?</strong></p>
+<p>→ Adding too many predictors can create problems such as:</p>
+<ul>
+<li><strong>dependence between predictors</strong>: predictors overlap strongly, making coefficients unstable</li>
+<li><strong>overfitting</strong>: the model fits the training data well but performs poorly on new data</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="Takeaway">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Takeaway</strong></p>
+</div>
+<div class="callout-content">
+<p>A good regression model is usually not the one with the <strong>most variables</strong>, but the one that achieves a good balance between <strong>interpretability</strong>, <strong>stability</strong>, and <strong>predictive performance</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="deployment" class="title-slide slide level1 center" data-stack-name="Deployment">
 <h1>Deployment</h1>
 
 </section>
-<section id="todo-tbd." class="slide level2">
-<h2>TODO / TBD.</h2>
+<section id="from-model-to-use-in-practice" class="slide level2">
+<h2>From model to use in practice</h2>
+<p>Once a regression model has been estimated and evaluated, it can be <strong>deployed</strong> to support decisions in practice.</p>
+<p>Typical uses include:</p>
 <ul>
-<li>Include a prediction example (based on a formula, python code).</li>
-<li>Also refer to the describe/predict/prescribe</li>
-<li>TBD: how can it be used to prescribe?</li>
+<li><p><strong>Describe</strong> Identify which factors are associated with higher or lower prices</p></li>
+<li><p><strong>Predict</strong> Estimate the expected price for a new house based on its characteristics</p></li>
+<li><p><strong>Prescribe</strong> Use predictions as input for action, for example:</p>
+<ul>
+<li>setting an asking price</li>
+<li>prioritizing properties for review</li>
+<li>comparing renovation options</li>
+</ul></li>
 </ul>
+<div class="fragment">
+<div title="Key idea">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Key idea</strong></p>
+</div>
+<div class="callout-content">
+<p>A regression model does not only help us <strong>understand</strong> the data. It can also be embedded in workflows to support <strong>future decisions</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>This is a good place to connect back to the broader analytics logic: describe = understand patterns, predict = estimate future/unknown outcomes, prescribe = support action. Prescriptive use is indirect here: the regression itself predicts, and decisions build on top of those predictions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="deployment-example-making-a-prediction" class="slide level2">
+<h2>Deployment example: Making a prediction</h2>
+<p>Suppose our fitted model is:</p>
+<p><span class="math display">\[ \widehat{\text{price}} = 180{,}921 + 110.85 \cdot \text{squarefoot} + 28{,}567.43 \cdot \text{Overall.Qual} \]</span></p>
+<p>For a house with:</p>
+<ul>
+<li><code>squarefoot = 1500</code></li>
+<li><code>Overall.Qual = 7</code></li>
+</ul>
+<p>the predicted price is:</p>
+<p><span class="math display">\[ \widehat{\text{price}} = 180{,}921 + 110.85 \cdot 1500 + 28{,}567.43 \cdot 7 \]</span></p>
+<p><span class="math display">\[
+\widehat{\text{price}} \approx 547{,}150
+\]</span></p>
+<div class="fragment">
+<p>This prediction could be used to:</p>
+<ul>
+<li>compare a listing price to the model-based estimate</li>
+<li>flag unusually overpriced or underpriced houses</li>
+<li>support pricing decisions together with human judgment</li>
+</ul>
+<!--
+    ::: {.callout-important title="Important"}
+    Predictions should be used with care:
+    they depend on the quality of the data, the validity of the model, and whether new cases are similar to the data used for training.
+    :::
+-->
+</div>
+</section>
+<section id="deployment-example-in-python" class="slide level2">
+<h2>Deployment example in Python</h2>
+<p>A fitted model can be <strong>saved</strong> and <strong>loaded</strong> for later use.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">import</span> joblib</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a><span class="co"># Save trained model</span></span>
+<span id="cb10-4"><a></a>joblib.dump(model, <span class="st">"house_price_model.joblib"</span>)</span>
+<span id="cb10-5"><a></a></span>
+<span id="cb10-6"><a></a><span class="co"># Load trained model later</span></span>
+<span id="cb10-7"><a></a>loaded_model <span class="op">=</span> joblib.load(<span class="st">"house_price_model.joblib"</span>)</span>
+<span id="cb10-8"><a></a></span>
+<span id="cb10-9"><a></a><span class="co"># New data for prediction</span></span>
+<span id="cb10-10"><a></a>new_house <span class="op">=</span> pd.DataFrame([{</span>
+<span id="cb10-11"><a></a>    <span class="st">"squarefoot"</span>: <span class="dv">1500</span>,</span>
+<span id="cb10-12"><a></a>    <span class="st">"Overall.Qual"</span>: <span class="dv">7</span></span>
+<span id="cb10-13"><a></a>}])</span>
+<span id="cb10-14"><a></a></span>
+<span id="cb10-15"><a></a>predicted_price <span class="op">=</span> loaded_model.predict(new_house)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<!--
+    ```{.text code-line-numbers="false"}
+    [547149.51]
+    ```
+-->
+<div title="Why save the model?">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Why save the model?</strong></p>
+</div>
+<div class="callout-content">
+<p>Saving a model makes it possible to reuse it in applications, dashboards, scripts, or decision-support systems without fitting it again each time.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>You may mention that joblib is commonly used for scikit-learn objects. Also useful to note that deployment requires the same variable names and preprocessing steps as in training.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="deployment-considerations" class="slide level2">
+<h2>Deployment considerations</h2>
+<p>Before using a regression model in practice, we should ask:</p>
+<ul>
+<li><p><strong>Does it generalize?</strong> Does it still perform well on new data?</p></li>
+<li><p><strong>Is it robust?</strong> Are predictions stable when conditions change?</p></li>
+<li><p><strong>Is it interpretable?</strong> Can decision makers understand how outputs are generated?</p></li>
+<li><p><strong>Is it used responsibly?</strong> Could predictions reinforce bias or lead to unfair decisions?</p></li>
+</ul>
+<div class="fragment">
+<div title="Takeaway">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Takeaway</strong></p>
+</div>
+<div class="callout-content">
+<p>Deployment is not the end of the analytics process. Models should be <strong>monitored, reviewed, and updated</strong> as data, environments, and decision needs change.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="vocabulary" class="slide level2" data-state="hide-menubar">
 <h2>Vocabulary</h2>
@@ -740,9 +1798,10 @@
 <p>In the given context, a <strong>model</strong> is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.</p>
 <p><strong>Fitting a model</strong> means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.</p>
 <p><strong>Overfitting</strong> is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.</p>
+<p>TOOD: DV, IV, predictor, target, explaining/explained</p>
 
 <aside><div>
-<p>— Source: <span class="citation" data-cites="SchuttONeil2014">Schutt &amp; O’Neil (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p>
+<p>— Source: <span class="citation" data-cites="SchuttONeil2014">Schutt &amp; O’Neil (<a href="#/survey-session-4" role="doc-biblioref" onclick="">2014</a>)</span></p>
 </div></aside></section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
@@ -751,24 +1810,24 @@
 <li>Linear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.</li>
 <li>In practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.</li>
 </ul>
-<p>Note: more on python in the exercises</p>
-</section></section>
-<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
-<h1>References</h1>
+</section>
+<section id="survey-session-4" class="slide level2 smaller scrollable" data-state="hide-menubar">
+<h2>Survey: Session 4</h2>
+<p><br><br></p>
+<div style="display:flex; justify-content:center;">
 
-
+</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-ProvostFawcett2013" class="csl-entry" role="listitem">
+Provost, F., &amp; Fawcett, T. (2013). <em>Data science for business: What you need to know about data mining and data-analytic thinking</em>. " O’Reilly Media, Inc.".
+</div>
 <div id="ref-SchuttONeil2014" class="csl-entry" role="listitem">
 Schutt, R., &amp; O’Neil, C. (2014). <em>Doing data science</em>. O’Reilly Media. <a href="https://www.oreilly.com/library/view/doing-data-science/9781449363871/">https://www.oreilly.com/library/view/doing-data-science/9781449363871/</a>
 </div>
 </div>
-</section>
+</section></section>
     </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<div class="footer footer-default">
-
-</div>
-</div></div>
+  </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>
@@ -981,7 +2040,7 @@ Schutt, R., &amp; O’Neil, C. (2014). <em>Doing data science</em>. O’Reilly M
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vLy98IHBhbmVsOiBpbnB1dFxuLy8vL3wgbGF5b3V0LW5jb2w6IDJcblxudmlld29mIGJldGEwID0gSW5wdXRzLnJhbmdlKFstMTAsIDEwXSwge3ZhbHVlOiAwLCBzdGVwOiAwLjEsIGxhYmVsOiBcIs6y4oKAIChpbnRlcmNlcHQpXCJ9KVxudmlld29mIGJldGExID0gSW5wdXRzLnJhbmdlKFstMywgM10sIHt2YWx1ZTogMSwgc3RlcDogMC4xLCBsYWJlbDogXCLOsuKCgSAoc2xvcGUpXCJ9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoibiA9IDQwXG5cbi8vIGRldGVybWluaXN0aWMgcHNldWRvLXJhbmRvbSBnZW5lcmF0b3IgKHNvIHRoZSBkb3RzIGRvbid0IGNoYW5nZSBvbiByZWZyZXNoKVxubXVsYmVycnkzMiA9IChhKSA9PiAoKSA9PiB7XG4gIGEgfD0gMDsgYSA9IGEgKyAweDZEMkI3OUY1IHwgMFxuICBsZXQgdCA9IE1hdGguaW11bChhIF4gYSA+Pj4gMTUsIDEgfCBhKVxuICB0ID0gdCArIE1hdGguaW11bCh0IF4gdCA+Pj4gNywgNjEgfCB0KSBeIHRcbiAgcmV0dXJuICgodCBeIHQgPj4+IDE0KSA+Pj4gMCkgLyA0Mjk0OTY3Mjk2XG59XG5yYW5kID0gbXVsYmVycnkzMigxMjM0NSlcblxuLy8gZGF0YXNldDogeSA9IDIgKyAwLjd4ICsgbm9pc2VcbnhzID0gQXJyYXkuZnJvbSh7bGVuZ3RoOiBufSwgKF8sIGkpID0+IC01ICsgaSAqICgxMC8obi0xKSkpXG5kYXRhID0geHMubWFwKHggPT4ge1xuICBjb25zdCBub2lzZSA9IChyYW5kKCkgLSAwLjUpICogNlxuICByZXR1cm4geyB4LCB5OiAyICsgMC43ICogeCArIG5vaXNlIH1cbn0pXG5cbi8vIGhhbmR5IGV4dGVudHNcbnhtaW4gPSBNYXRoLm1pbiguLi5kYXRhLm1hcChkID0+IGQueCkpXG54bWF4ID0gTWF0aC5tYXgoLi4uZGF0YS5tYXAoZCA9PiBkLngpKVxuXG5maXRMaW5lID0gW1xuICB7IHg6IHhtaW4sIHk6IGJldGEwICsgYmV0YTEgKiB4bWluIH0sXG4gIHsgeDogeG1heCwgeTogYmV0YTAgKyBiZXRhMSAqIHhtYXggfVxuXVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgaGVpZ2h0OiA0MjAsXG4gIGdyaWQ6IHRydWUsXG4gIHg6IHsgbGFiZWw6IFwieFwiIH0sXG4gIHk6IHsgbGFiZWw6IFwieVwiIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5kb3QoZGF0YSwge3g6IFwieFwiLCB5OiBcInlcIiwgcjogM30pLFxuICAgIFBsb3QubGluZShmaXRMaW5lLCB7eDogXCJ4XCIsIHk6IFwieVwiLCBzdHJva2U6IFwiY3JpbXNvblwiLCBzdHJva2VXaWR0aDogM30pLFxuICAgIFBsb3QucnVsZVkoWzBdKVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiSW5wdXRzLnRhYmxlKGRhdGEsIHtjb2x1bW5zOiBbXCJ4XCIsIFwieVwiXX0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2JldGEwJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2JldGExJykifV19
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im4gPSA0MFxuXG5tdWxiZXJyeTMyID0gKGEpID0+ICgpID0+IHtcbiAgYSB8PSAwOyBhID0gYSArIDB4NkQyQjc5RjUgfCAwXG4gIGxldCB0ID0gTWF0aC5pbXVsKGEgXiBhID4+PiAxNSwgMSB8IGEpXG4gIHQgPSB0ICsgTWF0aC5pbXVsKHQgXiB0ID4+PiA3LCA2MSB8IHQpIF4gdFxuICByZXR1cm4gKCh0IF4gdCA+Pj4gMTQpID4+PiAwKSAvIDQyOTQ5NjcyOTZcbn1cbnJhbmQgPSBtdWxiZXJyeTMyKDEyMzQ1KVxuXG5kYXRhID0gQXJyYXkuZnJvbSh7bGVuZ3RoOiBufSwgKCkgPT4ge1xuICBjb25zdCBzcXVhcmVmb290ID0gNTAwICsgcmFuZCgpICogMzAwMFxuICBjb25zdCBub2lzZSA9IChyYW5kKCkgLSAwLjUpICogMTAwMDAwXG4gIGNvbnN0IHByaWNlID0gNTAwMDAgKyBzcXVhcmVmb290ICogMTgwICsgbm9pc2VcbiAgcmV0dXJuIHtzcXVhcmVmb290LCBwcmljZX1cbn0pXG5cbnhtaW4gPSBNYXRoLm1pbiguLi5kYXRhLm1hcChkID0+IGQuc3F1YXJlZm9vdCkpXG54bWF4ID0gTWF0aC5tYXgoLi4uZGF0YS5tYXAoZCA9PiBkLnNxdWFyZWZvb3QpKVxuXG5maXRMaW5lID0gW1xuICB7IHNxdWFyZWZvb3Q6IHhtaW4sIHByaWNlOiBiZXRhMCArIGJldGExICogeG1pbiB9LFxuICB7IHNxdWFyZWZvb3Q6IHhtYXgsIHByaWNlOiBiZXRhMCArIGJldGExICogeG1heCB9XG5dXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUoZGF0YSwge1xuICBjb2x1bW5zOiBbXCJzcXVhcmVmb290XCIsIFwicHJpY2VcIl0sXG4gIGhlaWdodDogNDIwXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGNvbWJpbmVkU2xpZGVycyA9IHtcbiAgY29uc3QgYjAgPSBJbnB1dHMucmFuZ2UoWzAsIDMwMDAwMF0sIHt2YWx1ZTogNTAwMDAsIHN0ZXA6IDUwMDAsIGxhYmVsOiBcIs6y4oKAIChiYXNlIHByaWNlKVwifSlcbiAgY29uc3QgYjEgPSBJbnB1dHMucmFuZ2UoWzUwLCA0MDBdLCB7dmFsdWU6IDE4MCwgc3RlcDogNSwgbGFiZWw6IFwizrLigoEgKHByaWNlIHBlciBzcSBmdClcIn0pXG4gIGNvbnN0IGRpdiA9IGh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6ZmxleDsgZ2FwOjJyZW07IGFsaWduLWl0ZW1zOmNlbnRlcjtcIj4ke2IwfSR7YjF9PC9kaXY+YFxuICBkaXYudmFsdWUgPSB7YmV0YTA6IGIwLnZhbHVlLCBiZXRhMTogYjEudmFsdWV9XG4gIGIwLmFkZEV2ZW50TGlzdGVuZXIoXCJpbnB1dFwiLCAoKSA9PiB7XG4gICAgZGl2LnZhbHVlID0ge2JldGEwOiBiMC52YWx1ZSwgYmV0YTE6IGIxLnZhbHVlfVxuICAgIGRpdi5kaXNwYXRjaEV2ZW50KG5ldyBFdmVudChcImlucHV0XCIpKVxuICB9KVxuICBiMS5hZGRFdmVudExpc3RlbmVyKFwiaW5wdXRcIiwgKCkgPT4ge1xuICAgIGRpdi52YWx1ZSA9IHtiZXRhMDogYjAudmFsdWUsIGJldGExOiBiMS52YWx1ZX1cbiAgICBkaXYuZGlzcGF0Y2hFdmVudChuZXcgRXZlbnQoXCJpbnB1dFwiKSlcbiAgfSlcbiAgcmV0dXJuIGRpdlxufVxuXG5iZXRhMCA9IGNvbWJpbmVkU2xpZGVycy5iZXRhMFxuYmV0YTEgPSBjb21iaW5lZFNsaWRlcnMuYmV0YTFcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIGhlaWdodDogNDgwLFxuICBtYXJnaW5MZWZ0OiA3MCxcbiAgZ3JpZDogdHJ1ZSxcbiAgeDogeyBsYWJlbDogXCJzcXVhcmVmb290XCIgfSxcbiAgeToge1xuICAgIGxhYmVsOiBcInByaWNlICgkKVwiLFxuICAgIGRvbWFpbjogWzAsIE1hdGgubWF4KC4uLmRhdGEubWFwKGQgPT4gZC5wcmljZSkpICogMS4xXVxuICB9LFxuICBtYXJrczogW1xuICAgIFBsb3QuZG90KGRhdGEsIHt4OiBcInNxdWFyZWZvb3RcIiwgeTogXCJwcmljZVwiLCByOiAzfSksXG4gICAgUGxvdC5saW5lKGZpdExpbmUsIHt4OiBcInNxdWFyZWZvb3RcIiwgeTogXCJwcmljZVwiLCBzdHJva2U6IFwiY3JpbXNvblwiLCBzdHJva2VXaWR0aDogM30pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJleGFtcGxlRGF0YSA9IFtcbiAge3NxdWFyZWZvb3Q6IDgwMCwgIHByaWNlOiAxOTYwMDB9LFxuICB7c3F1YXJlZm9vdDogMTIwMCwgcHJpY2U6IDI3MjAwMH0sXG4gIHtzcXVhcmVmb290OiAxNTAwLCBwcmljZTogMzIyMDAwfSxcbiAge3NxdWFyZWZvb3Q6IDE5MDAsIHByaWNlOiAzOTQwMDB9LFxuICB7c3F1YXJlZm9vdDogMjMwMCwgcHJpY2U6IDQ2NjAwMH0sXG4gIHtzcXVhcmVmb290OiAyNzAwLCBwcmljZTogNTM4MDAwfSxcbl1cblxuZXhhbXBsZUZpdCA9IFtcbiAge3NxdWFyZWZvb3Q6IDgwMCwgIHByaWNlOiA1MDAwMCArIDE4MCAqIDgwMH0sXG4gIHtzcXVhcmVmb290OiAyNzAwLCBwcmljZTogNTAwMDAgKyAxODAgKiAyNzAwfVxuXVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgaGVpZ2h0OiAzMjAsXG4gIG1hcmdpbkxlZnQ6IDcwLFxuICBncmlkOiB0cnVlLFxuICB4OiB7IGxhYmVsOiBcInNxdWFyZWZvb3RcIiwgZG9tYWluOiBbNjAwLCAyOTAwXSB9LFxuICB5OiB7IGxhYmVsOiBcInByaWNlICgkKVwiLCBkb21haW46IFsxMDAwMDAsIDU1MDAwMF0gfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmRvdChleGFtcGxlRGF0YSwge3g6IFwic3F1YXJlZm9vdFwiLCB5OiBcInByaWNlXCIsIHI6IDUsIGZpbGw6IFwiIzMzNDE1NVwifSksXG4gICAgUGxvdC5saW5lKGV4YW1wbGVGaXQsICB7eDogXCJzcXVhcmVmb290XCIsIHk6IFwicHJpY2VcIiwgc3Ryb2tlOiBcImNyaW1zb25cIiwgc3Ryb2tlV2lkdGg6IDIuNX0pLFxuXG4gICAgLy8gdmVydGljYWwgZGFzaGVkIGxpbmUgYXQgeCA9IDE1MDBcbiAgICBQbG90LnJ1bGVYKFsxNTAwXSwge3N0cm9rZTogXCIjZjU5ZTBiXCIsIHN0cm9rZVdpZHRoOiAyLCBzdHJva2VEYXNoYXJyYXk6IFwiNiw0XCJ9KSxcbiAgICAvLyBob3Jpem9udGFsIGRhc2hlZCBsaW5lIGF0IHkgPSAzMjIwMDBcbiAgICBQbG90LnJ1bGVZKFszMjIwMDBdLCB7c3Ryb2tlOiBcIiNmNTllMGJcIiwgc3Ryb2tlV2lkdGg6IDIsIHN0cm9rZURhc2hhcnJheTogXCI2LDRcIn0pLFxuXG4gICAgLy8gYW5ub3RhdGlvbiBkb3QgYXQgcHJlZGljdGlvbiBwb2ludFxuICAgIFBsb3QuZG90KFt7c3F1YXJlZm9vdDogMTUwMCwgcHJpY2U6IDMyMjAwMH1dLCB7XG4gICAgICB4OiBcInNxdWFyZWZvb3RcIiwgeTogXCJwcmljZVwiLCByOiA3LFxuICAgICAgZmlsbDogXCIjZjU5ZTBiXCIsIHN0cm9rZTogXCJ3aGl0ZVwiLCBzdHJva2VXaWR0aDogMlxuICAgIH0pLFxuXG4gICAgLy8gbGFiZWxcbiAgICBQbG90LnRleHQoW3tzcXVhcmVmb290OiAxNTYwLCBwcmljZTogMzM1MDAwfV0sIHtcbiAgICAgIHg6IFwic3F1YXJlZm9vdFwiLCB5OiBcInByaWNlXCIsXG4gICAgICB0ZXh0OiBbXCIkMzIyLDAwMFwiXSxcbiAgICAgIGZpbGw6IFwiI2Y1OWUwYlwiLFxuICAgICAgZm9udFNpemU6IDEzLFxuICAgICAgZm9udFdlaWdodDogXCJib2xkXCJcbiAgICB9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdjb21iaW5lZFNsaWRlcnMnKSJ9XX0=
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

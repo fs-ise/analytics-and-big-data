@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Exercise 1: The rise of analytics – Analytics &amp; Big Data</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -52,15 +55,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc75b09f5250c27d17e89c6d0d56fedc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -89,26 +92,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-objective.callout {
@@ -122,15 +114,26 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
+  background-image: none;
+}
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 </style>
@@ -175,6 +178,18 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
     <a class="nav-link" href="../preparation.html"> 
 <span class="menu-text">⚠️ Preparation</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../evaluations.html"> 
+<span class="menu-text">Evaluations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data" rel="noopener noreferrer" target="_blank"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:github-01" aria-label="GitHub" title="GitHub"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data/issues" rel="noopener noreferrer" target="_blank"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:add-circle" aria-label="Issues" title="Issues"></iconify-icon></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -209,118 +224,231 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </header>
 
 
-<p>In this session, we split into two groups. You have approx. 30 mins for each part.</p>
-<section id="group-1-read-competing-on-analytics" class="level2">
-<h2 class="anchored" data-anchor-id="group-1-read-competing-on-analytics">Group 1: Read <em>Competing on Analytics</em></h2>
+<div class="direction">
+<p>In this session, we split into two groups.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Exercise part</th>
+<th>Time (min)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#task-1">Task 1: Competing on Analytics</a></td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td><a href="#task-2">Task 2: Jupyter notebook</a></td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td><a href="#discussion">Discussion</a></td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td><a href="#wrap-up">Wrap-up</a></td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td><strong>Overall</strong></td>
+<td>85</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="task-1-read-competing-on-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-read-competing-on-analytics">Task 1: Read <em>Competing on Analytics</em> <a id="task_1"></a></h2>
+<div class="direction">
 <p>Read the <em>Competing on Analytics</em> paper by <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span>. Prepare to discuss the following questions:</p>
+</div>
 <ol type="1">
-<li><p><strong>What does it mean for a company to “compete on analytics”?</strong><br>
-How is this different from simply using data or reports in decision making?</p></li>
-<li><p><strong>What organizational capabilities are required to compete on analytics?</strong><br>
-Consider aspects such as leadership, culture, people, and technology.</p></li>
-<li><p><strong>Which companies or industries today seem to compete on analytics?</strong><br>
-Give examples and explain how analytics creates their competitive advantage.</p></li>
+<li><strong>What does it mean for a company to “compete on analytics”?</strong><br>
+How is this different from simply using data or reports in decision making?</li>
 </ol>
-</section>
-<section id="group-2-create-an-analytical-notebook-in-jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="group-2-create-an-analytical-notebook-in-jupyter">Group 2: Create an analytical notebook in Jupyter</h2>
-<div class="learning-objectives">
-<p>Explore the Python and Jupyter analytics ecosystem:</p>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br></p>
+</div>
+<div class="sol">
+<p>To “compete on analytics” means that a company uses data, statistical analysis, modeling, and experimentation as a core strategic capability across the organization. Analytics is not just a support tool; it becomes a basis for competitive advantage. <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span> argues that such firms do not merely know what happened in the past, but use predictive and optimization methods to determine what will happen, what customers will do, what prices maximize profit, and how processes can be improved.</p>
+<p>This is different from simply using data or reports in decision making. Many firms use descriptive statistics and reports, but analytics competitors go further by:</p>
 <ul>
-<li>Start Jupyter in a VM (GitHub Codespace)</li>
-<li>Write a first notebook</li>
+<li>applying advanced models rather than only dashboards or summaries,</li>
+<li>embedding analytics across multiple functions rather than in isolated departments,</li>
+<li>coordinating these efforts under an enterprise strategy,</li>
+<li>and repeatedly using evidence to improve decisions over time.</li>
 </ul>
+<p>In short, ordinary data use supports decisions; competing on analytics makes superior, repeatable, organization-wide decision making a source of advantage.</p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="TODO">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>See https://www.codecademy.com/article/how-to-use-jupyter-notebooks https://www.codecademy.com/article/getting-started-with-jupyter -&gt; variable? + tab-completion, shift-tab for function arguments</p>
-<ul>
-<li><p>test workflow (github/local jupyter notebook - do not save as qmd / or convert?!)</p></li>
-<li><p>understand the elements of a jupyter notebook</p></li>
-<li><p>shortcuts: run individual lines with shift+ENTER ??, press a, b, x, …</p></li>
-<li><p>extend slide-deck?</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="preface" class="level2">
-<h2 class="anchored" data-anchor-id="preface">Preface</h2>
-<p>The purpose of this document is to give an introduction to data analytics with Python.</p>
-<ul>
-<li>jupyter notebooks and libraries</li>
-</ul>
-</section>
-<section id="example-case" class="level2">
-<h2 class="anchored" data-anchor-id="example-case">Example case</h2>
-<ol type="1">
-<li>Select a case (business problem and dataset)</li>
-</ol>
-<p>Kaggle: <a href="https://www.kaggle.com/datasets?topic=retailAndShoppingDataset">Retail and shopping</a>, <a href="https://www.kaggle.com/datasets?search=financial">financial</a> or <a href="https://www.kaggle.com/datasets?topic=trendingDataset">trending</a>.</p>
 <ol start="2" type="1">
-<li>Draft an analytical notebook</li>
+<li><strong>What organizational capabilities are required to compete on analytics?</strong><br>
+Consider aspects such as leadership, culture, people, and technology.</li>
 </ol>
-<ul>
-<li>writing a notebook: following the CRISP-DM structure: business question, how the data is loaded, prepared, analyzed, what our interpretation is. -&gt; Create a new notebook: create a skeleton (following CRISP-DM). explain the business problem, import a dataset from kaggle, explain what you would do in the different steps, include code cells and add notes on how you would analyze the data, which parts would be (if you are not sure about a particular part, you can leave it as TODO, say probably XY, or list two or three options that coudl be tried)</li>
-</ul>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br></p>
+</div>
+<div class="sol">
+<p>According to <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span>, companies that compete on analytics need a combination of organizational and technical capabilities. There is a need for:</p>
+<ol type="1">
+<li><p><strong>Strong senior leadership</strong>, ideally from the CEO. Top executives must actively champion data-based decision making and signal that analytics is central to strategy.</p></li>
+<li><p><strong>Analytics-oriented culture</strong>. Employees are expected to justify decisions with evidence, performance is measured quantitatively, and the organization develops a “test and learn” mindset in which ideas are validated through experiments.</p></li>
+<li><p><strong>The right people</strong>. This includes not only technically skilled analysts, but also people who can translate complex analyses into business language and work closely with decision makers. Analytical talent must be numerous enough to matter and visible enough to influence the business.</p></li>
+<li><p><strong>Enterprise approach</strong>. Analytics should not be fragmented across departments with separate tools and inconsistent data definitions. Instead, it should be managed coherently across the organization, with shared leadership, standards, and infrastructure.</p></li>
+<li><p><strong>The right technology and data foundation</strong>. <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span> highlights the importance of a clear data strategy, integrated and standardized data, data warehouses, business intelligence tools, and sufficient computing power. These capabilities take time to build and require sustained investment.</p></li>
+</ol>
+<p>Overall, competing on analytics depends on aligning leadership, culture, talent, organization, and technology around fact-based improvement.</p>
+</div>
 <ol start="3" type="1">
-<li>Refine the notebook</li>
+<li><strong>Which companies or industries compete on analytics?</strong><br>
+Give examples and explain how analytics creates their competitive advantage.</li>
 </ol>
+<div class="direction">
+<p><br><br><br><br><br><br><br><br><br></p>
+</div>
+<div class="sol">
+<p>In Davenport’s paper, several examples illustrate what it means to compete on analytics.</p>
 <ul>
-<li>Go over the notebook and annotate: which parts would be descriptive, predictive, prescriptive?</li>
+<li><p><strong>Amazon</strong> is a central example. Its advantage comes from using analytics in areas such as customer recommendations, supply chain management, and operational optimization. This helps it personalize the customer experience and manage large-scale complexity efficiently.</p></li>
+<li><p><strong>Capital One</strong> competes on analytics through extensive experimentation and quantitative analysis in marketing, pricing, and risk assessment. Its competitive advantage comes from constantly testing offers and learning which customers to target and how to manage risk profitably.</p></li>
+<li><p><strong>Harrah’s</strong> (now Caesars Entertainment) used analytics to improve customer loyalty, promotions, pricing, and service. Its advantage came from understanding customer behavior in great detail and using this knowledge to increase retention and spending.</p></li>
+<li><p><strong>Progressive</strong> used analytics to refine insurance pricing. Instead of broadly rejecting risky customers, it analyzed detailed customer segments and priced them more precisely, allowing it to profit where competitors relied on cruder categories.</p></li>
+<li><p><strong>Marriott</strong> applied analytics to revenue management, pricing, and customer retention. By optimizing room prices and related offerings, it improved revenue performance across its hotels.</p></li>
 </ul>
-<ol start="4" type="1">
-<li>Start implementing</li>
+<p>Davenport also points to <strong>sports organizations</strong> such as the Boston Red Sox, the Oakland A’s, and the New England Patriots. Their advantage came from applying statistical analysis to player selection, performance evaluation, and other decisions that were traditionally based more heavily on intuition.</p>
+<p>More broadly, industries that seem especially suited to competing on analytics are finance, retail, hospitality, logistics, insurance, and professional sports, because they generate rich data and make many repeatable decisions that can be improved through modeling and experimentation.</p>
+<div style="page-break-after: always;"></div>
+</div>
+</section>
+<section id="task-2-create-an-analytical-notebook-in-jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-create-an-analytical-notebook-in-jupyter">Task 2: Create an analytical notebook in Jupyter <a id="task_2"></a></h2>
+<div class="direction">
+<p>Navigate to your Codespace in the <a href="https://github.com/fs-ise/analytics-and-big-data-notebooks" target="_blank">analytics-and-big-data-notebooks</a> repository and create your first analytical notebook in Jupyter.</p>
+<section id="select-an-example-case-business-problem-and-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="select-an-example-case-business-problem-and-dataset">1. Select an example case (business problem and dataset)</h3>
+<p>Choose a dataset from Kaggle, for example:</p>
+<ul>
+<li><a href="https://www.kaggle.com/datasets?topic=retailAndShoppingDataset">Retail and shopping</a></li>
+<li><a href="https://www.kaggle.com/datasets?search=financial">Financial datasets</a></li>
+<li><a href="https://www.kaggle.com/datasets?topic=trendingDataset">Trending datasets</a></li>
+</ul>
+<p>Define a clear business problem that can be addressed using the selected dataset.</p>
+</section>
+<section id="draft-the-analytical-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="draft-the-analytical-notebook">2. Draft the analytical notebook</h3>
+<p>Create a new notebook and structure it according to the CRISP-DM framework.</p>
+<p>Start with a structured skeleton:</p>
+<ul>
+<li>Include both markdown and code cells</li>
+<li>Import a dataset (e.g., from Kaggle)</li>
+<li>Describe planned steps and analytical approaches</li>
+<li>If unsure about specific steps, clearly mark them as <code>TODO</code>, suggest likely approaches, or outline alternative options</li>
+</ul>
+</section>
+<section id="refine-the-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="refine-the-notebook">3. Refine the notebook</h3>
+<p>Review your notebook and annotate each part by indicating whether it is:</p>
+<ul>
+<li><strong>Descriptive</strong> (what happened?)</li>
+<li><strong>Predictive</strong> (what will happen?)</li>
+<li><strong>Prescriptive</strong> (what should be done?)</li>
+</ul>
+</section>
+<section id="begin-with-the-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="begin-with-the-implementation">4. Begin with the implementation</h3>
+<p>Proceed with initial implementation steps:</p>
+<ul>
+<li>Import the dataset (e.g., CSV file)</li>
+<li>Create a descriptive overview of the data</li>
+<li>Select and implement a basic predictive model</li>
+</ul>
+<p>Consult the documentation of relevant Python libraries such as <em>pandas</em> and <em>scikit-learn</em> as needed.</p>
+</section>
+</div>
+<div class="sol">
+<p>A good notebook solution should be structured according to <strong>CRISP-DM</strong>:</p>
+<ol type="1">
+<li><p><strong>Business understanding</strong><br>
+Clearly describe the business problem, explain why it is relevant, and define the target of the analysis.</p></li>
+<li><p><strong>Data understanding</strong><br>
+Import the dataset, inspect its structure, and create a first descriptive overview (for example: variables, missing values, distributions, summary statistics, or simple visualizations).</p></li>
+<li><p><strong>Data preparation</strong><br>
+Anticipate how data should be cleaned and prepared. This may include handling missing values, selecting variables, encoding categories, or splitting the data into training and test sets.</p></li>
+<li><p><strong>Modeling</strong><br>
+Select a first predictive model that fits the problem. Reasonable starting points could be:</p>
+<ul>
+<li>regression models for predicting numeric outcomes,</li>
+<li>classification models for predicting categories,</li>
+<li>or a machine-learning models and AI for prediction.</li>
+</ul></li>
+<li><p><strong>Evaluation</strong><br>
+Plan to assess whether the model is useful for the business problem. Explain the chosen metric and interpret the results in plain language.</p></li>
+<li><p><strong>Interpretation / deployment</strong><br>
+Anticipate what the findings could mean for decision-making and what could be done next.</p></li>
 </ol>
-<p>See how far you get:</p>
+<p>In the notebook, students should also indicate which parts are:</p>
 <ul>
-<li>import the CSV, create a descriptive overview of the data, select a model to make predictions</li>
+<li><strong>descriptive</strong> (understanding and summarizing the data),</li>
+<li><strong>predictive</strong> (building and evaluating a model),</li>
+<li><strong>prescriptive</strong> (discussing what actions could follow from the results).</li>
 </ul>
-<p>Consult the documentation of Python libraries such as pandas or scikit-learn.</p>
+<p>A complete solution does not need to finish every step perfectly. It is acceptable to leave key coding parts as <strong>TODO</strong>, propose likely next steps, or discuss modeling options that could be tried. The goal is to demonstrate a structured analytics workflow and familiarize yourself with Jupyter Notebooks.</p>
+</div>
+</section>
+<div class="direction">
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>In class, we will discuss</p>
 <ul>
-<li>Get a dataset (nice datasource)</li>
-<li>Import and prepare</li>
-<li>Produce a notebook</li>
+<li>Solutions for Task 1 (<em>Competing on Analytics</em>)</li>
+<li>Solutions for Task 2 (Jupyter Notebooks)</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" title="TODO">
+<p>You can share your notebook 🔴 LIVE: <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB" target="_blank">in this meeting</a>.</p>
+</section>
+<section id="wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="wrap-up">Wrap-up <a id="wrap-up"></a></h2>
+<p>🎉🎈 You have completed the first notebook - good work! 🎈🎉</p>
+<p>In this notebook, we have learned to</p>
+<ul>
+<li>Explain what it means to compete on analytics and why it creates competitive advantage</li>
+<li>Set up and use Jupyter notebooks in a Python-based analytics environment</li>
+<li>Structure an analytical workflow following CRISP-DM principles</li>
+<li>Distinguish between descriptive, predictive, and prescriptive analytics</li>
+<li>Begin implementing a basic data analysis workflow in Python</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Stop the Codespace">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>TODO
+<span class="screen-reader-only">Note</span>Stop the Codespace
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>TODO: add a setup explanation + tests for available python version and packages</strong></p>
+<p>To continue using your work in the next session, <b>stop</b> your Codespace <a href="https://github.com/codespaces" target="_blank">here</a>. Stopping the Codespace preserves the current state of your work and does not consume computational resources.</p>
 </div>
 </div>
-</section>
-<section id="exam-prep" class="level2">
-<h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
-<p>TODO : include specific questions/tasks that could be included in the exam.</p>
-<ul>
-<li>“Simple question” (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -&gt; explain how it exemplifies the rise of modern analytics, referring to the four “pillars”)</li>
-<li>table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive</li>
-<li>TBD: questions related to the jupyter ecosystem?</li>
-</ul>
-</section>
-<section id="survey" class="level2">
-<h2 class="anchored" data-anchor-id="survey">Survey</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Session 1 survey">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Session 1 survey
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up, please complete the Session 1 survey here: <a href="https://forms.gle/Jna4dmyEvcw3cjRPA" target="_blank">https://forms.gle/Jna4dmyEvcw3cjRPA</a>. Thank you 🙏</p>
+</div>
+</div>
 </section>
 <section id="references" class="level1">
-
-
-
-
+<h1>References</h1>
 </section>
+</div>
+
+
+
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Davenport2006" class="csl-entry" role="listitem">

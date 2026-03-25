@@ -6,10 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-23">
@@ -20,6 +19,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -52,7 +54,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -146,22 +148,7 @@
       margin-right: 0; 
     }
   </style>
-  <meta name="mermaid-theme" content="default">
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
-    background-image: none;
-  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -171,6 +158,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
     background-image: none;
   }
   div.callout-confidential.callout {
@@ -215,25 +213,25 @@
 
 </section>
 <section id="why-is-modern-analytics-so-successful" class="slide level2">
-<h2>Why is Modern Analytics so Successful?</h2>
+<h2>Why is modern analytics so successful?</h2>
 <ol type="1">
-<li><a href="#/more-data-for-the-analysis">More Data</a></li>
-<li><a href="#/computing-power">More Computing Power</a></li>
-<li><a href="#/new-algorithms">New Algorithms</a></li>
-<li><a href="#/analytics-processes">New Analytics Processes</a></li>
+<li><a href="#/more-data-for-the-analysis">More data</a></li>
+<li><a href="#/computing-power">More computing power</a></li>
+<li><a href="#/new-algorithms">New algorithms</a></li>
+<li><a href="#/analytics-processes">New analytics processes</a></li>
 </ol>
 </section>
 <section>
 <section id="more-data-for-the-analysis" class="title-slide slide level1 center" data-stack-name="Data">
-<h1>More Data for the Analysis</h1>
+<h1>More data for the analysis</h1>
 
 </section>
-<section id="the-data-explosion" class="slide level2">
-<h2>The Data Explosion</h2>
+<section id="the-explosion-of-data" class="slide level2">
+<h2>The explosion of data</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br></p>
-<div id="79055dc0" class="cell" data-execution_count="1">
+<div id="2df43493" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -254,7 +252,7 @@
 <tr class="header">
 <th>Unit</th>
 <th>Equivalent</th>
-<th>Approximate Meaning</th>
+<th>Approximate meaning</th>
 </tr>
 </thead>
 <tbody>
@@ -289,30 +287,26 @@
 </section>
 <section id="data-production" class="slide level2">
 <h2>Data production</h2>
-<p><strong>Enterprise and Transactional Data</strong><br>
+<p><strong>Enterprise and transactional data</strong><br>
 Enterprise systems such as ERP, CRM, and supply chain platforms generate large volumes of structured data through everyday business transactions.</p>
 <p><strong>eCommerce</strong><br>
 Every search, click, purchase, and review creates behavioral and transactional data used for recommendations and personalized marketing.</p>
-<p><strong>Social Media and User-Generated Content</strong><br>
+<p><strong>Social media and user-generated content</strong><br>
 Platforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live streaming.</p>
-<p><strong>IoT and Smart Devices</strong><br>
+<p><strong>IoT and smart devices</strong><br>
 Connected devices—from wearables to industrial sensors—continuously produce real-time data across interconnected systems.</p>
-<p><strong>Digital Transactions</strong><br>
+<p><strong>Digital transactions</strong><br>
 Online banking, mobile payments, and blockchain systems generate detailed financial records for transactions and security monitoring.</p>
-<p><strong>AI-Generated Data</strong><br>
+<p><strong>AI-generated data</strong><br>
 Machine learning and generative AI create large datasets during training and operation, further accelerating global data growth.</p>
-<!--
-## Data storage
-Moores law, Cloud computing, ...
--->
 </section></section>
 <section>
-<section id="computing-power" class="title-slide slide level1 center" data-stack-name="Computing Power">
-<h1>Computing Power</h1>
+<section id="computing-power" class="title-slide slide level1 center" data-stack-name="Computing power">
+<h1>Computing power</h1>
 
 </section>
 <section id="growth-of-computing-power" class="slide level2">
-<h2>Growth of Computing Power</h2>
+<h2>Growth of computing power</h2>
 <p>The rapid acceleration of computing power—driven by advances in hardware, cloud infrastructure, and parallel processing—has enabled modern analytics and machine learning to scale to massive datasets.</p>
 <!-- TODO : could include an illustration of a modern AI data center -->
 <p><br></p>
@@ -323,7 +317,7 @@ Moores law, Cloud computing, ...
 </div>
 </section>
 <section id="evolution-of-computing-power" class="slide level2">
-<h2>Evolution of Computing Power</h2>
+<h2>Evolution of computing power</h2>
 <p>The growth of modern analytics is enabled by <strong>changing strategies for increasing computing power</strong>.</p>
 <p><br></p>
 <table class="caption-top">
@@ -335,7 +329,7 @@ Moores law, Cloud computing, ...
 <thead>
 <tr class="header">
 <th>Era</th>
-<th>Main Strategy</th>
+<th>Main strategy</th>
 <th>Explanation</th>
 </tr>
 </thead>
@@ -368,7 +362,7 @@ Moores law, Cloud computing, ...
 </div></aside></section></section>
 <section>
 <section id="new-algorithms" class="title-slide slide level1 center" data-stack-name="Algorithms">
-<h1>New Algorithms</h1>
+<h1>New algorithms</h1>
 
 </section>
 <section id="algorithms" class="slide level2">
@@ -377,14 +371,20 @@ Moores law, Cloud computing, ...
 <p>Algorithms determine how efficiently computers can process data and solve tasks.</p>
 <p>Examples:</p>
 <ul>
-<li><strong>Linux Scheduling Algorithms</strong> <em>(1990s–present)</em> — Efficient process scheduling enabling operating systems to run many tasks concurrently</li>
+<li><strong>Linux Scheduling Algorithms</strong> <em>(1990s–present)</em> — Efficient process scheduling enabling operating systems to run tasks concurrently</li>
 <li><strong>RSA Encryption</strong> <em>(1977)</em> — Public-key cryptography algorithm enabling secure internet communication</li>
 <li><strong>PageRank</strong> <em>(1998)</em> — Algorithm ranking webpages based on link structure, enabling scalable web search</li>
-<li><strong>Blockchain / Proof-of-Work Consensus</strong> <em>(2008)</em> — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies</li>
+<li><strong>Blockchain</strong> <em>(2008)</em> — Distributed consensus algorithm enabling decentralized digital ledgers and cryptocurrencies</li>
 <li><strong>Deep Learning</strong> <em>(2010s)</em> — Improved neural network training enabling major advances in vision, speech, and language AI</li>
-<li><strong>Gradient Boosting / XGBoost</strong> <em>(2014)</em> — High-performance ensemble learning algorithm widely used in predictive analytics and data science</li>
+<li><strong>Gradient Boosting</strong> <em>(2014)</em> — High-performance ensemble learning algorithm widely used in predictive analytics and data science</li>
 <li><strong>GPT / Transformer Models</strong> <em>(2017–present)</em> — Transformer architecture enabling large language models and generative AI</li>
 </ul>
+<div class="learning_note">
+<p><strong>Learning note</strong></p>
+<p>No need to memorize everything.<br>
+Be able to give a few illustrative examples.<br>
+This also applies to the data production areas.</p>
+</div>
 </section>
 <section id="algorithms-enable-more-powerful-analytical-models" class="slide level2">
 <h2>Algorithms enable more powerful analytical models</h2>
@@ -402,9 +402,8 @@ Moores law, Cloud computing, ...
 </div></div>
 </section>
 <section id="algorithmic-breakthroughs-drive-ai-progress" class="slide level2">
-<h2>Algorithmic Breakthroughs Drive AI Progress</h2>
+<h2>Algorithmic breakthroughs drive AI progress</h2>
 <p>Recent breakthroughs in artificial intelligence (AI)<sup>1</sup> show how new algorithms can rapidly surpass human performance. <strong>DeepMind</strong> provides good examples.</p>
-<p><br></p>
 <div class="columns">
 <div class="column">
 <p>AlphaGo (2016)</p>
@@ -435,20 +434,9 @@ Moores law, Cloud computing, ...
 <section id="jagged-frontier-of-ai" class="slide level2">
 <h2>Jagged frontier of AI</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
-<p>Recent studies suggest that AI creates a <strong>“jagged frontier.”</strong> <span class="citation" data-cites="DellAcquaEtAl2023">(<a href="#/references" role="doc-biblioref" onclick="">Dell’Acqua et al., 2023</a>)</span>, i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities.</p>
-<ul>
-<li><strong>Within this frontier, AI can strongly enhance knowledge work</strong>, improving productivity and the quality of outputs.</li>
-<li><strong>Outside the frontier, AI can reduce performance</strong>, especially when users rely too heavily on its outputs without verification.</li>
-</ul>
-<p>AI progress often occurs through <strong>algorithmic breakthroughs</strong>, enabling machines to outperform humans in increasingly complex tasks.</p>
-<!--
-https://www.agidefinition.ai/
-https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
--->
-</div><div class="column" style="width:60%;">
+<div class="column" style="width:60%;">
 <p><br><br></p>
-<div id="20a247f7" class="cell" data-execution_count="2">
+<div id="5ae7ce11" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -457,70 +445,68 @@ https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
 </div>
 </div>
 </div>
+</div><div class="column" style="width:40%;">
+<p><br><br></p>
+<div class="highlight_must_learn">
+<p>AI progress often occurs through <strong>algorithmic breakthroughs</strong>, enabling machines to outperform humans in increasingly complex tasks.</p>
+<p>Recent studies suggest that AI creates a <strong>“jagged frontier.”</strong> <span class="citation" data-cites="DellAcquaEtAl2023">(<a href="#/survey-session-1" role="doc-biblioref" onclick="">Dell’Acqua et al., 2023</a>)</span>, i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities.</p>
+<ul>
+<li><strong>Within this frontier, AI can strongly enhance knowledge work</strong>, improving productivity and the quality of outputs.</li>
+<li><strong>Outside the frontier, AI can reduce performance</strong>, especially when users rely too heavily on its outputs without verification.</li>
+</ul>
+</div>
+<!--
+https://www.agidefinition.ai/
+https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks
+https://www.youtube.com/watch?v=d95J8yzvjbQ
+-->
 </div></div>
 
 <aside><div>
-<p>Figure based on <span class="citation" data-cites="HendrycksEtAl2025">Hendrycks et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span>.</p>
+<p>Figure based on the work of <span class="citation" data-cites="HendrycksEtAl2025"><span class="nocase">Hendrycks et al.</span> (<a href="#/survey-session-1" role="doc-biblioref" onclick="">2025</a>)</span> on <em>Artificial General Intelligence</em>.</p>
 </div></aside></section></section>
 <section>
-<section id="analytics-processes" class="title-slide slide level1 center" data-stack-name="Analytics Processes">
-<h1>Analytics Processes</h1>
-<!--
-        ## Structure: TODO
+<section id="analytics-processes" class="title-slide slide level1 center" data-stack-name="Analytics processes">
+<h1>Analytics processes</h1>
 
-        - start with epistemic goals (describing, predicting, prescribing)
-        - introduce CRISP-DM
-        - distinguish different analytical models and disciplines (referring to the epistemic goals - example: statistician would not be happy with an ML model because it does not support inference/explanation. ML engineer is not happy with a regression model - it may support inference/explanation better, but its predictions may be less accurate)
-
-        ![](../images/dispute-statistician-ml-engineer.png){fig-align="center" width="40%"}
-
-        ## Traditional vs. Modern Analytics Process
-
-
-        **Traditional Analytics Process:**
-
-        ![](../images/slide-13.1.png){fig-align="center" width="40%"}
-
-
-        **Modern Analytics Process:**
-
-        ![](../images/slide-13.2.png){fig-align="center" width="40%"}
-
-
-        ## From the Past to the Present
-
-        ![](../images/slide-14-new.png){fig-align="center" width="60%"}
-
-
-        ## Evolution of Analytics
-
-
-        ![](../images/slides_20.jpg){fig-align="center"  width="70%"}
-
-
-        ::: aside
-        Source: http://juxt.pro/blog/posts/machine-learning-with-clojure.html
-        :::
--->
 </section>
 <section id="maturing-analytical-capabilities" class="slide level2">
 <h2>Maturing analytical capabilities</h2>
-<p><br><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/analytics_maturity.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="highlight_must_learn">
+<p><strong>Descriptive analytics: What happened?</strong></p>
+<ul>
+<li>Summarizes historical data to understand patterns and trends.<br>
+</li>
+<li><em>Example: Sales reports, dashboards, KPIs</em></li>
+</ul>
+<p><strong>Predictive analytics: What will happen?</strong></p>
+<ul>
+<li>Uses statistical models and machine learning to forecast future outcomes.<br>
+</li>
+<li><em>Example: Demand forecasting, churn prediction</em></li>
+</ul>
+<p><strong>Prescriptive analytics: What should we do?</strong></p>
+<ul>
+<li>Recommends actions based on predictions and optimization.<br>
+</li>
+<li><em>Example: Pricing optimization, recommendation systems</em></li>
+</ul>
 </div>
+</div><div class="column" style="width:50%;">
+<p><br><br> <img data-src="../images/analytics_maturity.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</div></div>
 <!--
-https://medium.com/aimonks/key-types-of-analytics-according-to-gartner-9dd5861debe2
+      https://medium.com/aimonks/key-types-of-analytics-according-to-gartner-9dd5861debe2
 
-Types of Analytics (I)
+      Types of Analytics (I)
 
-![](../images/slides_21.png){fig-align="center" width="60%"}
+      ![](../images/slides_21.png){fig-align="center" width="60%"}
 
-::: aside
-Source: @Schmarzo2016, p. 88
-:::
+      ::: aside
+      Source: @Schmarzo2016, p. 88
+      :::
 -->
 </section>
 <section id="analytical-purposes" class="slide level2">
@@ -578,10 +564,10 @@ Source: @Schmarzo2016, p. 88
 -->
 
 <aside><div>
-<p>Source: <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>, p.&nbsp;13</p>
+<p>Source: <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/survey-session-1" role="doc-biblioref" onclick="">2016</a>)</span>, p.&nbsp;13</p>
 </div></aside></section>
 <section id="example-descriptive-analytics" class="slide level2">
-<h2>Example: Descriptive Analytics</h2>
+<h2>Example: Descriptive analytics</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -590,7 +576,7 @@ Source: @Schmarzo2016, p. 88
 </div>
 </section>
 <section id="example-predictive-analytics" class="slide level2">
-<h2>Example: Predictive Analytics</h2>
+<h2>Example: Predictive analytics</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -599,7 +585,8 @@ Source: @Schmarzo2016, p. 88
 </div>
 </section>
 <section id="example-prescriptive-analytics" class="slide level2">
-<h2>Example: Prescriptive Analytics</h2>
+<h2>Example: Prescriptive analytics</h2>
+<!-- TODO: select an example that aligns more with prescriptive analytics (not scenario planning) -->
 <p>Based on more than 300 million data records per week, Otto generates over one billion forecasts annually on the expected sales of individual products in the coming days and weeks. These forecasts are used to optimize inventory decisions, determining how many units of each product should be stocked or reordered across warehouses. By systematically adjusting inventory levels based on these data-driven recommendations, Otto is able to reduce its overall inventories by up to 30% on average while maintaining product availability.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -642,8 +629,8 @@ Source: @Schmarzo2016, p. 88
 <thead>
 <tr class="header">
 <th>Discipline</th>
-<th>Model Culture</th>
-<th>Typical Models</th>
+<th>Model culture</th>
+<th>Typical models</th>
 </tr>
 </thead>
 <tbody>
@@ -687,17 +674,19 @@ Source: @Schmarzo2016, p. 88
     ![](../images/slides_133_new.png)
 -->
 </section>
-<section id="crisp-dm-cross-industry-standard-process-for-data-mining" class="slide level2">
-<h2>CRISP-DM Cross-Industry Standard Process for Data Mining</h2>
+<section id="cross-industry-standard-process-for-data-mining-crisp-dm" class="slide level2">
+<h2>Cross-Industry Standard Process for Data Mining (CRISP-DM)</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
-<p><strong>CRISP-DM</strong> is a widely used framework that structures data mining and analytics projects <span class="citation" data-cites="WirthHipp2000">(<a href="#/references" role="doc-biblioref" onclick="">Wirth &amp; Hipp, 2000</a>)</span>.</p>
+<div class="highlight_must_learn">
+<p><strong>CRISP-DM</strong> is a widely used framework that structures data mining and analytics projects <span class="citation" data-cites="WirthHipp2000">(<a href="#/survey-session-1" role="doc-biblioref" onclick="">Wirth &amp; Hipp, 2000</a>)</span>.</p>
 <ul>
 <li>Developed by an <strong>industry consortium</strong> (e.g., DaimlerChrysler, SPSS, NCR) to create a common methodology for data mining projects.</li>
 <li>Designed to be <strong>independent of specific industries and technologies</strong>, making it applicable across many domains.</li>
 <li>Integrates <strong>best practices from real-world projects</strong>, helping teams plan, communicate, and document analytics work.</li>
 <li>Became popular because it provides a <strong>reliable and repeatable standard process</strong> for managing complex data mining projects.</li>
 </ul>
+</div>
 </div><div class="column" style="width:55%;">
 <p><br></p>
 <div class="cell" data-fig-width="8" data-layout-align="default">
@@ -995,11 +984,12 @@ Source: @Schmarzo2016, p. 88
 <p>Analytics is not a linear pipeline. We constantly move between business problems, data, modeling, and evaluation.</p>
 </blockquote>
 </section>
-<section id="summary" class="slide level2" data-state="hide-menubar">
-<h2>Summary</h2>
+<section id="section" class="slide level2" data-menu-title="Learning objectives" data-state="hide-menubar">
+<h2></h2>
+<p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
-<li><strong>Illustrate</strong> how modern data analytics capabilities are enabled by data availability, advances in computing power, new algorithms, and modern analytics processes.</li>
+<li><strong>Illustrate</strong> how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.</li>
 <li><strong>Distinguish</strong> between descriptive, predictive, and prescriptive analytics.</li>
 <li><strong>Explore</strong> the Python and Jupyter analytics ecosystem (<em>exercise</em>).</li>
 </ul>
@@ -1010,56 +1000,197 @@ Source: @Schmarzo2016, p. 88
 <h1>Exercise</h1>
 
 </section>
-<section id="setup" class="slide level2">
-<h2>Setup</h2>
-<p>TODO</p>
+<section id="setup-for-the-practical-exercises" class="slide level2" data-state="hide-menubar">
+<h2>Setup for the practical exercises</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Options</strong></p>
 <ul>
-<li>Why Jupyter/Codespaces? (other options?)</li>
-<li>explain setup</li>
+<li>Microsoft Excel</li>
+<li>RapidMiner</li>
+<li>RStudio</li>
+<li>IBM SPSS Statistics</li>
+<li><strong>Jupyter Notebooks</strong></li>
+<li>Tableau</li>
+<li>Microsoft Power BI</li>
 </ul>
-<p>Steps:</p>
+</div><div class="column fragment" style="width:60%;">
+<p><strong>Why this setup?</strong></p>
+<p>We use <strong>Jupyter Notebooks and Python</strong> because</p>
 <ul>
-<li>Create a Github account <a href="https://github.com/signup">here</a></li>
-<li>Start Codespace in <a href="https://github.com/fs-ise/analytics-and-big-data-notebooks">fs-ise/analytics-and-big-data-notebooks</a></li>
+<li>it supports <strong>advanced analytics</strong>, including data analysis, visualization, machine learning, and big data analytics</li>
+<li>it is a <strong>more demanding environment to learn</strong>, which helps us build skills that transfer easily to simpler analytics tools and interfaces</li>
+<li>it is <strong>widely used in research and large organizations</strong>, making it a valuable and relevant skillset</li>
+<li>it allows us to combine <strong>context, code, explanations, and results in a single document</strong></li>
 </ul>
+<!-- **GitHub Codespaces** provides a browser-based virtual environment with a common setup for everyone. -->
+</div></div>
+</section>
+<section id="a-jupyter-notebook" class="slide level2" data-state="hide-menubar">
+<h2>A Jupyter notebook</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Jupyter Notebooks combine <strong>context, code, output, and implications</strong> in one interactive document.</p>
+<p><strong>Cells</strong></p>
+<ul>
+<li><strong>Markdown cells</strong> → text, explanations, documentation</li>
+<li><strong>Code cells</strong> → Python code for analysis</li>
+</ul>
+<p><strong>Output</strong></p>
+<p>Running a code cell produces results directly below it (text, tables, charts, etc.).</p>
+<p><strong>Execution environment</strong></p>
+<ul>
+<li><strong>Kernel</strong> → executes the code (Python in this course)</li>
+<li><strong>Virtual machine (VM)</strong> → the computer where the kernel runs</li>
+<li>In this course: provided through <strong>GitHub Codespaces</strong></li>
+</ul>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> The analysis runs on a <strong>remote machine with Python and libraries already installed</strong>.</p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/notebook-example.png" class="boxed-image quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="starting-github-codespaces" class="slide level2" data-state="hide-menubar">
+<h2>Starting GitHub Codespaces</h2>
+<ul>
+<li>Create a GitHub account and sign in: <a href="https://github.com/signup">https://github.com/signup</a></li>
+<li>Open <a href="https://github.com/fs-ise/analytics-and-big-data-notebooks">https://github.com/fs-ise/analytics-and-big-data-notebooks</a></li>
+<li>Start a Codespace:</li>
+</ul>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/codespace-start.png" class="boxed-image quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
 
 <aside><div>
-<p>You can use a local setup after this session (if it works on your machine).</p>
+<p>A local setup may also be possible after this session, depending on your machine. If you run into setup issues or have tips to share, please post them in this repository’s issues:<br>
+<a href="https://github.com/fs-ise/analytics-and-big-data-notebooks/issues">github.com/fs-ise/analytics-and-big-data-notebooks/issues</a>.</p>
 </div></aside></section>
-<section id="break" class="slide level2">
-<h2>Break</h2>
+<section id="short-break" class="slide level2" data-state="hide-menubar">
+<h2>☕ Short Break</h2>
+<p>Take 5–10 minutes</p>
+<p>Stretch, grab a coffee, or chat with others.</p>
+<p>We’ll continue shortly</p>
 </section>
-<section id="group-split" class="slide level2">
+<section id="group-split" class="slide level2" data-state="hide-menubar">
 <h2>Group split</h2>
-<p>Each section is 30 min.</p>
+<p>Each section is 30 min. Work in pairs of two.</p>
 <p><br><br><br></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart LR
-
-B{Split} --&gt; C[Group 1&lt;br&gt;Jupyter Notebook]
-B --&gt; D[Group 2&lt;br&gt;Reading]
-
-C --&gt; E[Switch]
-D --&gt; E
-
-E --&gt; F[Group 1&lt;br&gt;Reading]
-E --&gt; G[Group 2&lt;br&gt;Jupyter Notebook]
-
-F --&gt; H["Discussion &amp; Comparison"]
-G --&gt; H
-</pre>
+<svg width="960" height="480" viewbox="0.00 0.00 741.17 156.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 152)">
+<title>learning_flow</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-152 737.17,-152 737.17,4 -4,4"></polygon>
+<!-- B -->
+<g id="node1" class="node">
+<title>B</title>
+<polygon fill="none" stroke="black" points="41.41,-91.5 0.08,-73.5 41.41,-55.5 82.74,-73.5 41.41,-91.5"></polygon>
+<text text-anchor="middle" x="41.41" y="-69.3" font-family="Times,serif" font-size="14.00">Split</text>
+</g>
+<!-- C -->
+<g id="node2" class="node">
+<title>C</title>
+<polygon fill="none" stroke="black" points="305.83,-148 118.83,-148 118.83,-83 305.83,-83 305.83,-148"></polygon>
+<text text-anchor="middle" x="212.33" y="-119.7" font-family="Times,serif" font-size="14.00">Group 1</text>
+<text text-anchor="middle" x="212.33" y="-102.9" font-family="Times,serif" font-size="14.00">Jupyter Notebook</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge1" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M68.44,-79.97C79.75,-82.78 93.8,-86.28 108.65,-89.97"></path>
+<polygon fill="black" stroke="black" points="107.94,-93.4 118.49,-92.42 109.63,-86.61 107.94,-93.4"></polygon>
+</g>
+<!-- D -->
+<g id="node3" class="node">
+<title>D</title>
+<polygon fill="none" stroke="black" points="305.83,-65 118.83,-65 118.83,0 305.83,0 305.83,-65"></polygon>
+<text text-anchor="middle" x="212.33" y="-36.7" font-family="Times,serif" font-size="14.00">Group 2</text>
+<text text-anchor="middle" x="212.33" y="-19.9" font-family="Times,serif" font-size="14.00">Reading</text>
+</g>
+<!-- B&#45;&gt;D -->
+<g id="edge2" class="edge">
+<title>B-&gt;D</title>
+<path fill="none" stroke="black" d="M68.44,-67.18C79.75,-64.44 93.8,-61.03 108.65,-57.42"></path>
+<polygon fill="black" stroke="black" points="109.6,-60.79 118.49,-55.03 107.95,-53.99 109.6,-60.79"></polygon>
+</g>
+<!-- E -->
+<g id="node4" class="node">
+<title>E</title>
+<polygon fill="none" stroke="black" points="396.66,-91.5 341.88,-91.5 341.88,-55.5 396.66,-55.5 396.66,-91.5"></polygon>
+<text text-anchor="middle" x="369.27" y="-69.3" font-family="Times,serif" font-size="14.00">Switch</text>
+</g>
+<!-- C&#45;&gt;E -->
+<g id="edge3" class="edge">
+<title>C-&gt;E</title>
+<path fill="none" stroke="black" d="M306.15,-90.34C315.3,-87.86 324.16,-85.46 332.18,-83.29"></path>
+<polygon fill="black" stroke="black" points="333.11,-86.66 341.84,-80.66 331.28,-79.9 333.11,-86.66"></polygon>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M306.15,-57.06C315.3,-59.48 324.16,-61.83 332.18,-63.95"></path>
+<polygon fill="black" stroke="black" points="331.28,-67.33 341.84,-66.51 333.07,-60.56 331.28,-67.33"></polygon>
+</g>
+<!-- F -->
+<g id="node5" class="node">
+<title>F</title>
+<polygon fill="none" stroke="black" points="619.72,-148 432.72,-148 432.72,-83 619.72,-83 619.72,-148"></polygon>
+<text text-anchor="middle" x="526.22" y="-119.7" font-family="Times,serif" font-size="14.00">Group 1</text>
+<text text-anchor="middle" x="526.22" y="-102.9" font-family="Times,serif" font-size="14.00">Reading</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M396.91,-80.72C404.55,-82.79 413.38,-85.18 422.75,-87.72"></path>
+<polygon fill="black" stroke="black" points="422.11,-91.18 432.68,-90.42 423.95,-84.42 422.11,-91.18"></polygon>
+</g>
+<!-- G -->
+<g id="node6" class="node">
+<title>G</title>
+<polygon fill="none" stroke="black" points="619.72,-65 432.72,-65 432.72,0 619.72,0 619.72,-65"></polygon>
+<text text-anchor="middle" x="526.22" y="-36.7" font-family="Times,serif" font-size="14.00">Group 2</text>
+<text text-anchor="middle" x="526.22" y="-19.9" font-family="Times,serif" font-size="14.00">Jupyter Notebook</text>
+</g>
+<!-- E&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>E-&gt;G</title>
+<path fill="none" stroke="black" d="M396.91,-66.45C404.55,-64.43 413.38,-62.09 422.75,-59.62"></path>
+<polygon fill="black" stroke="black" points="423.91,-62.93 432.68,-56.99 422.12,-56.16 423.91,-62.93"></polygon>
+</g>
+<!-- H -->
+<g id="node7" class="node">
+<title>H</title>
+<polygon fill="none" stroke="black" points="733.39,-91.5 655.49,-91.5 655.49,-55.5 733.39,-55.5 733.39,-91.5"></polygon>
+<text text-anchor="middle" x="694.44" y="-69.3" font-family="Times,serif" font-size="14.00">Discussion</text>
+</g>
+<!-- F&#45;&gt;H -->
+<g id="edge7" class="edge">
+<title>F-&gt;H</title>
+<path fill="none" stroke="black" d="M620.05,-92.04C628.84,-89.82 637.47,-87.64 645.56,-85.6"></path>
+<polygon fill="black" stroke="black" points="646.65,-88.93 655.49,-83.09 644.94,-82.15 646.65,-88.93"></polygon>
+</g>
+<!-- G&#45;&gt;H -->
+<g id="edge8" class="edge">
+<title>G-&gt;H</title>
+<path fill="none" stroke="black" d="M620.05,-55.4C628.84,-57.56 637.47,-59.69 645.56,-61.69"></path>
+<polygon fill="black" stroke="black" points="644.94,-65.14 655.49,-64.14 646.62,-58.35 644.94,-65.14"></polygon>
+</g>
+</g>
+</svg>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-</section>
-<section id="todo" class="slide level2" data-state="hide-menubar">
-<h2>TODO</h2>
 <!--
   - Github advice: https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning
   
@@ -1077,41 +1208,122 @@ G --&gt; H
     -> TODO: test whether pip-install through devcontainer setup works.
     -> microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
 -->
-<p>Kernel: select global env</p>
-<p>TODO: download/save changes (and stop/delete codespace)</p>
 </section>
-<section id="todo-readingsynthesis" class="slide level2">
-<h2>TODO: reading/synthesis?</h2>
+<section id="group-1-read-competing-on-analytics" class="slide level2" data-state="hide-menubar">
+<h2>Group 1: Read <em>Competing on Analytics</em></h2>
+<p>Read the <em>Competing on Analytics</em> paper by <span class="citation" data-cites="Davenport2006">Davenport (<a href="#/survey-session-1" role="doc-biblioref" onclick="">2006</a>)</span>. Prepare to discuss the following questions:</p>
+<ol type="1">
+<li><p><strong>What does it mean for a company to “compete on analytics”?</strong><br>
+How is this different from simply using data or reports in decision making?</p></li>
+<li><p><strong>What organizational capabilities are required to compete on analytics?</strong><br>
+Consider aspects such as leadership, culture, people, and technology.</p></li>
+<li><p><strong>Which companies or industries today seem to compete on analytics?</strong><br>
+Give examples and explain how analytics creates their competitive advantage.</p></li>
+</ol>
 </section>
-<section id="survey-session-1" class="slide level2" data-state="hide-menubar">
+<section id="group-2-developing-an-analytical-notebook" class="slide level2" data-state="hide-menubar">
+<h2>Group 2: Developing an analytical notebook</h2>
+<p>Find a dataset on <a href="https://www.kaggle.com/datasets">https://www.kaggle.com/datasets</a> and a corresponding business problem you could address with the data.</p>
+<p>Create a notebook <code>report.ipynb</code> and draft an <strong>analysis structure based on CRISP-DM</strong>:</p>
+<ul>
+<li>Add Markdown sections describing what you would do in each phase</li>
+<li>Add Python code sections for the analyses you intend to run</li>
+<li>Indicate which parts of the analysis are <strong>descriptive</strong>, <strong>predictive</strong>, or <strong>prescriptive</strong></li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>Download a suitable dataset (CSV)</li>
+<li>Import it into your notebook</li>
+<li>Start exploring the data and implement the analyses as far as you get</li>
+</ul>
+<p>The goal is <strong>not to complete the analysis</strong>, but to begin working with the data.</p>
+<div class="fragment">
+<p><br><br></p>
+<p>Meeting link: <a href="{{ var instructor.online_meeting_url }}">{{ var instructor.online_meeting_url }}</a></p>
+
+</div>
+<aside><div>
+<p>If you have a question, put up the <strong>help-needed</strong> tag and I will come by.</p>
+</div></aside></section>
+<section id="jupyter-notebook" class="slide level2" data-state="hide-menubar">
+<h2>Jupyter Notebook</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Modes</strong></p>
+<ul>
+<li>Edit mode: <code>Enter</code></li>
+<li>Command mode: <code>Esc</code></li>
+</ul>
+<p><strong>Navigating cells</strong></p>
+<ul>
+<li>Move between cells: <code>↑</code> / <code>↓</code></li>
+<li>Create new cell: <code>a</code> (above) / <code>b</code> (below)</li>
+</ul>
+<p><strong>Cell types</strong></p>
+<ul>
+<li>Markdown cell: <code>m</code></li>
+<li>Code cell: <code>y</code></li>
+</ul>
+<p><strong>Run cells</strong></p>
+<ul>
+<li>Run cell: <code>Ctrl + Enter</code> or <code>Shift + Enter</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../images/codespace-new-notebook.png" style="width:100.0%"></p>
+<p><strong>Steps to get started:</strong></p>
+<ul>
+<li>Create a new notebook: <code>notebook.ipynb</code></li>
+<li>Kernel selection → choose Python environments / <code>/opt/conda/bin/python</code>.</li>
+<li>Create a Markdown cell explaining that this is a test notebook</li>
+<li>Create a code cell to print “Hello world”</li>
+<li>Run both cells</li>
+</ul>
+</div></div>
+</section>
+<section id="github-codespaces-stop-resume-and-download-your-work" class="slide level2" data-state="hide-menubar">
+<h2>GitHub Codespaces: Stop, resume, and download your work</h2>
+<p><strong>Stopping and resuming a Codespace</strong></p>
+<ul>
+<li><strong>Stop a Codespace</strong> when you finish working
+<ul>
+<li>This <strong>pauses the environment</strong> but keeps your files and setup.</li>
+<li>You can <strong>resume later</strong> and continue where you left off.</li>
+</ul></li>
+<li><strong>Resume a Codespace</strong>
+<ul>
+<li>Open the repository on GitHub.</li>
+<li>Navigate to <strong>Code → Codespaces → Resume</strong>.</li>
+</ul></li>
+</ul>
+<p><strong>Deleting a Codespace</strong></p>
+<ul>
+<li><strong>Deleting a Codespace permanently removes the environment and all files stored in the Codespace.</strong></li>
+<li><strong>Before deleting</strong>: Download notebooks or files that you want to keep for your own reference.</li>
+</ul>
+<p><strong>Recommendation</strong></p>
+<ul>
+<li>Prefer <strong>Stop / Resume</strong> if you plan to continue working later.</li>
+<li>If you <strong>delete a Codespace</strong>, make sure you <strong>download important notebooks</strong> or <strong>push your changes to GitHub</strong> first.</li>
+</ul>
+
+<aside><div>
+<p>As a student, you can apply for the <a href="https://education.github.com/pack">GitHub Student Developer Pack</a>, which includes <strong>free or extended GitHub Codespaces usage</strong>.</p>
+</div></aside></section>
+<section id="survey-session-1" class="slide level2 smaller scrollable" data-state="hide-menubar">
 <h2>Survey: Session 1</h2>
 <p><br><br></p>
 <div style="display:flex; justify-content:center;">
-<div id="" class="qrcode"></div>
-<script type="text/javascript">
-(function() {
-  var script = document.currentScript;
-  var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"400","text":"https://docs.google.com/forms/u/0/","width":"400"});
-  script.remove();
-})();
-</script>
-    
+
 </div>
-<p><br><br></p>
-<p>Link: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor">https://docs.google.com/forms/d/e/1FAIpQLSeE4yOEu7kk1gm2NcEC1p55HprTc4j9peJ2Zun26NeItYoYzQ/viewform?usp=publish-editor</a></p>
-<p>Note: We will use and possibly publish results (anonymously).</p>
-</section></section>
-<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
-<h1>References</h1>
-
-
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Davenport2006" class="csl-entry" role="listitem">
+Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
+</div>
 <div id="ref-DellAcquaEtAl2023" class="csl-entry" role="listitem">
-Dell’Acqua, F., McFowland, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., Lakhani, K. R., Bervell, M., Cheng, J., Deshpande, P., Ledovskiy, M., Kalil, J., Kung, K., Lacerda, R., Awada, M., Sariego, P. M., Noriega, R., … Lakhani, M. (2023). <em>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</em> (Working Paper 24-013). Harvard Business School.
+Dell’Acqua, F., McFowland, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., Lakhani, K. R., Bervell, M., Cheng, J., Deshpande, P., Ledovskiy, M., Kalil, J., Kung, K., Lacerda, R., Awada, M., Sariego, P. M., Noriega, R., … Lakhani, M. (2023). <em>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</em> (Working Paper Nos. 24-013). Harvard Business School.
 </div>
 <div id="ref-HendrycksEtAl2025" class="csl-entry" role="listitem">
-Hendrycks, D., Song, D., Szegedy, C., Lee, H., Gal, Y., Brynjolfsson, E., Li, S., Zou, A., Levine, L., Han, B., et al. (2025). A definition of AGI. In <em>arXiv preprint arXiv:2510.18212</em>.
+<span class="nocase">Hendrycks, D., Song, D., Szegedy, C., Lee, H., Gal, Y., Brynjolfsson, E., Li, S., Zou, A., Levine, L., Han, B., et al.</span> (2025). A definition of AGI. In <em>arXiv preprint arXiv:2510.18212</em>.
 </div>
 <div id="ref-Schmarzo2016" class="csl-entry" role="listitem">
 Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1002/9781119238881">https://doi.org/10.1002/9781119238881</a>
@@ -1120,15 +1332,10 @@ Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1
 Wirth, R., &amp; Hipp, J. (2000). CRISP-DM: Towards a standard process model for data mining. <em>Proceedings of the 4th International Conference on the Practical Applications of Knowledge Discovery and Data Mining</em>, <em>1</em>, 29–39.
 </div>
 </div>
-</section>
-
+</section></section>
 
     </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<div class="footer footer-default">
-
-</div>
-</div></div>
+  </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>

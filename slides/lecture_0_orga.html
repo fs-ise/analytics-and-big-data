@@ -6,9 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-23">
@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -51,7 +54,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -150,17 +153,6 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -170,6 +162,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -183,15 +186,15 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -224,7 +227,7 @@
 <div class="column" style="width:70%;">
 <p>Academic background</p>
 <ul>
-<li>Universität Regensburg: Doctorate</li>
+<li>Universität Regensburg: Doctoral Student</li>
 <li>HEC Montréal: Postdoctoral Fellowship</li>
 <li>Otto-Friedrich-Universität Bamberg: Assistant Professor</li>
 <li>Frankfurt School of Finance &amp; Management: Full Professor</li>
@@ -237,8 +240,8 @@
 <p>Teaching interests</p>
 <ul>
 <li>Analytics and big data</li>
-<li>Programming and software engineering</li>
 <li>IT security</li>
+<li>Programming and software engineering</li>
 <li>Digital knowledge-intensive and platform-based work</li>
 <li>Literature review methods</li>
 </ul>
@@ -248,30 +251,31 @@
 </section>
 <section id="about-you" class="slide level2">
 <h2>About you</h2>
-<p>Please answer the three questions. Then choose <strong>one</strong> optional area where you would like to share a bit more.</p>
-<section id="have-you-worked-in-an-industry-role-or-completed-an-internship-with-an-analytics-focus" class="level3">
-<h3>1. Have you worked in an industry role or completed an internship with an analytics focus?</h3>
-<p>Optional:</p>
+<!--
+For smaller courses (approx. 15 students):
+
+Please answer the three questions.
+Then choose **one** optional area where you would like to share a bit more.
+
+HIGHLIGHT items as optional
+-->
+<p>Please take a moment to think about the following questions. For each question, I’ll invite a few of you to briefly share your thoughts.</p>
+<p><br></p>
+<p><strong>1. Have you worked in an industry role or completed an internship with an analytics focus?</strong></p>
 <ul>
 <li>What was something that felt <strong>very useful</strong> in your analytics work?</li>
 <li>Or where would you have liked to be <strong>better prepared</strong> for a data-related task?</li>
 </ul>
-</section>
-<section id="which-analytics-tools-or-programming-languages-have-you-used" class="level3">
-<h3>2. Which analytics tools or programming languages have you used?</h3>
-<p>Optional:</p>
+<p><strong>2. Which analytics tools or programming languages have you used?</strong></p>
 <ul>
 <li>What was a particularly interesting analytics <strong>challenge</strong> you encountered?</li>
 <li>Or a tool you found especially powerful or <strong>surprising</strong>?</li>
 </ul>
-</section>
-<section id="what-are-your-expectations-for-the-course" class="level3">
-<h3>3. What are your expectations for the course?</h3>
+<p><strong>3. What are your expectations for the course?</strong></p>
 <!--
-- What do you want to be able to do by the end of this course?
-- What would make this course “worth it” for you?
+  - What do you want to be able to do by the end of this course?
+  - What would make this course “worth it” for you?
 -->
-</section>
 </section></section>
 <section>
 <section id="analytics-big-data" class="title-slide slide level1 center" data-stack-name="Analytics &amp; Big Data">
@@ -280,53 +284,37 @@
 </section>
 <section id="analytics-big-data-in-the-curriculum" class="slide level2">
 <h2>Analytics &amp; Big Data in the curriculum</h2>
-<div style="text-align:center">
-<p><img data-src="../images/curriculum.png" style="width:40.0%"></p>
-</div>
-<!--
-<img src="../images/curriculum.png" width="600" style="display:block; margin:auto;">
-Prerequisite: Completed the "Introduction to Programming" module.
--->
+<p><img data-src="../images/curriculum.png" class="absolute" style="top: 10px; left: 300px; width: 1000px; height: 1000px; "></p>
 </section>
 <section id="what-exactly-is-analytics" class="slide level2">
 <h2>What exactly is “analytics”?</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><br><br> <img data-src="../images/deng-xiang--WXQm_NTK0U-unsplash.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
-</div><div class="column" style="width:50%;">
-<p><br><br><br><br><br><br></p>
-<p>Business analytics refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations (based on Davenport &amp; Harris 2007).</p>
+<div class="column" style="width:45%;">
+<p><br><br> <img data-src="../images/deng-xiang--WXQm_NTK0U-unsplash.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</div><div class="column" style="width:55%;">
+<p><br><br></p>
+<p><strong>Business analytics</strong> refers to the computer-supported examination of data using mathematical models to drive decisions and actions within business situations <span class="citation" data-cites="DavenportHarris2007">(based on <a href="#/references" role="doc-biblioref" onclick="">Davenport &amp; Harris, 2007</a>)</span>.</p>
+<div class="fragment">
+<p>Related fields <span class="citation" data-cites="ChenEtAl2012">(based on <a href="#/references" role="doc-biblioref" onclick="">Chen et al., 2012</a>)</span>:</p>
+<ul>
+<li><strong>Business intelligence</strong> refers to “the techniques, technologies, systems, practices, methodologies, and applications that analyze critical business data to help an enterprise better understand its business and market and make timely business decisions.”</li>
+<li><strong>Data mining</strong> refers to algorithmic techniques used to discover patterns, relationships, and knowledge from large datasets.</li>
+<li><strong>Data science</strong> is the interdisciplinary field that combines statistical methods, data mining, machine learning, and database technologies to extract knowledge and insights from large and complex datasets.</li>
+</ul>
+</div>
 </div></div>
-<!--
-TODO (ideally referring to a textbook?)
-
-Analytics is the systematic use of data, statistical methods, and digital tools to generate insights that support better business decisions.
-
-If you want it slightly more detailed (but still accessible):
-
-Analytics refers to the process of collecting, processing, and analyzing data to identify patterns, explain outcomes, predict future developments, and improve decision-making in organizations.
-
-You can break it down into four core elements:
-
-Data – Raw facts (e.g., sales numbers, customer clicks, costs).
-
-Methods – Statistical models, algorithms, and visualizations.
-
-Technology – Software tools like spreadsheets, databases, BI systems.
-
-Decision-making – Turning insights into business action.
--->
 </section>
 <section id="why-analytics-and-this-course-matter" class="slide level2">
-<h2>Why Analytics (and This Course) Matter</h2>
-<p><strong><iconify-icon role="img" inline="" icon="solar:money-bag-bold" aria-label="Icon money-bag-bold from solar Iconify.design set." title="Icon money-bag-bold from solar Iconify.design set."></iconify-icon> Finance — Quantitative Arbitrage at Princeton-Newport Partners</strong></p>
+<h2>Why analytics (and this course) matter</h2>
+<p><strong><iconify-icon role="img" inline="" icon="solar:money-bag-bold" aria-label="Icon money-bag-bold from solar Iconify.design set." title="Icon money-bag-bold from solar Iconify.design set."></iconify-icon> Finance — Quantitative arbitrage at Princeton-Newport Partners</strong></p>
 <ul>
 <li>Early pioneer of applying the Black-Scholes option pricing model in real markets</li>
 <li>Systematic identification of mispriced options through mathematical arbitrage</li>
 <li>Demonstrated how financial models and data could generate consistent trading profits</li>
 </ul>
+<!-- https://www.youtube.com/watch?v=A5w-dEgIU1M -->
 <div class="fragment">
-<p><strong><iconify-icon role="img" inline="" icon="mdi:film-open" aria-label="Icon film-open from mdi Iconify.design set." title="Icon film-open from mdi Iconify.design set."></iconify-icon> Entertainment — Personalization at Scale at Netflix</strong></p>
+<p><strong><iconify-icon role="img" inline="" icon="mdi:film-open" aria-label="Icon film-open from mdi Iconify.design set." title="Icon film-open from mdi Iconify.design set."></iconify-icon> Entertainment — Personalization at scale at Netflix</strong></p>
 <ul>
 <li>Recommendation systems shape what millions watch</li>
 <li>Continuous A/B testing and model refinement</li>
@@ -334,7 +322,7 @@ Decision-making – Turning insights into business action.
 </ul>
 </div>
 <div class="fragment">
-<p><strong><iconify-icon role="img" inline="" icon="lucide-lab:baseball" aria-label="Icon baseball from lucide-lab Iconify.design set." title="Icon baseball from lucide-lab Iconify.design set."></iconify-icon> Sports — The Moneyball Revolution at Oakland Athletics</strong></p>
+<p><strong><iconify-icon role="img" inline="" icon="lucide-lab:baseball" aria-label="Icon baseball from lucide-lab Iconify.design set." title="Icon baseball from lucide-lab Iconify.design set."></iconify-icon> Sports — The Moneyball revolution at Oakland Athletics</strong></p>
 <ul>
 <li>Advanced metrics replaced traditional scouting intuition</li>
 <li>Data-driven player selection with limited budget</li>
@@ -343,9 +331,9 @@ Decision-making – Turning insights into business action.
 </div>
 </section>
 <section id="course-architecture" class="slide level2">
-<h2>Course Architecture</h2>
+<h2>Course architecture</h2>
 <div style="text-align:center">
-<p><img data-src="../images/overview_structure.png" style="width:60.0%"></p>
+<p><img data-src="../images/overview_structure.png" style="width:80.0%"></p>
 <!--
 
 ::::::{.cell reveal=true layout-align="default"}
@@ -384,7 +372,7 @@ flowchart LR
   subgraph Stack[&quot;&lt;b&gt;Analytics&lt;/b&gt;&quot;]
     direction LR
     D[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Data foundations&lt;/b&gt;&lt;br/&gt;Exploration and architecture&lt;/div&gt;&quot;]
-    M[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Analytical models&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;&quot;]
+    M[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Analytical modeling&lt;/b&gt;&lt;br/&gt;Regression · ML · Big Data&lt;/div&gt;&quot;]
     O[&quot;&lt;div align=&#39;center&#39;&gt;&lt;b&gt;Deployment&lt;/b&gt;&lt;br/&gt;Organizations&lt;/div&gt;&quot;]
     D --&gt; M --&gt; O
   end
@@ -405,30 +393,32 @@ flowchart LR
 ::::::
 -->
 </div>
-</section>
-<section id="learning-objectives" class="slide level2">
-<h2>Learning objectives</h2>
-<p><strong>Knowledge</strong></p>
-<ul>
-<li><strong>Differentiate</strong> between descriptive, predictive, and prescriptive analytics approaches.</li>
-<li><strong>Describe</strong> architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.</li>
-<li><strong>Explain</strong> fundamental concepts of data analytics, and its role in data-driven organizations.</li>
-</ul>
-<p><strong>Skills</strong></p>
-<ul>
-<li><strong>Select</strong> appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.</li>
-<li><strong>Apply</strong> analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.</li>
-<li><strong>Implement</strong> analytical procedures in Python, using standard data science libraries (<code>pandas</code>, <code>scikit-learn</code>, <code>matplotlib</code>).</li>
-</ul>
-<p><strong>Competence</strong></p>
-<ul>
-<li><strong>Design</strong> analytics solutions aligned with business goals and governance principles.</li>
-<li><strong>Integrate</strong> analytical technologies into organizational decision-making processes</li>
-<li><strong>Assess</strong> the operational and strategic implications of data analytics in organizations.</li>
-</ul>
+<!--
+    Update before including:
+
+    ## Learning objectives
+
+    **Knowledge**
+
+    - **Differentiate** between descriptive, predictive, and prescriptive analytics approaches.
+    - **Describe** architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.
+    - **Explain** fundamental concepts of data analytics, and its role in data-driven organizations.
+
+    **Skills**
+
+    - **Select** appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.
+    - **Apply** analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.
+    - **Implement** analytical procedures in Python, using standard data science libraries (`pandas`, `scikit-learn`, `matplotlib`).
+
+    **Competence**
+
+    - **Design** analytics solutions aligned with business goals and governance principles.
+    - **Integrate** analytical technologies into organizational decision-making processes
+    - **Assess** the operational and strategic implications of data analytics in organizations.
+-->
 </section>
 <section id="what-this-course-does-not-cover" class="slide level2">
-<h2>What This Course Does <em>Not</em> Cover</h2>
+<h2>What this course does <em>not</em> cover</h2>
 <ul>
 <li><p><strong>Engineering of production-grade analytical systems</strong></p>
 <ul>
@@ -452,19 +442,22 @@ flowchart LR
 <li>Reinforcement learning</li>
 </ul></li>
 </ul>
-<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> We will <em>touch</em> these areas where needed, but our focus is on <strong>analytical reasoning</strong> and <strong>notebook-based implementations</strong>.</p>
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> We will <em>touch</em> these areas where needed, but our focus is on <strong>analytical reasoning for business decisions</strong><br> and <strong>notebook-based implementations</strong>.</p>
 </section></section>
 <section>
-<section id="course-logistics" class="title-slide slide level1 center" data-stack-name="Logistics">
+<section id="course-logistics" class="title-slide slide level1 center" data-stack-name="Course logistics">
 <h1>Course logistics</h1>
 
 </section>
 <section id="course-logistics-1" class="slide level2">
 <h2>Course logistics</h2>
-<p>Workload: 150h total (44h in class, remaining: self-study and group project)</p>
+<p>Workload:</p>
+<ul>
+<li>150h total (44h in class, remaining: self-study and group project)</li>
+</ul>
 <p>Assessment</p>
 <ul>
-<li>Exam: 60 minutes, 60 points</li>
+<li>Exam: 60 minutes, 60 points (closed book)</li>
 <li>Group project: written paper (40 pages), 60 points (end of module)</li>
 </ul>
 <p>Sessions:</p>
@@ -479,19 +472,8 @@ flowchart LR
 <p>Individual circumstances</p>
 <p>If you have family responsibilities, religious holidays, health-related matters, or other individual circumstances that may affect your participation or performance, please reach out early. We will work together to find a fair and workable solution.</p>
 <!--
-      - Format
-      - Expectations
-      - Workload
-      - Assessments and deliverables
-      - resources and administration
-
-      TODO: group sizes, how groups will form, ...
-
-      Sessions: Monday, 8.15-11.45, April 28 - July 21
-      Location: WE5/04.003
-
-      Consultation hours: [by appointment](https://calendly.com/gerit-wagner/30min) (individually or in small groups)
-      Web: https://www.uni-bamberg.de/digital-work
+      (individually or in small groups)
+      TBD: online or offline preferred? (add location?)
 
       Materials: available via VC: https://vc.uni-bamberg.de/course/view.php?id=71961 (password: IdW2526#stud)
 
@@ -514,29 +496,39 @@ flowchart LR
 
 
       TODO: `group-projects/Guidelines for the GroupProjects.pdf`
-
-
-      ## We value your feedback and suggestions
-
-      We encourage you to share your feedback and suggestions on our teaching materials. You can find the following links in the footer of each slide:
-
-      <br>
-
-      <a href="https://github.com/fs-ise/literature-review-seminar/issues/new" target="_blank"> ♻️ </a> Provide feedback by submitting an issue
-      <a href="https://github.com/fs-ise/literature-review-seminar/edit/main/slides/00-orga.md" target="_blank"> 🛠️ </a> Suggest specific changes by directly modifying the content
-
-      <br>
-
-      Your feedback plays a crucial role in helping us align with our core goals of **impact in research, teaching, and practice**. By contributing your suggestions, you help us further our commitment to **rigor**, **openness** and **participation**. Together, we can continuously enhance our work by contributing to **continuous learning** and collaboration across our community.
-
-      Visit this <a href="https://fs-ise.github.io/handbook/docs/10-lab/10_processes/10.01.goals.html" target="_blank">page</a> to learn more about our goals:  🚀 🛠️ ♻️ 🙏 🧑‍🎓️ .
 -->
 </section>
 <section id="materials" class="slide level2">
 <h2>Materials</h2>
 <p>Slides and materials</p>
 <ul>
-<li>Presentation slides will be made available for download.</li>
+<li>Presentation slides and notebooks will be made available for download.</li>
+</ul>
+<p>Short surveys at the end of each session</p>
+<ul>
+<li>If you notice anything that could benefit from further clarification or improvement, please take a note and let me know there.</li>
+</ul>
+<p>Your input makes a real difference 🙏</p>
+<div class="fragment">
+<p><br></p>
+<p>Learning markers</p>
+<ul>
+<li>Facilitate learning and exam preparation.</li>
+<li>Help distinguish between illustrative material and key concepts and skills to prioritize.</li>
+</ul>
+<div class="highlight_must_learn">
+<p><strong>Key concepts</strong></p>
+<p>These markers highlight key skills and knowledge areas that you should prioritize when preparing for the exam. <br> <em>Note</em>: This does not mean that other contents are excluded—they remain relevant for a complete understanding.</p>
+</div>
+<div class="learning_note">
+<p><strong>Learning focus</strong></p>
+<p>These notes indicate how the content may be addressed in the exam and how you can prepare effectively.</p>
+</div>
+</div>
+</section>
+<section id="literature" class="slide level2">
+<h2>Literature</h2>
+<ul>
 <li>You are expected to take complementary notes and read the recommended literature. <!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. --></li>
 <li>Literature and complementary materials will be listed at the end of each lecture.</li>
 <li>Reading of complementary materials depends on your interest and ambition.</li>
@@ -553,16 +545,16 @@ flowchart LR
 <section id="you-may-also-be-interested-in" class="slide level2" data-state="hide-menubar">
 <h2>You may also be interested in …</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:55%;">
 <p>Bachelor’s theses: See <a href="https://susy.frankfurt-school.de/">SuSy</a> and additional information on <a href="https://fs-ise.github.io/theses/">this page</a>.</p>
-<p>In SuSy, you can find more information on my primary research topics:</p>
+<p>In SuSy, you can find more information on my research topics:</p>
 <ul>
 <li><strong>Open, Agentic, and Boundary-Spanning Work</strong><br>
 This area examines how AI agents and open digital infrastructures reshape knowledge work and collaboration across organizational boundaries. It focuses on agentic systems embedded in real work contexts (e.g., Git workflows, handbooks, and repositories) and how they transform coordination, governance, and accountability.</li>
 <li><strong>AI-Supported Knowledge Synthesis</strong><br>
 This area investigates how AI supports knowledge synthesis across academic and professional contexts, focusing on transparency, rigor, and traceability in AI-assisted processes. It includes literature reviews and synthesis in digital gardens, second-brain systems, and other knowledge repositories.</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:45%;">
 <p><br><br><br><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -570,25 +562,6 @@ This area investigates how AI supports knowledge synthesis across academic and p
 </figure>
 </div>
 </div></div>
-<!--
- and [open topics](https://fs-ise.github.io/theses/docs/topics.html)
-
-::: {.callout-note title="TODO"}
-TODO: update thesis topics
-:::
-
-    ![bg right:35% width:400px vertical](../assets/images/logo)
-    ![bg right:35% width:400px vertical](../assets/images/logo-project.png)
-    ![bg right:35% width:400px](../assets/images/logo-theses.png)
-    ![bg right:35% width:400px](../assets/images/logo)
-
-    ## The open-source project (WI-Projekt)
-
-    - Learn to code in Python and contribute to the CoLRev package
-    - Practice the use of Git in a small-team setting
-
-    First session: Thursday, 17. April, 12.15-13.45 (WE5 3.004)
--->
 </section></section>
 <section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
 <h1>References</h1>
@@ -603,6 +576,9 @@ Chen, H., Chiang, R. H. L., &amp; Storey, V. C. (2012). Business intelligence an
 </div>
 <div id="ref-Davenport2006" class="csl-entry" role="listitem">
 Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
+</div>
+<div id="ref-DavenportHarris2007" class="csl-entry" role="listitem">
+Davenport, T. H., &amp; Harris, J. G. (2007). <em>Competing on analytics: The new science of winning</em>. Harvard Business School Press.
 </div>
 <div id="ref-MartinezEtAl2019" class="csl-entry" role="listitem">
 Martı́nez-Plumed, F., Contreras-Ochando, L., Ferri, C., Hernández-Orallo, J., Kull, M., Lachiche, N., Ramı́rez-Quintana, M. J., &amp; Flach, P. (2019). CRISP-DM twenty years later: From data mining processes to data science trajectories. <em>IEEE Transactions on Knowledge and Data Engineering</em>, <em>33</em>(8), 3048–3061. <a href="https://ieeexplore.ieee.org/abstract/document/8943998">https://ieeexplore.ieee.org/abstract/document/8943998</a>
