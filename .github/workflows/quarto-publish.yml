@@ -43,8 +43,13 @@ jobs:
 
       - name: Install Python deps
         run: |
-          pip install jupyter ipykernel matplotlib plotly scikit-learn pandas
-      #     pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          python -m pip install jupyter ipykernel matplotlib plotly scikit-learn pandas
+        # pip install -r requirements.txt
+
+      - name: Register Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name quarto-env --display-name "Python (quarto-env)"
 
       - name: Render site
         run: |
