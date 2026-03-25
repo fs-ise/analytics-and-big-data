@@ -919,7 +919,7 @@ The goal is **not to complete the analysis**, but to begin working with the data
 
 <br><br>
 
-Meeting link: [{{< var instructor.online_meeting_url >}}]({{< var instructor.online_meeting_url >}})
+Meeting link: [{{ var instructor.online_meeting_url }}]({{ var instructor.online_meeting_url }})
 
 
 ::: aside
@@ -1003,13 +1003,13 @@ As a student, you can apply for the [GitHub Student Developer Pack](https://educ
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode {{< var sessions.session_1.survey_url >}} width=400 height=400 >}}
+{{< qrcode {{ var sessions.session_1.survey_url }} width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[{{< var sessions.session_1.survey_url >}}]({{< var sessions.session_1.survey_url >}})
+[{{ var sessions.session_1.survey_url }}]({{ var sessions.session_1.survey_url }})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.
