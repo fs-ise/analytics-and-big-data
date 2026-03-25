@@ -20,6 +20,15 @@ The module combines conceptual foundations and hands-on analytical practice usin
 It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming).
 Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations.
 
+## Course policies
+
+- **Group assignment requirement**: The course includes a mandatory **group assignment**.
+  This assignment cannot be completed individually and requires active collaboration with your group.
+- **On-site participation**: The group assignment requires your **physical presence on site**.
+  Remote-only completion is not possible for this course component.
+- **Enrollment and attendance expectation**: Enrollment implies regular course participation.
+  Being enrolled without attending is not acceptable; students who cannot attend should cancel their enrollment.
+
 ## Learning objectives
 
 **Knowledge** After completing the module, students will be able to:
