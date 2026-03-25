@@ -68,7 +68,7 @@ Organizations structure operational data by departments and processes, but analy
 
 The hardware load differs in operational application systems and data warehouse systems over time
 
-![](../images/slides_30.png){fig-align="center" width="50%"}
+![](../images/dwh_computation_load_over_time.png){fig-align="center" width="50%"}
 
 => A data warehouse relieves the operational systems
 
@@ -98,8 +98,9 @@ He defined the terms in the sentence as follows:
 
 ## The data warehouse concept
 
-![](../images/slides_31_new.png){fig-align="center" width="50%"}
+<br>
 
+![](../images/dwh_concept.png){fig-align="center" width="60%"}
 
 ## Layers of a data warehouse system
 
