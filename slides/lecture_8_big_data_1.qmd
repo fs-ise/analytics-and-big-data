@@ -314,13 +314,13 @@ Aggregation is done just in time. Thus, the schema of the data warehouse is just
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode {{ var sessions.session_8.survey_url }} width=400 height=400 >}}
+{{< qrcode "{{< var sessions.session_8.survey_url >}}" width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[{{ var sessions.session_8.survey_url }}]({{ var sessions.session_8.survey_url }})
+[{{< var sessions.session_8.survey_url >}}]({{< var sessions.session_8.survey_url >}})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.

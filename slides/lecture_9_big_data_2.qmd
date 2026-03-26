@@ -141,13 +141,13 @@ Chess 2^64 legal positions, Go 2^120!!!
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode {{ var sessions.session_9.survey_url }} width=400 height=400 >}}
+{{< qrcode "{{< var sessions.session_9.survey_url >}}" width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[{{ var sessions.session_9.survey_url }}]({{ var sessions.session_9.survey_url }})
+[{{< var sessions.session_9.survey_url >}}]({{< var sessions.session_9.survey_url >}})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.
