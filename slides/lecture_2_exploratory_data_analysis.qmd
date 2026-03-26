@@ -814,6 +814,7 @@ plt.show()
 
 ## Correlation vs. causality
 
+
 **Correlation:** Two data series behave "similar"
 
 **Causality:** Principle of cause and effect
@@ -827,6 +828,8 @@ plt.show()
 ::: {.column width="50%"}
 ![](../images/5015_associates-degrees-_correlates-with_comments-on-oversimplified-youtube-videos.png){width=60% fig-align="center" }
 :::
+
+<!-- TODO: replace the second example with firefighter / damages?  -->
 
 ::: {.column width="50%"}
 ![](../images/1775_wind-power-generated-in-taiwan_correlates-with_google-searches-for-i-am-tired.png){width=60% fig-align="center" }
@@ -1315,13 +1318,13 @@ Ward is often used with Euclidean distance.
       :::
 -->
 
-## Validation and interpretation
+## Evaluation of clusters
 
 ⚠ Clustering algorithms will **always produce groups**, even when no meaningful structure exists.
 
-Therefore clusters must be **validated**.
+Therefore clusters must be **evaluated**.
 
-Common validation approaches:
+Common evaluation approaches include:
 
 * **internal validation**
 

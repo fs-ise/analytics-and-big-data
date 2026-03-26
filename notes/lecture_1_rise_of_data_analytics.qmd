@@ -67,6 +67,8 @@ I will work with the notebook group.
 - one document instead of multiple (easier to keep in sync, harder for files to get lost / matters more if the analyses are more complex, if there are more "moving parts")
 - option to collapse/hide cells (communicating with business stakeholders)
 
+- Notebook scaffolding: Also gives context to LLMs
+
 Jupyter notebooks are the standard environment in data science courses worldwide.
 
 

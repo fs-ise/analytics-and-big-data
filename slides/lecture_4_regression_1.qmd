@@ -109,7 +109,7 @@ digraph CRISPDM {
 
 Housing markets represent one of the largest asset classes in most economies. Residential real estate accounts for a substantial share of household wealth, and even small pricing errors can translate into large financial consequences.
 
-Understanding what drives house prices is therefore highly relevant:
+Understanding what drives house prices is therefore relevant for:
 
 - **Real estate firms** use pricing models to advise clients.
 - **Banks** rely on valuation models to assess collateral and manage mortgage risk.
@@ -163,12 +163,14 @@ To answer our question, we need a dataset that includes:
 
 * Sale prices
 * Physical attributes (e.g., size, rooms)
-* Quality indicators
 * Location characteristics
+* Quality indicators
 
 . . . 
 
-To address this, we turn to a **publicly available dataset** on Kaggle: the **Ames Housing dataset**, which provides detailed information on residential properties and their sale prices.
+To address this, we turn to a **publicly available dataset** on Kaggle:
+the [Ames Housing dataset](https://www.kaggle.com/datasets/shashanknecrothapa/ames-housing-dataset),
+which provides detailed information on residential properties and their sale prices.
 
 <br>
 
@@ -246,7 +248,7 @@ We create a small table that summarizes key variables:
 | ------------- | -------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------------ |
 | `Order`       | Unique order number                                | —                                  | Check for duplicates, NA not allowed                                     |
 | `PID`         | Parcel identification number                       | —                                  | Same property can appear multiple times (e.g., repeated sales)           |
-| `area`        | Above-ground living area                           | Square feet                        | Check for **plausible ranges and consistency** (e.g., no extreme values) |
+| `area`        | Above-ground living area                           | Square feet                        | Check for **plausible ranges and consistency** |
 | `price`       | Sale price of the property (target variable)       | USD                                | Check **format, missing values, and outliers**                           |
 | `MS.SubClass` | Type of dwelling                                   | Categorical codes (e.g., 020, 060) | Retrieve **code definitions** and check consistency with other variables |
 | `MS.Zoning`   | General zoning classification                      | Categorical (e.g., RL, RM, FV)     | TODO: Understand categories (may require **external expertise**)         |
@@ -317,18 +319,6 @@ Here, we focus on the **analytical modeling**.
 
 **2. Collect candidate models** *(selective overview)*
 
-<!--
-    <div class="smaller">
-
-    | Model family | Strengths | Limitations |
-    |-------------|----------|------------|
-    | **Regression** | Interpretable, simple | Limited flexibility |
-    | **Clustering** | Finds structure | Not for prediction |
-    | **ML models** | High performance, flexible | Less interpretable, risk of overfitting |
-
-    </div>
--->
-
 <div class="smaller">
 
 | Model family (examples)                               | Strengths                              | Limitations                                       |
@@ -367,31 +357,6 @@ Here, we focus on the **analytical modeling**.
 ::: aside
 See @ProvostFawcett2013, chapter 3 and 4.
 :::
-
-
-
-## Regression: Model assumptions
-
-Regression models rely the following **statistical assumptions**:
-
-* Linear relationship between predictors and outcome
-* Independent observations
-* Constant variance of errors (*homoscedasticity*)
-* Errors normally distributed
-
-::: {.callout-important}
-
-For many **prediction tasks**, violations are often less problematic.
-Assumptions become **more important when doing statistical inference** (e.g., interpreting p-values or confidence intervals).
-
-:::
-
-<!--
-  ::: {.learning_note .fragment}
-  **Learning focus**
-  You **do not need to memorize all regression assumptions**.
-  :::
--->
 
 ## Regression models: A visual illustration
 
@@ -532,7 +497,7 @@ $$\hat{\text{price}} = 50{,}000 + 180 \cdot \text{squarefoot}$$
 
 > *How much would a **1,500 sq ft** house cost?*
 
-$$\hat{y} = 50{,}000 + 180 \times 1{,}500 = \$322{,}000$$
+$$\hat{price} = 50{,}000 + 180 \times 1{,}500 = \$322{,}000$$
 ```{ojs}
 Plot.plot({
   height: 320,
@@ -731,24 +696,19 @@ Data available at [https://www.openintro.org/data/index.php?data=ames](https://w
 ## Implementation in Python
 
 ```python
-# Coefficient estimates (β̂)
-print("Intercept:", model.intercept_)     # β0
+print("Intercept:", model.intercept_)     # β0 (coefficient estimates)
 
-# Map coefficients to variable names
-coef_df = pd.DataFrame({
+coef_df = pd.DataFrame({                  # Map coefficients to variable names
     "Predictor": predictors,
-    "Coefficient": model.coef_           # β1, β2, ...
+    "Coefficient": model.coef_            # β1, β2, ...
 })
 print(coef_df)
 
-# Model fit (R²)
-r2 = model.score(X, y)
+r2 = model.score(X, y)                    # Model fit (R²)
 print("R^2:", r2)
 ```
 
 . . . 
-
-<br>
 
 ```{.text code-line-numbers="false"}
 Intercept: 180,921
@@ -760,8 +720,18 @@ Overall.Qual   28,567.43
 R^2: 0.56
 ```
 
+::: {.aside .fragment}
+In scikit-learn, a trailing underscore indicates that an attribute is **learned from data during model fitting**.
+This helps to prevent accidental access to values before fitting.
+
+* Attributes *without* `_` are **hyperparameters** you specify when creating the model.
+* Attributes *with* `_` are **estimated after calling `.fit()`** (e.g., `coef_`, `intercept_`).
+:::
 
 <!--
+This convention helps distinguish clearly between inputs and learned outputs — and prevents accidental access to values before the model has been trained.
+
+
 # Simple regression {data-stack-name="Simple regression"}
 
       # Simple regression {data-stack-name="Simple regression"}
@@ -801,6 +771,61 @@ R^2: 0.56
 
 
 # Evaluation {data-stack-name="Evaluation"}
+
+## Evaluation
+
+::: {.highlight_must_learn}
+
+After estimating a regression model, we need to evaluate whether it is **useful and reliable**.
+
+Evaluation focuses on three complementary questions:
+
+1. **Can we trust the model?**  
+   → Are the underlying assumptions reasonably satisfied?
+
+2. **How well does the model perform?**  
+   → Does it explain variation and make accurate predictions?
+
+3. **What do the coefficients tell us?**  
+   → Are the estimated relationships meaningful and relevant?
+
+:::
+
+## Model assumptions
+
+Regression models rely the following **assumptions**:
+
+* Linear relationship between predictors and outcome
+* Independent observations
+* Constant variance of errors (*homoscedasticity*)
+* Errors normally distributed
+
+. . . 
+
+After fitting a model, we can evaluate whether these assumptions are reasonable.
+Different violations affect different aspects of the model (interpretation, uncertainty, prediction).
+
+<div class="smaller">
+
+| Assumption violated  | Coefficients *(interpretation)* | Confidence intervals / p-values *(uncertainty)* | Prediction *(performance)* |
+| -------------------- | ------------------------------- | ---------------------------------------------- | -------------------------- |
+| **Linearity**        | ❌ biased                        | ❌ invalid                                      | ⚠️ worse                   |
+| **Independence**     | ✅ OK                            | ❌ too optimistic                               | ⚠️ context-dependent       |
+| **Homoscedasticity** | ✅ OK                            | ❌ incorrect SEs                                | ✅ mostly OK                |
+| **Normality**        | ✅ OK                            | ⚠️ small-sample issue                          | ✅ OK                      |
+
+</div>
+
+. . . 
+
+{{< iconify fluent-mdl2:insights >}} The impact of assumption violations depends on the **characteristics of the dataset** (e.g., sample size, noise, structure) and the **goal of the analysis**.
+
+<!--
+  ::: {.learning_note .fragment}
+  **Learning focus**
+  You **do not need to memorize all regression assumptions**.
+  :::
+-->
 
 
 ## Overall model
@@ -842,9 +867,12 @@ $$ R^2 = 1 - \frac{RSS}{TSS} $$
   Penalizes large errors more strongly
   → useful when large mistakes are especially costly
 
-* **Out-of-sample performance**
-  Evaluate on test data, not only on training data
-  → helps detect **overfitting**
+<!--
+      Note: will be covered in ML/overfitting
+      * **Out-of-sample performance**
+        Evaluate on test data, not only on training data
+        → helps detect **overfitting**
+-->
 
 ::: notes
 Main takeaway: students should understand R² well.
