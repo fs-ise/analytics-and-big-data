@@ -235,7 +235,7 @@
     "href": "slides/lecture_9_big_data_2.html#survey-session-9",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 9",
-    "text": "Survey: Session 9"
+    "text": "Survey: Session 9\n\n\n\n\n    \n\n\nhttps://forms.gle/1vsCsqc3SzWfSX1f6\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_4_regression_1.html#section",
@@ -417,7 +417,7 @@
     "href": "slides/lecture_4_regression_1.html#survey-session-4",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 4",
-    "text": "Survey: Session 4\n\n\n\n\n\n\nProvost, F., & Fawcett, T. (2013). Data science for business: What you need to know about data mining and data-analytic thinking. \" O’Reilly Media, Inc.\".\n\n\nSchutt, R., & O’Neil, C. (2014). Doing data science. O’Reilly Media. https://www.oreilly.com/library/view/doing-data-science/9781449363871/"
+    "text": "Survey: Session 4\n\n\n\n\n    \n\n\nhttps://forms.gle/GtBNSMdCTZ92ix549\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_0_orga.html#prof.-dr.-gerit-wagner",
@@ -508,7 +508,7 @@
     "href": "slides/lecture_10_organizations.html#survey-session-10",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 10",
-    "text": "Survey: Session 10"
+    "text": "Survey: Session 10\n\n\n\n\n    \n\n\nhttps://forms.gle/Rhr4C47jsAZJyumN6\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_1/test_notebook.html#recommendation",
@@ -697,7 +697,7 @@
     "href": "slides/lecture_8_big_data_1.html#survey-session-8",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 8",
-    "text": "Survey: Session 8\n\n\n\n\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881"
+    "text": "Survey: Session 8\n\n\n\n\n    \n\n\nhttps://forms.gle/hNuAD8UZvC8KYo4a8\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "data/synthetic-datasets.html",
@@ -1481,7 +1481,7 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#group-2-developing-an-analytical-notebook",
     "title": "Analytics & Big Data",
     "section": "Group 2: Developing an analytical notebook",
-    "text": "Group 2: Developing an analytical notebook\nFind a dataset on https://www.kaggle.com/datasets and a corresponding business problem you could address with the data.\nCreate a notebook report.ipynb and draft an analysis structure based on CRISP-DM:\n\nAdd Markdown sections describing what you would do in each phase\nAdd Python code sections for the analyses you intend to run\nIndicate which parts of the analysis are descriptive, predictive, or prescriptive\n\nThen:\n\nDownload a suitable dataset (CSV)\nImport it into your notebook\nStart exploring the data and implement the analyses as far as you get\n\nThe goal is not to complete the analysis, but to begin working with the data.\n\n\nMeeting link: {{ var instructor.online_meeting_url }}\n\n\n\nIf you have a question, put up the help-needed tag and I will come by."
+    "text": "Group 2: Developing an analytical notebook\nFind a dataset on https://www.kaggle.com/datasets and a corresponding business problem you could address with the data.\nCreate a notebook report.ipynb and draft an analysis structure based on CRISP-DM:\n\nAdd Markdown sections describing what you would do in each phase\nAdd Python code sections for the analyses you intend to run\nIndicate which parts of the analysis are descriptive, predictive, or prescriptive\n\nThen:\n\nDownload a suitable dataset (CSV)\nImport it into your notebook\nStart exploring the data and implement the analyses as far as you get\n\nThe goal is not to complete the analysis, but to begin working with the data.\n\n\nMeeting link: https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB\n\n\n\nIf you have a question, put up the help-needed tag and I will come by."
   },
   {
     "objectID": "slides/lecture_1_rise_of_data_analytics.html#jupyter-notebook",
@@ -1502,7 +1502,7 @@
     "href": "slides/lecture_1_rise_of_data_analytics.html#survey-session-1",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 1",
-    "text": "Survey: Session 1\n\n\n\n\n\n\nDavenport, T. H. (2006). Competing on analytics. Harvard Business Review, 84(1), 98–107. https://cs.brown.edu/courses/cs295-11/competing.pdf\n\n\nDell’Acqua, F., McFowland, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., Lakhani, K. R., Bervell, M., Cheng, J., Deshpande, P., Ledovskiy, M., Kalil, J., Kung, K., Lacerda, R., Awada, M., Sariego, P. M., Noriega, R., … Lakhani, M. (2023). Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality (Working Paper Nos. 24-013). Harvard Business School.\n\n\nHendrycks, D., Song, D., Szegedy, C., Lee, H., Gal, Y., Brynjolfsson, E., Li, S., Zou, A., Levine, L., Han, B., et al. (2025). A definition of AGI. In arXiv preprint arXiv:2510.18212.\n\n\nSchmarzo, B. (2016). Big data MBA. Wiley. https://doi.org/10.1002/9781119238881\n\n\nWirth, R., & Hipp, J. (2000). CRISP-DM: Towards a standard process model for data mining. Proceedings of the 4th International Conference on the Practical Applications of Knowledge Discovery and Data Mining, 1, 29–39."
+    "text": "Survey: Session 1\n\n\n\n\n    \n\n\nhttps://forms.gle/Jna4dmyEvcw3cjRPA\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#section",
@@ -1775,7 +1775,7 @@
     "href": "slides/lecture_7_machine_learning_2.html#survey-session-7",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 7",
-    "text": "Survey: Session 7"
+    "text": "Survey: Session 7\n\n\n\n\n    \n\n\nhttps://forms.gle/LghfTrCChfNMLzbJ6\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_3_analytical_data_architecture.html#section",
@@ -2062,7 +2062,7 @@
     "href": "slides/lecture_3_analytical_data_architecture.html#survey-session-3",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 3",
-    "text": "Survey: Session 3\n\n\n\n\n\n\nInmon, W. H. (1995). What is a data warehouse? Prism Tech Topic, 1(1), 1–5.\n\n\nInmon, W. H. (2005). Building the data warehouse. John wiley & sons."
+    "text": "Survey: Session 3\n\n\n\n\n    \n\n\nhttps://forms.gle/dkwMZN4zPT7N3qbx5\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_5_regression_2.html#section",
@@ -2132,7 +2132,7 @@
     "href": "slides/lecture_5_regression_2.html#survey-session-5",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 5",
-    "text": "Survey: Session 5"
+    "text": "Survey: Session 5\n\n\n\n\n    \n\n\nhttps://forms.gle/mVWw3z7ftFn48gDY6\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#section",
@@ -2398,7 +2398,7 @@
     "href": "slides/lecture_6_machine_learning_1.html#survey-session-6",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 6",
-    "text": "Survey: Session 6"
+    "text": "Survey: Session 6\n\n\n\n\n    \n\n\nhttps://forms.gle/AFmpWcopjMtGfNif6\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_2_exploratory_data_analysis.html#section",
@@ -2699,7 +2699,7 @@
     "href": "slides/lecture_2_exploratory_data_analysis.html#survey-session-2",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 2",
-    "text": "Survey: Session 2\n\n\n\n\n\n\nBalijepally, V., Mangalaraj, G., & Iyengar, K. (2011). Are we wielding this hammer correctly? A reflective review of the application of cluster analysis in information systems research. Journal of the Association for Information Systems, 12(5), 1. https://doi.org/10.17705/1jais.00266\n\n\nStrong, D. M., Lee, Y. W., & Wang, R. Y. (1997). Data quality in context. Communications of the ACM, 40(5), 103–110. https://doi.org/10.1145/253769.253804\n\n\nWickham, H. (2014). Tidy data. Journal of Statistical Software, 59, 1–23."
+    "text": "Survey: Session 2\n\n\n\n\n    \n\n\nhttps://forms.gle/XfRmmVbf1yaBwrky9\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "slides/lecture_11_synthesis.html#section",
@@ -2713,7 +2713,7 @@
     "href": "slides/lecture_11_synthesis.html#survey-session-11",
     "title": "Analytics & Big Data",
     "section": "Survey: Session 11",
-    "text": "Survey: Session 11"
+    "text": "Survey: Session 11\n\n\n\n\n    \n\n\nhttps://forms.gle/K4wGvwchWkBsQdhc9\n\n\nNote: Responses may be analyzed and published in anonymized form.\nPlease complete the survey before you leave today — thank you 🙏"
   },
   {
     "objectID": "notes/lecture_1_rise_of_data_analytics.html",

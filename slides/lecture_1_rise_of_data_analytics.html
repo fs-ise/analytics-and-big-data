@@ -7,6 +7,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
@@ -149,26 +150,15 @@
     }
   </style>
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   div.callout-confidential.callout {
@@ -182,15 +172,26 @@
     content: '🔒';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
   }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
   }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   </style>
@@ -231,7 +232,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br></p>
-<div id="2df43493" class="cell" data-execution_count="1">
+<div id="0e4dc5ff" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -436,7 +437,7 @@ This also applies to the data production areas.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><br><br></p>
-<div id="5ae7ce11" class="cell" data-execution_count="2">
+<div id="ab9100aa" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -449,7 +450,7 @@ This also applies to the data production areas.</p>
 <p><br><br></p>
 <div class="highlight_must_learn">
 <p>AI progress often occurs through <strong>algorithmic breakthroughs</strong>, enabling machines to outperform humans in increasingly complex tasks.</p>
-<p>Recent studies suggest that AI creates a <strong>“jagged frontier.”</strong> <span class="citation" data-cites="DellAcquaEtAl2023">(<a href="#/survey-session-1" role="doc-biblioref" onclick="">Dell’Acqua et al., 2023</a>)</span>, i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities.</p>
+<p>Recent studies suggest that AI creates a <strong>“jagged frontier.”</strong> <span class="citation" data-cites="DellAcquaEtAl2023">(<a href="#/references" role="doc-biblioref" onclick="">Dell’Acqua et al., 2023</a>)</span>, i.e., some tasks are well suited to AI, while others that appear similar remain outside its capabilities.</p>
 <ul>
 <li><strong>Within this frontier, AI can strongly enhance knowledge work</strong>, improving productivity and the quality of outputs.</li>
 <li><strong>Outside the frontier, AI can reduce performance</strong>, especially when users rely too heavily on its outputs without verification.</li>
@@ -463,7 +464,7 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
 </div></div>
 
 <aside><div>
-<p>Figure based on the work of <span class="citation" data-cites="HendrycksEtAl2025"><span class="nocase">Hendrycks et al.</span> (<a href="#/survey-session-1" role="doc-biblioref" onclick="">2025</a>)</span> on <em>Artificial General Intelligence</em>.</p>
+<p>Figure based on the work of <span class="citation" data-cites="HendrycksEtAl2025"><span class="nocase">Hendrycks et al.</span> (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span> on <em>Artificial General Intelligence</em>.</p>
 </div></aside></section></section>
 <section>
 <section id="analytics-processes" class="title-slide slide level1 center" data-stack-name="Analytics processes">
@@ -564,7 +565,7 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
 -->
 
 <aside><div>
-<p>Source: <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/survey-session-1" role="doc-biblioref" onclick="">2016</a>)</span>, p.&nbsp;13</p>
+<p>Source: <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>, p.&nbsp;13</p>
 </div></aside></section>
 <section id="example-descriptive-analytics" class="slide level2">
 <h2>Example: Descriptive analytics</h2>
@@ -679,7 +680,7 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="highlight_must_learn">
-<p><strong>CRISP-DM</strong> is a widely used framework that structures data mining and analytics projects <span class="citation" data-cites="WirthHipp2000">(<a href="#/survey-session-1" role="doc-biblioref" onclick="">Wirth &amp; Hipp, 2000</a>)</span>.</p>
+<p><strong>CRISP-DM</strong> is a widely used framework that structures data mining and analytics projects <span class="citation" data-cites="WirthHipp2000">(<a href="#/references" role="doc-biblioref" onclick="">Wirth &amp; Hipp, 2000</a>)</span>.</p>
 <ul>
 <li>Developed by an <strong>industry consortium</strong> (e.g., DaimlerChrysler, SPSS, NCR) to create a common methodology for data mining projects.</li>
 <li>Designed to be <strong>independent of specific industries and technologies</strong>, making it applicable across many domains.</li>
@@ -1211,7 +1212,7 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
 </section>
 <section id="group-1-read-competing-on-analytics" class="slide level2" data-state="hide-menubar">
 <h2>Group 1: Read <em>Competing on Analytics</em></h2>
-<p>Read the <em>Competing on Analytics</em> paper by <span class="citation" data-cites="Davenport2006">Davenport (<a href="#/survey-session-1" role="doc-biblioref" onclick="">2006</a>)</span>. Prepare to discuss the following questions:</p>
+<p>Read the <em>Competing on Analytics</em> paper by <span class="citation" data-cites="Davenport2006">Davenport (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span>. Prepare to discuss the following questions:</p>
 <ol type="1">
 <li><p><strong>What does it mean for a company to “compete on analytics”?</strong><br>
 How is this different from simply using data or reports in decision making?</p></li>
@@ -1239,7 +1240,7 @@ Give examples and explain how analytics creates their competitive advantage.</p>
 <p>The goal is <strong>not to complete the analysis</strong>, but to begin working with the data.</p>
 <div class="fragment">
 <p><br><br></p>
-<p>Meeting link: <a href="{{ var instructor.online_meeting_url }}">{{ var instructor.online_meeting_url }}</a></p>
+<p>Meeting link: <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB</a></p>
 
 </div>
 <aside><div>
@@ -1309,12 +1310,32 @@ Give examples and explain how analytics creates their competitive advantage.</p>
 <aside><div>
 <p>As a student, you can apply for the <a href="https://education.github.com/pack">GitHub Student Developer Pack</a>, which includes <strong>free or extended GitHub Codespaces usage</strong>.</p>
 </div></aside></section>
-<section id="survey-session-1" class="slide level2 smaller scrollable" data-state="hide-menubar">
+<section id="survey-session-1" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 1</h2>
 <p><br><br></p>
 <div style="display:flex; justify-content:center;">
-
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"400","text":"https://forms.gle/Jna4dmyEvcw3cjRPA","width":"400"});
+  script.remove();
+})();
+</script>
+    
 </div>
+<p><br><br></p>
+<p><a href="https://forms.gle/Jna4dmyEvcw3cjRPA">https://forms.gle/Jna4dmyEvcw3cjRPA</a></p>
+
+<aside><div>
+<p>Note: Responses may be analyzed and published in anonymized form.</p>
+<p>Please complete the survey before you leave today — thank you 🙏</p>
+</div></aside></section></section>
+<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
+<h1>References</h1>
+
+
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Davenport2006" class="csl-entry" role="listitem">
 Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
@@ -1332,10 +1353,15 @@ Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1
 Wirth, R., &amp; Hipp, J. (2000). CRISP-DM: Towards a standard process model for data mining. <em>Proceedings of the 4th International Conference on the Practical Applications of Knowledge Discovery and Data Mining</em>, <em>1</em>, 29–39.
 </div>
 </div>
-</section></section>
+</section>
+
 
     </div>
-  </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>

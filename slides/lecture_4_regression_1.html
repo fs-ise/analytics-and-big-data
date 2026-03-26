@@ -6,7 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
@@ -219,15 +220,15 @@
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
   <style>
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -241,6 +242,17 @@
     content: '🛠️';
     background-image: none;
   }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -250,17 +262,6 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
-    background-image: none;
-  }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
     background-image: none;
   }
   </style>
@@ -539,7 +540,7 @@ This makes it well suited for **regression analysis**.
 <section id="load-the-data" class="slide level2">
 <h2>Load the data</h2>
 <p>As a first step, we retrieve the dataset and load it into our Python environment for analysis.</p>
-<div id="d5e233ad" class="cell" data-execution_count="1">
+<div id="59c1ede8" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>USAhousing <span class="op">=</span> pd.read_csv(<span class="st">'../exercises/data/ames.csv'</span>)</span>
@@ -940,7 +941,7 @@ TODO: typically involves: identifying and formatting variables (as already discu
 
 </div>
 <aside><div>
-<p>See <span class="citation" data-cites="ProvostFawcett2013">Provost &amp; Fawcett (<a href="#/survey-session-4" role="doc-biblioref" onclick="">2013</a>)</span>, chapter 3 and 4.</p>
+<p>See <span class="citation" data-cites="ProvostFawcett2013">Provost &amp; Fawcett (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>, chapter 3 and 4.</p>
 </div></aside></section>
 <section id="regression-model-assumptions" class="slide level2">
 <h2>Regression: Model assumptions</h2>
@@ -1801,7 +1802,7 @@ R^2: 0.56</code></pre>
 <p>TOOD: DV, IV, predictor, target, explaining/explained</p>
 
 <aside><div>
-<p>— Source: <span class="citation" data-cites="SchuttONeil2014">Schutt &amp; O’Neil (<a href="#/survey-session-4" role="doc-biblioref" onclick="">2014</a>)</span></p>
+<p>— Source: <span class="citation" data-cites="SchuttONeil2014">Schutt &amp; O’Neil (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p>
 </div></aside></section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
@@ -1811,12 +1812,32 @@ R^2: 0.56</code></pre>
 <li>In practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.</li>
 </ul>
 </section>
-<section id="survey-session-4" class="slide level2 smaller scrollable" data-state="hide-menubar">
+<section id="survey-session-4" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 4</h2>
 <p><br><br></p>
 <div style="display:flex; justify-content:center;">
-
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"400","text":"https://forms.gle/GtBNSMdCTZ92ix549","width":"400"});
+  script.remove();
+})();
+</script>
+    
 </div>
+<p><br><br></p>
+<p><a href="https://forms.gle/GtBNSMdCTZ92ix549">https://forms.gle/GtBNSMdCTZ92ix549</a></p>
+
+<aside><div>
+<p>Note: Responses may be analyzed and published in anonymized form.</p>
+<p>Please complete the survey before you leave today — thank you 🙏</p>
+</div></aside></section></section>
+<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
+<h1>References</h1>
+
+
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-ProvostFawcett2013" class="csl-entry" role="listitem">
 Provost, F., &amp; Fawcett, T. (2013). <em>Data science for business: What you need to know about data mining and data-analytic thinking</em>. " O’Reilly Media, Inc.".
@@ -1825,9 +1846,13 @@ Provost, F., &amp; Fawcett, T. (2013). <em>Data science for business: What you n
 Schutt, R., &amp; O’Neil, C. (2014). <em>Doing data science</em>. O’Reilly Media. <a href="https://www.oreilly.com/library/view/doing-data-science/9781449363871/">https://www.oreilly.com/library/view/doing-data-science/9781449363871/</a>
 </div>
 </div>
-</section></section>
+</section>
     </div>
-  </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>
