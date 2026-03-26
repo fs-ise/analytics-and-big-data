@@ -62,7 +62,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cc75b09f5250c27d17e89c6d0d56fedc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-12acf3a2dea5fb6071b1261511aaf884.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -92,17 +92,6 @@ div.csl-indent {
   }
 }</script>
 <style>
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
-  background-image: none;
-}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -112,6 +101,17 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-objective.callout {
@@ -272,6 +272,7 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </tr>
 </tbody>
 </table>
+<p>TODO: prepare better explanations of interval/ratio/… TODO: think how the second part of clustering should be presented (hierarchical; distance measures). It was covered (too) quickly in the last session.</p>
 <!--
 Contents based on: [EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf](/home/gerit/workspace/projects/bda/nextcloud/lecture_3/EESYS_BIA_L02_Talking_about_data_2024_10_23.pdf)
 
@@ -304,6 +305,7 @@ After this session, students should be able to:
 <li>Need to develop the intuition and clear understanding of how data should be structured.</li>
 <li>Go back to the examples: and highlight values, variables, observations. Define observational unit. The wide format is an output in a report, not an input. Observational unit: <strong>Quarterly sales per region</strong> (implicitly: across years)</li>
 </ul>
+<p><strong>Key learning</strong>: Data structures for analytics may tolerate redundancies! -&gt; Illustrate this on the whiteboard: ERD/ERM: different rationale (ACID): preventing inconsistent states in operational databases -&gt; analytical data: often extracted (copied), will not be changed by operational systems. may not even be persisted (just used in-memory for the analysis) -&gt; in <em>tidy data</em>, there is no need for assigning unique IDs. Duplicates are a concern, but unique IDs are not enough to conclude that there are not duplicates.</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="data-integration" class="level2">
@@ -317,8 +319,13 @@ After this session, students should be able to:
 <li>Fraud detection: prediction of irregular and fraudulent transactions can be very accurate, but the attackers goal is to behave in a way that is hard to anticipate. Prediction may focus on identifying cases that are “not behaving regularly” (rather than identifying generalizable patterns)</li>
 </ul>
 </section>
+<section id="edaclustering" class="level2">
+<h2 class="anchored" data-anchor-id="edaclustering">EDA/Clustering</h2>
+<p>TODO: Illustrate how k-means clustering works for a given k (random centroids/assignments, recalculation of centroids), using different colors</p>
+</section>
 <section id="exercise" class="level2">
 <h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>TODO: include an example for tidying data with different observational units (e.g., different levels like department sales vs.&nbsp;package deliveries to customers)</p>
 <p>Note: focus on pandas df (not so much on other Python datatypes) Possible extension: financial API (code for the api call should be included)</p>
 <p>Implementation in Python/pandas: level of difficulty: use the library documentation vs.&nbsp;use ChatGPT</p>
 <p>Possible extensions: data structuring with tables requiring transpose</p>
