@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 2: Analytical data architecture – Analytics &amp; Big Data</title>
+<title>Synthetic datasets – Analytics &amp; Big Data</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,27 +23,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -114,17 +129,6 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -134,6 +138,17 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -207,7 +222,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 2: Analytical data architecture</h1>
+<h1 class="title">Synthetic datasets</h1>
 </div>
 
 
@@ -224,44 +239,135 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="exercise-4-regresssion" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-regresssion">Exercise 4 (Regresssion)</h2>
+<p><strong>TODO</strong>: maybe even simulate names/employee-ids?</p>
+<div id="64284821-0897-454f-860f-3f1fe6d239a5" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>departments <span class="op">=</span> np.random.choice([<span class="st">"Sales"</span>, <span class="st">"IT"</span>, <span class="st">"HR"</span>], size<span class="op">=</span>n, p<span class="op">=</span>[<span class="fl">0.4</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>])</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Core features</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>experience <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="dv">21</span>, n)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>training_hours <span class="op">=</span> np.random.normal(<span class="dv">40</span>, <span class="dv">10</span>, n).clip(<span class="dv">5</span>, <span class="dv">80</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>team_size <span class="op">=</span> np.random.randint(<span class="dv">3</span>, <span class="dv">15</span>, n)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>remote_share <span class="op">=</span> np.random.beta(<span class="fl">2.2</span>, <span class="fl">2.0</span>, n)  <span class="co"># slightly balanced around moderate remote work</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Department-specific manager quality distributions</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># IT has more high-quality managers on average</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>manager_quality <span class="op">=</span> np.zeros(n, dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, d <span class="kw">in</span> <span class="bu">enumerate</span>(departments):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> d <span class="op">==</span> <span class="st">"Sales"</span>:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        manager_quality[i] <span class="op">=</span> np.random.choice([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], p<span class="op">=</span>[<span class="fl">0.12</span>, <span class="fl">0.23</span>, <span class="fl">0.30</span>, <span class="fl">0.22</span>, <span class="fl">0.13</span>])</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> d <span class="op">==</span> <span class="st">"IT"</span>:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        manager_quality[i] <span class="op">=</span> np.random.choice([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], p<span class="op">=</span>[<span class="fl">0.04</span>, <span class="fl">0.08</span>, <span class="fl">0.18</span>, <span class="fl">0.36</span>, <span class="fl">0.34</span>])</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:  <span class="co"># HR</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        manager_quality[i] <span class="op">=</span> np.random.choice([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], p<span class="op">=</span>[<span class="fl">0.18</span>, <span class="fl">0.28</span>, <span class="fl">0.27</span>, <span class="fl">0.17</span>, <span class="fl">0.10</span>])</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>salary <span class="op">=</span> <span class="dv">30000</span> <span class="op">+</span> experience <span class="op">*</span> <span class="dv">2000</span> <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5000</span>, n)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>dept_effect <span class="op">=</span> {<span class="st">"Sales"</span>: <span class="dv">10</span>, <span class="st">"IT"</span>: <span class="dv">5</span>, <span class="st">"HR"</span>: <span class="dv">0</span>}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>dept_numeric <span class="op">=</span> np.array([dept_effect[d] <span class="cf">for</span> d <span class="kw">in</span> departments])</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Centered terms for interactions</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>training_c <span class="op">=</span> training_hours <span class="op">-</span> training_hours.mean()</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>remote_c <span class="op">=</span> remote_share <span class="op">-</span> remote_share.mean()</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Use department-specific centering for manager quality so the interaction</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># is more visible within each department subset</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>manager_c_within <span class="op">=</span> np.zeros(n)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> [<span class="st">"Sales"</span>, <span class="st">"IT"</span>, <span class="st">"HR"</span>]:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    idx <span class="op">=</span> departments <span class="op">==</span> d</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    manager_c_within[idx] <span class="op">=</span> manager_quality[idx] <span class="op">-</span> manager_quality[idx].mean()</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Hidden interaction: training works better with good managers</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>training_manager_interaction <span class="op">=</span> <span class="fl">0.16</span> <span class="op">*</span> training_c <span class="op">*</span> manager_c_within</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Main effect of remote is small overall</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>remote_main <span class="op">=</span> <span class="op">-</span><span class="fl">0.8</span> <span class="op">*</span> remote_c</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Department-specific direct remote effects:</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Sales/HR somewhat negative, IT slightly positive</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>remote_dept_main <span class="op">=</span> {<span class="st">"Sales"</span>: <span class="op">-</span><span class="fl">4.0</span>, <span class="st">"IT"</span>: <span class="fl">2.5</span>, <span class="st">"HR"</span>: <span class="op">-</span><span class="fl">5.0</span>}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>remote_dept_component <span class="op">=</span> np.array(</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    [remote_dept_main[d] <span class="cf">for</span> d <span class="kw">in</span> departments]</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>) <span class="op">*</span> remote_c</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the interaction more evident, but keep total remote slopes moderate</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpretation:</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co"># - In IT, good managers make remote work work well</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co"># - In Sales/HR, weak managers make remote work more problematic</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>remote_interaction_strength <span class="op">=</span> {<span class="st">"Sales"</span>: <span class="fl">9.0</span>, <span class="st">"IT"</span>: <span class="fl">12.0</span>, <span class="st">"HR"</span>: <span class="fl">10.0</span>}</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>remote_manager_interaction <span class="op">=</span> np.array(</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    [remote_interaction_strength[d] <span class="cf">for</span> d <span class="kw">in</span> departments]</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>) <span class="op">*</span> remote_c <span class="op">*</span> manager_c_within</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Stronger direct manager-quality effect in IT so that it aligns with the</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co"># more favorable remote-work context there</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>manager_main_strength <span class="op">=</span> {<span class="st">"Sales"</span>: <span class="fl">4.8</span>, <span class="st">"IT"</span>: <span class="fl">6.8</span>, <span class="st">"HR"</span>: <span class="fl">4.0</span>}</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>manager_component <span class="op">=</span> np.array(</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    [manager_main_strength[d] <span class="cf">for</span> d <span class="kw">in</span> departments]</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>) <span class="op">*</span> manager_quality</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>performance <span class="op">=</span> (</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="dv">50</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="fl">1.8</span> <span class="op">*</span> experience</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="fl">0.9</span> <span class="op">*</span> training_hours</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="fl">0.0004</span> <span class="op">*</span> salary</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="fl">1.4</span> <span class="op">*</span> team_size</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> manager_component</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> remote_main</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> remote_dept_component</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> training_manager_interaction</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> remote_manager_interaction</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> dept_numeric</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">9</span>, n)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    <span class="st">"performance"</span>: performance,</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">"experience"</span>: experience,</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="st">"training_hours"</span>: training_hours,</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salary"</span>: salary,</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="st">"remote_share"</span>: remote_share,</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="st">"team_size"</span>: team_size,</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="st">"manager_quality"</span>: manager_quality,</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="st">"department"</span>: departments</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"employee_performance_data.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.groupby(<span class="st">"department"</span>)[[<span class="st">"manager_quality"</span>, <span class="st">"remote_share"</span>, <span class="st">"performance"</span>]].mean())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   performance  experience  training_hours        salary  remote_share  \
+0   159.151624          12       32.603812  60215.917186      0.879245   
+1   168.470117          19       33.507527  63505.934060      0.182947   
+2   164.861349          14       31.514793  54472.871760      0.552633   
+3   159.413368           2       30.637550  34311.578227      0.513527   
+4   145.708783           7       43.331733  49572.581421      0.663745   
+
+   team_size  manager_quality department  
+0         11                3      Sales  
+1          4                5         HR  
+2          7                3         IT  
+3         14                5         IT  
+4          5                2      Sales  
+            manager_quality  remote_share  performance
+department                                            
+HR                 2.650794      0.498049   148.669269
+IT                 3.953704      0.515782   170.112483
+Sales              3.162791      0.585727   162.632426</code></pre>
 </div>
-<div class="callout-title-container flex-fill">
-Note
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO</p>
-<p>Refer to the <span class="citation" data-cites="Davenport2006">Davenport (<a href="#ref-Davenport2006" role="doc-biblioref">2006</a>)</span> case: competing on analytics requires organizations to go beyond simple descriptive statistics. As such, traditional DWH may be the (historical) foundation for analytics.</p>
-<p>Clarify: OLTP &lt;-&gt; OLAP OLTP -&gt; ETL -&gt; DWH -&gt; OLAP</p>
-<p>Distinguish fact and dimension tables</p>
-<p>Learning objective: writing SQL queries!?</p>
-<p>Illustrate: OLAP as a “systems approach”, notebooks as a more flexible data science approach</p>
-<p>Rotating hypercube: similar to rotating in tidy-data preparation?</p>
-<p>Extract exercises?</p>
-<p>TBD: complete the exercise on paper? provide a PDF version?</p>
-</div>
-</div>
-<!--
-::: callout-note
-See /home/gerit/workspace/projects/abd/nextcloud/Material/ABD/exercises/Solutions_DW-Modelling.pdf
-TODO: existing exercise sheet?
-https://github.com/ShantanilBagchi/DataCamp/blob/master/SQL%20Courses/Database%20Design/Solutions.md
-https://gitlab.ost.ch/db/datana/-/blob/master/Uebungen/02_DW_OLAP/README.adoc
-:::
--->
 
 
+</section>
 
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Davenport2006" class="csl-entry" role="listitem">
-Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em>, <em>84</em>(1), 98–107. <a href="https://cs.brown.edu/courses/cs295-11/competing.pdf">https://cs.brown.edu/courses/cs295-11/competing.pdf</a>
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -667,4 +773,4 @@ Davenport, T. H. (2006). Competing on analytics. <em>Harvard Business Review</em
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/notes/lecture_3_analytical_data_architecture.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.dev/fs-ise/big-data-analytics/blob/main/data/synthetic-dataset_exercise4_regression.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

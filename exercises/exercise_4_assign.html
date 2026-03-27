@@ -23,10 +23,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="exercise_4_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="exercise_4_files/libs/clipboard/clipboard.min.js"></script>
 <script src="exercise_4_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="exercise_4_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="exercise_4_files/libs/quarto-html/popper.min.js"></script>
@@ -37,6 +72,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="exercise_4_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="exercise_4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="exercise_4_files/libs/bootstrap/bootstrap-71db1584b3c9bb823602d399ce5b7aa0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -66,51 +104,955 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="section" class="level2" data-menu-title="Learning objectives" data-state="hide-menubar">
+<h2 data-menu-title="Learning objectives" data-state="hide-menubar" class="anchored" data-anchor-id="section"></h2>
 <div class="learning-objectives">
-<p>Describe how regression models are implemented in Python.</p>
 <ul>
-<li>Implement and interpret a regression model in Python using standard libraries.</li>
-<li>Evaluate model performance using appropriate regression metrics.</li>
-<li>Explain how regression modeling fits into the CRISP-DM process, including deployment of trained models.</li>
+<li><strong>Fit</strong> and <strong>interpret</strong> linear regression models in Python using a simulated company dataset.</li>
+<li><strong>Compare</strong> a global regression model with department-specific subgroup models.</li>
+<li><strong>Report</strong> regression results using coefficients, R², MSE, and regression tables.</li>
+<li><strong>Reflect</strong> on limitations of regression models, including heterogeneity, omitted interactions, and assumptions.</li>
 </ul>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+</section>
+<section id="focus-of-this-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="focus-of-this-notebook">Focus of this notebook</h2>
+<p>This notebook intentionally places <strong>less emphasis on data preparation</strong> because data understanding and preparation were covered in previous sessions.</p>
+<p>The main focus here is on:</p>
+<ul>
+<li>fitting regression models</li>
+<li>interpreting coefficients and tables</li>
+<li>comparing subgroup models</li>
+<li>saving and loading a model</li>
+<li>reflecting on assumptions and limitations</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="How to use this notebook">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>How to use this notebook
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>For some parts, you can choose between:</p>
 <ul>
-<li>start with one simple example</li>
+<li>a <strong>from-scratch path</strong></li>
+<li>a <strong>scaffolded path</strong> with <code>TODO</code>s and code skeletons</li>
 </ul>
-<p>TBD: include exploration of a dataset on kaggle follow CRISP-DM to design notebooks (groups, present to the class) At the end: use joblib to save and load models (to make a prediction) - illustrating the deployment phase of CRISP-DM</p>
-<ul>
-<li>see /home/gerit/workspace/projects/bda/nextcloud/Material/business-analytics-fau/4_Regression.ipynb (plus solutions)</li>
-<li>https://github.com/krishnaik06/Multiple-Linear-Regression/tree/master</li>
-</ul>
-<p>https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/pages/linear-regression/assignment-2/</p>
+<p>This makes it possible to adapt the exercise to different levels of support.</p>
 </div>
 </div>
-<section id="exam-prep" class="level2">
-<h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
-<p>TODO : include specific questions/tasks that could be included in the exam.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Session 4 survey">
+</section>
+<section id="business-understanding" class="level1">
+<h1>Business understanding</h1>
+<section id="case-employee-performance-in-a-company" class="level2">
+<h2 class="anchored" data-anchor-id="case-employee-performance-in-a-company">Case: Employee performance in a company</h2>
+<p>You are a business analyst working for a company that wants to understand which factors are associated with employee performance.</p>
+<p>The company is interested in questions such as:</p>
+<ul>
+<li>Does experience matter?</li>
+<li>Does training improve performance?</li>
+<li>Is remote work associated with higher or lower performance?</li>
+<li>Do these relationships differ across departments?</li>
+</ul>
+<p>The target variable is:</p>
+<ul>
+<li><code>performance</code>: an employee performance score</li>
+</ul>
+<p>Potential predictors include:</p>
+<ul>
+<li><code>experience</code>: years of work experience</li>
+<li><code>training_hours</code>: annual training hours</li>
+<li><code>salary</code>: annual salary in EUR</li>
+<li><code>remote_share</code>: share of working time spent remotely (between 0 and 1)</li>
+<li><code>team_size</code>: size of the employee’s team</li>
+<li><code>manager_quality</code>: manager quality on a 1–5 scale</li>
+<li><code>department</code>: department (<code>Sales</code>, <code>IT</code>, <code>HR</code>)</li>
+</ul>
+</section>
+</section>
+<section id="setup-and-synthetic-dataset" class="level1">
+<h1>Setup and synthetic dataset</h1>
+<section id="imports" class="level2">
+<h2 class="anchored" data-anchor-id="imports">Imports</h2>
+<div id="d3ad4fa1" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score, mean_squared_error</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="create-a-synthetic-company-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-synthetic-company-dataset">Create a synthetic company dataset</h2>
+<p>The following chunk generates a realistic but simulated company dataset and saves it as <code>employee_performance_data.csv</code>.</p>
+<div id="9d5ebc9c" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>departments <span class="op">=</span> rng.choice([<span class="st">"Sales"</span>, <span class="st">"IT"</span>, <span class="st">"HR"</span>], size<span class="op">=</span>n, p<span class="op">=</span>[<span class="fl">0.43</span>, <span class="fl">0.35</span>, <span class="fl">0.22</span>])</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>experience <span class="op">=</span> rng.integers(<span class="dv">0</span>, <span class="dv">21</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>manager_quality <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">6</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>team_size <span class="op">=</span> rng.integers(<span class="dv">3</span>, <span class="dv">15</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>training_base <span class="op">=</span> rng.normal(<span class="dv">35</span>, <span class="dv">10</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>training_adjustment <span class="op">=</span> np.select(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    [departments <span class="op">==</span> <span class="st">"Sales"</span>, departments <span class="op">==</span> <span class="st">"IT"</span>, departments <span class="op">==</span> <span class="st">"HR"</span>],</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>],</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    default<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>training_hours <span class="op">=</span> np.clip(training_base <span class="op">+</span> training_adjustment, <span class="dv">5</span>, <span class="dv">80</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>remote_base <span class="op">=</span> rng.beta(<span class="dv">2</span>, <span class="dv">2</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>remote_adjustment <span class="op">=</span> np.select(</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    [departments <span class="op">==</span> <span class="st">"Sales"</span>, departments <span class="op">==</span> <span class="st">"IT"</span>, departments <span class="op">==</span> <span class="st">"HR"</span>],</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    [<span class="op">-</span><span class="fl">0.08</span>, <span class="fl">0.10</span>, <span class="op">-</span><span class="fl">0.02</span>],</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    default<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>remote_share <span class="op">=</span> np.clip(remote_base <span class="op">+</span> remote_adjustment, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>salary <span class="op">=</span> (</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="dv">32000</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> experience <span class="op">*</span> <span class="dv">2200</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> np.select(</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        [departments <span class="op">==</span> <span class="st">"Sales"</span>, departments <span class="op">==</span> <span class="st">"IT"</span>, departments <span class="op">==</span> <span class="st">"HR"</span>],</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">7000</span>, <span class="dv">9000</span>, <span class="dv">3000</span>],</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        default<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> rng.normal(<span class="dv">0</span>, <span class="dv">4500</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>coefficients <span class="op">=</span> {</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sales"</span>: {</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"intercept"</span>: <span class="dv">60</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"experience"</span>: <span class="fl">1.2</span>,</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">"training_hours"</span>: <span class="fl">0.75</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">"salary"</span>: <span class="fl">0.0006</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">"remote_share"</span>: <span class="op">-</span><span class="fl">8.5</span>,</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">"team_size"</span>: <span class="fl">1.65</span>,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">"manager_quality"</span>: <span class="fl">5.5</span>,</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HR"</span>: {</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">"intercept"</span>: <span class="dv">60</span>,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">"experience"</span>: <span class="fl">2.5</span>,</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">"training_hours"</span>: <span class="fl">1.00</span>,</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">"salary"</span>: <span class="fl">0.0002</span>,</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        <span class="st">"remote_share"</span>: <span class="op">-</span><span class="fl">11.5</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"team_size"</span>: <span class="fl">1.40</span>,</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"manager_quality"</span>: <span class="fl">2.8</span>,</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">"IT"</span>: {</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">"intercept"</span>: <span class="dv">60</span>,</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        <span class="st">"experience"</span>: <span class="fl">2.2</span>,</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">"training_hours"</span>: <span class="fl">1.03</span>,</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">"salary"</span>: <span class="fl">0.0002</span>,</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"remote_share"</span>: <span class="fl">5.8</span>,</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        <span class="st">"team_size"</span>: <span class="fl">1.20</span>,</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"manager_quality"</span>: <span class="fl">6.0</span>,</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>performance <span class="op">=</span> []</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, dept <span class="kw">in</span> <span class="bu">enumerate</span>(departments):</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> coefficients[dept]</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    hidden_interaction <span class="op">=</span> <span class="fl">0.18</span> <span class="op">*</span> training_hours[i] <span class="op">*</span> manager_quality[i]</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    mild_nonlinearity <span class="op">=</span> <span class="op">-</span><span class="dv">10</span> <span class="op">*</span> (remote_share[i] <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    noise <span class="op">=</span> rng.normal(<span class="dv">0</span>, <span class="dv">18</span>)</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    y_i <span class="op">=</span> (</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        c[<span class="st">"intercept"</span>]</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> c[<span class="st">"experience"</span>] <span class="op">*</span> experience[i]</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> c[<span class="st">"training_hours"</span>] <span class="op">*</span> training_hours[i]</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> c[<span class="st">"salary"</span>] <span class="op">*</span> salary[i]</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> c[<span class="st">"remote_share"</span>] <span class="op">*</span> remote_share[i]</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> c[<span class="st">"team_size"</span>] <span class="op">*</span> team_size[i]</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> c[<span class="st">"manager_quality"</span>] <span class="op">*</span> manager_quality[i]</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> hidden_interaction</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> mild_nonlinearity</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> noise</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    performance.append(y_i)</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>performance <span class="op">=</span> np.array(performance)</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>df_generated <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        <span class="st">"performance"</span>: performance,</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>        <span class="st">"experience"</span>: experience,</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>        <span class="st">"training_hours"</span>: training_hours.<span class="bu">round</span>(<span class="dv">1</span>),</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>        <span class="st">"salary"</span>: salary.<span class="bu">round</span>(<span class="dv">0</span>),</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>        <span class="st">"remote_share"</span>: remote_share.<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>        <span class="st">"team_size"</span>: team_size,</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>        <span class="st">"manager_quality"</span>: manager_quality,</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>        <span class="st">"department"</span>: departments,</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>df_generated.to_csv(<span class="st">"employee_performance_data.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>df_generated.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">performance</th>
+<th data-quarto-table-cell-role="th">experience</th>
+<th data-quarto-table-cell-role="th">training_hours</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">remote_share</th>
+<th data-quarto-table-cell-role="th">team_size</th>
+<th data-quarto-table-cell-role="th">manager_quality</th>
+<th data-quarto-table-cell-role="th">department</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>168.639791</td>
+<td>12</td>
+<td>42.0</td>
+<td>60280.0</td>
+<td>0.59</td>
+<td>13</td>
+<td>1</td>
+<td>IT</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>227.407570</td>
+<td>16</td>
+<td>54.3</td>
+<td>72849.0</td>
+<td>0.18</td>
+<td>8</td>
+<td>1</td>
+<td>IT</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>115.046660</td>
+<td>15</td>
+<td>14.2</td>
+<td>67754.0</td>
+<td>0.75</td>
+<td>14</td>
+<td>2</td>
+<td>HR</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>183.799718</td>
+<td>2</td>
+<td>28.0</td>
+<td>50646.0</td>
+<td>0.35</td>
+<td>12</td>
+<td>5</td>
+<td>IT</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>159.246723</td>
+<td>17</td>
+<td>30.8</td>
+<td>71735.0</td>
+<td>0.72</td>
+<td>10</td>
+<td>3</td>
+<td>Sales</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-dataset">Load the dataset</h2>
+<div id="d8ba9159" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"employee_performance_data.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">performance</th>
+<th data-quarto-table-cell-role="th">experience</th>
+<th data-quarto-table-cell-role="th">training_hours</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">remote_share</th>
+<th data-quarto-table-cell-role="th">team_size</th>
+<th data-quarto-table-cell-role="th">manager_quality</th>
+<th data-quarto-table-cell-role="th">department</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>168.639791</td>
+<td>12</td>
+<td>42.0</td>
+<td>60280.0</td>
+<td>0.59</td>
+<td>13</td>
+<td>1</td>
+<td>IT</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>227.407570</td>
+<td>16</td>
+<td>54.3</td>
+<td>72849.0</td>
+<td>0.18</td>
+<td>8</td>
+<td>1</td>
+<td>IT</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>115.046660</td>
+<td>15</td>
+<td>14.2</td>
+<td>67754.0</td>
+<td>0.75</td>
+<td>14</td>
+<td>2</td>
+<td>HR</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>183.799718</td>
+<td>2</td>
+<td>28.0</td>
+<td>50646.0</td>
+<td>0.35</td>
+<td>12</td>
+<td>5</td>
+<td>IT</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>159.246723</td>
+<td>17</td>
+<td>30.8</td>
+<td>71735.0</td>
+<td>0.72</td>
+<td>10</td>
+<td>3</td>
+<td>Sales</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="variable-overview" class="level2">
+<h2 class="anchored" data-anchor-id="variable-overview">Variable overview</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>performance</code></td>
+<td>employee performance score</td>
+<td>target variable</td>
+</tr>
+<tr class="even">
+<td><code>experience</code></td>
+<td>years of experience</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>training_hours</code></td>
+<td>annual training hours</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>salary</code></td>
+<td>annual salary in EUR</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>remote_share</code></td>
+<td>share of remote work between 0 and 1</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>team_size</code></td>
+<td>size of employee team</td>
+<td>numeric</td>
+</tr>
+<tr class="odd">
+<td><code>manager_quality</code></td>
+<td>manager quality rating from 1 to 5</td>
+<td>numeric</td>
+</tr>
+<tr class="even">
+<td><code>department</code></td>
+<td>employee department</td>
+<td>categorical</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quick-inspection" class="level2">
+<h2 class="anchored" data-anchor-id="quick-inspection">Quick inspection</h2>
+<div id="8907dc78" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">performance</th>
+<th data-quarto-table-cell-role="th">experience</th>
+<th data-quarto-table-cell-role="th">training_hours</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">remote_share</th>
+<th data-quarto-table-cell-role="th">team_size</th>
+<th data-quarto-table-cell-role="th">manager_quality</th>
+<th data-quarto-table-cell-role="th">department</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">count</th>
+<td>300.000000</td>
+<td>300.000000</td>
+<td>300.000000</td>
+<td>300.000000</td>
+<td>300.000000</td>
+<td>300.000000</td>
+<td>300.000000</td>
+<td>300</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">unique</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">top</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Sales</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">freq</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>130</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">mean</th>
+<td>186.736399</td>
+<td>10.300000</td>
+<td>40.405333</td>
+<td>61697.550000</td>
+<td>0.498867</td>
+<td>8.573333</td>
+<td>3.010000</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">std</th>
+<td>32.951798</td>
+<td>6.237496</td>
+<td>10.419744</td>
+<td>14599.031371</td>
+<td>0.242258</td>
+<td>3.514607</td>
+<td>1.359926</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">min</th>
+<td>105.395072</td>
+<td>0.000000</td>
+<td>5.000000</td>
+<td>31842.000000</td>
+<td>0.000000</td>
+<td>3.000000</td>
+<td>1.000000</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">25%</th>
+<td>165.555584</td>
+<td>5.000000</td>
+<td>33.625000</td>
+<td>50158.250000</td>
+<td>0.300000</td>
+<td>6.000000</td>
+<td>2.000000</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">50%</th>
+<td>186.704640</td>
+<td>11.000000</td>
+<td>41.550000</td>
+<td>61904.500000</td>
+<td>0.500000</td>
+<td>8.000000</td>
+<td>3.000000</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">75%</th>
+<td>207.261174</td>
+<td>16.000000</td>
+<td>47.000000</td>
+<td>73109.000000</td>
+<td>0.680000</td>
+<td>12.000000</td>
+<td>4.000000</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">max</th>
+<td>291.138323</td>
+<td>20.000000</td>
+<td>71.800000</td>
+<td>95453.000000</td>
+<td>1.000000</td>
+<td>14.000000</td>
+<td>5.000000</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-a-baseline-regression" class="level1">
+<h1>Part A — Baseline regression</h1>
+<section id="task-a1-fit-a-global-regression-model-from-scratch" class="level2">
+<h2 class="anchored" data-anchor-id="task-a1-fit-a-global-regression-model-from-scratch">Task A1: Fit a global regression model from scratch</h2>
+<p>Use the full dataset to estimate a linear regression model for <code>performance</code>.</p>
+<p>Your tasks:</p>
+<ol type="1">
+<li>Load the dataset.</li>
+<li>One-hot encode <code>department</code>.</li>
+<li>Define <code>X</code> and <code>y</code>.</li>
+<li>Fit a <code>LinearRegression()</code> model.</li>
+<li>Print the coefficients and intercept.</li>
+</ol>
+<section id="path-1-from-scratch" class="level3">
+<h3 class="anchored" data-anchor-id="path-1-from-scratch">Path 1: from scratch</h3>
+<div id="8b444388" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Suggested objects: df_model, X, y, model, coef_df</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="path-2-scaffolded-version" class="level3">
+<h3 class="anchored" data-anchor-id="path-2-scaffolded-version">Path 2: scaffolded version</h3>
+<div id="9f88321d" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: one-hot encode department</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># df_model = ...</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: define X and y</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># X = ...</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># y = ...</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: fit the model</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># model = ...</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># model.fit(...)</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: create a coefficient table</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># coef_df = pd.DataFrame({</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#     "variable": ...,</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#     "coefficient": ...</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># })</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># print(coef_df)</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Intercept:", ...)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="task-a2-interpret-the-coefficients" class="level2">
+<h2 class="anchored" data-anchor-id="task-a2-interpret-the-coefficients">Task A2: Interpret the coefficients</h2>
+<p>Answer the following questions in Markdown or in a separate text cell.</p>
+<ol type="1">
+<li>Which variables have a positive association with performance?</li>
+<li>Which variables have a negative association with performance?</li>
+<li>Which coefficient seems largest in practical terms?</li>
+<li>How would you interpret the coefficient of <code>training_hours</code>?</li>
+<li>How should dummy variables such as <code>department_IT</code> or <code>department_Sales</code> be interpreted?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Interpretation reminder">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Session 4 survey
+<span class="screen-reader-only">Note</span>Interpretation reminder
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Before you wrap up, please complete the Session 4 survey here: <a href="https://forms.gle/GtBNSMdCTZ92ix549" target="_blank">https://forms.gle/GtBNSMdCTZ92ix549</a>. Thank you 🙏</p>
+<p>A coefficient expresses the expected change in the dependent variable when the predictor increases by one unit, <strong>holding the other variables constant</strong>.</p>
 </div>
 </div>
+</section>
+</section>
+<section id="part-b-regression-table-and-evaluation" class="level1">
+<h1>Part B — Regression table and evaluation</h1>
+<section id="task-b1-estimate-the-model-with-statsmodels" class="level2">
+<h2 class="anchored" data-anchor-id="task-b1-estimate-the-model-with-statsmodels">Task B1: Estimate the model with <code>statsmodels</code></h2>
+<p>Use <code>statsmodels</code> to create a regression table.</p>
+<section id="scaffolded-version" class="level3">
+<h3 class="anchored" data-anchor-id="scaffolded-version">Scaffolded version</h3>
+<div id="a87cb66a" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: one-hot encode department</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># df_model = ...</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: define X and y</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># X = ...</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># y = ...</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: add constant</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># X = ...</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: fit OLS regression</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># model_sm = ...</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: print the summary</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># print(model_sm.summary())</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="task-b2-interpret-the-regression-table" class="level2">
+<h2 class="anchored" data-anchor-id="task-b2-interpret-the-regression-table">Task B2: Interpret the regression table</h2>
+<p>Focus on the following parts of the output:</p>
+<ul>
+<li>coefficient estimates</li>
+<li>p-values</li>
+<li>confidence intervals</li>
+<li>R²</li>
+<li>adjusted R²</li>
+</ul>
+<p>Questions:</p>
+<ol type="1">
+<li>Which variables are statistically significant?</li>
+<li>Which variables may matter in practice even if statistical significance is weaker?</li>
+<li>What does R² tell you in this notebook?</li>
+<li>Why should we be careful not to treat R² as the only indicator of model quality?</li>
+</ol>
+</section>
+<section id="task-b3-compute-in-sample-predictions-and-basic-fit-measures" class="level2">
+<h2 class="anchored" data-anchor-id="task-b3-compute-in-sample-predictions-and-basic-fit-measures">Task B3: Compute in-sample predictions and basic fit measures</h2>
+<p>We are <strong>not</strong> using a train/test split in this notebook. Instead, compute predictions and fit measures for the current sample.</p>
+<section id="scaffolded-version-1" class="level3">
+<h3 class="anchored" data-anchor-id="scaffolded-version-1">Scaffolded version</h3>
+<div id="bd5cdf86" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: create predictions based on the fitted sklearn model</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y_pred = ...</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: compute R² and MSE</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># r2 = ...</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mse = ...</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print("R²:", r2)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print("MSE:", mse)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Important limitation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Important limitation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These measures are based on the <strong>same data</strong> used to fit the model. They therefore say something about fit within the current sample, but not yet about generalization to new data.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="part-c-subgroup-analysis-does-one-model-fit-all-departments" class="level1">
+<h1>Part C — Subgroup analysis: does one model fit all departments?</h1>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>A single model for all employees may hide important differences between departments.</p>
+<p>In this part, estimate <strong>separate regressions</strong> for <code>Sales</code>, <code>IT</code>, and <code>HR</code>.</p>
+</section>
+<section id="task-c1-department-specific-regressions" class="level2">
+<h2 class="anchored" data-anchor-id="task-c1-department-specific-regressions">Task C1: Department-specific regressions</h2>
+<section id="path-1-loop-based-solution" class="level3">
+<h3 class="anchored" data-anchor-id="path-1-loop-based-solution">Path 1: loop-based solution</h3>
+<div id="a1f36f59" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dept <span class="kw">in</span> df[<span class="st">"department"</span>].unique():</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: subset data for one department</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># df_sub = ...</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: one-hot encode if needed</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># df_sub_model = ...</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: define X_sub and y_sub</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># X_sub = ...</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># y_sub = ...</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: add constant and fit OLS</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># X_sub = ...</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># model_sub = ...</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># results[dept] = model_sub</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(f"\n=== Regression results for {dept} ===")</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(model_sub.summary())</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="path-2-start-from-this-template" class="level3">
+<h3 class="anchored" data-anchor-id="path-2-start-from-this-template">Path 2: start from this template</h3>
+<div id="aae19e74" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dept <span class="kw">in</span> df[<span class="st">"department"</span>].unique():</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    df_sub <span class="op">=</span> df[df[<span class="st">"department"</span>] <span class="op">==</span> dept]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    df_sub_model <span class="op">=</span> pd.get_dummies(df_sub, columns<span class="op">=</span>[<span class="st">"department"</span>], drop_first<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    X_sub <span class="op">=</span> df_sub_model.drop(columns<span class="op">=</span>[<span class="st">"performance"</span>])</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    y_sub <span class="op">=</span> df_sub_model[<span class="st">"performance"</span>]</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    X_sub <span class="op">=</span> sm.add_constant(X_sub)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    model_sub <span class="op">=</span> sm.OLS(y_sub, X_sub).fit()</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    results[dept] <span class="op">=</span> model_sub</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">=== Regression results for </span><span class="sc">{</span>dept<span class="sc">}</span><span class="ss"> ==="</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(model_sub.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="task-c2-compare-the-subgroup-models" class="level2">
+<h2 class="anchored" data-anchor-id="task-c2-compare-the-subgroup-models">Task C2: Compare the subgroup models</h2>
+<p>Use the results to answer the following questions.</p>
+<ol type="1">
+<li>Do the coefficients differ across departments?</li>
+<li>Is <code>remote_share</code> associated with performance in the same way in every department?</li>
+<li>Does <code>manager_quality</code> seem equally important in all departments?</li>
+<li>What does this tell us about heterogeneity in company data?</li>
+<li>Why might a single global model be too simplistic?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Key idea">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Key idea
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the relationships differ strongly between groups, a single regression model can hide important structure.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="part-d-save-and-load-the-model" class="level1">
+<h1>Part D — Save and load the model</h1>
+<section id="task-d1-save-a-fitted-model" class="level2">
+<h2 class="anchored" data-anchor-id="task-d1-save-a-fitted-model">Task D1: Save a fitted model</h2>
+<div id="0fb77b11" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: save the fitted sklearn model</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># joblib.dump(model, "employee_performance_model.joblib")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="task-d2-load-the-model-and-predict-a-new-case" class="level2">
+<h2 class="anchored" data-anchor-id="task-d2-load-the-model-and-predict-a-new-case">Task D2: Load the model and predict a new case</h2>
+<div id="e6419cba" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: load the saved model</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># loaded_model = ...</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: create a new employee record</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># new_employee = pd.DataFrame([</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     {</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         "experience": 8,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         "training_hours": 45,</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#         "salary": 56000,</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#         "remote_share": 0.40,</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#         "team_size": 7,</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#         "manager_quality": 4,</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#         "department_IT": 1,</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#         "department_Sales": 0,</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     }</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ])</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: generate prediction</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># prediction = ...</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># print(prediction)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<ol type="1">
+<li>Why is saving a model useful in business applications?</li>
+<li>What additional information besides the model itself would we need in practice?</li>
+<li>Why must new data follow the same structure and preprocessing steps as the training data?</li>
+</ol>
+</section>
+</section>
+<section id="part-e-assumptions-and-limitations" class="level1">
+<h1>Part E — Assumptions and limitations</h1>
+<section id="task-e1-residual-plot" class="level2">
+<h2 class="anchored" data-anchor-id="task-e1-residual-plot">Task E1: Residual plot</h2>
+<p>Create a simple residual plot for the global sklearn model.</p>
+<div id="1538a021" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># residuals = y - y_pred</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.scatter(y_pred, residuals)</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.axhline(0, linestyle="--")</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.xlabel("Predicted performance")</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.ylabel("Residuals")</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.title("Residual plot")</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Questions:</p>
+<ol type="1">
+<li>Do the residuals look roughly random?</li>
+<li>Do you see patterns that may indicate model problems?</li>
+<li>What would a clear funnel shape suggest?</li>
+</ol>
+</section>
+<section id="task-e2-what-assumptions-are-relevant-here" class="level2">
+<h2 class="anchored" data-anchor-id="task-e2-what-assumptions-are-relevant-here">Task E2: What assumptions are relevant here?</h2>
+<p>Discuss the following assumptions in your own words:</p>
+<ul>
+<li>linearity</li>
+<li>independent errors</li>
+<li>homoscedasticity</li>
+<li>absence of strong multicollinearity</li>
+<li>correct model specification</li>
+</ul>
+<p>You do <strong>not</strong> need to memorize formulas. Focus on the practical meaning.</p>
+</section>
+<section id="task-e3-a-hidden-interaction" class="level2">
+<h2 class="anchored" data-anchor-id="task-e3-a-hidden-interaction">Task E3: A hidden interaction</h2>
+<p>The synthetic data were generated with a hidden interaction between <code>training_hours</code> and <code>manager_quality</code>.</p>
+<p>Create a new interaction variable and compare the model.</p>
+<div id="c187682d" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: rebuild the encoded dataset if needed</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># df_model = ...</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: add interaction term</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># df_model["training_x_manager"] = ...</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: define X and y</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># X = ...</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># y = ...</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: fit a new OLS model</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># X = sm.add_constant(X)</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># interaction_model = sm.OLS(y, X).fit()</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># print(interaction_model.summary())</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Questions:</p>
+<ol type="1">
+<li>Does the model fit improve?</li>
+<li>How does the interaction term change the interpretation?</li>
+<li>Why might the original model have missed part of the underlying structure?</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled" title="Takeaway">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Takeaway
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A regression model can be useful even when it is imperfect. The key is to understand what it captures well, what it misses, and how those limitations affect interpretation and decision making.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="optional-extension" class="level1">
+<h1>Optional extension</h1>
+<section id="when-a-simple-linear-model-is-not-enough" class="level2">
+<h2 class="anchored" data-anchor-id="when-a-simple-linear-model-is-not-enough">When a simple linear model is not enough</h2>
+<p>Write a short answer to the following prompt:</p>
+<blockquote class="blockquote">
+<p>Give one realistic reason why a company should <strong>not</strong> rely only on a simple linear regression model for employee performance.</p>
+</blockquote>
+<p>Possible directions:</p>
+<ul>
+<li>unobserved variables</li>
+<li>department-specific relationships</li>
+<li>non-linear effects</li>
+<li>fairness and bias concerns</li>
+<li>causal interpretation problems</li>
+</ul>
+</section>
+</section>
+<section id="suggested-deliverables" class="level1">
+<h1>Suggested deliverables</h1>
+<p>At the end of the notebook, make sure you have:</p>
+<ol type="1">
+<li>one fitted global regression model</li>
+<li>one regression table using <code>statsmodels</code></li>
+<li>separate subgroup regressions for departments</li>
+<li>one saved and reloaded model</li>
+<li>short written reflections on interpretation and limitations</li>
+</ol>
 </section>
 
 </main>

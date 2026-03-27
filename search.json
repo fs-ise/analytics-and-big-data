@@ -1302,354 +1302,144 @@
     "text": "Students: Setup for exercises\n\nStudents: TBD (GitHub/jupyter notebooks)"
   },
   {
-    "objectID": "data/synthetic-datasets.html",
-    "href": "data/synthetic-datasets.html",
+    "objectID": "data/synthetic-datasets_exercise2_EDA.html",
+    "href": "data/synthetic-datasets_exercise2_EDA.html",
     "title": "Synthetic datasets",
     "section": "",
     "text": "import pandas as pd\nimport numpy as np\nimport random\nfrom datetime import datetime, timedelta\n\n# Reproducibility\nnp.random.seed(42)\nrandom.seed(42)\n\n# Expanded company list\ncompanies = [\n    (\"SAP\", \"DE\", \"Tech\"), (\"Siemens\", \"DE\", \"Industrial\"),\n    (\"Allianz\", \"DE\", \"Finance\"), (\"BMW\", \"DE\", \"Automotive\"),\n    (\"Apple\", \"US\", \"Tech\"), (\"Microsoft\", \"US\", \"Tech\"),\n    (\"Amazon\", \"US\", \"Tech\"), (\"Tesla\", \"US\", \"Automotive\"),\n    (\"GoldmanSachs\", \"US\", \"Finance\"), (\"JPMorgan\", \"US\", \"Finance\"),\n    (\"Sony\", \"JP\", \"Tech\"), (\"Toyota\", \"JP\", \"Automotive\"),\n    (\"SoftBank\", \"JP\", \"Finance\"),\n    (\"Samsung\", \"KR\", \"Tech\"), (\"Hyundai\", \"KR\", \"Automotive\"),\n    (\"Tencent\", \"CN\", \"Tech\"), (\"Alibaba\", \"CN\", \"Tech\"),\n    (\"ICBC\", \"CN\", \"Finance\"),\n    (\"Shell\", \"UK\", \"Energy\"), (\"BP\", \"UK\", \"Energy\"),\n    (\"HSBC\", \"UK\", \"Finance\"),\n    (\"TotalEnergies\", \"FR\", \"Energy\"), (\"LVMH\", \"FR\", \"Luxury\"),\n    (\"Airbus\", \"FR\", \"Industrial\"),\n    (\"Nestle\", \"CH\", \"Consumer\"), (\"Novartis\", \"CH\", \"Healthcare\"),\n    (\"Roche\", \"CH\", \"Healthcare\"),\n]\n\naggregates = [\n    (\"Total\", \"US\", \"Market\"),\n    (\"Total\", \"EU\", \"Market\"),\n    (\"Total\", \"APAC\", \"Market\"),\n    (\"Global\", \"ALL\", \"Market\")\n]\n\nentities = companies + aggregates\n\n# Periods\nperiods = [\n    \"2023Q1\", \"2023Q2\", \"2023Q3\", \"2023Q4\",\n    \"2024Q1\", \"2024Q2\", \"2024Q3\", \"2024Q4\"\n]\n\nmetrics = [\"MarketCap\", \"Revenue\", \"EBITDA\"]\n\nrecords = []\n\n# Timestamp range\nstart_date = datetime(2023, 1, 1)\nend_date = datetime(2024, 12, 31)\ndate_range_days = (end_date - start_date).days\n\nfor entity, country, sector in entities:\n    for period in periods:\n\n        # ✅ ONE timestamp per firm-period\n        random_days = random.randint(0, date_range_days)\n        timestamp = start_date + timedelta(days=random_days)\n        timestamp_str = timestamp.strftime(\"%Y-%m-%d %H:%M:%S\")\n\n        # Generate all metric values first\n        values = {}\n        for metric in metrics:\n            if metric == \"MarketCap\":\n                val = np.random.uniform(50, 3000)\n            elif metric == \"Revenue\":\n                val = np.random.uniform(5, 500)\n            else:\n                val = np.random.uniform(1, 200)\n            values[metric] = f\"{round(val, 1)}B\"\n\n        # Create one row per metric (still messy!)\n        for metric in metrics:\n            record = f\"{entity}-{country}-{sector}-{period}-{metric}-{values[metric]}\"\n\n            records.append({\n                \"timestamp\": timestamp_str,  # ✅ shared timestamp\n                \"logger_sys\": \"FIN-PIPE-V1\",\n                \"Record\": record\n            })\n\n# Add extra samples to reach ~1000\nextra_samples = random.choices(records, k=250)\nrecords.extend(extra_samples)\n\n# Create DataFrame\ndf = pd.DataFrame(records)\n\n# Save\ndf.to_csv(\"market_data_log.csv\", index=False)\n\n# Preview\ndf.head()\n\n\n\n\n\n\n\n\ntimestamp\nlogger_sys\nRecord\n\n\n\n\n0\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q1-MarketCap-1154.9B\n\n\n1\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q1-Revenue-475.6B\n\n\n2\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q1-EBITDA-146.7B\n\n\n3\n2023-04-25 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q2-MarketCap-1816.0B\n\n\n4\n2023-04-25 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q2-Revenue-82.2B\n\n\n\n\n\n\n\n\n\n\n\nimport pandas as pd\nimport numpy as np\nimport random\nimport string\n\n# Set seed for reproducibility\nnp.random.seed(42)\nrandom.seed(42)\n\ndef generate_customer_id():\n    prefix = random.choice([\"CUST\", \"CL\", \"ACC\"])\n    suffix = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))\n    return f\"{prefix}-{suffix}\"\n\n# Parameters\nn_customers = 100\ncustomer_ids = [generate_customer_id() for _ in range(n_customers)]\nregions = np.random.choice([\"EU\", \"US\", \"APAC\"], size=n_customers)\n\nmonths = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n          \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\nchannels = [\"Online\", \"Store\"]\n\n# Base DataFrame\ndf = pd.DataFrame({\n    \"Customer_ID\": customer_ids,\n    \"Region\": regions\n})\n\n# Generate sales data dynamically\nfor month in months:\n    for channel in channels:\n        base_low = 80 if channel == \"Online\" else 50\n        base_high = 300 if channel == \"Online\" else 250\n        \n        df[f\"{month}_{channel}\"] = np.random.randint(\n            base_low, base_high, size=n_customers\n        )\n\n# Optional: introduce slight regional patterns\nonline_cols = [col for col in df.columns if \"Online\" in col]\nstore_cols = [col for col in df.columns if \"Store\" in col]\n\ndf.loc[df[\"Region\"] == \"EU\", online_cols] += 20\ndf.loc[df[\"Region\"] == \"US\", store_cols] += 15\n\n# Save to CSV\ndf.to_csv(\"sales_data_channels_full_year.csv\", index=False)\n\n# Preview\ndf.head()\n\n# possible extensions\n# missing values\n# df.loc[np.random.choice(df.index, 5), random.choice(df.columns[2:])] = np.nan\n\n\n\n\n\n\n\n\nCustomer_ID\nRegion\nJan_Online\nJan_Store\nFeb_Online\nFeb_Store\nMar_Online\nMar_Store\nApr_Online\nApr_Store\n...\nAug_Online\nAug_Store\nSep_Online\nSep_Store\nOct_Online\nOct_Store\nNov_Online\nNov_Store\nDec_Online\nDec_Store\n\n\n\n\n0\nACC-E0IFD0\nAPAC\n215\n201\n240\n73\n80\n184\n224\n240\n...\n182\n180\n108\n154\n278\n76\n85\n211\n148\n132\n\n\n1\nACC-DPBHSA\nEU\n315\n108\n251\n163\n133\n245\n170\n194\n...\n300\n157\n289\n233\n173\n121\n172\n213\n260\n158\n\n\n2\nCUST-ZZPQK5\nAPAC\n142\n167\n195\n81\n175\n107\n296\n210\n...\n101\n221\n141\n116\n142\n109\n182\n55\n258\n124\n\n\n3\nCUST-ZMF8MD\nAPAC\n218\n209\n154\n224\n205\n163\n124\n206\n...\n83\n228\n264\n172\n235\n223\n239\n88\n285\n178\n\n\n4\nCUST-MMJBQE\nEU\n180\n145\n212\n135\n217\n124\n231\n190\n...\n253\n151\n115\n78\n159\n194\n140\n219\n111\n137\n\n\n\n\n5 rows × 26 columns\n\n\n\n\n\n\n\nimport pandas as pd\nimport numpy as np\nimport random\nfrom datetime import datetime, timedelta\n\n# Reproducibility\nnp.random.seed(42)\nrandom.seed(42)\n\nn = 2000\n\n# ---------------------------\n# Helper functions\n# ---------------------------\n\ndef generate_customer_id(i):\n    return f\"CUST_{str(i).zfill(11)}\"\n\ndef random_dob():\n    start = datetime(1940, 1, 1)\n    end = datetime(2005, 12, 31)\n    delta = (end - start).days\n    return start + timedelta(days=random.randint(0, delta))\n\n# ---------------------------\n# Base clean data\n# ---------------------------\n\ncustomer_ids = [generate_customer_id(i) for i in range(1, n+1)]\n\ncountries = [\n    \"DE\", \"Germany\", \"US\", \"USA\", \"UK\", \"France\", \"FR\",\n    \"Spain\", \"ES\", \"Italy\", \"IT\", \"Netherlands\", \"NL\",\n    \"Switzerland\", \"CH\", \"Austria\", \"AT\",\n    \"China\", \"CN\", \"Japan\", \"JP\", \"India\", \"IN\",\n    \"Brazil\", \"BR\", \"Canada\", \"CA\"\n]\n\ngenders = [\"M\", \"F\"]\n\ndf = pd.DataFrame({\n    \"customer_id\": customer_ids,\n    \"date_of_birth\": [random_dob().strftime(\"%Y-%m-%d\") for _ in range(n)],\n    \"income\": np.random.randint(2000, 8000, size=n).astype(str),\n    \"gender\": np.random.choice(genders, size=n),\n    \"signup_date\": pd.date_range(start=\"2022-01-01\", periods=n).astype(str),\n    \"country\": np.random.choice(countries, size=n)\n})\n\n# ---------------------------\n# Introduce data quality issues\n# ---------------------------\n\n# 1. Missing values\ndf.loc[np.random.choice(df.index, 100), \"date_of_birth\"] = None\ndf.loc[np.random.choice(df.index, 100), \"income\"] = None\ndf.loc[np.random.choice(df.index, 50), \"signup_date\"] = None\n\n# 2. Implausible values (DOB in future / too old)\ndf.loc[np.random.choice(df.index, 10), \"date_of_birth\"] = \"1890-01-01\"\ndf.loc[np.random.choice(df.index, 10), \"date_of_birth\"] = \"2030-01-01\"\n\n# 3. Inconsistent income formats\nidx = np.random.choice(df.index, 200, replace=False)\ndf.loc[idx, \"income\"] = df.loc[idx, \"income\"] + \" EUR\"\n\nidx = np.random.choice(df.index, 50, replace=False)\ndf.loc[idx, \"income\"] = df.loc[idx, \"income\"] + \" USD\"\n\n# 4. Outliers in income\ndf.loc[np.random.choice(df.index, 10), \"income\"] = [\"-5000\", \"200000\"] * 5\n\n# 5. Inconsistent gender formats\ndf.loc[np.random.choice(df.index, 100), \"gender\"] = np.random.choice(\n    [\"Male\", \"Female\", \"m\", \"f\"], size=100\n)\n\n# 6. Inconsistent date formats\nidx = np.random.choice(df.index, 100, replace=False)\ndf.loc[idx, \"signup_date\"] = pd.to_datetime(\n    df.loc[idx, \"signup_date\"], errors=\"coerce\"\n).dt.strftime(\"%d/%m/%y\")\n\nidx = np.random.choice(df.index, 50, replace=False)\ndf.loc[idx, \"signup_date\"] = pd.to_datetime(\n    df.loc[idx, \"signup_date\"], errors=\"coerce\"\n).dt.strftime(\"%Y/%m/%d\")\n\n# 7. Invalid dates\ndf.loc[np.random.choice(df.index, 5), \"signup_date\"] = \"2023-13-01\"\n\n# 8. Country inconsistencies / typos\ndf.loc[np.random.choice(df.index, 50), \"country\"] = np.random.choice(\n    [\"Ger\", \"DEU\", \"U.S.\", \"UK \", \"Munch\", \"Brasil\"], size=50\n)\n\n# 9. Duplicate records\nduplicates = df.sample(50, random_state=42)\ndf = pd.concat([df, duplicates], ignore_index=True)\n\n# Shuffle dataset\ndf = df.sample(frac=1, random_state=42).reset_index(drop=True)\n\n# Save\ndf.to_csv(\"messy_customer_data.csv\", index=False)\n\n# Preview\ndf.head()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\n0\nCUST_00000001809\n1980-04-09\n4896 USD\nM\n2026-12-14\nUSA\n\n\n1\nCUST_00000000695\n1945-08-02\n7029\nF\n2023-11-26\nBR\n\n\n2\nCUST_00000000907\n1971-07-25\n6432\nF\n2024-06-25\nAustria\n\n\n3\nCUST_00000000545\n2000-03-01\n6107\nM\n2023-06-29\nJP\n\n\n4\nCUST_00000001848\n1943-09-06\n7655\nF\n2027-01-22\nItaly\n\n\n\n\n\n\n\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\n\nn_samples = 200\n\n# Cluster 1: High-growth tech firms\ncluster_1 = pd.DataFrame({\n    \"revenue\": np.random.normal(500, 100, n_samples//4),\n    \"profit_margin\": np.random.normal(5, 3, n_samples//4),\n    \"growth_rate\": np.random.normal(20, 5, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.3, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(5000, 1000, n_samples//4),\n    \"rd_intensity\": np.random.normal(15, 5, n_samples//4),\n})\n\n# Cluster 2: Mature stable firms\ncluster_2 = pd.DataFrame({\n    \"revenue\": np.random.normal(2000, 500, n_samples//4),\n    \"profit_margin\": np.random.normal(15, 5, n_samples//4),\n    \"growth_rate\": np.random.normal(5, 2, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.5, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(15000, 3000, n_samples//4),\n    \"rd_intensity\": np.random.normal(5, 2, n_samples//4),\n})\n\n# Cluster 3: Distressed firms\ncluster_3 = pd.DataFrame({\n    \"revenue\": np.random.normal(800, 200, n_samples//4),\n    \"profit_margin\": np.random.normal(-5, 5, n_samples//4),\n    \"growth_rate\": np.random.normal(-2, 3, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.8, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(2000, 800, n_samples//4),\n    \"rd_intensity\": np.random.normal(2, 1, n_samples//4),\n})\n\n# Cluster 4: Innovation-heavy niche firms\ncluster_4 = pd.DataFrame({\n    \"revenue\": np.random.normal(300, 80, n_samples//4),\n    \"profit_margin\": np.random.normal(8, 4, n_samples//4),\n    \"growth_rate\": np.random.normal(12, 4, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.4, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(4000, 1200, n_samples//4),\n    \"rd_intensity\": np.random.normal(25, 7, n_samples//4),\n})\n\n# Combine dataset\ndf_finance = pd.concat([cluster_1, cluster_2, cluster_3, cluster_4], ignore_index=True)\n\n# Optional: add noise\ndf_finance += np.random.normal(0, 0.05 * df_finance.std(), df_finance.shape)\n\ndf_finance[\"sector\"] = np.random.choice(\n    [\"Tech\", \"Finance\", \"Healthcare\", \"Industry\"],\n    size=len(df_finance)\n)\ndf_finance[\"company_id\"] = [\"FIRM-\" + str(i).zfill(4) for i in range(len(df_finance))]\ndf_finance = df_finance.sample(frac=1, random_state=42).reset_index(drop=True)\n\ncols = [\n    \"company_id\",\n    \"sector\",\n    \"revenue\",\n    \"profit_margin\",\n    \"growth_rate\",\n    \"debt_ratio\",\n    \"market_cap\",\n    \"rd_intensity\"\n]\n\ndf_finance = df_finance[cols]\n\n# Save\ndf_finance.to_csv(\"firm_data.csv\", index=False)\n\n# Preview\ndf_finance.head()\n\n\n\n\n\n\n\n\ncompany_id\nsector\nrevenue\nprofit_margin\ngrowth_rate\ndebt_ratio\nmarket_cap\nrd_intensity\n\n\n\n\n0\nFIRM-0095\nHealthcare\n2117.569743\n13.382162\n6.053507\n0.555974\n12426.889897\n3.308879\n\n\n1\nFIRM-0015\nHealthcare\n457.538045\n10.139487\n21.504950\n0.350252\n5779.074618\n8.710809\n\n\n2\nFIRM-0030\nIndustry\n463.847307\n4.131422\n13.237034\n0.356084\n4451.965515\n15.719744\n\n\n3\nFIRM-0158\nFinance\n347.980562\n9.573304\n16.117482\n0.472141\n3256.609038\n31.989645\n\n\n4\nFIRM-0128\nTech\n804.239654\n0.165357\n-3.346796\n0.761088\n1825.004761\n2.082579"
   },
   {
-    "objectID": "data/synthetic-datasets.html#part-1-structuring",
-    "href": "data/synthetic-datasets.html#part-1-structuring",
+    "objectID": "data/synthetic-datasets_exercise2_EDA.html#part-1-structuring",
+    "href": "data/synthetic-datasets_exercise2_EDA.html#part-1-structuring",
     "title": "Synthetic datasets",
     "section": "",
     "text": "import pandas as pd\nimport numpy as np\nimport random\nfrom datetime import datetime, timedelta\n\n# Reproducibility\nnp.random.seed(42)\nrandom.seed(42)\n\n# Expanded company list\ncompanies = [\n    (\"SAP\", \"DE\", \"Tech\"), (\"Siemens\", \"DE\", \"Industrial\"),\n    (\"Allianz\", \"DE\", \"Finance\"), (\"BMW\", \"DE\", \"Automotive\"),\n    (\"Apple\", \"US\", \"Tech\"), (\"Microsoft\", \"US\", \"Tech\"),\n    (\"Amazon\", \"US\", \"Tech\"), (\"Tesla\", \"US\", \"Automotive\"),\n    (\"GoldmanSachs\", \"US\", \"Finance\"), (\"JPMorgan\", \"US\", \"Finance\"),\n    (\"Sony\", \"JP\", \"Tech\"), (\"Toyota\", \"JP\", \"Automotive\"),\n    (\"SoftBank\", \"JP\", \"Finance\"),\n    (\"Samsung\", \"KR\", \"Tech\"), (\"Hyundai\", \"KR\", \"Automotive\"),\n    (\"Tencent\", \"CN\", \"Tech\"), (\"Alibaba\", \"CN\", \"Tech\"),\n    (\"ICBC\", \"CN\", \"Finance\"),\n    (\"Shell\", \"UK\", \"Energy\"), (\"BP\", \"UK\", \"Energy\"),\n    (\"HSBC\", \"UK\", \"Finance\"),\n    (\"TotalEnergies\", \"FR\", \"Energy\"), (\"LVMH\", \"FR\", \"Luxury\"),\n    (\"Airbus\", \"FR\", \"Industrial\"),\n    (\"Nestle\", \"CH\", \"Consumer\"), (\"Novartis\", \"CH\", \"Healthcare\"),\n    (\"Roche\", \"CH\", \"Healthcare\"),\n]\n\naggregates = [\n    (\"Total\", \"US\", \"Market\"),\n    (\"Total\", \"EU\", \"Market\"),\n    (\"Total\", \"APAC\", \"Market\"),\n    (\"Global\", \"ALL\", \"Market\")\n]\n\nentities = companies + aggregates\n\n# Periods\nperiods = [\n    \"2023Q1\", \"2023Q2\", \"2023Q3\", \"2023Q4\",\n    \"2024Q1\", \"2024Q2\", \"2024Q3\", \"2024Q4\"\n]\n\nmetrics = [\"MarketCap\", \"Revenue\", \"EBITDA\"]\n\nrecords = []\n\n# Timestamp range\nstart_date = datetime(2023, 1, 1)\nend_date = datetime(2024, 12, 31)\ndate_range_days = (end_date - start_date).days\n\nfor entity, country, sector in entities:\n    for period in periods:\n\n        # ✅ ONE timestamp per firm-period\n        random_days = random.randint(0, date_range_days)\n        timestamp = start_date + timedelta(days=random_days)\n        timestamp_str = timestamp.strftime(\"%Y-%m-%d %H:%M:%S\")\n\n        # Generate all metric values first\n        values = {}\n        for metric in metrics:\n            if metric == \"MarketCap\":\n                val = np.random.uniform(50, 3000)\n            elif metric == \"Revenue\":\n                val = np.random.uniform(5, 500)\n            else:\n                val = np.random.uniform(1, 200)\n            values[metric] = f\"{round(val, 1)}B\"\n\n        # Create one row per metric (still messy!)\n        for metric in metrics:\n            record = f\"{entity}-{country}-{sector}-{period}-{metric}-{values[metric]}\"\n\n            records.append({\n                \"timestamp\": timestamp_str,  # ✅ shared timestamp\n                \"logger_sys\": \"FIN-PIPE-V1\",\n                \"Record\": record\n            })\n\n# Add extra samples to reach ~1000\nextra_samples = random.choices(records, k=250)\nrecords.extend(extra_samples)\n\n# Create DataFrame\ndf = pd.DataFrame(records)\n\n# Save\ndf.to_csv(\"market_data_log.csv\", index=False)\n\n# Preview\ndf.head()\n\n\n\n\n\n\n\n\ntimestamp\nlogger_sys\nRecord\n\n\n\n\n0\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q1-MarketCap-1154.9B\n\n\n1\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q1-Revenue-475.6B\n\n\n2\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q1-EBITDA-146.7B\n\n\n3\n2023-04-25 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q2-MarketCap-1816.0B\n\n\n4\n2023-04-25 00:00:00\nFIN-PIPE-V1\nSAP-DE-Tech-2023Q2-Revenue-82.2B"
   },
   {
-    "objectID": "data/synthetic-datasets.html#part-2-structuring",
-    "href": "data/synthetic-datasets.html#part-2-structuring",
+    "objectID": "data/synthetic-datasets_exercise2_EDA.html#part-2-structuring",
+    "href": "data/synthetic-datasets_exercise2_EDA.html#part-2-structuring",
     "title": "Synthetic datasets",
     "section": "",
     "text": "import pandas as pd\nimport numpy as np\nimport random\nimport string\n\n# Set seed for reproducibility\nnp.random.seed(42)\nrandom.seed(42)\n\ndef generate_customer_id():\n    prefix = random.choice([\"CUST\", \"CL\", \"ACC\"])\n    suffix = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))\n    return f\"{prefix}-{suffix}\"\n\n# Parameters\nn_customers = 100\ncustomer_ids = [generate_customer_id() for _ in range(n_customers)]\nregions = np.random.choice([\"EU\", \"US\", \"APAC\"], size=n_customers)\n\nmonths = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n          \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\nchannels = [\"Online\", \"Store\"]\n\n# Base DataFrame\ndf = pd.DataFrame({\n    \"Customer_ID\": customer_ids,\n    \"Region\": regions\n})\n\n# Generate sales data dynamically\nfor month in months:\n    for channel in channels:\n        base_low = 80 if channel == \"Online\" else 50\n        base_high = 300 if channel == \"Online\" else 250\n        \n        df[f\"{month}_{channel}\"] = np.random.randint(\n            base_low, base_high, size=n_customers\n        )\n\n# Optional: introduce slight regional patterns\nonline_cols = [col for col in df.columns if \"Online\" in col]\nstore_cols = [col for col in df.columns if \"Store\" in col]\n\ndf.loc[df[\"Region\"] == \"EU\", online_cols] += 20\ndf.loc[df[\"Region\"] == \"US\", store_cols] += 15\n\n# Save to CSV\ndf.to_csv(\"sales_data_channels_full_year.csv\", index=False)\n\n# Preview\ndf.head()\n\n# possible extensions\n# missing values\n# df.loc[np.random.choice(df.index, 5), random.choice(df.columns[2:])] = np.nan\n\n\n\n\n\n\n\n\nCustomer_ID\nRegion\nJan_Online\nJan_Store\nFeb_Online\nFeb_Store\nMar_Online\nMar_Store\nApr_Online\nApr_Store\n...\nAug_Online\nAug_Store\nSep_Online\nSep_Store\nOct_Online\nOct_Store\nNov_Online\nNov_Store\nDec_Online\nDec_Store\n\n\n\n\n0\nACC-E0IFD0\nAPAC\n215\n201\n240\n73\n80\n184\n224\n240\n...\n182\n180\n108\n154\n278\n76\n85\n211\n148\n132\n\n\n1\nACC-DPBHSA\nEU\n315\n108\n251\n163\n133\n245\n170\n194\n...\n300\n157\n289\n233\n173\n121\n172\n213\n260\n158\n\n\n2\nCUST-ZZPQK5\nAPAC\n142\n167\n195\n81\n175\n107\n296\n210\n...\n101\n221\n141\n116\n142\n109\n182\n55\n258\n124\n\n\n3\nCUST-ZMF8MD\nAPAC\n218\n209\n154\n224\n205\n163\n124\n206\n...\n83\n228\n264\n172\n235\n223\n239\n88\n285\n178\n\n\n4\nCUST-MMJBQE\nEU\n180\n145\n212\n135\n217\n124\n231\n190\n...\n253\n151\n115\n78\n159\n194\n140\n219\n111\n137\n\n\n\n\n5 rows × 26 columns"
   },
   {
-    "objectID": "data/synthetic-datasets.html#part-3-cleansing",
-    "href": "data/synthetic-datasets.html#part-3-cleansing",
+    "objectID": "data/synthetic-datasets_exercise2_EDA.html#part-3-cleansing",
+    "href": "data/synthetic-datasets_exercise2_EDA.html#part-3-cleansing",
     "title": "Synthetic datasets",
     "section": "",
     "text": "import pandas as pd\nimport numpy as np\nimport random\nfrom datetime import datetime, timedelta\n\n# Reproducibility\nnp.random.seed(42)\nrandom.seed(42)\n\nn = 2000\n\n# ---------------------------\n# Helper functions\n# ---------------------------\n\ndef generate_customer_id(i):\n    return f\"CUST_{str(i).zfill(11)}\"\n\ndef random_dob():\n    start = datetime(1940, 1, 1)\n    end = datetime(2005, 12, 31)\n    delta = (end - start).days\n    return start + timedelta(days=random.randint(0, delta))\n\n# ---------------------------\n# Base clean data\n# ---------------------------\n\ncustomer_ids = [generate_customer_id(i) for i in range(1, n+1)]\n\ncountries = [\n    \"DE\", \"Germany\", \"US\", \"USA\", \"UK\", \"France\", \"FR\",\n    \"Spain\", \"ES\", \"Italy\", \"IT\", \"Netherlands\", \"NL\",\n    \"Switzerland\", \"CH\", \"Austria\", \"AT\",\n    \"China\", \"CN\", \"Japan\", \"JP\", \"India\", \"IN\",\n    \"Brazil\", \"BR\", \"Canada\", \"CA\"\n]\n\ngenders = [\"M\", \"F\"]\n\ndf = pd.DataFrame({\n    \"customer_id\": customer_ids,\n    \"date_of_birth\": [random_dob().strftime(\"%Y-%m-%d\") for _ in range(n)],\n    \"income\": np.random.randint(2000, 8000, size=n).astype(str),\n    \"gender\": np.random.choice(genders, size=n),\n    \"signup_date\": pd.date_range(start=\"2022-01-01\", periods=n).astype(str),\n    \"country\": np.random.choice(countries, size=n)\n})\n\n# ---------------------------\n# Introduce data quality issues\n# ---------------------------\n\n# 1. Missing values\ndf.loc[np.random.choice(df.index, 100), \"date_of_birth\"] = None\ndf.loc[np.random.choice(df.index, 100), \"income\"] = None\ndf.loc[np.random.choice(df.index, 50), \"signup_date\"] = None\n\n# 2. Implausible values (DOB in future / too old)\ndf.loc[np.random.choice(df.index, 10), \"date_of_birth\"] = \"1890-01-01\"\ndf.loc[np.random.choice(df.index, 10), \"date_of_birth\"] = \"2030-01-01\"\n\n# 3. Inconsistent income formats\nidx = np.random.choice(df.index, 200, replace=False)\ndf.loc[idx, \"income\"] = df.loc[idx, \"income\"] + \" EUR\"\n\nidx = np.random.choice(df.index, 50, replace=False)\ndf.loc[idx, \"income\"] = df.loc[idx, \"income\"] + \" USD\"\n\n# 4. Outliers in income\ndf.loc[np.random.choice(df.index, 10), \"income\"] = [\"-5000\", \"200000\"] * 5\n\n# 5. Inconsistent gender formats\ndf.loc[np.random.choice(df.index, 100), \"gender\"] = np.random.choice(\n    [\"Male\", \"Female\", \"m\", \"f\"], size=100\n)\n\n# 6. Inconsistent date formats\nidx = np.random.choice(df.index, 100, replace=False)\ndf.loc[idx, \"signup_date\"] = pd.to_datetime(\n    df.loc[idx, \"signup_date\"], errors=\"coerce\"\n).dt.strftime(\"%d/%m/%y\")\n\nidx = np.random.choice(df.index, 50, replace=False)\ndf.loc[idx, \"signup_date\"] = pd.to_datetime(\n    df.loc[idx, \"signup_date\"], errors=\"coerce\"\n).dt.strftime(\"%Y/%m/%d\")\n\n# 7. Invalid dates\ndf.loc[np.random.choice(df.index, 5), \"signup_date\"] = \"2023-13-01\"\n\n# 8. Country inconsistencies / typos\ndf.loc[np.random.choice(df.index, 50), \"country\"] = np.random.choice(\n    [\"Ger\", \"DEU\", \"U.S.\", \"UK \", \"Munch\", \"Brasil\"], size=50\n)\n\n# 9. Duplicate records\nduplicates = df.sample(50, random_state=42)\ndf = pd.concat([df, duplicates], ignore_index=True)\n\n# Shuffle dataset\ndf = df.sample(frac=1, random_state=42).reset_index(drop=True)\n\n# Save\ndf.to_csv(\"messy_customer_data.csv\", index=False)\n\n# Preview\ndf.head()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\n0\nCUST_00000001809\n1980-04-09\n4896 USD\nM\n2026-12-14\nUSA\n\n\n1\nCUST_00000000695\n1945-08-02\n7029\nF\n2023-11-26\nBR\n\n\n2\nCUST_00000000907\n1971-07-25\n6432\nF\n2024-06-25\nAustria\n\n\n3\nCUST_00000000545\n2000-03-01\n6107\nM\n2023-06-29\nJP\n\n\n4\nCUST_00000001848\n1943-09-06\n7655\nF\n2027-01-22\nItaly"
   },
   {
-    "objectID": "data/synthetic-datasets.html#part-4-clustering",
-    "href": "data/synthetic-datasets.html#part-4-clustering",
+    "objectID": "data/synthetic-datasets_exercise2_EDA.html#part-4-clustering",
+    "href": "data/synthetic-datasets_exercise2_EDA.html#part-4-clustering",
     "title": "Synthetic datasets",
     "section": "",
     "text": "import pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\n\nn_samples = 200\n\n# Cluster 1: High-growth tech firms\ncluster_1 = pd.DataFrame({\n    \"revenue\": np.random.normal(500, 100, n_samples//4),\n    \"profit_margin\": np.random.normal(5, 3, n_samples//4),\n    \"growth_rate\": np.random.normal(20, 5, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.3, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(5000, 1000, n_samples//4),\n    \"rd_intensity\": np.random.normal(15, 5, n_samples//4),\n})\n\n# Cluster 2: Mature stable firms\ncluster_2 = pd.DataFrame({\n    \"revenue\": np.random.normal(2000, 500, n_samples//4),\n    \"profit_margin\": np.random.normal(15, 5, n_samples//4),\n    \"growth_rate\": np.random.normal(5, 2, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.5, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(15000, 3000, n_samples//4),\n    \"rd_intensity\": np.random.normal(5, 2, n_samples//4),\n})\n\n# Cluster 3: Distressed firms\ncluster_3 = pd.DataFrame({\n    \"revenue\": np.random.normal(800, 200, n_samples//4),\n    \"profit_margin\": np.random.normal(-5, 5, n_samples//4),\n    \"growth_rate\": np.random.normal(-2, 3, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.8, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(2000, 800, n_samples//4),\n    \"rd_intensity\": np.random.normal(2, 1, n_samples//4),\n})\n\n# Cluster 4: Innovation-heavy niche firms\ncluster_4 = pd.DataFrame({\n    \"revenue\": np.random.normal(300, 80, n_samples//4),\n    \"profit_margin\": np.random.normal(8, 4, n_samples//4),\n    \"growth_rate\": np.random.normal(12, 4, n_samples//4),\n    \"debt_ratio\": np.random.normal(0.4, 0.1, n_samples//4),\n    \"market_cap\": np.random.normal(4000, 1200, n_samples//4),\n    \"rd_intensity\": np.random.normal(25, 7, n_samples//4),\n})\n\n# Combine dataset\ndf_finance = pd.concat([cluster_1, cluster_2, cluster_3, cluster_4], ignore_index=True)\n\n# Optional: add noise\ndf_finance += np.random.normal(0, 0.05 * df_finance.std(), df_finance.shape)\n\ndf_finance[\"sector\"] = np.random.choice(\n    [\"Tech\", \"Finance\", \"Healthcare\", \"Industry\"],\n    size=len(df_finance)\n)\ndf_finance[\"company_id\"] = [\"FIRM-\" + str(i).zfill(4) for i in range(len(df_finance))]\ndf_finance = df_finance.sample(frac=1, random_state=42).reset_index(drop=True)\n\ncols = [\n    \"company_id\",\n    \"sector\",\n    \"revenue\",\n    \"profit_margin\",\n    \"growth_rate\",\n    \"debt_ratio\",\n    \"market_cap\",\n    \"rd_intensity\"\n]\n\ndf_finance = df_finance[cols]\n\n# Save\ndf_finance.to_csv(\"firm_data.csv\", index=False)\n\n# Preview\ndf_finance.head()\n\n\n\n\n\n\n\n\ncompany_id\nsector\nrevenue\nprofit_margin\ngrowth_rate\ndebt_ratio\nmarket_cap\nrd_intensity\n\n\n\n\n0\nFIRM-0095\nHealthcare\n2117.569743\n13.382162\n6.053507\n0.555974\n12426.889897\n3.308879\n\n\n1\nFIRM-0015\nHealthcare\n457.538045\n10.139487\n21.504950\n0.350252\n5779.074618\n8.710809\n\n\n2\nFIRM-0030\nIndustry\n463.847307\n4.131422\n13.237034\n0.356084\n4451.965515\n15.719744\n\n\n3\nFIRM-0158\nFinance\n347.980562\n9.573304\n16.117482\n0.472141\n3256.609038\n31.989645\n\n\n4\nFIRM-0128\nTech\n804.239654\n0.165357\n-3.346796\n0.761088\n1825.004761\n2.082579"
   },
   {
-    "objectID": "preparation.html",
-    "href": "preparation.html",
-    "title": "Preparation",
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "Analytics & Big Data",
     "section": "",
-    "text": "%%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%\ngantt\n    title Big Data & Analytics — Prep plan (everything done before teaching)\n    dateFormat YYYY-MM-DD\n    axisFormat %Y-%m-%d\n    excludes weekends\n\n    section Milestones\n    First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d\n\n    section Week 1\n    Foundations (Session 1) :found, 2026-03-02, 2d\n    Structured Data (Sessions 2–7) :struct, after found, 3d\n\n    section Week 2\n    Big Data (Sessions 8–9) :big, 2026-03-09, 3d\n    Organizations (Sessions 10–11) :org, after big, 2d"
+    "text": "Analytics & Big Data\nServe preview:\nquarto preview\n\n# preview solutions\ncd exercises\nquarto preview --profile solution\nRender\nmake site\nmake all # includes pdfs"
   },
   {
-    "objectID": "preparation.html#preparation-overview",
-    "href": "preparation.html#preparation-overview",
-    "title": "Preparation",
-    "section": "Preparation overview",
-    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Big data I\nFind contents: Big data II\nCheck: Jupyter Exercise setup: export of jupyter notebooks\nCheck: Jupyter Exercise setup: running jupyter notebooks (GitHub?)\n\nGenerally: generation of PDFs: local only?\n\nInclude “must-learn” markers: &lt;!-- _class: must_learn --&gt;\n\nPlan to record timing (data in the repository) and data from google surveys - TODO: session/exercise structure should be reflected in each survey -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration\nTODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)\nConsistently include “vocabulary” sections at the end (like in regression 1)\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — The rise of analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Analytical data architecture\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Big Data II\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
-  },
-  {
-    "objectID": "preparation.html#cross-cutting-tasks",
-    "href": "preparation.html#cross-cutting-tasks",
-    "title": "Preparation",
-    "section": "Cross-cutting tasks",
-    "text": "Cross-cutting tasks\n\nGroup work\nWe may prepare the handout generated based on all slides.\nExams: fs-ise/big-data-analytics-exams\nCreate first-slide background illustrations for all sessions (consistent design)\nAlign learning objectives in individual sessions with the overall overview\nLink checker set up (slides / notes / exercises)\nExercises run end-to-end (Dataset availability verified)\nGroup exercises tested\nTest exam prepared\nConsistency of terminology across sessions\nLearning objectives aligned with exam scope\nOptional: handout / combined PDF prepared\nSyllabus updated\nLicense, code of conduct, contributing, …"
-  },
-  {
-    "objectID": "preparation.html#tbd",
-    "href": "preparation.html#tbd",
-    "title": "Preparation",
-    "section": "TBD:",
-    "text": "TBD:\n\nTest exercise sheets: GitHub jupyterlab with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?\nExcerpts for teaching hub\nExercise sheets: solutions?!\nUpdate requirements (exam):\n\nshow and read code for the analysis\ninclude code reading and interpretation, maybe even pseudo-code writing in the exam (and exercises)\nsurveys during the lecture: vote for “additional exercise/more difficult exercise”\n\n\nWork through the different parts (easier to identify materials for a part instead of comparing multiple lectures for multiple topics)\nSlides:\n\nstart with teaching notes and schedule. Setup teaching-notes\nscreen and include relevant materials (e.g., Hopf, Prester; identify gaps)\nspecify learning goals\nPrepare and test-run\n\nExercise sheets:\n\nSpecify exercise goals and state typical exam questions\nIdentify suitable exercise materials (rossbach, hopf, prester)\nPrepare and test-run\nSetup teaching-notes\nSplit Data Analytics with Python.pdf and -&gt; jnb\n\nhttps://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)\nSwitch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI\ninspiration for model choice/test/exam questions:\nUse Cases Quiz:"
-  },
-  {
-    "objectID": "preparation.html#notes-quartorevealjs",
-    "href": "preparation.html#notes-quartorevealjs",
-    "title": "Preparation",
-    "section": "Notes (Quarto/revealjs)",
-    "text": "Notes (Quarto/revealjs)\nHide slide in PDF export:\n\n::: {.content-hidden when-profile=\"pdf\"}\n\n## temp\n\n:::"
-  },
-  {
-    "objectID": "group_work.html",
-    "href": "group_work.html",
-    "title": "Group work",
+    "objectID": "objectives.html",
+    "href": "objectives.html",
+    "title": "Overview of learning objectives",
     "section": "",
-    "text": "Note\n\n\n\nWritten paper: 60 points (code added in separate file) -&gt; project: end of module -&gt; nach der letzten VL: 6 Wochen Zeit.\nTODO:\n\nschedule\ntopics\ncriteria\n\nSee CS109A: Introduction to Data Science projects\n-&gt; complete the analyses and explain why it illustrates or complements the contents covered in the course (-&gt; draw inspiration for teaching cases)"
+    "text": "Note\n\n\n\nThe following extracts the primary learning objectives from the lecture slides. Exercises typically mirror these objectives (covering practical implementation, illustrative cases, or specific exam prep/questions). Objectives that are covered in the exercises exclusively are highlighted.\nThe rise of analytics\n\nIllustrate how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise).\n\n\n\nData preparation and exploration\n\nDescribe variables, relationships between variables, and underlying structure in the data (e.g., clusters).\nPrepare and explore data sets using appropriate descriptive and visual techniques.\nExplain the role of exploratory data analysis in business decision-making.\n\n\n\nAnalytical data architecture\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact and dimension schemata from business questions and operational data.\n\n\n\nRegression I\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficients, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python.\n\n\n\nRegression II\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning.\n\n\n\nMachine learning I\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)\n\n\n\nMachine learning II\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.\n\n\n\nBig data I\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics.\n\n\n\nBig data II\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows.\n\n\n\nAnalytics in organizations\n\nExplain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations.\n\n\n\nIntegration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
   },
   {
-    "objectID": "group_work.html#group-size-and-application",
-    "href": "group_work.html#group-size-and-application",
-    "title": "Group work",
-    "section": "Group Size and Application",
-    "text": "Group Size and Application\n\nThe group size depends on the difficulty level of the individual project (see project description).\nProjects can be allocated multiple times.\nEach participant applies by e-mail for the desired projects. Alternatively, you can already form groups and apply as a group.\nIn every case, please indicate three projects as:\n\nPreference 1\nPreference 2\nPreference 3\n\nBased on the applications, the groups are arranged and projects are assigned."
+    "objectID": "objectives.html#the-rise-of-analytics",
+    "href": "objectives.html#the-rise-of-analytics",
+    "title": "Overview of learning objectives",
+    "section": "The rise of analytics",
+    "text": "The rise of analytics\n\nIllustrate how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
   },
   {
-    "objectID": "group_work.html#group-work-and-delivery",
-    "href": "group_work.html#group-work-and-delivery",
-    "title": "Group work",
-    "section": "Group Work and Delivery",
-    "text": "Group Work and Delivery\n\nEach group applies the methods and procedures covered in the teaching sessions. Depending on the project, different focuses have to be set (e.g., for some projects more data preparation, for others more model optimization).\nAll necessary steps for the analysis should be performed in Python.\nThe group work should be documented, explained, and reasoned in a text document, including code fragments that are relevant for understanding (see the Python manual for an example).\nEach group delivers:\n\nthe text document, and\nthe corresponding Python files by the announced deadline.\n\nThe text document has a maximum of 40 pages, including figures and code fragments.\nThe applied methodology is more important for the evaluation than the model results."
+    "objectID": "objectives.html#data-preparation-and-exploration",
+    "href": "objectives.html#data-preparation-and-exploration",
+    "title": "Overview of learning objectives",
+    "section": "Data preparation and exploration",
+    "text": "Data preparation and exploration\n\nDescribe variables, relationships between variables, and underlying structure in the data (e.g., clusters).\nPrepare and explore data sets using appropriate descriptive and visual techniques.\nExplain the role of exploratory data analysis in business decision-making."
   },
   {
-    "objectID": "exercises/exercise_10.html",
-    "href": "exercises/exercise_10.html",
-    "title": "Exercise 10: Governance of data analytics",
+    "objectID": "objectives.html#analytical-data-architecture",
+    "href": "objectives.html#analytical-data-architecture",
+    "title": "Overview of learning objectives",
+    "section": "Analytical data architecture",
+    "text": "Analytical data architecture\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact and dimension schemata from business questions and operational data."
+  },
+  {
+    "objectID": "objectives.html#regression-i",
+    "href": "objectives.html#regression-i",
+    "title": "Overview of learning objectives",
+    "section": "Regression I",
+    "text": "Regression I\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficients, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python."
+  },
+  {
+    "objectID": "objectives.html#regression-ii",
+    "href": "objectives.html#regression-ii",
+    "title": "Overview of learning objectives",
+    "section": "Regression II",
+    "text": "Regression II\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
+  },
+  {
+    "objectID": "objectives.html#machine-learning-i",
+    "href": "objectives.html#machine-learning-i",
+    "title": "Overview of learning objectives",
+    "section": "Machine learning I",
+    "text": "Machine learning I\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
+  },
+  {
+    "objectID": "objectives.html#machine-learning-ii",
+    "href": "objectives.html#machine-learning-ii",
+    "title": "Overview of learning objectives",
+    "section": "Machine learning II",
+    "text": "Machine learning II\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
+  },
+  {
+    "objectID": "objectives.html#big-data-i",
+    "href": "objectives.html#big-data-i",
+    "title": "Overview of learning objectives",
+    "section": "Big data I",
+    "text": "Big data I\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics."
+  },
+  {
+    "objectID": "objectives.html#big-data-ii",
+    "href": "objectives.html#big-data-ii",
+    "title": "Overview of learning objectives",
+    "section": "Big data II",
+    "text": "Big data II\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows."
+  },
+  {
+    "objectID": "objectives.html#analytics-in-organizations",
+    "href": "objectives.html#analytics-in-organizations",
+    "title": "Overview of learning objectives",
+    "section": "Analytics in organizations",
+    "text": "Analytics in organizations\n\nExplain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations."
+  },
+  {
+    "objectID": "objectives.html#integration-and-exam-preparation",
+    "href": "objectives.html#integration-and-exam-preparation",
+    "title": "Overview of learning objectives",
+    "section": "Integration and exam preparation",
+    "text": "Integration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
+  },
+  {
+    "objectID": "exercises/exercise_9.html",
+    "href": "exercises/exercise_9.html",
+    "title": "Exercise 9: Big data II",
     "section": "",
-    "text": "Analyze how data analytics creates strategic value within a given organizational context.\nIdentify ethical and legal risks in analytics initiatives and propose mitigation strategies."
+    "text": "Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python. Apply large language models or other scalable methods to extract, classify, or summarize unstructured data."
   },
   {
-    "objectID": "exercises/exercise_10.html#exam-prep",
-    "href": "exercises/exercise_10.html#exam-prep",
-    "title": "Exercise 10: Governance of data analytics",
+    "objectID": "exercises/exercise_9.html#exam-prep",
+    "href": "exercises/exercise_9.html#exam-prep",
+    "title": "Exercise 9: Big data II",
     "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 10 survey\n\n\n\nBefore you wrap up, please complete the Session 10 survey here: https://forms.gle/Rhr4C47jsAZJyumN6. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/exercise_8.html",
-    "href": "exercises/exercise_8.html",
-    "title": "Exercise 8: Big data",
-    "section": "",
-    "text": "TBD: traditional case study (with questions)?"
-  },
-  {
-    "objectID": "exercises/exercise_8.html#exam-prep",
-    "href": "exercises/exercise_8.html#exam-prep",
-    "title": "Exercise 8: Big data",
-    "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 8 survey\n\n\n\nBefore you wrap up, please complete the Session 8 survey here: https://forms.gle/hNuAD8UZvC8KYo4a8. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/exercise_1.html",
-    "href": "exercises/exercise_1.html",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "",
-    "text": "In this session, we split into two groups.\n\n\n\nExercise part\nTime (min)\n\n\n\n\nTask 1: Competing on Analytics\n30\n\n\nTask 2: Jupyter notebook\n30\n\n\nDiscussion\n20\n\n\nWrap-up\n5\n\n\nOverall\n85"
-  },
-  {
-    "objectID": "exercises/exercise_1.html#task-1-read-competing-on-analytics",
-    "href": "exercises/exercise_1.html#task-1-read-competing-on-analytics",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "Task 1: Read Competing on Analytics ",
-    "text": "Task 1: Read Competing on Analytics \n\nRead the Competing on Analytics paper by Davenport (2006). Prepare to discuss the following questions:\n\n\nWhat does it mean for a company to “compete on analytics”?\nHow is this different from simply using data or reports in decision making?\n\n\n\n\n\nTo “compete on analytics” means that a company uses data, statistical analysis, modeling, and experimentation as a core strategic capability across the organization. Analytics is not just a support tool; it becomes a basis for competitive advantage. Davenport (2006) argues that such firms do not merely know what happened in the past, but use predictive and optimization methods to determine what will happen, what customers will do, what prices maximize profit, and how processes can be improved.\nThis is different from simply using data or reports in decision making. Many firms use descriptive statistics and reports, but analytics competitors go further by:\n\napplying advanced models rather than only dashboards or summaries,\nembedding analytics across multiple functions rather than in isolated departments,\ncoordinating these efforts under an enterprise strategy,\nand repeatedly using evidence to improve decisions over time.\n\nIn short, ordinary data use supports decisions; competing on analytics makes superior, repeatable, organization-wide decision making a source of advantage.\n\n\nWhat organizational capabilities are required to compete on analytics?\nConsider aspects such as leadership, culture, people, and technology.\n\n\n\n\n\nAccording to Davenport (2006), companies that compete on analytics need a combination of organizational and technical capabilities. There is a need for:\n\nStrong senior leadership, ideally from the CEO. Top executives must actively champion data-based decision making and signal that analytics is central to strategy.\nAnalytics-oriented culture. Employees are expected to justify decisions with evidence, performance is measured quantitatively, and the organization develops a “test and learn” mindset in which ideas are validated through experiments.\nThe right people. This includes not only technically skilled analysts, but also people who can translate complex analyses into business language and work closely with decision makers. Analytical talent must be numerous enough to matter and visible enough to influence the business.\nEnterprise approach. Analytics should not be fragmented across departments with separate tools and inconsistent data definitions. Instead, it should be managed coherently across the organization, with shared leadership, standards, and infrastructure.\nThe right technology and data foundation. Davenport (2006) highlights the importance of a clear data strategy, integrated and standardized data, data warehouses, business intelligence tools, and sufficient computing power. These capabilities take time to build and require sustained investment.\n\nOverall, competing on analytics depends on aligning leadership, culture, talent, organization, and technology around fact-based improvement.\n\n\nWhich companies or industries compete on analytics?\nGive examples and explain how analytics creates their competitive advantage.\n\n\n\n\n\nIn Davenport’s paper, several examples illustrate what it means to compete on analytics.\n\nAmazon is a central example. Its advantage comes from using analytics in areas such as customer recommendations, supply chain management, and operational optimization. This helps it personalize the customer experience and manage large-scale complexity efficiently.\nCapital One competes on analytics through extensive experimentation and quantitative analysis in marketing, pricing, and risk assessment. Its competitive advantage comes from constantly testing offers and learning which customers to target and how to manage risk profitably.\nHarrah’s (now Caesars Entertainment) used analytics to improve customer loyalty, promotions, pricing, and service. Its advantage came from understanding customer behavior in great detail and using this knowledge to increase retention and spending.\nProgressive used analytics to refine insurance pricing. Instead of broadly rejecting risky customers, it analyzed detailed customer segments and priced them more precisely, allowing it to profit where competitors relied on cruder categories.\nMarriott applied analytics to revenue management, pricing, and customer retention. By optimizing room prices and related offerings, it improved revenue performance across its hotels.\n\nDavenport also points to sports organizations such as the Boston Red Sox, the Oakland A’s, and the New England Patriots. Their advantage came from applying statistical analysis to player selection, performance evaluation, and other decisions that were traditionally based more heavily on intuition.\nMore broadly, industries that seem especially suited to competing on analytics are finance, retail, hospitality, logistics, insurance, and professional sports, because they generate rich data and make many repeatable decisions that can be improved through modeling and experimentation."
-  },
-  {
-    "objectID": "exercises/exercise_1.html#task-2-create-an-analytical-notebook-in-jupyter",
-    "href": "exercises/exercise_1.html#task-2-create-an-analytical-notebook-in-jupyter",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "Task 2: Create an analytical notebook in Jupyter ",
-    "text": "Task 2: Create an analytical notebook in Jupyter \n\nNavigate to your Codespace in the analytics-and-big-data-notebooks repository and create your first analytical notebook in Jupyter.\n\n1. Select an example case (business problem and dataset)\nChoose a dataset from Kaggle, for example:\n\nRetail and shopping\nFinancial datasets\nTrending datasets\n\nDefine a clear business problem that can be addressed using the selected dataset.\n\n\n2. Draft the analytical notebook\nCreate a new notebook and structure it according to the CRISP-DM framework.\nStart with a structured skeleton:\n\nInclude both markdown and code cells\nImport a dataset (e.g., from Kaggle)\nDescribe planned steps and analytical approaches\nIf unsure about specific steps, clearly mark them as TODO, suggest likely approaches, or outline alternative options\n\n\n\n3. Refine the notebook\nReview your notebook and annotate each part by indicating whether it is:\n\nDescriptive (what happened?)\nPredictive (what will happen?)\nPrescriptive (what should be done?)\n\n\n\n4. Begin with the implementation\nProceed with initial implementation steps:\n\nImport the dataset (e.g., CSV file)\nCreate a descriptive overview of the data\nSelect and implement a basic predictive model\n\nConsult the documentation of relevant Python libraries such as pandas and scikit-learn as needed.\n\n\n\nA good notebook solution should be structured according to CRISP-DM:\n\nBusiness understanding\nClearly describe the business problem, explain why it is relevant, and define the target of the analysis.\nData understanding\nImport the dataset, inspect its structure, and create a first descriptive overview (for example: variables, missing values, distributions, summary statistics, or simple visualizations).\nData preparation\nAnticipate how data should be cleaned and prepared. This may include handling missing values, selecting variables, encoding categories, or splitting the data into training and test sets.\nModeling\nSelect a first predictive model that fits the problem. Reasonable starting points could be:\n\nregression models for predicting numeric outcomes,\nclassification models for predicting categories,\nor a machine-learning models and AI for prediction.\n\nEvaluation\nPlan to assess whether the model is useful for the business problem. Explain the chosen metric and interpret the results in plain language.\nInterpretation / deployment\nAnticipate what the findings could mean for decision-making and what could be done next.\n\nIn the notebook, students should also indicate which parts are:\n\ndescriptive (understanding and summarizing the data),\npredictive (building and evaluating a model),\nprescriptive (discussing what actions could follow from the results).\n\nA complete solution does not need to finish every step perfectly. It is acceptable to leave key coding parts as TODO, propose likely next steps, or discuss modeling options that could be tried. The goal is to demonstrate a structured analytics workflow and familiarize yourself with Jupyter Notebooks."
-  },
-  {
-    "objectID": "exercises/exercise_1.html#discussion",
-    "href": "exercises/exercise_1.html#discussion",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "Discussion",
-    "text": "Discussion\nIn class, we will discuss\n\nSolutions for Task 1 (Competing on Analytics)\nSolutions for Task 2 (Jupyter Notebooks)\n\nYou can share your notebook 🔴 LIVE: in this meeting."
-  },
-  {
-    "objectID": "exercises/exercise_1.html#wrap-up",
-    "href": "exercises/exercise_1.html#wrap-up",
-    "title": "Exercise 1: The rise of analytics",
-    "section": "Wrap-up ",
-    "text": "Wrap-up \n🎉🎈 You have completed the first notebook - good work! 🎈🎉\nIn this notebook, we have learned to\n\nExplain what it means to compete on analytics and why it creates competitive advantage\nSet up and use Jupyter notebooks in a Python-based analytics environment\nStructure an analytical workflow following CRISP-DM principles\nDistinguish between descriptive, predictive, and prescriptive analytics\nBegin implementing a basic data analysis workflow in Python\n\n\n\n\n\n\n\nNoteStop the Codespace\n\n\n\nTo continue using your work in the next session, stop your Codespace here. Stopping the Codespace preserves the current state of your work and does not consume computational resources.\n\n\n\n\n\n\n\n\nTipSession 1 survey\n\n\n\nBefore you wrap up, please complete the Session 1 survey here: https://forms.gle/Jna4dmyEvcw3cjRPA. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/exercise_11.html",
-    "href": "exercises/exercise_11.html",
-    "title": "Exercise 11: Recap, exam preparation, Q&A",
-    "section": "",
-    "text": "Note\n\n\n\nTODO"
-  },
-  {
-    "objectID": "exercises/exercise_11.html#exam-prep",
-    "href": "exercises/exercise_11.html#exam-prep",
-    "title": "Exercise 11: Recap, exam preparation, Q&A",
-    "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 11 survey\n\n\n\nBefore you wrap up, please complete the Session 11 survey here: https://forms.gle/K4wGvwchWkBsQdhc9. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/exercise_4.html",
-    "href": "exercises/exercise_4.html",
-    "title": "Exercise 4: Regression I",
-    "section": "",
-    "text": "Describe how regression models are implemented in Python.\n\nImplement and interpret a regression model in Python using standard libraries.\nEvaluate model performance using appropriate regression metrics.\nExplain how regression modeling fits into the CRISP-DM process, including deployment of trained models."
-  },
-  {
-    "objectID": "exercises/exercise_4.html#exam-prep",
-    "href": "exercises/exercise_4.html#exam-prep",
-    "title": "Exercise 4: Regression I",
-    "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 4 survey\n\n\n\nBefore you wrap up, please complete the Session 4 survey here: https://forms.gle/GtBNSMdCTZ92ix549. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/exercise_7.html",
-    "href": "exercises/exercise_7.html",
-    "title": "Exercise 7: Machine learning II",
-    "section": "",
-    "text": "Implement and evaluate k-nearest neighbors, decision trees, and neural networks for a business prediction task.\nCompare models with respect to accuracy, interpretability, and practical implications.\nRecommend a suitable model for deployment."
-  },
-  {
-    "objectID": "exercises/exercise_7.html#exam-prep",
-    "href": "exercises/exercise_7.html#exam-prep",
-    "title": "Exercise 7: Machine learning II",
-    "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 7 survey\n\n\n\nBefore you wrap up, please complete the Session 7 survey here: https://forms.gle/LghfTrCChfNMLzbJ6. Thank you 🙏"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Note\n\n\n\nBuilding on previous sessions:\n\nRegression I builds the basics, Regression II introduces model tuning (forward/backward variable selection in multiple regression, non-linear transformations, logistic regression)\nML I builds the basics, ML II introduces feature engineering, ensemble models, …"
-  },
-  {
-    "objectID": "syllabus.html#summary",
-    "href": "syllabus.html#summary",
-    "title": "Syllabus",
-    "section": "Summary",
-    "text": "Summary\nThis module introduces students to the methods, technologies, and governance of modern data analytics across descriptive, predictive, and prescriptive approaches. It builds a comprehensive understanding of the data analytics process—from data structuring and preparation to exploratory data analysis, analytical modeling, and decision support. The module combines conceptual foundations and hands-on analytical practice using Python, pandas, and scikit-learn. It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming). Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations."
-  },
-  {
-    "objectID": "syllabus.html#course-policies",
-    "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course policies",
-    "text": "Course policies\n\nGroup assignment requirement: The course includes a mandatory group assignment. This assignment cannot be completed individually and requires active collaboration with your group.\nOn-site participation: The group assignment requires your physical presence on site. Remote-only completion is not possible for this course component.\nEnrollment and attendance expectation: Enrollment implies regular course participation. Being enrolled without attending is not acceptable; students who cannot attend should cancel their enrollment."
-  },
-  {
-    "objectID": "syllabus.html#learning-objectives",
-    "href": "syllabus.html#learning-objectives",
-    "title": "Syllabus",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nKnowledge After completing the module, students will be able to:\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills Students will be able to:\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence Upon successful completion, students will be able to:\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
-  },
-  {
-    "objectID": "syllabus.html#related-courses",
-    "href": "syllabus.html#related-courses",
-    "title": "Syllabus",
-    "section": "Related courses",
-    "text": "Related courses\n\nBig Data & Analytics/Rossbach\nBusiness Intelligence & Analytics (BIA), Hopf\nData-driven Decision Support (DSS), Hopf\nbusiness-analytics-fau, Hopf\nManaging Data at Scale (infs6024), Prester\nCS109A: Introduction to Data Science and materials\nData Science for Business with syllabus\nUC Berkley: Data 100: Principles and Techniques of Data Science\nCoursera: Data Science\nFinancial data science notebooks"
-  },
-  {
-    "objectID": "syllabus.html#recommended-literature",
-    "href": "syllabus.html#recommended-literature",
-    "title": "Syllabus",
-    "section": "Recommended literature",
-    "text": "Recommended literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
-  },
-  {
-    "objectID": "exercises/exercise_2.html",
-    "href": "exercises/exercise_2.html",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "",
-    "text": "In this notebook, we cover:\n\n\n\nExercise part\nTime (min)\n\n\n\n\nData structuring I\n15\n\n\nData structuring II\n20\n\n\nData cleansing\n20\n\n\nEDA: Clustering\n25\n\n\nWrap-up\n10\n\n\nOverall\n90\n\n\n\n\n\nRecommended workflow:\n\n✏️ Think & plan first: In the PDF, draft your answers and outline the transformation steps before coding\n\n💻 Then code: Implement your solution in the Jupyter Notebook\n\nThe Jupyter Notebook is available in the Codespace (repository) here:\nhttps://github.com/fs-ise/analytics-and-big-data-notebooks\nFor the pandas library, refer to this cheat sheet."
-  },
-  {
-    "objectID": "exercises/exercise_2.html#solution",
-    "href": "exercises/exercise_2.html#solution",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Solution",
-    "text": "Solution\n\n1. Identify:\n\nValues: Examples: 2024-10-16 00:00:00, FIN-PIPE-V1, SAP, DE, 2023Q1, 1154.9\nObservations: Individual logged measurements for a specific firm and period\nVariables: Timestamp, Logger system, Firm, Country, Sector, Period, MarketCap, Revenue, EBITDA\nUnits of observation: One logged firm–period record (aggregating multiple metrics)\n\n\n\n\n2. Draft the tidy structure of the dataset (wide format):\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntimestamp\nlogger_sys\nFirm\nCountry\nSector\nPeriod\nMarketCap\nRevenue\nEBITDA\n\n\n\n\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP\nDE\nTech\n2023Q1\n1154.9B\n475.6B\n146.7B\n\n\n2023-10-09 00:00:00\nFIN-PIPE-V1\nSAP\nDE\nTech\n2023Q2\n1816.0B\n82.2B\n\n\n\n…\n…\n…\n…\n…\n…\n…\n…\n…\n\n\n\n\n\n\n3. Describe how the dataset should be transformed.\n\nParse encoded column:\n\nThe Record column contains multiple variables concatenated with -\nSplit into: Firm, Country, Sector, Period, Metric, Value\n\nReshape (long → wide):\n\nPivot the Metric column into separate columns (MarketCap, Revenue, EBITDA, …)\nUse Value as cell entries\n\nOptional refinement:\n\nConvert Value into numeric format (e.g., remove B and cast to float)\nKeep or drop timestamp depending on whether it represents data collection or observation time\n\n\n\n\n\n4. (Optional challenge): Implement the transformation in Python (pandas)\n\nimport pandas as pd\n\n# Load data\nmarket_data_df = pd.read_csv(\"data/market_data_log.csv\")\n\n# Split encoded column\nsplit_cols = market_data_df[\"Record\"].str.split(\"-\", expand=True)\nsplit_cols.columns = [\"Firm\", \"Country\", \"Sector\", \"Period\", \"Metric\", \"Value\"]\n\n# Combine with original dataframe\ndf = pd.concat([market_data_df, split_cols], axis=1)\n\n# Pivot to wide format\ndf_wide = (\n    df.pivot_table(\n        index=[\"timestamp\", \"logger_sys\", \"Firm\", \"Country\", \"Sector\", \"Period\"],\n        columns=\"Metric\",\n        values=\"Value\",\n        aggfunc=\"first\"\n    )\n    .reset_index()\n)\n\ndf_wide.head()\n\n\n\n\n\n\n\nMetric\ntimestamp\nlogger_sys\nFirm\nCountry\nSector\nPeriod\nEBITDA\nMarketCap\nRevenue\n\n\n\n\n0\n2023-01-01 00:00:00\nFIN-PIPE-V1\nLVMH\nFR\nLuxury\n2023Q4\n26.7B\n779.7B\n228.0B\n\n\n1\n2023-01-04 00:00:00\nFIN-PIPE-V1\nHSBC\nUK\nFinance\n2023Q3\n190.1B\n184.1B\n144.1B\n\n\n2\n2023-01-07 00:00:00\nFIN-PIPE-V1\nBMW\nDE\nAutomotive\n2024Q4\n99.3B\n1705.8B\n386.6B\n\n\n3\n2023-01-08 00:00:00\nFIN-PIPE-V1\nTotal\nEU\nMarket\n2024Q3\n102.0B\n1004.9B\n215.6B\n\n\n4\n2023-01-12 00:00:00\nFIN-PIPE-V1\nShell\nUK\nEnergy\n2024Q2\n17.6B\n2272.5B\n191.2B"
-  },
-  {
-    "objectID": "exercises/exercise_2.html#solution-1",
-    "href": "exercises/exercise_2.html#solution-1",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Solution",
-    "text": "Solution\n\n1. Identify:\n\nValues: Numerical sales values (215, 201, 240, …)\nObservations: Individual sales measurements for a specific customer, month, and channel\nVariables: CustomerID, Region, Month, Channel, Sales\nUnits of observation: A customer–month–channel combination\n\n\n\n2. Draft the tidy structure of the dataset:\n\n\n\nCustomer_ID\nRegion\nMonth\nChannel\nSales\n\n\n\n\nCUST-AB12CD\nEU\nJan\nOnline\n120\n\n\nCUST-AB12CD\nEU\nJan\nStore\n95\n\n\nCUST-AB12CD\nEU\nFeb\nOnline\n135\n\n\n\n\n\n\n3. Describe how the dataset should be transformed.\n\nReshape (wide → long): Convert all monthly/channel columns into two columns\nSplit the combined column (Month, Channel)\n\n\n\n4. (Optional challenge): Implement the transformation in Python (pandas)\n\nimport pandas as pd\n\n# Load data\nsales_data_df = pd.read_csv(\"data/sales_data_channels_full_year.csv\")\n\n# Step 1: reshape to long format\ntidy_df = sales_data_df.melt(\n    id_vars=[\"Customer_ID\", \"Region\"],\n    var_name=\"Month_Channel\",\n    value_name=\"Sales\"\n)\n\n# Step 2: split Month and Channel\ntidy_df[[\"Month\", \"Channel\"]] = tidy_df[\"Month_Channel\"].str.split(\"_\", expand=True)\n\n# Step 3: drop Month_Channel\ntidy_df.drop(columns=[\"Month_Channel\"], inplace=True)\n\ntidy_df.head()\n\n\n\n\n\n\n\n\nCustomer_ID\nRegion\nSales\nMonth\nChannel\n\n\n\n\n0\nACC-E0IFD0\nAPAC\n215\nJan\nOnline\n\n\n1\nACC-DPBHSA\nEU\n315\nJan\nOnline\n\n\n2\nCUST-ZZPQK5\nAPAC\n142\nJan\nOnline\n\n\n3\nCUST-ZMF8MD\nAPAC\n218\nJan\nOnline\n\n\n4\nCUST-MMJBQE\nEU\n180\nJan\nOnline"
-  },
-  {
-    "objectID": "exercises/exercise_2.html#tasks-2",
-    "href": "exercises/exercise_2.html#tasks-2",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Tasks",
-    "text": "Tasks\nIn this part, move from detecting problems to making the dataset analysis-ready. The goal is not only to spot errors, but also to document a reproducible cleaning strategy.\n\n1. Identify scales of variables\n\nWhat type of scale is each variable? Run the following and assign nominal, ordinal, interval, or ratio.\n\n\ncustomer_df = pd.read_csv(\"data/messy_customer_data.csv\")\ncustomer_df.info()\n\n\nWhat type of scale should each variable be? Assign nominal, ordinal, interval, or ratio.\n\ncustomer_id: ________________\ndate_of_birth: ________________\nincome: ________________\ngender: ________________\nsignup_date: ________________\ncountry: ________________\n\n\n\n\n\n2. Analyze data quality\nExamine the dataset data/messy_customer_data.csv and run the following:\n\ncustomer_df.describe()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\ncount\n2050\n1951\n1948\n2050\n1999\n2050\n\n\nunique\n2000\n1825\n1668\n6\n1945\n33\n\n\ntop\nCUST_00000000945\n1890-01-01\n200000\nF\n2023-13-01\nAT\n\n\nfreq\n2\n10\n5\n995\n5\n93\n\n\n\n\n\n\n\n\nSummarize all data quality issues you observe (open the data/messy_customer_data.csv).\n\n\n\n\n\n3. Propose data preparation steps\n\nFor each data quality issue, suggest how you would address it.\n\n\n\n\n\n4. (Optional challenge) Implement in Python (pandas)\n\nImplement the data preparation steps in Python.\nRun the code after each step and inspect the results.\n\n\n# Your solution (in Jupyter notebook)\n\nNote: Check how the customer_df changes after each preparation step!"
-  },
-  {
-    "objectID": "exercises/exercise_2.html#solution-2",
-    "href": "exercises/exercise_2.html#solution-2",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Solution",
-    "text": "Solution\n\n1. Identify scales of variables\n\nWhat type of scale is each variable?\nAll are nominal (strings).\nWhat type of scale should each variable be? Assign nominal, ordinal, interval, or ratio.\n\ncustomer_id: nominal\ndate_of_birth: interval\nincome: ratio\ngender: nominal\nsignup_date: interval\ncountry: nominal\n\n\n\n\n2. Analyze data quality\nExamine the dataset data/messy_customer_data.csv and run the following:\n\ncustomer_df.describe()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\ncount\n2050\n1951\n1948\n2050\n1999\n2050\n\n\nunique\n2000\n1825\n1668\n6\n1945\n33\n\n\ntop\nCUST_00000000945\n1890-01-01\n200000\nF\n2023-13-01\nAT\n\n\nfreq\n2\n10\n5\n995\n5\n93\n\n\n\n\n\n\n\n\nSummarize all data quality issues you observe.\nMissing values\n\ndate_of_birth\nincome\nsignup_date\n\nImplausible / invalid values\n\ndate_of_birth (e.g., 1890, future dates like 2030)\nsignup_date (e.g., invalid dates like 2023-13-01)\nincome (e.g., negative values)\n\n\n\n\nInconsistent formats\n\nincome (e.g., “5000”, “5000 EUR”, “5000 USD”)\nsignup_date (multiple date formats)\n\nOutliers\n\nincome (e.g., very high values like 200000)\n\nInconsistent categorical values\n\ngender (M, F, Male, Female, m, f)\ncountry (codes, names, typos: DE, Germany, Ger, U.S., Brasil, etc.)\n\nDuplicates\n\nDuplicate records identifiable via repeated customer_id (high frequency)\n\n\n\n\n\n3. Propose data preparation steps\n\nFor each data quality issue, suggest how you would address it.\nMissing values: impute (e.g., median for income) or remove rows\nImplausible / invalid values: filter out or correct (e.g., negative income, invalid dates)\nInconsistent formats: standardize (convert income to numeric, parse dates to datetime)\nOutliers: inspect and cap or remove extreme values\nInconsistent categorical values: unify categories (e.g., gender labels, country formats)\nDuplicates: remove duplicates based on customer_id\n\n\n\n\n4. (Optional challenge) Implement in Python (pandas)\n\nimport pandas as pd\n\ncustomer_df = pd.read_csv(\"data/messy_customer_data.csv\")\n\n# --- Income: clean + numeric ---\ncustomer_df[\"income\"] = (\n    customer_df[\"income\"]\n    .astype(str)\n    .str.replace(r\"\\s*(USD|EUR)\", \"\", regex=True)\n)\ncustomer_df[\"income\"] = pd.to_numeric(customer_df[\"income\"], errors=\"coerce\")\n\n# --- Missing values (income) ---\ncustomer_df[\"income\"] = customer_df[\"income\"].fillna(customer_df[\"income\"].median())\n\n# --- Dates: parse ---\ncustomer_df[\"date_of_birth\"] = pd.to_datetime(customer_df[\"date_of_birth\"], errors=\"coerce\")\ncustomer_df[\"signup_date\"] = pd.to_datetime(customer_df[\"signup_date\"], errors=\"coerce\")\n\n# --- Invalid / implausible values ---\ntoday = pd.Timestamp.today()\n\n# remove future DOB and very old values\ncustomer_df = customer_df[\n    (customer_df[\"date_of_birth\"] &lt; today) &\n    (customer_df[\"date_of_birth\"] &gt; pd.Timestamp(\"1900-01-01\"))\n]\n\n# remove invalid signup dates (future or NaT)\ncustomer_df = customer_df[\n    (customer_df[\"signup_date\"] &lt;= today)\n]\n\n# remove negative income\ncustomer_df = customer_df[customer_df[\"income\"] &gt;= 0]\n\n# --- Outliers (simple cap) ---\nupper_cap = customer_df[\"income\"].quantile(0.99)\ncustomer_df[\"income\"] = customer_df[\"income\"].clip(upper=upper_cap)\n\n# --- Gender standardization ---\ncustomer_df[\"gender\"] = customer_df[\"gender\"].replace({\n    \"M\": \"Male\", \"m\": \"Male\",\n    \"F\": \"Female\", \"f\": \"Female\"\n})\n\n# --- Country standardization ---\ncountry_map = {\n    \"Germany\": \"DE\", \"Ger\": \"DE\", \"DEU\": \"DE\",\n    \"USA\": \"US\", \"U.S.\": \"US\",\n    \"UK \": \"UK\",\n    \"France\": \"FR\",\n    \"Spain\": \"ES\",\n    \"Italy\": \"IT\",\n    \"Netherlands\": \"NL\",\n    \"Switzerland\": \"CH\",\n    \"Austria\": \"AT\",\n    \"China\": \"CN\",\n    \"Japan\": \"JP\",\n    \"India\": \"IN\",\n    \"Brazil\": \"BR\", \"Brasil\": \"BR\",\n    \"Canada\": \"CA\",\n    \"Munch\": \"DE\"\n}\ncustomer_df[\"country\"] = customer_df[\"country\"].replace(country_map)\n\n# --- Remove duplicates ---\ncustomer_df = customer_df.drop_duplicates(subset=[\"customer_id\"])\n\ncustomer_df.head()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\n1\nCUST_00000000695\n1945-08-02\n7029.0\nFemale\n2023-11-26\nBR\n\n\n2\nCUST_00000000907\n1971-07-25\n6432.0\nFemale\n2024-06-25\nAT\n\n\n3\nCUST_00000000545\n2000-03-01\n6107.0\nMale\n2023-06-29\nJP\n\n\n7\nCUST_00000000945\n1989-08-23\n3976.0\nMale\n2024-08-02\nBR\n\n\n8\nCUST_00000000819\n1946-03-09\n3077.0\nFemale\n2024-03-29\nNL"
-  },
-  {
-    "objectID": "exercises/exercise_2.html#tasks-3",
-    "href": "exercises/exercise_2.html#tasks-3",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Tasks",
-    "text": "Tasks\n\n1. Prepare the data for clustering\nWe decide to use profit_margin and rd_intensity to cluster firms. In a first step, create a dataframe X consisting of values for these two variables:\n\nimport pandas as pd\n\ndf_firm_data = pd.read_csv(\"data/firm_data.csv\")\n\n# Your solution (in Jupyter notebook)\n\n# Print X at the end\n\nBefore clustering, do a quick exploratory check so you know what kind of patterns you are looking for.\n\nX.describe()\n\n\ndf_firm_data[[\"profit_margin\", \"rd_intensity\"]].hist(figsize=(6, 3))\n\nConsidering that k-means is sensitive to different measurement scale, we need to standardize the values. This ensures that they have approximately equal influence on the clusters.\nRun the following code and observe how the scale of both variables changes:\n\nfrom sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX = scaler.fit_transform(X)\nX\n\nBefore running a clustering algorithm, lets’s view the data in a scatterplot:\n\nimport matplotlib.pyplot as plt\n\nplt.scatter(X[:, 0], X[:, 1], s=10)\nplt.title(\"Raw data (no clustering)\")\nplt.show()\n\nHow many clusters would you expect? Briefly justify your answer based on the plot.\n\n\n\n2. Apply K-Means clustering\n\nNext, run the k-means clustering algorithm for different values of k.\n\n\nfrom sklearn.cluster import KMeans\n\n# Your solution (in Jupyter notebook)\n# Note: consider the names of variables and objects used in the rest of the code\n\n# Run the whole code cell to fit KMeans and plot it\nplt.figure(figsize=(3.6, 2.8))\nplt.scatter(X[:, 0], X[:, 1], c=labels, s=10)\nplt.scatter(\n    kmeans.cluster_centers_[:, 0],\n    kmeans.cluster_centers_[:, 1],\n    c='red', marker='x', s=60, linewidth=2\n)\nplt.title(f\"k={k}\", fontsize=10)\nplt.xticks([])\nplt.yticks([])\nplt.tight_layout()\nplt.show()\n\n\nTry different values of K (e.g., 2–10). Which number of clusters seems appropriate?\n\n\n\n\n3. Add cluster labels to the dataset\n\nAssign the cluster labels returned by the k-means algorithm to the original dataframe (df_firm_data).\n\n\n# Your solution (in Jupyter notebook)\n\n\n\n\n4. Create grouped boxplots\n\nGenerate a boxplot, grouped according to the clusters, to compare differences in revenue.\nTry to complete the task relying only on the pandas documentation for boxplots.\n\n\nimport matplotlib.pyplot as plt\n\n# Your solution (in Jupyter notebook)"
-  },
-  {
-    "objectID": "exercises/exercise_2.html#solution-3",
-    "href": "exercises/exercise_2.html#solution-3",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Solution",
-    "text": "Solution\n\n1. Prepare the data for clustering\nWe use only profit_margin and rd_intensity for clustering:\n\nimport pandas as pd\n\ndf_firm_data = pd.read_csv(\"data/firm_data.csv\")\n\nX = df_firm_data[[\"profit_margin\", \"rd_intensity\"]]\n\nX.head()\n\n\n\n\n\n\n\n\nprofit_margin\nrd_intensity\n\n\n\n\n0\n13.382162\n3.308879\n\n\n1\n10.139487\n8.710809\n\n\n2\n4.131422\n15.719744\n\n\n3\n9.573304\n31.989645\n\n\n4\n0.165357\n2.082579\n\n\n\n\n\n\n\n\nExploratory check\n\nX.describe()\n\n\n\n\n\n\n\n\nprofit_margin\nrd_intensity\n\n\n\n\ncount\n200.000000\n200.000000\n\n\nmean\n6.038353\n11.782773\n\n\nstd\n8.606380\n10.182518\n\n\nmin\n-18.193454\n-1.006377\n\n\n25%\n1.165900\n3.438376\n\n\n50%\n6.300245\n7.883626\n\n\n75%\n11.151334\n18.519914\n\n\nmax\n26.183842\n41.741721\n\n\n\n\n\n\n\n\ndf_firm_data[[\"profit_margin\", \"rd_intensity\"]].hist(figsize=(6, 3))\n\narray([[&lt;Axes: title={'center': 'profit_margin'}&gt;,\n        &lt;Axes: title={'center': 'rd_intensity'}&gt;]], dtype=object)\n\n\n\n\n\n\n\n\n\nThese summaries and histograms help us understand the distribution and scale of the variables.\n\n\n\nStandardization\nSince k-means is sensitive to scale differences, we standardize the variables:\n\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\nX_scaled[:3]\n\narray([[ 0.85543951, -0.83428853],\n       [ 0.47771828, -0.30244699],\n       [-0.22212786,  0.38761056]])\n\n\n\n\nScatterplot (before clustering)\n\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(5, 3))\nplt.scatter(X_scaled[:, 0], X_scaled[:, 1], s=10)\nplt.title(\"Standardized data (no clustering)\")\nplt.xlabel(\"profit_margin (scaled)\")\nplt.ylabel(\"rd_intensity (scaled)\")\nplt.show()\n\n\n\n\n\n\n\n\nInterpretation: From the scatterplot, we might expect a small number of clusters (e.g., 3–5), depending on visible groupings.\n\n\n\n\n2. Apply K-Means clustering\nWe try different values of k and visually inspect the cluster structure:\n\nfrom sklearn.cluster import KMeans\n\nfor k in range(2, 7):\n    kmeans = KMeans(n_clusters=k, random_state=42)\n    labels = kmeans.fit_predict(X_scaled)\n\n    plt.figure(figsize=(3.6, 2.8))\n    plt.scatter(X_scaled[:, 0], X_scaled[:, 1], c=labels, s=10)\n    plt.scatter(\n        kmeans.cluster_centers_[:, 0],\n        kmeans.cluster_centers_[:, 1],\n        c=\"red\", marker=\"x\", s=60, linewidth=2\n    )\n    plt.title(f\"k={k}\", fontsize=10)\n    plt.xticks([])\n    plt.yticks([])\n    plt.tight_layout()\n    plt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion: A value around k = 4 appears to provide a reasonable balance between simplicity and structure.\n\n\n\n3. Add cluster labels to the dataset\nWe now fit the final model and store the cluster labels:\n\nk = 4\nkmeans = KMeans(n_clusters=k, random_state=42)\nlabels = kmeans.fit_predict(X_scaled)\n\ndf_firm_data[\"cluster\"] = labels\n\ndf_firm_data.head()\n\n\n\n\n\n\n\n\ncompany_id\nsector\nrevenue\nprofit_margin\ngrowth_rate\ndebt_ratio\nmarket_cap\nrd_intensity\ncluster\n\n\n\n\n0\nFIRM-0095\nHealthcare\n2117.569743\n13.382162\n6.053507\n0.555974\n12426.889897\n3.308879\n2\n\n\n1\nFIRM-0015\nHealthcare\n457.538045\n10.139487\n21.504950\n0.350252\n5779.074618\n8.710809\n3\n\n\n2\nFIRM-0030\nIndustry\n463.847307\n4.131422\n13.237034\n0.356084\n4451.965515\n15.719744\n3\n\n\n3\nFIRM-0158\nFinance\n347.980562\n9.573304\n16.117482\n0.472141\n3256.609038\n31.989645\n1\n\n\n4\nFIRM-0128\nTech\n804.239654\n0.165357\n-3.346796\n0.761088\n1825.004761\n2.082579\n0\n\n\n\n\n\n\n\n\n\n\n4. Create grouped boxplots\nWe compare revenue across clusters:\n\nimport matplotlib.pyplot as plt\n\ndf_firm_data.boxplot(column=\"revenue\", by=\"cluster\")\nplt.title(\"Revenue by Cluster\")\nplt.suptitle(\"\")\nplt.xlabel(\"Cluster\")\nplt.ylabel(\"Revenue\")\nplt.show()\n\n\n\n\n\n\n\n\nInterpretation: The boxplots reveal how revenue differs across clusters, helping to characterize the identified firm profiles."
-  },
-  {
-    "objectID": "exercises/exercise_2.html#wrap-up",
-    "href": "exercises/exercise_2.html#wrap-up",
-    "title": "Exercise 2: Data preparation and exploration",
-    "section": "Wrap-up ",
-    "text": "Wrap-up \n🎉🎈 You have completed the notebook - good work! 🎈🎉\nIn this notebook, we have learned to\n\nStructure data in a tidy format\nPrepare and explore datasets\nApply clustering methods\n\n\n\n\n\n\n\nNoteStop the Codespace\n\n\n\nRemember to stop your Codespace here.\n\n\n\n\n\n\n\n\nTipSession 2 survey\n\n\n\nBefore you wrap up, please complete the Session 2 survey here: https://forms.gle/XfRmmVbf1yaBwrky9. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/demo_1.html",
-    "href": "exercises/demo_1.html",
-    "title": "Demo 1: Linear regression",
-    "section": "",
-    "text": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score"
-  },
-  {
-    "objectID": "exercises/demo_1.html#load-libraries",
-    "href": "exercises/demo_1.html#load-libraries",
-    "title": "Demo 1: Linear regression",
-    "section": "",
-    "text": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score"
-  },
-  {
-    "objectID": "exercises/demo_1.html#load-dataset",
-    "href": "exercises/demo_1.html#load-dataset",
-    "title": "Demo 1: Linear regression",
-    "section": "Load dataset",
-    "text": "Load dataset\n\ndf = pd.read_csv(\"data/ames.csv\")"
-  },
-  {
-    "objectID": "exercises/exercise_5.html",
-    "href": "exercises/exercise_5.html",
-    "title": "Exercise 5: Regression II",
-    "section": "",
-    "text": "Estimate and interpret a multiple regression model in Python.\nRefine a regression model, assessing how additional predictors affect model fit.\nImplement and evaluate a logistic regression model for a binary outcome."
-  },
-  {
-    "objectID": "exercises/exercise_5.html#exam-prep",
-    "href": "exercises/exercise_5.html#exam-prep",
-    "title": "Exercise 5: Regression II",
-    "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 5 survey\n\n\n\nBefore you wrap up, please complete the Session 5 survey here: https://forms.gle/mVWw3z7ftFn48gDY6. Thank you 🙏"
-  },
-  {
-    "objectID": "exercises/exercise_6.html",
-    "href": "exercises/exercise_6.html",
-    "title": "Exercise 6: Machine learning I",
-    "section": "",
-    "text": "Implement a machine learning model in Python, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nhttps://github.com/justmarkham/scikit-learn-videos"
-  },
-  {
-    "objectID": "exercises/exercise_6.html#implementation-in-python-with-scikit-learn-20-min",
-    "href": "exercises/exercise_6.html#implementation-in-python-with-scikit-learn-20-min",
-    "title": "Exercise 6: Machine learning I",
-    "section": "Implementation in Python with scikit-learn (20 min)",
-    "text": "Implementation in Python with scikit-learn (20 min)\nWalk through a simple, reproducible pipeline:\n\nLoad dataset (toy dataset or small real-world example)\nTrain–test split\nPreprocessing pipeline (e.g., StandardScaler + model)\nFit logistic regression vs. one non-linear model (e.g., decision tree or SVM)\nCompare performance metrics\nShow how to inspect confusion matrix & classification report\n\nHighlight: - Consistent API (fit, predict, score) - Use of Pipeline - Keeping code structured and reproducible"
-  },
-  {
-    "objectID": "exercises/exercise_6.html#exam-prep",
-    "href": "exercises/exercise_6.html#exam-prep",
-    "title": "Exercise 6: Machine learning I",
-    "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 6 survey\n\n\n\nBefore you wrap up, please complete the Session 6 survey here: https://forms.gle/AFmpWcopjMtGfNif6. Thank you 🙏"
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 9 survey\n\n\n\nBefore you wrap up, please complete the Session 9 survey here: https://forms.gle/1vsCsqc3SzWfSX1f6. Thank you 🙏"
   },
   {
     "objectID": "exercises/exercise_3.html",
@@ -1834,109 +1624,487 @@
     "text": "Question 10\nHow can a dendrogram support the choice of the number of clusters for k-means?\nAnswer:\nA dendrogram is a tree-like diagram produced by hierarchical clustering. It shows how observations or groups are merged step by step and at what dissimilarity level those merges occur.\nLarge vertical gaps in the dendrogram suggest that combining clusters beyond that point would merge relatively dissimilar groups. This can provide a useful hint about a reasonable number of clusters.\nThis is helpful before running k-means because it offers an exploratory view of possible cluster structure in the data. However, the dendrogram itself does not perform k-means clustering. It is a separate hierarchical method that can help inform the choice of k."
   },
   {
-    "objectID": "exercises/exercise_9.html",
-    "href": "exercises/exercise_9.html",
-    "title": "Exercise 9: Big data II",
+    "objectID": "exercises/exercise_6.html",
+    "href": "exercises/exercise_6.html",
+    "title": "Exercise 6: Machine learning I",
     "section": "",
-    "text": "Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python. Apply large language models or other scalable methods to extract, classify, or summarize unstructured data."
+    "text": "Implement a machine learning model in Python, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nhttps://github.com/justmarkham/scikit-learn-videos"
   },
   {
-    "objectID": "exercises/exercise_9.html#exam-prep",
-    "href": "exercises/exercise_9.html#exam-prep",
-    "title": "Exercise 9: Big data II",
+    "objectID": "exercises/exercise_6.html#implementation-in-python-with-scikit-learn-20-min",
+    "href": "exercises/exercise_6.html#implementation-in-python-with-scikit-learn-20-min",
+    "title": "Exercise 6: Machine learning I",
+    "section": "Implementation in Python with scikit-learn (20 min)",
+    "text": "Implementation in Python with scikit-learn (20 min)\nWalk through a simple, reproducible pipeline:\n\nLoad dataset (toy dataset or small real-world example)\nTrain–test split\nPreprocessing pipeline (e.g., StandardScaler + model)\nFit logistic regression vs. one non-linear model (e.g., decision tree or SVM)\nCompare performance metrics\nShow how to inspect confusion matrix & classification report\n\nHighlight: - Consistent API (fit, predict, score) - Use of Pipeline - Keeping code structured and reproducible"
+  },
+  {
+    "objectID": "exercises/exercise_6.html#exam-prep",
+    "href": "exercises/exercise_6.html#exam-prep",
+    "title": "Exercise 6: Machine learning I",
     "section": "Exam prep",
-    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 9 survey\n\n\n\nBefore you wrap up, please complete the Session 9 survey here: https://forms.gle/1vsCsqc3SzWfSX1f6. Thank you 🙏"
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 6 survey\n\n\n\nBefore you wrap up, please complete the Session 6 survey here: https://forms.gle/AFmpWcopjMtGfNif6. Thank you 🙏"
   },
   {
-    "objectID": "objectives.html",
-    "href": "objectives.html",
-    "title": "Overview of learning objectives",
+    "objectID": "exercises/exercise_5.html",
+    "href": "exercises/exercise_5.html",
+    "title": "Exercise 5: Regression II",
     "section": "",
-    "text": "Note\n\n\n\nThe following extracts the primary learning objectives from the lecture slides. Exercises typically mirror these objectives (covering practical implementation, illustrative cases, or specific exam prep/questions). Objectives that are covered in the exercises exclusively are highlighted.\nThe rise of analytics\n\nIllustrate how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise).\n\n\n\nData preparation and exploration\n\nDescribe variables, relationships between variables, and underlying structure in the data (e.g., clusters).\nPrepare and explore data sets using appropriate descriptive and visual techniques.\nExplain the role of exploratory data analysis in business decision-making.\n\n\n\nAnalytical data architecture\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact and dimension schemata from business questions and operational data.\n\n\n\nRegression I\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficients, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python.\n\n\n\nRegression II\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning.\n\n\n\nMachine learning I\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)\n\n\n\nMachine learning II\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.\n\n\n\nBig data I\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics.\n\n\n\nBig data II\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows.\n\n\n\nAnalytics in organizations\n\nExplain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations.\n\n\n\nIntegration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
+    "text": "Estimate and interpret a multiple regression model in Python.\nRefine a regression model, assessing how additional predictors affect model fit.\nImplement and evaluate a logistic regression model for a binary outcome."
   },
   {
-    "objectID": "objectives.html#the-rise-of-analytics",
-    "href": "objectives.html#the-rise-of-analytics",
-    "title": "Overview of learning objectives",
-    "section": "The rise of analytics",
-    "text": "The rise of analytics\n\nIllustrate how the rise of data analytics capabilities is enabled by data availability, advances in computing power, new algorithms, and maturing analytics processes.\nDistinguish between descriptive, predictive, and prescriptive analytics.\nExplore the Python and Jupyter analytics ecosystem (exercise)."
+    "objectID": "exercises/exercise_5.html#exam-prep",
+    "href": "exercises/exercise_5.html#exam-prep",
+    "title": "Exercise 5: Regression II",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 5 survey\n\n\n\nBefore you wrap up, please complete the Session 5 survey here: https://forms.gle/mVWw3z7ftFn48gDY6. Thank you 🙏"
   },
   {
-    "objectID": "objectives.html#data-preparation-and-exploration",
-    "href": "objectives.html#data-preparation-and-exploration",
-    "title": "Overview of learning objectives",
-    "section": "Data preparation and exploration",
-    "text": "Data preparation and exploration\n\nDescribe variables, relationships between variables, and underlying structure in the data (e.g., clusters).\nPrepare and explore data sets using appropriate descriptive and visual techniques.\nExplain the role of exploratory data analysis in business decision-making."
-  },
-  {
-    "objectID": "objectives.html#analytical-data-architecture",
-    "href": "objectives.html#analytical-data-architecture",
-    "title": "Overview of learning objectives",
-    "section": "Analytical data architecture",
-    "text": "Analytical data architecture\n\nOutline the architecture of data warehouses.\nExplain dimensional modeling concepts and common schemata.\nDesign fact and dimension schemata from business questions and operational data."
-  },
-  {
-    "objectID": "objectives.html#regression-i",
-    "href": "objectives.html#regression-i",
-    "title": "Overview of learning objectives",
-    "section": "Regression I",
-    "text": "Regression I\n\nExplain the stages of a model-based analytics workflow using linear regression as an example.\nInterpret linear regression models, including coefficients, OLS estimation, and model evaluation.\nDescribe how regression models are implemented in Python."
-  },
-  {
-    "objectID": "objectives.html#regression-ii",
-    "href": "objectives.html#regression-ii",
-    "title": "Overview of learning objectives",
-    "section": "Regression II",
-    "text": "Regression II\n\nUnderstand and assess multiple regression models, including refinement strategies and key assumptions.\nDistinguish between inference- and prediction-oriented modeling and their implications for business contexts.\nExplain logistic regression as a probabilistic classification model and its role as a bridge to machine learning."
-  },
-  {
-    "objectID": "objectives.html#machine-learning-i",
-    "href": "objectives.html#machine-learning-i",
-    "title": "Overview of learning objectives",
-    "section": "Machine learning I",
-    "text": "Machine learning I\n\nDistinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
-  },
-  {
-    "objectID": "objectives.html#machine-learning-ii",
-    "href": "objectives.html#machine-learning-ii",
-    "title": "Overview of learning objectives",
-    "section": "Machine learning II",
-    "text": "Machine learning II\n\nCompare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
-  },
-  {
-    "objectID": "objectives.html#big-data-i",
-    "href": "objectives.html#big-data-i",
-    "title": "Overview of learning objectives",
-    "section": "Big data I",
-    "text": "Big data I\n\nExplain the characteristics of big data and their implications for analytics workflows.\nAssess key challenges of big data, including scalability, heterogeneity, and data quality.\nOutline distributed data architectures and their role in large-scale analytics."
-  },
-  {
-    "objectID": "objectives.html#big-data-ii",
-    "href": "objectives.html#big-data-ii",
-    "title": "Overview of learning objectives",
-    "section": "Big data II",
-    "text": "Big data II\n\nExplain the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).\nAcquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.\nApply large language models or other scalable methods to extract, classify, or summarize unstructured data.\nEvaluate the reliability, bias, and limitations of API- and LLM-based analytics workflows."
-  },
-  {
-    "objectID": "objectives.html#analytics-in-organizations",
-    "href": "objectives.html#analytics-in-organizations",
-    "title": "Overview of learning objectives",
-    "section": "Analytics in organizations",
-    "text": "Analytics in organizations\n\nExplain the strategic role of data analytics in data-driven organizations.\nDiscuss the ethical and legal boundaries of data analytics in organizations."
-  },
-  {
-    "objectID": "objectives.html#integration-and-exam-preparation",
-    "href": "objectives.html#integration-and-exam-preparation",
-    "title": "Overview of learning objectives",
-    "section": "Integration and exam preparation",
-    "text": "Integration and exam preparation\n\nSummarize how learnings integrate across the semester.\nResolve remaining questions for exam preparation."
-  },
-  {
-    "objectID": "readme.html",
-    "href": "readme.html",
-    "title": "Analytics & Big Data",
+    "objectID": "exercises/demo_1.html",
+    "href": "exercises/demo_1.html",
+    "title": "Demo 1: Linear regression",
     "section": "",
-    "text": "Analytics & Big Data\nServe preview:\nquarto preview\n\n# preview solutions\ncd exercises\nquarto preview --profile solution\nRender\nmake site\nmake all # includes pdfs"
+    "text": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score"
+  },
+  {
+    "objectID": "exercises/demo_1.html#load-libraries",
+    "href": "exercises/demo_1.html#load-libraries",
+    "title": "Demo 1: Linear regression",
+    "section": "",
+    "text": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score"
+  },
+  {
+    "objectID": "exercises/demo_1.html#load-dataset",
+    "href": "exercises/demo_1.html#load-dataset",
+    "title": "Demo 1: Linear regression",
+    "section": "Load dataset",
+    "text": "Load dataset\n\ndf = pd.read_csv(\"data/ames.csv\")"
+  },
+  {
+    "objectID": "exercises/exercise_2.html",
+    "href": "exercises/exercise_2.html",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "",
+    "text": "In this notebook, we cover:\n\n\n\nExercise part\nTime (min)\n\n\n\n\nData structuring I\n15\n\n\nData structuring II\n20\n\n\nData cleansing\n20\n\n\nEDA: Clustering\n25\n\n\nWrap-up\n10\n\n\nOverall\n90\n\n\n\n\n\nRecommended workflow:\n\n✏️ Think & plan first: In the PDF, draft your answers and outline the transformation steps before coding\n\n💻 Then code: Implement your solution in the Jupyter Notebook\n\nThe Jupyter Notebook is available in the Codespace (repository) here:\nhttps://github.com/fs-ise/analytics-and-big-data-notebooks\nFor the pandas library, refer to this cheat sheet."
+  },
+  {
+    "objectID": "exercises/exercise_2.html#solution",
+    "href": "exercises/exercise_2.html#solution",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Solution",
+    "text": "Solution\n\n1. Identify:\n\nValues: Examples: 2024-10-16 00:00:00, FIN-PIPE-V1, SAP, DE, 2023Q1, 1154.9\nObservations: Individual logged measurements for a specific firm and period\nVariables: Timestamp, Logger system, Firm, Country, Sector, Period, MarketCap, Revenue, EBITDA\nUnits of observation: One logged firm–period record (aggregating multiple metrics)\n\n\n\n\n2. Draft the tidy structure of the dataset (wide format):\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntimestamp\nlogger_sys\nFirm\nCountry\nSector\nPeriod\nMarketCap\nRevenue\nEBITDA\n\n\n\n\n2024-10-16 00:00:00\nFIN-PIPE-V1\nSAP\nDE\nTech\n2023Q1\n1154.9B\n475.6B\n146.7B\n\n\n2023-10-09 00:00:00\nFIN-PIPE-V1\nSAP\nDE\nTech\n2023Q2\n1816.0B\n82.2B\n\n\n\n…\n…\n…\n…\n…\n…\n…\n…\n…\n\n\n\n\n\n\n3. Describe how the dataset should be transformed.\n\nParse encoded column:\n\nThe Record column contains multiple variables concatenated with -\nSplit into: Firm, Country, Sector, Period, Metric, Value\n\nReshape (long → wide):\n\nPivot the Metric column into separate columns (MarketCap, Revenue, EBITDA, …)\nUse Value as cell entries\n\nOptional refinement:\n\nConvert Value into numeric format (e.g., remove B and cast to float)\nKeep or drop timestamp depending on whether it represents data collection or observation time\n\n\n\n\n\n4. (Optional challenge): Implement the transformation in Python (pandas)\n\nimport pandas as pd\n\n# Load data\nmarket_data_df = pd.read_csv(\"data/market_data_log.csv\")\n\n# Split encoded column\nsplit_cols = market_data_df[\"Record\"].str.split(\"-\", expand=True)\nsplit_cols.columns = [\"Firm\", \"Country\", \"Sector\", \"Period\", \"Metric\", \"Value\"]\n\n# Combine with original dataframe\ndf = pd.concat([market_data_df, split_cols], axis=1)\n\n# Pivot to wide format\ndf_wide = (\n    df.pivot_table(\n        index=[\"timestamp\", \"logger_sys\", \"Firm\", \"Country\", \"Sector\", \"Period\"],\n        columns=\"Metric\",\n        values=\"Value\",\n        aggfunc=\"first\"\n    )\n    .reset_index()\n)\n\ndf_wide.head()\n\n\n\n\n\n\n\nMetric\ntimestamp\nlogger_sys\nFirm\nCountry\nSector\nPeriod\nEBITDA\nMarketCap\nRevenue\n\n\n\n\n0\n2023-01-01 00:00:00\nFIN-PIPE-V1\nLVMH\nFR\nLuxury\n2023Q4\n26.7B\n779.7B\n228.0B\n\n\n1\n2023-01-04 00:00:00\nFIN-PIPE-V1\nHSBC\nUK\nFinance\n2023Q3\n190.1B\n184.1B\n144.1B\n\n\n2\n2023-01-07 00:00:00\nFIN-PIPE-V1\nBMW\nDE\nAutomotive\n2024Q4\n99.3B\n1705.8B\n386.6B\n\n\n3\n2023-01-08 00:00:00\nFIN-PIPE-V1\nTotal\nEU\nMarket\n2024Q3\n102.0B\n1004.9B\n215.6B\n\n\n4\n2023-01-12 00:00:00\nFIN-PIPE-V1\nShell\nUK\nEnergy\n2024Q2\n17.6B\n2272.5B\n191.2B"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#solution-1",
+    "href": "exercises/exercise_2.html#solution-1",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Solution",
+    "text": "Solution\n\n1. Identify:\n\nValues: Numerical sales values (215, 201, 240, …)\nObservations: Individual sales measurements for a specific customer, month, and channel\nVariables: CustomerID, Region, Month, Channel, Sales\nUnits of observation: A customer–month–channel combination\n\n\n\n2. Draft the tidy structure of the dataset:\n\n\n\nCustomer_ID\nRegion\nMonth\nChannel\nSales\n\n\n\n\nCUST-AB12CD\nEU\nJan\nOnline\n120\n\n\nCUST-AB12CD\nEU\nJan\nStore\n95\n\n\nCUST-AB12CD\nEU\nFeb\nOnline\n135\n\n\n\n\n\n\n3. Describe how the dataset should be transformed.\n\nReshape (wide → long): Convert all monthly/channel columns into two columns\nSplit the combined column (Month, Channel)\n\n\n\n4. (Optional challenge): Implement the transformation in Python (pandas)\n\nimport pandas as pd\n\n# Load data\nsales_data_df = pd.read_csv(\"data/sales_data_channels_full_year.csv\")\n\n# Step 1: reshape to long format\ntidy_df = sales_data_df.melt(\n    id_vars=[\"Customer_ID\", \"Region\"],\n    var_name=\"Month_Channel\",\n    value_name=\"Sales\"\n)\n\n# Step 2: split Month and Channel\ntidy_df[[\"Month\", \"Channel\"]] = tidy_df[\"Month_Channel\"].str.split(\"_\", expand=True)\n\n# Step 3: drop Month_Channel\ntidy_df.drop(columns=[\"Month_Channel\"], inplace=True)\n\ntidy_df.head()\n\n\n\n\n\n\n\n\nCustomer_ID\nRegion\nSales\nMonth\nChannel\n\n\n\n\n0\nACC-E0IFD0\nAPAC\n215\nJan\nOnline\n\n\n1\nACC-DPBHSA\nEU\n315\nJan\nOnline\n\n\n2\nCUST-ZZPQK5\nAPAC\n142\nJan\nOnline\n\n\n3\nCUST-ZMF8MD\nAPAC\n218\nJan\nOnline\n\n\n4\nCUST-MMJBQE\nEU\n180\nJan\nOnline"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#tasks-2",
+    "href": "exercises/exercise_2.html#tasks-2",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Tasks",
+    "text": "Tasks\nIn this part, move from detecting problems to making the dataset analysis-ready. The goal is not only to spot errors, but also to document a reproducible cleaning strategy.\n\n1. Identify scales of variables\n\nWhat type of scale is each variable? Run the following and assign nominal, ordinal, interval, or ratio.\n\n\ncustomer_df = pd.read_csv(\"data/messy_customer_data.csv\")\ncustomer_df.info()\n\n\nWhat type of scale should each variable be? Assign nominal, ordinal, interval, or ratio.\n\ncustomer_id: ________________\ndate_of_birth: ________________\nincome: ________________\ngender: ________________\nsignup_date: ________________\ncountry: ________________\n\n\n\n\n\n2. Analyze data quality\nExamine the dataset data/messy_customer_data.csv and run the following:\n\ncustomer_df.describe()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\ncount\n2050\n1951\n1948\n2050\n1999\n2050\n\n\nunique\n2000\n1825\n1668\n6\n1945\n33\n\n\ntop\nCUST_00000000945\n1890-01-01\n200000\nF\n2023-13-01\nAT\n\n\nfreq\n2\n10\n5\n995\n5\n93\n\n\n\n\n\n\n\n\nSummarize all data quality issues you observe (open the data/messy_customer_data.csv).\n\n\n\n\n\n3. Propose data preparation steps\n\nFor each data quality issue, suggest how you would address it.\n\n\n\n\n\n4. (Optional challenge) Implement in Python (pandas)\n\nImplement the data preparation steps in Python.\nRun the code after each step and inspect the results.\n\n\n# Your solution (in Jupyter notebook)\n\nNote: Check how the customer_df changes after each preparation step!"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#solution-2",
+    "href": "exercises/exercise_2.html#solution-2",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Solution",
+    "text": "Solution\n\n1. Identify scales of variables\n\nWhat type of scale is each variable?\nAll are nominal (strings).\nWhat type of scale should each variable be? Assign nominal, ordinal, interval, or ratio.\n\ncustomer_id: nominal\ndate_of_birth: interval\nincome: ratio\ngender: nominal\nsignup_date: interval\ncountry: nominal\n\n\n\n\n2. Analyze data quality\nExamine the dataset data/messy_customer_data.csv and run the following:\n\ncustomer_df.describe()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\ncount\n2050\n1951\n1948\n2050\n1999\n2050\n\n\nunique\n2000\n1825\n1668\n6\n1945\n33\n\n\ntop\nCUST_00000000945\n1890-01-01\n200000\nF\n2023-13-01\nAT\n\n\nfreq\n2\n10\n5\n995\n5\n93\n\n\n\n\n\n\n\n\nSummarize all data quality issues you observe.\nMissing values\n\ndate_of_birth\nincome\nsignup_date\n\nImplausible / invalid values\n\ndate_of_birth (e.g., 1890, future dates like 2030)\nsignup_date (e.g., invalid dates like 2023-13-01)\nincome (e.g., negative values)\n\n\n\n\nInconsistent formats\n\nincome (e.g., “5000”, “5000 EUR”, “5000 USD”)\nsignup_date (multiple date formats)\n\nOutliers\n\nincome (e.g., very high values like 200000)\n\nInconsistent categorical values\n\ngender (M, F, Male, Female, m, f)\ncountry (codes, names, typos: DE, Germany, Ger, U.S., Brasil, etc.)\n\nDuplicates\n\nDuplicate records identifiable via repeated customer_id (high frequency)\n\n\n\n\n\n3. Propose data preparation steps\n\nFor each data quality issue, suggest how you would address it.\nMissing values: impute (e.g., median for income) or remove rows\nImplausible / invalid values: filter out or correct (e.g., negative income, invalid dates)\nInconsistent formats: standardize (convert income to numeric, parse dates to datetime)\nOutliers: inspect and cap or remove extreme values\nInconsistent categorical values: unify categories (e.g., gender labels, country formats)\nDuplicates: remove duplicates based on customer_id\n\n\n\n\n4. (Optional challenge) Implement in Python (pandas)\n\nimport pandas as pd\n\ncustomer_df = pd.read_csv(\"data/messy_customer_data.csv\")\n\n# --- Income: clean + numeric ---\ncustomer_df[\"income\"] = (\n    customer_df[\"income\"]\n    .astype(str)\n    .str.replace(r\"\\s*(USD|EUR)\", \"\", regex=True)\n)\ncustomer_df[\"income\"] = pd.to_numeric(customer_df[\"income\"], errors=\"coerce\")\n\n# --- Missing values (income) ---\ncustomer_df[\"income\"] = customer_df[\"income\"].fillna(customer_df[\"income\"].median())\n\n# --- Dates: parse ---\ncustomer_df[\"date_of_birth\"] = pd.to_datetime(customer_df[\"date_of_birth\"], errors=\"coerce\")\ncustomer_df[\"signup_date\"] = pd.to_datetime(customer_df[\"signup_date\"], errors=\"coerce\")\n\n# --- Invalid / implausible values ---\ntoday = pd.Timestamp.today()\n\n# remove future DOB and very old values\ncustomer_df = customer_df[\n    (customer_df[\"date_of_birth\"] &lt; today) &\n    (customer_df[\"date_of_birth\"] &gt; pd.Timestamp(\"1900-01-01\"))\n]\n\n# remove invalid signup dates (future or NaT)\ncustomer_df = customer_df[\n    (customer_df[\"signup_date\"] &lt;= today)\n]\n\n# remove negative income\ncustomer_df = customer_df[customer_df[\"income\"] &gt;= 0]\n\n# --- Outliers (simple cap) ---\nupper_cap = customer_df[\"income\"].quantile(0.99)\ncustomer_df[\"income\"] = customer_df[\"income\"].clip(upper=upper_cap)\n\n# --- Gender standardization ---\ncustomer_df[\"gender\"] = customer_df[\"gender\"].replace({\n    \"M\": \"Male\", \"m\": \"Male\",\n    \"F\": \"Female\", \"f\": \"Female\"\n})\n\n# --- Country standardization ---\ncountry_map = {\n    \"Germany\": \"DE\", \"Ger\": \"DE\", \"DEU\": \"DE\",\n    \"USA\": \"US\", \"U.S.\": \"US\",\n    \"UK \": \"UK\",\n    \"France\": \"FR\",\n    \"Spain\": \"ES\",\n    \"Italy\": \"IT\",\n    \"Netherlands\": \"NL\",\n    \"Switzerland\": \"CH\",\n    \"Austria\": \"AT\",\n    \"China\": \"CN\",\n    \"Japan\": \"JP\",\n    \"India\": \"IN\",\n    \"Brazil\": \"BR\", \"Brasil\": \"BR\",\n    \"Canada\": \"CA\",\n    \"Munch\": \"DE\"\n}\ncustomer_df[\"country\"] = customer_df[\"country\"].replace(country_map)\n\n# --- Remove duplicates ---\ncustomer_df = customer_df.drop_duplicates(subset=[\"customer_id\"])\n\ncustomer_df.head()\n\n\n\n\n\n\n\n\ncustomer_id\ndate_of_birth\nincome\ngender\nsignup_date\ncountry\n\n\n\n\n1\nCUST_00000000695\n1945-08-02\n7029.0\nFemale\n2023-11-26\nBR\n\n\n2\nCUST_00000000907\n1971-07-25\n6432.0\nFemale\n2024-06-25\nAT\n\n\n3\nCUST_00000000545\n2000-03-01\n6107.0\nMale\n2023-06-29\nJP\n\n\n7\nCUST_00000000945\n1989-08-23\n3976.0\nMale\n2024-08-02\nBR\n\n\n8\nCUST_00000000819\n1946-03-09\n3077.0\nFemale\n2024-03-29\nNL"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#tasks-3",
+    "href": "exercises/exercise_2.html#tasks-3",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Tasks",
+    "text": "Tasks\n\n1. Prepare the data for clustering\nWe decide to use profit_margin and rd_intensity to cluster firms. In a first step, create a dataframe X consisting of values for these two variables:\n\nimport pandas as pd\n\ndf_firm_data = pd.read_csv(\"data/firm_data.csv\")\n\n# Your solution (in Jupyter notebook)\n\n# Print X at the end\n\nBefore clustering, do a quick exploratory check so you know what kind of patterns you are looking for.\n\nX.describe()\n\n\ndf_firm_data[[\"profit_margin\", \"rd_intensity\"]].hist(figsize=(6, 3))\n\nConsidering that k-means is sensitive to different measurement scale, we need to standardize the values. This ensures that they have approximately equal influence on the clusters.\nRun the following code and observe how the scale of both variables changes:\n\nfrom sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX = scaler.fit_transform(X)\nX\n\nBefore running a clustering algorithm, lets’s view the data in a scatterplot:\n\nimport matplotlib.pyplot as plt\n\nplt.scatter(X[:, 0], X[:, 1], s=10)\nplt.title(\"Raw data (no clustering)\")\nplt.show()\n\nHow many clusters would you expect? Briefly justify your answer based on the plot.\n\n\n\n2. Apply K-Means clustering\n\nNext, run the k-means clustering algorithm for different values of k.\n\n\nfrom sklearn.cluster import KMeans\n\n# Your solution (in Jupyter notebook)\n# Note: consider the names of variables and objects used in the rest of the code\n\n# Run the whole code cell to fit KMeans and plot it\nplt.figure(figsize=(3.6, 2.8))\nplt.scatter(X[:, 0], X[:, 1], c=labels, s=10)\nplt.scatter(\n    kmeans.cluster_centers_[:, 0],\n    kmeans.cluster_centers_[:, 1],\n    c='red', marker='x', s=60, linewidth=2\n)\nplt.title(f\"k={k}\", fontsize=10)\nplt.xticks([])\nplt.yticks([])\nplt.tight_layout()\nplt.show()\n\n\nTry different values of K (e.g., 2–10). Which number of clusters seems appropriate?\n\n\n\n\n3. Add cluster labels to the dataset\n\nAssign the cluster labels returned by the k-means algorithm to the original dataframe (df_firm_data).\n\n\n# Your solution (in Jupyter notebook)\n\n\n\n\n4. Create grouped boxplots\n\nGenerate a boxplot, grouped according to the clusters, to compare differences in revenue.\nTry to complete the task relying only on the pandas documentation for boxplots.\n\n\nimport matplotlib.pyplot as plt\n\n# Your solution (in Jupyter notebook)"
+  },
+  {
+    "objectID": "exercises/exercise_2.html#solution-3",
+    "href": "exercises/exercise_2.html#solution-3",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Solution",
+    "text": "Solution\n\n1. Prepare the data for clustering\nWe use only profit_margin and rd_intensity for clustering:\n\nimport pandas as pd\n\ndf_firm_data = pd.read_csv(\"data/firm_data.csv\")\n\nX = df_firm_data[[\"profit_margin\", \"rd_intensity\"]]\n\nX.head()\n\n\n\n\n\n\n\n\nprofit_margin\nrd_intensity\n\n\n\n\n0\n13.382162\n3.308879\n\n\n1\n10.139487\n8.710809\n\n\n2\n4.131422\n15.719744\n\n\n3\n9.573304\n31.989645\n\n\n4\n0.165357\n2.082579\n\n\n\n\n\n\n\n\nExploratory check\n\nX.describe()\n\n\n\n\n\n\n\n\nprofit_margin\nrd_intensity\n\n\n\n\ncount\n200.000000\n200.000000\n\n\nmean\n6.038353\n11.782773\n\n\nstd\n8.606380\n10.182518\n\n\nmin\n-18.193454\n-1.006377\n\n\n25%\n1.165900\n3.438376\n\n\n50%\n6.300245\n7.883626\n\n\n75%\n11.151334\n18.519914\n\n\nmax\n26.183842\n41.741721\n\n\n\n\n\n\n\n\ndf_firm_data[[\"profit_margin\", \"rd_intensity\"]].hist(figsize=(6, 3))\n\narray([[&lt;Axes: title={'center': 'profit_margin'}&gt;,\n        &lt;Axes: title={'center': 'rd_intensity'}&gt;]], dtype=object)\n\n\n\n\n\n\n\n\n\nThese summaries and histograms help us understand the distribution and scale of the variables.\n\n\n\nStandardization\nSince k-means is sensitive to scale differences, we standardize the variables:\n\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\nX_scaled[:3]\n\narray([[ 0.85543951, -0.83428853],\n       [ 0.47771828, -0.30244699],\n       [-0.22212786,  0.38761056]])\n\n\n\n\nScatterplot (before clustering)\n\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(5, 3))\nplt.scatter(X_scaled[:, 0], X_scaled[:, 1], s=10)\nplt.title(\"Standardized data (no clustering)\")\nplt.xlabel(\"profit_margin (scaled)\")\nplt.ylabel(\"rd_intensity (scaled)\")\nplt.show()\n\n\n\n\n\n\n\n\nInterpretation: From the scatterplot, we might expect a small number of clusters (e.g., 3–5), depending on visible groupings.\n\n\n\n\n2. Apply K-Means clustering\nWe try different values of k and visually inspect the cluster structure:\n\nfrom sklearn.cluster import KMeans\n\nfor k in range(2, 7):\n    kmeans = KMeans(n_clusters=k, random_state=42)\n    labels = kmeans.fit_predict(X_scaled)\n\n    plt.figure(figsize=(3.6, 2.8))\n    plt.scatter(X_scaled[:, 0], X_scaled[:, 1], c=labels, s=10)\n    plt.scatter(\n        kmeans.cluster_centers_[:, 0],\n        kmeans.cluster_centers_[:, 1],\n        c=\"red\", marker=\"x\", s=60, linewidth=2\n    )\n    plt.title(f\"k={k}\", fontsize=10)\n    plt.xticks([])\n    plt.yticks([])\n    plt.tight_layout()\n    plt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion: A value around k = 4 appears to provide a reasonable balance between simplicity and structure.\n\n\n\n3. Add cluster labels to the dataset\nWe now fit the final model and store the cluster labels:\n\nk = 4\nkmeans = KMeans(n_clusters=k, random_state=42)\nlabels = kmeans.fit_predict(X_scaled)\n\ndf_firm_data[\"cluster\"] = labels\n\ndf_firm_data.head()\n\n\n\n\n\n\n\n\ncompany_id\nsector\nrevenue\nprofit_margin\ngrowth_rate\ndebt_ratio\nmarket_cap\nrd_intensity\ncluster\n\n\n\n\n0\nFIRM-0095\nHealthcare\n2117.569743\n13.382162\n6.053507\n0.555974\n12426.889897\n3.308879\n2\n\n\n1\nFIRM-0015\nHealthcare\n457.538045\n10.139487\n21.504950\n0.350252\n5779.074618\n8.710809\n3\n\n\n2\nFIRM-0030\nIndustry\n463.847307\n4.131422\n13.237034\n0.356084\n4451.965515\n15.719744\n3\n\n\n3\nFIRM-0158\nFinance\n347.980562\n9.573304\n16.117482\n0.472141\n3256.609038\n31.989645\n1\n\n\n4\nFIRM-0128\nTech\n804.239654\n0.165357\n-3.346796\n0.761088\n1825.004761\n2.082579\n0\n\n\n\n\n\n\n\n\n\n\n4. Create grouped boxplots\nWe compare revenue across clusters:\n\nimport matplotlib.pyplot as plt\n\ndf_firm_data.boxplot(column=\"revenue\", by=\"cluster\")\nplt.title(\"Revenue by Cluster\")\nplt.suptitle(\"\")\nplt.xlabel(\"Cluster\")\nplt.ylabel(\"Revenue\")\nplt.show()\n\n\n\n\n\n\n\n\nInterpretation: The boxplots reveal how revenue differs across clusters, helping to characterize the identified firm profiles."
+  },
+  {
+    "objectID": "exercises/exercise_2.html#wrap-up",
+    "href": "exercises/exercise_2.html#wrap-up",
+    "title": "Exercise 2: Data preparation and exploration",
+    "section": "Wrap-up ",
+    "text": "Wrap-up \n🎉🎈 You have completed the notebook - good work! 🎈🎉\nIn this notebook, we have learned to\n\nStructure data in a tidy format\nPrepare and explore datasets\nApply clustering methods\n\n\n\n\n\n\n\nNoteStop the Codespace\n\n\n\nRemember to stop your Codespace here.\n\n\n\n\n\n\n\n\nTipSession 2 survey\n\n\n\nBefore you wrap up, please complete the Session 2 survey here: https://forms.gle/XfRmmVbf1yaBwrky9. Thank you 🙏"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Note\n\n\n\nBuilding on previous sessions:\n\nRegression I builds the basics, Regression II introduces model tuning (forward/backward variable selection in multiple regression, non-linear transformations, logistic regression)\nML I builds the basics, ML II introduces feature engineering, ensemble models, …"
+  },
+  {
+    "objectID": "syllabus.html#summary",
+    "href": "syllabus.html#summary",
+    "title": "Syllabus",
+    "section": "Summary",
+    "text": "Summary\nThis module introduces students to the methods, technologies, and governance of modern data analytics across descriptive, predictive, and prescriptive approaches. It builds a comprehensive understanding of the data analytics process—from data structuring and preparation to exploratory data analysis, analytical modeling, and decision support. The module combines conceptual foundations and hands-on analytical practice using Python, pandas, and scikit-learn. It progresses from structured transactional data (data warehouses, OLAP, data mining) to big and unstructured data (text, social, streaming). Emphasis is placed on the fit between data types, analytical models, and decision purposes, as well as the ability to design, evaluate, and govern analytical systems in organizations."
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course policies",
+    "text": "Course policies\n\nGroup assignment requirement: The course includes a mandatory group assignment. This assignment cannot be completed individually and requires active collaboration with your group.\nOn-site participation: The group assignment requires your physical presence on site. Remote-only completion is not possible for this course component.\nEnrollment and attendance expectation: Enrollment implies regular course participation. Being enrolled without attending is not acceptable; students who cannot attend should cancel their enrollment."
+  },
+  {
+    "objectID": "syllabus.html#learning-objectives",
+    "href": "syllabus.html#learning-objectives",
+    "title": "Syllabus",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nKnowledge After completing the module, students will be able to:\n\nDifferentiate between descriptive, predictive, and prescriptive analytics approaches.\nDescribe architectures for data warehousing and big data processing, with reference to the underlying data modeling concepts.\nExplain fundamental concepts of data analytics, and its role in data-driven organizations.\n\nSkills Students will be able to:\n\nSelect appropriate analytical methods for transactional or non-transactional data, and for descriptive, predictive, and prescriptive analysis tasks.\nApply analytical methods to real-world datasets, including structuring, transforming, and visualizing data. This also involves training models, evaluating performance, and interpreting analytical results for decision-making.\nImplement analytical procedures in Python, using standard data science libraries (pandas, scikit-learn, matplotlib).\n\nCompetence Upon successful completion, students will be able to:\n\nDesign analytics solutions aligned with business goals and governance principles.\nIntegrate analytical technologies into organizational decision-making processes\nAssess the operational and strategic implications of data analytics in organizations."
+  },
+  {
+    "objectID": "syllabus.html#related-courses",
+    "href": "syllabus.html#related-courses",
+    "title": "Syllabus",
+    "section": "Related courses",
+    "text": "Related courses\n\nBig Data & Analytics/Rossbach\nBusiness Intelligence & Analytics (BIA), Hopf\nData-driven Decision Support (DSS), Hopf\nbusiness-analytics-fau, Hopf\nManaging Data at Scale (infs6024), Prester\nCS109A: Introduction to Data Science and materials\nData Science for Business with syllabus\nUC Berkley: Data 100: Principles and Techniques of Data Science\nCoursera: Data Science\nFinancial data science notebooks"
+  },
+  {
+    "objectID": "syllabus.html#recommended-literature",
+    "href": "syllabus.html#recommended-literature",
+    "title": "Syllabus",
+    "section": "Recommended literature",
+    "text": "Recommended literature\n\nPart 1: Chen et al. (2012), Martı́nez-Plumed et al. (2019), Sharda et al. (2018)\nPart 2: Raschka (2015), Schutt & O’Neil (2014), Vaisman & Zimányi (2016)\nPart 3: Bengfort et al. (2018). Schmarzo (2016)\nPart 4: Davenport (2006), Vidgen et al. (2017)"
+  },
+  {
+    "objectID": "exercises/exercise_7.html",
+    "href": "exercises/exercise_7.html",
+    "title": "Exercise 7: Machine learning II",
+    "section": "",
+    "text": "Implement and evaluate k-nearest neighbors, decision trees, and neural networks for a business prediction task.\nCompare models with respect to accuracy, interpretability, and practical implications.\nRecommend a suitable model for deployment."
+  },
+  {
+    "objectID": "exercises/exercise_7.html#exam-prep",
+    "href": "exercises/exercise_7.html#exam-prep",
+    "title": "Exercise 7: Machine learning II",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 7 survey\n\n\n\nBefore you wrap up, please complete the Session 7 survey here: https://forms.gle/LghfTrCChfNMLzbJ6. Thank you 🙏"
+  },
+  {
+    "objectID": "exercises/exercise_4.html",
+    "href": "exercises/exercise_4.html",
+    "title": "Exercise 4: Regression I",
+    "section": "",
+    "text": "Fit and interpret linear regression models in Python using a simulated company dataset.\nCompare a global regression model with department-specific subgroup models.\nReport regression results using coefficients, R², MSE, and regression tables.\nReflect on limitations of regression models, including heterogeneity, omitted interactions, and assumptions."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#section",
+    "href": "exercises/exercise_4.html#section",
+    "title": "Exercise 4: Regression I",
+    "section": "",
+    "text": "Fit and interpret linear regression models in Python using a simulated company dataset.\nCompare a global regression model with department-specific subgroup models.\nReport regression results using coefficients, R², MSE, and regression tables.\nReflect on limitations of regression models, including heterogeneity, omitted interactions, and assumptions."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#focus-of-this-notebook",
+    "href": "exercises/exercise_4.html#focus-of-this-notebook",
+    "title": "Exercise 4: Regression I",
+    "section": "Focus of this notebook",
+    "text": "Focus of this notebook\nThis notebook intentionally places less emphasis on data preparation because data understanding and preparation were covered in previous sessions.\nThe main focus here is on:\n\nfitting regression models\ninterpreting coefficients and tables\ncomparing subgroup models\nsaving and loading a model\nreflecting on assumptions and limitations\n\n\n\n\n\n\n\nNoteHow to use this notebook\n\n\n\nFor some parts, you can choose between:\n\na from-scratch path\na scaffolded path with TODOs and code skeletons\n\nThis makes it possible to adapt the exercise to different levels of support."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#case-employee-performance-in-a-company",
+    "href": "exercises/exercise_4.html#case-employee-performance-in-a-company",
+    "title": "Exercise 4: Regression I",
+    "section": "Case: Employee performance in a company",
+    "text": "Case: Employee performance in a company\nYou are a business analyst working for a company that wants to understand which factors are associated with employee performance.\nThe company is interested in questions such as:\n\nDoes experience matter?\nDoes training improve performance?\nIs remote work associated with higher or lower performance?\nDo these relationships differ across departments?\n\nThe target variable is:\n\nperformance: an employee performance score\n\nPotential predictors include:\n\nexperience: years of work experience\ntraining_hours: annual training hours\nsalary: annual salary in EUR\nremote_share: share of working time spent remotely (between 0 and 1)\nteam_size: size of the employee’s team\nmanager_quality: manager quality on a 1–5 scale\ndepartment: department (Sales, IT, HR)"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#imports",
+    "href": "exercises/exercise_4.html#imports",
+    "title": "Exercise 4: Regression I",
+    "section": "Imports",
+    "text": "Imports\n\nimport numpy as np\nimport pandas as pd\nimport statsmodels.api as sm\nimport matplotlib.pyplot as plt\nimport joblib\n\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score, mean_squared_error"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#create-a-synthetic-company-dataset",
+    "href": "exercises/exercise_4.html#create-a-synthetic-company-dataset",
+    "title": "Exercise 4: Regression I",
+    "section": "Create a synthetic company dataset",
+    "text": "Create a synthetic company dataset\nThe following chunk generates a realistic but simulated company dataset and saves it as employee_performance_data.csv.\n\nrng = np.random.default_rng(42)\nn = 300\n\ndepartments = rng.choice([\"Sales\", \"IT\", \"HR\"], size=n, p=[0.43, 0.35, 0.22])\nexperience = rng.integers(0, 21, size=n)\nmanager_quality = rng.integers(1, 6, size=n)\nteam_size = rng.integers(3, 15, size=n)\n\ntraining_base = rng.normal(35, 10, size=n)\ntraining_adjustment = np.select(\n    [departments == \"Sales\", departments == \"IT\", departments == \"HR\"],\n    [5, 8, 2],\n    default=0,\n)\ntraining_hours = np.clip(training_base + training_adjustment, 5, 80)\n\nremote_base = rng.beta(2, 2, size=n)\nremote_adjustment = np.select(\n    [departments == \"Sales\", departments == \"IT\", departments == \"HR\"],\n    [-0.08, 0.10, -0.02],\n    default=0,\n)\nremote_share = np.clip(remote_base + remote_adjustment, 0, 1)\n\nsalary = (\n    32000\n    + experience * 2200\n    + np.select(\n        [departments == \"Sales\", departments == \"IT\", departments == \"HR\"],\n        [7000, 9000, 3000],\n        default=0,\n    )\n    + rng.normal(0, 4500, size=n)\n)\n\ncoefficients = {\n    \"Sales\": {\n        \"intercept\": 60,\n        \"experience\": 1.2,\n        \"training_hours\": 0.75,\n        \"salary\": 0.0006,\n        \"remote_share\": -8.5,\n        \"team_size\": 1.65,\n        \"manager_quality\": 5.5,\n    },\n    \"HR\": {\n        \"intercept\": 60,\n        \"experience\": 2.5,\n        \"training_hours\": 1.00,\n        \"salary\": 0.0002,\n        \"remote_share\": -11.5,\n        \"team_size\": 1.40,\n        \"manager_quality\": 2.8,\n    },\n    \"IT\": {\n        \"intercept\": 60,\n        \"experience\": 2.2,\n        \"training_hours\": 1.03,\n        \"salary\": 0.0002,\n        \"remote_share\": 5.8,\n        \"team_size\": 1.20,\n        \"manager_quality\": 6.0,\n    },\n}\n\nperformance = []\nfor i, dept in enumerate(departments):\n    c = coefficients[dept]\n    hidden_interaction = 0.18 * training_hours[i] * manager_quality[i]\n    mild_nonlinearity = -10 * (remote_share[i] - 0.5) ** 2\n    noise = rng.normal(0, 18)\n\n    y_i = (\n        c[\"intercept\"]\n        + c[\"experience\"] * experience[i]\n        + c[\"training_hours\"] * training_hours[i]\n        + c[\"salary\"] * salary[i]\n        + c[\"remote_share\"] * remote_share[i]\n        + c[\"team_size\"] * team_size[i]\n        + c[\"manager_quality\"] * manager_quality[i]\n        + hidden_interaction\n        + mild_nonlinearity\n        + noise\n    )\n    performance.append(y_i)\n\nperformance = np.array(performance)\n\ndf_generated = pd.DataFrame(\n    {\n        \"performance\": performance,\n        \"experience\": experience,\n        \"training_hours\": training_hours.round(1),\n        \"salary\": salary.round(0),\n        \"remote_share\": remote_share.round(2),\n        \"team_size\": team_size,\n        \"manager_quality\": manager_quality,\n        \"department\": departments,\n    }\n)\n\ndf_generated.to_csv(\"employee_performance_data.csv\", index=False)\ndf_generated.head()\n\n\n\n\n\n\n\n\nperformance\nexperience\ntraining_hours\nsalary\nremote_share\nteam_size\nmanager_quality\ndepartment\n\n\n\n\n0\n168.639791\n12\n42.0\n60280.0\n0.59\n13\n1\nIT\n\n\n1\n227.407570\n16\n54.3\n72849.0\n0.18\n8\n1\nIT\n\n\n2\n115.046660\n15\n14.2\n67754.0\n0.75\n14\n2\nHR\n\n\n3\n183.799718\n2\n28.0\n50646.0\n0.35\n12\n5\nIT\n\n\n4\n159.246723\n17\n30.8\n71735.0\n0.72\n10\n3\nSales"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#load-the-dataset",
+    "href": "exercises/exercise_4.html#load-the-dataset",
+    "title": "Exercise 4: Regression I",
+    "section": "Load the dataset",
+    "text": "Load the dataset\n\ndf = pd.read_csv(\"employee_performance_data.csv\")\ndf.head()\n\n\n\n\n\n\n\n\nperformance\nexperience\ntraining_hours\nsalary\nremote_share\nteam_size\nmanager_quality\ndepartment\n\n\n\n\n0\n168.639791\n12\n42.0\n60280.0\n0.59\n13\n1\nIT\n\n\n1\n227.407570\n16\n54.3\n72849.0\n0.18\n8\n1\nIT\n\n\n2\n115.046660\n15\n14.2\n67754.0\n0.75\n14\n2\nHR\n\n\n3\n183.799718\n2\n28.0\n50646.0\n0.35\n12\n5\nIT\n\n\n4\n159.246723\n17\n30.8\n71735.0\n0.72\n10\n3\nSales"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#variable-overview",
+    "href": "exercises/exercise_4.html#variable-overview",
+    "title": "Exercise 4: Regression I",
+    "section": "Variable overview",
+    "text": "Variable overview\n\n\n\nVariable\nMeaning\nType\n\n\n\n\nperformance\nemployee performance score\ntarget variable\n\n\nexperience\nyears of experience\nnumeric\n\n\ntraining_hours\nannual training hours\nnumeric\n\n\nsalary\nannual salary in EUR\nnumeric\n\n\nremote_share\nshare of remote work between 0 and 1\nnumeric\n\n\nteam_size\nsize of employee team\nnumeric\n\n\nmanager_quality\nmanager quality rating from 1 to 5\nnumeric\n\n\ndepartment\nemployee department\ncategorical"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#quick-inspection",
+    "href": "exercises/exercise_4.html#quick-inspection",
+    "title": "Exercise 4: Regression I",
+    "section": "Quick inspection",
+    "text": "Quick inspection\n\ndf.describe(include=\"all\")\n\n\n\n\n\n\n\n\nperformance\nexperience\ntraining_hours\nsalary\nremote_share\nteam_size\nmanager_quality\ndepartment\n\n\n\n\ncount\n300.000000\n300.000000\n300.000000\n300.000000\n300.000000\n300.000000\n300.000000\n300\n\n\nunique\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n3\n\n\ntop\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nSales\n\n\nfreq\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n130\n\n\nmean\n186.736399\n10.300000\n40.405333\n61697.550000\n0.498867\n8.573333\n3.010000\nNaN\n\n\nstd\n32.951798\n6.237496\n10.419744\n14599.031371\n0.242258\n3.514607\n1.359926\nNaN\n\n\nmin\n105.395072\n0.000000\n5.000000\n31842.000000\n0.000000\n3.000000\n1.000000\nNaN\n\n\n25%\n165.555584\n5.000000\n33.625000\n50158.250000\n0.300000\n6.000000\n2.000000\nNaN\n\n\n50%\n186.704640\n11.000000\n41.550000\n61904.500000\n0.500000\n8.000000\n3.000000\nNaN\n\n\n75%\n207.261174\n16.000000\n47.000000\n73109.000000\n0.680000\n12.000000\n4.000000\nNaN\n\n\nmax\n291.138323\n20.000000\n71.800000\n95453.000000\n1.000000\n14.000000\n5.000000\nNaN"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-a1-fit-a-global-regression-model-from-scratch",
+    "href": "exercises/exercise_4.html#task-a1-fit-a-global-regression-model-from-scratch",
+    "title": "Exercise 4: Regression I",
+    "section": "Task A1: Fit a global regression model from scratch",
+    "text": "Task A1: Fit a global regression model from scratch\nUse the full dataset to estimate a linear regression model for performance.\nYour tasks:\n\nLoad the dataset.\nOne-hot encode department.\nDefine X and y.\nFit a LinearRegression() model.\nPrint the coefficients and intercept.\n\n\nPath 1: from scratch\n\n# Write your own code here.\n# Suggested objects: df_model, X, y, model, coef_df\n\n\n\nPath 2: scaffolded version\n\nfrom sklearn.linear_model import LinearRegression\nimport pandas as pd\n\n# TODO: one-hot encode department\n# df_model = ...\n\n# TODO: define X and y\n# X = ...\n# y = ...\n\n# TODO: fit the model\n# model = ...\n# model.fit(...)\n\n# TODO: create a coefficient table\n# coef_df = pd.DataFrame({\n#     \"variable\": ...,\n#     \"coefficient\": ...\n# })\n\n# print(coef_df)\n# print(\"Intercept:\", ...)"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-a2-interpret-the-coefficients",
+    "href": "exercises/exercise_4.html#task-a2-interpret-the-coefficients",
+    "title": "Exercise 4: Regression I",
+    "section": "Task A2: Interpret the coefficients",
+    "text": "Task A2: Interpret the coefficients\nAnswer the following questions in Markdown or in a separate text cell.\n\nWhich variables have a positive association with performance?\nWhich variables have a negative association with performance?\nWhich coefficient seems largest in practical terms?\nHow would you interpret the coefficient of training_hours?\nHow should dummy variables such as department_IT or department_Sales be interpreted?\n\n\n\n\n\n\n\nNoteInterpretation reminder\n\n\n\nA coefficient expresses the expected change in the dependent variable when the predictor increases by one unit, holding the other variables constant."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-b1-estimate-the-model-with-statsmodels",
+    "href": "exercises/exercise_4.html#task-b1-estimate-the-model-with-statsmodels",
+    "title": "Exercise 4: Regression I",
+    "section": "Task B1: Estimate the model with statsmodels",
+    "text": "Task B1: Estimate the model with statsmodels\nUse statsmodels to create a regression table.\n\nScaffolded version\n\nimport statsmodels.api as sm\n\n# TODO: one-hot encode department\n# df_model = ...\n\n# TODO: define X and y\n# X = ...\n# y = ...\n\n# TODO: add constant\n# X = ...\n\n# TODO: fit OLS regression\n# model_sm = ...\n\n# TODO: print the summary\n# print(model_sm.summary())"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-b2-interpret-the-regression-table",
+    "href": "exercises/exercise_4.html#task-b2-interpret-the-regression-table",
+    "title": "Exercise 4: Regression I",
+    "section": "Task B2: Interpret the regression table",
+    "text": "Task B2: Interpret the regression table\nFocus on the following parts of the output:\n\ncoefficient estimates\np-values\nconfidence intervals\nR²\nadjusted R²\n\nQuestions:\n\nWhich variables are statistically significant?\nWhich variables may matter in practice even if statistical significance is weaker?\nWhat does R² tell you in this notebook?\nWhy should we be careful not to treat R² as the only indicator of model quality?"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-b3-compute-in-sample-predictions-and-basic-fit-measures",
+    "href": "exercises/exercise_4.html#task-b3-compute-in-sample-predictions-and-basic-fit-measures",
+    "title": "Exercise 4: Regression I",
+    "section": "Task B3: Compute in-sample predictions and basic fit measures",
+    "text": "Task B3: Compute in-sample predictions and basic fit measures\nWe are not using a train/test split in this notebook. Instead, compute predictions and fit measures for the current sample.\n\nScaffolded version\n\n# TODO: create predictions based on the fitted sklearn model\n# y_pred = ...\n\n# TODO: compute R² and MSE\n# r2 = ...\n# mse = ...\n\n# print(\"R²:\", r2)\n# print(\"MSE:\", mse)\n\n\n\n\n\n\n\nWarningImportant limitation\n\n\n\nThese measures are based on the same data used to fit the model. They therefore say something about fit within the current sample, but not yet about generalization to new data."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#motivation",
+    "href": "exercises/exercise_4.html#motivation",
+    "title": "Exercise 4: Regression I",
+    "section": "Motivation",
+    "text": "Motivation\nA single model for all employees may hide important differences between departments.\nIn this part, estimate separate regressions for Sales, IT, and HR."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-c1-department-specific-regressions",
+    "href": "exercises/exercise_4.html#task-c1-department-specific-regressions",
+    "title": "Exercise 4: Regression I",
+    "section": "Task C1: Department-specific regressions",
+    "text": "Task C1: Department-specific regressions\n\nPath 1: loop-based solution\n\nimport statsmodels.api as sm\n\nresults = {}\n\nfor dept in df[\"department\"].unique():\n    # TODO: subset data for one department\n    # df_sub = ...\n\n    # TODO: one-hot encode if needed\n    # df_sub_model = ...\n\n    # TODO: define X_sub and y_sub\n    # X_sub = ...\n    # y_sub = ...\n\n    # TODO: add constant and fit OLS\n    # X_sub = ...\n    # model_sub = ...\n\n    # results[dept] = model_sub\n\n    # print(f\"\\n=== Regression results for {dept} ===\")\n    # print(model_sub.summary())\n\n\n\nPath 2: start from this template\n\nresults = {}\n\nfor dept in df[\"department\"].unique():\n    df_sub = df[df[\"department\"] == dept]\n\n    df_sub_model = pd.get_dummies(df_sub, columns=[\"department\"], drop_first=True)\n\n    X_sub = df_sub_model.drop(columns=[\"performance\"])\n    y_sub = df_sub_model[\"performance\"]\n\n    X_sub = sm.add_constant(X_sub)\n\n    model_sub = sm.OLS(y_sub, X_sub).fit()\n\n    results[dept] = model_sub\n\n    print(f\"\\n=== Regression results for {dept} ===\")\n    print(model_sub.summary())"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-c2-compare-the-subgroup-models",
+    "href": "exercises/exercise_4.html#task-c2-compare-the-subgroup-models",
+    "title": "Exercise 4: Regression I",
+    "section": "Task C2: Compare the subgroup models",
+    "text": "Task C2: Compare the subgroup models\nUse the results to answer the following questions.\n\nDo the coefficients differ across departments?\nIs remote_share associated with performance in the same way in every department?\nDoes manager_quality seem equally important in all departments?\nWhat does this tell us about heterogeneity in company data?\nWhy might a single global model be too simplistic?\n\n\n\n\n\n\n\nNoteKey idea\n\n\n\nIf the relationships differ strongly between groups, a single regression model can hide important structure."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-d1-save-a-fitted-model",
+    "href": "exercises/exercise_4.html#task-d1-save-a-fitted-model",
+    "title": "Exercise 4: Regression I",
+    "section": "Task D1: Save a fitted model",
+    "text": "Task D1: Save a fitted model\n\nimport joblib\n\n# TODO: save the fitted sklearn model\n# joblib.dump(model, \"employee_performance_model.joblib\")"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-d2-load-the-model-and-predict-a-new-case",
+    "href": "exercises/exercise_4.html#task-d2-load-the-model-and-predict-a-new-case",
+    "title": "Exercise 4: Regression I",
+    "section": "Task D2: Load the model and predict a new case",
+    "text": "Task D2: Load the model and predict a new case\n\n# TODO: load the saved model\n# loaded_model = ...\n\n# TODO: create a new employee record\n# new_employee = pd.DataFrame([\n#     {\n#         \"experience\": 8,\n#         \"training_hours\": 45,\n#         \"salary\": 56000,\n#         \"remote_share\": 0.40,\n#         \"team_size\": 7,\n#         \"manager_quality\": 4,\n#         \"department_IT\": 1,\n#         \"department_Sales\": 0,\n#     }\n# ])\n\n# TODO: generate prediction\n# prediction = ...\n# print(prediction)"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#reflection",
+    "href": "exercises/exercise_4.html#reflection",
+    "title": "Exercise 4: Regression I",
+    "section": "Reflection",
+    "text": "Reflection\n\nWhy is saving a model useful in business applications?\nWhat additional information besides the model itself would we need in practice?\nWhy must new data follow the same structure and preprocessing steps as the training data?"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-e1-residual-plot",
+    "href": "exercises/exercise_4.html#task-e1-residual-plot",
+    "title": "Exercise 4: Regression I",
+    "section": "Task E1: Residual plot",
+    "text": "Task E1: Residual plot\nCreate a simple residual plot for the global sklearn model.\n\n# residuals = y - y_pred\n# plt.scatter(y_pred, residuals)\n# plt.axhline(0, linestyle=\"--\")\n# plt.xlabel(\"Predicted performance\")\n# plt.ylabel(\"Residuals\")\n# plt.title(\"Residual plot\")\n# plt.show()\n\nQuestions:\n\nDo the residuals look roughly random?\nDo you see patterns that may indicate model problems?\nWhat would a clear funnel shape suggest?"
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-e2-what-assumptions-are-relevant-here",
+    "href": "exercises/exercise_4.html#task-e2-what-assumptions-are-relevant-here",
+    "title": "Exercise 4: Regression I",
+    "section": "Task E2: What assumptions are relevant here?",
+    "text": "Task E2: What assumptions are relevant here?\nDiscuss the following assumptions in your own words:\n\nlinearity\nindependent errors\nhomoscedasticity\nabsence of strong multicollinearity\ncorrect model specification\n\nYou do not need to memorize formulas. Focus on the practical meaning."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#task-e3-a-hidden-interaction",
+    "href": "exercises/exercise_4.html#task-e3-a-hidden-interaction",
+    "title": "Exercise 4: Regression I",
+    "section": "Task E3: A hidden interaction",
+    "text": "Task E3: A hidden interaction\nThe synthetic data were generated with a hidden interaction between training_hours and manager_quality.\nCreate a new interaction variable and compare the model.\n\n# TODO: rebuild the encoded dataset if needed\n# df_model = ...\n\n# TODO: add interaction term\n# df_model[\"training_x_manager\"] = ...\n\n# TODO: define X and y\n# X = ...\n# y = ...\n\n# TODO: fit a new OLS model\n# X = sm.add_constant(X)\n# interaction_model = sm.OLS(y, X).fit()\n\n# print(interaction_model.summary())\n\nQuestions:\n\nDoes the model fit improve?\nHow does the interaction term change the interpretation?\nWhy might the original model have missed part of the underlying structure?\n\n\n\n\n\n\n\nImportantTakeaway\n\n\n\nA regression model can be useful even when it is imperfect. The key is to understand what it captures well, what it misses, and how those limitations affect interpretation and decision making."
+  },
+  {
+    "objectID": "exercises/exercise_4.html#when-a-simple-linear-model-is-not-enough",
+    "href": "exercises/exercise_4.html#when-a-simple-linear-model-is-not-enough",
+    "title": "Exercise 4: Regression I",
+    "section": "When a simple linear model is not enough",
+    "text": "When a simple linear model is not enough\nWrite a short answer to the following prompt:\n\nGive one realistic reason why a company should not rely only on a simple linear regression model for employee performance.\n\nPossible directions:\n\nunobserved variables\ndepartment-specific relationships\nnon-linear effects\nfairness and bias concerns\ncausal interpretation problems"
+  },
+  {
+    "objectID": "exercises/exercise_11.html",
+    "href": "exercises/exercise_11.html",
+    "title": "Exercise 11: Recap, exam preparation, Q&A",
+    "section": "",
+    "text": "Note\n\n\n\nTODO"
+  },
+  {
+    "objectID": "exercises/exercise_11.html#exam-prep",
+    "href": "exercises/exercise_11.html#exam-prep",
+    "title": "Exercise 11: Recap, exam preparation, Q&A",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 11 survey\n\n\n\nBefore you wrap up, please complete the Session 11 survey here: https://forms.gle/K4wGvwchWkBsQdhc9. Thank you 🙏"
+  },
+  {
+    "objectID": "exercises/exercise_1.html",
+    "href": "exercises/exercise_1.html",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "",
+    "text": "In this session, we split into two groups.\n\n\n\nExercise part\nTime (min)\n\n\n\n\nTask 1: Competing on Analytics\n30\n\n\nTask 2: Jupyter notebook\n30\n\n\nDiscussion\n20\n\n\nWrap-up\n5\n\n\nOverall\n85"
+  },
+  {
+    "objectID": "exercises/exercise_1.html#task-1-read-competing-on-analytics",
+    "href": "exercises/exercise_1.html#task-1-read-competing-on-analytics",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Task 1: Read Competing on Analytics ",
+    "text": "Task 1: Read Competing on Analytics \n\nRead the Competing on Analytics paper by Davenport (2006). Prepare to discuss the following questions:\n\n\nWhat does it mean for a company to “compete on analytics”?\nHow is this different from simply using data or reports in decision making?\n\n\n\n\n\nTo “compete on analytics” means that a company uses data, statistical analysis, modeling, and experimentation as a core strategic capability across the organization. Analytics is not just a support tool; it becomes a basis for competitive advantage. Davenport (2006) argues that such firms do not merely know what happened in the past, but use predictive and optimization methods to determine what will happen, what customers will do, what prices maximize profit, and how processes can be improved.\nThis is different from simply using data or reports in decision making. Many firms use descriptive statistics and reports, but analytics competitors go further by:\n\napplying advanced models rather than only dashboards or summaries,\nembedding analytics across multiple functions rather than in isolated departments,\ncoordinating these efforts under an enterprise strategy,\nand repeatedly using evidence to improve decisions over time.\n\nIn short, ordinary data use supports decisions; competing on analytics makes superior, repeatable, organization-wide decision making a source of advantage.\n\n\nWhat organizational capabilities are required to compete on analytics?\nConsider aspects such as leadership, culture, people, and technology.\n\n\n\n\n\nAccording to Davenport (2006), companies that compete on analytics need a combination of organizational and technical capabilities. There is a need for:\n\nStrong senior leadership, ideally from the CEO. Top executives must actively champion data-based decision making and signal that analytics is central to strategy.\nAnalytics-oriented culture. Employees are expected to justify decisions with evidence, performance is measured quantitatively, and the organization develops a “test and learn” mindset in which ideas are validated through experiments.\nThe right people. This includes not only technically skilled analysts, but also people who can translate complex analyses into business language and work closely with decision makers. Analytical talent must be numerous enough to matter and visible enough to influence the business.\nEnterprise approach. Analytics should not be fragmented across departments with separate tools and inconsistent data definitions. Instead, it should be managed coherently across the organization, with shared leadership, standards, and infrastructure.\nThe right technology and data foundation. Davenport (2006) highlights the importance of a clear data strategy, integrated and standardized data, data warehouses, business intelligence tools, and sufficient computing power. These capabilities take time to build and require sustained investment.\n\nOverall, competing on analytics depends on aligning leadership, culture, talent, organization, and technology around fact-based improvement.\n\n\nWhich companies or industries compete on analytics?\nGive examples and explain how analytics creates their competitive advantage.\n\n\n\n\n\nIn Davenport’s paper, several examples illustrate what it means to compete on analytics.\n\nAmazon is a central example. Its advantage comes from using analytics in areas such as customer recommendations, supply chain management, and operational optimization. This helps it personalize the customer experience and manage large-scale complexity efficiently.\nCapital One competes on analytics through extensive experimentation and quantitative analysis in marketing, pricing, and risk assessment. Its competitive advantage comes from constantly testing offers and learning which customers to target and how to manage risk profitably.\nHarrah’s (now Caesars Entertainment) used analytics to improve customer loyalty, promotions, pricing, and service. Its advantage came from understanding customer behavior in great detail and using this knowledge to increase retention and spending.\nProgressive used analytics to refine insurance pricing. Instead of broadly rejecting risky customers, it analyzed detailed customer segments and priced them more precisely, allowing it to profit where competitors relied on cruder categories.\nMarriott applied analytics to revenue management, pricing, and customer retention. By optimizing room prices and related offerings, it improved revenue performance across its hotels.\n\nDavenport also points to sports organizations such as the Boston Red Sox, the Oakland A’s, and the New England Patriots. Their advantage came from applying statistical analysis to player selection, performance evaluation, and other decisions that were traditionally based more heavily on intuition.\nMore broadly, industries that seem especially suited to competing on analytics are finance, retail, hospitality, logistics, insurance, and professional sports, because they generate rich data and make many repeatable decisions that can be improved through modeling and experimentation."
+  },
+  {
+    "objectID": "exercises/exercise_1.html#task-2-create-an-analytical-notebook-in-jupyter",
+    "href": "exercises/exercise_1.html#task-2-create-an-analytical-notebook-in-jupyter",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Task 2: Create an analytical notebook in Jupyter ",
+    "text": "Task 2: Create an analytical notebook in Jupyter \n\nNavigate to your Codespace in the analytics-and-big-data-notebooks repository and create your first analytical notebook in Jupyter.\n\n1. Select an example case (business problem and dataset)\nChoose a dataset from Kaggle, for example:\n\nRetail and shopping\nFinancial datasets\nTrending datasets\n\nDefine a clear business problem that can be addressed using the selected dataset.\n\n\n2. Draft the analytical notebook\nCreate a new notebook and structure it according to the CRISP-DM framework.\nStart with a structured skeleton:\n\nInclude both markdown and code cells\nImport a dataset (e.g., from Kaggle)\nDescribe planned steps and analytical approaches\nIf unsure about specific steps, clearly mark them as TODO, suggest likely approaches, or outline alternative options\n\n\n\n3. Refine the notebook\nReview your notebook and annotate each part by indicating whether it is:\n\nDescriptive (what happened?)\nPredictive (what will happen?)\nPrescriptive (what should be done?)\n\n\n\n4. Begin with the implementation\nProceed with initial implementation steps:\n\nImport the dataset (e.g., CSV file)\nCreate a descriptive overview of the data\nSelect and implement a basic predictive model\n\nConsult the documentation of relevant Python libraries such as pandas and scikit-learn as needed.\n\n\n\nA good notebook solution should be structured according to CRISP-DM:\n\nBusiness understanding\nClearly describe the business problem, explain why it is relevant, and define the target of the analysis.\nData understanding\nImport the dataset, inspect its structure, and create a first descriptive overview (for example: variables, missing values, distributions, summary statistics, or simple visualizations).\nData preparation\nAnticipate how data should be cleaned and prepared. This may include handling missing values, selecting variables, encoding categories, or splitting the data into training and test sets.\nModeling\nSelect a first predictive model that fits the problem. Reasonable starting points could be:\n\nregression models for predicting numeric outcomes,\nclassification models for predicting categories,\nor a machine-learning models and AI for prediction.\n\nEvaluation\nPlan to assess whether the model is useful for the business problem. Explain the chosen metric and interpret the results in plain language.\nInterpretation / deployment\nAnticipate what the findings could mean for decision-making and what could be done next.\n\nIn the notebook, students should also indicate which parts are:\n\ndescriptive (understanding and summarizing the data),\npredictive (building and evaluating a model),\nprescriptive (discussing what actions could follow from the results).\n\nA complete solution does not need to finish every step perfectly. It is acceptable to leave key coding parts as TODO, propose likely next steps, or discuss modeling options that could be tried. The goal is to demonstrate a structured analytics workflow and familiarize yourself with Jupyter Notebooks."
+  },
+  {
+    "objectID": "exercises/exercise_1.html#discussion",
+    "href": "exercises/exercise_1.html#discussion",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Discussion",
+    "text": "Discussion\nIn class, we will discuss\n\nSolutions for Task 1 (Competing on Analytics)\nSolutions for Task 2 (Jupyter Notebooks)\n\nYou can share your notebook 🔴 LIVE: in this meeting."
+  },
+  {
+    "objectID": "exercises/exercise_1.html#wrap-up",
+    "href": "exercises/exercise_1.html#wrap-up",
+    "title": "Exercise 1: The rise of analytics",
+    "section": "Wrap-up ",
+    "text": "Wrap-up \n🎉🎈 You have completed the first notebook - good work! 🎈🎉\nIn this notebook, we have learned to\n\nExplain what it means to compete on analytics and why it creates competitive advantage\nSet up and use Jupyter notebooks in a Python-based analytics environment\nStructure an analytical workflow following CRISP-DM principles\nDistinguish between descriptive, predictive, and prescriptive analytics\nBegin implementing a basic data analysis workflow in Python\n\n\n\n\n\n\n\nNoteStop the Codespace\n\n\n\nTo continue using your work in the next session, stop your Codespace here. Stopping the Codespace preserves the current state of your work and does not consume computational resources.\n\n\n\n\n\n\n\n\nTipSession 1 survey\n\n\n\nBefore you wrap up, please complete the Session 1 survey here: https://forms.gle/Jna4dmyEvcw3cjRPA. Thank you 🙏"
+  },
+  {
+    "objectID": "exercises/exercise_8.html",
+    "href": "exercises/exercise_8.html",
+    "title": "Exercise 8: Big data",
+    "section": "",
+    "text": "TBD: traditional case study (with questions)?"
+  },
+  {
+    "objectID": "exercises/exercise_8.html#exam-prep",
+    "href": "exercises/exercise_8.html#exam-prep",
+    "title": "Exercise 8: Big data",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 8 survey\n\n\n\nBefore you wrap up, please complete the Session 8 survey here: https://forms.gle/hNuAD8UZvC8KYo4a8. Thank you 🙏"
+  },
+  {
+    "objectID": "exercises/exercise_10.html",
+    "href": "exercises/exercise_10.html",
+    "title": "Exercise 10: Governance of data analytics",
+    "section": "",
+    "text": "Analyze how data analytics creates strategic value within a given organizational context.\nIdentify ethical and legal risks in analytics initiatives and propose mitigation strategies."
+  },
+  {
+    "objectID": "exercises/exercise_10.html#exam-prep",
+    "href": "exercises/exercise_10.html#exam-prep",
+    "title": "Exercise 10: Governance of data analytics",
+    "section": "Exam prep",
+    "text": "Exam prep\nTODO : include specific questions/tasks that could be included in the exam.\n\n\n\n\n\n\nTipSession 10 survey\n\n\n\nBefore you wrap up, please complete the Session 10 survey here: https://forms.gle/Rhr4C47jsAZJyumN6. Thank you 🙏"
+  },
+  {
+    "objectID": "group_work.html",
+    "href": "group_work.html",
+    "title": "Group work",
+    "section": "",
+    "text": "Note\n\n\n\nWritten paper: 60 points (code added in separate file) -&gt; project: end of module -&gt; nach der letzten VL: 6 Wochen Zeit.\nTODO:\n\nschedule\ntopics\ncriteria\n\nSee CS109A: Introduction to Data Science projects\n-&gt; complete the analyses and explain why it illustrates or complements the contents covered in the course (-&gt; draw inspiration for teaching cases)"
+  },
+  {
+    "objectID": "group_work.html#group-size-and-application",
+    "href": "group_work.html#group-size-and-application",
+    "title": "Group work",
+    "section": "Group Size and Application",
+    "text": "Group Size and Application\n\nThe group size depends on the difficulty level of the individual project (see project description).\nProjects can be allocated multiple times.\nEach participant applies by e-mail for the desired projects. Alternatively, you can already form groups and apply as a group.\nIn every case, please indicate three projects as:\n\nPreference 1\nPreference 2\nPreference 3\n\nBased on the applications, the groups are arranged and projects are assigned."
+  },
+  {
+    "objectID": "group_work.html#group-work-and-delivery",
+    "href": "group_work.html#group-work-and-delivery",
+    "title": "Group work",
+    "section": "Group Work and Delivery",
+    "text": "Group Work and Delivery\n\nEach group applies the methods and procedures covered in the teaching sessions. Depending on the project, different focuses have to be set (e.g., for some projects more data preparation, for others more model optimization).\nAll necessary steps for the analysis should be performed in Python.\nThe group work should be documented, explained, and reasoned in a text document, including code fragments that are relevant for understanding (see the Python manual for an example).\nEach group delivers:\n\nthe text document, and\nthe corresponding Python files by the announced deadline.\n\nThe text document has a maximum of 40 pages, including figures and code fragments.\nThe applied methodology is more important for the evaluation than the model results."
+  },
+  {
+    "objectID": "preparation.html",
+    "href": "preparation.html",
+    "title": "Preparation",
+    "section": "",
+    "text": "%%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%\ngantt\n    title Big Data & Analytics — Prep plan (everything done before teaching)\n    dateFormat YYYY-MM-DD\n    axisFormat %Y-%m-%d\n    excludes weekends\n\n    section Milestones\n    First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d\n\n    section Week 1\n    Foundations (Session 1) :found, 2026-03-02, 2d\n    Structured Data (Sessions 2–7) :struct, after found, 3d\n\n    section Week 2\n    Big Data (Sessions 8–9) :big, 2026-03-09, 3d\n    Organizations (Sessions 10–11) :org, after big, 2d"
+  },
+  {
+    "objectID": "preparation.html#preparation-overview",
+    "href": "preparation.html#preparation-overview",
+    "title": "Preparation",
+    "section": "Preparation overview",
+    "text": "Preparation overview\n\nSelect contents for each session\nFind contents: Exploratory data analysis\nFind contents: Regression I\nFind contents: Regression II\nFind contents: Machine learning I\nFind contents: Machine learning II\nFind contents: Big data I\nFind contents: Big data II\nCheck: Jupyter Exercise setup: export of jupyter notebooks\nCheck: Jupyter Exercise setup: running jupyter notebooks (GitHub?)\n\nGenerally: generation of PDFs: local only?\n\nInclude “must-learn” markers: &lt;!-- _class: must_learn --&gt;\n\nPlan to record timing (data in the repository) and data from google surveys - TODO: session/exercise structure should be reflected in each survey -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration\nTODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)\nConsistently include “vocabulary” sections at the end (like in regression 1)\n\nSession 0 — Course logistics\n\nSlides polished\nTeaching notes prepared\n\n\n\n\nSession 1 — The rise of analytics\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\nTODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)\n\n\n\nSession 2 — Exploratory data analysis\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 3 — Analytical data architecture\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 4 — Regression I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 5 — Regression II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 6 — Machine learning I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 7 — Machine learning II\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 8 — Big Data I\n\nLearning objectives set\nLecture contents selected\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 9 — Big Data II\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 10 — Governance of data analytics\n\nLearning objectives set\nLecture contents selected ⚠️\nExercise contents selected\nLecture polished\nExercise polished\nExercise tested\nTeaching notes prepared\n\n\n\n\nSession 11 — Recap, exam preparation, Q&A\n\nLearning objectives set\nRecap structure defined\nExam-relevant topics consolidated\nSlides polished\nTeaching notes prepared"
+  },
+  {
+    "objectID": "preparation.html#cross-cutting-tasks",
+    "href": "preparation.html#cross-cutting-tasks",
+    "title": "Preparation",
+    "section": "Cross-cutting tasks",
+    "text": "Cross-cutting tasks\n\nGroup work\nWe may prepare the handout generated based on all slides.\nExams: fs-ise/big-data-analytics-exams\nCreate first-slide background illustrations for all sessions (consistent design)\nAlign learning objectives in individual sessions with the overall overview\nLink checker set up (slides / notes / exercises)\nExercises run end-to-end (Dataset availability verified)\nGroup exercises tested\nTest exam prepared\nConsistency of terminology across sessions\nLearning objectives aligned with exam scope\nOptional: handout / combined PDF prepared\nSyllabus updated\nLicense, code of conduct, contributing, …"
+  },
+  {
+    "objectID": "preparation.html#tbd",
+    "href": "preparation.html#tbd",
+    "title": "Preparation",
+    "section": "TBD:",
+    "text": "TBD:\n\nTest exercise sheets: GitHub jupyterlab with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?\nExcerpts for teaching hub\nExercise sheets: solutions?!\nUpdate requirements (exam):\n\nshow and read code for the analysis\ninclude code reading and interpretation, maybe even pseudo-code writing in the exam (and exercises)\nsurveys during the lecture: vote for “additional exercise/more difficult exercise”\n\n\nWork through the different parts (easier to identify materials for a part instead of comparing multiple lectures for multiple topics)\nSlides:\n\nstart with teaching notes and schedule. Setup teaching-notes\nscreen and include relevant materials (e.g., Hopf, Prester; identify gaps)\nspecify learning goals\nPrepare and test-run\n\nExercise sheets:\n\nSpecify exercise goals and state typical exam questions\nIdentify suitable exercise materials (rossbach, hopf, prester)\nPrepare and test-run\nSetup teaching-notes\nSplit Data Analytics with Python.pdf and -&gt; jnb\n\nhttps://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)\nSwitch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI\ninspiration for model choice/test/exam questions:\nUse Cases Quiz:"
+  },
+  {
+    "objectID": "preparation.html#notes-quartorevealjs",
+    "href": "preparation.html#notes-quartorevealjs",
+    "title": "Preparation",
+    "section": "Notes (Quarto/revealjs)",
+    "text": "Notes (Quarto/revealjs)\nHide slide in PDF export:\n\n::: {.content-hidden when-profile=\"pdf\"}\n\n## temp\n\n:::"
+  },
+  {
+    "objectID": "data/synthetic-dataset_exercise4_regression.html",
+    "href": "data/synthetic-dataset_exercise4_regression.html",
+    "title": "Synthetic datasets",
+    "section": "",
+    "text": "TODO: maybe even simulate names/employee-ids?\n\nimport numpy as np\nimport pandas as pd\n\nnp.random.seed(42)\nn = 300\n\ndepartments = np.random.choice([\"Sales\", \"IT\", \"HR\"], size=n, p=[0.4, 0.4, 0.2])\n\n# Core features\nexperience = np.random.randint(0, 21, n)\ntraining_hours = np.random.normal(40, 10, n).clip(5, 80)\nteam_size = np.random.randint(3, 15, n)\nremote_share = np.random.beta(2.2, 2.0, n)  # slightly balanced around moderate remote work\n\n# Department-specific manager quality distributions\n# IT has more high-quality managers on average\nmanager_quality = np.zeros(n, dtype=int)\nfor i, d in enumerate(departments):\n    if d == \"Sales\":\n        manager_quality[i] = np.random.choice([1, 2, 3, 4, 5], p=[0.12, 0.23, 0.30, 0.22, 0.13])\n    elif d == \"IT\":\n        manager_quality[i] = np.random.choice([1, 2, 3, 4, 5], p=[0.04, 0.08, 0.18, 0.36, 0.34])\n    else:  # HR\n        manager_quality[i] = np.random.choice([1, 2, 3, 4, 5], p=[0.18, 0.28, 0.27, 0.17, 0.10])\n\nsalary = 30000 + experience * 2000 + np.random.normal(0, 5000, n)\n\ndept_effect = {\"Sales\": 10, \"IT\": 5, \"HR\": 0}\ndept_numeric = np.array([dept_effect[d] for d in departments])\n\n# Centered terms for interactions\ntraining_c = training_hours - training_hours.mean()\nremote_c = remote_share - remote_share.mean()\n\n# Use department-specific centering for manager quality so the interaction\n# is more visible within each department subset\nmanager_c_within = np.zeros(n)\nfor d in [\"Sales\", \"IT\", \"HR\"]:\n    idx = departments == d\n    manager_c_within[idx] = manager_quality[idx] - manager_quality[idx].mean()\n\n# Hidden interaction: training works better with good managers\ntraining_manager_interaction = 0.16 * training_c * manager_c_within\n\n# Main effect of remote is small overall\nremote_main = -0.8 * remote_c\n\n# Department-specific direct remote effects:\n# Sales/HR somewhat negative, IT slightly positive\nremote_dept_main = {\"Sales\": -4.0, \"IT\": 2.5, \"HR\": -5.0}\nremote_dept_component = np.array(\n    [remote_dept_main[d] for d in departments]\n) * remote_c\n\n# Make the interaction more evident, but keep total remote slopes moderate\n# Interpretation:\n# - In IT, good managers make remote work work well\n# - In Sales/HR, weak managers make remote work more problematic\nremote_interaction_strength = {\"Sales\": 9.0, \"IT\": 12.0, \"HR\": 10.0}\nremote_manager_interaction = np.array(\n    [remote_interaction_strength[d] for d in departments]\n) * remote_c * manager_c_within\n\n# Stronger direct manager-quality effect in IT so that it aligns with the\n# more favorable remote-work context there\nmanager_main_strength = {\"Sales\": 4.8, \"IT\": 6.8, \"HR\": 4.0}\nmanager_component = np.array(\n    [manager_main_strength[d] for d in departments]\n) * manager_quality\n\nperformance = (\n    50\n    + 1.8 * experience\n    + 0.9 * training_hours\n    + 0.0004 * salary\n    + 1.4 * team_size\n    + manager_component\n    + remote_main\n    + remote_dept_component\n    + training_manager_interaction\n    + remote_manager_interaction\n    + dept_numeric\n    + np.random.normal(0, 9, n)\n)\n\ndf = pd.DataFrame({\n    \"performance\": performance,\n    \"experience\": experience,\n    \"training_hours\": training_hours,\n    \"salary\": salary,\n    \"remote_share\": remote_share,\n    \"team_size\": team_size,\n    \"manager_quality\": manager_quality,\n    \"department\": departments\n})\n\ndf.to_csv(\"employee_performance_data.csv\", index=False)\nprint(df.head())\nprint(df.groupby(\"department\")[[\"manager_quality\", \"remote_share\", \"performance\"]].mean())\n\n   performance  experience  training_hours        salary  remote_share  \\\n0   159.151624          12       32.603812  60215.917186      0.879245   \n1   168.470117          19       33.507527  63505.934060      0.182947   \n2   164.861349          14       31.514793  54472.871760      0.552633   \n3   159.413368           2       30.637550  34311.578227      0.513527   \n4   145.708783           7       43.331733  49572.581421      0.663745   \n\n   team_size  manager_quality department  \n0         11                3      Sales  \n1          4                5         HR  \n2          7                3         IT  \n3         14                5         IT  \n4          5                2      Sales  \n            manager_quality  remote_share  performance\ndepartment                                            \nHR                 2.650794      0.498049   148.669269\nIT                 3.953704      0.515782   170.112483\nSales              3.162791      0.585727   162.632426"
+  },
+  {
+    "objectID": "data/synthetic-dataset_exercise4_regression.html#exercise-4-regresssion",
+    "href": "data/synthetic-dataset_exercise4_regression.html#exercise-4-regresssion",
+    "title": "Synthetic datasets",
+    "section": "",
+    "text": "TODO: maybe even simulate names/employee-ids?\n\nimport numpy as np\nimport pandas as pd\n\nnp.random.seed(42)\nn = 300\n\ndepartments = np.random.choice([\"Sales\", \"IT\", \"HR\"], size=n, p=[0.4, 0.4, 0.2])\n\n# Core features\nexperience = np.random.randint(0, 21, n)\ntraining_hours = np.random.normal(40, 10, n).clip(5, 80)\nteam_size = np.random.randint(3, 15, n)\nremote_share = np.random.beta(2.2, 2.0, n)  # slightly balanced around moderate remote work\n\n# Department-specific manager quality distributions\n# IT has more high-quality managers on average\nmanager_quality = np.zeros(n, dtype=int)\nfor i, d in enumerate(departments):\n    if d == \"Sales\":\n        manager_quality[i] = np.random.choice([1, 2, 3, 4, 5], p=[0.12, 0.23, 0.30, 0.22, 0.13])\n    elif d == \"IT\":\n        manager_quality[i] = np.random.choice([1, 2, 3, 4, 5], p=[0.04, 0.08, 0.18, 0.36, 0.34])\n    else:  # HR\n        manager_quality[i] = np.random.choice([1, 2, 3, 4, 5], p=[0.18, 0.28, 0.27, 0.17, 0.10])\n\nsalary = 30000 + experience * 2000 + np.random.normal(0, 5000, n)\n\ndept_effect = {\"Sales\": 10, \"IT\": 5, \"HR\": 0}\ndept_numeric = np.array([dept_effect[d] for d in departments])\n\n# Centered terms for interactions\ntraining_c = training_hours - training_hours.mean()\nremote_c = remote_share - remote_share.mean()\n\n# Use department-specific centering for manager quality so the interaction\n# is more visible within each department subset\nmanager_c_within = np.zeros(n)\nfor d in [\"Sales\", \"IT\", \"HR\"]:\n    idx = departments == d\n    manager_c_within[idx] = manager_quality[idx] - manager_quality[idx].mean()\n\n# Hidden interaction: training works better with good managers\ntraining_manager_interaction = 0.16 * training_c * manager_c_within\n\n# Main effect of remote is small overall\nremote_main = -0.8 * remote_c\n\n# Department-specific direct remote effects:\n# Sales/HR somewhat negative, IT slightly positive\nremote_dept_main = {\"Sales\": -4.0, \"IT\": 2.5, \"HR\": -5.0}\nremote_dept_component = np.array(\n    [remote_dept_main[d] for d in departments]\n) * remote_c\n\n# Make the interaction more evident, but keep total remote slopes moderate\n# Interpretation:\n# - In IT, good managers make remote work work well\n# - In Sales/HR, weak managers make remote work more problematic\nremote_interaction_strength = {\"Sales\": 9.0, \"IT\": 12.0, \"HR\": 10.0}\nremote_manager_interaction = np.array(\n    [remote_interaction_strength[d] for d in departments]\n) * remote_c * manager_c_within\n\n# Stronger direct manager-quality effect in IT so that it aligns with the\n# more favorable remote-work context there\nmanager_main_strength = {\"Sales\": 4.8, \"IT\": 6.8, \"HR\": 4.0}\nmanager_component = np.array(\n    [manager_main_strength[d] for d in departments]\n) * manager_quality\n\nperformance = (\n    50\n    + 1.8 * experience\n    + 0.9 * training_hours\n    + 0.0004 * salary\n    + 1.4 * team_size\n    + manager_component\n    + remote_main\n    + remote_dept_component\n    + training_manager_interaction\n    + remote_manager_interaction\n    + dept_numeric\n    + np.random.normal(0, 9, n)\n)\n\ndf = pd.DataFrame({\n    \"performance\": performance,\n    \"experience\": experience,\n    \"training_hours\": training_hours,\n    \"salary\": salary,\n    \"remote_share\": remote_share,\n    \"team_size\": team_size,\n    \"manager_quality\": manager_quality,\n    \"department\": departments\n})\n\ndf.to_csv(\"employee_performance_data.csv\", index=False)\nprint(df.head())\nprint(df.groupby(\"department\")[[\"manager_quality\", \"remote_share\", \"performance\"]].mean())\n\n   performance  experience  training_hours        salary  remote_share  \\\n0   159.151624          12       32.603812  60215.917186      0.879245   \n1   168.470117          19       33.507527  63505.934060      0.182947   \n2   164.861349          14       31.514793  54472.871760      0.552633   \n3   159.413368           2       30.637550  34311.578227      0.513527   \n4   145.708783           7       43.331733  49572.581421      0.663745   \n\n   team_size  manager_quality department  \n0         11                3      Sales  \n1          4                5         HR  \n2          7                3         IT  \n3         14                5         IT  \n4          5                2      Sales  \n            manager_quality  remote_share  performance\ndepartment                                            \nHR                 2.650794      0.498049   148.669269\nIT                 3.953704      0.515782   170.112483\nSales              3.162791      0.585727   162.632426"
   },
   {
     "objectID": "index.html",
