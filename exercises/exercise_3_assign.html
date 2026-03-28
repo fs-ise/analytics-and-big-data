@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -66,13 +101,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="todo-check-correctness" class="level1">
-<h1>TODO : check correctness</h1>
-<div class="learning-objectives">
-<p>Design fact and dimension schemata from business questions and operational data.</p>
+<p>In this exercise, we cover:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Exercise part</th>
+<th>Time (min)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#part-1">Star schema: Facts and dimensions</a></td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td><a href="#part-2">Star schema (wine retailer)</a></td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td><a href="#part-3">Star schema (restaurant chain)</a></td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td><a href="#part-4">Star schema (Flowers GmbH)</a></td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td><a href="#olap">OLAP operations</a></td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td><a href="#questions">Question set</a></td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td><a href="#wrap-up">Wrap-up</a></td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><strong>Overall</strong></td>
+<td><strong>90</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="How to work on this exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<section id="part-1" class="level2">
-<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How to work on this exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This notebook does not involve coding. You can solve all tasks in the PDF document.</p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<section id="part-1-star-schema-facts-and-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-star-schema-facts-and-dimensions">Part 1: Star schema: Facts and dimensions <a id="part_1" href=""></a></h2>
 <p>You are working as a data analytics consultant for a bank. The bank plans to build a data warehouse to support management reporting and analytical queries. A common starting point in data warehouse design is to consider the analytical questions that decision-makers want to answer. These questions help determine:</p>
 <ul>
 <li><strong>the facts</strong> that should be stored in the warehouse (typically derived from transaction data, e.g., transaction amounts or volumes), and</li>
@@ -98,9 +185,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Based on these observations, derive a possible star schema, identifying: the fact table and the relevant dimension tables.</li>
 </ul>
 <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="part-2" class="level2">
-<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
+<section id="part-2-star-schema-wine-retailer" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-star-schema-wine-retailer">Part 2: Star schema (wine retailer) <a id="part_2" href=""></a></h2>
 <p>An online wine retailer plans to design a data warehouse to collect key figures regarding its wine sales. The relevant part of the operational database consists of the following tables:</p>
 <p><strong>CUSTOMER</strong> (ID, name, address, telephone, birthday, gender)<br>
 <strong>WINE</strong> (ID, name, type, year, bottle_price, class)<br>
@@ -109,27 +197,168 @@ ul.task-list li input[type="checkbox"] {
 <strong>ORDER</strong> (customer, wine, time, bottles)</p>
 <p>Create the star schema for the data warehouse.</p>
 <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="part-3" class="level2">
-<h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
+<section id="part-3-star-schema-restaurant-chain" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-star-schema-restaurant-chain">Part 3: Star schema (restaurant chain) <a id="part_3" href=""></a></h2>
 <p>A restaurant chain wants to build a management information system. The application system architecture is to be aligned with the data warehouse concept. An OLAP system is chosen for report generation. The company maintains various restaurants, which can be differentiated by region and by renovation status. The Leonardo-Campus restaurant belongs to the North region and is New from the renovation status. The restaurant Nordblick is also located in the North region, but its renovation status is Old. The Spätzleburg restaurant, on the other hand, is in the South region and has a New renovation status. The menu items of the restaurants are divided into the classes “Starters”, “Main courses”, “Desserts”, “Beverages” and “Other”. Time-based analyses are to enable evaluations by days of the week, weeks, months and years. Simple contribution margin calculations for restaurants, services and days are to be supported. The contribution margin is mathematically calculated from sales minus costs.</p>
 <p>Create the logical data warehouse schema!</p>
 <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="part-4" class="level2">
-<h2 class="anchored" data-anchor-id="part-4">Part 4</h2>
+<section id="part-4-star-schema-flowers-gmbh" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-star-schema-flowers-gmbh">Part 4: Star schema (Flowers GmbH) <a id="part_4" href=""></a></h2>
 <p>As an employee of the Controlling department, you will be given the task of setting up a data warehouse for sales and headcount analyses. Flowers GmbH has two branches in Hesse, one in Rhineland-Palatinate and three in France. Product categories include cut flowers, garden flowers and bridal jewelry. Within garden flowers, the rose family includes the genera roses and wild roses. Products in the rose genus include thornless roses and roses with thorns. The company distinguishes between corporate and private customers. Data about the place of residence of the customers is available. The DWH should be able to generate daily and weekly analyses as well as monthly, quarterly and annual reports. The key figure required for the sales analyses is the profit, which is calculated from the difference between revenues and costs. Employees have been working in the different branches of the company for different periods of time. The DWH should also enable headcount analyses. The key figure required for this is the headcount.</p>
 <p>Create the logical data warehouse schema!</p>
 <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="olap" class="level2">
-<h2 class="anchored" data-anchor-id="olap">OLAP</h2>
-<p>TODO</p>
+<section id="part-5-olap-operations" class="level2">
+<h2 class="anchored" data-anchor-id="part-5-olap-operations">Part 5: OLAP operations <a id="part_5" href=""></a></h2>
+<p>Next, we will translate common OLAP operations into SQL queries using a simple dataset.</p>
+<p>We work with the <code>fact_sales</code> table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>order_id</th>
+<th>date</th>
+<th>region</th>
+<th>product_category</th>
+<th>sales_amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2024-01-15</td>
+<td>Europe</td>
+<td>Electronics</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2024-01-20</td>
+<td>Europe</td>
+<td>Furniture</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2024-02-10</td>
+<td>Asia</td>
+<td>Electronics</td>
+<td>300</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2024-02-12</td>
+<td>Europe</td>
+<td>Electronics</td>
+<td>250</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>2024-03-05</td>
+<td>Asia</td>
+<td>Furniture</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Working with dates: `DATE_TRUNC`">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Working with dates: <code>DATE_TRUNC</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To aggregate data by time periods (e.g., months), we use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>DATE_TRUNC(<span class="st">'month'</span>, <span class="dt">date</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This function:</p>
+<ul>
+<li><p>Rounds a date down to the beginning of the specified time unit</p></li>
+<li><p>Example:</p>
+<ul>
+<li><code>2024-01-15 → 2024-01-01</code></li>
+<li><code>2024-02-12 → 2024-02-01</code></li>
+</ul></li>
+</ul>
+<p>This allows grouping data at the month level instead of day level.</p>
+</div>
+</div>
 </section>
+<section id="task-1-roll-up" class="level1">
+<h1>Task 1: Roll-up</h1>
+<p>Roll-up means aggregating data to a higher level of granularity.</p>
+<p>In this case:</p>
+<ul>
+<li>From day → month</li>
+<li>Grouped by region and month</li>
+</ul>
+<p>Write an SQL query that calculates total sales:</p>
+<ul>
+<li>grouped by <code>region</code></li>
+<li>aggregated at the monthly level (not daily)</li>
+</ul>
+<p>Use <code>DATE_TRUNC('month', date)</code>.</p>
+<p>Also:</p>
+<ul>
+<li>include <code>total_sales</code> as a column</li>
+<li>sort the result by region and month</li>
+</ul>
+<p>Finally, sketch the expected structure of the resulting table.</p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
-<section id="part-xxx-question-sets" class="level1">
-<h1>Part xxx: Question sets <a id="questions" href=""></a></h1>
-<p>TODO: add questions on DWH/OLAP (question sets for the whole part on data foundations)</p>
+<section id="task-2-drill-down" class="level1">
+<h1>Task 2: Drill-down</h1>
+<p>Drill-down means moving to a more detailed level.</p>
+<p>In this case:</p>
+<ul>
+<li>From month → day</li>
+<li>Keep both month and exact date</li>
+</ul>
+<hr>
+<p>Write an SQL query that shows total sales:</p>
+<ul>
+<li>by <code>region</code></li>
+<li>by <code>month</code></li>
+<li>and by exact date</li>
+</ul>
+<p>Use <code>DATE_TRUNC('month', date)</code>.</p>
+<p>Also:</p>
+<ul>
+<li>include <code>total_sales</code></li>
+<li>sort by region, month, and date</li>
+</ul>
+<p>Finally, sketch the structure of the result.</p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="task-3-slice" class="level1">
+<h1>Task 3: Slice</h1>
+<p>Slice means fixing one dimension to a single value.</p>
+<p>In this case:</p>
+<ul>
+<li>Only look at Europe</li>
+</ul>
+<p>Write an SQL query that calculates total sales:</p>
+<ul>
+<li>only for <code>region = 'Europe'</code></li>
+<li>grouped by month</li>
+</ul>
+<p>Use <code>DATE_TRUNC('month', date)</code>.</p>
+<p>Also:</p>
+<ul>
+<li>include <code>total_sales</code></li>
+<li>sort by month</li>
+</ul>
+<p>Sketch the resulting table structure.</p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="part-6-question-sets" class="level1">
+<h1>Part 6: Question sets <a id="questions" href=""></a></h1>
 <div class=".callout-note">
 <p>Work on these questions as far as you get during the session. There is no expectation to complete everything — you can continue with the rest after the session.</p>
 </div>
@@ -142,6 +371,7 @@ ul.task-list li input[type="checkbox"] {
 <li>How data preparation and EDA are connected</li>
 <li>Which kinds of insights EDA can provide before formal modeling</li>
 </ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
@@ -155,6 +385,7 @@ ul.task-list li input[type="checkbox"] {
 <li>country</li>
 </ul>
 <p>Then explain why the mean is appropriate for some variables but not for others.</p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
@@ -172,6 +403,7 @@ ul.task-list li input[type="checkbox"] {
 <li>whether grouping into intervals makes sense</li>
 <li>which mathematical operations are meaningful</li>
 </ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
@@ -185,6 +417,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Propose the tidy target structure.</li>
 <li>Describe the transformation needed.</li>
 </ol>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
@@ -199,6 +432,7 @@ ul.task-list li input[type="checkbox"] {
 <li>duplicate records</li>
 <li>data entry errors</li>
 </ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
@@ -210,6 +444,7 @@ ul.task-list li input[type="checkbox"] {
 <li>which analyses become possible after transforming timestamps</li>
 <li>examples such as hour of day, day of week, or numeric timestamps</li>
 </ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-7" class="level2">
 <h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
@@ -228,6 +463,7 @@ ul.task-list li input[type="checkbox"] {
 <li>scatterplot</li>
 <li>clustering</li>
 </ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
@@ -241,6 +477,7 @@ ul.task-list li input[type="checkbox"] {
 <li>stopping criterion</li>
 <li>one strength and one limitation of k-means</li>
 </ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-9" class="level2">
 <h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
@@ -251,17 +488,76 @@ ul.task-list li input[type="checkbox"] {
 <li>why k-means is sensitive to scaling</li>
 <li>what standardization is intended to achieve</li>
 </ul>
-<div style="page-break-after: always;"></div>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 </section>
 <section id="question-10" class="level2">
 <h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
-<p><strong>How can a dendrogram support the choice of the number of clusters for k-means?</strong></p>
+<p><strong>How can a dendrogram support the choice of the number of clusters?</strong></p>
 <p>In your answer, explain:</p>
 <ul>
 <li>what a dendrogram shows</li>
 <li>how large vertical gaps can help suggest a reasonable number of clusters</li>
-<li>why this can be useful before running k-means</li>
-<li>why the dendrogram does not itself perform k-means clustering</li>
+<li>how this supports deciding where to “cut” the tree</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="question-11" class="level2">
+<h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
+<p><strong>Why are star schemas preferred over highly normalized schemas in data warehouses?</strong></p>
+<p>Discuss:</p>
+<ul>
+<li>differences between OLTP and OLAP requirements</li>
+<li>query performance and join complexity</li>
+<li>usability for analysts</li>
+<li>how the structure relates to tidy data principles</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="question-12" class="level2">
+<h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
+<p><strong>Explain the difference between a fact table and a dimension table.</strong></p>
+<p>In your answer, include:</p>
+<ul>
+<li>the type of data stored in each</li>
+<li>examples of attributes</li>
+<li>how they are used together in analysis</li>
+<li>how this relates to tidy data structure</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="question-13" class="level2">
+<h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<p><strong>What is the role of the time dimension in a data warehouse?</strong></p>
+<p>Discuss:</p>
+<ul>
+<li>why time is almost always included as a dimension</li>
+<li>typical hierarchies (e.g., day → month → year)</li>
+<li>how it supports analysis</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="question-14" class="level2">
+<h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
+<p><strong>Explain the difference between roll-up and drill-down in OLAP.</strong></p>
+<p>Use examples to illustrate:</p>
+<ul>
+<li>change in level of detail</li>
+<li>impact on number of rows</li>
+<li>typical use cases</li>
+<li>illustrate both operations using SQL (based on the examples in Part 5)</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="wrap-up">Wrap-up <a id="wrap-up" href=""></a></h2>
+<p>🎉🎈 You have completed the notebook - good work! 🎈🎉</p>
+<p>In this notebook, we have learned to</p>
+<ul>
+<li>Translate business questions into <strong>analytical requirements</strong></li>
+<li>Distinguish clearly between <strong>facts (measures)</strong> and <strong>dimensions (perspectives)</strong></li>
+<li>Derive <strong>star schemas</strong> from both conceptual questions and operational data sources</li>
+<li>Structure data for <strong>multidimensional analysis (OLAP)</strong></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Session 3 survey">
 <div class="callout-header d-flex align-content-center">
