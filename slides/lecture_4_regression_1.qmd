@@ -260,8 +260,9 @@ We create a small table that summarizes key variables:
 
 <br>
 
-> For the Housing dataset, this overview is already available.
-> In practice, however—especially in organizational contexts—this step often involves **acquiring access to data, extracting it from systems, consulting documentation, talking to domain experts, and making sense of how the data was collected and defined**.
+> In organizations, this step often involves
+  **acquiring access to data, extracting it from systems, consulting documentation, talking to domain experts,
+  and making sense of how the data was collected and defined**.
 
 ::: aside
 For the Ames Housing dataset, we rely on this data description:
@@ -487,7 +488,8 @@ $$\hat{\text{price}} = 50{,}000 + 180 \cdot \text{squarefoot}$$
 : The predicted price for a house with 0 sq ft. Rarely meaningful on its own — it anchors the line.
 
 **β₁ = 180** — *slope*
-: Each additional square foot is associated with **+$180** in predicted price, on average.
+: The **slope** (or marginal effect) of square footage:  
+each additional square foot is associated with **+$180** in predicted price, on average.
 
 :::
 
@@ -657,11 +659,11 @@ In a statistics lecture, we would derive the closed form solution mathematically
 Here, we simply take away that it exists and that it can be computed efficiently.
 :::
 
-## Implementation in Python
+## Implementation in Python (I)
 
 <!--
-Live demo: see [notebook](TODO).
-. . . 
+    Live demo: see [notebook](TODO).
+    . . . 
 -->
 
 <br>
@@ -686,14 +688,14 @@ model.fit(X, y)                          # <5>
 5. Estimate the model on the data
 
 <!--
-**TODO: clarify expectations (TBD: what is reasonable when ChatGPT would be available? - knowing code structure, reproducing? - add example exam questions)**
+    **TODO: clarify expectations (TBD: what is reasonable when ChatGPT would be available? - knowing code structure, reproducing? - add example exam questions)**
 
-::: aside
-Data available at [https://www.openintro.org/data/index.php?data=ames](https://www.openintro.org/data/index.php?data=ames)
-:::
+    ::: aside
+    Data available at [https://www.openintro.org/data/index.php?data=ames](https://www.openintro.org/data/index.php?data=ames)
+    :::
 -->
 
-## Implementation in Python
+## Implementation in Python (II)
 
 ```python
 print("Intercept:", model.intercept_)     # β0 (coefficient estimates)
@@ -939,9 +941,15 @@ That helps avoid confusion when students compare packages like statsmodels and s
 -->
 
 
+# Next steps
+
 ## Next steps
 
-Once we move beyond a simple regression model, two practical questions arise:
+Once we move beyond a simple regression model, practical follow-up questions arise:
+
+* **How can we use categorical predictors?**
+
+  → See next slides.
 
 * **Which predictors should we include?**
 
@@ -961,6 +969,165 @@ Once we move beyond a simple regression model, two practical questions arise:
 ::: {.callout-note title="Takeaway"}
 A good regression model is usually not the one with the **most variables**, but the one that achieves a good balance between **interpretability**, **stability**, and **predictive performance**.
 :::
+
+
+
+<!--
+    Include a slide explaining dummy variables (needed in the exercise)
+    see https://www.datacamp.com/de/tutorial/one-hot-encoding-python-tutorial
+    -> TBD: rule/checklist for regression? (nominal variables dummy-coded?)
+    https://jose.theoj.org/papers/10.21105/jose.00115
+    https://moderndive.com/v2/
+-->
+
+## Categorical variables
+
+Regression models require **numerical input**.
+
+But real-world datasets often include **categorical variables**, for example:
+
+- Industry: *Finance, Healthcare, Retail*
+- Region: *EU, US, APAC*
+
+**Question:**  
+How can we include such variables in a regression model for `performance`?
+
+
+## Categorical variables: A naïve solution
+
+:::: {.columns}
+
+::: {.column width="40%"}
+We could assign numbers:
+
+```
+Finance = 1, Healthcare = 2, Retail = 3
+```
+
+<br>
+
+Problem:
+
+- This introduces an **artificial order**
+- The model assumes:
+  - Retail > Healthcare > Finance
+
+
+:::
+
+::: {.column width="60%" .fragment}
+**Regression model:**
+
+$$\text{performance}_i = \beta_0 + \beta_1 \cdot \text{Industry}_i + \varepsilon_i$$
+
+**Encoding:**
+
+$$\text{Finance}=1,\ \text{Healthcare}=2,\ \text{Retail}=3$$
+
+**Implications**
+
+* **Ordering:** Retail > Healthcare > Finance
+* **Equal spacing:**
+  $$ \text{Effect}(1 \to 2) = \text{Effect}(2 \to 3) = \beta_1$$
+
+:::
+
+::::
+
+. . . 
+
+**Key issue**
+
+Categorical variables have **no natural order or distance**,
+but the model treats them as **equally spaced numeric values**.
+We must avoid introducing **false relationships**.
+
+<!--
+  ::: aside
+  Note: In this example, we would perform mathematical operations that are not defined for categorical (nominal) variables. (if we look at the OLS)
+  :::
+-->
+
+## Categorical variables: One-hot encoding
+
+Create **one binary column per category** (1: category present, 0: category not present).
+
+Example transformation:
+
+:::: {.columns}
+
+::: {.column width="48%"}
+
+**Original data**
+
+<div class="smaller">
+
+| Industry   | Performance |
+|------------|-------------|
+| Finance    | 120         |
+| Retail     | 95          |
+| Healthcare | 140         |
+
+</div>
+
+:::
+
+::: {.column width="52%"}
+
+**After one-hot encoding**
+
+<div class="smaller">
+
+| Performance | Retail | Healthcare |
+|-------------|--------|------------|
+| 120         | 0      | 0          |
+| 95          | 1      | 0          |
+| 140         | 0      | 1          |
+
+</div>
+
+:::
+
+::::
+
+. . . 
+
+<br>
+
+**Advantages**
+
+- No artificial ordering  
+- The model learns **separate effects** (one $\beta_i$ coefficient for each category)
+
+One-hot encoding allows categorical variables to be used in linear regression models.
+
+
+::: aside
+Notice that `Finance` is dropped and serves as the **reference category**.
+The remaining dummy coefficients show differences relative to `Finance`.
+:::
+
+
+## Categorical variables: Interpreting coefficients
+
+Assume the following regression model:
+
+<br>
+
+$$\text{Performance}_i = 100 + 20 \cdot \text{Retail}_i + 40 \cdot \text{Healthcare}_i + \varepsilon_i$$
+
+<br>
+
+**Interpretation (reference: Finance)**
+
+- Intercept (100): baseline performance for **Finance**
+- Retail (20): **+20** relative to Finance → 120
+- Healthcare (40): **+40** relative to Finance → 140
+
+**Key idea**
+
+Coefficients measure **differences relative to the reference category**.
+
 
 
 # Deployment {data-stack-name="Deployment"}
@@ -1020,13 +1187,6 @@ $$
 \widehat{\text{price}} \approx 547{,}150
 $$
 
-. . .
-
-This prediction could be used to:
-
-* compare a listing price to the model-based estimate
-* flag unusually overpriced or underpriced houses
-* support pricing decisions together with human judgment
 
 <!--
     ::: {.callout-important title="Important"}
@@ -1103,30 +1263,43 @@ Models should be **monitored, reviewed, and updated** as data, environments, and
 
 ## Vocabulary {data-state="hide-menubar"}
 
+<!--
 A **method** is a composition of formalized principles that form the basis for a stringent calculation process.
+-->
 
 An **algorithm** is a procedure or set of steps or rules to accomplish a task. It is usually the implementation of a method. Algorithms are used to build models.
 
 In the given context, a **model** is the description of the relationship between variables. It is used to create output data from given input data, for example to make predictions.
 
+A **predictor** is a variable used as an input to a model to explain or predict an outcome.
+Synonyms include: Independent variable (IV);  explanatory variable; regressor (econometrics); feature (machine learning); input variable; covariate (statistics, esp. causal inference); control variable (when included to adjust for effects); factor (sometimes, esp. experimental settings); attribute (data mining).
+
+An **outcome** refers to the variable a model aims to explain or predict based on the predictors.
+Synonyms include: Dependent variable (DV); response variable; target; label (classification); explained variable; criterion variable; output variable.
+
 **Fitting a model** means that you estimate the model using the observed data. You are using your data as evidence to help approximate the real-world mathematical process that generated the data. Fitting the model often involves optimization methods and algorithms, such as maximum likelihood estimation, to help get the parameters.
 
-**Overfitting** is the term used to mean that you used a dataset to estimate the parameters of your model, but your model isn’t that good at capturing reality beyond your sampled data.
-
-TOOD: DV, IV, predictor, target, explaining/explained
+**Overfitting** arises when a model has learned sample-specific patterns (including noise) rather than the true data-generating process, leading to low out-of-sample predictive performance.
 
 ::: aside
 — Source: @SchuttONeil2014
 :::
 
+
 ## Summary {data-state="hide-menubar"}
 
 - Regression is a core example of a structured, model-based analytics process: from business question to data, modeling, evaluation, and potential deployment.
-- Linear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS) and evaluated using metrics such as R² while considering generalization and overfitting.
+
+- Linear regression models quantify relationships between variables through coefficients, estimated via optimization (OLS).
+  Coefficients capture **marginal effects** (numeric variables) and **differences relative to a reference category** (categorical variables using one-hot encoding).
+
 - In practice, the analytics workflow can be implemented in Python: define a model, fit it to data, generate predictions, and evaluate performance — a pattern that extends to many other modeling approaches.
+
 
 ## Survey: Session 4 {data-state="hide-menubar"}
 
+<br>
+Please complete the survey before you leave today — thank you 🙏
 <br><br>
 
 ::: {style="display:flex; justify-content:center;"}
@@ -1141,8 +1314,6 @@ TOOD: DV, IV, predictor, target, explaining/explained
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.
-
-Please complete the survey before you leave today — thank you 🙏
 :::
 
 # References {data-state="hide-menubar"}
