@@ -8,3 +8,4 @@ _site/
 /.quarto/
 **/*.quarto_ipynb
 data/.ipynb_checkpoints/*
+exercises/data/employee_performance_model.joblib
