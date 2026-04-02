@@ -18,11 +18,12 @@ In this notebook, we cover:
 | Overall                                                      |         90 |
 
 
+Note: resume your codspace at [analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks).
+
 # Case: Employee performance at MetaCorp
 
 You are a business analyst working for MetaCorp.
 The company wants to understand which factors are associated with employee performance.
-
 A central question in this notebook is whether **remote work** is associated with employee performance once we also account for other relevant variables.
 
 MetaCorp is interested in questions such as:
@@ -32,9 +33,7 @@ MetaCorp is interested in questions such as:
 - Is the relationship between remote work and performance similar across departments?
 - When should we be careful not to overinterpret regression results?
 
-The target variable is:
-
-- `performance`: an employee performance score
+The target variable is: `performance`, a quantitative employee performance score
 
 Potential predictors include:
 
@@ -48,24 +47,16 @@ Potential predictors include:
 
 # Setup and dataset
 
-## Imports
-
-```{python}
-import numpy as np
-import pandas as pd
-import statsmodels.api as sm
-import matplotlib.pyplot as plt
-import joblib
-
-from sklearn.linear_model import LinearRegression
-```
-
 ## Load the dataset
 
 ```{python}
+import pandas as pd
+
 df = pd.read_csv("data/employee_performance_data.csv")
 df.head()
 ```
+
+{{< pagebreak >}}
 
 ## Variable overview
 
@@ -86,9 +77,7 @@ df.head()
 df.describe(include="all")
 ```
 
-```{python}
-df["department"].value_counts()
-```
+{{< pagebreak >}}
 
 # Part A — Baseline regression <a id="baseline"></a>
 
@@ -116,6 +105,7 @@ Your tasks:
 
 ```{python}
 #| eval: false
+from sklearn.linear_model import LinearRegression
 
 # Write your own code here.
 # Suggested objects: df_model, X, y, model, coef_df
@@ -127,6 +117,8 @@ Your tasks:
 :::{.sol}
 
 ```{python}
+from sklearn.linear_model import LinearRegression
+
 # One-hot encode the department variable
 df_model = pd.get_dummies(df, columns=["department"], drop_first=True)
 # drop_first effectively removes the HR department, setting it as the reference level
@@ -154,6 +146,8 @@ print("Intercept:", model.intercept_)
 > *Note: The `HR` department serves as the reference category.*
 
 :::
+
+{{< pagebreak >}}
 
 ## Task A2: Interpret the coefficients
 
@@ -209,13 +203,13 @@ For a more realistic change of 10 percentage points, the predicted difference is
 
 Compared with other coefficients, especially `manager_quality` (`5.82`) or the department coefficients (`about 13` to `14`), the `remote_share` effect is relatively small.
 :::
-
 5. How should dummy variables such as `department_IT` or `department_Sales` be interpreted?
 
 ::: {.sol}
 Dummy variables compare one category to the omitted reference category.
 
-Here, `department_IT` and `department_Sales` show how those departments differ from the reference department, which is the department that was dropped during one-hot encoding. If `drop_first=True` was used and the departments are ordered alphabetically, the reference category is likely `HR`.
+Here, `department_IT` and `department_Sales` show how those departments differ from the reference department, which is the department that was dropped during one-hot encoding.
+If `drop_first=True` was used and the departments are ordered alphabetically, the reference category is `HR`.
 
 This means:
 
@@ -239,6 +233,8 @@ In practice, you may also want to interpret smaller changes, such as an increase
 :::
 
 :::
+
+{{< pagebreak >}}
 
 # Part B — Regression tables with `statsmodels` <a id="statsmodels"></a>
 
@@ -279,21 +275,7 @@ Use `statsmodels` to create a regression table for the same model.
 #| eval: false
 import statsmodels.api as sm
 
-# TODO: one-hot encode department
-# df_model = ...
-
-# TODO: define X and y
-# X = ...
-# y = ...
-
-# TODO: add constant
-# X = ...
-
-# TODO: fit OLS regression
-# model_sm = ...
-
-# TODO: print the summary
-# print(model_sm.summary())
+# Write your own code here.
 ```
 :::
 
@@ -313,6 +295,8 @@ print(model_sm.summary())
 ```
 
 :::
+
+{{< pagebreak >}}
 
 ## Task B2: Interpret the regression table
 
@@ -377,6 +361,8 @@ The formula approach is more readable and better suited for interpretation.
 :::
 
 
+{{< pagebreak >}}
+
 # Part C — Regression diagnostics <a id="diagnostics"></a>
 
 ::: {.direction}
@@ -400,12 +386,14 @@ A key point is that even if `remote_share` has a positive or negative coefficien
 
 ## Task C1: Residual plot
 
-Create a simple residual plot for the model.
+Create a simple residual plot for the fitted `scikit-learn` model from part A.
 
 ::: {.direction}
 
 ```{python}
 #| eval: false
+import matplotlib.pyplot as plt
+
 # residuals = y - model.predict(X_without_constant_or_matching_feature_matrix)
 # plt.scatter(model.predict(X_without_constant_or_matching_feature_matrix), residuals)
 # plt.axhline(0, linestyle="--")
@@ -420,6 +408,8 @@ Create a simple residual plot for the model.
 :::{.sol}
 
 ```{python}
+import matplotlib.pyplot as plt
+
 residuals = y - model.predict(X)
 plt.scatter(model.predict(X), residuals)
 plt.axhline(0, linestyle="--")
@@ -458,19 +448,20 @@ This would violate a key regression assumption (constant variance) and could mak
 :::
 
 
+{{< pagebreak >}}
+
 # Part D — Subgroup analysis: does one model fit all departments? <a id="subgroup-analysis"></a>
 
 ::: {.direction}
 
 Sometimes, a single regression model for the whole company may hide important differences.
-
 The relationship between predictors and performance may not be the same for all employees. For example, internal feedback at MetaCorp suggests that **complaints about remote work are more frequent in some departments than in others**. In departments with high coordination needs, employees may report communication challenges or delays, while in others, remote work may support concentration and flexibility.
 
 This suggests that the effect of `remote_share` may depend on the **work context**—even if our initial model treats all employees the same.
-
 Instead of assuming that one model fits everyone equally well, we can explore this idea by estimating separate models for different groups.
 
 This helps us answer questions such as:
+
 - Do relationships look similar across departments?
 - Are some variables more important in certain contexts?
 - Does the effect of `remote_share` change depending on the work environment?
@@ -489,26 +480,18 @@ Estimate separate regressions for `Sales`, `IT`, and `HR`.
 ```{python}
 #| eval: false
 
-# Write your own code here.
+# Write your own code here, using the following scaffold
 
-# Code scaffold:
 # import statsmodels.api as sm
-#
-# results = {}
-#
+
 # for dept in df["department"].unique():
-     # TODO: subset data for one department
      # df_sub = ...
 
-     # TODO: define X_sub and y_sub
      # X_sub = ...
      # y_sub = ...
 
-     # TODO: add constant and fit OLS
-     # X_sub = ...
+     # TODO: fit OLS
      # model_sub = ...
-
-     # results[dept] = model_sub
 
      # print(f"\n=== Regression results for {dept} ===")
      # print(model_sub.summary())
@@ -544,15 +527,65 @@ for dept in df["department"].unique():
 ```
 :::
 
+{{< pagebreak >}}
+
 ## Task D2: Compare the subgroup models
 
 Use the results to answer the following questions.
 
 1. Do the coefficients differ across departments?
+
+:::{.sol}
+Yes, the coefficients differ across departments.
+While most variables (e.g., experience, training_hours, salary, team_size, manager_quality) are positively associated with performance in all departments, the magnitude of these effects varies.
+
+For example, experience has a stronger effect in Sales than in HR, and manager_quality is much more influential in IT than in the other departments.
+In contrast, training_hours shows a very similar effect across all departments.
+
+This indicates that the strength of relationships is not constant across departments.
+:::
+
 2. Is `remote_share` associated with performance in the same way in every department?
+
+:::{.sol}
+No, the association differs across departments.
+
+In Sales, remote_share has a negative but not statistically significant effect.
+In HR, it has a negative and statistically significant effect, suggesting that more remote work is associated with lower performance.
+In contrast, in IT, the effect is positive and statistically significant.
+
+This shows that remote work impacts performance differently depending on the department.
+:::
+
 3. Does `manager_quality` seem equally important in all departments?
+
+:::{.sol}
+No, although manager_quality is positively and significantly associated with performance in all departments, its importance varies.
+
+The effect is strongest in IT, where the coefficient is substantially larger than in Sales and HR.
+This suggests that high-quality management may be particularly critical in IT compared to other departments.
+:::
+
 4. What does this tell us about heterogeneity in company data?
+
+:::{.sol}
+The results indicate that the data are heterogeneous across departments.
+The same variables do not have identical effects everywhere, and some relationships (e.g., remote_share) even change direction.
+
+This suggests that departments differ in their work structures, tasks, and coordination needs, leading to different performance drivers.
+:::
+
 5. Why might a single model be too simplistic?
+
+:::{.sol}
+A single model assumes that the effects of all variables are the same across departments (apart from intercept differences when using dummies).
+
+However, the subgroup results show that some effects vary in magnitude or even direction.
+A single model would therefore mask these differences and potentially lead to misleading conclusions.
+
+Using subgroup models or interaction terms can better capture these variations.
+:::
+
 
 ::: {.callout-note title="Key idea"}
 If relationships differ strongly between groups, a single regression model can hide important structure.
@@ -590,16 +623,16 @@ joblib.dump(model, "data/employee_performance_model.joblib")
 
 :::
 
+{{< pagebreak >}}
+
 ## Task E2 (optional): Load the model and predict a new case
 
 ::: {.direction}
 
 ```{python}
 #| eval: false
-# TODO: load the saved model
 # loaded_model = ...
 
-# TODO: create a new employee record
 # new_employee = pd.DataFrame([
 #     {
 #         "experience": 8,
@@ -607,10 +640,15 @@ joblib.dump(model, "data/employee_performance_model.joblib")
 #     }
 # ])
 
-# TODO: generate prediction
 # prediction = ...
 # print(prediction)
 ```
+
+> ⚠️ **Important note**
+> In this example, we only save the trained model, but not the preprocessing steps (e.g., one-hot encoding of the `department` variable).
+>
+> The prediction works only because we manually created a new data point that exactly matches the structure of the training data (`X`).
+> In real-world applications, you should always save the full preprocessing pipeline together with the model to ensure consistent predictions.
 
 :::
 
@@ -648,7 +686,6 @@ print(prediction)
 
 :::{.direction}
 In practice, deploying a model like this involves more than just saving and loading it.
-
 Think about how such a model would be used in a real company like MetaCorp.
 :::
 
@@ -701,7 +738,7 @@ In this notebook, we have learned to
 * Interpret coefficients, including the effect of `remote_share`
 * Reflect on statistical significance, model fit, and practical relevance
 * Diagnose regression models using residual plots and assumptions
-* Compare and subgroup (department-specific) models
+* Compare models across departments
 * Save, load, and apply a trained model for prediction
 
 ::: {.callout-note title="Stop the Codespace"}
