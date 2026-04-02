@@ -4,9 +4,10 @@ erDiagram
     CUSTOMER {
         int ID
         string name
-        int age
+        string address
+        string telephone
+        string birthday
         string gender
-        string region
     }
 
     WINE {
@@ -14,6 +15,7 @@ erDiagram
         string name
         string type
         int year
+        string bottle_price
         string class
         string region
     }
@@ -24,15 +26,14 @@ erDiagram
         int year
     }
 
-    SALES {
+    ORDER {
         int customer_id
         int wine_id
         datetime time_id
-        int units_sold
-        float turnover
+        int nr_bottles
     }
 
-    CUSTOMER ||--o{ SALES : purchases
-    WINE     ||--o{ SALES : includes
-    TIME     ||--o{ SALES : occurs_at
+    CUSTOMER ||--o{ ORDER : purchases
+    WINE     ||--o{ ORDER : includes
+    TIME     ||--o{ ORDER : occurs_at
 ```
