@@ -3,6 +3,13 @@ title: "Notes: Session 2: Analytical data architecture"
 format: html
 ---
 
+| Time (min) | Duration | Topic                | Additional materials |
+|------------|----------|----------------------|----------------------|
+| 0–23       | 23       | Data warehouse       |                      |
+| 23–46      | 23       | ETL pipeline         |                      |
+| 46–68      | 22       | Dimensional modeling |                      |
+| 68–90      | 22       | OLAP operations      |                      |
+
 2026-03-30 lecture: 85 minutes (5 min short)
 
 TODO: check for code-based example of ELT/ETL: https://proceedings.scipy.org/articles/wjjm7869

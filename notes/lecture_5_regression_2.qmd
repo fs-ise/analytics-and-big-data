@@ -3,6 +3,12 @@ title: "Notes: Session 5: Regression II"
 format: html
 ---
 
+| Time (min) | Duration | Topic                         | Additional materials |
+|------------|----------|-------------------------------|----------------------|
+| 0–30       | 30       | Refining the model            |                      |
+| 30–60      | 30       | Explanation ↔ prediction      |                      |
+| 60–90      | 30       | Regression → Machine learning |                      |
+
 ::: callout-note
 TODO
 :::

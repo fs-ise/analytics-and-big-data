@@ -3,6 +3,13 @@ title: "Notes: Session 6: Machine learning I"
 format: html
 ---
 
+| Time (min) | Duration | Topic                           | Additional materials |
+|------------|----------|---------------------------------|----------------------|
+| 0–23       | 23       | Foundations                     |                      |
+| 23–46      | 23       | The Generalization Problem      |                      |
+| 46–68      | 22       | The Machine Learning Workflow   |                      |
+| 68–90      | 22       | Performance                     |                      |
+
 ::: callout-note
 
 Note: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)

@@ -3,6 +3,17 @@ title: "Notes: Session 4: Regression I"
 format: html
 ---
 
+| Time (min) | Duration | Topic                  | Additional materials |
+|------------|----------|------------------------|----------------------|
+| 0–12       | 12       | Business understanding |                      |
+| 12–24      | 12       | Data understanding     |                      |
+| 24–35      | 11       | Data preparation       |                      |
+| 35–46      | 11       | Modeling               |                      |
+| 46–57      | 11       | Simple regression      |                      |
+| 57–68      | 11       | Evaluation             |                      |
+| 68–79      | 11       | Next steps             |                      |
+| 79–90      | 11       | Deployment             |                      |
+
 TODO: prepare explanation of regression assumptions and diagnostics
 
 2026-03-31: 80 mins for the lecture (slightly short, could be a bit more formal/challenging)
