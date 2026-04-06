@@ -3,46 +3,235 @@ title: "Group work"
 format: html
 ---
 
-::: callout-note
+> In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection.
+  While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project takes a different approach.
+  We focus on business-relevant contexts such as management, finance, operations, or digital platforms that are more directly aligned with your future professional environments.
+  To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations.
+  This allows you not only to apply analytical methods, but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them.
 
-Written paper: 60 points (code added in separate file)
--> project: end of module
--> nach der letzten VL: 6 Wochen Zeit.
 
-TODO:
+## 1. Learning Objective
 
-- schedule
-- topics
-- criteria
+* Apply the **CRISP-DM process** end-to-end
+* Design and analyze **realistic business data scenarios**
+* Select and justify appropriate **analytical methods**
+* Communicate results to **technical and non-technical audiences**
+* Reflect on **limitations and improvements**
 
-See [CS109A: Introduction to Data Science projects](https://harvard-iacs.github.io/2018-CS109A/pages/projects.html)
 
+## 2. Project Overview
+
+### Task
+
+- Each group applies the methods and procedures covered in the teaching sessions.
+  Depending on the project, different focuses have to be set (e.g., for some projects more data preparation, for others more model optimization).
+- Create a realistic, internal dataset
+- Prepare an analytical notebook (covering the CRISP-DM steps; selecting an analytical model covered in the lectures)
+- Optional (challenge/better grades): include an advanced question (e.g., in data preparation; model refinement; evaluation; deployment)
+- Develop three statements: one case description (directed to students who would work on the case); one for instructors (explaining why the case is interesting; what students will learn/specific challenge; how it extends existing work (??) - TODO: provide links to key sources and registries; discuss weaknesses/potential for improvement)
 -> complete the analyses and explain why it illustrates or complements the contents covered in the course (-> draw inspiration for teaching cases)
 
-:::
+    TODO: simplification is ok: if you know that the problem would typically be solved with more advanced (e.g., reinforcement learning) approaches not covered in the lecture, 
 
-# Guidelines for the Group Projects
+### Topic suggestions
 
-## Group Size and Application
+* **Human Resources** (e.g., attrition, promotion, team productivity)
+* **Finance** (e.g., credit default, fraud, customer lifetime value)
+* **Marketing** (e.g., churn, customer segmentation, campaign effectiveness)
+* **Operations** (e.g., demand forecasting, inventory optimization, supplier risk scoring)
+* **Digital Platforms** (e.g., user engagement prediction, gig worker retention, pricing strategy simulation)
 
+
+### Group Size and Application
+
+* You can **form your own groups**. The **target group size is 4 students**.
+* If you have formed a group, please **send me an email** with the names and email addresses of all group members.
+* Groups of 4 will be **automatically accepted**.
+* If you are not yet in a group, you can still participate: the **allocation of remaining students will take place during a session** (not after the deadline).
+* If the total number of students does not divide evenly into groups of 4, some groups may have **3 or 5 members**, determined in a **fair and transparent way**.
+
+<!--
 - The group size depends on the difficulty level of the individual project (see project description).
-- Projects can be allocated multiple times.
 - Each participant applies by e-mail for the desired projects. Alternatively, you can already form groups and apply as a group.
 - In every case, please indicate three projects as:
   - Preference 1
   - Preference 2
   - Preference 3
 - Based on the applications, the groups are arranged and projects are assigned.
+-->
 
-## Group Work and Delivery
+## 3. Deliverables
 
-- Each group applies the methods and procedures covered in the teaching sessions.
-  Depending on the project, different focuses have to be set (e.g., for some projects more data preparation, for others more model optimization).
-- All necessary steps for the analysis should be performed in Python.
-- The group work should be documented, explained, and reasoned in a text document, including code fragments that are relevant for understanding (see the Python manual for an example).
-- Each group delivers:
-  - the text document, and
-  - the corresponding Python files
-  by the announced deadline.
-- The text document has a maximum of **40 pages**, including figures and code fragments.
-- The applied methodology is more important for the evaluation than the model results.
+All necessary steps for the analysis should be performed in Python.
+
+
+1. **Report (max 10 pages)**
+
+   * Section 1: Case Package (explaining business context, problem statement)
+   * Section 2: Structured explanation of approach
+
+  TODO/TBD: suggest structure??
+
+2. **Script for synthetic dataset**
+
+  * Python script to generate the dataset
+
+    TODO: give examples / link to my own synthetic dataset scripts
+
+3. **Dataset**
+
+   * CSV containing the simulated data (synthetic but realistic)
+
+4. **Analytical Notebook (Python)**
+
+   * Full CRISP-DM pipeline
+
+## 4. Project Timeline
+
+Start: 2026-04-14
+Deadline: 2026-06-01
+
+Note: GW: limited availability in the last week (2026-05-25 to 2026-06-01)
+
+### Week 1 – Project Setup
+
+* Topic selection
+* Initial idea (1-page proposal)
+
+### Week 2 – Data Design
+
+* Synthetic dataset concept
+* Data schema + generation approach
+
+### Week 3 – Data & EDA
+
+* Dataset finalized
+* Exploratory analysis
+
+### Week 4 – Modeling
+
+* First model(s)
+* Baseline results
+
+### Week 5 – Refinement
+
+* Improvements / advanced component
+
+### Week 6 – Finalization
+
+* Report + code submission
+
+
+
+
+## 5. Evaluation Criteria
+
+A max of 60 points can be earned, adding to the final grade.
+
+Each group receives one grade.
+
+TODO: escalation procedure/how do we ensure fair contributions?
+TODO: ask for topics after week 1 to coordinate and minimize overlap
+
+| Category                              | Points | Criteria                                                                 |
+| ------------------------------------- | ------ | ------------------------------------------------------------------------ |
+| **A. Problem & Case Design**          | 15 pts | Realism and clarity of business problem; Quality of dataset design       |
+| **B. Methodological Rigor**           | 20 pts | Proper use of CRISP-DM; Justification of methods; Correct implementation |
+| **C. Analysis Quality**               | 15 pts | Insightfulness of results; Interpretation (not just metrics)             |
+| **D. Communication**                  | 5 pts  | Clarity, structure, visualizations                                       |
+| **E. Reproducibility & Code Quality** | 5 pts  | Clean, documented, runnable                                              |
+
+
+Note: The applied methodology is more important for the evaluation than the absolute model performance.
+
+**Synthetic Data Requirement**
+
+* Must reflect **realistic business processes**
+* Should include:
+
+  * Noise
+  * Missing values
+  * Imperfections
+* Must be **documented** in the script:
+
+  * How it was generated
+  * Assumptions (ideally with evidence)
+
+
+**Difficulty Levels**
+
+* **Standard**: basic pipeline + one model
+* **Advanced**: specific data preparation challenge, feature engineering, model refinement, advanced evaluation
+
+<!--
+Expectations (best grades: compelling motivation; instructive advanced analysis; strong contextualization and rationale)
+-->
+
+
+
+<!--
+Link examples? - ask for consent before.
+-->
+
+### AI policy
+
+* Allowed:
+
+  * Debugging
+  * Code explanations
+  * Documentation support
+* Not allowed:
+
+  * Fully generated solutions without understanding
+* Requirement:
+
+  * Students must **explain and defend their work orally if needed**
+  * Everything must be validated.
+
+TBD: share repository/directory and be prepared to answer questions on the analysis at any time (-> LLMs)
+
+
+## 6. Consultation / Support
+
+* See [Bookings](https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&ismsaljsauthenabled) and teams.
+
+## 7. Template
+
+* Report template
+* Notebook structure
+
+## 8. Submission
+
+TODO: add link to upload in canvas
+
+
+<!--
+### C. Common Pitfalls Section (very effective pedagogically)
+
+Example:
+
+* Overfitting without validation
+* Ignoring business interpretation
+* Weak data generation
+* “Model-first” instead of “problem-first”
+
+
+Inspiration
+
+- See [CS109A: Introduction to Data Science projects](https://harvard-iacs.github.io/2018-CS109A/pages/projects.html)
+-->
+
+
+::: {.callout-note title="Optional: Research Extension"}
+
+* Exceptional projects may lead to:
+
+  * Teaching cases
+  * Research outputs
+* Co-authorship possible based on contribution
+
+:::
+
+<!--
+TBD: announce the option for co-authorship? (mentioning student co-authored papers, 25%?) - if this is something that will be published, I will reach out and you will have the opportunity to become a coauthor.
+-->
