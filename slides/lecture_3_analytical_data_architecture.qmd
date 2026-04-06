@@ -6,6 +6,7 @@ session: "Session 3"
 date: "2026-03-30"
 ---
 
+
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
@@ -30,7 +31,7 @@ date: "2026-03-30"
 
 ## Typical descriptive questions
 
-![](../images/slides_28.png){fig-align="center" width="50%"}
+![](../images/slides_28.png){fig-align="center" width="70%"}
 
 ::: aside
 — Source: Alfred Schlaucher, Oracle, p. 15
@@ -41,6 +42,8 @@ date: "2026-03-30"
 
 <br><br>
 
+::: {.highlight_must_learn}
+
 |                           | Operational database    | Analytical database         |
 |---------------------------|-------------------------|-----------------------------|
 | Target group              | Operational employees   | Management, Analysts        |
@@ -49,15 +52,20 @@ date: "2026-03-30"
 | Required response time    | Very short              | Short to medium             |
 | Level of data             | Detailed                | Aggregated, processed       |
 | Queries                   | Predictable, periodic   | Unpredictable, ad hoc       |
-| Given period              | Current                 | Past to future              |
+| Focal period of time      | Current                 | Past to future              |
 | Time horizon              | 1–3 months              | Years or decades            |
 
+:::
 
 ## Contradiction between operational data architecture and analytical information needs
 
+<br>
+
 ![](../images/slides_29_new.png){fig-align="center" width="50%"}
 
-Organizations structure operational data by departments and processes, but analytical questions require cross-departmental views.
+<br>
+
+> Organizations structure operational data by departments and processes, but analytical questions require cross-departmental views.
 
 ::: aside
 — Source: Jung/Winter (2000): Data Warehousing Strategie: Erfahrungen, Methoden, Visionen, Berlin, p. 7.
@@ -79,22 +87,28 @@ The hardware load differs in operational application systems and data warehouse 
 
 ## Definition: Data warehouse
 
+::: {.highlight_must_learn}
+
 The term Data Warehouse was coined by @Inmon1995, who defined it as follows:
+
+<br>
+
 
 > **"A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision making process."**
 
-. . . 
+<br>
 
 He defined the terms in the sentence as follows:
 
-**Subject Oriented:** Data that gives information about a particular subject instead of about a company's ongoing operations.
+**Subject-oriented:** Data that gives information about a particular subject instead of about a company's ongoing operations.
+Rather than reflecting fragmented departmental systems, it integrates data into consistent, cross-departmental subject areas.
 
 **Integrated:** Data that is gathered into the data warehouse from a variety of sources and merged into a coherent whole.
 
 **Time-variant:** All data in the data warehouse is identified with a particular time period.
 
 **Non-volatile:** Data is stable in a data warehouse. More data is added but data is never removed. This enables management to gain a consistent picture of the business.
-
+:::
 
 ## The data warehouse concept
 
@@ -114,11 +128,12 @@ He defined the terms in the sentence as follows:
 
 ## Structure of the database
 
-The database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company. In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company. They are organized in such a way that they can be viewed from different dimensions.
+The database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company.
+In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company.
+They are organized in such a way that they can be viewed from different dimensions.
 
 Frequently used dimensions are:
 
-- Company structure (e.g., business units, organizational structure, legal entities)
 - Product structure (e.g., product groups and individual products)
 - Regional structure (e.g., region, country, continent)
 - Customer structure (e.g., customer groups or segments, and individual customers)
@@ -136,7 +151,11 @@ Frequently used dimensions are:
 
 ## ETL tools
 
-The data in the data warehouse can normally only be accessed in a read-only manner. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.
+::: {.highlight_must_learn}
+
+The data in the data warehouse can normally only be accessed in a **read-only manner**.
+The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources.
+They automate the process of data acquisition from these sources.
 
 The timeliness with which the transfer to the database is performed can be defined flexibly, e.g., within defined time intervals, immediately after each change, or at the explicit request of the user.
 
@@ -150,12 +169,16 @@ ETL programs include:
 
 - **Loaders:** Load transformed data from the workspace into the data warehouse after the data retrieval process is complete.
 
+:::
 
 ## Staging area
 
-The staging area is a temporary cache that performs the ETL process. It includes the extraction, transformation and loading of the data into the data warehouse.
+The staging area is a temporary cache that performs the ETL process.
+It includes the extraction, transformation and loading of the data into the data warehouse.
 
-Neither the operational systems nor the data warehouse are affected by the process. The data can be transferred incrementally from the operational systems without having to have a permanent connection to them. It is stored temporarily and only transformed when it is sufficiently complete.
+Neither the operational systems nor the data warehouse are affected by the process.
+The data can be transferred incrementally from the operational systems without having to have a permanent connection to them.
+It is stored temporarily and only transformed when it is sufficiently complete.
 
 It is then loaded en bloc into the data warehouse, so that no inconsistencies can occur here either.
 
@@ -164,13 +187,15 @@ If the ETL process is successful, the data is deleted from the staging area.
 
 ## The metadata repository
 
-Metadata supports data management and serves as a descriptor for an object that holds some data or information. In data warehouses, it is collectively organized in a catalog called the metadata repository.
+Metadata supports data management and serves as a descriptor for an object that holds some data or information.
+In data warehouses, it is collectively organized in a catalog called the metadata repository.
 
 Metadata is classified into three types:
 
 - **Technical metadata:** Provides information about the structure of data, where it resides, and other technical details related to locating data in its native database.
 
-- **Business metadata:** Describes the actual data in business-understandable terms. It can provide insights into the type of data, its origin, definition, quality, and relationships with other entities in the data warehouse.
+- **Business metadata:** Describes the actual data in business-understandable terms.
+  It can provide insights into the type of data, its origin, definition, quality, and relationships with other entities in the data warehouse.
 
 - **Process metadata:** Stores information about the occurrence and outcomes of operations taking place in the data warehouse.
 
@@ -193,15 +218,15 @@ Comparison: Data warehouse and data mart
 | Origin             | Task oriented        | Data model oriented   |
 | Requirements       | Specific             | Versatile             |
 
-
-# Dimensional modeling {data-stack-name="Dimensional modeling"}
-
 ## Architectural variants of data warehouses in practice
 
 ![](../images/slides_41_new.png){fig-align="center" width="50%"}
 
+# Dimensional modeling {data-stack-name="Dimensional modeling"}
 
 ## From transactions to reports
+
+<br>
 
 ![](../images/slides_42_new.png){fig-align="center" width="50%"}
 
@@ -215,12 +240,17 @@ Comparison: Data warehouse and data mart
 
 ## Star schema (I)
 
+::: {.highlight_must_learn}
+
 The Star schema has a central fact table and exactly one dimension table for each dimension.
 
 ![](../images/slides_38.png){fig-align="center" width="50%"}
 
-The cardinality between the fact table and a dimension table is n∶1, i.e. a fact (e.g. sales: 67,000 euros) is described by one dimension expression for each dimension (e.g. time: 1st quarter, region: Hesse, product group: books). A dimension characteristic (e.g. product group: books) is associated with 0, 1 or n facts.
+The cardinality between the fact table and a dimension table is n∶1,
+i.e. a fact (e.g. sales: 67,000 euros) is described by one dimension expression for each dimension (e.g. time: 1st quarter, region: Hesse, product group: books).
+A dimension characteristic (e.g. product group: books) is associated with 0, 1 or n facts.
 
+:::
 
 ## Star schema (II)
 
@@ -239,7 +269,7 @@ digraph G {
 
     { rank=same; W; S; P }
 
-    S -> W [label="Where?", dir=back];
+    S -> W [label="Where?"];
     S -> T [label="When?"];
     S -> P [label="With what?"];
     S -> O [label="..."];
@@ -248,14 +278,10 @@ digraph G {
 
 ## Star schema (III)
 
-::: columns
-::: column
-![](../images/slides_40.png)
-:::
-::: column
-![](../images/slides_41.png)
-:::
-:::
+<br>
+
+![](../images/slides_40.png){fig-align="center" width="60%"}
+
 
 
 ## Star schema table design (I)
@@ -285,10 +311,13 @@ digraph G {
 ```sql
 select z.Year as Year, sum(v.Amount) as Total_Amount
 from Branch f, Product p, Time z, Customer k, Sales v
-where z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname and v.CustomerID = k.CustomerID
+where z.Quarter = 1 and k.gender = 'f' and p.Product_type = 'Car' and f.state = 'Hesse' \
+    and v.Date = z.Date and v.ProductID = p.ProductID and v.Branch = f.Branchname \
+    and v.CustomerID = k.CustomerID
 group by z.Year
 order by Total_Amount Descending;
 ```
+<br>
 
 | Year | Total amount |
 |------|--------------|
@@ -297,15 +326,27 @@ order by Total_Amount Descending;
 | 2003 | 650          |
 
 ::: aside
+**Note:**
+`FROM Branch f, Product p, Time z, Customer k, Sales v` uses **implicit join syntax**.
+All tables are combined first, and the **join conditions are defined in the `WHERE` clause** (e.g., `v.ProductID = p.ProductID`).
+This is equivalent to `JOIN ... ON`, but separates joins less clearly from filtering conditions.
+
+Note: 
 — Source: Hartung (2011), p. 37
 :::
 
 
 ## Snowflake schema
 
+::: {.highlight_must_learn}
+
 In the Snowflake schema, the redundancies in the Star schema are resolved in the dimension tables and the hierarchy levels are each modeled with their own tables:
 
-![](../images/slides_45.png){fig-align="center" width="50%"}
+<br>
+
+![](../images/slides_45.png){fig-align="center" width="60%"}
+
+:::
 
 ::: aside
 — Source: https://www.guru99.com/star-snowflake-data-warehousing.html
@@ -321,117 +362,132 @@ In the Snowflake schema, the redundancies in the Star schema are resolved in the
 
 ## Galaxy schema
 
-The Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions. The Galaxy schema thus represents more than one data cube (multi-cubes).
 
-![](../images/slides_54_new.png){fig-align="center" width="50%"}
+::: {.highlight_must_learn}
+
+The Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions.
+The Galaxy schema thus represents more than one data cube (multi-cubes).
+
+<br>
+
+![](../images/slides_54_new.png){fig-align="center" width="70%"}
+
+:::
 
 ## Table structure of the Galaxy schema
 
-![](../images/slides_55_new.png){fig-align="center" width="50%"}
+![](../images/slides_55_new.png){fig-align="center" width="60%"}
 
+<!--
 
-```{mermaid}
-erDiagram
+    ```{mermaid}
+    erDiagram
 
-    DELIVERY {
-        int id_product PK
-        int id_supplier PK
-        int id_date PK
-        float amount
-        float volume
-    }
+        DELIVERY {
+            int id_product PK
+            int id_supplier PK
+            int id_date PK
+            float amount
+            float volume
+        }
 
-    SALES {
-        int id_product PK
-        int id_client PK
-        int id_shop PK
-        int id_date PK
-        float amount
-        float volume
-    }
+        SALES {
+            int id_product PK
+            int id_client PK
+            int id_shop PK
+            int id_date PK
+            float amount
+            float volume
+        }
 
-    PRODUCT {
-        int id_product PK
-        int id_brand
-        string name
-        string description
-    }
+        PRODUCT {
+            int id_product PK
+            int id_brand
+            string name
+            string description
+        }
 
-    BRAND {
-        int id_brand PK
-        int id_supplier
-        string name
-    }
+        BRAND {
+            int id_brand PK
+            int id_supplier
+            string name
+        }
 
-    SUPPLIER {
-        int id_supplier PK
-        int id_country
-        string name
-        string address
-    }
+        SUPPLIER {
+            int id_supplier PK
+            int id_country
+            string name
+            string address
+        }
 
-    COUNTRY {
-        int id_country PK
-        string name
-        string code_name
-    }
+        COUNTRY {
+            int id_country PK
+            string name
+            string code_name
+        }
 
-    TIME {
-        int id_date PK
-        int week_no
-    }
+        TIME {
+            int id_date PK
+            int week_no
+        }
 
-    CLIENT {
-        int id_client PK
-        int id_client_group
-        string name
-        string last_name
-    }
+        CLIENT {
+            int id_client PK
+            int id_client_group
+            string name
+            string last_name
+        }
 
-    CLIENT_GROUP {
-        int id_client_group PK
-        string group_name
-        string segment_name
-    }
+        CLIENT_GROUP {
+            int id_client_group PK
+            string group_name
+            string segment_name
+        }
 
-    SHOP {
-        int id_shop PK
-        int id_city
-        string name
-        string business_type
-    }
+        SHOP {
+            int id_shop PK
+            int id_city
+            string name
+            string business_type
+        }
 
-    CITY {
-        int id_city PK
-        int id_region
-        string name
-    }
+        CITY {
+            int id_city PK
+            int id_region
+            string name
+        }
 
-    REGION {
-        int id_region PK
-        string name
-        string country
-    }
+        REGION {
+            int id_region PK
+            string name
+            string country
+        }
 
-    DELIVERY }o--|| PRODUCT : product
-    DELIVERY }o--|| SUPPLIER : supplier
-    DELIVERY }o--|| TIME : date
+        DELIVERY }o--|| PRODUCT : product
+        DELIVERY }o--|| SUPPLIER : supplier
+        DELIVERY }o--|| TIME : date
 
-    PRODUCT }o--|| BRAND : brand
-    BRAND }o--|| SUPPLIER : supplier
+        PRODUCT }o--|| BRAND : brand
+        BRAND }o--|| SUPPLIER : supplier
 
-    SUPPLIER }o--|| COUNTRY : country
+        SUPPLIER }o--|| COUNTRY : country
 
-    SALES }o--|| PRODUCT : product
-    SALES }o--|| CLIENT : client
-    SALES }o--|| SHOP : shop
-    SALES }o--|| TIME : date
+        SALES }o--|| PRODUCT : product
+        SALES }o--|| CLIENT : client
+        SALES }o--|| SHOP : shop
+        SALES }o--|| TIME : date
 
-    CLIENT }o--|| CLIENT_GROUP : group
+        CLIENT }o--|| CLIENT_GROUP : group
 
-    SHOP }o--|| CITY : city
-    CITY }o--|| REGION : region
-```
+        SHOP }o--|| CITY : city
+        CITY }o--|| REGION : region
+    ```
+-->
+
+<!--
+    TODO: include figure like "Components of a data warehouse" - and annotate: dwh-DB: star/snowflake/galaxy schema, operational database: ERD (non-redundant design)
+-->
+
 # OLAP operations {data-stack-name="OLAP operations"}
 
 ## Subject of OLAP
@@ -460,26 +516,45 @@ OLAP functionality can be characterized as dynamic, multidimensional analysis of
 
 ## OLAP operations: Slicing and dicing
 
-![](../images/slides_65_new.png){fig-align="center" width="50%"}
+::: {.highlight_must_learn}
 
+<br>
+
+![](../images/slides_65_new.png){fig-align="center" width="60%"}
+
+:::
 
 ## OLAP operations: Rotate
 
+::: {.highlight_must_learn}
+
+<br>
+
 ![](../images/slides_66_new.png){fig-align="center" width="50%"}
 
+:::
 
 ## OLAP operations: Drill down and roll up
 
-![](../images/slides_67_new.png){fig-align="center" width="50%"}
+::: {.highlight_must_learn}
 
+<br>
+
+![](../images/slides_67_new.png){fig-align="center" width="60%"}
+
+:::
 
 ## OLAP operations: Nest
 
-The result of a nest operation physically represents a two-dimensional matrix. It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form. In the following example, three dimensions are displayed:
+::: {.highlight_must_learn}
+
+The result of a nest operation physically represents a two-dimensional matrix.
+It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form.
+In the following example, three dimensions are displayed:
 
 ![](../images/slides_68_new.png){fig-align="center" width="50%"}
 
-
+:::
 ## OLAP as Excel plug-in
 
 ![](../images/slides_69_new.png){fig-align="center" width="50%"}
@@ -491,9 +566,48 @@ The result of a nest operation physically represents a two-dimensional matrix. I
 
 ![](../images/olap_architecture.png){width="50%" fig-align="center"}
 
+
+## Data warehousing in modern analytics
+
+**DWH as foundation**
+
+- Codifies data preparation (ETL), transformations, and integration  
+- Centralizes **data access** and **metadata knowledge**
+
+**Evolution vs. replacement**
+
+- Accumulated logic and data understanding **favor incremental over greenfield evolution**
+
+**Data preparation**
+
+- Errors should be fixed **at the source systems**  
+- Transformations handled in **ETL processes**  
+- Duplicate handling depends on context (within vs. across datasets)
+
+**Role in modern analytics**
+
+- Serves as a **curated, reliable data layer**  
+- ML and advanced analytics typically operate **on top of the DWH**
+
 ## Summary {data-state="hide-menubar"}
 
-TODO
+- A **data warehouse** supports analytical decision-making by integrating data from multiple sources.  
+  It is **subject-oriented, integrated, time-variant, and non-volatile**, and separates analytical workloads from operational systems.
+
+- The **ETL process** (Extract, Transform, Load) prepares data for analysis:
+  data is extracted from sources, cleaned and integrated in a staging area, and loaded into the warehouse.
+  **Metadata** ensures transparency and usability.
+
+- **Dimensional modeling** organizes data for analysis:
+  - **Facts** (e.g., sales) and **dimensions** (e.g., time, product, region)
+  - Common schemata: **star** (simple, fast), **snowflake** (normalized), **galaxy** (multiple fact tables)
+
+- **OLAP systems** enable interactive, multidimensional analysis:
+  operations such as **slice, dice, drill-down, and roll-up** support flexible exploration of aggregated data.
+
+- Overall, analytical data architecture transforms **operational data into structured, queryable information** to support reporting, dashboards, and decision-making.
+
+
 
 ## Survey: Session 3 {data-state="hide-menubar"}
 
