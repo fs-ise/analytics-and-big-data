@@ -3,6 +3,10 @@ title: "Notes: Session 4: Regression I"
 format: html
 ---
 
+TODO: prepare explanation of regression assumptions and diagnostics
+
+2026-03-31: 80 mins for the lecture (slightly short, could be a bit more formal/challenging)
+
 ::: callout-note
 Preparation: start regression demo notebook:
 
@@ -22,6 +26,10 @@ https://github.com/lmarti/machine-learning/blob/master/02.%20Linear%20regression
 
 :::
 
+
+Explicitly discuss "why do we focus on/start with regression? (boring/want ML/AI)"
+-> simplest form of a model, where we can see principles (like fitting/overfitting/...)
+-> sometimes, we may try to extract structured data from big data to run regression/ML models
 
 Process:
 
@@ -83,7 +91,34 @@ coef_df = pd.DataFrame({
 print(coef_df)
 ```
 
+## Overall model performance
 
-Explicitly discuss "why do we focus on/start with regression? (boring/want ML/AI)"
--> simplest form of a model, where we can see principles (like fitting/overfitting/...)
--> sometimes, we may try to extract structured data from big data to run regression/ML models
+whether predictions are accurate enough for decisions
+-> depends on nr. of cases and their significance (e.g., large samples: estimating age based on names)
+
+
+
+## Categorical predictors
+
+TODO: Why should we not include all levels for a categorical variable? (include explanation here)
+
+
+## Exercise
+
+**Why does it make sense to "test" different libraries?
+- Check whether they yield the same results? (did we specify the model correctly? is there an error in the library?) - generally, validating results is an important skill
+- Some libraries may offer more comprehensive output (like statsmodel)
+- We may need to work in different environments (R or Python) in the future, so it makes sense to understand different options
+- Understand what preprocessing steps must be done manually (before the library call), e.g., statsmodel does the encoding of categorical variables internally (specified through the formula)
+
+For statsmodel output, we may need to click on **scrollable** (output is truncated for readability)
+
+Insight: model coefficients change in subgroups
+
+Note: always exclude unique identifiers from regression models.
+
+<!--
+Possible extensions:
+- state the model formula
+- step-by-step add/remove variables
+-->
