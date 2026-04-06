@@ -309,7 +309,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <h1>Setup and dataset</h1>
 <section id="load-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-dataset">Load the dataset</h2>
-<div id="ae471b60" class="cell" data-execution_count="1">
+<div id="8e36a332" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/employee_performance_data.csv"</span>)</span>
@@ -470,7 +470,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </section>
 <section id="quick-inspection" class="level2">
 <h2 class="anchored" data-anchor-id="quick-inspection">Quick inspection</h2>
-<div id="7a1ecda6" class="cell" data-execution_count="2">
+<div id="3ad172b2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -678,7 +678,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <li>Print the coefficients and intercept.</li>
 <li>Pay special attention to the coefficient of <code>remote_share</code>.</li>
 </ol>
-<div id="cea5fcd9" class="cell" data-execution_count="3">
+<div id="27461bd2" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here.</span></span>
@@ -687,7 +687,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <p><em>Note. When initial versions raise errors, remember that regression models work with numerical predictors exclusively. Find a way to address this and run the model.</em></p>
 </div>
 <div class="sol">
-<div id="a6478a1e" class="cell" data-execution_count="4">
+<div id="26f4e422" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># One-hot encode the department variable</span></span>
@@ -864,14 +864,14 @@ Intercept: 45.630943483089595</code></pre>
 <h2 class="anchored" data-anchor-id="task-b1-estimate-the-same-model-with-statsmodels">Task B1: Estimate the same model with <code>statsmodels</code></h2>
 <div class="direction">
 <p>Use <code>statsmodels</code> to create a regression table for the same model.</p>
-<div id="d68d3669" class="cell" data-execution_count="5">
+<div id="5313ea9f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="sol">
-<div id="3053e576" class="cell" data-execution_count="6">
+<div id="da8bfd1f" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the regression model using a formula</span></span>
@@ -889,7 +889,7 @@ Dep. Variable:            performance   R-squared:                       0.816
 Model:                            OLS   Adj. R-squared:                  0.814
 Method:                 Least Squares   F-statistic:                     768.8
 Date:                Mon, 06 Apr 2026   Prob (F-statistic):               0.00
-Time:                        07:48:21   Log-Likelihood:                -5207.8
+Time:                        14:28:59   Log-Likelihood:                -5207.8
 No. Observations:                1400   AIC:                         1.043e+04
 Df Residuals:                    1391   BIC:                         1.048e+04
 Df Model:                           8                                         
@@ -988,7 +988,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <h2 class="anchored" data-anchor-id="task-c1-residual-plot">Task C1: Residual plot</h2>
 <p>Create a simple residual plot for the fitted <code>scikit-learn</code> model from part A.</p>
 <div class="direction">
-<div id="9ef11833" class="cell" data-execution_count="7">
+<div id="b083b269" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># residuals = y - model.predict(X_without_constant_or_matching_feature_matrix)</span></span>
@@ -1001,7 +1001,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 </div>
 <div class="sol">
-<div id="ff56f2b4" class="cell" data-execution_count="8">
+<div id="832156f3" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>residuals <span class="op">=</span> y <span class="op">-</span> model.predict(X)</span>
@@ -1062,7 +1062,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <h2 class="anchored" data-anchor-id="task-d1-department-specific-regressions">Task D1: Department-specific regressions</h2>
 <p>Estimate separate regressions for <code>Sales</code>, <code>IT</code>, and <code>HR</code>.</p>
 <div class="direction">
-<div id="45d6acb7" class="cell" data-execution_count="9">
+<div id="c769a21d" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here, using the following scaffold</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># import statsmodels.api as sm</span></span>
@@ -1081,7 +1081,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 </div>
 <div class="sol">
-<div id="349bac44" class="cell" data-execution_count="10">
+<div id="ba75cd49" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
@@ -1114,7 +1114,7 @@ Dep. Variable:            performance   R-squared:                       0.806
 Model:                            OLS   Adj. R-squared:                  0.804
 Method:                 Least Squares   F-statistic:                     392.3
 Date:                Mon, 06 Apr 2026   Prob (F-statistic):          5.90e-198
-Time:                        07:48:21   Log-Likelihood:                -2099.4
+Time:                        14:28:59   Log-Likelihood:                -2099.4
 No. Observations:                 573   AIC:                             4213.
 Df Residuals:                     566   BIC:                             4243.
 Df Model:                           6                                         
@@ -1148,7 +1148,7 @@ Dep. Variable:            performance   R-squared:                       0.786
 Model:                            OLS   Adj. R-squared:                  0.782
 Method:                 Least Squares   F-statistic:                     173.0
 Date:                Mon, 06 Apr 2026   Prob (F-statistic):           1.88e-91
-Time:                        07:48:21   Log-Likelihood:                -1072.5
+Time:                        14:28:59   Log-Likelihood:                -1072.5
 No. Observations:                 289   AIC:                             2159.
 Df Residuals:                     282   BIC:                             2185.
 Df Model:                           6                                         
@@ -1182,7 +1182,7 @@ Dep. Variable:            performance   R-squared:                       0.803
 Model:                            OLS   Adj. R-squared:                  0.801
 Method:                 Least Squares   F-statistic:                     361.3
 Date:                Mon, 06 Apr 2026   Prob (F-statistic):          8.13e-184
-Time:                        07:48:21   Log-Likelihood:                -2010.0
+Time:                        14:28:59   Log-Likelihood:                -2010.0
 No. Observations:                 538   AIC:                             4034.
 Df Residuals:                     531   BIC:                             4064.
 Df Model:                           6                                         
@@ -1276,7 +1276,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section id="task-e1-optional-save-a-fitted-model" class="level2">
 <h2 class="anchored" data-anchor-id="task-e1-optional-save-a-fitted-model">Task E1 (optional): Save a fitted model</h2>
 <div class="direction">
-<div id="d4cc3f9c" class="cell" data-execution_count="11">
+<div id="011afa7f" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: save the fitted sklearn model</span></span>
@@ -1284,7 +1284,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 </div>
 <div class="sol">
-<div id="e689a3cb" class="cell" data-execution_count="12">
+<div id="c8eaa3b4" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the fitted sklearn model</span></span>
@@ -1299,7 +1299,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section id="task-e2-optional-load-the-model-and-predict-a-new-case" class="level2">
 <h2 class="anchored" data-anchor-id="task-e2-optional-load-the-model-and-predict-a-new-case">Task E2 (optional): Load the model and predict a new case</h2>
 <div class="direction">
-<div id="d69ef449" class="cell" data-execution_count="13">
+<div id="a0024ab5" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loaded_model = ...</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># new_employee = pd.DataFrame([</span></span>
@@ -1318,7 +1318,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </blockquote>
 </div>
 <div class="sol">
-<div id="030cd41e" class="cell" data-execution_count="14">
+<div id="36d9457c" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
