@@ -129,17 +129,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -171,6 +160,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -222,140 +222,62 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 <p>What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?</p>
 </blockquote>
 <p><img data-src="../images/slides_221.png"></p>
-</section>
-<section>
-<section id="k-nearest-neighbors" class="title-slide slide level1 center" data-stack-name="k-Nearest Neighbors">
-<h1>k-Nearest Neighbors</h1>
+<p>TODO: remove knn (covered in EDA)!?!</p>
+<pre><code>  # k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
 
-</section>
-<section id="k-nearest-neighbors-1" class="slide level2">
-<h2>k-Nearest Neighbors</h2>
-<ul>
-<li>k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.</li>
-<li>The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.</li>
-<li><strong>Procedure of k-NN:</strong>
-<ul>
-<li><ol type="1">
-<li>Determine parameter k (= number of nearest neighbors)</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>Calculate the distances between the new object and all known labeled objects.</li>
-</ol></li>
-<li><ol start="3" type="1">
-<li>Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.</li>
-</ol></li>
-<li><ol start="4" type="1">
-<li>Count the frequencies of the classes of the nearest neighbors.</li>
-</ol></li>
-<li><ol start="5" type="1">
-<li>Assign the new object to the most frequent class.</li>
-</ol></li>
-</ul></li>
-</ul>
-</section>
-<section id="measuring-similarity" class="slide level2">
-<h2>Measuring Similarity</h2>
-<p><img data-src="../images/slides_182_new.png"></p>
-</section>
-<section id="unnormalized-vs.-normalized" class="slide level2">
-<h2>Unnormalized vs.&nbsp;Normalized</h2>
-<p><img data-src="../images/slides_183_new.png"></p>
-</section>
-<section id="example-i" class="slide level2">
-<h2>Example (I)</h2>
-<p><img data-src="../images/slides_184_new.png"></p>
-</section>
-<section id="example-ii" class="slide level2">
-<h2>Example (II)</h2>
-<p><img data-src="../images/slides_185_new.png"></p>
-</section>
-<section id="example-iii" class="slide level2">
-<h2>Example (III)</h2>
-<ol start="3" type="1">
-<li>Choose the k nearest neighbors</li>
-</ol>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Customer</th>
-<th style="text-align: center;">Age</th>
-<th style="text-align: center;">Monthly Income</th>
-<th style="text-align: center;">Monthly Costs</th>
-<th style="text-align: center;">Creditworthy</th>
-<th style="text-align: center;">Distance</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">0.0000</td>
-<td style="text-align: center;">0.0303</td>
-<td style="text-align: center;">0.0400</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.4347</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">0.1714</td>
-<td style="text-align: center;">0.3333</td>
-<td style="text-align: center;">0.3600</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.1726</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">E</td>
-<td style="text-align: center;">0.3143</td>
-<td style="text-align: center;">0.1818</td>
-<td style="text-align: center;">0.2000</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.2010</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">0.4286</td>
-<td style="text-align: center;">0.3939</td>
-<td style="text-align: center;">0.6000</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.4482</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">G</td>
-<td style="text-align: center;">0.4857</td>
-<td style="text-align: center;">0.2121</td>
-<td style="text-align: center;">0.1200</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.3090</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">0.2286</td>
-<td style="text-align: center;">0.3636</td>
-<td style="text-align: center;">0.2000</td>
-<td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<ol start="4" type="1">
-<li>Count the numbers of class members</li>
-</ol>
-<blockquote>
-<p>3 x yes; 2 x no</p>
-</blockquote>
-<ol start="5" type="1">
-<li>Assign object to most frequent class</li>
-</ol>
-<blockquote>
-<p>Customer is creditworthy!</p>
-</blockquote>
+
+  ## k-Nearest Neighbors
+
+  - k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.
+  - The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.
+  - **Procedure of k-NN:**
+    - 1. Determine parameter k (= number of nearest neighbors)
+    - 2. Calculate the distances between the new object and all known labeled objects.
+    - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.
+    - 4. Count the frequencies of the classes of the nearest neighbors.
+    - 5. Assign the new object to the most frequent class.
+
+
+  ## Measuring Similarity
+
+  ![](../images/slides_182_new.png)
+
+
+  ## Unnormalized vs. Normalized
+
+  ![](../images/slides_183_new.png)
+
+
+  ## Example (I)
+
+  ![](../images/slides_184_new.png)
+
+
+  ## Example (II)
+
+  ![](../images/slides_185_new.png)
+
+
+  ## Example (III)
+
+  3. Choose the k nearest neighbors
+
+  | Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |
+  | :-: | :-: | :-: | :-: | :-: | :-: |
+  | A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |
+  | C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |
+  | E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |
+  | F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |
+  | G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |
+  | X | 0.2286 | 0.3636 | 0.2000 | ? |  |
+
+  4. Count the numbers of class members
+
+  &gt; 3 x yes; 2 x no
+
+  5. Assign object to most frequent class
+
+  &gt; Customer is creditworthy!</code></pre>
 </section>
 <section id="creation-and-use-of-models" class="slide level2">
 <h2>Creation and Use of Models</h2>
@@ -423,7 +345,7 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </tr>
 </tbody>
 </table>
-</section></section>
+</section>
 <section>
 <section id="decision-trees" class="title-slide slide level1 center" data-stack-name="Decision trees">
 <h1>Decision trees</h1>
@@ -508,6 +430,11 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </tr>
 </tbody>
 </table>
+</section></section>
+<section>
+<section id="tbd" class="title-slide slide level1 center">
+<h1>TBD</h1>
+
 </section>
 <section id="introductory-example-2" class="slide level2">
 <h2>Introductory Example</h2>

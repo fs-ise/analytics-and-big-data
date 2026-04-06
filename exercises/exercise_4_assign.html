@@ -170,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Setup and dataset</h1>
 <section id="load-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-dataset">Load the dataset</h2>
-<div id="a18979e7" class="cell" data-execution_count="1">
+<div id="e847ed64" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/employee_performance_data.csv"</span>)</span>
@@ -331,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="quick-inspection" class="level2">
 <h2 class="anchored" data-anchor-id="quick-inspection">Quick inspection</h2>
-<div id="0699ed5a" class="cell" data-execution_count="2">
+<div id="6a517f74" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -536,7 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Print the coefficients and intercept.</li>
 <li>Pay special attention to the coefficient of <code>remote_share</code>.</li>
 </ol>
-<div id="4f08e936" class="cell" data-execution_count="3">
+<div id="60ae4c70" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here.</span></span>
@@ -627,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-b1-estimate-the-same-model-with-statsmodels" class="level2">
 <h2 class="anchored" data-anchor-id="task-b1-estimate-the-same-model-with-statsmodels">Task B1: Estimate the same model with <code>statsmodels</code></h2>
 <p>Use <code>statsmodels</code> to create a regression table for the same model.</p>
-<div id="faa9d12b" class="cell" data-execution_count="5">
+<div id="f461eaa3" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -675,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-c1-residual-plot" class="level2">
 <h2 class="anchored" data-anchor-id="task-c1-residual-plot">Task C1: Residual plot</h2>
 <p>Create a simple residual plot for the fitted <code>scikit-learn</code> model from part A.</p>
-<div id="1fc2974a" class="cell" data-execution_count="7">
+<div id="4c5521f6" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># residuals = y - model.predict(X_without_constant_or_matching_feature_matrix)</span></span>
@@ -713,7 +713,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-d1-department-specific-regressions" class="level2">
 <h2 class="anchored" data-anchor-id="task-d1-department-specific-regressions">Task D1: Department-specific regressions</h2>
 <p>Estimate separate regressions for <code>Sales</code>, <code>IT</code>, and <code>HR</code>.</p>
-<div id="fc69411d" class="cell" data-execution_count="9">
+<div id="7bb06945" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your own code here, using the following scaffold</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># import statsmodels.api as sm</span></span>
@@ -771,7 +771,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here, it is included as an optional extension after you have already worked through model estimation, interpretation, diagnostics, and subgroup analysis.</p>
 <section id="task-e1-optional-save-a-fitted-model" class="level2">
 <h2 class="anchored" data-anchor-id="task-e1-optional-save-a-fitted-model">Task E1 (optional): Save a fitted model</h2>
-<div id="9f9a6971" class="cell" data-execution_count="11">
+<div id="b26eee19" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: save the fitted sklearn model</span></span>
@@ -781,7 +781,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="task-e2-optional-load-the-model-and-predict-a-new-case" class="level2">
 <h2 class="anchored" data-anchor-id="task-e2-optional-load-the-model-and-predict-a-new-case">Task E2 (optional): Load the model and predict a new case</h2>
-<div id="0f5ad232" class="cell" data-execution_count="13">
+<div id="596caccd" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loaded_model = ...</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># new_employee = pd.DataFrame([</span></span>
