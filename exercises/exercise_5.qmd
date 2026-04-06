@@ -13,6 +13,8 @@ using forward and backward variable selection
 logistic regression: interpreting predicted probabilities and classification performance
 :::
 
+TODO: explicit learning: when we use regression as a baseline, we will also run it in a train/test mode (unlike in exercises 4 and 5)
+
 ## Exam prep
 
 TODO : include specific questions/tasks that could be included in the exam.
