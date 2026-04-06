@@ -11,6 +11,7 @@ execute:
   message: false
 ---
 
+
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
@@ -260,14 +261,17 @@ We create a small table that summarizes key variables:
 
 <br>
 
-> In organizations, this step often involves
-  **acquiring access to data, extracting it from systems, consulting documentation, talking to domain experts,
+> this step often involves **acquiring access to data, extracting it from systems, consulting documentation, talking to domain experts,
   and making sense of how the data was collected and defined**.
 
 ::: aside
 For the Ames Housing dataset, we rely on this data description:
  [http://jse.amstat.org/v19n3/decock/DataDocumentation.txt](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt)
 :::
+
+<!--
+  TODO: practice with the help of LLMs?
+-->
 
 # Data preparation {data-stack-name="Data preparation"}
 
@@ -305,6 +309,10 @@ Here, we focus on the **analytical modeling**.
 # Modeling {data-stack-name="Modeling"}
 
 ## Model choice
+
+<!--
+TODO: refine based on https://chatgpt.com/c/69c508fd-8900-8393-9589-e1b01ad0ba30
+-->
 
 ::: {.highlight_must_learn}
 
@@ -361,9 +369,11 @@ See @ProvostFawcett2013, chapter 3 and 4.
 
 ## Regression models: A visual illustration
 
+<!--
+TODO: check and refine: when do we use the \hat and epsilon?
+-->
 
 Model formula: $$price = \beta_0 + \beta_1*squarefoot$$
-
 
 ```{ojs}
 n = 40
@@ -456,6 +466,8 @@ Plot.plot({
 
 ## Interpreting the regression model
 
+::: {.highlight_must_learn}
+
 ```{ojs}
 exampleData = [
   {squarefoot: 800,  price: 196000},
@@ -477,6 +489,10 @@ exampleFit = [
 ::: {.column width="48%"}
 
 **The model**
+
+<!--
+TODO: check/update according to https://chatgpt.com/c/69c50bee-121c-8397-a9c2-f9726f49a6f4
+-->
 
 $$\hat{y} = \beta_0 + \beta_1 \cdot x$$
 
@@ -538,6 +554,12 @@ Plot.plot({
 
 ::::
 
+
+:::
+
+<!--
+      TODO: include an illustration of confidence intervals (surrounding the prediction)?
+-->
 
 ## Including multiple predictor variables
 
@@ -889,6 +911,10 @@ Emphasize that model evaluation is not just “how well did it fit the training 
 
 Regression coefficients tell us how the predicted outcome changes when a predictor changes, **holding the other predictors constant**.
 
+<!--
+    TODO: include an example of a regression table with significace (p-value/stars/confidence intervals)?
+-->
+
 For a coefficient $\beta_j$:
 
 * **Sign**
@@ -995,6 +1021,10 @@ How can we include such variables in a regression model for `performance`?
 
 ## Categorical variables: A naïve solution
 
+<!--
+TODO: switch to example that aligns with the housing-prices dataset!
+-->
+
 :::: {.columns}
 
 ::: {.column width="40%"}
@@ -1027,7 +1057,7 @@ $$\text{Finance}=1,\ \text{Healthcare}=2,\ \text{Retail}=3$$
 **Implications**
 
 * **Ordering:** Retail > Healthcare > Finance
-* **Equal spacing:**
+* **Equal marginal effects:**
   $$ \text{Effect}(1 \to 2) = \text{Effect}(2 \to 3) = \beta_1$$
 
 :::
@@ -1049,6 +1079,8 @@ We must avoid introducing **false relationships**.
 -->
 
 ## Categorical variables: One-hot encoding
+
+::: {.highlight_must_learn}
 
 Create **one binary column per category** (1: category present, 0: category not present).
 
@@ -1090,9 +1122,13 @@ Example transformation:
 
 ::::
 
+<br>
+
+<!--
+TBD: fix (.. . is displayed on the slide?!)
 . . . 
 
-<br>
+-->
 
 **Advantages**
 
@@ -1101,6 +1137,7 @@ Example transformation:
 
 One-hot encoding allows categorical variables to be used in linear regression models.
 
+:::
 
 ::: aside
 Notice that `Finance` is dropped and serves as the **reference category**.
@@ -1109,6 +1146,8 @@ The remaining dummy coefficients show differences relative to `Finance`.
 
 
 ## Categorical variables: Interpreting coefficients
+
+::: {.highlight_must_learn}
 
 Assume the following regression model:
 
@@ -1128,7 +1167,7 @@ $$\text{Performance}_i = 100 + 20 \cdot \text{Retail}_i + 40 \cdot \text{Healthc
 
 Coefficients measure **differences relative to the reference category**.
 
-
+:::
 
 # Deployment {data-stack-name="Deployment"}
 
