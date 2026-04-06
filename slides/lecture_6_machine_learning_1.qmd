@@ -6,6 +6,8 @@ session: "Session 6"
 date: "2026-04-20"
 ---
 
+https://jose.theoj.org/papers/10.21105/jose.00239
+
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
@@ -524,6 +526,10 @@ The prediction error is influenced by three components:
 
 ![](../images/slides_132_new.png)
 
+
+## TODO: Deployment
+
+Cover explainable AI, responsible use (e.g., hiring)
 
 
 ## Summary {data-state="hide-menubar"}

@@ -6,6 +6,21 @@ session: "Session 10"
 date: "2026-05-11"
 ---
 
+Deployment
+    -> AI for generating and understanding analytical code.
+    https://www.datacamp.com/de/tutorial/one-hot-encoding-python-tutorial - see "AI explain code"
+    https://www.datacamp.com/datalab
+    https://www.datacamp.com/datalab/ai
+
+    https://pyoneer.ai/
+
+    -> connect to AGI debates (jagged frontier...), which unlocks generation, but places new burdens on validation and testing
+
+
+    Reliability: monitoring/ensuring that the data input remains stable/in-line with the model (e.g., one-hot encoded variables with the specific levels for regression)
+
+
+
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>

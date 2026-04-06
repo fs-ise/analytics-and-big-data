@@ -308,6 +308,161 @@ Aggregation is done just in time. Thus, the schema of the data warehouse is just
 :::
 
 
+
+
+
+                ## Sampling
+
+                A population can be defined as including all people or items with the characteristic one wishes to understand.
+
+                Sampling is about to find a representative subset of that population.
+
+                Data represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.
+
+                There are two sources of randomness and uncertainty:
+
+                - the randomness and uncertainty underlying the process itself, and
+                - the uncertainty associated with the underlying sampling method.
+
+
+
+
+                ## Sampling in Times of Big Data
+
+                **Question:**
+
+                Is there any need for sampling in times of Big Data? Why not "N=ALL"?
+
+                **Answer:**
+
+                Data is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.
+
+                **Examples:**
+
+                - When analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.
+                - When analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently.
+
+
+
+
+                ## Reasons for Sampling
+
+                - The volume of data is too large to capture and process
+                - Design the analytics process using a subset of the data for performance reasons. Later use the complete data set.
+                - The data set doesn't perfectly represent the target population.
+                - The data set is imbalanced.
+                - Use sampling to partition into training and test data.
+                - ...
+
+
+
+
+                ## Popular Methods of Sampling (I)
+
+                ![](../images/slides_135.png)
+
+
+
+
+                ## Popular Methods of Sampling (II)
+
+                ![](../images/slides_167.png)
+
+
+                ---
+
+
+                ## Systematic Sampling
+
+                ![](../images/slides_176.png)
+
+
+
+
+                ## Random Sampling
+
+                ![](../images/slides_177.png)
+
+
+
+
+                ## Proportional Sampling
+
+                ![](../images/slides_178.png)
+
+
+
+
+                ## Downsampling
+
+                ![](../images/slides_179.png)
+
+
+
+
+                ## SMOTE
+
+                <div style="display:flex">
+                <div style="width:60%">
+                > SMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class. At first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1. Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.
+                </div>
+
+                <div style="float:right;width:40%">
+                ![](../images/slides_180.png)
+                </div>
+                </div>
+
+                ::: aside
+                — Source: https://github.com/minoue-xx/Oversampling-Imbalanced-Data
+                :::
+
+
+
+
+                ## Use Cases of Data Analytics - Examples
+
+                ![](../images/slides_98_new.png)
+
+
+
+
+                ## Fundamental Skills of Data Analytics
+
+                ![](../images/slides_105.png)
+
+
+
+                ## The Data Analytics Process
+
+                ![](../images/slides_106.png)
+
+                ::: aside
+                — Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process
+                :::
+
+
+
+
+                ## Need for Knowledge about the Algorithms
+
+                > The distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.
+
+                ::: aside
+                — Source: Dataiku - Data Science for Banking and Insurance
+                :::
+
+
+
+
+
+
+
+
+## TODO Deployment
+
+Cover ML Ops pipelines, scaling (parallel architectures)
+
+
 ## Survey: Session 8 {data-state="hide-menubar"}
 
 <br><br>

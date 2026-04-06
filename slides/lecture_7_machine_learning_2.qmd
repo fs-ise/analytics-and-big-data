@@ -35,61 +35,63 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 ![](../images/slides_221.png)
 
 
-# k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
+TODO: remove knn (covered in EDA)!?!
+
+      # k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
 
 
-## k-Nearest Neighbors
+      ## k-Nearest Neighbors
 
-- k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.
-- The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.
-- **Procedure of k-NN:**
-  - 1. Determine parameter k (= number of nearest neighbors)
-  - 2. Calculate the distances between the new object and all known labeled objects.
-  - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.
-  - 4. Count the frequencies of the classes of the nearest neighbors.
-  - 5. Assign the new object to the most frequent class.
-
-
-## Measuring Similarity
-
-![](../images/slides_182_new.png)
+      - k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.
+      - The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.
+      - **Procedure of k-NN:**
+        - 1. Determine parameter k (= number of nearest neighbors)
+        - 2. Calculate the distances between the new object and all known labeled objects.
+        - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.
+        - 4. Count the frequencies of the classes of the nearest neighbors.
+        - 5. Assign the new object to the most frequent class.
 
 
-## Unnormalized vs. Normalized
+      ## Measuring Similarity
 
-![](../images/slides_183_new.png)
-
-
-## Example (I)
-
-![](../images/slides_184_new.png)
+      ![](../images/slides_182_new.png)
 
 
-## Example (II)
+      ## Unnormalized vs. Normalized
 
-![](../images/slides_185_new.png)
+      ![](../images/slides_183_new.png)
 
 
-## Example (III)
+      ## Example (I)
 
-3. Choose the k nearest neighbors
+      ![](../images/slides_184_new.png)
 
-| Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |
-| C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |
-| E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |
-| F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |
-| G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |
-| X | 0.2286 | 0.3636 | 0.2000 | ? |  |
 
-4. Count the numbers of class members
+      ## Example (II)
 
-> 3 x yes; 2 x no
+      ![](../images/slides_185_new.png)
 
-5. Assign object to most frequent class
 
-> Customer is creditworthy!
+      ## Example (III)
+
+      3. Choose the k nearest neighbors
+
+      | Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |
+      | :-: | :-: | :-: | :-: | :-: | :-: |
+      | A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |
+      | C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |
+      | E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |
+      | F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |
+      | G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |
+      | X | 0.2286 | 0.3636 | 0.2000 | ? |  |
+
+      4. Count the numbers of class members
+
+      > 3 x yes; 2 x no
+
+      5. Assign object to most frequent class
+
+      > Customer is creditworthy!
 
 
 ## Creation and Use of Models
@@ -184,6 +186,7 @@ The decision tree approach does not require any assumption about the functional 
 | **Type of Splitting** | Binary | Complete, pruning | Complete, pruning | Complete, pruning | Complete |
 
 
+# TBD
 
 
 ## Introductory Example
