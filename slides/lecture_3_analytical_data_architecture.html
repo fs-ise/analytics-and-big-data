@@ -230,6 +230,17 @@
     content: '🎯';
     background-image: none;
   }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -250,17 +261,6 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
-    background-image: none;
-  }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
     background-image: none;
   }
   </style>
@@ -314,7 +314,7 @@
 <h2>Typical descriptive questions</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_28.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_28.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
 
@@ -324,6 +324,7 @@
 <section id="characteristics-of-operational-and-analytical-databases" class="slide level2">
 <h2>Characteristics of operational and analytical databases</h2>
 <p><br><br></p>
+<div class="highlight_must_learn">
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -369,7 +370,7 @@
 <td>Unpredictable, ad hoc</td>
 </tr>
 <tr class="odd">
-<td>Given period</td>
+<td>Focal period of time</td>
 <td>Current</td>
 <td>Past to future</td>
 </tr>
@@ -380,15 +381,20 @@
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="contradiction-between-operational-data-architecture-and-analytical-information-needs" class="slide level2">
 <h2>Contradiction between operational data architecture and analytical information needs</h2>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_29_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
+<p><br></p>
+<blockquote>
 <p>Organizations structure operational data by departments and processes, but analytical questions require cross-departmental views.</p>
+</blockquote>
 
 <aside><div>
 <p>— Source: Jung/Winter (2000): Data Warehousing Strategie: Erfahrungen, Methoden, Visionen, Berlin, p.&nbsp;7.</p>
@@ -408,13 +414,15 @@
 </div></aside></section>
 <section id="definition-data-warehouse" class="slide level2">
 <h2>Definition: Data warehouse</h2>
+<div class="highlight_must_learn">
 <p>The term Data Warehouse was coined by <span class="citation" data-cites="Inmon1995">Inmon (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, who defined it as follows:</p>
+<p><br></p>
 <blockquote>
 <p><strong>“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision making process.”</strong></p>
 </blockquote>
-<div class="fragment">
+<p><br></p>
 <p>He defined the terms in the sentence as follows:</p>
-<p><strong>Subject Oriented:</strong> Data that gives information about a particular subject instead of about a company’s ongoing operations.</p>
+<p><strong>Subject-oriented:</strong> Data that gives information about a particular subject instead of about a company’s ongoing operations. Rather than reflecting fragmented departmental systems, it integrates data into consistent, cross-departmental subject areas.</p>
 <p><strong>Integrated:</strong> Data that is gathered into the data warehouse from a variety of sources and merged into a coherent whole.</p>
 <p><strong>Time-variant:</strong> All data in the data warehouse is identified with a particular time period.</p>
 <p><strong>Non-volatile:</strong> Data is stable in a data warehouse. More data is added but data is never removed. This enables management to gain a consistent picture of the business.</p>
@@ -450,7 +458,6 @@
 <p>The database represents the core of the data warehouse. It contains current and historical data from all relevant areas of the company. In contrast to the operational databases, the data here is not structured according to the business processes and functions of the company, but is aligned with the facts that determine the company. They are organized in such a way that they can be viewed from different dimensions.</p>
 <p>Frequently used dimensions are:</p>
 <ul>
-<li>Company structure (e.g., business units, organizational structure, legal entities)</li>
 <li>Product structure (e.g., product groups and individual products)</li>
 <li>Regional structure (e.g., region, country, continent)</li>
 <li>Customer structure (e.g., customer groups or segments, and individual customers)</li>
@@ -474,7 +481,8 @@
 </section>
 <section id="etl-tools" class="slide level2">
 <h2>ETL tools</h2>
-<p>The data in the data warehouse can normally only be accessed in a read-only manner. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.</p>
+<div class="highlight_must_learn">
+<p>The data in the data warehouse can normally only be accessed in a <strong>read-only manner</strong>. The only exception to this are ETL tools, which are responsible for transferring data from internal and external information sources. They automate the process of data acquisition from these sources.</p>
 <p>The timeliness with which the transfer to the database is performed can be defined flexibly, e.g., within defined time intervals, immediately after each change, or at the explicit request of the user.</p>
 <p>ETL programs include:</p>
 <ul>
@@ -483,6 +491,7 @@
 <li><p><strong>Transformers:</strong> Unify, clean, integrate, consolidate, aggregate, and augment extracted data in the workspace.</p></li>
 <li><p><strong>Loaders:</strong> Load transformed data from the workspace into the data warehouse after the data retrieval process is complete.</p></li>
 </ul>
+</div>
 </section>
 <section id="staging-area" class="slide level2">
 <h2>Staging area</h2>
@@ -543,11 +552,6 @@
 </tr>
 </tbody>
 </table>
-</section></section>
-<section>
-<section id="dimensional-modeling" class="title-slide slide level1 center" data-stack-name="Dimensional modeling">
-<h1>Dimensional modeling</h1>
-
 </section>
 <section id="architectural-variants-of-data-warehouses-in-practice" class="slide level2">
 <h2>Architectural variants of data warehouses in practice</h2>
@@ -556,9 +560,15 @@
 <p><img data-src="../images/slides_41_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
+</section></section>
+<section>
+<section id="dimensional-modeling" class="title-slide slide level1 center" data-stack-name="Dimensional modeling">
+<h1>Dimensional modeling</h1>
+
 </section>
 <section id="from-transactions-to-reports" class="slide level2">
 <h2>From transactions to reports</h2>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_42_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
@@ -576,6 +586,7 @@
 </section>
 <section id="star-schema-i" class="slide level2">
 <h2>Star schema (I)</h2>
+<div class="highlight_must_learn">
 <p>The Star schema has a central fact table and exactly one dimension table for each dimension.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -583,6 +594,7 @@
 </figure>
 </div>
 <p>The cardinality between the fact table and a dimension table is n∶1, i.e.&nbsp;a fact (e.g.&nbsp;sales: 67,000 euros) is described by one dimension expression for each dimension (e.g.&nbsp;time: 1st quarter, region: Hesse, product group: books). A dimension characteristic (e.g.&nbsp;product group: books) is associated with 0, 1 or n facts.</p>
+</div>
 </section>
 <section id="star-schema-ii" class="slide level2">
 <h2>Star schema (II)</h2>
@@ -610,8 +622,8 @@
 <!-- S&#45;&gt;W -->
 <g id="edge1" class="edge">
 <title>S-&gt;W</title>
-<path fill="none" stroke="black" d="M227.46,-176.8C290.74,-200.96 406.12,-236.82 506.24,-223.6 581.53,-213.66 666.4,-187.46 714.93,-170.98"></path>
-<polygon fill="black" stroke="black" points="228.72,-173.54 218.13,-173.18 226.19,-180.06 228.72,-173.54"></polygon>
+<path fill="none" stroke="black" d="M218.13,-173.18C278.86,-197.15 400.98,-237.5 506.24,-223.6 576.82,-214.28 655.83,-190.67 705.42,-174.18"></path>
+<polygon fill="black" stroke="black" points="706.56,-177.49 714.93,-170.98 704.33,-170.85 706.56,-177.49"></polygon>
 <text text-anchor="middle" x="481.73" y="-222" font-family="Arial" font-size="14.00">Where?</text>
 </g>
 <!-- T -->
@@ -663,12 +675,12 @@
 </section>
 <section id="star-schema-iii" class="slide level2">
 <h2>Star schema (III)</h2>
-<div class="columns">
-<div class="column">
-<p><img data-src="../images/slides_40.png"></p>
-</div><div class="column">
-<p><img data-src="../images/slides_41.png"></p>
-</div></div>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_40.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
 </section>
 <section id="star-schema-table-design-i" class="slide level2">
 <h2>Star schema table design (I)</h2>
@@ -703,9 +715,12 @@
 <p><strong>In which years were the most cars purchased by female customers in Hesse in the 1st quarter?</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
 <span id="cb1-2"><a></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
-<span id="cb1-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
-<span id="cb1-4"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
-<span id="cb1-5"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> \</span>
+<span id="cb1-4"><a></a>    <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname \</span>
+<span id="cb1-5"><a></a>    <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
+<span id="cb1-6"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
+<span id="cb1-7"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><br></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -730,15 +745,19 @@
 </table>
 
 <aside><div>
-<p>— Source: Hartung (2011), p.&nbsp;37</p>
+<p><strong>Note:</strong> <code>FROM Branch f, Product p, Time z, Customer k, Sales v</code> uses <strong>implicit join syntax</strong>. All tables are combined first, and the <strong>join conditions are defined in the <code>WHERE</code> clause</strong> (e.g., <code>v.ProductID = p.ProductID</code>). This is equivalent to <code>JOIN ... ON</code>, but separates joins less clearly from filtering conditions.</p>
+<p>Note: — Source: Hartung (2011), p.&nbsp;37</p>
 </div></aside></section>
 <section id="snowflake-schema" class="slide level2">
 <h2>Snowflake schema</h2>
+<div class="highlight_must_learn">
 <p>In the Snowflake schema, the redundancies in the Star schema are resolved in the dimension tables and the hierarchy levels are each modeled with their own tables:</p>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_45.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_45.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
+</div>
 </div>
 
 <aside><div>
@@ -754,131 +773,145 @@
 </section>
 <section id="galaxy-schema" class="slide level2">
 <h2>Galaxy schema</h2>
+<div class="highlight_must_learn">
 <p>The Galaxy schema contains more than one fact table. The fact tables share some but not all dimensions. The Galaxy schema thus represents more than one data cube (multi-cubes).</p>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_54_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_54_new.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
+</div>
 </div>
 </section>
 <section id="table-structure-of-the-galaxy-schema" class="slide level2">
 <h2>Table structure of the Galaxy schema</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_55_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_55_new.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">erDiagram
+<!--
 
-    DELIVERY {
-        int id_product PK
-        int id_supplier PK
-        int id_date PK
-        float amount
-        float volume
-    }
 
-    SALES {
-        int id_product PK
-        int id_client PK
-        int id_shop PK
-        int id_date PK
-        float amount
-        float volume
-    }
+::::::{.cell reveal=true layout-align="default"}
 
-    PRODUCT {
-        int id_product PK
-        int id_brand
-        string name
-        string description
-    }
+:::::{.cell-output-display}
 
-    BRAND {
-        int id_brand PK
-        int id_supplier
-        string name
-    }
+::::{}
+`<figure class=''>`{=html}
 
-    SUPPLIER {
-        int id_supplier PK
-        int id_country
-        string name
-        string address
-    }
+:::{}
 
-    COUNTRY {
-        int id_country PK
-        string name
-        string code_name
-    }
+<pre class="mermaid mermaid-js">    erDiagram
 
-    TIME {
-        int id_date PK
-        int week_no
-    }
+        DELIVERY {
+            int id_product PK
+            int id_supplier PK
+            int id_date PK
+            float amount
+            float volume
+        }
 
-    CLIENT {
-        int id_client PK
-        int id_client_group
-        string name
-        string last_name
-    }
+        SALES {
+            int id_product PK
+            int id_client PK
+            int id_shop PK
+            int id_date PK
+            float amount
+            float volume
+        }
 
-    CLIENT_GROUP {
-        int id_client_group PK
-        string group_name
-        string segment_name
-    }
+        PRODUCT {
+            int id_product PK
+            int id_brand
+            string name
+            string description
+        }
 
-    SHOP {
-        int id_shop PK
-        int id_city
-        string name
-        string business_type
-    }
+        BRAND {
+            int id_brand PK
+            int id_supplier
+            string name
+        }
 
-    CITY {
-        int id_city PK
-        int id_region
-        string name
-    }
+        SUPPLIER {
+            int id_supplier PK
+            int id_country
+            string name
+            string address
+        }
 
-    REGION {
-        int id_region PK
-        string name
-        string country
-    }
+        COUNTRY {
+            int id_country PK
+            string name
+            string code_name
+        }
 
-    DELIVERY }o--|| PRODUCT : product
-    DELIVERY }o--|| SUPPLIER : supplier
-    DELIVERY }o--|| TIME : date
+        TIME {
+            int id_date PK
+            int week_no
+        }
 
-    PRODUCT }o--|| BRAND : brand
-    BRAND }o--|| SUPPLIER : supplier
+        CLIENT {
+            int id_client PK
+            int id_client_group
+            string name
+            string last_name
+        }
 
-    SUPPLIER }o--|| COUNTRY : country
+        CLIENT_GROUP {
+            int id_client_group PK
+            string group_name
+            string segment_name
+        }
 
-    SALES }o--|| PRODUCT : product
-    SALES }o--|| CLIENT : client
-    SALES }o--|| SHOP : shop
-    SALES }o--|| TIME : date
+        SHOP {
+            int id_shop PK
+            int id_city
+            string name
+            string business_type
+        }
 
-    CLIENT }o--|| CLIENT_GROUP : group
+        CITY {
+            int id_city PK
+            int id_region
+            string name
+        }
 
-    SHOP }o--|| CITY : city
-    CITY }o--|| REGION : region
+        REGION {
+            int id_region PK
+            string name
+            string country
+        }
+
+        DELIVERY }o--|| PRODUCT : product
+        DELIVERY }o--|| SUPPLIER : supplier
+        DELIVERY }o--|| TIME : date
+
+        PRODUCT }o--|| BRAND : brand
+        BRAND }o--|| SUPPLIER : supplier
+
+        SUPPLIER }o--|| COUNTRY : country
+
+        SALES }o--|| PRODUCT : product
+        SALES }o--|| CLIENT : client
+        SALES }o--|| SHOP : shop
+        SALES }o--|| TIME : date
+
+        CLIENT }o--|| CLIENT_GROUP : group
+
+        SHOP }o--|| CITY : city
+        CITY }o--|| REGION : region
 </pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+:::
+`</figure>`{=html}
+::::
+:::::
+::::::
+-->
+<!--
+    TODO: include figure like "Components of a data warehouse" - and annotate: dwh-DB: star/snowflake/galaxy schema, operational database: ERD (non-redundant design)
+-->
 </section></section>
 <section>
 <section id="olap-operations" class="title-slide slide level1 center" data-stack-name="OLAP operations">
@@ -915,35 +948,46 @@
 </section>
 <section id="olap-operations-slicing-and-dicing" class="slide level2">
 <h2>OLAP operations: Slicing and dicing</h2>
+<div class="highlight_must_learn">
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_65_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_65_new.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
+</div>
 </div>
 </section>
 <section id="olap-operations-rotate" class="slide level2">
 <h2>OLAP operations: Rotate</h2>
+<div class="highlight_must_learn">
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_66_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
+</div>
 </section>
 <section id="olap-operations-drill-down-and-roll-up" class="slide level2">
 <h2>OLAP operations: Drill down and roll up</h2>
+<div class="highlight_must_learn">
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_67_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_67_new.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
+</div>
 </div>
 </section>
 <section id="olap-operations-nest" class="slide level2">
 <h2>OLAP operations: Nest</h2>
+<div class="highlight_must_learn">
 <p>The result of a nest operation physically represents a two-dimensional matrix. It is extended by displaying different hierarchy levels of one or more dimensions on one axis (column or row) in nested form. In the following example, three dimensions are displayed:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_68_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
+</div>
 </div>
 </section>
 <section id="olap-as-excel-plug-in" class="slide level2">
@@ -963,9 +1007,47 @@
 </figure>
 </div>
 </section>
+<section id="data-warehousing-in-modern-analytics" class="slide level2">
+<h2>Data warehousing in modern analytics</h2>
+<p><strong>DWH as foundation</strong></p>
+<ul>
+<li>Codifies data preparation (ETL), transformations, and integration<br>
+</li>
+<li>Centralizes <strong>data access</strong> and <strong>metadata knowledge</strong></li>
+</ul>
+<p><strong>Evolution vs.&nbsp;replacement</strong></p>
+<ul>
+<li>Accumulated logic and data understanding <strong>favor incremental over greenfield evolution</strong></li>
+</ul>
+<p><strong>Data preparation</strong></p>
+<ul>
+<li>Errors should be fixed <strong>at the source systems</strong><br>
+</li>
+<li>Transformations handled in <strong>ETL processes</strong><br>
+</li>
+<li>Duplicate handling depends on context (within vs.&nbsp;across datasets)</li>
+</ul>
+<p><strong>Role in modern analytics</strong></p>
+<ul>
+<li>Serves as a <strong>curated, reliable data layer</strong><br>
+</li>
+<li>ML and advanced analytics typically operate <strong>on top of the DWH</strong></li>
+</ul>
+</section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
-<p>TODO</p>
+<ul>
+<li><p>A <strong>data warehouse</strong> supports analytical decision-making by integrating data from multiple sources.<br>
+It is <strong>subject-oriented, integrated, time-variant, and non-volatile</strong>, and separates analytical workloads from operational systems.</p></li>
+<li><p>The <strong>ETL process</strong> (Extract, Transform, Load) prepares data for analysis: data is extracted from sources, cleaned and integrated in a staging area, and loaded into the warehouse. <strong>Metadata</strong> ensures transparency and usability.</p></li>
+<li><p><strong>Dimensional modeling</strong> organizes data for analysis:</p>
+<ul>
+<li><strong>Facts</strong> (e.g., sales) and <strong>dimensions</strong> (e.g., time, product, region)</li>
+<li>Common schemata: <strong>star</strong> (simple, fast), <strong>snowflake</strong> (normalized), <strong>galaxy</strong> (multiple fact tables)</li>
+</ul></li>
+<li><p><strong>OLAP systems</strong> enable interactive, multidimensional analysis: operations such as <strong>slice, dice, drill-down, and roll-up</strong> support flexible exploration of aggregated data.</p></li>
+<li><p>Overall, analytical data architecture transforms <strong>operational data into structured, queryable information</strong> to support reporting, dashboards, and decision-making.</p></li>
+</ul>
 </section>
 <section id="survey-session-3" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 3</h2>
