@@ -2,22 +2,551 @@
 title: "Exercise 5: Regression II"
 ---
 
-::: {.learning-objectives}
-- Estimate and interpret a multiple regression model in Python.
-- Refine a regression model, assessing how additional predictors affect model fit.
-- Implement and evaluate a logistic regression model for a binary outcome.
+::: {.direction}
+
+In this notebook, we cover:
+
+| Part    | Topic                              | Time   |
+| ------- | ---------------------------------- | ------ |
+| 1       | Case understanding and first model | 15 min |
+| 2       | Probabilities and thresholds       | 10 min |
+| 3       | Confusion matrix and metrics       | 10 min |
+| 4       | ROC and AUC                        | 10 min |
+| 5       | Comparing customer categories      | 10 min |
+| Wrap-up | Reflection                         | 5 min  |
+
+
+# Case: Rising defaults at LendWise
+
+You are a business analyst working for **LendWise**, a fintech company that offers fast digital consumer loans.
+Over the last six months, LendWise has seen a noticeable **spike in credit defaults** in two customer categories:
+
+- **Early-career urban borrowers**: 
+  Typically younger customers, often with lower savings, moderate income, and irregular repayment histories.
+
+- **Self-employed platform workers**: 
+  Customers with fluctuating income, often higher short-term debt exposure, and less predictable monthly cash flows.
+
+The risk team wants to understand these groups better.
+They are especially interested in whether default risk follows the same logic in both categories, or whether the predictors and model quality differ substantially.
+
+In this notebook, you first focus on **early-career urban borrowers** and build a logistic regression model to predict default.
+Afterwards, you compare the results with **self-employed platform workers**.
+
+LendWise is interested in questions such as:
+
+- Which factors are associated with a higher probability of default in early-career urban borrowers?
+- How can predicted probabilities be translated into default / non-default classifications?
+- How well does the model perform when evaluated with confusion-matrix-based metrics?
+- How informative is the ROC curve and AUC?
+- Does a model work equally well across customer categories?
+
+
+## Data description
+
+The dataset contains the following variables:
+
+- `customer_category`: customer segment (`early_career_urban`, `platform_worker`)
+- `income`: monthly income in EUR
+- `debt_to_income`: debt-to-income ratio
+- `missed_payments_12m`: number of missed payments in the last 12 months
+- `credit_utilization`: share of available credit currently used (between 0 and 1)
+- `months_with_company`: months since first activity with LendWise
+- `default`: whether the customer defaulted (1 = yes, 0 = no)
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv("data/credit_default.csv")
+df.head()
+```
+
+
+**Note on the dataset**: 
+The dataset used in this exercise was curated by the company’s Risk Analytics Department.
+It has already been cleaned, validated, and prepared for modeling.
+
 :::
 
-::: callout-note
-using forward and backward variable selection
-logistic regression: interpreting predicted probabilities and classification performance
+# Part 1 — Analyze early-career urban borrowers with logistic regression
+
+::: {.direction}
+In this first part, focus only on early-career urban borrowers.
 :::
 
-TODO: explicit learning: when we use regression as a baseline, we will also run it in a train/test mode (unlike in exercises 4 and 5)
+### Task 1.1 — Prepare the subset
 
-## Exam prep
+Create a filtered dataset that contains only customers from early-career urban borrowers.
 
-TODO : include specific questions/tasks that could be included in the exam.
+::: {.direction}
+
+```python
+# Your solution here
+df_A = ...
+```
+
+:::
+
+::: {.sol}
+
+## Solution
+
+```{python}
+df_A = df[df["customer_category"] == "early_career_urban"]
+```
+
+:::
+
+
+### Task 1.2 — Estimate the model
+
+Estimate a logistic regression model to predict credit default.
+
+::: {.direction}
+
+- Define the target variable (`default`)
+- Use all remaining numeric variables as predictors
+- Fit the logistic regression model
+- Retrieve the estimated coefficients and intercept
+
+```python
+from sklearn.linear_model import LogisticRegression
+
+# Your solution here...
+```
+:::
+
+::: {.sol}
+
+## Solution
+
+```{python}
+from sklearn.linear_model import LogisticRegression
+
+y = df_A["default"]
+X = df_A.drop(columns=["default", "customer_category"])
+
+model = LogisticRegression()
+model.fit(X, y)
+
+model.coef_
+model.intercept_
+```
+
+:::
+
+
+### Task 1.3 — Interpret the model
+
+Interpret the coefficients in substantive terms:
+
+- Which variables increase the likelihood of default?
+- Which variables decrease it?
+- Which variable appears to have the strongest relationship with default?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+import pandas as pd
+
+coef_df = pd.DataFrame({
+    "feature": X.columns,
+    "coefficient": model.coef_[0]
+}).sort_values(by="coefficient", key=abs, ascending=False)
+
+coef_df
+```
+
+- Positive coefficients → increase default risk
+- Negative coefficients → decrease default risk
+- Largest absolute coefficient → strongest relationship
+
+:::
+
+
+### Task 1.4 — From coefficients to classification
+
+Explain how the model moves from:
+
+- a linear combination of predictors
+- to a predicted probability
+- to a classification as default / non-default
+
+::: {.sol}
+
+## Solution
+
+```{python}
+# Example for one observation
+z = model.intercept_[0] + (X.iloc[0] * model.coef_[0]).sum()
+
+import numpy as np
+p = 1 / (1 + np.exp(-z))
+p
+```
+
+Steps:
+
+1. Linear combination (log-odds)
+2. Logistic transformation → probability
+3. Threshold (e.g., 0.5) → class label
+
+:::
+
+
+# Part 2 — Probabilities and thresholds
+
+```{python}
+y_prob = model.predict_proba(X)[:, 1]
+y_pred = model.predict(X)
+```
+
+
+### Task 2.1 — Understanding outputs
+
+- What is the difference between `y_prob` and `y_pred`?
+- Why does `predict_proba` return two columns?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+y_prob[:5], y_pred[:5]
+```
+
+- `y_prob`: probabilities for class 1 (default)
+- `y_pred`: binary predictions based on threshold
+
+```python
+model.predict_proba(X[:5])
+```
+
+- Column 0 → P(no default)
+- Column 1 → P(default)
+
+:::
+
+
+### Task 2.2 — Manual thresholding
+
+```{python}
+y_pred_03 = (y_prob >= 0.3).astype(int)
+```
+
+- Compare `y_pred` and `y_pred_03`
+- What changes when the threshold is lowered from 0.5 to 0.3?
+- Which kinds of observations are most likely to switch class?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+import numpy as np
+
+np.sum(y_pred != y_pred_03)
+```
+
+- More observations classified as default
+
+```python
+changed = (y_prob >= 0.3) & (y_prob < 0.5)
+y_prob[changed][:5]
+```
+
+- Observations with probabilities between 0.3 and 0.5 switch class
+
+:::
+
+
+# Part 3 — Confusion matrix and metrics
+
+```{python}
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y, y_pred)
+cm
+```
+
+
+### Task 3.1 — Interpret the matrix
+
+Identify:
+
+- true positives
+- true negatives
+- false positives
+- false negatives
+
+::: {.sol}
+
+## Solution
+
+```{python}
+tn, fp, fn, tp = cm.ravel()
+tn, fp, fn, tp
+```
+
+- TP: predicted 1 & actual 1
+- TN: predicted 0 & actual 0
+- FP: predicted 1 but actual 0
+- FN: predicted 0 but actual 1
+
+:::
+
+
+### Task 3.2 — Compute key metrics
+
+Compute and interpret:
+
+- Accuracy
+- Precision
+- Recall
+
+::: {.sol}
+
+## Solution
+
+```{python}
+accuracy = (tp + tn) / (tp + tn + fp + fn)
+precision = tp / (tp + fp)
+recall = tp / (tp + fn)
+
+accuracy, precision, recall
+```
+
+:::
+
+
+### Task 3.3 — Strategic reflection
+
+LendWise is currently trying to grow its customer base aggressively.
+
+Discuss:
+
+- Why might the company temporarily accept a higher false-negative risk?
+- Why might the same company later tighten the threshold when macroeconomic conditions worsen?
+- What does this tell us about classification as a business decision rather than just a technical exercise?
+
+::: {.sol}
+
+## Solution
+
+- Growth phase:
+
+  - Lower threshold → more approvals → higher growth
+  - Accept more defaults as trade-off
+
+- Downturn:
+
+  - Higher threshold → fewer risky loans
+  - Focus on risk control
+
+- Key insight:
+
+  - Threshold is a **strategic lever**, not purely technical
+
+:::
+
+
+# Part 4 — ROC curve and AUC for early-career urban borrowers
+
+```{python}
+from sklearn.metrics import roc_curve, auc
+
+fpr, tpr, thresholds = roc_curve(y, y_prob)
+roc_auc = auc(fpr, tpr)
+```
+
+
+### Task 4.1 — Understanding ROC
+
+- What does the ROC curve represent?
+- What are TPR and FPR?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+fpr[:5], tpr[:5]
+```
+
+- ROC: trade-off between TPR and FPR across thresholds
+
+- TPR = TP / (TP + FN)
+
+- FPR = FP / (FP + TN)
+
+:::
+
+
+### Task 4.2 — Interpreting AUC
+
+- What does the AUC value tell us?
+- What would values near 0.5, 0.7, and 1.0 suggest?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+roc_auc
+```
+
+- 0.5 → random
+- ~0.7 → moderate
+- 1.0 → perfect
+
+:::
+
+
+### Task 4.3 — Threshold perspective
+
+- Why is ROC/AUC useful when the company has not yet fixed one single decision threshold?
+
+::: {.sol}
+
+## Solution
+
+- Evaluates performance across all thresholds
+- Supports flexible decision-making
+- Enables model comparison independent of cutoff
+
+:::
+
+
+# Part 5 — Compare early-career urban borrowers and early-career urban borrowers
+
+Now repeat the same modeling steps the segment of platform workers.
+
+::: {.direction}
+
+You do not need to interpret every single line of code again.
+Focus on comparing the results.
+
+:::
+
+### Task 5.1 — Fit the second model
+
+Fit a logistic regression model for early-career urban borrowers.
+
+::: {.sol}
+
+## Solution
+
+```{python}
+df_B = df[df["customer_category"] == "platform_worker"]
+
+y_B = df_B["default"]
+X_B = df_B.drop(columns=["default", "customer_category"])
+
+model_B = LogisticRegression()
+model_B.fit(X_B, y_B)
+```
+
+:::
+
+
+### Task 5.2 — Compare coefficients
+
+Compare the coefficients across both categories.
+
+- Are the same predictors important in both groups?
+- Does any variable appear to matter more strongly in one group than the other?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+coef_A = pd.Series(model.coef_[0], index=X.columns)
+coef_B = pd.Series(model_B.coef_[0], index=X_B.columns)
+
+comparison = pd.DataFrame({
+    "Category_A": coef_A,
+    "Category_B": coef_B
+})
+
+comparison
+```
+
+:::
+
+
+### Task 5.3 — Compare ROC and AUC
+
+Compare the ROC curves and AUC values of the two models.
+
+- Which category seems easier to classify?
+- What might explain the difference?
+
+::: {.sol}
+
+## Solution
+
+```{python}
+y_prob_B = model_B.predict_proba(X_B)[:, 1]
+
+fpr_B, tpr_B, _ = roc_curve(y_B, y_prob_B)
+roc_auc_B = auc(fpr_B, tpr_B)
+
+roc_auc, roc_auc_B
+```
+
+- Higher AUC → easier classification
+
+:::
+
+
+### Task 5.4 — Interpretation challenge
+
+Suppose the AUC for early-career urban borrowers is much higher than for early-career urban borrowers.
+ 
+Discuss at least two possible explanations, such as:
+
+- the predictors are more informative in one group
+- one group is more heterogeneous
+- the same variables do not capture risk equally well in both customer categories
+- additional predictors may be needed for one category
+
+::: {.sol}
+
+## Solution
+
+Possible explanations:
+
+- Predictors are more informative in early-career urban borrowers
+- The group of early-career urban borrowers is more heterogeneous
+- Missing variables for early-career urban borrowers
+- Different behavioral patterns
+
+```{python}
+comparison.abs().sort_values(by="Category_A", ascending=False)
+```
+
+- Differences in coefficient magnitude support this reasoning
+
+:::
+
+# 🧩 Wrap-up <a id="wrap-up"></a>
+
+🎉🎈 You have completed the notebook – good work! 🎈🎉
+
+In this notebook, we have learned to:
+
+- Fit and interpret logistic regression models using `scikit-learn`
+- Understand how coefficients relate to default risk in a realistic fintech setting
+- Distinguish between predicted probabilities and class labels
+- Apply and reflect on different classification thresholds
+- Compute and interpret confusion-matrix-based metrics
+- Understand ROC curves and AUC as threshold-independent evaluation tools
+- Compare model performance across different customer categories
+- Reflect on how model use depends on business context and risk strategy
+
 
 ::: {.callout-tip title="Session 5 survey"}
 Before you wrap up, please complete the Session 5 survey here: [{{< var sessions.session_5.survey_url >}}]({{< var sessions.session_5.survey_url >}}){target="_blank"}. Thank you 🙏
