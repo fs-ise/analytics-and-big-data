@@ -24,6 +24,10 @@ format:
       scale: 0.67
     mermaid:
       theme: default
+    chalkboard:
+      theme: whiteboard
+      boardmarker-width: 5
+      buttons: false
 
 revealjs-plugins:
   - simplemenu
