@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="exercise_2_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="exercise_2_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="exercise_2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="exercise_2_files/libs/bootstrap/bootstrap-71db1584b3c9bb823602d399ce5b7aa0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="exercise_2_files/libs/bootstrap/bootstrap-7f8d28353e1b7aed8a50cdb71f958a5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="exercise_2_files/libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
@@ -156,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="part-1-data-structuring-i" class="level1">
 <h1>Part 1: Data structuring I <a id="structuring_1" href=""></a></h1>
 <p>We start with the <code>market_data_log.csv</code> dataset.</p>
-<div id="ffc52963" class="cell" data-execution_count="1">
+<div id="cdff5b1f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>market_data_log_df <span class="op">=</span> pd.read_csv(<span class="st">"data/market_data_log.csv"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>market_data_log_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -416,7 +416,7 @@ SAP-DE-Tech-2023Q2-Revenue-82.2B
 <ol start="4" type="1">
 <li><strong>(Optional challenge)</strong>: Implement the transformation in Python (pandas)</li>
 </ol>
-<div id="d2558dd3" class="cell" data-execution_count="2">
+<div id="e4c31d91" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>market_data_df <span class="op">=</span> pd.read_csv(<span class="st">"data/market_data_log.csv"</span>)</span>
@@ -494,7 +494,7 @@ Expectations
 <section id="part-2-data-structuring-ii" class="level1">
 <h1>Part 2: Data structuring II <a id="structuring_2" href=""></a></h1>
 <p>Dataset <code>sales_data_channels_full_year.csv</code></p>
-<div id="1a693b34" class="cell" data-execution_count="4">
+<div id="393cd61e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sales_data_df <span class="op">=</span> pd.read_csv(<span class="st">"data/sales_data_channels_full_year.csv"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sales_data_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1033,7 +1033,7 @@ EU
 <ol start="4" type="1">
 <li><strong>(Optional challenge)</strong>: Implement the transformation in Python (pandas)</li>
 </ol>
-<div id="ff1ea151" class="cell" data-execution_count="5">
+<div id="9d3467f3" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>market_data_df <span class="op">=</span> pd.read_csv(<span class="st">"data/market_data_log.csv"</span>)</span>
@@ -1048,7 +1048,7 @@ EU
 <section id="part-3-data-cleansing" class="level1">
 <h1>Part 3: Data cleansing <a id="cleansing" href=""></a></h1>
 <p>Dataset <code>messy_customer_data.csv</code></p>
-<div id="5604f799" class="cell" data-execution_count="7">
+<div id="3c876553" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>customers_df <span class="op">=</span> pd.read_csv(<span class="st">"data/messy_customer_data.csv"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>customers_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1554,7 +1554,7 @@ ES
 <ul>
 <li>What type of scale is each variable? Run the following and assign <code>nominal</code>, <code>ordinal</code>, <code>interval</code>, or <code>ratio</code>.</li>
 </ul>
-<div id="da1b097a" class="cell" data-execution_count="8">
+<div id="ba293d9a" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>customer_df <span class="op">=</span> pd.read_csv(<span class="st">"data/messy_customer_data.csv"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>customer_df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1574,7 +1574,7 @@ ES
 <section id="analyze-data-quality" class="level3">
 <h3 class="anchored" data-anchor-id="analyze-data-quality">2. Analyze data quality</h3>
 <p>Examine the dataset <code>data/messy_customer_data.csv</code> and run the following:</p>
-<div id="744919f4" class="cell" data-execution_count="9">
+<div id="9f43b6fb" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>customer_df.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -1655,7 +1655,7 @@ ES
 <li>Implement the data preparation steps in Python.</li>
 <li>Run the code after each step and inspect the results.</li>
 </ul>
-<div id="71bca0bc" class="cell" data-execution_count="10">
+<div id="51d03eff" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your solution (in Jupyter notebook)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note: Check how the <code>customer_df</code> changes after each preparation step!</p>
@@ -1668,7 +1668,7 @@ ES
 <h1>Part 4: EDA: Clustering <a id="clustering" href=""></a></h1>
 <p>Now that the data is structured and cleaned, we explore whether companies group into similar patterns. Clustering helps us move from preparation to insight generation: instead of looking at firms one by one, we ask whether there are recurring profiles in the data.</p>
 <p>Dataset: <code>firm_data.csv</code></p>
-<div id="2c894986" class="cell" data-execution_count="13">
+<div id="06fcbe73" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>firm_data_df <span class="op">=</span> pd.read_csv(<span class="st">"data/firm_data.csv"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>firm_data_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1861,7 +1861,7 @@ Tech
 <section id="prepare-the-data-for-clustering" class="level3">
 <h3 class="anchored" data-anchor-id="prepare-the-data-for-clustering">1. Prepare the data for clustering</h3>
 <p>We decide to use <code>profit_margin</code> and <code>rd_intensity</code> to cluster firms. In a first step, create a dataframe <code>X</code> consisting of values for these two variables:</p>
-<div id="1d0652ab" class="cell" data-execution_count="14">
+<div id="ff0350d6" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_firm_data <span class="op">=</span> pd.read_csv(<span class="st">"data/firm_data.csv"</span>)</span>
@@ -1871,15 +1871,15 @@ Tech
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print X at the end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Before clustering, do a quick exploratory check so you know what kind of patterns you are looking for.</p>
-<div id="4fa2004c" class="cell" data-execution_count="15">
+<div id="8b6e234c" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>X.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4f9a94d3" class="cell" data-execution_count="16">
+<div id="b4fcb410" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_firm_data[[<span class="st">"profit_margin"</span>, <span class="st">"rd_intensity"</span>]].hist(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Considering that k-means is sensitive to different measurement scale, we need to standardize the values. This ensures that they have approximately equal influence on the clusters.</p>
 <p>Run the following code and observe how the scale of both variables changes:</p>
-<div id="2b23535c" class="cell" data-execution_count="17">
+<div id="e0dadbd1" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
@@ -1887,7 +1887,7 @@ Tech
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>X</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Before running a clustering algorithm, lets’s view the data in a scatterplot:</p>
-<div id="27782720" class="cell" data-execution_count="18">
+<div id="24e7c250" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], s<span class="op">=</span><span class="dv">10</span>)</span>
@@ -1902,7 +1902,7 @@ Tech
 <ul>
 <li>Next, run the k-means clustering algorithm for different values of <code>k</code>.</li>
 </ul>
-<div id="58aba10e" class="cell" data-execution_count="19">
+<div id="3cb8cf07" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your solution (in Jupyter notebook)</span></span>
@@ -1932,7 +1932,7 @@ Tech
 <ul>
 <li>Assign the cluster labels returned by the k-means algorithm to the original dataframe (<code>df_firm_data</code>).</li>
 </ul>
-<div id="40685aab" class="cell" data-execution_count="20">
+<div id="8f250e6e" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your solution (in Jupyter notebook)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
@@ -1943,7 +1943,7 @@ Tech
 <li>Generate a boxplot, grouped according to the clusters, to compare differences in <code>revenue</code>.</li>
 <li>Try to complete the task relying only on the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html">pandas documentation for boxplots</a>.</li>
 </ul>
-<div id="bfc8a4d6" class="cell" data-execution_count="21">
+<div id="1f765bef" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your solution (in Jupyter notebook)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

@@ -7,7 +7,8 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
@@ -33,12 +34,34 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/simplemenu/simplemenu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -129,17 +152,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -149,6 +161,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -162,15 +185,15 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -197,146 +220,916 @@
 <p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
-<li><strong>Understand and assess</strong> multiple regression models, including refinement strategies and key assumptions.</li>
-<li><strong>Distinguish</strong> between inference- and prediction-oriented modeling and their implications for business contexts.</li>
-<li><strong>Explain</strong> logistic regression as a probabilistic classification model and its role as a bridge to machine learning.</li>
+<li><strong>Explain</strong> how business problems can be formulated as binary classification tasks and modeled using logistic regression.</li>
+<li><strong>Understand</strong> how logistic regression uses a linear predictor and sigmoid function to produce probabilities, apply thresholds, and interpret log-odds and coefficients.</li>
+<li><strong>Evaluate</strong> classification models using confusion matrices and metrics such as accuracy, precision, recall, and F1 score.</li>
+<li><strong>Apply</strong> model predictions to decision-making by selecting appropriate thresholds based on business costs and expected value.</li>
 </ul>
 </div>
+</section>
+<section>
+<section id="business-problem-churn-prediction" class="title-slide slide level1 center" data-stack-name="Business problem: Churn prediction">
+<h1>Business problem: Churn prediction</h1>
+
+</section>
+<section id="predicting-customer-churn" class="slide level2">
+<h2>Predicting customer churn</h2>
+<p><strong>Why churn prediction matters</strong></p>
+<p>A lost customer is often a <strong>predictable</strong> customer.</p>
+<p>Firms collect many traces of customer relationships — usage, spending, support interactions, contract data.<br>
+The analytical challenge is to turn these traces into an <strong>early warning system</strong>.</p>
+<p><strong>Typical variables in a churn dataset</strong></p>
+<ul>
+<li><strong>Who is the customer?</strong> tenure, segment, contract type, subscription tier</li>
+<li><strong>How do they use the service?</strong> login frequency, feature usage, inactivity days</li>
+<li><strong>How satisfied are they?</strong> complaints, support tickets, response times, NPS/satisfaction</li>
+<li><strong>Are there warning signs?</strong> payment delays, downgrades, cancellations of add-ons, price sensitivity</li>
+</ul>
+<p><strong>Prediction goal</strong></p>
+<p>Predict:</p>
+<p><span class="math display">\[P(\text{churn}=1 \mid X)\]</span></p>
+<p>where <span class="math inline">\(X\)</span> contains the observed customer characteristics and behaviors.</p>
 <!--
-- **Refine and critically assess multiple regression models**, explaining how linear regression extends to multiple predictors and when results can be trusted given key assumptions.
-- **Distinguish between inference- and prediction-oriented modeling**, identifying whether a business problem requires causal explanation or predictive accuracy and outlining the implications for model use.
-- **Explain logistic regression as a classification model and bridge to machine learning**, describing how it models binary outcomes as probabilities and supports predictive analytics.
+**Why this is valuable**
+
+- Intervene **before** churn happens
+- Focus retention efforts on the right customers
+- Support decisions with probabilities, not intuition alone
+- Move from reactive reporting to proactive customer management
 -->
 </section>
-<section>
-<section id="refining-the-model" class="title-slide slide level1 center" data-stack-name="Refining the model">
-<h1>Refining the model</h1>
-
-</section>
-<section id="mulitple-regression" class="slide level2">
-<h2>Mulitple regression</h2>
-<p>example + ceteris paribus</p>
-</section>
-<section id="assumptions" class="slide level2">
-<h2>Assumptions</h2>
-<p>list, illustrate how transformations could model non-linear relationships</p>
-<p>Transition: we may accept some violations (e.g., multicollinearity) when we are interested in prediction (statisticians and economists: headache when the goal is to make inferences on individual effects)</p>
-</section></section>
-<section>
-<section id="explanation-prediction" class="title-slide slide level1 center" data-stack-name="Explanation ↔ prediction">
-<h1>Explanation ↔︎ prediction</h1>
-
-</section>
-<section id="correlation-vs-causality-explanation-vs-prediction" class="slide level2">
-<h2>Correlation vs causality / explanation vs prediction</h2>
-<p>Example: more garages → higher price?</p>
-</section></section>
-<section>
-<section id="regression-machine-learning" class="title-slide slide level1 center" data-stack-name="Regression → Machine learning">
-<h1>Regression → Machine learning</h1>
-
-</section>
-<section id="illustration" class="slide level2">
-<h2>illustration</h2>
-<p>business goal: predict defaults or quick-sales (binary outcome; need to select an appropriate model)</p>
-</section>
-<section id="logistic-regression" class="slide level2">
-<h2>logistic regression…</h2>
-</section>
-<section id="classification-and-evaluation-metrics-confusion-matrix" class="slide level2">
-<h2>classification and evaluation metrics (confusion matrix…)</h2>
-</section>
-<section id="similarity-to-machine-learning" class="slide level2">
-<h2>similarity to machine learning</h2>
+<section id="geometric-view-of-the-problem" class="slide level2">
+<h2>Geometric view of the problem</h2>
 <!--
-        Logistic regression (illustrating the transition from regression to ML; also: fit, train/test?)
-
-        ## Logistic regression (I)
-
-        > Logistic regression is a regression model where the dependent variable is categorical. The classical logistic regression is a binary classifier, where the dependent variable has two states. The output of a logistic regression model ranges between 0 and 1.
-
-        > Logistic regression uses the logistic function (or Sigmoid function) because it can take an input with any value from negative to positive infinity, whereas the output always takes values between zero and one and hence is interpretable as a probability.
-
-        > It is defined as:
-
-        ![](../images/slides_250.png)
-
-
-
-
-        ## Logistic regression (II)
-
-        > If we set
-
-        > the logistic function can now be written as:
-
-        > We interpret F(x) as the conditional probability that the class attribute has the value 1 with the given input vector x.
-
-        > The coefficients ß0 and ß can be estimated via Maximum Likelihood Estimation.
-
-        > The parameter ß0 represents the unconditional probability of "Y=1" knowing nothing about the feature vector x.
-
-        > The parameter vector β defines the slope of the logit function. It determines the extent to which certain features contribute for increased or decreased likelihood to "Y=1".
-
-        > The output of a logistic model is a probability. To use this for classification purposes:
-
-        > If the predicted probability is > 0.5 the label is 1
-
-        > and otherwise 0.
-
-        ::: aside
-        — Source: odd = Chance
-        :::
-
-
-
-        ## TBD: could this fit in here?
-
-        correlation vs causality example: nr of firefighters vs damage (insurance context)
-
-
-        ## Explanation vs. Prediction (I)
-
-        > Question 1: I have a headache. If I take an aspirin now, will it go away?
-
-        > Question 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?
-
-        > The first case is a typical "predictive" question. You are calculating the effect of a hypothetical intervention.
-
-        > The second case is a typical "explanatory" question. You are calculating the effect of a counterfactual intervention.
-
-        ::: {.notes}
-
-        Which one is Explanation, which Prediction?
-
-        counterfactual : den Tatsachen widersprechend
-
-        :::
-
-        ## Explanation vs. Prediction (II)
-
-        **Explanation:**
-
-        - Explanation is about understanding relationships and why certain things happen.
-        - It requires an understanding of cause and effect.
-        - Tests of causal hypotheses are fundamental.
-        - Measures of significance are central.
-        - A good explanatory model may also have predictive power.
-
-        **Prediction:**
-
-        - Prediction is about anticipating and forecasting what may happen in the future.
-        - Correlations are important in this context (but correlation does not imply causation).
-        - Therefore, predictive models may have no real explanatory power.
-        - For robust prediction, knowledge of causality is preferable.
-        - The main task is to find a model that optimally approximates reality and minimizes overfitting.
-        - Accuracy is measured using out-of-sample data.
+        min 3 : https://www.youtube.com/watch?v=4u81xU7BIOc
 -->
+<p>Churn prediction is a <strong>binary classification problem</strong>:</p>
+<div id="60b963c4" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-2-output-1.png" class="quarto-figure quarto-figure-center" width="799" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Possible approach: We could use Linear Regression with a threshold at <code>0.5</code> to classify output:</p>
+<ul>
+<li>If <span class="math inline">\(f(x) &lt; 0.5\)</span>, predict <code>y=0</code></li>
+<li>If <span class="math inline">\(f(x) \ge 0.5\)</span>, predict <code>y=1</code></li>
+</ul>
+<aside class="notes">
+<p>On whiteboard: draw previous versions (continuous -&gt; continous; categorical -&gt; continuous / multidimensional) - good (simple; geographical) explanation: https://www.youtube.com/watch?v=yIYKR4sgzI8 - TODO : include illustrations from video, min 2.17 and 3.20</p>
+<p>Our natrual expectation would be <em>decreasing marginal effects</em> - if customers are reasonably annoyed by waiting times, they will quit. There is no linear change with every additional hour they wait.</p>
+<p>On slides: Draw regression line and illustrate the cutoff threshold when the <code>y=0.5</code> cuts the regression line.</p>
+<p>Illustrate sensitivity of regression lines to outliers (min 5 in https://www.youtube.com/watch?v=4u81xU7BIOc)</p>
+<p>Also: linear regression will not respect the restriction of outcomes to {0,1}, but also give larger or negative (continuous) values. The “marginal effects” logic of linear regression does not make sense.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="logistic-regression" class="title-slide slide level1 center" data-stack-name="Logistic regression">
+<h1>Logistic regression</h1>
+
+</section>
+<section id="classification" class="slide level2">
+<h2>Classification</h2>
+<p>Examples:</p>
+<ul>
+<li>Online transactions: Fraudulent (yes/no)?</li>
+<li>Customer churn: yes/no?</li>
+<li>EMail: Spam/not spam?</li>
+</ul>
+<p><span class="math display">\[y \in \{0,1\}\]</span> with</p>
+<p>0: “Negative class” (e.g., no fraud, no churn, no spam)<br>
+1: “Positive class” (e.g., fraud, churn, spam)</p>
+<aside class="notes">
+<p>Don’t be confused by Logistic “Regression” - it works like regression, but it is actually a classification algorithm</p>
+<p>The binary classification can be extended to multiple classes:</p>
+<p><span class="math display">\[y \in {0,1,2,3,4}\]</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+TODO: include an overview of classifiers (see paper notes): rule-based, threshold-based, area-based, GLM - logistic regression: particular link function
+-->
+</section>
+<section id="logistic-regression-model" class="slide level2">
+<h2>Logistic regression model</h2>
+<!--
+TODO: Linear regression typically gives us continuous **scores**, but for our case of binary classification, scores between 0 and 1 are needed. Probabilities would be a score ranging between 0 and 1 (with a "nice" interpretation).
+
+
+As explained previously, linear models would also return scores > 1 or negative scores. This is problematic for a binary classification, and especially problematic when 
+
+TODO: mention threshold approach to 
+-->
+<p>Ideally, our model should predict the <strong>probability</strong> of <code>y=1</code>. This would allow us to apply a threshold for classification, but it would also give us more information (how likely an observation belongs to the <em>positive class</em>).</p>
+<p>This means we need a model that ensures continuous values between 0 and 1: <span class="math display">\[y \in [0,1]\]</span></p>
+<div class="fragment">
+<p><strong>Step 1: Linear model</strong></p>
+<p><span class="math display">\[z_i = \beta_0 + \beta_1 x_i\]</span></p>
+<ul>
+<li>Same structure as linear regression</li>
+<li><span class="math inline">\(z_i \in \mathbb{R}\)</span> (can be any real number)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Step 2: Transform to probability via sigmoid function</strong></p>
+<p><span class="math display">\[\mathbb{P}(y_i = 1 \mid x_i) = \sigma(z_i)\]</span></p>
+<p><span class="math display">\[\sigma(z) = \frac{1}{1 + e^{-z}}\]</span></p>
+</div>
+<div class="fragment">
+<div class="highlight_must_learn">
+<p><strong>Logistic regression model</strong></p>
+<p><span class="math display">\[\mathbb{P}(y_i = 1 \mid x_i) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_i)}}\]</span></p>
+<p><strong>Key intuition:</strong></p>
+<ul>
+<li>Linear predictor → transformed by the sigmoid (logistic) function</li>
+<li>Output always in ([0,1])</li>
+<li>Can be interpreted as a probability (next slide)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="log-odds" class="slide level2">
+<h2>Log-odds</h2>
+<p>Logistic regression assumes that the <strong>log-odds of the outcome are linear in the predictors</strong>:</p>
+<p><span class="math display">\[\log\left(\frac{y_i}{1 - y_i}\right) = \beta_0 + \beta_1 x_i\]</span></p>
+<p><em>Note: <span class="math inline">\(\frac{y_i}{1 - y_i}\)</span> are the “odds”.</em></p>
+<div class="fragment">
+<p><br></p>
+<p>This implies a <strong>sigmoid-shaped relationship</strong> between <code>x</code> and the <code>y</code>:</p>
+<p><span class="math display">\[y_i = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_i)}}\]</span></p>
+<p>The sigmoid function serves as a <em>link function</em> to convert the linear predictor into a <em>probability</em>.</p>
+</div>
+</section>
+<section id="the-sigmoid-function" class="slide level2">
+<h2>The Sigmoid function</h2>
+<div id="66c2b2a3" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="1259" height="503"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Changing <strong>β₀ shifts</strong> the curve left/right</li>
+<li>Changing <strong>β₁ changes slope</strong> (flatter vs.&nbsp;steeper transition)</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Highlight that the sigmoid function resolves the “constant marginal effects problem”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="estimation-maximum-likelihood" class="slide level2">
+<h2>Estimation: Maximum likelihood</h2>
+<p>Instead of minimizing squared errors (like in linear regression), logistic regression chooses parameters that make the <strong>observed data most likely</strong>.</p>
+<div class="fragment">
+<p><strong>Core idea</strong></p>
+<p>We want predicted probabilities to match observed outcomes:</p>
+<ul>
+<li>If <span class="math inline">\(y_i = 1\)</span> → predicted probability should be <strong>high</strong></li>
+<li>If <span class="math inline">\(y_i = 0\)</span> → predicted probability should be <strong>low</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Likelihood function</strong></p>
+<p>For each observation:</p>
+<p><span class="math display">\[P(y_i \mid x_i) = p_i^{y_i} (1 - p_i)^{1 - y_i}\]</span></p>
+<p>For all observations:</p>
+<p><span class="math display">\[L(\beta) = \prod_{i=1}^n p_i^{y_i} (1 - p_i)^{1 - y_i}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Maximization</strong>: Choose <span class="math inline">\(\beta_0, \beta_1\)</span> to maximize this likelihood</li>
+</ul>
+<div class="note">
+<p><strong>Intuition:</strong> We search for the model that assigns <strong>high probability to what actually happened</strong>.</p>
+</div>
+</div>
+</section>
+<section id="interpretation-of-coefficients" class="slide level2">
+<h2>Interpretation of coefficients</h2>
+<p>Logistic regression coefficients are <strong>not directly effects on probability</strong>.</p>
+<p>They describe effects on the <strong>log-odds</strong>.</p>
+<div class="fragment">
+<p><strong>Coefficient meaning</strong></p>
+<p><span class="math display">\[\log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 x\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta_1\)</span>: change in <strong>log-odds</strong> when <span class="math inline">\(x\)</span> increases by 1</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>More intuitive: odds ratios</strong></p>
+<p>Exponentiate the coefficient:</p>
+<p><span class="math display">\[e^{\beta_1}\]</span></p>
+<ul>
+<li><p>Factor change in the <strong>odds</strong></p></li>
+<li><p>Example:</p>
+<ul>
+<li><span class="math inline">\(e^{\beta_1} = 1.5\)</span> → odds increase by <strong>50%</strong></li>
+<li><span class="math inline">\(e^{\beta_1} = 0.7\)</span> → odds decrease by <strong>30%</strong></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Important implication</strong></p>
+<ul>
+<li>Effect on probability is <strong>nonlinear</strong></li>
+<li>Depends on current level of <span class="math inline">\(x\)</span></li>
+</ul>
+<p>→ Same change in <span class="math inline">\(x\)</span> has <strong>different impact</strong> depending on where you are on the sigmoid curve</p>
+<div class="note">
+<p><strong>Takeaway:</strong> Logistic regression is linear in log-odds — but <strong>nonlinear in probabilities</strong>.</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="evaluation" class="title-slide slide level1 center" data-stack-name="Evaluation">
+<h1>Evaluation</h1>
+
+</section>
+<section id="predicted-probabilities" class="slide level2">
+<h2>Predicted probabilities</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A logistic regression model predicts a <strong>probability</strong> of churn:</p>
+<p><span class="math display">\[
+P(\text{churn}=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x)}}
+\]</span></p>
+<!--
+- Predictor: **average response time (hours)**
+- Higher response time  $\rightarrow$ higher churn probability
+-->
+<p><br></p>
+<div class="highlight_must_learn">
+<p>A threshold (such as <strong>0.5</strong>) is needed to convert probabilities into class labels.</p>
+<p>Comparing predicted vs.&nbsp;actual class labels allows us to evaluate the performance of a classifier like logistic regression.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="9d6d36f1" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-5-output-1.png" class="quarto-figure quarto-figure-center" width="710" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+
+<aside><div>
+<p>Note: there are no meaningful <em>residuals</em> (or <span class="math inline">\(R^2\)</span>), as in linear regression models.</p>
+</div></aside></section>
+<section id="confusion-matrix" class="slide level2">
+<h2>Confusion matrix</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Using a <strong>0.5 threshold</strong>, predicted probabilities are turned into classes.</p>
+<p>The confusion matrix summarizes:</p>
+<ul>
+<li><strong>True negatives (TN):</strong> predicted no churn, observed no churn<br>
+</li>
+<li><strong>False positives (FP):</strong> predicted churn, observed no churn<br>
+</li>
+<li><strong>False negatives (FN):</strong> predicted no churn, observed churn<br>
+</li>
+<li><strong>True positives (TP):</strong> predicted churn, observed churn</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="95083670" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-6-output-1.png" class="quarto-figure quarto-figure-center" width="583" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="evaluation-metrics" class="slide level2">
+<h2>Evaluation metrics</h2>
+<div id="7f393153" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-7-output-1.png" class="quarto-figure quarto-figure-center" width="566" height="422"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 27%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: center;">Formula</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Accuracy</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{TP+TN}{TP+TN+FP+FN}\)</span></td>
+<td style="text-align: left;">Overall share of correct predictions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Precision</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{TP}{TP+FP}\)</span></td>
+<td style="text-align: left;">Among predicted positives, how many are actually positive?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Recall</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{TP}{TP+FN}\)</span></td>
+<td style="text-align: left;">Among actual positives, how many did the model identify?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>F1</strong></td>
+<td style="text-align: center;"><span class="math inline">\(2\cdot\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}\)</span></td>
+<td style="text-align: left;">Balance between precision and recall</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="roc-curve-and-auc" class="slide level2">
+<h2>ROC curve and AUC</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>ROC</strong> (receiver operating characteristic) curve summarizes the trade-off between:</p>
+<ul>
+<li><strong>Sensitivity / Recall / True Positive Rate</strong></li>
+<li><strong>False Positive Rate</strong></li>
+</ul>
+<p>As we vary the <strong>classification threshold</strong>, the model becomes more or less conservative in predicting <code>churn = 1</code>.</p>
+<p><br></p>
+<div class="highlight_must_learn">
+<p><strong>Area under the curve (AUC)</strong> summarizes ROC performance in a single number:</p>
+<ul>
+<li><strong>AUC = 0.5</strong>: no better than random guessing</li>
+<li><strong>AUC = 1.0</strong>: perfect separation</li>
+<li><strong>Higher AUC</strong>: better ranking of churners vs.&nbsp;non-churners</li>
+</ul>
+</div>
+<p><br></p>
+<p>A good classifier achieves:</p>
+<ul>
+<li><strong>high true positive rate</strong></li>
+<li><strong>low false positive rate</strong></li>
+</ul>
+<p>→ curves closer to the <strong>top-left corner</strong> indicate better model fit.</p>
+<!--
+    **TODO: insight: ROC depends on the dataset!**
+-->
+</div><div class="column" style="width:52%;">
+<div id="eb3caa70" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-8-output-1.png" width="758" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+
+<aside class="notes">
+<p>Emphasize that each point on the ROC curve corresponds to a different classification threshold.</p>
+<p>Good link back to the confusion matrix:</p>
+<ul>
+<li>lowering the threshold catches more churners</li>
+<li>but also creates more false alarms</li>
+</ul>
+<p>AUC is especially useful when we want to compare models independently of one specific cutoff such as 0.5.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Unlike accuracy, ROC/AUC evaluates the classifier across <strong>all possible thresholds</strong>.</p>
+</div></aside></section></section>
+<section>
+<section id="from-prediction-to-decisions" class="title-slide slide level1 center" data-stack-name="From prediction to decisions">
+<h1>From prediction to decisions</h1>
+
+</section>
+<section id="from-prediction-to-decision" class="slide level2">
+<h2>From prediction to decision</h2>
+<p>A logistic regression model predicts a <strong>probability of churn</strong>:</p>
+<p><span class="math display">\[
+p(x) = P(\text{churn}=1 \mid x)
+\]</span></p>
+<div class="fragment">
+<p>This probability is based on <strong>historical data</strong>:</p>
+<ul>
+<li>It reflects how similar customers behaved in the past</li>
+<li>It captures <strong>baseline churn risk</strong></li>
+<li>It is <strong>not a certainty</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Suppose a firm has two possible actions:</p>
+<ul>
+<li><strong>Intervene</strong>: offer a retention incentive</li>
+<li><strong>Do nothing</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p>So the business problem is no longer only:</p>
+<blockquote>
+<p>Who is likely to churn?</p>
+</blockquote>
+<p>It becomes:</p>
+<blockquote>
+<p>For whom is an intervention worth it?</p>
+</blockquote>
+<aside class="notes">
+<p>Important distinction: The model predicts what is likely to happen if we do nothing different. It does not yet tell us whether we should intervene.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="decision-making-under-uncertainty" class="slide level2">
+<h2>Decision-making under uncertainty</h2>
+<p>We can use the expected value criterion to <strong>translate predictions into decisions</strong> by combining:</p>
+<ul>
+<li><strong>Predicted churn probability</strong> from the model</li>
+<li><strong>Business consequences</strong> of the action</li>
+</ul>
+<div class="fragment">
+<p>A simple payoff structure:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Action</th>
+<th style="text-align: right;">Customer would churn</th>
+<th style="text-align: right;">Customer would stay</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intervene</td>
+<td style="text-align: right;">+20</td>
+<td style="text-align: right;">-10</td>
+</tr>
+<tr class="even">
+<td>Do nothing</td>
+<td style="text-align: right;">-100</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>Interpretation:</p>
+<ul>
+<li>Saving a likely churner creates value</li>
+<li>Intervening with a customer who would stay creates unnecessary cost</li>
+<li>Missing a true churner is very costly</li>
+</ul>
+<aside class="notes">
+<p>Stress that these are simplified business values. They encode the firm’s priorities and economics.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="expected-value-of-not-intervening" class="slide level2">
+<h2>Expected value of (not) intervening</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Action</th>
+<th style="text-align: right;">Customer would churn</th>
+<th style="text-align: right;">Customer would stay</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intervene</td>
+<td style="text-align: right;">+20</td>
+<td style="text-align: right;">-10</td>
+</tr>
+<tr class="even">
+<td>Do nothing</td>
+<td style="text-align: right;">-100</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<!--
+Let $p(x)$ denote the predicted churn probability.
+-->
+<p>If we <strong>intervene</strong>, the expected value is:</p>
+<p><span class="math display">\[
+EV(intervene) = p(x)\cdot 20 + (1-p(x))\cdot (-10) = 30p(x) - 10
+\]</span></p>
+<p>Interpretation:</p>
+<ul>
+<li>With probability <span class="math inline">\(p(x)\)</span>, the customer is at risk and intervention helps</li>
+<li>With probability <span class="math inline">\(1-p(x)\)</span>, the customer would stay anyway and intervention wastes resources</li>
+</ul>
+<div class="fragment">
+<p>If we <strong>do nothing</strong>, the expected value is:</p>
+<p><span class="math display">\[
+EV(do\_nothing) = p(x)\cdot (-100) + (1-p(x))\cdot 0 = -100p(x)
+\]</span></p>
+<p>Interpretation:</p>
+<ul>
+<li>If the customer would churn, the firm bears a large loss</li>
+<li>If the customer would stay, there is no cost</li>
+</ul>
+
+</div>
+<aside><div>
+<p>Based on <span class="citation" data-cites="Elkan2001">Elkan (<a href="#/references" role="doc-biblioref" onclick="">2001</a>)</span>.</p>
+</div></aside></section>
+<section id="optimal-decision-rule" class="slide level2">
+<h2>Optimal decision rule</h2>
+<p>Instead of selecting one action, we should intervene whenever:</p>
+<p><span class="math display">\[
+EV(intervene) &gt; EV(do\_nothing)
+\]</span></p>
+<div class="fragment">
+<p>Insert the expected values:</p>
+<p><span class="math display">\[
+p(x)\cdot 20 + (1-p(x))\cdot (-10) &gt; -100p(x)
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Simplify:</p>
+<p><span class="math display">\[
+20p(x) -10 +10p(x) &gt; -100p(x)
+\]</span></p>
+<p><span class="math display">\[
+130p(x) &gt; 10
+\]</span></p>
+<p><span class="math display">\[
+p(x) &gt; 0.077
+\]</span></p>
+</div>
+</section>
+<section id="decision-threshold" class="slide level2">
+<h2>Decision threshold</h2>
+<p>This gives a clear rule:</p>
+<p><br></p>
+<blockquote>
+<p><strong>Intervene if</strong></p>
+<p><span class="math display">\[ (x) &gt; 0.077 \]</span></p>
+<p>That is: intervene if predicted churn probability exceeds <strong>7.7%</strong>.</p>
+</blockquote>
+<div class="fragment">
+<p>The threshold is low because:</p>
+<ul>
+<li>Losing a customer is <strong>very costly</strong></li>
+<li>Intervening is <strong>relatively cheap</strong></li>
+</ul>
+<p>So even a small churn probability can justify action.</p>
+</div>
+<div class="fragment">
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> A classification threshold does not have to be 0.5. It should depend on the <strong>business context</strong>.</p>
+<aside class="notes">
+<p>This is a nice place to contrast statistical classification with managerial decision-making. Students often assume 0.5 is automatic or “correct”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="general-decision-rule" class="slide level2">
+<h2>General decision rule</h2>
+<p>More generally, the threshold can be written as:</p>
+<p><span class="math display">\[
+t = \frac{C_{01}}{C_{01}+C_{10}}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(C_{01}\)</span> = cost of unnecessary intervention</li>
+<li><span class="math inline">\(C_{10}\)</span> = cost of missing a churner</li>
+</ul>
+<div class="fragment">
+<p>Decision rule:</p>
+<p><span class="math display">\[
+\text{Intervene if } p(x) &gt; t
+\]</span></p>
+</div>
+</section>
+<section id="two-sources-of-knowledge" class="slide level2">
+<h2>Two sources of knowledge</h2>
+<p>This decision combines two different inputs:</p>
+<p><strong>1. Data-driven component</strong></p>
+<ul>
+<li>Logistic regression estimates: <span class="math display">\[
+p(x)=P(\text{churn}=1\mid x)
+\]</span></li>
+<li>Learned from historical data</li>
+</ul>
+<div class="fragment">
+<p><strong>2. Business-driven component</strong></p>
+<ul>
+<li>The threshold <span class="math display">\[t = \frac{C_{01}}{C_{01}+C_{10}}\]</span></li>
+<li>Based on business costs, strategy, and domain knowledge</li>
+</ul>
+</div>
+</section>
+<section id="big-conceptual-takeaway" class="slide level2">
+<h2>Big conceptual takeaway</h2>
+<p><span class="math display">\[
+\textbf{Data} \rightarrow \textbf{Model} \rightarrow \textbf{Probability}
+\qquad + \qquad
+\textbf{Business costs} \rightarrow \textbf{Threshold}
+\rightarrow \textbf{Decision}
+\]</span></p>
+<div class="fragment">
+<p>The model does <strong>not</strong> decide what to do.</p>
+<p>It produces probabilities.</p>
+<p>The <strong>business defines the threshold</strong>, and together they determine the action.</p>
+</div>
+</section>
+<section id="why-probabilities-matter" class="slide level2">
+<h2>Why probabilities matter</h2>
+<p>Probabilities create a clean interface between <strong>prediction</strong> and <strong>decision-making</strong>.</p>
+<div class="fragment">
+<p>With probabilities:</p>
+<ul>
+<li>the output is interpretable</li>
+<li>the threshold can come directly from business costs</li>
+<li>model and decision rule remain conceptually separate</li>
+</ul>
+</div>
+<div class="fragment">
+<p>With arbitrary scores:</p>
+<ul>
+<li>interpretation is less clear</li>
+<li>thresholds must often be tuned empirically</li>
+<li>the connection to business value is less direct</li>
+</ul>
+<!--
+
+    ## Important assumptions
+
+    ::: notes
+
+    This reasoning assumes that:
+
+    - the relationship between features and churn remains reasonably stable
+    - intervention effects are similar to what the business expects
+    - the cost/benefit structure is known and relevant
+
+    If these change, the threshold should also change.
+
+    :::
+
+
+    ## Takeaway
+
+    ::: {.highlight_must_learn}
+    **Data gives us probabilities.**
+
+    **Business defines the threshold.**
+
+    **Together, they determine the decision.**
+    :::
+
+    ::: notes
+    This is the main message of the section.
+    Nice bridge to ML later:
+    many models can produce probabilities or scores,
+    but business decision-making still requires a threshold and value logic.
+    :::
+
+
+    TOOD: potential extensions:
+
+    ###  Improving the model
+
+    * Add interaction effects
+    * Model non-linear relationships (transformations)
+
+    ### Dealing with class imbalance
+
+    * Why accuracy can be misleading
+    * Focus on relevant metrics
+    -> SMOTE
+
+Decided to skip multi-label prediction
+-->
+</div>
+</section></section>
+<section>
+<section id="outlook-machine-learning" class="title-slide slide level1 center" data-stack-name="Outlook">
+<h1>Outlook: Machine learning</h1>
+
+</section>
+<section id="from-statistical-models-to-machine-learning" class="slide level2">
+<h2>From statistical models to machine learning</h2>
+<p>Logistic regression is already a <strong>classification model</strong>:</p>
+<ul>
+<li>Predicts binary outcomes (0/1)</li>
+<li>Produces <strong>probabilities</strong> (P(y=1 X))</li>
+<li>Uses a <strong>threshold</strong> to assign class labels</li>
+</ul>
+<p>It is:</p>
+<ul>
+<li><strong>Interpretable</strong></li>
+<li><strong>Fast and robust</strong></li>
+<li>Often a <strong>baseline model</strong></li>
+</ul>
+<p><strong>Logistic regression is often the first model to try.</strong></p>
+<aside class="notes">
+<p>Recall the earlier comparison of models: logistic regression fits into the broader class of classifiers.</p>
+<p>If a simple model performs well, more complex models may not be necessary.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="from-simple-models-to-flexible-models" class="slide level2">
+<h2>From simple models to flexible models</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Logistic regression</th>
+<th>Machine learning models</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linear decision boundary</td>
+<td>Can learn nonlinear boundaries</td>
+</tr>
+<tr class="even">
+<td>Strong assumptions</td>
+<td>Fewer assumptions</td>
+</tr>
+<tr class="odd">
+<td>Few variables (selected)</td>
+<td>Many variables (high-dimensional)</td>
+</tr>
+<tr class="even">
+<td>Interpretable coefficients</td>
+<td>Often less interpretable</td>
+</tr>
+</tbody>
+</table>
+<p>Key shift:</p>
+<ul>
+<li>From <strong>structured, theory-driven models</strong></li>
+<li>To <strong>flexible, data-driven models</strong></li>
+</ul>
+<aside class="notes">
+<p>Machine learning models relax the structural assumptions of statistical models.</p>
+<p>They allow more flexibility, but this comes at the cost of interpretability.</p>
+<p>This is not a strict replacement, but an extension of modeling approaches.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="new-challenges-in-machine-learning" class="slide level2">
+<h2>New challenges in machine learning</h2>
+<p><strong>1. Overfitting</strong></p>
+<ul>
+<li>Models may fit noise instead of signal</li>
+<li>Good training performance ≠ good generalization</li>
+</ul>
+<p><strong>2. Role of data</strong></p>
+<ul>
+<li>More observations and features become important</li>
+</ul>
+<p><strong>3. Evaluation</strong></p>
+<ul>
+<li>Same metrics as before:
+<ul>
+<li>Accuracy, precision, recall, F1</li>
+</ul></li>
+<li>But evaluated on <strong>new/unseen data</strong></li>
+</ul>
+<p><strong>4. Model tuning</strong></p>
+<ul>
+<li>Not only the classification threshold</li>
+<li>Additional <strong>hyperparameters</strong> must be chosen</li>
+</ul>
+<aside class="notes">
+<p>Emphasize that evaluation builds directly on this lecture: confusion matrix and derived metrics remain central.</p>
+<p>However, we now evaluate models on separate data (train/test split, cross-validation).</p>
+<p>Hyperparameters introduce an additional layer of decision-making beyond the threshold.</p>
+<p>In the next session, we move from interpretable models to more powerful predictive models—and learn how to control their complexity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
 <ul>
-<li>TODO</li>
+<li>Logistic regression is a method for <strong>binary classification</strong>, where the goal is to predict whether an outcome occurs (e.g., churn vs.&nbsp;no churn).</li>
+<li>It predicts <strong>probabilities</strong> <span class="math display">\[P(y=1 \mid X)\]</span> using a linear predictor combined with a <strong>sigmoid function</strong>, ensuring outputs between 0 and 1.</li>
+<li>Coefficients are interpreted in terms of <strong>log-odds</strong> (or odds ratios), not direct probability changes.</li>
+<li>Parameters are estimated via <strong>maximum likelihood</strong>, aiming to match predicted probabilities with observed outcomes.</li>
+<li>Model performance is evaluated using <strong>classification metrics</strong> such as confusion matrices, accuracy, precision, recall, F1, and ROC/AUC.</li>
+<li>A <strong>threshold</strong> is required to convert probabilities into class labels, and should be chosen based on <strong>business costs</strong>, not fixed at 0.5.</li>
 </ul>
 </section>
 <section id="survey-session-5" class="slide level2" data-state="hide-menubar">
@@ -361,10 +1154,15 @@
 <p>Note: Responses may be analyzed and published in anonymized form.</p>
 <p>Please complete the survey before you leave today — thank you 🙏</p>
 </div></aside></section></section>
-<section id="references" class="title-slide slide level1 center" data-state="hide-menubar">
+<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
 <h1>References</h1>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Elkan2001" class="csl-entry" role="listitem">
+Elkan, C. (2001). The foundations of cost-sensitive learning. <em>International Joint Conference on Artificial Intelligence</em>, <em>17</em>, 973–978. <a href="https://doi.org/10.5555/1642194.1642224">https://doi.org/10.5555/1642194.1642224</a>
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -380,6 +1178,7 @@
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/simplemenu/simplemenu.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -402,7 +1201,8 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false,"theme":"whiteboard","boardmarkerWidth":5},
 'simplemenu': {"menubarclass":"menubar","menuclass":"menu","activeclass":"active","activeelement":"li","flat":false,"barhtml":{"header":"","footer":"<div class='menubar'><ul class='menu'></ul><div class='slide-number'></div></div>"},"scale":0.67},
 'smaller': false,
  
@@ -574,7 +1374,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, Simplemenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, Simplemenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
