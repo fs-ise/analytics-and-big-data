@@ -5,9 +5,19 @@ format: html
 
 ## Summary
 
+TODO:
+
+- Code: Must run and reproduce.
+- Consult when focusing onf Big Data. Do Not do feed (real-time) data.
+- Consistently use "you" or "students"
+- Check for incomplete sentences/spelling (e.g., end of summary)
+- group formation: we will create groups in class. if not present: send me an email
+- polish the "document your contributions paragraph"
+- templates
+
+
 > In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection.
-  While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project takes a different approach.
-  We focus on business-relevant contexts such as management, finance, operations, or digital platforms that are more directly aligned with your future professional environments.
+  While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project focuses on business-relevant contexts such as management, finance, operations, or digital platforms.
   To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations.
   This allows you not only to apply analytical methods, but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them.
   Also: downstream challenge of deployment (e.g., ethics, ...)
@@ -15,10 +25,9 @@ format: html
 
 **Objectives**
 
-- Design and analyze realistic business data scenarios
-- Select and justify appropriate analytical methods
-- Communicate results to technical and non-technical audiences
-- Apply the CRISP-DM process as a scaffold
+- Design a realistic business analytics scenario
+- Select and apply appropriate analytical models
+- Communicate results using CRISP-DM as a scaffold
 - Reflect on limitations and improvements
 
 
@@ -55,18 +64,18 @@ format: html
   - Marketing (e.g., churn, customer segmentation, campaign effectiveness)
   - Human Resources (e.g., attrition, promotion, team productivity)
   - Operations (e.g., demand forecasting, inventory optimization, supplier risk scoring)
-  - Digital business (e.g., user engagement prediction, gig worker retention, pricing strategy simulation)
+  - Digital business (e.g., user engagement, gig worker retention, pricing strategy)
 
 - Create a synthetic but realistic dataset to simulate internal company data.
   This could be complemented by synthetic or real external data.
-- Prepare an analytical notebook, following the **CRISP-DM process**:
+- Prepare an analytical notebook, following the **CRISP-DM process**, covering:
 
-  1. Business Understanding *(What is the business context? What is the concrete question? Who are the stakeholders? Why does it matter?)*
+  1. Business Understanding *(What is the business context? What is the concrete question? Who are the stakeholders? Why is it interesting?)*
   2. Data Understanding *(What does the dataset contain? How does it reflect a realistic business setting? What do you observe in the EDA?)*
   3. Data Preparation *(How is the data cleaned and transformed? What features are created? How is the data split?)*
   4. Modeling *(Which model is used? How is it trained? Why does it fit the problem?)*
-  5. Evaluation *(Which metrics are used? How well does the model perform? What do the results mean in business terms?)*
-  6. Deployment *(How would the model be used in practice? What inputs/outputs are required? What are key limitations or risks?)*
+  5. Evaluation *(Which metrics are used? How well does the model perform? What do the results mean in practice?)*
+  6. Deployment *(How would the model be implemented in practice? What inputs/outputs are required? What are key limitations or risks?)*
 
 - Develop a report to reflect on the case (what students will learn/specific challenge; how it illustrates and complements materials covered in the lecture; what its simplyfying assumptions or limitations are; how it extends existing work; potential for improvement)
 
@@ -84,13 +93,15 @@ format: html
   - typical data structures
   - common modeling approaches
 
-- Simplification is acceptable. If a problem would typically require more advanced methods (e.g., reinforcement learning), you may use a simpler, well-justified approach.
+- **Simplification is acceptable**.
+  If a problem would typically require more advanced methods (e.g., reinforcement learning), you may use a simpler, well-justified approach.
 
-- Optional extensions (for stronger projects) may include:
+- **Advanced extensions**, optional for stronger projects, may include:
 
   - advanced data preparation or feature engineering
   - model comparison or refinement
   - robustness checks or extended evaluation
+  - interactive visualizations
   - more detailed deployment considerations
 
 :::
@@ -98,18 +109,19 @@ format: html
 
 ### Project Timeline
 
-- Start: {{< var group_work.start_date >}}  
-- Deadline: {{< var group_work.submission_date >}}
+::: {.callout-important title="Important dates"}
 
-Note: GW: limited availability in the last week (2026-05-25 to 2026-06-01)
+- Start: **{{< var group_work.start_date >}}**  
+- Deadline: **{{< var group_work.submission_date >}}**
+:::
 
-### Suggested Timeline
+### Proposed Timeline
 
 **Week 1 – Topic Selection**
 
   - Define and align on your project topic
-  - Short proposal (≈1 page)
-  - *Instructor check to ensure sufficient differentiation across groups*
+  - Share your topic via e-mail by the end of Week 1
+  - Groups that focus on the same topic will be asekd to refocus
 
 **Weeks 2–4 – Iterative Development**
 
@@ -124,63 +136,70 @@ Note: GW: limited availability in the last week (2026-05-25 to 2026-06-01)
 **Week 5 – Refinement**
 
   - Strengthen analysis and interpretation
-  - Optional: add an advanced component (e.g., alternative model, robustness check, extension)
+  - Optional: add an advanced extension
 
 **Week 6 – Finalization**
 
-  - Final report and code submission
   - Ensure clarity, reproducibility, and communication quality
+  - Final submission via Canvas (see deliverables)
 
 
 ```{mermaid}
 gantt
-    title Timeline
+    title Proposed dimeline
     dateFormat  YYYY-MM-DD
+    excludes    weekends
 
     section Setup
     Topic selection                  :active, 2026-04-14, 7d
 
     section Iterative Development
-    Data, EDA, modeling (iterative)  : 2026-04-21, 21d
+    Data, EDA, modeling (iterative)  : 2026-04-21, 18d
 
     section Refinement
     Refinement                       :2026-05-12, 7d
 
     section Finalization
-    Final report & submission        :2026-05-19, 11d
+    Final report & submission        :2026-05-19, 9d
 ```
 
 
 ### Deliverables
 
-All necessary steps for the analysis should be performed in Python.
+1. **Synthetic dataset generation script**
 
+- Python script to generate the dataset (well-structured and executable), including:
 
-1. **Report (max 10 pages)**
+  - Brief description of purpose and business context (docstring)
+  - Definition of variables (schema)
+  - Data generation logic (distributions, relationships)
+  - Realism features (e.g., noise, missing values, duplicates)
+  - Key assumptions (with justification where possible)
+  - Reproducible output (fixed seed, CSV export)
 
-   - Section 1: Case Package (explaining business context, problem statement)
-   - Section 2: Structured explanation of approach
+- An example is provided at the end.
 
+2. **Dataset**
 
-2. **Script for synthetic dataset**
+   - CSV file(s) containing the simulated data
 
-  - Python script to generate the dataset
+3. **Analytical notebook**
 
-    TODO: give examples / link to my own synthetic dataset scripts
-
-3. **Dataset**
-
-   - CSV file(s) containing the simulated data (synthetic but realistic)
-
-4. **Analytical Notebook (Python)**
-
+   - Jupyter Notebook containing all necessary steps for the analysis in Python and explanations in Markdown cells.
    - Full CRISP-DM pipeline
+
+4. **Report (max 15 pages)**
+
+    - Section 1: Case package (business context and motivation; problem statement and objectives; stakeholders and decision relevance; positioning in practice with references)
+    - Section 2: Analytical approach and key findings (overview of analytical approach; justification of suitability; selected key results without repeating the notebook; key business insights)
+    - Section 3: Reflection (assumptions; limitations of dataset and approach; ethical and deployment considerations; potential improvements and extensions)
 
 
 ### Evaluation Criteria
 
 A max of 60 points can be earned, adding to the final grade.
-Each group receives one grade.
+Everyone is expected to contribute equally and each group receives one grade per default.
+Document your contributions.
 
 <!--
   escalation procedure/how do we ensure fair contributions?
@@ -188,31 +207,19 @@ Each group receives one grade.
 
 | Category                              | Points | Criteria                                                                 |
 | ------------------------------------- | ------ | ------------------------------------------------------------------------ |
-| **A. Problem and case design**          | 15 pts | Relevance and clarity of business problem; Realism and quality of dataset design       |
-| **B. Methodological rigor**           | 20 pts | Proper use of CRISP-DM; Justification of methods; Correct implementation |
-| **C. Analysis quality**               | 15 pts | Insightfulness of results and interpretation             |
-| **D. Communication**                  | 5 pts  | Clarity, structure, visualizations                                       |
-| **E. Code quality** | 5 pts  | Clean, documented, runnable                                              |
-
+| **A. Case and dataset design**        | 15 pts | Relevance and clarity of the business problem; Realism and quality of dataset design; Transparency of the synthetic data generation process |
+| **B. Analysis quality**               | 20 pts | Justification of methods; Correctness of implementation; Proper use of CRISP-DM; Insightfulness of results and interpretation |
+| **C. Communication**                  | 20 pts | Clarity and structure; Quality of visualizations; Clean, documented, and runnable code; Compellingness of arguments; Appropriate use of references; Reflection on limitations and potential extensions |
+| **D. Advanced extension**             | 5 pts  | Implementation of an additional advanced feature or extension beyond the core requirements |
 
 Note: The applied methodology is more important for the evaluation than the absolute model performance.
 
-**Synthetic Data Requirement**
-
-- Must reflect realistic business data
-- Could include noise, missing values, duplicates
-- Must be documented in the script:
-
-  - How it was generated
-  - Assumptions (ideally with evidence)
-
-
+<!--
 **Difficulty Levels**
 
 - **Standard**: basic pipeline + one model
 - **Advanced**: focused extension in individual areas, such as specific data preparation challenge, interactive visualization, feature engineering, model refinement, advanced evaluation
 
-<!--
 Expectations (best grades: compelling motivation; instructive advanced analysis; strong contextualization and rationale)
 
 Link examples? - ask for consent before.
@@ -220,6 +227,7 @@ Link examples? - ask for consent before.
 
 ### AI policy
 
+- Allowed for generating the *synthetic dataset generation script*
 - Allowed for debugging, code explanations, documentation support
 - Not allowed to generate solutions
 - Students must explain and defend their work if needed.
@@ -231,7 +239,9 @@ TBD: share repository/directory and be prepared to answer questions on the analy
 
 ### Consultation and Support
 
-- See [Bookings]({{< var instructor.bookings_url >}}) and [teams]({{< var instructor.online_meeting_url >}}).
+- Book appointments via [Bookings]({{< var instructor.bookings_url >}}) and join via [teams]({{< var instructor.online_meeting_url >}}).
+
+Note: Availability will be limited from **2026-05-25 to 2026-06-01**. Please plan accordingly.
 
 ### Template
 
@@ -268,3 +278,60 @@ In such cases, we will discuss how contributions are acknowledged.
 <!--
 TBD: announce the option for co-authorship? (mentioning student co-authored papers, 25%?) - if this is something that will be published, I will reach out and you will have the opportunity to become a coauthor.
 -->
+
+## Example: Synthetic data generation script
+
+```python
+"""
+Synthetic dataset generation for [case name]
+
+Purpose:
+- Simulate [business scenario]
+
+Data schema:
+- age: numeric (years)
+- income: numeric (annual income in EUR)
+
+Generation logic:
+- Age is drawn from a normal distribution (mean=40, sd=10)
+- Income depends linearly on age with added noise
+
+Assumptions and justification:
+- Age distribution approximates working population demographics
+- Income increases with age due to experience (human capital theory)
+- Noise reflects unobserved heterogeneity in earnings
+- Missing values simulate incomplete records in real datasets
+
+References (if applicable):
+- [Add source, e.g., statistical office, industry report, or literature]
+"""
+
+import numpy as np
+import pandas as pd
+
+# Reproducibility
+SEED = 42
+np.random.seed(SEED)
+
+# 1. Define dataset size
+n = 1000
+
+# 2. Generate base variables
+age = np.random.normal(loc=40, scale=10, size=n)
+
+# 3. Define relationships
+income = age * 1000 + np.random.normal(loc=0, scale=5000, size=n)
+
+# 4. Add realism (missingness)
+missing_mask = np.random.rand(n) < 0.05
+income[missing_mask] = np.nan
+
+# 5. Create dataframe
+df = pd.DataFrame({
+    "age": age,
+    "income": income,
+})
+
+# 6. Export dataset
+df.to_csv("dataset.csv", index=False)
+```
