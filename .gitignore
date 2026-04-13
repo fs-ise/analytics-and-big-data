@@ -9,3 +9,5 @@ _site/
 **/*.quarto_ipynb
 data/.ipynb_checkpoints/*
 exercises/data/employee_performance_model.joblib
+
+*_files/
