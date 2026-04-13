@@ -4,17 +4,17 @@ format: html
 ---
 
 > In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection.
-> While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project focuses on business-relevant contexts such as management, finance, operations, or digital platforms.
-> To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations. This allows you not only to apply analytical methods, but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them.
+> While many analytics courses rely on publicly available datasets—often centered on societal questions—this project focuses on business-relevant contexts such as management, finance, operations, or digital platforms.
+> To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations. This allows you not only to apply analytical methods but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them.
 > In addition, you will address downstream challenges such as deployment considerations (e.g., implementation, ethics, and risks).
-> Your work should be grounded in suitable and reputable references (e.g., academic literature or industry reports) to demonstrate the relevance of the problem and to provide evidence that the analytical approach and dataset reflect realistic practices.
+> Your work should be grounded in appropriate and reputable references (e.g., academic literature or industry reports) to demonstrate the relevance of the problem and to provide evidence that the analytical approach and dataset reflect realistic practices.
 
 ## Objectives
 
 - Design a realistic business analytics scenario
 - Select and apply appropriate analytical models
-- Communicate results using CRISP-DM as a scaffold
-- Reflect critically on assumptions, limitations, and improvements
+- Communicate results using CRISP-DM as a structuring framework
+- Critically reflect on assumptions, limitations, and improvements
 
 ## Group formation
 
@@ -43,7 +43,7 @@ format: html
 
 ## Task
 
-- Select a business topic and question. Example domains include:
+- Select a business topic and formulate a concrete question. Example domains include:
 
   - Finance (e.g., credit default, fraud, customer lifetime value)
   - Marketing (e.g., churn, customer segmentation, campaign effectiveness)
@@ -51,9 +51,8 @@ format: html
   - Operations (e.g., demand forecasting, inventory optimization, supplier risk scoring)
   - Digital business (e.g., user engagement, gig worker retention, pricing strategy)
 
-- Create a synthetic but realistic dataset representing internal company data.
-
-  - You may complement this with synthetic or real external data if appropriate.
+- Create a synthetic but realistic dataset representing internal organizational data.
+  You may complement this with synthetic or real external data if appropriate.
 
 - Develop an analytical notebook following the CRISP-DM process:
 
@@ -75,7 +74,7 @@ format: html
   6. **Deployment**
      How would the model be implemented? What are the requirements, risks, and ethical considerations?
 
-- Develop a report that reflects on the case, including:
+- Develop a report that presents and critically reflects on the case, including:
 
   - What can be learned from the case
   - How it connects to or extends course content
@@ -90,7 +89,7 @@ format: html
 
 ::: {.callout-note title="Notes"}
 
-- Support key elements of your analysis with reputable sources, especially for:
+- Support key elements of your analysis with reputable sources, particularly for:
 
   - Problem relevance
   - Typical data sources
@@ -153,7 +152,6 @@ format: html
 
 ```{mermaid}
 gantt
-    title Proposed timeline
     dateFormat  YYYY-MM-DD
     excludes    weekends
 
@@ -181,7 +179,7 @@ gantt
     - Defines the data schema (variables)
     - Implements data generation logic (distributions and relationships)
     - Includes realism features (e.g., noise, missing values, duplicates)
-    - States key assumptions (with justification where possible)
+    - States key assumptions and provides justification (where possible)
     - Produces reproducible output (fixed random seed, CSV export)
 
 2. **Dataset**
@@ -235,7 +233,7 @@ A maximum of **60 points** can be earned.
 | **C. Communication**           | 20 pts | Structure; visualization; clean code; argument quality; use of references; reflection |
 | **D. Advanced extension**      | 5 pts  | Meaningful additional feature beyond core requirements                                |
 
-**Note:** The applied methodology and reasoning are more important than achieving the best possible model performance.
+**Note:** The applied methodology and reasoning are more important than achieving the highest possible model performance.
 
 <!--
 **Difficulty Levels**
@@ -258,7 +256,7 @@ Link examples? - ask for consent before.
 
 - Not allowed:
 
-  - Generating full solutions
+  - Generating complete end-to-end solutions
 
 - You must be able to explain and defend your work at any time.
 - All outputs must be validated.
@@ -306,7 +304,7 @@ Inspiration
 
 
 ::: {.callout-note title="Note"}
-High-quality project work may contribute to future course development—for example, by extending teaching materials or informing teaching cases.
+High-quality project work may contribute to future course development, for example by extending teaching materials or informing teaching cases.
 In such cases, we will discuss how contributions are acknowledged.
 :::
 
