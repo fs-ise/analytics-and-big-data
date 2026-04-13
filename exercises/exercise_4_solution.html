@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="task-a1-fit-a-regression-model-with-scikit-learn" class="level2">
 <h2 class="anchored" data-anchor-id="task-a1-fit-a-regression-model-with-scikit-learn">Task A1: Fit a regression model with <code>scikit-learn</code></h2>
-<div id="9a4554e6" class="cell" data-execution_count="4">
+<div id="e7fa02ac" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># One-hot encode the department variable</span></span>
@@ -207,7 +207,7 @@ Intercept: 45.630943483089595</code></pre>
 <h1>Part B — Regression tables with <code>statsmodels</code> <a id="statsmodels" href=""></a></h1>
 <section id="task-b1-estimate-the-same-model-with-statsmodels" class="level2">
 <h2 class="anchored" data-anchor-id="task-b1-estimate-the-same-model-with-statsmodels">Task B1: Estimate the same model with <code>statsmodels</code></h2>
-<div id="bfe8a9d2" class="cell" data-execution_count="6">
+<div id="4ba8c152" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the regression model using a formula</span></span>
@@ -225,7 +225,7 @@ Dep. Variable:            performance   R-squared:                       0.816
 Model:                            OLS   Adj. R-squared:                  0.814
 Method:                 Least Squares   F-statistic:                     768.8
 Date:                Mon, 13 Apr 2026   Prob (F-statistic):               0.00
-Time:                        09:42:26   Log-Likelihood:                -5207.8
+Time:                        10:54:21   Log-Likelihood:                -5207.8
 No. Observations:                1400   AIC:                         1.043e+04
 Df Residuals:                    1391   BIC:                         1.048e+04
 Df Model:                           8                                         
@@ -300,7 +300,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section id="task-c1-residual-plot" class="level2">
 <h2 class="anchored" data-anchor-id="task-c1-residual-plot">Task C1: Residual plot</h2>
 <p>Create a simple residual plot for the fitted <code>scikit-learn</code> model from part A.</p>
-<div id="f6b932bb" class="cell" data-execution_count="8">
+<div id="1c169781" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>residuals <span class="op">=</span> y <span class="op">-</span> model.predict(X)</span>
@@ -342,7 +342,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section id="task-d1-department-specific-regressions" class="level2">
 <h2 class="anchored" data-anchor-id="task-d1-department-specific-regressions">Task D1: Department-specific regressions</h2>
 <p>Estimate separate regressions for <code>Sales</code>, <code>IT</code>, and <code>HR</code>.</p>
-<div id="7cee160e" class="cell" data-execution_count="10">
+<div id="4b504e31" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
@@ -375,7 +375,7 @@ Dep. Variable:            performance   R-squared:                       0.806
 Model:                            OLS   Adj. R-squared:                  0.804
 Method:                 Least Squares   F-statistic:                     392.3
 Date:                Mon, 13 Apr 2026   Prob (F-statistic):          5.90e-198
-Time:                        09:42:26   Log-Likelihood:                -2099.4
+Time:                        10:54:21   Log-Likelihood:                -2099.4
 No. Observations:                 573   AIC:                             4213.
 Df Residuals:                     566   BIC:                             4243.
 Df Model:                           6                                         
@@ -409,7 +409,7 @@ Dep. Variable:            performance   R-squared:                       0.786
 Model:                            OLS   Adj. R-squared:                  0.782
 Method:                 Least Squares   F-statistic:                     173.0
 Date:                Mon, 13 Apr 2026   Prob (F-statistic):           1.88e-91
-Time:                        09:42:26   Log-Likelihood:                -1072.5
+Time:                        10:54:21   Log-Likelihood:                -1072.5
 No. Observations:                 289   AIC:                             2159.
 Df Residuals:                     282   BIC:                             2185.
 Df Model:                           6                                         
@@ -443,7 +443,7 @@ Dep. Variable:            performance   R-squared:                       0.803
 Model:                            OLS   Adj. R-squared:                  0.801
 Method:                 Least Squares   F-statistic:                     361.3
 Date:                Mon, 13 Apr 2026   Prob (F-statistic):          8.13e-184
-Time:                        09:42:26   Log-Likelihood:                -2010.0
+Time:                        10:54:21   Log-Likelihood:                -2010.0
 No. Observations:                 538   AIC:                             4034.
 Df Residuals:                     531   BIC:                             4064.
 Df Model:                           6                                         
@@ -525,7 +525,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <p>Here, it is included as an optional extension after you have already worked through model estimation, interpretation, diagnostics, and subgroup analysis.</p>
 <section id="task-e1-optional-save-a-fitted-model" class="level2">
 <h2 class="anchored" data-anchor-id="task-e1-optional-save-a-fitted-model">Task E1 (optional): Save a fitted model</h2>
-<div id="ee7a2d04" class="cell" data-execution_count="12">
+<div id="5e70fe2f" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the fitted sklearn model</span></span>
@@ -538,7 +538,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </section>
 <section id="task-e2-optional-load-the-model-and-predict-a-new-case" class="level2">
 <h2 class="anchored" data-anchor-id="task-e2-optional-load-the-model-and-predict-a-new-case">Task E2 (optional): Load the model and predict a new case</h2>
-<div id="4befdf15" class="cell" data-execution_count="14">
+<div id="b837c734" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>

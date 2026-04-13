@@ -110,17 +110,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -152,6 +141,17 @@ div.callout-self-service.callout-style-default > .callout-header {
 div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
   content: '🛠️';
+  background-image: none;
+}
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 </style>
@@ -242,39 +242,28 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>TODO:</p>
-<ul>
-<li>Code: Must run and reproduce.</li>
-<li>Consult when focusing onf Big Data. Do Not do feed (real-time) data.</li>
-<li>Consistently use “you” or “students”</li>
-<li>Check for incomplete sentences/spelling (e.g., end of summary)</li>
-<li>group formation: we will create groups in class. if not present: send me an email</li>
-<li>polish the “document your contributions paragraph”</li>
-<li>templates</li>
-</ul>
 <blockquote class="blockquote">
-<p>In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection. While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project focuses on business-relevant contexts such as management, finance, operations, or digital platforms. To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations. This allows you not only to apply analytical methods, but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them. Also: downstream challenge of deployment (e.g., ethics, …) Using suitable/reputable references to illustrate the prevalence/significance of the problem, and to show evidence that the proposed analytical approach and dataset is “typical” in practice</p>
+<p>In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection. While many analytics courses rely on publicly available datasets—often centered on societal questions—this project focuses on business-relevant contexts such as management, finance, operations, or digital platforms. To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations. This allows you not only to apply analytical methods but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them. In addition, you will address downstream challenges such as deployment considerations (e.g., implementation, ethics, and risks). Your work should be grounded in appropriate and reputable references (e.g., academic literature or industry reports) to demonstrate the relevance of the problem and to provide evidence that the analytical approach and dataset reflect realistic practices.</p>
 </blockquote>
-<p><strong>Objectives</strong></p>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <ul>
 <li>Design a realistic business analytics scenario</li>
 <li>Select and apply appropriate analytical models</li>
-<li>Communicate results using CRISP-DM as a scaffold</li>
-<li>Reflect on limitations and improvements</li>
+<li>Communicate results using CRISP-DM as a structuring framework</li>
+<li>Critically reflect on assumptions, limitations, and improvements</li>
 </ul>
 </section>
-<section id="project-overview" class="level2">
-<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
-<section id="group-formation" class="level3">
-<h3 class="anchored" data-anchor-id="group-formation">Group Formation</h3>
+<section id="group-formation" class="level2">
+<h2 class="anchored" data-anchor-id="group-formation">Group formation</h2>
 <ul>
-<li>The target group size is 4 students. We will select two groups with 5 students in a fair procedure. Groups with 5 students are expected to submit a more comprehensive case (+25%).</li>
-<li>Once you know your group, create or join the group in the <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a>.</li>
+<li>The target group size is 4 participants.</li>
+<li>We will form groups during class sessions.</li>
+<li>If you are not present, you must send me an email so that I can assign you to a group.</li>
+<li>We will select two groups with 5 participants using a fair and transparent procedure. Groups with 5 participants are expected to submit a more comprehensive case (+25%).</li>
+<li>Once your group is formed, you should create or join your group in the Canvas assignment: <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a></li>
 </ul>
 <!--
-
 - If you have formed a group, please **send me an email** with the names and email addresses of all group members.
 - Groups of 4 will be **automatically accepted**.
 - If you are not yet in a group, you can still participate: the **allocation of remaining students will take place during a session** (not after the deadline).
@@ -289,10 +278,10 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 - Based on the applications, the groups are arranged and projects are assigned.
 -->
 </section>
-<section id="task" class="level3">
-<h3 class="anchored" data-anchor-id="task">Task</h3>
+<section id="task" class="level2">
+<h2 class="anchored" data-anchor-id="task">Task</h2>
 <ul>
-<li><p>Select a topic and business question. Topics could include:</p>
+<li><p>Select a business topic and formulate a concrete question. Example domains include:</p>
 <ul>
 <li>Finance (e.g., credit default, fraud, customer lifetime value)</li>
 <li>Marketing (e.g., churn, customer segmentation, campaign effectiveness)</li>
@@ -300,17 +289,23 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 <li>Operations (e.g., demand forecasting, inventory optimization, supplier risk scoring)</li>
 <li>Digital business (e.g., user engagement, gig worker retention, pricing strategy)</li>
 </ul></li>
-<li><p>Create a synthetic but realistic dataset to simulate internal company data. This could be complemented by synthetic or real external data.</p></li>
-<li><p>Prepare an analytical notebook, following the <strong>CRISP-DM process</strong>, covering:</p>
+<li><p>Create a synthetic but realistic dataset representing internal organizational data. You may complement this with synthetic or real external data if appropriate.</p></li>
+<li><p>Develop an analytical notebook following the CRISP-DM process:</p>
 <ol type="1">
-<li>Business Understanding <em>(What is the business context? What is the concrete question? Who are the stakeholders? Why is it interesting?)</em></li>
-<li>Data Understanding <em>(What does the dataset contain? How does it reflect a realistic business setting? What do you observe in the EDA?)</em></li>
-<li>Data Preparation <em>(How is the data cleaned and transformed? What features are created? How is the data split?)</em></li>
-<li>Modeling <em>(Which model is used? How is it trained? Why does it fit the problem?)</em></li>
-<li>Evaluation <em>(Which metrics are used? How well does the model perform? What do the results mean in practice?)</em></li>
-<li>Deployment <em>(How would the model be implemented in practice? What inputs/outputs are required? What are key limitations or risks?)</em></li>
+<li><p><strong>Business understanding</strong> What is the context, the concrete question, and the decision relevance? Who are the stakeholders?</p></li>
+<li><p><strong>Data understanding</strong> What does the dataset contain? How does it reflect a realistic business setting? What insights emerge from EDA?</p></li>
+<li><p><strong>Data preparation</strong> How is the data cleaned, transformed, and enriched? What features are created?</p></li>
+<li><p><strong>Modeling</strong> Which model is used and why? How is it trained?</p></li>
+<li><p><strong>Evaluation</strong> Which metrics are used? How should the results be interpreted in practice?</p></li>
+<li><p><strong>Deployment</strong> How would the model be implemented? What are the requirements, risks, and ethical considerations?</p></li>
 </ol></li>
-<li><p>Develop a report to reflect on the case (what students will learn/specific challenge; how it illustrates and complements materials covered in the lecture; what its simplyfying assumptions or limitations are; how it extends existing work; potential for improvement)</p></li>
+<li><p>Develop a report that presents and critically reflects on the case, including:</p>
+<ul>
+<li>What can be learned from the case</li>
+<li>How it connects to or extends course content</li>
+<li>Simplifying assumptions and limitations</li>
+<li>Opportunities for improvement</li>
+</ul></li>
 </ul>
 <!--
   - Select and apply analytical models and procedures covered in the lecture.
@@ -328,27 +323,30 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Support key elements of your analysis with <strong>reputable sources</strong> (industry reports or academic literature), especially for:</p>
+<li><p>Support key elements of your analysis with reputable sources, particularly for:</p>
 <ul>
-<li>problem relevance</li>
-<li>typical data structures</li>
-<li>common modeling approaches</li>
+<li>Problem relevance</li>
+<li>Typical data sources</li>
+<li>Common modeling approaches</li>
 </ul></li>
-<li><p><strong>Simplification is acceptable</strong>. If a problem would typically require more advanced methods (e.g., reinforcement learning), you may use a simpler, well-justified approach.</p></li>
-<li><p><strong>Advanced extensions</strong>, optional for stronger projects, may include:</p>
+<li><p>Simplifications are acceptable, provided they are clearly justified.</p></li>
+<li><p>Advanced extensions (optional) may include:</p>
 <ul>
-<li>advanced data preparation or feature engineering</li>
-<li>model comparison or refinement</li>
-<li>robustness checks or extended evaluation</li>
-<li>interactive visualizations</li>
-<li>more detailed deployment considerations</li>
+<li>Advanced dataset preparation</li>
+<li>Model comparison or refinement</li>
+<li>Robustness checks</li>
+<li>Interactive visualizations</li>
+<li>More detailed deployment considerations</li>
 </ul></li>
+<li><p>Your code must run and reproduce your results. Submissions that are not reproducible will be penalized.</p></li>
+<li><p>If you plan to work with large-scale (big data) scenarios, you must consult with me in advance.</p></li>
+<li><p>You are strongly advised not to focus on real-time or streaming data, as this is difficult to implement and evaluate within a notebook-based project.</p></li>
 </ul>
 </div>
 </div>
 </section>
-<section id="project-timeline" class="level3">
-<h3 class="anchored" data-anchor-id="project-timeline">Project Timeline</h3>
+<section id="project-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="project-timeline">Project timeline</h2>
 <div class="callout callout-style-default callout-important callout-titled" title="Important dates">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -367,34 +365,34 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </div>
 </div>
 </section>
-<section id="proposed-timeline" class="level3">
-<h3 class="anchored" data-anchor-id="proposed-timeline">Proposed Timeline</h3>
-<p><strong>Week 1 – Topic Selection</strong></p>
+<section id="proposed-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="proposed-timeline">Proposed timeline</h2>
+<p><strong>Week 1 – Topic selection</strong></p>
 <ul>
-<li>Define and align on your project topic</li>
-<li>Share your topic via e-mail by the end of Week 1</li>
-<li>Groups that focus on the same topic will be asekd to refocus</li>
+<li>Define and align on your topic</li>
+<li>Share your topic via email by the end of Week 1</li>
+<li>If multiple groups choose very similar topics, you will be asked to refine your focus</li>
 </ul>
-<p><strong>Weeks 2–4 – Iterative Development</strong></p>
+<p><strong>Weeks 2–4 – Iterative development</strong></p>
 <ul>
 <li><p>Develop and refine:</p>
 <ul>
-<li>Problem framing &amp; assumptions</li>
-<li>Synthetic dataset and structure</li>
-<li>Notebook (EDA + modeling)</li>
+<li>Problem framing and assumptions</li>
+<li>Dataset design and structure</li>
+<li>Notebook (EDA and modeling)</li>
 </ul></li>
 <li><p>Iterate between data design, analysis, and modeling</p></li>
-<li><p>Gradually improve coherence and realism of the case</p></li>
+<li><p>Improve coherence and realism step by step</p></li>
 </ul>
 <p><strong>Week 5 – Refinement</strong></p>
 <ul>
 <li>Strengthen analysis and interpretation</li>
-<li>Optional: add an advanced extension</li>
+<li>Optionally include an advanced extension</li>
 </ul>
 <p><strong>Week 6 – Finalization</strong></p>
 <ul>
-<li>Ensure clarity, reproducibility, and communication quality</li>
-<li>Final submission via Canvas (see deliverables)</li>
+<li>Ensure clarity, reproducibility, and quality of communication</li>
+<li>Submit all deliverables via Canvas</li>
 </ul>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -402,21 +400,20 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">gantt
-    title Proposed dimeline
     dateFormat  YYYY-MM-DD
     excludes    weekends
 
     section Setup
     Topic selection                  :active, 2026-04-14, 7d
 
-    section Iterative Development
+    section Iterative development
     Data, EDA, modeling (iterative)  : 2026-04-21, 18d
 
     section Refinement
     Refinement                       :2026-05-12, 7d
 
     section Finalization
-    Final report &amp; submission        :2026-05-19, 9d
+    Final report and submission        :2026-05-19, 9d
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -424,84 +421,98 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </div>
 </div>
 </section>
-<section id="deliverables" class="level3">
-<h3 class="anchored" data-anchor-id="deliverables">Deliverables</h3>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
 <ol type="1">
-<li><strong>Synthetic dataset generation script</strong></li>
-</ol>
+<li><p><strong>Synthetic dataset generation script</strong></p>
+<p>A Python script that:</p>
 <ul>
-<li><p>Python script to generate the dataset (well-structured and executable), including:</p>
-<ul>
-<li>Brief description of purpose and business context (docstring)</li>
-<li>Definition of variables (schema)</li>
-<li>Data generation logic (distributions, relationships)</li>
-<li>Realism features (e.g., noise, missing values, duplicates)</li>
-<li>Key assumptions (with justification where possible)</li>
-<li>Reproducible output (fixed seed, CSV export)</li>
+<li>Clearly documents the business context and purpose (docstring)</li>
+<li>Defines the data schema (variables)</li>
+<li>Implements data generation logic (distributions and relationships)</li>
+<li>Includes realism features (e.g., noise, missing values, duplicates)</li>
+<li>States key assumptions and provides justification (where possible)</li>
+<li>Produces reproducible output (fixed random seed, CSV export)</li>
 </ul></li>
-<li><p>An example is provided at the end.</p></li>
-</ul>
-<ol start="2" type="1">
 <li><p><strong>Dataset</strong></p>
 <ul>
 <li>CSV file(s) containing the simulated data</li>
 </ul></li>
 <li><p><strong>Analytical notebook</strong></p>
+<p>A <em>Jupyter Notebook</em> that:</p>
 <ul>
-<li>Jupyter Notebook containing all necessary steps for the analysis in Python and explanations in Markdown cells.</li>
-<li>Full CRISP-DM pipeline</li>
+<li>Covers the full CRISP-DM pipeline</li>
+<li>Includes explanations in Markdown</li>
+<li>Is fully executable and reproducible</li>
 </ul></li>
 <li><p><strong>Report (max 15 pages)</strong></p>
+<p><strong>Section 1: Case package</strong></p>
 <ul>
-<li>Section 1: Case package (business context and motivation; problem statement and objectives; stakeholders and decision relevance; positioning in practice with references)</li>
-<li>Section 2: Analytical approach and key findings (overview of analytical approach; justification of suitability; selected key results without repeating the notebook; key business insights)</li>
-<li>Section 3: Reflection (assumptions; limitations of dataset and approach; ethical and deployment considerations; potential improvements and extensions)</li>
+<li>Business context and motivation</li>
+<li>Problem statement and objectives</li>
+<li>Stakeholders and decision relevance</li>
+<li>Positioning in practice (with references)</li>
+</ul>
+<p><strong>Section 2: Analytical approach and key findings</strong></p>
+<ul>
+<li>Overview and justification of the analytical approach</li>
+<li>Selected key results (do not duplicate the notebook)</li>
+<li>Key business insights</li>
+</ul>
+<p><strong>Section 3: Reflection</strong></p>
+<ul>
+<li>Assumptions</li>
+<li>Limitations of dataset and approach</li>
+<li>Ethical and deployment considerations</li>
+<li>Potential improvements and extensions</li>
 </ul></li>
 </ol>
 </section>
-<section id="evaluation-criteria" class="level3">
-<h3 class="anchored" data-anchor-id="evaluation-criteria">Evaluation Criteria</h3>
-<p>A max of 60 points can be earned, adding to the final grade. Everyone is expected to contribute equally and each group receives one grade per default. Document your contributions.</p>
-<!--
-  escalation procedure/how do we ensure fair contributions?
--->
+<section id="evaluation-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-criteria">Evaluation criteria</h2>
+<p>A maximum of <strong>60 points</strong> can be earned.</p>
+<ul>
+<li>Each group receives a single grade.</li>
+<li>You are expected to contribute equally.</li>
+<li>You must document your individual contributions clearly and transparently. In case of disputes, you should be prepared to provide evidence of your contributions.</li>
+</ul>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 32%">
-<col style="width: 5%">
-<col style="width: 62%">
+<col style="width: 6%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Category</th>
-<th>Points</th>
+<th style="text-align: right;">Points</th>
 <th>Criteria</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>A. Case and dataset design</strong></td>
-<td>15 pts</td>
-<td>Relevance and clarity of the business problem; Realism and quality of dataset design; Transparency of the synthetic data generation process</td>
+<td style="text-align: right;">15 pts</td>
+<td>Clarity and relevance of problem; realism of dataset; transparency of data generation</td>
 </tr>
 <tr class="even">
 <td><strong>B. Analysis quality</strong></td>
-<td>20 pts</td>
-<td>Justification of methods; Correctness of implementation; Proper use of CRISP-DM; Insightfulness of results and interpretation</td>
+<td style="text-align: right;">20 pts</td>
+<td>Method justification; correctness; CRISP-DM use; insightfulness</td>
 </tr>
 <tr class="odd">
 <td><strong>C. Communication</strong></td>
-<td>20 pts</td>
-<td>Clarity and structure; Quality of visualizations; Clean, documented, and runnable code; Compellingness of arguments; Appropriate use of references; Reflection on limitations and potential extensions</td>
+<td style="text-align: right;">20 pts</td>
+<td>Structure; visualization; clean code; argument quality; use of references; reflection</td>
 </tr>
 <tr class="even">
 <td><strong>D. Advanced extension</strong></td>
-<td>5 pts</td>
-<td>Implementation of an additional advanced feature or extension beyond the core requirements</td>
+<td style="text-align: right;">5 pts</td>
+<td>Meaningful additional feature beyond core requirements</td>
 </tr>
 </tbody>
 </table>
-<p>Note: The applied methodology is more important for the evaluation than the absolute model performance.</p>
+<p><strong>Note:</strong> The applied methodology and reasoning are more important than achieving the highest possible model performance.</p>
 <!--
 **Difficulty Levels**
 
@@ -513,34 +524,47 @@ Expectations (best grades: compelling motivation; instructive advanced analysis;
 Link examples? - ask for consent before.
 -->
 </section>
-<section id="ai-policy" class="level3">
-<h3 class="anchored" data-anchor-id="ai-policy">AI policy</h3>
+<section id="ai-policy" class="level2">
+<h2 class="anchored" data-anchor-id="ai-policy">AI policy</h2>
 <ul>
-<li>Allowed for generating the <em>synthetic dataset generation script</em></li>
-<li>Allowed for debugging, code explanations, documentation support</li>
-<li>Not allowed to generate solutions</li>
-<li>Students must explain and defend their work if needed. Everything must be validated.</li>
+<li><p>Allowed:</p>
+<ul>
+<li>Generating dataset scripts</li>
+<li>Debugging and explaining code</li>
+<li>Documentation support</li>
+</ul></li>
+<li><p>Not allowed:</p>
+<ul>
+<li>Generating complete end-to-end solutions</li>
+</ul></li>
+<li><p>You must be able to explain and defend your work at any time.</p></li>
+<li><p>All outputs must be validated.</p></li>
 </ul>
 <!--
 TBD: share repository/directory and be prepared to answer questions on the analysis at any time (-> LLMs)
 -->
 </section>
-<section id="consultation-and-support" class="level3">
-<h3 class="anchored" data-anchor-id="consultation-and-support">Consultation and Support</h3>
+<section id="consultation-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="consultation-and-support">Consultation and support</h2>
 <ul>
-<li>Book appointments via <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">Bookings</a> and join via <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">teams</a>.</li>
+<li>Book appointments via: <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">Bookings</a></li>
+<li>Join meetings via: <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">Teams</a></li>
 </ul>
-<p>Note: Availability will be limited from <strong>2026-05-25 to 2026-06-01</strong>. Please plan accordingly.</p>
+<p><strong>Note:</strong> Availability will be limited from <strong>2026-05-25 to 2026-06-01</strong>. Please plan accordingly.</p>
 </section>
-<section id="template" class="level3">
-<h3 class="anchored" data-anchor-id="template">Template</h3>
+<section id="template" class="level2">
+<h2 class="anchored" data-anchor-id="template">Template</h2>
 <ul>
-<li>Report template</li>
-<li>Notebook structure</li>
+<li><a href="assets/report_template.docx">Report template</a></li>
 </ul>
+<!--
+https://monroeuniversity.libguides.com/APA
+
+- Notebook structure
+-->
 </section>
-<section id="submission" class="level3">
-<h3 class="anchored" data-anchor-id="submission">Submission</h3>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
 <p>Via <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a>.</p>
 <!--
 ### C. Common Pitfalls Section (very effective pedagogically)
@@ -567,13 +591,12 @@ Inspiration
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>High-quality project work may contribute to future course development—for example, by extending teaching materials or informing teaching cases. In such cases, we will discuss how contributions are acknowledged.</p>
+<p>High-quality project work may contribute to future course development, for example by extending teaching materials or informing teaching cases. In such cases, we will discuss how contributions are acknowledged.</p>
 </div>
 </div>
 <!--
 TBD: announce the option for co-authorship? (mentioning student co-authored papers, 25%?) - if this is something that will be published, I will reach out and you will have the opportunity to become a coauthor.
 -->
-</section>
 </section>
 <section id="example-synthetic-data-generation-script" class="level2">
 <h2 class="anchored" data-anchor-id="example-synthetic-data-generation-script">Example: Synthetic data generation script</h2>
