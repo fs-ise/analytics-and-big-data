@@ -222,16 +222,20 @@ y_class = int(p >= 0.5)
 p, y_class
 ```
 
-With a predicted probability of 46.8%, the observation would be classified as **“no default”** under a 50% threshold.
+With a predicted probability of 46.8%, the observation would be classified as “no default” under a 50% threshold.
 
 :::
 
 # Part 2 — Probabilities and thresholds
 
+::: {.direction}
+
 In this part, we move from model coefficients to **predicted probabilities and classification decisions**.
 
 Logistic regression outputs probabilities, which must be converted into classes using a **threshold**.  
 The threshold directly affects business outcomes: lowering it increases approvals (but also defaults), while raising it reduces risk (but may reject good customers).
+
+:::
 
 ### Task 2.1 — Understanding outputs
 
@@ -687,7 +691,7 @@ roc_auc_B = auc(fpr_B, tpr_B)
 roc_auc, roc_auc_B
 ```
 
-- Higher AUC → easier classification
+- Higher AUC → better ability to distinguish defaults from non-defaults
 
 :::
 
