@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -75,15 +110,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 div.callout-objective.callout {
@@ -97,17 +132,6 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -117,6 +141,17 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 </style>
@@ -209,15 +244,24 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>TODO:</p>
+<ul>
+<li>Code: Must run and reproduce.</li>
+<li>Consult when focusing onf Big Data. Do Not do feed (real-time) data.</li>
+<li>Consistently use “you” or “students”</li>
+<li>Check for incomplete sentences/spelling (e.g., end of summary)</li>
+<li>group formation: we will create groups in class. if not present: send me an email</li>
+<li>polish the “document your contributions paragraph”</li>
+<li>templates</li>
+</ul>
 <blockquote class="blockquote">
-<p>In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection. While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project takes a different approach. We focus on business-relevant contexts such as management, finance, operations, or digital platforms that are more directly aligned with your future professional environments. To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations. This allows you not only to apply analytical methods, but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them. Also: downstream challenge of deployment (e.g., ethics, …) Using suitable/reputable references to illustrate the prevalence/significance of the problem, and to show evidence that the proposed analytical approach and dataset is “typical” in practice</p>
+<p>In this group project, you will develop and analyze a realistic business analytics case, including data, modeling, and critical reflection. While many analytics courses rely on publicly available datasets—often centered on societal or general-purpose questions—this project focuses on business-relevant contexts such as management, finance, operations, or digital platforms. To achieve this, you will design and work with synthetic datasets that reflect realistic organizational processes and decision situations. This allows you not only to apply analytical methods, but also to engage with the upstream challenge of framing meaningful problems and constructing data that captures them. Also: downstream challenge of deployment (e.g., ethics, …) Using suitable/reputable references to illustrate the prevalence/significance of the problem, and to show evidence that the proposed analytical approach and dataset is “typical” in practice</p>
 </blockquote>
 <p><strong>Objectives</strong></p>
 <ul>
-<li>Design and analyze realistic business data scenarios</li>
-<li>Select and justify appropriate analytical methods</li>
-<li>Communicate results to technical and non-technical audiences</li>
-<li>Apply the CRISP-DM process as a scaffold</li>
+<li>Design a realistic business analytics scenario</li>
+<li>Select and apply appropriate analytical models</li>
+<li>Communicate results using CRISP-DM as a scaffold</li>
 <li>Reflect on limitations and improvements</li>
 </ul>
 </section>
@@ -254,17 +298,17 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <li>Marketing (e.g., churn, customer segmentation, campaign effectiveness)</li>
 <li>Human Resources (e.g., attrition, promotion, team productivity)</li>
 <li>Operations (e.g., demand forecasting, inventory optimization, supplier risk scoring)</li>
-<li>Digital business (e.g., user engagement prediction, gig worker retention, pricing strategy simulation)</li>
+<li>Digital business (e.g., user engagement, gig worker retention, pricing strategy)</li>
 </ul></li>
 <li><p>Create a synthetic but realistic dataset to simulate internal company data. This could be complemented by synthetic or real external data.</p></li>
-<li><p>Prepare an analytical notebook, following the <strong>CRISP-DM process</strong>:</p>
+<li><p>Prepare an analytical notebook, following the <strong>CRISP-DM process</strong>, covering:</p>
 <ol type="1">
-<li>Business Understanding <em>(What is the business context? What is the concrete question? Who are the stakeholders? Why does it matter?)</em></li>
+<li>Business Understanding <em>(What is the business context? What is the concrete question? Who are the stakeholders? Why is it interesting?)</em></li>
 <li>Data Understanding <em>(What does the dataset contain? How does it reflect a realistic business setting? What do you observe in the EDA?)</em></li>
 <li>Data Preparation <em>(How is the data cleaned and transformed? What features are created? How is the data split?)</em></li>
 <li>Modeling <em>(Which model is used? How is it trained? Why does it fit the problem?)</em></li>
-<li>Evaluation <em>(Which metrics are used? How well does the model perform? What do the results mean in business terms?)</em></li>
-<li>Deployment <em>(How would the model be used in practice? What inputs/outputs are required? What are key limitations or risks?)</em></li>
+<li>Evaluation <em>(Which metrics are used? How well does the model perform? What do the results mean in practice?)</em></li>
+<li>Deployment <em>(How would the model be implemented in practice? What inputs/outputs are required? What are key limitations or risks?)</em></li>
 </ol></li>
 <li><p>Develop a report to reflect on the case (what students will learn/specific challenge; how it illustrates and complements materials covered in the lecture; what its simplyfying assumptions or limitations are; how it extends existing work; potential for improvement)</p></li>
 </ul>
@@ -290,12 +334,13 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <li>typical data structures</li>
 <li>common modeling approaches</li>
 </ul></li>
-<li><p>Simplification is acceptable. If a problem would typically require more advanced methods (e.g., reinforcement learning), you may use a simpler, well-justified approach.</p></li>
-<li><p>Optional extensions (for stronger projects) may include:</p>
+<li><p><strong>Simplification is acceptable</strong>. If a problem would typically require more advanced methods (e.g., reinforcement learning), you may use a simpler, well-justified approach.</p></li>
+<li><p><strong>Advanced extensions</strong>, optional for stronger projects, may include:</p>
 <ul>
 <li>advanced data preparation or feature engineering</li>
 <li>model comparison or refinement</li>
 <li>robustness checks or extended evaluation</li>
+<li>interactive visualizations</li>
 <li>more detailed deployment considerations</li>
 </ul></li>
 </ul>
@@ -304,20 +349,31 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </section>
 <section id="project-timeline" class="level3">
 <h3 class="anchored" data-anchor-id="project-timeline">Project Timeline</h3>
+<div class="callout callout-style-default callout-important callout-titled" title="Important dates">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Important dates
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Start: 2026-04-14<br>
+<li>Start: <strong>2026-04-14</strong><br>
 </li>
-<li>Deadline: 2026-05-30</li>
+<li>Deadline: <strong>2026-05-30</strong></li>
 </ul>
-<p>Note: GW: limited availability in the last week (2026-05-25 to 2026-06-01)</p>
+</div>
+</div>
 </section>
-<section id="suggested-timeline" class="level3">
-<h3 class="anchored" data-anchor-id="suggested-timeline">Suggested Timeline</h3>
+<section id="proposed-timeline" class="level3">
+<h3 class="anchored" data-anchor-id="proposed-timeline">Proposed Timeline</h3>
 <p><strong>Week 1 – Topic Selection</strong></p>
 <ul>
 <li>Define and align on your project topic</li>
-<li>Short proposal (≈1 page)</li>
-<li><em>Instructor check to ensure sufficient differentiation across groups</em></li>
+<li>Share your topic via e-mail by the end of Week 1</li>
+<li>Groups that focus on the same topic will be asekd to refocus</li>
 </ul>
 <p><strong>Weeks 2–4 – Iterative Development</strong></p>
 <ul>
@@ -333,12 +389,12 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <p><strong>Week 5 – Refinement</strong></p>
 <ul>
 <li>Strengthen analysis and interpretation</li>
-<li>Optional: add an advanced component (e.g., alternative model, robustness check, extension)</li>
+<li>Optional: add an advanced extension</li>
 </ul>
 <p><strong>Week 6 – Finalization</strong></p>
 <ul>
-<li>Final report and code submission</li>
 <li>Ensure clarity, reproducibility, and communication quality</li>
+<li>Final submission via Canvas (see deliverables)</li>
 </ul>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -346,20 +402,21 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">gantt
-    title Timeline
+    title Proposed dimeline
     dateFormat  YYYY-MM-DD
+    excludes    weekends
 
     section Setup
     Topic selection                  :active, 2026-04-14, 7d
 
     section Iterative Development
-    Data, EDA, modeling (iterative)  : 2026-04-21, 21d
+    Data, EDA, modeling (iterative)  : 2026-04-21, 18d
 
     section Refinement
     Refinement                       :2026-05-12, 7d
 
     section Finalization
-    Final report &amp; submission        :2026-05-19, 11d
+    Final report &amp; submission        :2026-05-19, 9d
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -369,33 +426,42 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </section>
 <section id="deliverables" class="level3">
 <h3 class="anchored" data-anchor-id="deliverables">Deliverables</h3>
-<p>All necessary steps for the analysis should be performed in Python.</p>
 <ol type="1">
-<li><p><strong>Report (max 10 pages)</strong></p>
-<ul>
-<li>Section 1: Case Package (explaining business context, problem statement)</li>
-<li>Section 2: Structured explanation of approach</li>
-</ul></li>
-<li><p><strong>Script for synthetic dataset</strong></p></li>
+<li><strong>Synthetic dataset generation script</strong></li>
 </ol>
 <ul>
-<li><p>Python script to generate the dataset</p>
-<p>TODO: give examples / link to my own synthetic dataset scripts</p></li>
+<li><p>Python script to generate the dataset (well-structured and executable), including:</p>
+<ul>
+<li>Brief description of purpose and business context (docstring)</li>
+<li>Definition of variables (schema)</li>
+<li>Data generation logic (distributions, relationships)</li>
+<li>Realism features (e.g., noise, missing values, duplicates)</li>
+<li>Key assumptions (with justification where possible)</li>
+<li>Reproducible output (fixed seed, CSV export)</li>
+</ul></li>
+<li><p>An example is provided at the end.</p></li>
 </ul>
-<ol start="3" type="1">
+<ol start="2" type="1">
 <li><p><strong>Dataset</strong></p>
 <ul>
-<li>CSV file(s) containing the simulated data (synthetic but realistic)</li>
+<li>CSV file(s) containing the simulated data</li>
 </ul></li>
-<li><p><strong>Analytical Notebook (Python)</strong></p>
+<li><p><strong>Analytical notebook</strong></p>
 <ul>
+<li>Jupyter Notebook containing all necessary steps for the analysis in Python and explanations in Markdown cells.</li>
 <li>Full CRISP-DM pipeline</li>
+</ul></li>
+<li><p><strong>Report (max 15 pages)</strong></p>
+<ul>
+<li>Section 1: Case package (business context and motivation; problem statement and objectives; stakeholders and decision relevance; positioning in practice with references)</li>
+<li>Section 2: Analytical approach and key findings (overview of analytical approach; justification of suitability; selected key results without repeating the notebook; key business insights)</li>
+<li>Section 3: Reflection (assumptions; limitations of dataset and approach; ethical and deployment considerations; potential improvements and extensions)</li>
 </ul></li>
 </ol>
 </section>
 <section id="evaluation-criteria" class="level3">
 <h3 class="anchored" data-anchor-id="evaluation-criteria">Evaluation Criteria</h3>
-<p>A max of 60 points can be earned, adding to the final grade. Each group receives one grade.</p>
+<p>A max of 60 points can be earned, adding to the final grade. Everyone is expected to contribute equally and each group receives one grade per default. Document your contributions.</p>
 <!--
   escalation procedure/how do we ensure fair contributions?
 -->
@@ -414,49 +480,34 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>A. Problem and case design</strong></td>
+<td><strong>A. Case and dataset design</strong></td>
 <td>15 pts</td>
-<td>Relevance and clarity of business problem; Realism and quality of dataset design</td>
+<td>Relevance and clarity of the business problem; Realism and quality of dataset design; Transparency of the synthetic data generation process</td>
 </tr>
 <tr class="even">
-<td><strong>B. Methodological rigor</strong></td>
+<td><strong>B. Analysis quality</strong></td>
 <td>20 pts</td>
-<td>Proper use of CRISP-DM; Justification of methods; Correct implementation</td>
+<td>Justification of methods; Correctness of implementation; Proper use of CRISP-DM; Insightfulness of results and interpretation</td>
 </tr>
 <tr class="odd">
-<td><strong>C. Analysis quality</strong></td>
-<td>15 pts</td>
-<td>Insightfulness of results and interpretation</td>
+<td><strong>C. Communication</strong></td>
+<td>20 pts</td>
+<td>Clarity and structure; Quality of visualizations; Clean, documented, and runnable code; Compellingness of arguments; Appropriate use of references; Reflection on limitations and potential extensions</td>
 </tr>
 <tr class="even">
-<td><strong>D. Communication</strong></td>
+<td><strong>D. Advanced extension</strong></td>
 <td>5 pts</td>
-<td>Clarity, structure, visualizations</td>
-</tr>
-<tr class="odd">
-<td><strong>E. Code quality</strong></td>
-<td>5 pts</td>
-<td>Clean, documented, runnable</td>
+<td>Implementation of an additional advanced feature or extension beyond the core requirements</td>
 </tr>
 </tbody>
 </table>
 <p>Note: The applied methodology is more important for the evaluation than the absolute model performance.</p>
-<p><strong>Synthetic Data Requirement</strong></p>
-<ul>
-<li><p>Must reflect realistic business data</p></li>
-<li><p>Could include noise, missing values, duplicates</p></li>
-<li><p>Must be documented in the script:</p>
-<ul>
-<li>How it was generated</li>
-<li>Assumptions (ideally with evidence)</li>
-</ul></li>
-</ul>
-<p><strong>Difficulty Levels</strong></p>
-<ul>
-<li><strong>Standard</strong>: basic pipeline + one model</li>
-<li><strong>Advanced</strong>: focused extension in individual areas, such as specific data preparation challenge, interactive visualization, feature engineering, model refinement, advanced evaluation</li>
-</ul>
 <!--
+**Difficulty Levels**
+
+- **Standard**: basic pipeline + one model
+- **Advanced**: focused extension in individual areas, such as specific data preparation challenge, interactive visualization, feature engineering, model refinement, advanced evaluation
+
 Expectations (best grades: compelling motivation; instructive advanced analysis; strong contextualization and rationale)
 
 Link examples? - ask for consent before.
@@ -465,6 +516,7 @@ Link examples? - ask for consent before.
 <section id="ai-policy" class="level3">
 <h3 class="anchored" data-anchor-id="ai-policy">AI policy</h3>
 <ul>
+<li>Allowed for generating the <em>synthetic dataset generation script</em></li>
 <li>Allowed for debugging, code explanations, documentation support</li>
 <li>Not allowed to generate solutions</li>
 <li>Students must explain and defend their work if needed. Everything must be validated.</li>
@@ -476,8 +528,9 @@ TBD: share repository/directory and be prepared to answer questions on the analy
 <section id="consultation-and-support" class="level3">
 <h3 class="anchored" data-anchor-id="consultation-and-support">Consultation and Support</h3>
 <ul>
-<li>See <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">Bookings</a> and <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">teams</a>.</li>
+<li>Book appointments via <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">Bookings</a> and join via <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">teams</a>.</li>
 </ul>
+<p>Note: Availability will be limited from <strong>2026-05-25 to 2026-06-01</strong>. Please plan accordingly.</p>
 </section>
 <section id="template" class="level3">
 <h3 class="anchored" data-anchor-id="template">Template</h3>
@@ -520,9 +573,64 @@ Inspiration
 <!--
 TBD: announce the option for co-authorship? (mentioning student co-authored papers, 25%?) - if this is something that will be published, I will reach out and you will have the opportunity to become a coauthor.
 -->
-
-
 </section>
+</section>
+<section id="example-synthetic-data-generation-script" class="level2">
+<h2 class="anchored" data-anchor-id="example-synthetic-data-generation-script">Example: Synthetic data generation script</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">Synthetic dataset generation for [case name]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">Purpose:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">- Simulate [business scenario]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">Data schema:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">- age: numeric (years)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">- income: numeric (annual income in EUR)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">Generation logic:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">- Age is drawn from a normal distribution (mean=40, sd=10)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">- Income depends linearly on age with added noise</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">Assumptions and justification:</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">- Age distribution approximates working population demographics</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">- Income increases with age due to experience (human capital theory)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">- Noise reflects unobserved heterogeneity in earnings</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">- Missing values simulate incomplete records in real datasets</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">References (if applicable):</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">- [Add source, e.g., statistical office, industry report, or literature]</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproducibility</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>SEED <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>np.random.seed(SEED)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define dataset size</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Generate base variables</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">40</span>, scale<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span>n)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Define relationships</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> age <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">5000</span>, size<span class="op">=</span>n)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add realism (missingness)</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>missing_mask <span class="op">=</span> np.random.rand(n) <span class="op">&lt;</span> <span class="fl">0.05</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>income[missing_mask] <span class="op">=</span> np.nan</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Create dataframe</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>: age,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">"income"</span>: income,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Export dataset</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"dataset.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
 </section>
 
 </main> <!-- /main -->
