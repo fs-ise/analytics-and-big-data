@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<div id="8b9cfee1" class="cell" data-execution_count="2">
+<div id="12aa0a92" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_A <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"early_career_urban"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="task-1.2-estimate-the-model" class="level3">
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution-1" class="level2">
 <h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
-<div id="0e8c5421" class="cell" data-execution_count="3">
+<div id="2ec2617d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_A[<span class="st">"default"</span>]</span>
@@ -160,7 +160,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-2" class="level2">
 <h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<div id="91a1c7f5" class="cell" data-execution_count="4">
+<div id="e0af5d7f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>coef_df <span class="op">=</span> pd.DataFrame({</span>
@@ -230,7 +230,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-3" class="level2">
 <h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
-<div id="b60e9904" class="cell" data-execution_count="5">
+<div id="6cc04e98" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for one observation</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> model.intercept_[<span class="dv">0</span>] <span class="op">+</span> (X.iloc[<span class="dv">0</span>] <span class="op">*</span> model.coef_[<span class="dv">0</span>]).<span class="bu">sum</span>()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -251,7 +251,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="part-2-probabilities-and-thresholds" class="level1">
 <h1>Part 2 — Probabilities and thresholds</h1>
-<div id="451d9892" class="cell" data-execution_count="6">
+<div id="3a853c85" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -264,7 +264,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
-<div id="7ca7284b" class="cell" data-execution_count="7">
+<div id="4c2c15ad" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y_prob[:<span class="dv">5</span>], y_pred[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>(array([0.46803982, 0.61032879, 0.95665403, 0.15395479, 0.71533136]),
@@ -282,7 +282,7 @@ Please also refer to the documentation for alternative solver options:
 </ul>
 <section id="task-2.2-manual-thresholding" class="level3">
 <h3 class="anchored" data-anchor-id="task-2.2-manual-thresholding">Task 2.2 — Manual thresholding</h3>
-<div id="25cb8f04" class="cell" data-execution_count="8">
+<div id="ecc42436" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>y_pred_03 <span class="op">=</span> (y_prob <span class="op">&gt;=</span> <span class="fl">0.3</span>).astype(<span class="bu">int</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -294,7 +294,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-5" class="level2">
 <h2 class="anchored" data-anchor-id="solution-5">Solution</h2>
-<div id="f5ef85ab" class="cell" data-execution_count="9">
+<div id="38b93cea" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(y_pred <span class="op">!=</span> y_pred_03)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -314,7 +314,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="part-3-confusion-matrix-and-metrics" class="level1">
 <h1>Part 3 — Confusion matrix and metrics</h1>
-<div id="c002b141" class="cell" data-execution_count="10">
+<div id="89da8aa6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y, y_pred)</span>
@@ -336,7 +336,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-6" class="level2">
 <h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
-<div id="6e99d73e" class="cell" data-execution_count="11">
+<div id="90861fef" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tn, fp, fn, tp <span class="op">=</span> cm.ravel()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tn, fp, fn, tp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -361,7 +361,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-7" class="level2">
 <h2 class="anchored" data-anchor-id="solution-7">Solution</h2>
-<div id="762de677" class="cell" data-execution_count="12">
+<div id="d310a3d2" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> (tp <span class="op">+</span> tn) <span class="op">/</span> (tp <span class="op">+</span> tn <span class="op">+</span> fp <span class="op">+</span> fn)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fp)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>recall <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fn)</span>
@@ -406,7 +406,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="part-4-roc-curve-and-auc-for-early-career-urban-borrowers" class="level1">
 <h1>Part 4 — ROC curve and AUC for early-career urban borrowers</h1>
-<div id="1e3a920a" class="cell" data-execution_count="13">
+<div id="c3366160" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y, y_prob)</span>
@@ -421,7 +421,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-9" class="level2">
 <h2 class="anchored" data-anchor-id="solution-9">Solution</h2>
-<div id="56f94241" class="cell" data-execution_count="14">
+<div id="e29704fe" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fpr[:<span class="dv">5</span>], tpr[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>(array([0.        , 0.        , 0.        , 0.00884956, 0.00884956]),
@@ -443,7 +443,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-10" class="level2">
 <h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
-<div id="61ae6eca" class="cell" data-execution_count="15">
+<div id="740eb4d0" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>roc_auc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>0.7972345132743363</code></pre>
@@ -479,7 +479,7 @@ Please also refer to the documentation for alternative solver options:
 </section>
 <section id="solution-12" class="level2">
 <h2 class="anchored" data-anchor-id="solution-12">Solution</h2>
-<div id="ba4e31d1" class="cell" data-execution_count="16">
+<div id="4b66cc62" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df_B <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"platform_worker"</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>y_B <span class="op">=</span> df_B[<span class="st">"default"</span>]</span>
@@ -1423,7 +1423,7 @@ forceTheme('sk-container-id-1');</script>
 </section>
 <section id="solution-13" class="level2">
 <h2 class="anchored" data-anchor-id="solution-13">Solution</h2>
-<div id="9fe1f0f6" class="cell" data-execution_count="17">
+<div id="3b194975" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>coef_A <span class="op">=</span> pd.Series(model.coef_[<span class="dv">0</span>], index<span class="op">=</span>X.columns)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>coef_B <span class="op">=</span> pd.Series(model_B.coef_[<span class="dv">0</span>], index<span class="op">=</span>X_B.columns)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1488,7 +1488,7 @@ forceTheme('sk-container-id-1');</script>
 </section>
 <section id="solution-14" class="level2">
 <h2 class="anchored" data-anchor-id="solution-14">Solution</h2>
-<div id="93c35ec1" class="cell" data-execution_count="18">
+<div id="6d86d0d8" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>y_prob_B <span class="op">=</span> model_B.predict_proba(X_B)[:, <span class="dv">1</span>]</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>fpr_B, tpr_B, _ <span class="op">=</span> roc_curve(y_B, y_prob_B)</span>
@@ -1523,7 +1523,7 @@ forceTheme('sk-container-id-1');</script>
 <li>Missing variables for early-career urban borrowers</li>
 <li>Different behavioral patterns</li>
 </ul>
-<div id="12babded" class="cell" data-execution_count="19">
+<div id="fa2fad91" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>comparison.<span class="bu">abs</span>().sort_values(by<span class="op">=</span><span class="st">"Category_A"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
