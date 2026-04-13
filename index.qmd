@@ -25,6 +25,8 @@ Instructor: [{{< var instructor.name >}}]({{< var instructor.url >}}), {{< var u
 Online office hours meeting link:  
 [{{< var instructor.online_meeting_url >}}]({{< var instructor.online_meeting_url >}})
 
+**INF60196**
+
 ## Sessions
 
 ```{python}
