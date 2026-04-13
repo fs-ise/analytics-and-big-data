@@ -148,26 +148,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <section id="case-rising-defaults-at-lendwise" class="level1">
 <h1>Case: Rising defaults at LendWise</h1>
-<p>You are a business analyst working for <strong>LendWise</strong>, a fintech company that offers fast digital consumer loans. Over the last six months, LendWise has seen a noticeable <strong>spike in credit defaults</strong> in two customer categories:</p>
+<p>You are a business analyst working for LendWise, a fintech company that offers fast digital consumer loans. Over the last six months, LendWise has seen a noticeable spike in credit defaults in two customer categories:</p>
 <ul>
 <li><p><strong>Early-career urban borrowers</strong>: Typically younger customers, often with lower savings, moderate income, and irregular repayment histories.</p></li>
 <li><p><strong>Self-employed platform workers</strong>: Customers with fluctuating income, often higher short-term debt exposure, and less predictable monthly cash flows.</p></li>
 </ul>
 <p>The risk team wants to understand these groups better. They are especially interested in whether default risk follows the same logic in both categories, or whether the predictors and model quality differ substantially.</p>
-<p>In this notebook, you first focus on <strong>early-career urban borrowers</strong> and build a logistic regression model to predict default. Afterwards, you compare the results with <strong>self-employed platform workers</strong>.</p>
+<p>In this notebook, you first focus on <strong>early-career urban borrowers</strong> and build a logistic regression model to predict default. Afterwards, you compare the results with self-employed platform workers.</p>
 <p>LendWise is interested in questions such as:</p>
 <ul>
 <li>Which factors are associated with a higher probability of default in early-career urban borrowers?</li>
 <li>How can predicted probabilities be translated into default / non-default classifications?</li>
-<li>How well does the model perform when evaluated with confusion-matrix-based metrics?</li>
-<li>How informative is the ROC curve and AUC?</li>
+<li>How well does the model perform? How informative is the ROC curve and AUC?</li>
 <li>Does a model work equally well across customer categories?</li>
 </ul>
 <section id="data-description" class="level2">
 <h2 class="anchored" data-anchor-id="data-description">Data description</h2>
 <p>The dataset contains the following variables:</p>
 <ul>
-<li><code>customer_category</code>: customer segment (<code>early_career_urban</code>, <code>platform_worker</code>)</li>
+<li><code>customer_category</code>: customer segment</li>
 <li><code>income</code>: monthly income in EUR</li>
 <li><code>debt_to_income</code>: debt-to-income ratio</li>
 <li><code>missed_payments_12m</code>: number of missed payments in the last 12 months</li>
@@ -175,7 +174,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>months_with_company</code>: months since first activity with LendWise</li>
 <li><code>default</code>: whether the customer defaulted (1 = yes, 0 = no)</li>
 </ul>
-<div id="126eab22" class="cell" data-execution_count="1">
+<p><em>Note</em>: The dataset was curated by the company’s Risk Analytics Department. It has already been cleaned, validated, and prepared for modeling.</p>
+<div id="c343b7df" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/credit_default.csv"</span>)</span>
@@ -254,7 +254,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><strong>Note on the dataset</strong>: The dataset used in this exercise was curated by the company’s Risk Analytics Department. It has already been cleaned, validated, and prepared for modeling.</p>
 </section>
 </section>
 <section id="part-1-analyze-early-career-urban-borrowers-with-logistic-regression" class="level1">
@@ -284,7 +283,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Interpret the coefficients in substantive terms:</p>
 <ul>
 <li>Which variables increase the likelihood of default?</li>
+</ul>
+<ul>
 <li>Which variables decrease it?</li>
+</ul>
+<ul>
 <li>Which variable appears to have the strongest relationship with default?</li>
 </ul>
 </section>
@@ -300,12 +303,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-2-probabilities-and-thresholds" class="level1">
 <h1>Part 2 — Probabilities and thresholds</h1>
-<div id="4aadb9cc" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>In this part, we move from model coefficients to <strong>predicted probabilities and classification decisions</strong>.</p>
+<p>Logistic regression outputs probabilities, which must be converted into classes using a <strong>threshold</strong>.<br>
+The threshold directly affects business outcomes: lowering it increases approvals (but also defaults), while raising it reduces risk (but may reject good customers).</p>
 <section id="task-2.1-understanding-outputs" class="level3">
 <h3 class="anchored" data-anchor-id="task-2.1-understanding-outputs">Task 2.1 — Understanding outputs</h3>
+<p>Run the code and answer the following questions:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y_prob[:<span class="dv">5</span>], y_pred[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>What is the difference between <code>y_prob</code> and <code>y_pred</code>?</li>
 <li>Why does <code>predict_proba</code> return two columns?</li>
@@ -313,36 +319,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="task-2.2-manual-thresholding" class="level3">
 <h3 class="anchored" data-anchor-id="task-2.2-manual-thresholding">Task 2.2 — Manual thresholding</h3>
-<div id="a092dd72" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y_pred_03 <span class="op">=</span> (y_prob <span class="op">&gt;=</span> <span class="fl">0.3</span>).astype(<span class="bu">int</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>Instead of relying on the default threshold of 0.5, we can manually adjust the cutoff to reflect different business objectives. In practice, thresholds are used to identify specific customer groups, for example:</p>
 <ul>
-<li>Compare <code>y_pred</code> and <code>y_pred_03</code></li>
-<li>What changes when the threshold is lowered from 0.5 to 0.3?</li>
-<li>Which kinds of observations are most likely to switch class?</li>
+<li>customers with high default risk (for intervention or stricter approval)</li>
+<li>customers with low risk (for fast-track approval or better conditions)</li>
 </ul>
+<p>In general, predictions can be obtained for any threshold <code>t</code> as:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y_pred_t <span class="op">=</span> (y_prob <span class="op">&gt;=</span> t).astype(<span class="bu">int</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y_pred_t</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>First, explore different thresholds by modifying <code>t</code> (e.g., 0.2, 0.4, 0.6, 0.7):</p>
+<ul>
+<li>How does the number of predicted defaults change?</li>
+<li>What pattern do you observe as the threshold increases?</li>
+</ul>
+<p>Now consider a concrete business task: LendWise wants to identify the 20% most risky customers to prioritize early intervention.</p>
+<ul>
+<li>How can you choose a threshold so that approximately 20% of customers are classified as default?</li>
+<li>Which customers would be selected?</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your solution here ...</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint: use the `np.quantile()` function on the predicted probabilities</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Similarly, LendWise may want to identify the 20% safest customers:</p>
+<ul>
+<li>How would you define a threshold for this group?</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your solution here ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="part-3-confusion-matrix-and-metrics" class="level1">
 <h1>Part 3 — Confusion matrix and metrics</h1>
-<div id="d76cbe03" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y, y_pred)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>cm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>array([[94, 19],
-       [36, 44]])</code></pre>
-</div>
-</div>
+<p>Use the <code>confusion_matrix</code> function of <code>sklearn.metrics</code> to generate the confusion matrix:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y, y_pred)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>cm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="task-3.1-interpret-the-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="task-3.1-interpret-the-matrix">Task 3.1 — Interpret the matrix</h3>
-<p>Identify:</p>
+<p>The <code>confusion_matrix</code> function returns an unlabeled ndarray. Consult with the documentation to identify:</p>
 <ul>
-<li>true positives</li>
-<li>true negatives</li>
-<li>false positives</li>
-<li>false negatives</li>
+<li>true positives (TP)</li>
+<li>true negatives (TN)</li>
+<li>false positives (FP)</li>
+<li>false negatives (FN)</li>
 </ul>
 </section>
 <section id="task-3.2-compute-key-metrics" class="level3">
@@ -354,25 +373,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Recall</li>
 </ul>
 </section>
-<section id="task-3.3-strategic-reflection" class="level3">
-<h3 class="anchored" data-anchor-id="task-3.3-strategic-reflection">Task 3.3 — Strategic reflection</h3>
+<section id="task-3.3-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.3-reflection">Task 3.3 — Reflection</h3>
 <p>LendWise is currently trying to grow its customer base aggressively.</p>
 <p>Discuss:</p>
 <ul>
 <li>Why might the company temporarily accept a higher false-negative risk?</li>
+</ul>
+<ul>
 <li>Why might the same company later tighten the threshold when macroeconomic conditions worsen?</li>
-<li>What does this tell us about classification as a business decision rather than just a technical exercise?</li>
 </ul>
 </section>
 </section>
-<section id="part-4-roc-curve-and-auc-for-early-career-urban-borrowers" class="level1">
-<h1>Part 4 — ROC curve and AUC for early-career urban borrowers</h1>
-<div id="776cab80" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y, y_prob)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>roc_auc <span class="op">=</span> auc(fpr, tpr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<section id="part-4-roc-curve-and-auc" class="level1">
+<h1>Part 4 — ROC curve and AUC</h1>
+<p>Run the following code to compute and visualize the ROC curve:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y, y_prob)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>roc_auc <span class="op">=</span> auc(fpr, tpr)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot ROC curve</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.plot(fpr, tpr, label<span class="op">=</span><span class="ss">f"AUC = </span><span class="sc">{</span>roc_auc<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">"--"</span>)  <span class="co"># random baseline</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"False Positive Rate"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"True Positive Rate"</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"ROC Curve"</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="task-4.1-understanding-roc" class="level3">
 <h3 class="anchored" data-anchor-id="task-4.1-understanding-roc">Task 4.1 — Understanding ROC</h3>
 <ul>
@@ -394,13 +424,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="part-5-compare-early-career-urban-borrowers-and-early-career-urban-borrowers" class="level1">
-<h1>Part 5 — Compare early-career urban borrowers and early-career urban borrowers</h1>
+<section id="part-5-compare-early-career-urban-borrowers-and-platform-workers" class="level1">
+<h1>Part 5 — Compare early-career urban borrowers and platform workers</h1>
 <p>Now repeat the same modeling steps the segment of platform workers.</p>
 <p>You do not need to interpret every single line of code again. Focus on comparing the results.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="task-5.1-fit-the-second-model" class="level3">
 <h3 class="anchored" data-anchor-id="task-5.1-fit-the-second-model">Task 5.1 — Fit the second model</h3>
-<p>Fit a logistic regression model for early-career urban borrowers.</p>
+<p>Fit a logistic regression model for platform workers.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="task-5.2-compare-coefficients" class="level3">
 <h3 class="anchored" data-anchor-id="task-5.2-compare-coefficients">Task 5.2 — Compare coefficients</h3>
@@ -409,6 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Are the same predictors important in both groups?</li>
 <li>Does any variable appear to matter more strongly in one group than the other?</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="task-5.3-compare-roc-and-auc" class="level3">
 <h3 class="anchored" data-anchor-id="task-5.3-compare-roc-and-auc">Task 5.3 — Compare ROC and AUC</h3>
@@ -417,17 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Which category seems easier to classify?</li>
 <li>What might explain the difference?</li>
 </ul>
-</section>
-<section id="task-5.4-interpretation-challenge" class="level3">
-<h3 class="anchored" data-anchor-id="task-5.4-interpretation-challenge">Task 5.4 — Interpretation challenge</h3>
-<p>Suppose the AUC for early-career urban borrowers is much higher than for early-career urban borrowers.</p>
-<p>Discuss at least two possible explanations, such as:</p>
-<ul>
-<li>the predictors are more informative in one group</li>
-<li>one group is more heterogeneous</li>
-<li>the same variables do not capture risk equally well in both customer categories</li>
-<li>additional predictors may be needed for one category</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="wrap-up" class="level1">
@@ -436,7 +459,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this notebook, we have learned to:</p>
 <ul>
 <li>Fit and interpret logistic regression models using <code>scikit-learn</code></li>
-<li>Understand how coefficients relate to default risk in a realistic fintech setting</li>
 <li>Distinguish between predicted probabilities and class labels</li>
 <li>Apply and reflect on different classification thresholds</li>
 <li>Compute and interpret confusion-matrix-based metrics</li>
