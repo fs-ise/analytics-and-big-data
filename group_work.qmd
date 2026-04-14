@@ -40,6 +40,8 @@ format: html
 - Based on the applications, the groups are arranged and projects are assigned.
 -->
 
+{{< pagebreak >}}
+
 ## Task
 
 - Select a business topic and formulate a concrete question. Example domains include:
@@ -47,7 +49,6 @@ format: html
   - Finance (e.g., credit default, fraud, customer lifetime value)
   - Marketing (e.g., churn, customer segmentation, campaign effectiveness)
   - Human Resources (e.g., attrition, promotion, team productivity)
-  - Operations (e.g., demand forecasting, inventory optimization, supplier risk scoring)
   - Digital business (e.g., user engagement, gig worker retention, pricing strategy)
 
 - Create a synthetic but realistic dataset representing internal organizational data.
@@ -62,7 +63,7 @@ format: html
      What does the dataset contain? How does it reflect a realistic business setting? What insights emerge from EDA?
 
   3. **Data preparation**
-     How is the data cleaned, transformed, and enriched? What features are created?
+     How is the data cleaned, transformed, and enriched?
 
   4. **Modeling**
      Which model is used and why? How is it trained?
@@ -88,27 +89,16 @@ format: html
 
 ::: {.callout-note title="Notes"}
 
-- Support key elements of your analysis with reputable sources, particularly for:
-
-  - Problem relevance
-  - Typical data sources
-  - Common modeling approaches
-
+- Support key elements of your analysis with reputable sources, particularly for: Problem relevance, typical data sources, and common modeling approaches.
 - Simplifications are acceptable, provided they are clearly justified.
-- Advanced extensions (optional) may include:
-
-  - Advanced dataset preparation
-  - Model comparison or refinement
-  - Robustness checks
-  - Interactive visualizations
-  - More detailed deployment considerations
-
-- Your code must run and reproduce your results. Submissions that are not reproducible will be penalized.
+- Advanced extensions (optional) may include: Advanced dataset preparation, model comparison or refinement, robustness checks, interactive visualizations, or more detailed deployment considerations.
+- Your code must run and reproduce your results.
 - If you plan to work with large-scale (big data) scenarios, you must consult with me in advance.
 - You are strongly advised not to focus on real-time or streaming data, as this is difficult to implement and evaluate within a notebook-based project.
 
 :::
 
+{{< pagebreak >}}
 
 ## Project timeline
 
@@ -167,6 +157,7 @@ gantt
     Final report and submission        :2026-05-19, 9d
 ```
 
+{{< pagebreak >}}
 
 ## Deliverables
 
@@ -219,11 +210,12 @@ gantt
 ## Evaluation criteria
 
 A maximum of **60 points** can be earned.
+Each group receives a single grade.
+You are expected to contribute equally.
+Document your individual contributions clearly and transparently.
+In case of disputes, you should be prepared to provide evidence of your contributions.
 
-- Each group receives a single grade.
-- You are expected to contribute equally.
-- You must document your individual contributions clearly and transparently.
-  In case of disputes, you should be prepared to provide evidence of your contributions.
+::: {.small}
 
 | Category                       | Points | Criteria                                                                              |
 | ----------------------------------- | ------: | ----------------------------------------------------------------- |
@@ -231,6 +223,8 @@ A maximum of **60 points** can be earned.
 | **B. Analysis quality**        | 20 pts | Method justification; correctness; CRISP-DM use; insightfulness                       |
 | **C. Communication**           | 20 pts | Structure; visualization; clean code; argument quality; use of references; reflection |
 | **D. Advanced extension**      | 5 pts  | Meaningful additional feature beyond core requirements                                |
+
+:::
 
 **Note:** The applied methodology and reasoning are more important than achieving the highest possible model performance.
 
@@ -245,18 +239,10 @@ Expectations (best grades: compelling motivation; instructive advanced analysis;
 Link examples? - ask for consent before.
 -->
 
-## AI policy
+### AI policy
 
-- Allowed:
-
-  - Generating dataset scripts
-  - Debugging and explaining code
-  - Documentation support
-
-- Not allowed:
-
-  - Generating complete end-to-end solutions
-
+- Allowed: Generating dataset scripts, debugging code, and documentation support.
+- Not allowed: Generating complete end-to-end solutions.
 - You must be able to explain and defend your work at any time.
 - All outputs must be validated.
 
@@ -264,14 +250,14 @@ Link examples? - ask for consent before.
 TBD: share repository/directory and be prepared to answer questions on the analysis at any time (-> LLMs)
 -->
 
-## Consultation and support
+### Consultation and support
 
 - Book appointments via: [Bookings]({{< var instructor.bookings_url >}})
 - Join meetings via: [Teams]({{< var instructor.online_meeting_url >}})
 
 **Note:** Availability will be limited from **2026-05-25 to 2026-06-01**. Please plan accordingly.
 
-## Template
+### Template
 
 - [Report template](assets/report_template.docx)
 
@@ -281,7 +267,7 @@ https://monroeuniversity.libguides.com/APA
 - Notebook structure
 -->
 
-## Submission
+### Submission
 
 Via [Canvas assignment]({{< var group_work.submission_url >}}).
 
@@ -311,12 +297,12 @@ In such cases, we will discuss how contributions are acknowledged.
 TBD: announce the option for co-authorship? (mentioning student co-authored papers, 25%?) - if this is something that will be published, I will reach out and you will have the opportunity to become a coauthor.
 -->
 
+{{< pagebreak >}}
+
 ## Example: Synthetic data generation script
 
 ```python
 """
-Synthetic dataset generation for [case name]
-
 Purpose:
 - Simulate [business scenario]
 
@@ -332,18 +318,13 @@ Assumptions and justification:
 - Age distribution approximates working population demographics
 - Income increases with age due to experience (human capital theory)
 - Noise reflects unobserved heterogeneity in earnings
-- Missing values simulate incomplete records in real datasets
 
-References (if applicable):
-- [Add source, e.g., statistical office, industry report, or literature]
+References (if applicable): [Add source, e.g., industry report, literature]
 """
-
 import numpy as np
 import pandas as pd
 
-# Reproducibility
-SEED = 42
-np.random.seed(SEED)
+np.random.seed(42) # Reproducibility
 
 # 1. Define dataset size
 n = 1000
@@ -358,13 +339,11 @@ income = age * 1000 + np.random.normal(loc=0, scale=5000, size=n)
 missing_mask = np.random.rand(n) < 0.05
 income[missing_mask] = np.nan
 
-# 5. Create dataframe
+# 5. Create dataframe and export
 df = pd.DataFrame({
     "age": age,
     "income": income,
 })
-
-# 6. Export dataset
 df.to_csv("dataset.csv", index=False)
 ```
 
