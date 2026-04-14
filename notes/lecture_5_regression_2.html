@@ -72,15 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 div.callout-objective.callout {
@@ -94,6 +94,17 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -105,19 +116,37 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '🔗';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -265,8 +294,70 @@ Note
 <p>TODO: explicit learning: when we use regression as a baseline, we will also run it in a train/test mode (unlike in exercises 4 and 5)</p>
 </div>
 </div>
-<section id="exercise" class="level2">
-<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<div id="047a3db8" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture_5_regression_2_files/figure-html/cell-2-output-1.png" width="585" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="0be492f7" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture_5_regression_2_files/figure-html/cell-3-output-1.png" width="585" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="5f08f657" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture_5_regression_2_files/figure-html/cell-4-output-1.png" width="589" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="classification-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="classification-approaches">Classification Approaches</h3>
+<ul>
+<li><p><strong>Black box models</strong> → Directly map input → class (low interpretability)</p></li>
+<li><p><strong>Score + threshold</strong> → Compute a score, then classify via cutoff (separates prediction from decision)</p></li>
+<li><p><strong>Regions / rules</strong> → Partition input space into decision areas (e.g., trees, rule systems)</p></li>
+</ul>
+</section>
+<section id="logistic-regression-choice" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression-choice">Logistic Regression Choice</h3>
+<p>We use the <strong>score approach</strong>, where the score is: <span class="math inline">\(p(x)=P(Y=1\mid x)\)</span></p>
+<p>→ <strong>Interpretable probability</strong> + threshold ⇒ classification</p>
+</section>
+<section id="from-logit-to-sigmoid-whiteboard" class="level2">
+<h2 class="anchored" data-anchor-id="from-logit-to-sigmoid-whiteboard">From Logit to Sigmoid (whiteboard)</h2>
+<p>Start with the <strong>logit formulation</strong> and define: <span class="math display">\[\log\left(\frac{y}{1-y}\right)=\beta_0 + \beta_1 x = z\]</span></p>
+<p><strong>Solve for (y)</strong></p>
+<p>Exponentiate: <span class="math display">\[
+\frac{y}{1-y} = e^{z}
+\]</span></p>
+<p>Rearrange: <span class="math display">\[
+y = (1-y)\cdot e^{z}
+\]</span></p>
+<p><span class="math display">\[
+y + y e^{z} = e^{z}
+\]</span></p>
+<p><span class="math display">\[
+y(1 + e^{z}) = e^{z}
+\]</span></p>
+<p><span class="math display">\[
+y = \frac{e^{z}}{1 + e^{z}}
+\]</span></p>
+<p><strong>Final step (multiply numerator and denominator by <span class="math inline">\(e^{-z}\)</span>)</strong>:</p>
+<p><span class="math display">\[
+y = \frac{e^{z}}{1 + e^{z}} \cdot \frac{e^{-z}}{e^{-z}}
+= \frac{1}{1 + e^{-z}}
+\]</span> ## Exercise</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
