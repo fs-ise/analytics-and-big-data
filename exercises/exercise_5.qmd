@@ -146,10 +146,7 @@ Interpret the coefficients in substantive terms:
 ```{python}
 import pandas as pd
 
-coef_df = pd.DataFrame({
-    "feature": X.columns,
-    "coefficient": model.coef_[0]
-}).sort_values(by="coefficient", key=abs, ascending=False)
+coef_df = pd.DataFrame({"feature": X.columns, "coefficient": model.coef_[0]})
 
 coef_df
 ```
@@ -244,7 +241,8 @@ The threshold directly affects business outcomes: lowering it increases approval
 
 Run the code and answer the following questions:
 
-```python
+```{python}
+# | eval: false
 y_prob = model.predict_proba(X)[:, 1]
 y_pred = model.predict(X)
 y_prob[:5], y_pred[:5]
@@ -287,7 +285,8 @@ In practice, thresholds are used to identify specific customer groups, for examp
 
 In general, predictions can be obtained for any threshold `t` as:
 
-```python
+```{python}
+# | eval: false
 t = 0.3
 y_pred_t = (y_prob >= t).astype(int)
 y_pred_t
@@ -365,7 +364,8 @@ safe_customers.head()
 
 Use the `confusion_matrix` function of `sklearn.metrics` to generate the confusion matrix:
 
-```python
+```{python}
+# | eval: false
 from sklearn.metrics import confusion_matrix
 
 cm = confusion_matrix(y, y_pred)
@@ -488,7 +488,8 @@ Downturn:
 
 Run the following code to compute and visualize the ROC curve:
 
-```python
+```{python}
+# | eval: false
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 
