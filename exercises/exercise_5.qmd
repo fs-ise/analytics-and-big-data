@@ -77,11 +77,12 @@ Create a filtered dataset that contains only customers from early-career urban b
 
 ::: {.direction}
 
-```python
+```{python}
 # Your solution here
-df_A = ...
+# df_A = ...
 ```
 
+{{< pagebreak >}}
 :::
 
 ::: {.sol}
@@ -106,7 +107,7 @@ Estimate a logistic regression model to predict credit default.
 - Fit the logistic regression model
 - Retrieve the estimated coefficients and intercept
 
-```python
+```{python}
 from sklearn.linear_model import LogisticRegression
 
 # Your solution here...
@@ -226,13 +227,15 @@ With a predicted probability of 46.8%, the observation would be classified as �
 
 :::
 
+{{< pagebreak >}}
+
 # Part 2 — Probabilities and thresholds
 
 ::: {.direction}
 
-In this part, we move from model coefficients to **predicted probabilities and classification decisions**.
+In this part, we move from model coefficients to predicted probabilities and classification decisions.
 
-Logistic regression outputs probabilities, which must be converted into classes using a **threshold**.  
+Logistic regression outputs probabilities, which must be converted into classes using a threshold.
 The threshold directly affects business outcomes: lowering it increases approvals (but also defaults), while raising it reduces risk (but may reject good customers).
 
 :::
@@ -301,7 +304,7 @@ LendWise wants to identify the 20% most risky customers to prioritize early inte
 - How can you choose a threshold so that approximately 20% of customers are classified as default?
 - Which customers would be selected?
 
-```python
+```{python}
 # Your solution here ...
 # Hint: use the `np.quantile()` function on the predicted probabilities
 
@@ -311,7 +314,7 @@ Similarly, LendWise may want to identify the 20% safest customers:
 
 - How would you define a threshold for this group?
 
-```python
+```{python}
 # Your solution here ...
 ```
 
@@ -583,7 +586,7 @@ roc_auc
 :::
 
 
-
+{{< pagebreak >}}
 
 # Part 5 — Compare early-career urban borrowers and platform workers
 
@@ -594,7 +597,7 @@ Now repeat the same modeling steps the segment of platform workers.
 You do not need to interpret every single line of code again.
 Focus on comparing the results.
 
-```python
+```{python}
 # Your code here ...
 ```
 
@@ -606,7 +609,7 @@ Fit a logistic regression model for platform workers.
 
 ::: {.direction}
 
-```python
+```{python}
 # Your code here ...
 ```
 
@@ -638,7 +641,7 @@ Compare the coefficients across both categories.
 
 ::: {.direction}
 
-```python
+```{python}
 # Your code here ...
 ```
 
@@ -672,7 +675,7 @@ Compare the ROC curves and AUC values of the two models.
 
 ::: {.direction}
 
-```python
+```{python}
 # Your code here ...
 ```
 
@@ -694,6 +697,8 @@ roc_auc, roc_auc_B
 - Higher AUC → better ability to distinguish defaults from non-defaults
 
 :::
+
+{{< pagebreak >}}
 
 # 🧩 Wrap-up <a id="wrap-up"></a>
 

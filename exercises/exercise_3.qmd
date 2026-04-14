@@ -22,9 +22,9 @@ This notebook does not involve coding.
 You can solve all tasks in the PDF document.
 :::
 
-:::
-
 {{< pagebreak >}}
+
+:::
 
 ## Part 1: Star schema: Facts and dimensions <a id="part_1"></a>
 
@@ -116,6 +116,7 @@ Create the star schema for the data warehouse.
 
 ## Part 3: Star schema (restaurant chain) <a id="part_3"></a>
 
+
 A restaurant chain wants to build a management information system.
 The application system architecture is to be aligned with the data warehouse concept.
 An OLAP system is chosen for report generation.
@@ -138,7 +139,7 @@ Create the logical data warehouse schema!
 :::{.sol}
 ## Solution
 
-<img src="images/schema_solution_3.png" width="800">
+<img src="images/schema_solution_3.png" width="500">
 :::
 
 {{< pagebreak >}}
@@ -175,9 +176,12 @@ Create the logical data warehouse schema!
 
 ## Part 5: OLAP operations <a id="part_5"></a>
 
+:::{.direction}
+
 Next, we will translate common OLAP operations into SQL queries using a simple dataset.
 
 We work with the `sales_data` table:
+:::
 
 | order_id | date       | region | product_category | sales_amount |
 | -------- | ---------- | ------ | ---------------- | ------------ |
@@ -186,7 +190,6 @@ We work with the `sales_data` table:
 | 3        | 2024-02-10 | Asia   | Electronics      | 300          |
 | 4        | 2024-02-12 | Europe | Electronics      | 250          |
 | 5        | 2024-03-05 | Asia   | Furniture        | 100          |
-
 
 :::{.direction}
 
@@ -208,6 +211,7 @@ This allows grouping data at the month level instead of day level.
 
 # Task 1: Roll-up
 
+:::{.direction}
 Roll-up means aggregating data to a higher level of granularity.
 
 In this case:
@@ -215,7 +219,6 @@ In this case:
 * From day → month
 * Grouped by region and month
 
-:::{.direction}
 Write an SQL query that calculates total sales:
 
 * grouped by `region`
@@ -249,6 +252,8 @@ ORDER BY region, month;
 
 Expected structure:
 
+::: {.small}
+
 | region | month      | total_sales |
 | ------ | ---------- | ----------- |
 | Asia   | 2024-02-01 | ...         |
@@ -256,13 +261,16 @@ Expected structure:
 | Europe | 2024-01-01 | ...         |
 | Europe | 2024-02-01 | ...         |
 
-Fewer rows than original data because values are aggregated.
-
 :::
 
+Fewer rows than original data because values are aggregated.
+
+{{< pagebreak >}}
+:::
 
 # Task 2: Drill-down
 
+:::{.direction}
 Drill-down means moving to a more detailed level.
 
 In this case:
@@ -270,9 +278,6 @@ In this case:
 * From month → day
 * Keep both month and exact date
 
----
-
-:::{.direction}
 Write an SQL query that shows total sales:
 
 * by `region`
@@ -307,12 +312,15 @@ ORDER BY region, month, date;
 
 Expected structure:
 
+::: {.small}
+
 | region | month      | date       | total_sales |
 | ------ | ---------- | ---------- | ----------- |
 | Europe | 2024-01-01 | 2024-01-15 | ...         |
 | Europe | 2024-01-01 | 2024-01-20 | ...         |
 | Europe | 2024-02-01 | 2024-02-12 | ...         |
-| Asia   | 2024-02-01 | 2024-02-10 | ...         |
+
+:::
 
 More rows because we move to a finer level of detail.
 :::
@@ -357,12 +365,17 @@ ORDER BY month;
 
 Expected structure:
 
+::: {.small}
+
 | month      | total_sales |
 | ---------- | ----------- |
 | 2024-01-01 | ...         |
 | 2024-02-01 | ...         |
 
+:::
+
 Only one region remains; aggregation happens over time.
+{{< pagebreak >}}
 :::
 
 # Part 6: Question sets <a id="questions"></a>
@@ -589,7 +602,6 @@ Methods:
 - **Scatterplot:** multivariate, graphical
 - **Clustering:** multivariate, usually non-graphical as a method itself, though results are often shown graphically
 
-These methods differ in whether they focus on one variable or multiple variables and whether they summarize results numerically or visually.
 :::
 
 ## Question 8
