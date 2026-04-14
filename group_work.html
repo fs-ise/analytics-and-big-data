@@ -110,15 +110,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
 }
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
 }
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -132,17 +132,6 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
   content: '🛠️';
   background-image: none;
 }
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -152,6 +141,17 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 </style>
@@ -261,7 +261,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <li>We will form groups during class sessions.</li>
 <li>If you are not present, you must send me an email so that I can assign you to a group.</li>
 <li>We will select two groups with 5 participants using a fair and transparent procedure. Groups with 5 participants are expected to submit a more comprehensive case (+25%).</li>
-<li>Once your group is formed, you should create or join your group in the Canvas assignment: <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a></li>
+<li>Once your group is formed, you should create or join your group in the <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a>.</li>
 </ul>
 <!--
 - If you have formed a group, please **send me an email** with the names and email addresses of all group members.
@@ -277,6 +277,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   - Preference 3
 - Based on the applications, the groups are arranged and projects are assigned.
 -->
+<div style="page-break-after: always;"></div>
 </section>
 <section id="task" class="level2">
 <h2 class="anchored" data-anchor-id="task">Task</h2>
@@ -286,7 +287,6 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <li>Finance (e.g., credit default, fraud, customer lifetime value)</li>
 <li>Marketing (e.g., churn, customer segmentation, campaign effectiveness)</li>
 <li>Human Resources (e.g., attrition, promotion, team productivity)</li>
-<li>Operations (e.g., demand forecasting, inventory optimization, supplier risk scoring)</li>
 <li>Digital business (e.g., user engagement, gig worker retention, pricing strategy)</li>
 </ul></li>
 <li><p>Create a synthetic but realistic dataset representing internal organizational data. You may complement this with synthetic or real external data if appropriate.</p></li>
@@ -294,7 +294,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <ol type="1">
 <li><p><strong>Business understanding</strong> What is the context, the concrete question, and the decision relevance? Who are the stakeholders?</p></li>
 <li><p><strong>Data understanding</strong> What does the dataset contain? How does it reflect a realistic business setting? What insights emerge from EDA?</p></li>
-<li><p><strong>Data preparation</strong> How is the data cleaned, transformed, and enriched? What features are created?</p></li>
+<li><p><strong>Data preparation</strong> How is the data cleaned, transformed, and enriched?</p></li>
 <li><p><strong>Modeling</strong> Which model is used and why? How is it trained?</p></li>
 <li><p><strong>Evaluation</strong> Which metrics are used? How should the results be interpreted in practice?</p></li>
 <li><p><strong>Deployment</strong> How would the model be implemented? What are the requirements, risks, and ethical considerations?</p></li>
@@ -323,27 +323,16 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Support key elements of your analysis with reputable sources, particularly for:</p>
-<ul>
-<li>Problem relevance</li>
-<li>Typical data sources</li>
-<li>Common modeling approaches</li>
-</ul></li>
-<li><p>Simplifications are acceptable, provided they are clearly justified.</p></li>
-<li><p>Advanced extensions (optional) may include:</p>
-<ul>
-<li>Advanced dataset preparation</li>
-<li>Model comparison or refinement</li>
-<li>Robustness checks</li>
-<li>Interactive visualizations</li>
-<li>More detailed deployment considerations</li>
-</ul></li>
-<li><p>Your code must run and reproduce your results. Submissions that are not reproducible will be penalized.</p></li>
-<li><p>If you plan to work with large-scale (big data) scenarios, you must consult with me in advance.</p></li>
-<li><p>You are strongly advised not to focus on real-time or streaming data, as this is difficult to implement and evaluate within a notebook-based project.</p></li>
+<li>Support key elements of your analysis with reputable sources, particularly for: Problem relevance, typical data sources, and common modeling approaches.</li>
+<li>Simplifications are acceptable, provided they are clearly justified.</li>
+<li>Advanced extensions (optional) may include: Advanced dataset preparation, model comparison or refinement, robustness checks, interactive visualizations, or more detailed deployment considerations.</li>
+<li>Your code must run and reproduce your results.</li>
+<li>If you plan to work with large-scale (big data) scenarios, you must consult with me in advance.</li>
+<li>You are strongly advised not to focus on real-time or streaming data, as this is difficult to implement and evaluate within a notebook-based project.</li>
 </ul>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="project-timeline" class="level2">
 <h2 class="anchored" data-anchor-id="project-timeline">Project timeline</h2>
@@ -420,6 +409,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </div>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="deliverables" class="level2">
 <h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
@@ -470,12 +460,8 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </section>
 <section id="evaluation-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="evaluation-criteria">Evaluation criteria</h2>
-<p>A maximum of <strong>60 points</strong> can be earned.</p>
-<ul>
-<li>Each group receives a single grade.</li>
-<li>You are expected to contribute equally.</li>
-<li>You must document your individual contributions clearly and transparently. In case of disputes, you should be prepared to provide evidence of your contributions.</li>
-</ul>
+<p>A maximum of <strong>60 points</strong> can be earned. Each group receives a single grade. You are expected to contribute equally. Document your individual contributions clearly and transparently. In case of disputes, you should be prepared to provide evidence of your contributions.</p>
+<div class="small">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 32%">
@@ -512,6 +498,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Note:</strong> The applied methodology and reasoning are more important than achieving the highest possible model performance.</p>
 <!--
 **Difficulty Levels**
@@ -523,37 +510,28 @@ Expectations (best grades: compelling motivation; instructive advanced analysis;
 
 Link examples? - ask for consent before.
 -->
-</section>
-<section id="ai-policy" class="level2">
-<h2 class="anchored" data-anchor-id="ai-policy">AI policy</h2>
+<section id="ai-policy" class="level3">
+<h3 class="anchored" data-anchor-id="ai-policy">AI policy</h3>
 <ul>
-<li><p>Allowed:</p>
-<ul>
-<li>Generating dataset scripts</li>
-<li>Debugging and explaining code</li>
-<li>Documentation support</li>
-</ul></li>
-<li><p>Not allowed:</p>
-<ul>
-<li>Generating complete end-to-end solutions</li>
-</ul></li>
-<li><p>You must be able to explain and defend your work at any time.</p></li>
-<li><p>All outputs must be validated.</p></li>
+<li>Allowed: Generating dataset scripts, debugging code, and documentation support.</li>
+<li>Not allowed: Generating complete end-to-end solutions.</li>
+<li>You must be able to explain and defend your work at any time.</li>
+<li>All outputs must be validated.</li>
 </ul>
 <!--
 TBD: share repository/directory and be prepared to answer questions on the analysis at any time (-> LLMs)
 -->
 </section>
-<section id="consultation-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="consultation-and-support">Consultation and support</h2>
+<section id="consultation-and-support" class="level3">
+<h3 class="anchored" data-anchor-id="consultation-and-support">Consultation and support</h3>
 <ul>
 <li>Book appointments via: <a href="https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&amp;ismsaljsauthenabled">Bookings</a></li>
 <li>Join meetings via: <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">Teams</a></li>
 </ul>
 <p><strong>Note:</strong> Availability will be limited from <strong>2026-05-25 to 2026-06-01</strong>. Please plan accordingly.</p>
 </section>
-<section id="template" class="level2">
-<h2 class="anchored" data-anchor-id="template">Template</h2>
+<section id="template" class="level3">
+<h3 class="anchored" data-anchor-id="template">Template</h3>
 <ul>
 <li><a href="assets/report_template.docx">Report template</a></li>
 </ul>
@@ -563,8 +541,8 @@ https://monroeuniversity.libguides.com/APA
 - Notebook structure
 -->
 </section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<section id="submission" class="level3">
+<h3 class="anchored" data-anchor-id="submission">Submission</h3>
 <p>Via <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a>.</p>
 <!--
 ### C. Common Pitfalls Section (very effective pedagogically)
@@ -597,61 +575,55 @@ Inspiration
 <!--
 TBD: announce the option for co-authorship? (mentioning student co-authored papers, 25%?) - if this is something that will be published, I will reach out and you will have the opportunity to become a coauthor.
 -->
+<div style="page-break-after: always;"></div>
+</section>
 </section>
 <section id="example-synthetic-data-generation-script" class="level2">
 <h2 class="anchored" data-anchor-id="example-synthetic-data-generation-script">Example: Synthetic data generation script</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">Synthetic dataset generation for [case name]</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">Purpose:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">- Simulate [business scenario]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">Data schema:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">- age: numeric (years)</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">- income: numeric (annual income in EUR)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">Generation logic:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">- Age is drawn from a normal distribution (mean=40, sd=10)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">- Income depends linearly on age with added noise</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">Assumptions and justification:</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">- Age distribution approximates working population demographics</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">- Income increases with age due to experience (human capital theory)</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">- Noise reflects unobserved heterogeneity in earnings</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">- Missing values simulate incomplete records in real datasets</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">References (if applicable):</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">- [Add source, e.g., statistical office, industry report, or literature]</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">Purpose:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">- Simulate [business scenario]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">Data schema:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">- age: numeric (years)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">- income: numeric (annual income in EUR)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">Generation logic:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">- Age is drawn from a normal distribution (mean=40, sd=10)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">- Income depends linearly on age with added noise</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">Assumptions and justification:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">- Age distribution approximates working population demographics</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">- Income increases with age due to experience (human capital theory)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">- Noise reflects unobserved heterogeneity in earnings</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">References (if applicable): [Add source, e.g., industry report, literature]</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>) <span class="co"># Reproducibility</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define dataset size</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproducibility</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>SEED <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>np.random.seed(SEED)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define dataset size</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Generate base variables</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">40</span>, scale<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span>n)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Generate base variables</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">40</span>, scale<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span>n)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Define relationships</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> age <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">5000</span>, size<span class="op">=</span>n)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add realism (e.g., missing values)</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>missing_mask <span class="op">=</span> np.random.rand(n) <span class="op">&lt;</span> <span class="fl">0.05</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>income[missing_mask] <span class="op">=</span> np.nan</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Define relationships</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> age <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">5000</span>, size<span class="op">=</span>n)</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Add realism (missingness)</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>missing_mask <span class="op">=</span> np.random.rand(n) <span class="op">&lt;</span> <span class="fl">0.05</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>income[missing_mask] <span class="op">=</span> np.nan</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Create dataframe</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>: age,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">"income"</span>: income,</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Export dataset</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"dataset.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Create dataframe and export</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>: age,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">"income"</span>: income,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"dataset.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Note: More examples available <a href="https://github.com/fs-ise/analytics-and-big-data/tree/main/data">here</a></em>.</p>
 
 
 </section>
