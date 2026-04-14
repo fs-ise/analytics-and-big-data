@@ -23,8 +23,7 @@ format: html
 - If you are not present, you must send me an email so that I can assign you to a group.
 - We will select two groups with 5 participants using a fair and transparent procedure.
   Groups with 5 participants are expected to submit a more comprehensive case (+25%).
-- Once your group is formed, you should create or join your group in the Canvas assignment:
-  [Canvas assignment]({{< var group_work.submission_url >}})
+- Once your group is formed, you should create or join your group in the [Canvas assignment]({{< var group_work.submission_url >}}).
 
 <!--
 - If you have formed a group, please **send me an email** with the names and email addresses of all group members.
@@ -355,7 +354,7 @@ age = np.random.normal(loc=40, scale=10, size=n)
 # 3. Define relationships
 income = age * 1000 + np.random.normal(loc=0, scale=5000, size=n)
 
-# 4. Add realism (missingness)
+# 4. Add realism (e.g., missing values)
 missing_mask = np.random.rand(n) < 0.05
 income[missing_mask] = np.nan
 
