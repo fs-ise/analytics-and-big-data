@@ -53,7 +53,147 @@ And preview:
 TODO: explicit learning: when we use regression as a baseline, we will also run it in a train/test mode (unlike in exercises 4 and 5)
 :::
 
+```{python}
+# | echo: false
+import numpy as np
+import matplotlib.pyplot as plt
 
+# Data
+np.random.seed(1)
+x = np.linspace(0, 10, 50)
+y = 2 * x + 3 + np.random.normal(0, 3, size=len(x))
+
+# Fit line
+coef = np.polyfit(x, y, 1)
+y_fit = np.polyval(coef, x)
+
+# Plot
+plt.figure()
+plt.scatter(x, y)
+plt.plot(x, y_fit)
+plt.xlabel("X (continuous)")
+plt.ylabel("Y (continuous)")
+plt.title("Linear Regression (Continuous Outcome)")
+plt.show()
+```
+
+```{python}
+# | echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(1)
+
+# 4 categories
+categories = np.random.choice([0, 1, 2, 3], size=80)
+
+# Assign different means per group
+means = {0: 5, 1: 7, 2: 10, 3: 6}
+y = np.array([means[c] for c in categories]) + np.random.normal(0, 1.5, size=80)
+
+# Compute group means
+group_means = [y[categories == i].mean() for i in range(4)]
+
+# Plot
+plt.figure()
+
+# Jitter for better visibility
+x_jitter = categories + np.random.normal(0, 0.05, size=len(categories))
+
+plt.scatter(x_jitter, y, alpha=0.6)
+
+# Plot group means
+plt.plot(range(4), group_means, marker="o")
+
+plt.xticks(range(4), ["A", "B", "C", "D"])
+plt.xlabel("Categorical Predictor (4 levels)")
+plt.ylabel("Y (continuous)")
+plt.title("Regression with 4-Level Categorical Predictor")
+
+plt.show()
+```
+
+```{python}
+# | echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Data
+np.random.seed(1)
+x = np.linspace(0, 10, 100)
+logits = -5 + 1 * x
+p = 1 / (1 + np.exp(-logits))
+
+# Simulated binary outcomes
+y = np.random.binomial(1, p)
+
+# Plot
+plt.figure()
+plt.scatter(x, y, alpha=0.4)
+plt.plot(x, p)
+plt.xlabel("X (continuous)")
+plt.ylabel("Probability / Outcome (0 or 1)")
+plt.title("Logistic Regression (Binary Outcome)")
+plt.show()
+```
+
+
+### Classification Approaches
+
+* **Black box models**
+  → Directly map input → class (low interpretability)
+
+* **Score + threshold**
+  → Compute a score, then classify via cutoff
+  (separates prediction from decision)
+
+* **Regions / rules**
+  → Partition input space into decision areas
+  (e.g., trees, rule systems)
+
+### Logistic Regression Choice
+
+We use the **score approach**, where the score is: $p(x)=P(Y=1\mid x)$
+
+→ **Interpretable probability** + threshold ⇒ classification
+
+
+## From Logit to Sigmoid (whiteboard)
+
+Start with the **logit formulation** and define:
+$$\log\left(\frac{y}{1-y}\right)=\beta_0 + \beta_1 x = z$$
+
+**Solve for (y)**
+
+Exponentiate:
+$$
+\frac{y}{1-y} = e^{z}
+$$
+
+Rearrange:
+$$
+y = (1-y)\cdot e^{z}
+$$
+
+$$
+y + y e^{z} = e^{z}
+$$
+
+$$
+y(1 + e^{z}) = e^{z}
+$$
+
+$$
+y = \frac{e^{z}}{1 + e^{z}}
+$$
+
+
+**Final step (multiply numerator and denominator by $e^{-z}$)**:
+
+$$
+y = \frac{e^{z}}{1 + e^{z}} \cdot \frac{e^{-z}}{e^{-z}}
+= \frac{1}{1 + e^{-z}}
+$$
 ## Exercise
 
 | Time (min) | Duration | Topic                         | Additional materials |
