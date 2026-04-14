@@ -72,26 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-self-service.callout {
-  border-left-color: #198754;
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 div.callout-resource.callout {
@@ -105,15 +94,26 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   content: '🔗';
   background-image: none;
 }
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
 }
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
 }
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -250,14 +250,66 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO</p>
-</div>
-</div>
+<p>good slides: https://harvard-iacs.github.io/2019-CS109A/lectures/lecture10/ (https://harvard-iacs.github.io/2019-CS109A/lectures/lecture11/presentation/Lecture11_LogReg2.pdf)</p>
+<p>good (simple; geographical) explanation: https://www.youtube.com/watch?v=yIYKR4sgzI8</p>
+<p>Lecture, Ng: https://www.youtube.com/watch?v=4u81xU7BIOc</p>
+<p>https://web.stanford.edu/class/cme250/files/cme250_lecture2.pdf</p>
+<p>https://slds-lmu.github.io/i2ml/chapters/03_supervised_classification/03-04-classification-logistic/</p>
+<p>https://ubc-cs.github.io/cpsc330-2023W1/README.html</p>
+<p>Optional /extension: changing the data: https://ubc-cs.github.io/cpsc330-2023W1/lectures/09_classification-metrics.html#optional-changing-the-data</p>
+<p>https://harvard-iacs.github.io/2019-CS109A/lectures/lecture-11/notebook/ https://github.com/UBC-CS/cpsc330-2023W1 https://slds-lmu.github.io/i2ml/</p>
+<p>https://www2.stat.duke.edu/courses/Spring20/sta210.001/labs/lab-08-logistic.html</p>
 <p>Goal: Deepen linear regression and surface modeling tensions.</p>
 <p>You are not just teaching “more regression.” You are teaching: How modeling goals shape methodological choices (or how they interact).</p>
 <p>Close with a framing slide: - Analytics is not one method. It is a toolbox shaped by goals. Then summarize: - Regression for understanding - Regression for prediction - Logistic regression as bridge to ML And preview: - Next: more complex machine learning models.</p>
+<p>TODO: explicit learning: when we use regression as a baseline, we will also run it in a train/test mode (unlike in exercises 4 and 5)</p>
+</div>
+</div>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 41%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (min)</th>
+<th>Duration</th>
+<th>Topic</th>
+<th>Additional materials</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0–30</td>
+<td>30</td>
+<td>Group work assignment</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>30–90</td>
+<td>60</td>
+<td>Logistic regression</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!--
+        TBD: using forward and backward variable selection?
+
+        ::: {.learning-objectives}
+        - Estimate and interpret a multiple regression model in Python.
+        - Refine a regression model, assessing how additional predictors affect model fit.
+        - Implement and evaluate a logistic regression model for a binary outcome.
+        :::
+
+-->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

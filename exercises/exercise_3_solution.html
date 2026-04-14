@@ -101,7 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div style="page-break-after: always;"></div>
 <section id="part-1-star-schema-facts-and-dimensions" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-star-schema-facts-and-dimensions">Part 1: Star schema: Facts and dimensions <a id="part_1" href=""></a></h2>
 <section id="solution" class="level3">
@@ -146,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution-2" class="level2">
 <h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<p><img src="images/schema_solution_3.png" width="800"></p>
+<p><img src="images/schema_solution_3.png" width="500"></p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="part-4-star-schema-flowers-gmbh" class="level2">
@@ -160,8 +159,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div style="page-break-after: always;"></div>
 <section id="part-5-olap-operations" class="level2">
 <h2 class="anchored" data-anchor-id="part-5-olap-operations">Part 5: OLAP operations <a id="part_5" href=""></a></h2>
-<p>Next, we will translate common OLAP operations into SQL queries using a simple dataset.</p>
-<p>We work with the <code>sales_data</code> table:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -214,12 +211,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="task-1-roll-up" class="level1">
 <h1>Task 1: Roll-up</h1>
-<p>Roll-up means aggregating data to a higher level of granularity.</p>
-<p>In this case:</p>
-<ul>
-<li>From day → month</li>
-<li>Grouped by region and month</li>
-</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    region,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    DATE_TRUNC(<span class="st">'month'</span>, <span class="dt">date</span>) <span class="kw">AS</span> <span class="dt">month</span>,</span>
@@ -228,6 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> region, DATE_TRUNC(<span class="st">'month'</span>, <span class="dt">date</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> region, <span class="dt">month</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Expected structure:</p>
+<div class="small">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -259,17 +251,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</div>
 <p>Fewer rows than original data because values are aggregated.</p>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="task-2-drill-down" class="level1">
 <h1>Task 2: Drill-down</h1>
-<p>Drill-down means moving to a more detailed level.</p>
-<p>In this case:</p>
-<ul>
-<li>From month → day</li>
-<li>Keep both month and exact date</li>
-</ul>
-<hr>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    region,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    DATE_TRUNC(<span class="st">'month'</span>, <span class="dt">date</span>) <span class="kw">AS</span> <span class="dt">month</span>,</span>
@@ -279,6 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> region, DATE_TRUNC(<span class="st">'month'</span>, <span class="dt">date</span>), <span class="dt">date</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> region, <span class="dt">month</span>, <span class="dt">date</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Expected structure:</p>
+<div class="small">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -307,14 +295,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2024-02-12</td>
 <td>…</td>
 </tr>
-<tr class="even">
-<td>Asia</td>
-<td>2024-02-01</td>
-<td>2024-02-10</td>
-<td>…</td>
-</tr>
 </tbody>
 </table>
+</div>
 <p>More rows because we move to a finer level of detail.</p>
 </section>
 <section id="task-3-slice" class="level1">
@@ -332,6 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> DATE_TRUNC(<span class="st">'month'</span>, <span class="dt">date</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">month</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Expected structure:</p>
+<div class="small">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -350,7 +334,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Only one region remains; aggregation happens over time.</p>
+</div>
+<p>Only one region remains; aggregation happens over time. </p><div style="page-break-after: always;"></div><p></p>
 </section>
 <section id="part-6-question-sets" class="level1">
 <h1>Part 6: Question sets <a id="questions" href=""></a></h1>
@@ -469,7 +454,6 @@ Data transformation changes the format or type of a variable so that it becomes 
 <li><strong>Scatterplot:</strong> multivariate, graphical</li>
 <li><strong>Clustering:</strong> multivariate, usually non-graphical as a method itself, though results are often shown graphically</li>
 </ul>
-<p>These methods differ in whether they focus on one variable or multiple variables and whether they summarize results numerically or visually.</p>
 </section>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
