@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="247e27f3" class="cell" data-execution_count="1">
+<div id="18ff4ca4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/credit_default.csv"</span>)</span>
@@ -191,8 +191,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<div id="e66781ba" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_A <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"early_career_urban"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3e555d2a" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_ec_urban <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"early_career_urban"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="task-1.2-estimate-the-model" class="level3">
 <h3 class="anchored" data-anchor-id="task-1.2-estimate-the-model">Task 1.2 — Estimate the model</h3>
@@ -201,12 +201,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution-1" class="level2">
 <h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
-<p><em>Note</em>: You will initially encounter a <code>ConvergenceWarning</code>, indicating that the maximum likelihood estimation has not fully converged. To address this, increase the <code>max_iter</code> parameter to give the optimization algorithm sufficient iterations to converge.</p>
-<div id="3df93cea" class="cell" data-execution_count="5">
+<p><em>Note</em>: You will initially encounter a <code>ConvergenceWarning</code>, indicating that the maximum likelihood estimation has not fully converged. To address this, increase the <code>max_iter</code> parameter to give the optimization algorithm sufficient iterations to converge. In practice, scaling predictors can also improve convergence and model stability.</p>
+<div id="8c0a964e" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_A[<span class="st">"default"</span>]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df_A.drop(columns<span class="op">=</span>[<span class="st">"default"</span>, <span class="st">"customer_category"</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_ec_urban[<span class="st">"default"</span>]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df_ec_urban.drop(columns<span class="op">=</span>[<span class="st">"default"</span>, <span class="st">"customer_category"</span>])</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>model.fit(X, y)</span>
@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution-2" class="level2">
 <h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<div id="e0a88a7a" class="cell" data-execution_count="6">
+<div id="878834c1" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>coef_df <span class="op">=</span> pd.DataFrame({<span class="st">"feature"</span>: X.columns, <span class="st">"coefficient"</span>: model.coef_[<span class="dv">0</span>]})</span>
@@ -275,6 +275,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="Note on interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Note on interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The coefficients shown here indicate the direction and relative strength of relationships. However, models from <code>scikit-learn</code> do not provide p-values or standard errors.</p>
+<p>This means we cannot assess statistical significance directly. In applied research, p-values (e.g., from <code>statsmodels</code>) are typically used to evaluate whether effects are statistically reliable.</p>
+<p>Therefore, the interpretation below focuses on magnitude and direction, not statistical significance.</p>
+</div>
+</div>
 <ul>
 <li>Which variables increase the likelihood of default?</li>
 </ul>
@@ -312,7 +327,6 @@ In this model, the strongest positive effects are:</p>
 <p>Variables with negative coefficients decrease default risk.<br>
 In this model:</p>
 <ul>
-<li><code>debt_to_income</code> (0.04) → moderate decrease in default risk</li>
 <li><code>months_with_company</code> (-0.02) → small decrease</li>
 <li><code>income</code> (-0.00) → very small (negligible) decrease</li>
 </ul>
@@ -331,8 +345,8 @@ In this model:</p>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The variable with the largest absolute coefficient has the strongest relationship.<br>
-Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor, closely followed by <code>missed_payments_12m</code> (|1.06|).</p>
+<p>Among the predictors, <code>credit_utilization</code> has the largest coefficient in absolute terms, followed closely by <code>missed_payments_12m</code>. This suggests that both variables are strongly associated with default risk in this model.</p>
+<p>However, this comparison should be interpreted with caution. Because the predictors are measured on different scales (e.g., proportions, counts, income levels), the magnitude of coefficients is not directly comparable. A more rigorous comparison would require standardized variables or an analysis based on meaningful unit changes (e.g., odds ratios).</p>
 </div>
 </div>
 <section id="task-1.4-from-coefficients-to-classification" class="level3">
@@ -353,7 +367,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 <li>Logistic transformation → probability</li>
 <li>Threshold (e.g., 0.5) → class label</li>
 </ol>
-<div id="e03e4170" class="cell" data-execution_count="7">
+<div id="0d32163a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for one observation</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> model.intercept_[<span class="dv">0</span>] <span class="op">+</span> (X.iloc[<span class="dv">0</span>] <span class="op">*</span> model.coef_[<span class="dv">0</span>]).<span class="bu">sum</span>()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -378,7 +392,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 <section id="task-2.1-understanding-outputs" class="level3">
 <h3 class="anchored" data-anchor-id="task-2.1-understanding-outputs">Task 2.1 — Understanding outputs</h3>
 <p>Run the code and answer the following questions:</p>
-<div id="31448bba" class="cell" data-execution_count="8">
+<div id="04ec4cee" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>y_prob[:<span class="dv">5</span>], y_pred[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -390,7 +404,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 </section>
 <section id="solution-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
-<div id="a0248beb" class="cell" data-execution_count="9">
+<div id="a69f0892" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>y_prob[:<span class="dv">5</span>], y_pred[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -403,7 +417,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 <li><code>y_prob</code>: probabilities for class 1 (default)</li>
 <li><code>y_pred</code>: binary predictions based on threshold (<code>0.5</code> per default)</li>
 </ul>
-<div id="4f829cbb" class="cell" data-execution_count="10">
+<div id="1ad6caf1" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.predict_proba(X[:<span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([[0.5322133 , 0.4677867 ],
@@ -429,32 +443,32 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 <li>Higher threshold → fewer customers flagged as risky</li>
 </ul>
 <p>For top 20% risk:</p>
-<div id="7c94fb8a" class="cell" data-execution_count="14">
+<div id="b6f45fe1" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>threshold_risky <span class="op">=</span> np.quantile(y_prob, <span class="fl">0.8</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y_pred_20 <span class="op">=</span> (y_prob <span class="op">&gt;=</span> threshold_risky).astype(<span class="bu">int</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>threshold_risky, y_pred_20.<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y_pred_risky20 <span class="op">=</span> (y_prob <span class="op">&gt;=</span> threshold_risky).astype(<span class="bu">int</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>threshold_risky, y_pred_risky20.<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>(np.float64(0.6416442644835957), np.int64(39))</code></pre>
 </div>
 </div>
 <ul>
-<li>Selects customers with the highest predicted probabilities in the <code>y_pred_20</code> vector</li>
+<li>Flags the top 20% of customers with the highest predicted default probabilities</li>
 </ul>
 <p>For safest 20%:</p>
-<div id="6e2b0c0f" class="cell" data-execution_count="15">
+<div id="528dfd6f" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>threshold_safe <span class="op">=</span> np.quantile(y_prob, <span class="fl">0.2</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>y_pred_80 <span class="op">=</span> (y_prob <span class="op">&gt;=</span> threshold_safe).astype(<span class="bu">int</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>threshold_safe, y_pred_80.<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>y_pred_safe20 <span class="op">=</span> (y_prob <span class="op">&lt;=</span> threshold_safe).astype(<span class="bu">int</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>threshold_safe, y_pred_safe20.<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>(np.float64(0.1675110069415143), np.int64(154))</code></pre>
+<pre><code>(np.float64(0.1675110069415143), np.int64(39))</code></pre>
 </div>
 </div>
 <ul>
-<li>Identifies customers with very low predicted risk in the <code>y_pred_80</code> vector</li>
+<li>Flags the bottom 20% of customers with the lowest predicted default probabilities</li>
 </ul>
 <p>Low risk customers could be selected as follows:</p>
-<div id="d0ec637b" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>safe_customers <span class="op">=</span> df_A[y_pred_80 <span class="op">==</span> <span class="dv">0</span>]</span>
+<div id="5dc412a2" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>safe_customers <span class="op">=</span> df_ec_urban[y_pred_safe20 <span class="op">==</span> <span class="dv">1</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>safe_customers.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -535,12 +549,15 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 </section>
 <section id="part-3-confusion-matrix-and-metrics" class="level1">
 <h1>Part 3 — Confusion matrix and metrics</h1>
+<div class=".callout-note">
+<p>For simplicity, model performance is evaluated on the same data used for estimation. In practice, a train/test split or cross-validation should be used.</p>
+</div>
 <section id="task-3.1-interpret-the-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="task-3.1-interpret-the-matrix">Task 3.1 — Interpret the matrix</h3>
 </section>
 <section id="solution-6" class="level2">
 <h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
-<div id="c20d6d40" class="cell" data-execution_count="18">
+<div id="270f9636" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y, y_pred)</span>
@@ -557,7 +574,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 <li>FN: 36</li>
 </ul>
 <p><em>Note: the <code>ravel()</code> function can be helpful to access the individual values:</em></p>
-<div id="838665db" class="cell" data-execution_count="19">
+<div id="1c14657d" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tn, fp, fn, tp <span class="op">=</span> cm.ravel()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tn, fp, fn, tp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -570,21 +587,21 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 </section>
 <section id="solution-manually-or-based-on-python" class="level2">
 <h2 class="anchored" data-anchor-id="solution-manually-or-based-on-python">Solution (manually or based on Python)</h2>
-<div id="77a906b8" class="cell" data-execution_count="20">
+<div id="4d24f7a6" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> (tp <span class="op">+</span> tn) <span class="op">/</span> (tp <span class="op">+</span> tn <span class="op">+</span> fp <span class="op">+</span> fn)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>accuracy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>np.float64(0.7150259067357513)</code></pre>
 </div>
 </div>
-<div id="5f229cc5" class="cell" data-execution_count="21">
+<div id="3d035208" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fp)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>precision</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>np.float64(0.6984126984126984)</code></pre>
 </div>
 </div>
-<div id="d259323e" class="cell" data-execution_count="22">
+<div id="f4fad1e3" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>recall <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fn)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>recall</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -640,7 +657,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 </section>
 <section id="part-4-roc-curve-and-auc" class="level1">
 <h1>Part 4 — ROC curve and AUC</h1>
-<div id="e3a75b2e" class="cell" data-execution_count="24">
+<div id="c6869f80" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -679,7 +696,7 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 <li>FPR = FP / (FP + TN)</li>
 </ul>
 <p>Values for FPR, TPR at different thresholds:</p>
-<div id="a600a466" class="cell" data-execution_count="25">
+<div id="79b47094" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>roc_df <span class="op">=</span> pd.DataFrame({<span class="st">"threshold"</span>: thresholds, <span class="st">"fpr"</span>: fpr, <span class="st">"tpr"</span>: tpr})</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>roc_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -743,14 +760,14 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 </section>
 <section id="solution-8" class="level2">
 <h2 class="anchored" data-anchor-id="solution-8">Solution</h2>
-<div id="584650f1" class="cell" data-execution_count="26">
+<div id="2fc28250" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>roc_auc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>0.7982300884955752</code></pre>
 </div>
 </div>
 <ul>
-<li>0.5 → random</li>
+<li>0.5 → no discriminatory power (equivalent to random guessing)</li>
 <li>~0.7 → moderate</li>
 <li>1.0 → perfect</li>
 </ul>
@@ -773,944 +790,27 @@ Here, <code>credit_utilization</code> (|1.16|) is the most influential predictor
 </section>
 <section id="part-5-compare-early-career-urban-borrowers-and-platform-workers" class="level1">
 <h1>Part 5 — Compare early-career urban borrowers and platform workers</h1>
-<p>Now repeat the same modeling steps the segment of platform workers.</p>
+<p>Now repeat the same modeling steps for the segment of platform workers.</p>
 <section id="task-5.1-fit-the-second-model" class="level3">
 <h3 class="anchored" data-anchor-id="task-5.1-fit-the-second-model">Task 5.1 — Fit the second model</h3>
 <p>Fit a logistic regression model for platform workers.</p>
 </section>
 <section id="solution-10" class="level2">
 <h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
-<div id="86a4a957" class="cell" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df_B <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"platform_worker"</span>]</span>
+<div id="04df5a92" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df_platform <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"platform_worker"</span>]</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>y_B <span class="op">=</span> df_B[<span class="st">"default"</span>]</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>X_B <span class="op">=</span> df_B.drop(columns<span class="op">=</span>[<span class="st">"default"</span>, <span class="st">"customer_category"</span>])</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>y_platform <span class="op">=</span> df_platform[<span class="st">"default"</span>]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>X_platform <span class="op">=</span> df_platform.drop(columns<span class="op">=</span>[<span class="st">"default"</span>, <span class="st">"customer_category"</span>])</span>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>model_B <span class="op">=</span> LogisticRegression()</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>model_B.fit(X_B, y_B)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:406: ConvergenceWarning: lbfgs failed to converge after 100 iteration(s) (status=1):
-STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
-
-Increase the number of iterations to improve the convergence (max_iter=100).
-You might also want to scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  n_iter_i = _check_optimize_result(</code></pre>
-</div>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>model_platform <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>model_platform.fit(X_platform, y_platform)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>model_platform.intercept_, model_platform.coef_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-<style>#sk-container-id-1 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: #000;
-  --sklearn-color-text-muted: #666;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-}
-
-#sk-container-id-1.light {
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: black;
-  --sklearn-color-background: white;
-  --sklearn-color-border-box: black;
-  --sklearn-color-icon: #696969;
-}
-
-#sk-container-id-1.dark {
-  --sklearn-color-text-on-default-background: white;
-  --sklearn-color-background: #111;
-  --sklearn-color-border-box: white;
-  --sklearn-color-icon: #878787;
-}
-
-#sk-container-id-1 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-1 pre {
-  padding: 0;
-}
-
-#sk-container-id-1 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-1 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-1 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-1 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-1 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-1 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-1 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
-  cursor: pointer;
-  display: flex;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-}
-
-#sk-container-id-1 label.sk-toggleable__label .caption {
-  font-size: 0.6rem;
-  font-weight: lighter;
-  color: var(--sklearn-color-text-muted);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-1 div.sk-toggleable__content {
-  display: none;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  display: block;
-  width: 100%;
-  overflow: visible;
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-1 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  line-height: 1.2em;
-}
-
-#sk-container-id-1 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-unfitted-level-0);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 0.5em;
-  text-align: center;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3) 1pt solid;
-  color: var(--sklearn-color-fitted-level-3);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  border: var(--sklearn-color-fitted-level-0) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-0);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  border: var(--sklearn-color-fitted-level-0) 1pt solid;
-  color: var(--sklearn-color-fitted-level-0);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-1 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-unfitted-level-0);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-
-.estimator-table {
-    font-family: monospace;
-}
-
-.estimator-table summary {
-    padding: .5rem;
-    cursor: pointer;
-}
-
-.estimator-table summary::marker {
-    font-size: 0.7rem;
-}
-
-.estimator-table details[open] {
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    padding-bottom: 0.3rem;
-}
-
-.estimator-table .parameters-table {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 0;
-}
-
-.estimator-table .parameters-table tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.estimator-table .parameters-table tr:nth-child(even) {
-    background-color: #f6f6f6;
-}
-
-.estimator-table .parameters-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-.estimator-table table td {
-    border: 1px solid rgba(106, 105, 104, 0.232);
-}
-
-/*
-    `table td`is set in notebook with right text-align.
-    We need to overwrite it.
-*/
-.estimator-table table td.param {
-    text-align: left;
-    position: relative;
-    padding: 0;
-}
-
-.user-set td {
-    color:rgb(255, 94, 0);
-    text-align: left !important;
-}
-
-.user-set td.value {
-    color:rgb(255, 94, 0);
-    background-color: transparent;
-}
-
-.default td {
-    color: black;
-    text-align: left !important;
-}
-
-.user-set td i,
-.default td i {
-    color: black;
-}
-
-/*
-    Styles for parameter documentation links
-    We need styling for visited so jupyter doesn't overwrite it
-*/
-a.param-doc-link,
-a.param-doc-link:link,
-a.param-doc-link:visited {
-    text-decoration: underline dashed;
-    text-underline-offset: .3em;
-    color: inherit;
-    display: block;
-    padding: .5em;
-}
-
-/* "hack" to make the entire area of the cell containing the link clickable */
-a.param-doc-link::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-}
-
-.param-doc-description {
-    display: none;
-    position: absolute;
-    z-index: 9999;
-    left: 0;
-    padding: .5ex;
-    margin-left: 1.5em;
-    color: var(--sklearn-color-text);
-    box-shadow: .3em .3em .4em #999;
-    width: max-content;
-    text-align: left;
-    max-height: 10em;
-    overflow-y: auto;
-
-    /* unfitted */
-    background: var(--sklearn-color-unfitted-level-0);
-    border: thin solid var(--sklearn-color-unfitted-level-3);
-}
-
-/* Fitted state for parameter tooltips */
-.fitted .param-doc-description {
-    /* fitted */
-    background: var(--sklearn-color-fitted-level-0);
-    border: thin solid var(--sklearn-color-fitted-level-3);
-}
-
-.param-doc-link:hover .param-doc-description {
-    display: block;
-}
-
-.copy-paste-icon {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-size: 14px 14px;
-    background-position: 0;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-}
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                
-<table class="parameters-table caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<tbody>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=penalty,-%7B%27l1%27%2C%20%27l2%27%2C%20%27elasticnet%27%2C%20None%7D%2C%20default%3D%27l2%27" class="param-doc-link" rel="noreferrer" target="_blank">penalty <span class="param-doc-description">penalty: {'l1', 'l2', 'elasticnet', None}, default='l2'<br>
-<br>
-Specify the norm of the penalty:<br>
-<br>
-- `None`: no penalty is added;<br>
-- `'l2'`: add a L2 penalty term and it is the default choice;<br>
-- `'l1'`: add a L1 penalty term;<br>
-- `'elasticnet'`: both L1 and L2 penalty terms are added.<br>
-<br>
-.. warning::<br>
-Some penalties may not work with some solvers. See the parameter<br>
-`solver` below, to know the compatibility between the penalty and<br>
-solver.<br>
-<br>
-.. versionadded:: 0.19<br>
-l1 penalty with SAGA solver (allowing 'multinomial' + L1)<br>
-<br>
-.. deprecated:: 1.8<br>
-`penalty` was deprecated in version 1.8 and will be removed in 1.10.<br>
-Use `l1_ratio` instead. `l1_ratio=0` for `penalty='l2'`, `l1_ratio=1` for<br>
-`penalty='l1'` and `l1_ratio` set to any float between 0 and 1 for<br>
-`'penalty='elasticnet'`.</span></a></td>
-<td class="value">'deprecated'</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=C,-float%2C%20default%3D1.0" class="param-doc-link" rel="noreferrer" target="_blank">C <span class="param-doc-description">C: float, default=1.0<br>
-<br>
-Inverse of regularization strength; must be a positive float.<br>
-Like in support vector machines, smaller values specify stronger<br>
-regularization. `C=np.inf` results in unpenalized logistic regression.<br>
-For a visual example on the effect of tuning the `C` parameter<br>
-with an L1 penalty, see:<br>
-:ref:`sphx_glr_auto_examples_linear_model_plot_logistic_path.py`.</span></a></td>
-<td class="value">1.0</td>
-</tr>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=l1_ratio,-float%2C%20default%3D0.0" class="param-doc-link" rel="noreferrer" target="_blank">l1_ratio <span class="param-doc-description">l1_ratio: float, default=0.0<br>
-<br>
-The Elastic-Net mixing parameter, with `0 &lt;= l1_ratio &lt;= 1`. Setting<br>
-`l1_ratio=1` gives a pure L1-penalty, setting `l1_ratio=0` a pure L2-penalty.<br>
-Any value between 0 and 1 gives an Elastic-Net penalty of the form<br>
-`l1_ratio * L1 + (1 - l1_ratio) * L2`.<br>
-<br>
-.. warning::<br>
-Certain values of `l1_ratio`, i.e. some penalties, may not work with some<br>
-solvers. See the parameter `solver` below, to know the compatibility between<br>
-the penalty and solver.<br>
-<br>
-.. versionchanged:: 1.8<br>
-Default value changed from None to 0.0.<br>
-<br>
-.. deprecated:: 1.8<br>
-`None` is deprecated and will be removed in version 1.10. Always use<br>
-`l1_ratio` to specify the penalty type.</span></a></td>
-<td class="value">0.0</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=dual,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">dual <span class="param-doc-description">dual: bool, default=False<br>
-<br>
-Dual (constrained) or primal (regularized, see also<br>
-:ref:`this equation <regularized-logistic-loss>`) formulation. Dual formulation<br>
-is only implemented for l2 penalty with liblinear solver. Prefer `dual=False`<br>
-when n_samples &gt; n_features.</regularized-logistic-loss></span></a></td>
-<td class="value">False</td>
-</tr>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=tol,-float%2C%20default%3D1e-4" class="param-doc-link" rel="noreferrer" target="_blank">tol <span class="param-doc-description">tol: float, default=1e-4<br>
-<br>
-Tolerance for stopping criteria.</span></a></td>
-<td class="value">0.0001</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=fit_intercept,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">fit_intercept <span class="param-doc-description">fit_intercept: bool, default=True<br>
-<br>
-Specifies if a constant (a.k.a. bias or intercept) should be<br>
-added to the decision function.</span></a></td>
-<td class="value">True</td>
-</tr>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=intercept_scaling,-float%2C%20default%3D1" class="param-doc-link" rel="noreferrer" target="_blank">intercept_scaling <span class="param-doc-description">intercept_scaling: float, default=1<br>
-<br>
-Useful only when the solver `liblinear` is used<br>
-and `self.fit_intercept` is set to `True`. In this case, `x` becomes<br>
-`[x, self.intercept_scaling]`,<br>
-i.e. a "synthetic" feature with constant value equal to<br>
-`intercept_scaling` is appended to the instance vector.<br>
-The intercept becomes<br>
-``intercept_scaling * synthetic_feature_weight``.<br>
-<br>
-.. note::<br>
-The synthetic feature weight is subject to L1 or L2<br>
-regularization as all other features.<br>
-To lessen the effect of regularization on synthetic feature weight<br>
-(and therefore on the intercept) `intercept_scaling` has to be increased.</span></a></td>
-<td class="value">1</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=class_weight,-dict%20or%20%27balanced%27%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">class_weight <span class="param-doc-description">class_weight: dict or 'balanced', default=None<br>
-<br>
-Weights associated with classes in the form ``{class_label: weight}``.<br>
-If not given, all classes are supposed to have weight one.<br>
-<br>
-The "balanced" mode uses the values of y to automatically adjust<br>
-weights inversely proportional to class frequencies in the input data<br>
-as ``n_samples / (n_classes * np.bincount(y))``.<br>
-<br>
-Note that these weights will be multiplied with sample_weight (passed<br>
-through the fit method) if sample_weight is specified.<br>
-<br>
-.. versionadded:: 0.17<br>
-*class_weight='balanced'*</span></a></td>
-<td class="value">None</td>
-</tr>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=random_state,-int%2C%20RandomState%20instance%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">random_state <span class="param-doc-description">random_state: int, RandomState instance, default=None<br>
-<br>
-Used when ``solver`` == 'sag', 'saga' or 'liblinear' to shuffle the<br>
-data. See :term:`Glossary <random_state>` for details.</random_state></span></a></td>
-<td class="value">None</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=solver,-%7B%27lbfgs%27%2C%20%27liblinear%27%2C%20%27newton-cg%27%2C%20%27newton-cholesky%27%2C%20%27sag%27%2C%20%27saga%27%7D%2C%20%20%20%20%20%20%20%20%20%20%20%20%20default%3D%27lbfgs%27" class="param-doc-link" rel="noreferrer" target="_blank">solver <span class="param-doc-description">solver: {'lbfgs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga'}, default='lbfgs'<br>
-<br>
-Algorithm to use in the optimization problem. Default is 'lbfgs'.<br>
-To choose a solver, you might want to consider the following aspects:<br>
-<br>
-- 'lbfgs' is a good default solver because it works reasonably well for a wide<br>
-class of problems.<br>
-- For :term:`multiclass` problems (`n_classes &gt;= 3`), all solvers except<br>
-'liblinear' minimize the full multinomial loss, 'liblinear' will raise an<br>
-error.<br>
-- 'newton-cholesky' is a good choice for<br>
-`n_samples` &gt;&gt; `n_features * n_classes`, especially with one-hot encoded<br>
-categorical features with rare categories. Be aware that the memory usage<br>
-of this solver has a quadratic dependency on `n_features * n_classes`<br>
-because it explicitly computes the full Hessian matrix.<br>
-- For small datasets, 'liblinear' is a good choice, whereas 'sag'<br>
-and 'saga' are faster for large ones;<br>
-- 'liblinear' can only handle binary classification by default. To apply a<br>
-one-versus-rest scheme for the multiclass setting one can wrap it with the<br>
-:class:`~sklearn.multiclass.OneVsRestClassifier`.<br>
-<br>
-.. warning::<br>
-The choice of the algorithm depends on the penalty chosen (`l1_ratio=0`<br>
-for L2-penalty, `l1_ratio=1` for L1-penalty and `0 &lt; l1_ratio &lt; 1` for<br>
-Elastic-Net) and on (multinomial) multiclass support:<br>
-<br>
-================= ======================== ======================<br>
-solver l1_ratio multinomial multiclass<br>
-================= ======================== ======================<br>
-'lbfgs' l1_ratio=0 yes<br>
-'liblinear' l1_ratio=1 or l1_ratio=0 no<br>
-'newton-cg' l1_ratio=0 yes<br>
-'newton-cholesky' l1_ratio=0 yes<br>
-'sag' l1_ratio=0 yes<br>
-'saga' 0&lt;=l1_ratio&lt;=1 yes<br>
-================= ======================== ======================<br>
-<br>
-.. note::<br>
-'sag' and 'saga' fast convergence is only guaranteed on features<br>
-with approximately the same scale. You can preprocess the data with<br>
-a scaler from :mod:`sklearn.preprocessing`.<br>
-<br>
-.. seealso::<br>
-Refer to the :ref:`User Guide <logistic_regression>` for more<br>
-information regarding :class:`LogisticRegression` and more specifically the<br>
-:ref:`Table <logistic_regression_solvers>`<br>
-summarizing solver/penalty supports.<br>
-<br>
-.. versionadded:: 0.17<br>
-Stochastic Average Gradient (SAG) descent solver. Multinomial support in<br>
-version 0.18.<br>
-.. versionadded:: 0.19<br>
-SAGA solver.<br>
-.. versionchanged:: 0.22<br>
-The default solver changed from 'liblinear' to 'lbfgs' in 0.22.<br>
-.. versionadded:: 1.2<br>
-newton-cholesky solver. Multinomial support in version 1.6.</logistic_regression_solvers></logistic_regression></span></a></td>
-<td class="value">'lbfgs'</td>
-</tr>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=max_iter,-int%2C%20default%3D100" class="param-doc-link" rel="noreferrer" target="_blank">max_iter <span class="param-doc-description">max_iter: int, default=100<br>
-<br>
-Maximum number of iterations taken for the solvers to converge.</span></a></td>
-<td class="value">100</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=verbose,-int%2C%20default%3D0" class="param-doc-link" rel="noreferrer" target="_blank">verbose <span class="param-doc-description">verbose: int, default=0<br>
-<br>
-For the liblinear and lbfgs solvers set verbose to any positive<br>
-number for verbosity.</span></a></td>
-<td class="value">0</td>
-</tr>
-<tr class="default odd">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=warm_start,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">warm_start <span class="param-doc-description">warm_start: bool, default=False<br>
-<br>
-When set to True, reuse the solution of the previous call to fit as<br>
-initialization, otherwise, just erase the previous solution.<br>
-Useless for liblinear solver. See :term:`the Glossary <warm_start>`.<br>
-<br>
-.. versionadded:: 0.17<br>
-*warm_start* to support *lbfgs*, *newton-cg*, *sag*, *saga* solvers.</warm_start></span></a></td>
-<td class="value">False</td>
-</tr>
-<tr class="default even">
-<td><em></em></td>
-<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=n_jobs,-int%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">n_jobs <span class="param-doc-description">n_jobs: int, default=None<br>
-<br>
-Does not have any effect.<br>
-<br>
-.. deprecated:: 1.8<br>
-`n_jobs` is deprecated in version 1.8 and will be removed in 1.10.</span></a></td>
-<td class="value">None</td>
-</tr>
-</tbody>
-</table>
-
-            </details>
-        </div>
-    </div></div></div></div></div><script>function copyToClipboard(text, element) {
-    // Get the parameter prefix from the closest toggleable content
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
-
-    const originalStyle = element.style;
-    const computedStyle = window.getComputedStyle(element);
-    const originalWidth = computedStyle.width;
-    const originalHTML = element.innerHTML.replace('Copied!', '');
-
-    navigator.clipboard.writeText(fullParamName)
-        .then(() => {
-            element.style.width = originalWidth;
-            element.style.color = 'green';
-            element.innerHTML = "Copied!";
-
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy:', err);
-            element.style.color = 'red';
-            element.innerHTML = "Failed!";
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        });
-    return false;
-}
-
-document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const paramName = element.parentElement.nextElementSibling
-        .textContent.trim().split(' ')[0];
-    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
-
-    element.setAttribute('title', fullParamName);
-});
-
-
-/**
- * Adapted from Skrub
- * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
- * @returns "light" or "dark"
- */
-function detectTheme(element) {
-    const body = document.querySelector('body');
-
-    // Check VSCode theme
-    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
-    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
-
-    if (themeKindAttr && themeNameAttr) {
-        const themeKind = themeKindAttr.toLowerCase();
-        const themeName = themeNameAttr.toLowerCase();
-
-        if (themeKind.includes("dark") || themeName.includes("dark")) {
-            return "dark";
-        }
-        if (themeKind.includes("light") || themeName.includes("light")) {
-            return "light";
-        }
-    }
-
-    // Check Jupyter theme
-    if (body.getAttribute('data-jp-theme-light') === 'false') {
-        return 'dark';
-    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
-        return 'light';
-    }
-
-    // Guess based on a parent element's color
-    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
-    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
-    if (match) {
-        const [r, g, b] = [
-            parseFloat(match[1]),
-            parseFloat(match[2]),
-            parseFloat(match[3])
-        ];
-
-        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
-        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
-
-        if (luma > 180) {
-            // If the text is very bright we have a dark theme
-            return 'dark';
-        }
-        if (luma < 75) {
-            // If the text is very dark we have a light theme
-            return 'light';
-        }
-        // Otherwise fall back to the next heuristic.
-    }
-
-    // Fallback to system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-
-function forceTheme(elementId) {
-    const estimatorElement = document.querySelector(`#${elementId}`);
-    if (estimatorElement === null) {
-        console.error(`Element with id ${elementId} not found.`);
-    } else {
-        const theme = detectTheme(estimatorElement);
-        estimatorElement.classList.add(theme);
-    }
-}
-
-forceTheme('sk-container-id-1');</script>
+<pre><code>(array([-0.8975385]),
+ array([[-2.54132047e-04,  1.42011934e+00,  3.75148051e-01,
+          1.38392740e+00, -1.91947960e-02]]))</code></pre>
 </div>
 </div>
 <section id="task-5.2-compare-coefficients" class="level3">
@@ -1724,16 +824,15 @@ forceTheme('sk-container-id-1');</script>
 </section>
 <section id="solution-11" class="level2">
 <h2 class="anchored" data-anchor-id="solution-11">Solution</h2>
-<div id="3db3d611" class="cell" data-execution_count="31">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>coef_A <span class="op">=</span> pd.Series(model.coef_[<span class="dv">0</span>], index<span class="op">=</span>X.columns)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>coef_B <span class="op">=</span> pd.Series(model_B.coef_[<span class="dv">0</span>], index<span class="op">=</span>X_B.columns)</span>
+<div id="2a7282c6" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>coef_ec_urban <span class="op">=</span> pd.Series(model.coef_[<span class="dv">0</span>], index<span class="op">=</span>X.columns)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>coef_platform <span class="op">=</span> pd.Series(model_platform.coef_[<span class="dv">0</span>], index<span class="op">=</span>X_platform.columns)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>comparison <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Category_A"</span>: coef_A,</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Category_B"</span>: coef_B</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>comparison</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>comparison <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"Early-career urban borrowers"</span>: coef_ec_urban, <span class="st">"Platform workers"</span>: coef_platform}</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>comparison</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
@@ -1742,35 +841,35 @@ forceTheme('sk-container-id-1');</script>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Category_A</th>
-<th data-quarto-table-cell-role="th">Category_B</th>
+<th data-quarto-table-cell-role="th">Early-career urban borrowers</th>
+<th data-quarto-table-cell-role="th">Platform workers</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">income</th>
 <td>-0.000517</td>
-<td>-0.000255</td>
+<td>-0.000254</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">debt_to_income</th>
 <td>0.044377</td>
-<td>1.461107</td>
+<td>1.420119</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">missed_payments_12m</th>
 <td>1.061270</td>
-<td>0.376432</td>
+<td>0.375148</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">credit_utilization</th>
 <td>1.155647</td>
-<td>1.336799</td>
+<td>1.383927</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">months_with_company</th>
 <td>-0.016245</td>
-<td>-0.019232</td>
+<td>-0.019195</td>
 </tr>
 </tbody>
 </table>
@@ -1778,6 +877,10 @@ forceTheme('sk-container-id-1');</script>
 </div>
 </div>
 </div>
+<p>Some predictors matter in both groups, but their strength differs.</p>
+<p>For both early-career urban borrowers and platform workers, credit utilization is a strong positive predictor of default, indicating that higher usage of available credit increases risk in both groups.</p>
+<p>Income and months with company have small negative effects in both groups, suggesting slightly lower default risk with higher income and longer tenure, though these effects are minor.</p>
+<p>Key differences emerge for debt-to-income and missed payments. For platform workers, debt-to-income is much more influential, indicating that overall debt burden plays a larger role. In contrast, for early-career urban borrowers, missed payments are more important, suggesting recent repayment behavior is a stronger signal of default risk.</p>
 <section id="task-5.3-compare-roc-and-auc" class="level3">
 <h3 class="anchored" data-anchor-id="task-5.3-compare-roc-and-auc">Task 5.3 — Compare ROC and AUC</h3>
 <p>Compare the ROC curves and AUC values of the two models.</p>
@@ -1789,49 +892,21 @@ forceTheme('sk-container-id-1');</script>
 </section>
 <section id="solution-12" class="level2">
 <h2 class="anchored" data-anchor-id="solution-12">Solution</h2>
-<div id="d33318de" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>y_prob_B <span class="op">=</span> model_B.predict_proba(X_B)[:, <span class="dv">1</span>]</span>
+<div id="119e9549" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>y_prob_platform <span class="op">=</span> model_platform.predict_proba(X_platform)[:, <span class="dv">1</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>fpr_B, tpr_B, _ <span class="op">=</span> roc_curve(y_B, y_prob_B)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>roc_auc_B <span class="op">=</span> auc(fpr_B, tpr_B)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>fpr_platform, tpr_platform, _ <span class="op">=</span> roc_curve(y_platform, y_prob_platform)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>roc_auc_platform <span class="op">=</span> auc(fpr_platform, tpr_platform)</span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>roc_auc, roc_auc_B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>roc_auc, roc_auc_platform</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
-<pre><code>(0.7982300884955752, 0.7174603174603175)</code></pre>
+<pre><code>(0.7982300884955752, 0.7167133520074697)</code></pre>
 </div>
 </div>
-<ul>
-<li>Higher AUC → better ability to distinguish defaults from non-defaults</li>
-</ul>
-<div style="page-break-after: always;"></div>
+<p>The model for early-career urban borrowers achieves a higher AUC (~0.80) than the model for platform workers (~0.72).</p>
+<p>This indicates that defaults are easier to classify for early-career urban borrowers, as the model can better distinguish between defaulters and non-defaulters.</p>
+<p>A possible explanation is that risk patterns are more clear and consistent among early-career urban borrowers (e.g., strong signals like missed payments). In contrast, platform workers may have more heterogeneous or less stable financial situations, making default harder to predict with the available variables.</p>
 </section>
-</section>
-<section id="wrap-up" class="level1">
-<h1>🧩 Wrap-up <a id="wrap-up" href=""></a></h1>
-<p>🎉🎈 You have completed the notebook – good work! 🎈🎉</p>
-<p>In this notebook, we have learned to:</p>
-<ul>
-<li>Fit and interpret logistic regression models using <code>scikit-learn</code></li>
-<li>Distinguish between predicted probabilities and class labels</li>
-<li>Apply and reflect on different classification thresholds</li>
-<li>Compute and interpret confusion-matrix-based metrics</li>
-<li>Understand ROC curves and AUC as threshold-independent evaluation tools</li>
-<li>Compare model performance across different customer categories</li>
-<li>Reflect on how model use depends on business context and risk strategy</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Session 5 survey">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Session 5 survey
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before you wrap up, please complete the Session 5 survey here: <a href="https://forms.gle/mVWw3z7ftFn48gDY6" target="_blank">https://forms.gle/mVWw3z7ftFn48gDY6</a>. Thank you 🙏</p>
-</div>
-</div>
 </section>
 
 </main>
