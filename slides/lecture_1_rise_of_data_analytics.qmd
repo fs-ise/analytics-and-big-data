@@ -425,6 +425,48 @@ Figure based on the work of @HendrycksEtAl2025 on *Artificial General Intelligen
       ::: aside
       Source: @Schmarzo2016, p. 88
       :::
+
+
+    TODO: include explanation
+
+      ## Explanation vs. Prediction (I)
+
+      > Question 1: I have a headache. If I take an aspirin now, will it go away?
+
+      > Question 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?
+
+      > The first case is a typical "predictive" question. You are calculating the effect of a hypothetical intervention.
+
+      > The second case is a typical "explanatory" question. You are calculating the effect of a counterfactual intervention.
+
+      ::: {.notes}
+
+      Which one is Explanation, which Prediction?
+
+      counterfactual : den Tatsachen widersprechend
+
+      :::
+
+      ## Explanation vs. Prediction (II)
+
+      **Explanation:**
+
+      - Explanation is about understanding relationships and why certain things happen.
+      - It requires an understanding of cause and effect.
+      - Tests of causal hypotheses are fundamental.
+      - Measures of significance are central.
+      - A good explanatory model may also have predictive power.
+
+      **Prediction:**
+
+      - Prediction is about anticipating and forecasting what may happen in the future.
+      - Correlations are important in this context (but correlation does not imply causation).
+      - Therefore, predictive models may have no real explanatory power.
+      - For robust prediction, knowledge of causality is preferable.
+      - The main task is to find a model that optimally approximates reality and minimizes overfitting.
+      - Accuracy is measured using out-of-sample data.
+
+
 -->
 
 ## Analytical purposes
