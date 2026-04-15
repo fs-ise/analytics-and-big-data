@@ -56,7 +56,7 @@ TODO :
   The first session gives an overview, the last a synthesis (across phases).
   The initial sessions focus on data understanding and preparation and the penultimate ones on deployment in organizations.
   The main focus is then on analytical modeling, covering different models (regression, ML, Big Data analytics).
-  In this part, the focus is on modeling, but relevant aspects in the other phases (such as overfitting in ML) are also covered.
+  In this part, the focus is on modeling, but relevant aspects in the other phases (such as over-fitting in ML) are also covered.
   The modeling sessions use CRISP-DM as a meta-layer to organize materials (e.g., starting from the business problem and data, which explain the need for particular models), but the major sections mirror the model specificities instead of repeating the CRISP-DM phases in each session.
 - The focus is on **dataset examples from a business-context**.
   To ensure a good fit, we aim to avoid typical example datasets from the areas of medicine, climate, or political and societal phenomena.
@@ -66,8 +66,22 @@ TODO :
   Similarly, examples like recommender systems show why it can be reasonable to focus solely on prediction, putting less emphasis on typical concerns raised by statistical inference (interpretation of coefficients, or generalization).
   In addition, business data raises particular upstream considerations, e.g., related to the typical data sources and features that should be accessed and incorporated or even data that should be recorded in the first place, and downstream deployment considerations, e.g., related to compliant use of employee analytics, or bias in algorithmic decision systems.
 - The focus is on **coding analytical notebooks**.
-  Reasons: advanced analytics, transferrability to graphical tools, rich context, and LLM support.
+  Reasons: advanced analytics, transferability to graphical tools, rich context, and LLM support.
   
+TBD: If analytical decisions should support particular actions, a typical task may be related to handling identifiers: removing them for the model training, but adding them again when predictions were made? -> e.g., logistic regression and default prediction?
+TBD: Prepare for "cognitive translation" (between Python code, formulas, different outputs, conceptual procedures like OLS/Max.Likelihood)
+
+Table illustrating case examples and insights (specific to *business analytics*, and in line with the whole CRISP-DM process):
+
+| Phase                     | Case Example           | Insights                                           |
+|--------------------------|-----------------------|------------------------------------------------------|
+| Data Preparation         |                       | Integration; data quality issues                     |
+| Exploratory Data Analysis| Cluster example       | TODO                                                 |
+| Linear Regression        | Employee analytics    | Ethics                                               |
+| Logistic Regression      | Churn prediction      | Expected value criterion                             |
+| Machine Learning         | TBA                   | Explainable AI; MLOps                                |
+| Big Data                 | TBA                   | Handling extreme events (e.g., Uber crisis example)  |
+| Deployment               | TBA                   | TBA                                                  |
 
 
 ## Students: Setup for exercises
