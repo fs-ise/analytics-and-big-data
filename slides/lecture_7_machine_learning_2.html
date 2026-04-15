@@ -131,15 +131,15 @@
     }
   </style>
   <style>
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -153,17 +153,6 @@
     content: '🔗';
     background-image: none;
   }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -173,6 +162,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
     background-image: none;
   }
   </style>
@@ -209,23 +209,37 @@
 characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 -->
 </section>
-<section id="introductory-example" class="slide level2">
-<h2>Introductory Example</h2>
-<blockquote>
-<p>Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.</p>
-</blockquote>
-<blockquote>
-<p>Assume you have the age, income, and a creditworthiness category of “yes” or “no” for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.</p>
-</blockquote>
-<blockquote>
-<p>You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.</p>
-</blockquote>
-<blockquote>
-<p>What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?</p>
-</blockquote>
-<p><img data-src="../images/slides_221.png"></p>
-<p>TODO: remove knn (covered in EDA)!?!</p>
-<pre><code>  # k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
+<section id="classification-vs.-regression-same-models-different-outputs" class="slide level2">
+<h2>Classification vs.&nbsp;Regression: Same models, different outputs</h2>
+<p>Classification → categorical output Regression → numerical output</p>
+<p>Many models can handle both</p>
+</section>
+<section>
+<section id="linear-models" class="title-slide slide level1 center" data-stack-name="Linear models">
+<h1>Linear models</h1>
+
+</section>
+<section id="linear-models-1" class="slide level2">
+<h2>Linear models</h2>
+<p>Linear Regression (regression) Logistic Regression (classification) Ridge / Lasso (regularization)</p>
+<p>👉 Key idea:</p>
+<p>Linear relationship + regularization</p>
+<pre><code>  ## Introductory Example
+
+  &gt; Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.
+
+  &gt; Assume you have the age, income, and a creditworthiness category of "yes" or "no" for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.
+
+  &gt; You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.
+
+  &gt; What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?
+
+  ![](../images/slides_221.png)
+
+
+  TODO: remove knn (covered in EDA)!?!
+
+  # k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
 
 
   ## k-Nearest Neighbors
@@ -279,85 +293,56 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 
   5. Assign object to most frequent class
 
-  &gt; Customer is creditworthy!</code></pre>
-</section>
-<section id="creation-and-use-of-models" class="slide level2">
-<h2>Creation and Use of Models</h2>
-<p><img data-src="../images/slides_188_new.png"></p>
-</section>
-<section id="calculating-accuracies" class="slide level2">
-<h2>Calculating Accuracies</h2>
-<p><img data-src="../images/slides_189_new.png"></p>
-</section>
-<section id="determining-parameter-k" class="slide level2">
-<h2>Determining Parameter k</h2>
-<ol type="1">
-<li><p>Split the original labeled dataset into training and test data.</p></li>
-<li><p>Pick an evaluation metric. Misclassification rate or accuracy are good ones.</p></li>
-<li><p>Run k-NN a few times, changing k and checking the evaluation measure.</p></li>
-<li><p>Optimize k by picking the one with the best evaluation measure.</p></li>
-</ol>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: center;">k</th>
-<th style="text-align: center;">Accuracy</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0.720</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.685</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.740</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">0.745</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.770</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0.740</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">0.750</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">0.750</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">0.765</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">0.760</td>
-</tr>
-</tbody>
-</table>
-</section>
+  &gt; Customer is creditworthy!
+
+
+  ## Creation and Use of Models
+
+  ![](../images/slides_188_new.png)
+
+
+  ## Calculating Accuracies
+
+  ![](../images/slides_189_new.png)
+
+
+  ## Determining Parameter k
+
+  1. Split the original labeled dataset into training and test data.
+
+  2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.
+
+  3. Run k-NN a few times, changing k and checking the evaluation measure.
+
+  4. Optimize k by picking the one with the best evaluation measure.
+
+
+  | k | Accuracy |
+  | :-: | :-: |
+  | 1 | 0.720 |
+  | 2 | 0.685 |
+  | 3 | 0.740 |
+  | 4 | 0.745 |
+  | 5 | 0.770 |
+  | 6 | 0.740 |
+  | 7 | 0.750 |
+  | 8 | 0.750 |
+  | 9 | 0.765 |
+  | 10 | 0.760 |</code></pre>
+</section></section>
 <section>
 <section id="decision-trees" class="title-slide slide level1 center" data-stack-name="Decision trees">
 <h1>Decision trees</h1>
-
+<ul>
+<li>Decision Trees (classification + regression)</li>
+<li>Random Forests (ensemble)</li>
+</ul>
 </section>
 <section id="which-one-is-better" class="slide level2">
 <h2>Which one is better?</h2>
 <p><img data-src="../images/slides_199_new.png"></p>
 </section>
-<section id="introductory-example-1" class="slide level2">
+<section id="introductory-example" class="slide level2">
 <h2>Introductory Example</h2>
 <p><img data-src="../images/slides_225.png"></p>
 
@@ -432,13 +417,8 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </tr>
 </tbody>
 </table>
-</section></section>
-<section>
-<section id="tbd" class="title-slide slide level1 center">
-<h1>TBD</h1>
-
 </section>
-<section id="introductory-example-2" class="slide level2">
+<section id="introductory-example-1" class="slide level2">
 <h2>Introductory Example</h2>
 <p><img data-src="../images/slides_205_new.png"></p>
 </section>
@@ -544,11 +524,6 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 <p>The learner overfits to correctly classify the noisy data objects.</p>
 </blockquote>
 <p><img data-src="../images/slides_245.png"></p>
-</section></section>
-<section>
-<section id="random-forest" class="title-slide slide level1 center" data-stack-name="Random Forest">
-<h1>Random Forest</h1>
-
 </section>
 <section id="random-forest-i" class="slide level2">
 <h2>Random Forest (I)</h2>
@@ -622,6 +597,14 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
       ::: aside
       — Source: Bichler (2015): Course Business Analytics, TU München
       :::</code></pre>
+</section></section>
+<section>
+<section id="svm" class="title-slide slide level1 center" data-stack-name="SVM">
+<h1>SVM</h1>
+
+</section>
+<section id="todo-add-contents" class="slide level2">
+<h2>TODO (add contents)</h2>
 </section></section>
 <section>
 <section id="neural-networks" class="title-slide slide level1 center" data-stack-name="Neural Networks">
@@ -806,9 +789,14 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 <p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
 </div><div>
 <p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div></aside></section>
-<section id="todotbd-close-with-ensemble-classifiers" class="slide level2">
-<h2>TODO/TBD: close with ensemble classifiers?</h2>
+</div></aside></section></section>
+<section>
+<section id="ensembles" class="title-slide slide level1 center" data-stack-name="Ensbembles">
+<h1>Ensembles</h1>
+
+</section>
+<section id="todo-see-abd-slides" class="slide level2">
+<h2>TODO / see ABD slides</h2>
 </section>
 <section id="survey-session-7" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 7</h2>

@@ -501,7 +501,7 @@
     "href": "exercises/exercise_4.html#task-b1-estimate-the-same-model-with-statsmodels",
     "title": "Exercise 4: Regression I",
     "section": "Task B1: Estimate the same model with statsmodels",
-    "text": "Task B1: Estimate the same model with statsmodels\n\nUse statsmodels to create a regression table for the same model.\n\nimport statsmodels.api as sm\n\n# Write your own code here.\n\n\n\n\nimport statsmodels.formula.api as smf\n\n# Fit the regression model using a formula\nmodel_sm = smf.ols(\n    formula=\"performance ~ experience + training_hours + salary + remote_share + team_size + manager_quality + C(department)\",\n    data=df\n).fit()\n\n# Print the regression table\nprint(model_sm.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.816\nModel:                            OLS   Adj. R-squared:                  0.814\nMethod:                 Least Squares   F-statistic:                     768.8\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):               0.00\nTime:                        08:01:02   Log-Likelihood:                -5207.8\nNo. Observations:                1400   AIC:                         1.043e+04\nDf Residuals:                    1391   BIC:                         1.048e+04\nDf Model:                           8                                         \nCovariance Type:            nonrobust                                         \n==========================================================================================\n                             coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------------------\nIntercept                 45.6309      2.397     19.035      0.000      40.928      50.334\nC(department)[T.IT]       13.9295      0.770     18.093      0.000      12.419      15.440\nC(department)[T.Sales]    12.7582      0.730     17.465      0.000      11.325      14.191\nexperience                 1.8172      0.116     15.671      0.000       1.590       2.045\ntraining_hours             0.9135      0.027     33.517      0.000       0.860       0.967\nsalary                     0.0004    5.4e-05      7.064      0.000       0.000       0.000\nremote_share              -0.9364      1.238     -0.757      0.449      -3.364       1.491\nteam_size                  1.3921      0.077     18.036      0.000       1.241       1.544\nmanager_quality            5.8212      0.224     25.982      0.000       5.382       6.261\n==============================================================================\nOmnibus:                        0.442   Durbin-Watson:                   1.996\nProb(Omnibus):                  0.802   Jarque-Bera (JB):                0.414\nSkew:                           0.042   Prob(JB):                        0.813\nKurtosis:                       3.010   Cond. No.                     4.76e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.76e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems."
+    "text": "Task B1: Estimate the same model with statsmodels\n\nUse statsmodels to create a regression table for the same model.\n\nimport statsmodels.api as sm\n\n# Write your own code here.\n\n\n\n\nimport statsmodels.formula.api as smf\n\n# Fit the regression model using a formula\nmodel_sm = smf.ols(\n    formula=\"performance ~ experience + training_hours + salary + remote_share + team_size + manager_quality + C(department)\",\n    data=df\n).fit()\n\n# Print the regression table\nprint(model_sm.summary())\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.816\nModel:                            OLS   Adj. R-squared:                  0.814\nMethod:                 Least Squares   F-statistic:                     768.8\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):               0.00\nTime:                        15:41:13   Log-Likelihood:                -5207.8\nNo. Observations:                1400   AIC:                         1.043e+04\nDf Residuals:                    1391   BIC:                         1.048e+04\nDf Model:                           8                                         \nCovariance Type:            nonrobust                                         \n==========================================================================================\n                             coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------------------\nIntercept                 45.6309      2.397     19.035      0.000      40.928      50.334\nC(department)[T.IT]       13.9295      0.770     18.093      0.000      12.419      15.440\nC(department)[T.Sales]    12.7582      0.730     17.465      0.000      11.325      14.191\nexperience                 1.8172      0.116     15.671      0.000       1.590       2.045\ntraining_hours             0.9135      0.027     33.517      0.000       0.860       0.967\nsalary                     0.0004    5.4e-05      7.064      0.000       0.000       0.000\nremote_share              -0.9364      1.238     -0.757      0.449      -3.364       1.491\nteam_size                  1.3921      0.077     18.036      0.000       1.241       1.544\nmanager_quality            5.8212      0.224     25.982      0.000       5.382       6.261\n==============================================================================\nOmnibus:                        0.442   Durbin-Watson:                   1.996\nProb(Omnibus):                  0.802   Jarque-Bera (JB):                0.414\nSkew:                           0.042   Prob(JB):                        0.813\nKurtosis:                       3.010   Cond. No.                     4.76e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.76e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems."
   },
   {
     "objectID": "exercises/exercise_4.html#task-b2-interpret-the-regression-table",
@@ -522,7 +522,7 @@
     "href": "exercises/exercise_4.html#task-d1-department-specific-regressions",
     "title": "Exercise 4: Regression I",
     "section": "Task D1: Department-specific regressions",
-    "text": "Task D1: Department-specific regressions\nEstimate separate regressions for Sales, IT, and HR.\n\n\n# Write your own code here, using the following scaffold\n\n# import statsmodels.api as sm\n\n# for dept in df[\"department\"].unique():\n     # df_sub = ...\n\n     # X_sub = ...\n     # y_sub = ...\n\n     # TODO: fit OLS\n     # model_sub = ...\n\n     # print(f\"\\n=== Regression results for {dept} ===\")\n     # print(model_sub.summary())\n\n\n\n\nimport statsmodels.api as sm\n\nresults = {}\n\nfor dept in df[\"department\"].unique():\n    # Subset data for one department\n    df_sub = df[df[\"department\"] == dept].copy()\n\n    # Define X and y\n    X_sub = df_sub[\n        [\"experience\", \"training_hours\", \"salary\", \"remote_share\", \"team_size\", \"manager_quality\"]\n    ]\n    y_sub = df_sub[\"performance\"]\n\n    # Add constant and fit OLS model\n    X_sub = sm.add_constant(X_sub)\n    model_sub = sm.OLS(y_sub, X_sub).fit()\n\n    # Store result\n    results[dept] = model_sub\n\n    print(f\"\\n=== Regression results for {dept} ===\")\n    print(model_sub.summary())\n\n\n=== Regression results for Sales ===\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.806\nModel:                            OLS   Adj. R-squared:                  0.804\nMethod:                 Least Squares   F-statistic:                     392.3\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):          5.90e-198\nTime:                        08:01:03   Log-Likelihood:                -2099.4\nNo. Observations:                 573   AIC:                             4213.\nDf Residuals:                     566   BIC:                             4243.\nDf Model:                           6                                         \nCovariance Type:            nonrobust                                         \n===================================================================================\n                      coef    std err          t      P&gt;|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------\nconst              66.1880      3.317     19.956      0.000      59.674      72.702\nexperience          2.0658      0.165     12.540      0.000       1.742       2.389\ntraining_hours      0.8965      0.040     22.636      0.000       0.819       0.974\nsalary              0.0003   7.61e-05      3.518      0.000       0.000       0.000\nremote_share       -2.9166      1.841     -1.584      0.114      -6.533       0.700\nteam_size           1.3468      0.112     12.048      0.000       1.127       1.566\nmanager_quality     4.9809      0.334     14.910      0.000       4.325       5.637\n==============================================================================\nOmnibus:                        0.995   Durbin-Watson:                   1.991\nProb(Omnibus):                  0.608   Jarque-Bera (JB):                0.973\nSkew:                           0.101   Prob(JB):                        0.615\nKurtosis:                       2.986   Cond. No.                     4.47e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.47e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\n=== Regression results for HR ===\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.786\nModel:                            OLS   Adj. R-squared:                  0.782\nMethod:                 Least Squares   F-statistic:                     173.0\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):           1.88e-91\nTime:                        08:01:03   Log-Likelihood:                -1072.5\nNo. Observations:                 289   AIC:                             2159.\nDf Residuals:                     282   BIC:                             2185.\nDf Model:                           6                                         \nCovariance Type:            nonrobust                                         \n===================================================================================\n                      coef    std err          t      P&gt;|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------\nconst              47.2129      5.419      8.712      0.000      36.545      57.880\nexperience          1.3588      0.272      4.997      0.000       0.824       1.894\ntraining_hours      0.9066      0.066     13.811      0.000       0.777       1.036\nsalary              0.0006      0.000      4.519      0.000       0.000       0.001\nremote_share       -6.4131      2.890     -2.219      0.027     -12.101      -0.725\nteam_size           1.3288      0.173      7.665      0.000       0.988       1.670\nmanager_quality     4.7151      0.477      9.888      0.000       3.776       5.654\n==============================================================================\nOmnibus:                        2.090   Durbin-Watson:                   1.917\nProb(Omnibus):                  0.352   Jarque-Bera (JB):                2.159\nSkew:                          -0.179   Prob(JB):                        0.340\nKurtosis:                       2.774   Cond. No.                     4.75e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.75e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\n=== Regression results for IT ===\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.803\nModel:                            OLS   Adj. R-squared:                  0.801\nMethod:                 Least Squares   F-statistic:                     361.3\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):          8.13e-184\nTime:                        08:01:03   Log-Likelihood:                -2010.0\nNo. Observations:                 538   AIC:                             4034.\nDf Residuals:                     531   BIC:                             4064.\nDf Model:                           6                                         \nCovariance Type:            nonrobust                                         \n===================================================================================\n                      coef    std err          t      P&gt;|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------\nconst              48.2260      4.059     11.880      0.000      40.252      56.200\nexperience          1.6694      0.195      8.568      0.000       1.287       2.052\ntraining_hours      0.9113      0.044     20.596      0.000       0.824       0.998\nsalary              0.0005   9.14e-05      4.962      0.000       0.000       0.001\nremote_share        4.0651      2.000      2.033      0.043       0.137       7.993\nteam_size           1.4581      0.130     11.198      0.000       1.202       1.714\nmanager_quality     7.4462      0.375     19.867      0.000       6.710       8.182\n==============================================================================\nOmnibus:                        2.112   Durbin-Watson:                   1.930\nProb(Omnibus):                  0.348   Jarque-Bera (JB):                1.952\nSkew:                           0.091   Prob(JB):                        0.377\nKurtosis:                       3.232   Cond. No.                     4.93e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.93e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems."
+    "text": "Task D1: Department-specific regressions\nEstimate separate regressions for Sales, IT, and HR.\n\n\n# Write your own code here, using the following scaffold\n\n# import statsmodels.api as sm\n\n# for dept in df[\"department\"].unique():\n     # df_sub = ...\n\n     # X_sub = ...\n     # y_sub = ...\n\n     # TODO: fit OLS\n     # model_sub = ...\n\n     # print(f\"\\n=== Regression results for {dept} ===\")\n     # print(model_sub.summary())\n\n\n\n\nimport statsmodels.api as sm\n\nresults = {}\n\nfor dept in df[\"department\"].unique():\n    # Subset data for one department\n    df_sub = df[df[\"department\"] == dept].copy()\n\n    # Define X and y\n    X_sub = df_sub[\n        [\"experience\", \"training_hours\", \"salary\", \"remote_share\", \"team_size\", \"manager_quality\"]\n    ]\n    y_sub = df_sub[\"performance\"]\n\n    # Add constant and fit OLS model\n    X_sub = sm.add_constant(X_sub)\n    model_sub = sm.OLS(y_sub, X_sub).fit()\n\n    # Store result\n    results[dept] = model_sub\n\n    print(f\"\\n=== Regression results for {dept} ===\")\n    print(model_sub.summary())\n\n\n=== Regression results for Sales ===\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.806\nModel:                            OLS   Adj. R-squared:                  0.804\nMethod:                 Least Squares   F-statistic:                     392.3\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):          5.90e-198\nTime:                        15:41:14   Log-Likelihood:                -2099.4\nNo. Observations:                 573   AIC:                             4213.\nDf Residuals:                     566   BIC:                             4243.\nDf Model:                           6                                         \nCovariance Type:            nonrobust                                         \n===================================================================================\n                      coef    std err          t      P&gt;|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------\nconst              66.1880      3.317     19.956      0.000      59.674      72.702\nexperience          2.0658      0.165     12.540      0.000       1.742       2.389\ntraining_hours      0.8965      0.040     22.636      0.000       0.819       0.974\nsalary              0.0003   7.61e-05      3.518      0.000       0.000       0.000\nremote_share       -2.9166      1.841     -1.584      0.114      -6.533       0.700\nteam_size           1.3468      0.112     12.048      0.000       1.127       1.566\nmanager_quality     4.9809      0.334     14.910      0.000       4.325       5.637\n==============================================================================\nOmnibus:                        0.995   Durbin-Watson:                   1.991\nProb(Omnibus):                  0.608   Jarque-Bera (JB):                0.973\nSkew:                           0.101   Prob(JB):                        0.615\nKurtosis:                       2.986   Cond. No.                     4.47e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.47e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\n=== Regression results for HR ===\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.786\nModel:                            OLS   Adj. R-squared:                  0.782\nMethod:                 Least Squares   F-statistic:                     173.0\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):           1.88e-91\nTime:                        15:41:14   Log-Likelihood:                -1072.5\nNo. Observations:                 289   AIC:                             2159.\nDf Residuals:                     282   BIC:                             2185.\nDf Model:                           6                                         \nCovariance Type:            nonrobust                                         \n===================================================================================\n                      coef    std err          t      P&gt;|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------\nconst              47.2129      5.419      8.712      0.000      36.545      57.880\nexperience          1.3588      0.272      4.997      0.000       0.824       1.894\ntraining_hours      0.9066      0.066     13.811      0.000       0.777       1.036\nsalary              0.0006      0.000      4.519      0.000       0.000       0.001\nremote_share       -6.4131      2.890     -2.219      0.027     -12.101      -0.725\nteam_size           1.3288      0.173      7.665      0.000       0.988       1.670\nmanager_quality     4.7151      0.477      9.888      0.000       3.776       5.654\n==============================================================================\nOmnibus:                        2.090   Durbin-Watson:                   1.917\nProb(Omnibus):                  0.352   Jarque-Bera (JB):                2.159\nSkew:                          -0.179   Prob(JB):                        0.340\nKurtosis:                       2.774   Cond. No.                     4.75e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.75e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\n=== Regression results for IT ===\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:            performance   R-squared:                       0.803\nModel:                            OLS   Adj. R-squared:                  0.801\nMethod:                 Least Squares   F-statistic:                     361.3\nDate:                Wed, 15 Apr 2026   Prob (F-statistic):          8.13e-184\nTime:                        15:41:14   Log-Likelihood:                -2010.0\nNo. Observations:                 538   AIC:                             4034.\nDf Residuals:                     531   BIC:                             4064.\nDf Model:                           6                                         \nCovariance Type:            nonrobust                                         \n===================================================================================\n                      coef    std err          t      P&gt;|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------\nconst              48.2260      4.059     11.880      0.000      40.252      56.200\nexperience          1.6694      0.195      8.568      0.000       1.287       2.052\ntraining_hours      0.9113      0.044     20.596      0.000       0.824       0.998\nsalary              0.0005   9.14e-05      4.962      0.000       0.000       0.001\nremote_share        4.0651      2.000      2.033      0.043       0.137       7.993\nteam_size           1.4581      0.130     11.198      0.000       1.202       1.714\nmanager_quality     7.4462      0.375     19.867      0.000       6.710       8.182\n==============================================================================\nOmnibus:                        2.112   Durbin-Watson:                   1.930\nProb(Omnibus):                  0.348   Jarque-Bera (JB):                1.952\nSkew:                           0.091   Prob(JB):                        0.377\nKurtosis:                       3.232   Cond. No.                     4.93e+05\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 4.93e+05. This might indicate that there are\nstrong multicollinearity or other numerical problems."
   },
   {
     "objectID": "exercises/exercise_4.html#task-d2-compare-the-subgroup-models",
@@ -1134,32 +1134,18 @@
     "text": "Compare selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.\nExplain the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).\nSelect and justify an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power."
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example",
-    "href": "slides/lecture_7_machine_learning_2.html#introductory-example",
+    "objectID": "slides/lecture_7_machine_learning_2.html#classification-vs.-regression-same-models-different-outputs",
+    "href": "slides/lecture_7_machine_learning_2.html#classification-vs.-regression-same-models-different-outputs",
     "title": "Analytics & Big Data",
-    "section": "Introductory Example",
-    "text": "Introductory Example\n\nCredit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.\n\n\nAssume you have the age, income, and a creditworthiness category of “yes” or “no” for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.\n\n\nYou can plot people as points on the plane and label people with an empty circle if they have low credit ratings.\n\n\nWhat if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?\n\n\nTODO: remove knn (covered in EDA)!?!\n  # k-Nearest Neighbors {data-stack-name=\"k-Nearest Neighbors\"}\n\n\n  ## k-Nearest Neighbors\n\n  - k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.\n  - The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.\n  - **Procedure of k-NN:**\n    - 1. Determine parameter k (= number of nearest neighbors)\n    - 2. Calculate the distances between the new object and all known labeled objects.\n    - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.\n    - 4. Count the frequencies of the classes of the nearest neighbors.\n    - 5. Assign the new object to the most frequent class.\n\n\n  ## Measuring Similarity\n\n  ![](../images/slides_182_new.png)\n\n\n  ## Unnormalized vs. Normalized\n\n  ![](../images/slides_183_new.png)\n\n\n  ## Example (I)\n\n  ![](../images/slides_184_new.png)\n\n\n  ## Example (II)\n\n  ![](../images/slides_185_new.png)\n\n\n  ## Example (III)\n\n  3. Choose the k nearest neighbors\n\n  | Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |\n  | :-: | :-: | :-: | :-: | :-: | :-: |\n  | A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |\n  | C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |\n  | E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |\n  | F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |\n  | G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |\n  | X | 0.2286 | 0.3636 | 0.2000 | ? |  |\n\n  4. Count the numbers of class members\n\n  &gt; 3 x yes; 2 x no\n\n  5. Assign object to most frequent class\n\n  &gt; Customer is creditworthy!"
+    "section": "Classification vs. Regression: Same models, different outputs",
+    "text": "Classification vs. Regression: Same models, different outputs\nClassification → categorical output Regression → numerical output\nMany models can handle both"
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#creation-and-use-of-models",
-    "href": "slides/lecture_7_machine_learning_2.html#creation-and-use-of-models",
+    "objectID": "slides/lecture_7_machine_learning_2.html#linear-models-1",
+    "href": "slides/lecture_7_machine_learning_2.html#linear-models-1",
     "title": "Analytics & Big Data",
-    "section": "Creation and Use of Models",
-    "text": "Creation and Use of Models"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#calculating-accuracies",
-    "href": "slides/lecture_7_machine_learning_2.html#calculating-accuracies",
-    "title": "Analytics & Big Data",
-    "section": "Calculating Accuracies",
-    "text": "Calculating Accuracies"
-  },
-  {
-    "objectID": "slides/lecture_7_machine_learning_2.html#determining-parameter-k",
-    "href": "slides/lecture_7_machine_learning_2.html#determining-parameter-k",
-    "title": "Analytics & Big Data",
-    "section": "Determining Parameter k",
-    "text": "Determining Parameter k\n\nSplit the original labeled dataset into training and test data.\nPick an evaluation metric. Misclassification rate or accuracy are good ones.\nRun k-NN a few times, changing k and checking the evaluation measure.\nOptimize k by picking the one with the best evaluation measure.\n\n\n\n\nk\nAccuracy\n\n\n\n\n1\n0.720\n\n\n2\n0.685\n\n\n3\n0.740\n\n\n4\n0.745\n\n\n5\n0.770\n\n\n6\n0.740\n\n\n7\n0.750\n\n\n8\n0.750\n\n\n9\n0.765\n\n\n10\n0.760"
+    "section": "Linear models",
+    "text": "Linear models\nLinear Regression (regression) Logistic Regression (classification) Ridge / Lasso (regularization)\n👉 Key idea:\nLinear relationship + regularization\n  ## Introductory Example\n\n  &gt; Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.\n\n  &gt; Assume you have the age, income, and a creditworthiness category of \"yes\" or \"no\" for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.\n\n  &gt; You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.\n\n  &gt; What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?\n\n  ![](../images/slides_221.png)\n\n\n  TODO: remove knn (covered in EDA)!?!\n\n  # k-Nearest Neighbors {data-stack-name=\"k-Nearest Neighbors\"}\n\n\n  ## k-Nearest Neighbors\n\n  - k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.\n  - The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.\n  - **Procedure of k-NN:**\n    - 1. Determine parameter k (= number of nearest neighbors)\n    - 2. Calculate the distances between the new object and all known labeled objects.\n    - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.\n    - 4. Count the frequencies of the classes of the nearest neighbors.\n    - 5. Assign the new object to the most frequent class.\n\n\n  ## Measuring Similarity\n\n  ![](../images/slides_182_new.png)\n\n\n  ## Unnormalized vs. Normalized\n\n  ![](../images/slides_183_new.png)\n\n\n  ## Example (I)\n\n  ![](../images/slides_184_new.png)\n\n\n  ## Example (II)\n\n  ![](../images/slides_185_new.png)\n\n\n  ## Example (III)\n\n  3. Choose the k nearest neighbors\n\n  | Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |\n  | :-: | :-: | :-: | :-: | :-: | :-: |\n  | A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |\n  | C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |\n  | E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |\n  | F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |\n  | G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |\n  | X | 0.2286 | 0.3636 | 0.2000 | ? |  |\n\n  4. Count the numbers of class members\n\n  &gt; 3 x yes; 2 x no\n\n  5. Assign object to most frequent class\n\n  &gt; Customer is creditworthy!\n\n\n  ## Creation and Use of Models\n\n  ![](../images/slides_188_new.png)\n\n\n  ## Calculating Accuracies\n\n  ![](../images/slides_189_new.png)\n\n\n  ## Determining Parameter k\n\n  1. Split the original labeled dataset into training and test data.\n\n  2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.\n\n  3. Run k-NN a few times, changing k and checking the evaluation measure.\n\n  4. Optimize k by picking the one with the best evaluation measure.\n\n\n  | k | Accuracy |\n  | :-: | :-: |\n  | 1 | 0.720 |\n  | 2 | 0.685 |\n  | 3 | 0.740 |\n  | 4 | 0.745 |\n  | 5 | 0.770 |\n  | 6 | 0.740 |\n  | 7 | 0.750 |\n  | 8 | 0.750 |\n  | 9 | 0.765 |\n  | 10 | 0.760 |"
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#which-one-is-better",
@@ -1169,8 +1155,8 @@
     "text": "Which one is better?"
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example-1",
-    "href": "slides/lecture_7_machine_learning_2.html#introductory-example-1",
+    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example",
+    "href": "slides/lecture_7_machine_learning_2.html#introductory-example",
     "title": "Analytics & Big Data",
     "section": "Introductory Example",
     "text": "Introductory Example\n\n\n\nTo choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.\nProportions in the leafs can be interpreted as probabilities."
@@ -1204,8 +1190,8 @@
     "text": "Overview of important Decision Tree Methods\n\n\n\n\n\n\n\n\n\n\n\nName\nCART\nID3\nC5.0\nCHAID\nRandom Forests\n\n\n\n\nIdea\nChoose the attribute with the highest information content\nOne of the first methods from Quinlan; uses the concept of information gain\nLike ID3 based on the concept of information gain\nChoose the attribute that is most dependent on the target variable\nConstruct many trees with different sets of features and samples (randomly). Result by voting.\n\n\nMeasure used\nGini-Index\nInformation gain (entropy)\nRatio of information gain\nChi-square split\nOptional, mostly Gini-Index\n\n\nType of Splitting\nBinary\nComplete, pruning\nComplete, pruning\nComplete, pruning\nComplete"
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example-2",
-    "href": "slides/lecture_7_machine_learning_2.html#introductory-example-2",
+    "objectID": "slides/lecture_7_machine_learning_2.html#introductory-example-1",
+    "href": "slides/lecture_7_machine_learning_2.html#introductory-example-1",
     "title": "Analytics & Big Data",
     "section": "Introductory Example",
     "text": "Introductory Example"
@@ -1295,6 +1281,13 @@
     "text": "Random Forest (II)\n\nVoting-Principle of Random Forest:\n\n\nTo avoid overfitting effects, the size and the depth of the trees can be restricted.\n\n\n      ## Introductory Example\n\n      ![](../images/slides_248.png)\n\n      ![](../images/slides_249.png)\n\n      &gt; **websites (features)**\n\n      &gt; 1=visited\n\n      &gt; 0=not visited\n\n      &gt; **ad (target)**\n\n      &gt; 1=clicked\n\n      &gt; 0=not clicked\n\n      &gt; **Giant sparse matrix!**\n\n      &gt; **One matrix for every ad!**\n\n      ::: aside\n      — Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative\n      :::\n\n\n\n\n      ## Why not classical linear regression?\n\n      &gt; It is possible to implement a linear regression on such a dataset where Y={0,1}.\n\n      &gt; Problems:\n\n      &gt; - The predicted values of the linear model can be greater than 1 or less than 0.\n      &gt; - e is not normally distributed because Y takes on only two values.\n      &gt; - The error terms are heteroscedastic (the error variance is not constant for all values of X).\n\n      ::: aside\n      — Source: Bichler (2015): Course Business Analytics, TU München\n      :::"
   },
   {
+    "objectID": "slides/lecture_7_machine_learning_2.html#todo-add-contents",
+    "href": "slides/lecture_7_machine_learning_2.html#todo-add-contents",
+    "title": "Analytics & Big Data",
+    "section": "TODO (add contents)",
+    "text": "TODO (add contents)"
+  },
+  {
     "objectID": "slides/lecture_7_machine_learning_2.html#functionality-of-human-neurons",
     "href": "slides/lecture_7_machine_learning_2.html#functionality-of-human-neurons",
     "title": "Analytics & Big Data",
@@ -1344,11 +1337,11 @@
     "text": "Design of a Multilayer Perceptron\n\n\n\n\n          ## Introductory Example\n\n          &gt; Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)\n\n\n\n\n          ## Regression Trees\n\n          &gt; Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.\n\n          &gt; The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.\n\n          &gt; The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.\n\n          &gt; Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.\n\n          ![](../images/slides_322.png)\n\n          ::: aside\n          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.\n          :::\n\n\n\n\n          ## Constructing a Regression Tree (I)\n\n          ![](../images/slides_323.png)\n\n          ::: aside\n          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.\n          :::\n\n\n\n\n          ## Constructing a Regression Tree (II)\n\n          ::: aside\n          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.\n          :::\n\n\n\n\n          ## Random Forests for Regression\n\n          &gt; Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.\n\n          &gt; A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.\n\n          &gt; Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.\n\n          &gt; The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.\n\n\n\n\n          ## Comparing the Fitting Ability of one vs. many Regression Trees\n\n          **Single Regression Tree**\n\n          **Average of 100 Regression Trees**\n\n          ![](../images/slides_324.png)\n\n          ![](../images/slides_325.png)\n\n\n\n\n          ## Limitations of Tree Methods in Regression\n\n          &gt; When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.\n\n          &gt; Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.\n\n          &gt; An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.\n\n          &gt; If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.\n\n\n\n\n          ## k-Nearest Neighbors for Regression\n\n          &gt; k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.\n\n          &gt; A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.\n\n— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf\n\n— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf"
   },
   {
-    "objectID": "slides/lecture_7_machine_learning_2.html#todotbd-close-with-ensemble-classifiers",
-    "href": "slides/lecture_7_machine_learning_2.html#todotbd-close-with-ensemble-classifiers",
+    "objectID": "slides/lecture_7_machine_learning_2.html#todo-see-abd-slides",
+    "href": "slides/lecture_7_machine_learning_2.html#todo-see-abd-slides",
     "title": "Analytics & Big Data",
-    "section": "TODO/TBD: close with ensemble classifiers?",
-    "text": "TODO/TBD: close with ensemble classifiers?"
+    "section": "TODO / see ABD slides",
+    "text": "TODO / see ABD slides"
   },
   {
     "objectID": "slides/lecture_7_machine_learning_2.html#survey-session-7",
@@ -2562,6 +2555,13 @@
     "text": "Distinguish between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.\nDescribe the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.\nAssess the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.\nConnect conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (see exercise)"
   },
   {
+    "objectID": "slides/lecture_6_machine_learning_1.html#applications-of-machine-learning",
+    "href": "slides/lecture_6_machine_learning_1.html#applications-of-machine-learning",
+    "title": "Analytics & Big Data",
+    "section": "Applications of machine learning",
+    "text": "Applications of machine learning\nThe applications of machine learning\n\nE-Commerce & Online Services (Recommender Systems)\n\nData: clicks, purchases, browsing behavior\nTasks: preference prediction, ranking\nExamples: product recommendations, personalized content\n\nLogistics & Supply Chain\n\nData: shipments, inventory, delivery times\nTasks: demand forecasting, delay prediction, classification\nExamples: demand prediction, delivery risk classification\n\nFinance & Payments\n\nData: transactions, account behavior\nTasks: classification\nExamples: fraud detection, credit scoring\n\nOperations & Process Optimization\n\nData: process logs, operational metrics\nTasks: classification, anomaly detection\nExamples: defect detection, process monitoring\n\nText & Document Processing\n\nData: emails, documents, customer messages\nTasks: classification, information extraction\nExamples: spam detection, ticket routing"
+  },
+  {
     "objectID": "slides/lecture_6_machine_learning_1.html#today",
     "href": "slides/lecture_6_machine_learning_1.html#today",
     "title": "Analytics & Big Data",
@@ -2597,18 +2597,88 @@
     "text": "Overfitting (example, …)\nTraditional Analytics Process\n\nNote: large ML models may create overfitting issues… -&gt; need for separate test set"
   },
   {
+    "objectID": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
+    "href": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
+    "title": "Analytics & Big Data",
+    "section": "Best Fit vs. Best Generalization",
+    "text": "Best Fit vs. Best Generalization"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
+    "href": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
+    "title": "Analytics & Big Data",
+    "section": "Over- and Underfitting",
+    "text": "Over- and Underfitting\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
+    "href": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
+    "title": "Analytics & Big Data",
+    "section": "The Bias-Variance Tradeoff",
+    "text": "The Bias-Variance Tradeoff\nThe prediction error is influenced by three components:\n\nError = Bias + Variance + Noise\n\n\nBias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.\nVariance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.\nTypically, there is a tradeoff between bias and variance.\nNoise is everything that arises from random variations in the data. It cannot be controlled."
+  },
+  {
     "objectID": "slides/lecture_6_machine_learning_1.html#generalization-problem",
     "href": "slides/lecture_6_machine_learning_1.html#generalization-problem",
     "title": "Analytics & Big Data",
     "section": "Generalization problem",
-    "text": "Generalization problem\nState the generalization problem very clearly.\nAsk students for ideas"
+    "text": "Generalization problem\nState the generalization problem very clearly."
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#conceptual-solution-split",
+    "href": "slides/lecture_6_machine_learning_1.html#conceptual-solution-split",
+    "title": "Analytics & Big Data",
+    "section": "Conceptual solution: Split",
+    "text": "Conceptual solution: Split\nbriefly illustrate split."
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#the-supervised-machine-learning-workflow",
     "href": "slides/lecture_6_machine_learning_1.html#the-supervised-machine-learning-workflow",
     "title": "Analytics & Big Data",
     "section": "The Supervised Machine Learning Workflow",
-    "text": "The Supervised Machine Learning Workflow\nIntroduce the high-level pipeline (Modern Analytics Process)\n\n\n2.1 Labeled Data - Input features (X) and target labels (y) - Importance of data quality and representativeness\n2.2 Feature Engineering - Transformations, encoding, normalization - Why features matter more than the model itself\n2.3 Train–Test Split - Why we split data into training and testing sets - Preventing information leakage - Hold-out, cross-validation (brief mention)\n2.4 Model Training - Fit model on training data - Conceptual: “learning patterns/parameters”\n2.5 Evaluation on Test Data - Predict on unseen data - Establish generalization performance\n2.6 Applying the Model Beyond the Known Sample - Using the model in decision-making or prediction for future cases"
+    "text": "The Supervised Machine Learning Workflow\nIntroduce the high-level pipeline (Modern Analytics Process)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#steps",
+    "href": "slides/lecture_6_machine_learning_1.html#steps",
+    "title": "Analytics & Big Data",
+    "section": "Steps",
+    "text": "Steps\n2.1 Labeled Data - Input features (X) and target labels (y) - Importance of data quality and representativeness\n2.2 Feature Engineering - Transformations, encoding, normalization - Why features matter more than the model itself\n2.3 Train–Test Split - Why we split data into training and testing sets - Preventing information leakage - Hold-out, cross-validation (brief mention)\n2.4 Model Training - Fit model on training data - Conceptual: “learning patterns/parameters”\n2.5 Hyperparameter Tuning (Validation / Cross-Validation)\n2.6 Final Evaluation on Test Data - Predict on unseen data - Establish generalization performance\n2.7 Applying the Model Beyond the Known Sample - Using the model in decision-making or prediction for future cases"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
+    "href": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
+    "title": "Analytics & Big Data",
+    "section": "Partitioning the Data",
+    "text": "Partitioning the Data\n\nThe partitioning of the data in Training and Test Data has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.\n\n\nThe partitioning of the data in training and test data can be carried out in the following ways:\n\n\nBy random/stratified/… sampling (problem with the repeatability)\naccording to a list\naccording to rules (e.g. the first/last 50 records or every twelfth)"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
+    "href": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
+    "title": "Analytics & Big Data",
+    "section": "Applying Training and Test Data",
+    "text": "Applying Training and Test Data\n\n\n\n— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning",
+    "href": "slides/lecture_6_machine_learning_1.html#partitioning",
+    "title": "Analytics & Big Data",
+    "section": "Partitioning",
+    "text": "Partitioning"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#leakage",
+    "href": "slides/lecture_6_machine_learning_1.html#leakage",
+    "title": "Analytics & Big Data",
+    "section": "Leakage",
+    "text": "Leakage\nIllustrate leakage TODO: make-or-break teaching moment"
+  },
+  {
+    "objectID": "slides/lecture_6_machine_learning_1.html#hyperparameter-tuning",
+    "href": "slides/lecture_6_machine_learning_1.html#hyperparameter-tuning",
+    "title": "Analytics & Big Data",
+    "section": "Hyperparameter tuning",
+    "text": "Hyperparameter tuning"
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#overview-of-supervised-ml-algorithms",
@@ -2618,53 +2688,18 @@
     "text": "Overview of Supervised ML Algorithms\nWhich Method should I choose?\nThe choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.\nIn the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.\nFor this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.\n\nLogistic Regression\n\nLinear boundary, interpretable, limited for non-linear patterns\n\nSupport Vector Machines (SVM)\n\nMargin maximization\nKernel trick for non-linear boundaries\n\nDecision Trees\n\nRecursive splitting, intuitive but prone to overfitting\n\nRandom Forests / Ensembles (optional brief preview)\n\nReduce overfitting by combining trees\n\nNeural Networks\n\nLayers transforming data\nExtremely flexible but data-hungry and less interpretable\n\n\nNote: Emphasize the why behind different models: Different inductive biases, different levels of flexibility, different data needs."
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#linear-world",
-    "href": "slides/lecture_6_machine_learning_1.html#linear-world",
+    "objectID": "slides/lecture_6_machine_learning_1.html#the-feature-engineering-process",
+    "href": "slides/lecture_6_machine_learning_1.html#the-feature-engineering-process",
     "title": "Analytics & Big Data",
-    "section": "Linear World",
-    "text": "Linear World"
+    "section": "The feature engineering process",
+    "text": "The feature engineering process\n\nFeature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.\n\n\nA feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:\n\n\n\nFeatures can be of two major types. Raw features are obtained directly from the dataset with no extra data manipulation or engineering. Derived features are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.\n\n\n\n— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#quadratic-world",
-    "href": "slides/lecture_6_machine_learning_1.html#quadratic-world",
+    "objectID": "slides/lecture_6_machine_learning_1.html#models",
+    "href": "slides/lecture_6_machine_learning_1.html#models",
     "title": "Analytics & Big Data",
-    "section": "Quadratic World",
-    "text": "Quadratic World"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-1",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-1",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 1)",
-    "text": "Nonlinear World (Type 1)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-2",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-2",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 2)",
-    "text": "Nonlinear World (Type 2)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-3",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-3",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 3)",
-    "text": "Nonlinear World (Type 3)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-4",
-    "href": "slides/lecture_6_machine_learning_1.html#nonlinear-world-type-4",
-    "title": "Analytics & Big Data",
-    "section": "Nonlinear World (Type 4)",
-    "text": "Nonlinear World (Type 4)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#feature-engineering",
-    "href": "slides/lecture_6_machine_learning_1.html#feature-engineering",
-    "title": "Analytics & Big Data",
-    "section": "Feature Engineering",
-    "text": "Feature Engineering\n\nFeature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.\n\n\nA feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:\n\n\n\nFeatures can be of two major types. Raw features are obtained directly from the dataset with no extra data manipulation or engineering. Derived features are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.\n\n\n\n— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com."
+    "section": "Models",
+    "text": "Models\n“Different models require different feature representations.”\nExamples:\nSVM → scaling matters trees → scaling less important linear models → feature engineering critical"
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#variants-of-feature-engineering",
@@ -2709,116 +2744,18 @@
     "text": "Example of Feature Engineering (III)\n\nSuppose we are given a feature “Marital_Status” and other data with the objective to classify customers into “Creditworthy” and “Not_Creditworthy”. In the data set the martial status has many different values, for example:\n\n\nsingle living alone\nsingle living with his parents\nmarried living together\nmarried living separately\ndivorced\ndivorced but living together\nregistered partnerships\nliving in marriage-like community\nwidowed\n…\n\n\nTo avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.\n\n\nIf there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single “other” class."
   },
   {
-    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
-    "href": "slides/lecture_6_machine_learning_1.html#partitioning-the-data",
+    "objectID": "slides/lecture_6_machine_learning_1.html#todo-smote-for-imbalanced-data",
+    "href": "slides/lecture_6_machine_learning_1.html#todo-smote-for-imbalanced-data",
     "title": "Analytics & Big Data",
-    "section": "Partitioning the Data",
-    "text": "Partitioning the Data\n\nThe partitioning of the data in Training and Test Data has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.\n\n\nThe partitioning of the data in training and test data can be carried out in the following ways:\n\n\nBy random/stratified/… sampling (problem with the repeatability)\naccording to a list\naccording to rules (e.g. the first/last 50 records or every twelfth)"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
-    "href": "slides/lecture_6_machine_learning_1.html#applying-training-and-test-data",
-    "title": "Analytics & Big Data",
-    "section": "Applying Training and Test Data",
-    "text": "Applying Training and Test Data\n\n\n\n— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#partitioning",
-    "href": "slides/lecture_6_machine_learning_1.html#partitioning",
-    "title": "Analytics & Big Data",
-    "section": "Partitioning",
-    "text": "Partitioning"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#performance-metrics-model-behavior-15-min",
-    "href": "slides/lecture_6_machine_learning_1.html#performance-metrics-model-behavior-15-min",
-    "title": "Analytics & Big Data",
-    "section": "3. Performance Metrics & Model Behavior (15 min)",
-    "text": "3. Performance Metrics & Model Behavior (15 min)\nIntroduce classification performance evaluation:\n\nConfusion matrix (TP, TN, FP, FN)\nAccuracy, Precision, Recall\nF1 Score and when it is useful\nROC/AUC (optional, light touch)\nBias–Variance tradeoff (intro)\nOverfitting vs. underfitting\n\nHigh-level intuition: complexity, flexibility, noise-fitting\n\n\nTODO: cover cases where some error types are more costly than others"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
-    "href": "slides/lecture_6_machine_learning_1.html#best-fit-vs.-best-generalization",
-    "title": "Analytics & Big Data",
-    "section": "Best Fit vs. Best Generalization",
-    "text": "Best Fit vs. Best Generalization"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
-    "href": "slides/lecture_6_machine_learning_1.html#over--and-underfitting",
-    "title": "Analytics & Big Data",
-    "section": "Over- and Underfitting",
-    "text": "Over- and Underfitting\n\n\nDue to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.\n\n\nFibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-i",
-    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-i",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (I)",
-    "text": "Evaluating the quality of Classification (I)\n\nTrue positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as “yes”, when it is in fact “no”. A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-ii",
-    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-ii",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (II)",
-    "text": "Evaluating the quality of Classification (II)\n\nTest metrics are used to assess how accurately the model predicts the known values:\n\n\n\nMost classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iii",
-    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iii",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (III)",
-    "text": "Evaluating the quality of Classification (III)\n\nMisclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:\n\n\n\nFor problems like this additional measures are required to evaluate a classifier.\n\n\nSensitivity (true positive rate, recall) measures the proportion of positives that are correctly identified as such. Specificity (true negative rate) measures the proportion of negatives that are correctly identified as such.\n\n\n\nUsing both measures, we can compute the Balanced Accuracy."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#problem-of-imbalancing-and-accuracy",
-    "href": "slides/lecture_6_machine_learning_1.html#problem-of-imbalancing-and-accuracy",
-    "title": "Analytics & Big Data",
-    "section": "Problem of Imbalancing and Accuracy",
-    "text": "Problem of Imbalancing and Accuracy\n\nAssume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be “Accept” (Y) and “Reject” (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.\n\n\nBecause of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.\n\n\nThe results of the test of the model is consequently:\n\n\n\nThus, the model is blind for the N cases. But these are the ones of primary interest for the company."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iv",
-    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-iv",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (IV)",
-    "text": "Evaluating the quality of Classification (IV)\n\n\n\nPrecision measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.\n\n\nRecall measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.\n\n\n\n\n\n\n\n\n\n\n— Source: Wikipedia"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-v",
-    "href": "slides/lecture_6_machine_learning_1.html#evaluating-the-quality-of-classification-v",
-    "title": "Analytics & Big Data",
-    "section": "Evaluating the quality of Classification (V)",
-    "text": "Evaluating the quality of Classification (V)\n\nThe F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.\n\n\n\n\n\nA F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.\n\n\nIt is commonly used in cases of high class imbalance."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#creation-and-use-of-models",
-    "href": "slides/lecture_6_machine_learning_1.html#creation-and-use-of-models",
-    "title": "Analytics & Big Data",
-    "section": "Creation and Use of Models",
-    "text": "Creation and Use of Models"
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
-    "href": "slides/lecture_6_machine_learning_1.html#the-bias-variance-tradeoff",
-    "title": "Analytics & Big Data",
-    "section": "The Bias-Variance Tradeoff",
-    "text": "The Bias-Variance Tradeoff\nThe prediction error is influenced by three components:\n\nError = Bias + Variance + Noise\n\n\nBias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.\nVariance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.\nTypically, there is a tradeoff between bias and variance.\nNoise is everything that arises from random variations in the data. It cannot be controlled."
-  },
-  {
-    "objectID": "slides/lecture_6_machine_learning_1.html#todo-deployment",
-    "href": "slides/lecture_6_machine_learning_1.html#todo-deployment",
-    "title": "Analytics & Big Data",
-    "section": "TODO: Deployment",
-    "text": "TODO: Deployment\nCover explainable AI, responsible use (e.g., hiring)"
+    "section": "TODO SMOTE for imbalanced data",
+    "text": "TODO SMOTE for imbalanced data"
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#summary",
     "href": "slides/lecture_6_machine_learning_1.html#summary",
     "title": "Analytics & Big Data",
     "section": "Summary",
-    "text": "Summary"
+    "text": "Summary\nTBD: ML Ops?"
   },
   {
     "objectID": "slides/lecture_6_machine_learning_1.html#survey-session-6",
