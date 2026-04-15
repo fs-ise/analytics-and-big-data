@@ -152,17 +152,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -194,6 +183,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -234,7 +234,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br></p>
-<div id="75b56843" class="cell" data-execution_count="1">
+<div id="14f44bbe" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -439,7 +439,7 @@ This also applies to the data production areas.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><br><br></p>
-<div id="7af463e7" class="cell" data-execution_count="2">
+<div id="6b9b27f0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -510,6 +510,48 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
       ::: aside
       Source: @Schmarzo2016, p. 88
       :::
+
+
+    TODO: include explanation
+
+      ## Explanation vs. Prediction (I)
+
+      > Question 1: I have a headache. If I take an aspirin now, will it go away?
+
+      > Question 2: I had a headache, but it passed. Was it because I took an aspirin two hours ago? Had I not taken such an aspirin, would I still have a headache?
+
+      > The first case is a typical "predictive" question. You are calculating the effect of a hypothetical intervention.
+
+      > The second case is a typical "explanatory" question. You are calculating the effect of a counterfactual intervention.
+
+      ::: {.notes}
+
+      Which one is Explanation, which Prediction?
+
+      counterfactual : den Tatsachen widersprechend
+
+      :::
+
+      ## Explanation vs. Prediction (II)
+
+      **Explanation:**
+
+      - Explanation is about understanding relationships and why certain things happen.
+      - It requires an understanding of cause and effect.
+      - Tests of causal hypotheses are fundamental.
+      - Measures of significance are central.
+      - A good explanatory model may also have predictive power.
+
+      **Prediction:**
+
+      - Prediction is about anticipating and forecasting what may happen in the future.
+      - Correlations are important in this context (but correlation does not imply causation).
+      - Therefore, predictive models may have no real explanatory power.
+      - For robust prediction, knowledge of causality is preferable.
+      - The main task is to find a model that optimally approximates reality and minimizes overfitting.
+      - Accuracy is measured using out-of-sample data.
+
+
 -->
 </section>
 <section id="analytical-purposes" class="slide level2">

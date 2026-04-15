@@ -72,15 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-self-service.callout {
-  border-left-color: #198754;
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-objective.callout {
@@ -105,15 +105,15 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
   content: '🔒';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -233,6 +233,7 @@ window.Quarto = {
 </header>
 
 
+<p>2026-04-14: 65 min for the lecture + 25 min for the discussion of group projects</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -294,7 +295,7 @@ Note
 <p>TODO: explicit learning: when we use regression as a baseline, we will also run it in a train/test mode (unlike in exercises 4 and 5)</p>
 </div>
 </div>
-<div id="047a3db8" class="cell" data-execution_count="1">
+<div id="2db424fd" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -303,7 +304,7 @@ Note
 </div>
 </div>
 </div>
-<div id="0be492f7" class="cell" data-execution_count="2">
+<div id="fdbc121d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -312,7 +313,7 @@ Note
 </div>
 </div>
 </div>
-<div id="5f08f657" class="cell" data-execution_count="3">
+<div id="fcde379f" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -357,7 +358,11 @@ y = \frac{e^{z}}{1 + e^{z}}
 <p><span class="math display">\[
 y = \frac{e^{z}}{1 + e^{z}} \cdot \frac{e^{-z}}{e^{-z}}
 = \frac{1}{1 + e^{-z}}
-\]</span> ## Exercise</p>
+\]</span></p>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>2026-04-14: 90 min, did not start with Part 5 (students indicated that we could discuss solutions earlier)</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -388,6 +393,7 @@ y = \frac{e^{z}}{1 + e^{z}} \cdot \frac{e^{-z}}{e^{-z}}
 </tr>
 </tbody>
 </table>
+<p>Part 1.3: TODO: extract confidence and interpret practical and statistical significance? (the small coefficient for income could be practically significant because of the high values of income, which is not standardized)</p>
 <!--
         TBD: using forward and backward variable selection?
 
