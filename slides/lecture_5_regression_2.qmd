@@ -156,7 +156,7 @@ Don't be confused by Logistic "Regression" - it works like regression, but it is
 
 The binary classification can be extended to multiple classes:
 
-$$y \in {0,1,2,3,4}$$
+$$y \in \{0,1,2,3,4\}$$
 
 :::
 
@@ -175,10 +175,10 @@ As explained previously, linear models would also return scores > 1 or negative 
 TODO: mention threshold approach to 
 -->
 
-Ideally, our model should predict the **probability** of `y=1`.
+Ideally, our model should predict the **probability** of $y_i=1$.
 This would allow us to apply a threshold for classification, but it would also give us more information (how likely an observation belongs to the *positive class*).
 
-This means we need a model that ensures continuous values between 0 and 1: $y \in [0,1]$
+This means we need a model that produces predicted probabilities between 0 and 1:
 
 . . . 
 
@@ -208,7 +208,7 @@ $$\mathbb{P}(y_i = 1 \mid x_i) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_i)}}$$
 **Key intuition:**
 
 * Linear predictor $z$ → transformed by the sigmoid (logistic) function
-* Output always in ([0,1])
+* Output always in $[0,1]$
 * Can be interpreted as a probability (next slide)
 
 :::
@@ -217,17 +217,17 @@ $$\mathbb{P}(y_i = 1 \mid x_i) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_i)}}$$
 
 Logistic regression assumes that the **log-odds of the outcome are linear in the predictors**:
 
-$$\log\left(\frac{y_i}{1 - y_i}\right) = \beta_0 + \beta_1 x_i$$
+$$\log\left(\frac{p_i}{1 - p_i}\right) = \beta_0 + \beta_1 x_i$$
 
-*Note: $\frac{y_i}{1 - y_i}$ are the "odds".*  
+*Note: $\frac{p_i}{1 - p_i}$ are the "odds".*  
 
 . . . 
 
 <br>
 
-This implies a **sigmoid-shaped relationship** between `x` and the `y`:
+This implies a **sigmoid-shaped relationship** between $x_i$ and the probability of $y_i=1$:
 
-$$y_i = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_i)}}$$
+$$p_i = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_i)}}$$
 
 The sigmoid function serves as a *link function* to convert the linear predictor into a *probability*.
 
@@ -444,7 +444,7 @@ metrics_df = pd.DataFrame(
 A logistic regression model predicts a **probability** of churn:
 
 $$
-P(\text{churn}=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x)}}
+P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 $$
 
 <!--
