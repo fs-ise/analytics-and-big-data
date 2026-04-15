@@ -16,6 +16,9 @@ Note: moved unsupervised ML (clustering) to EDA (mention here only as an example
 
 TODO: suggest code reading/understanding exercises (e.g., "what are the next steps of the procedure?", "annotate what is done in the code blocks", "give pseudo code", "are there any errors (e.g., switched code blocks)?")
 
+Exercises in jupyter:
+https://github.com/intro-stat-learning/ISLP_labs/
+
 :::
 
 ## TODO: Group work topics

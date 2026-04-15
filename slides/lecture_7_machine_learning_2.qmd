@@ -22,20 +22,41 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 -->
 
 
-## Introductory Example
+## Classification vs. Regression: Same models, different outputs
 
-> Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.
+Classification → categorical output
+Regression → numerical output
 
-> Assume you have the age, income, and a creditworthiness category of "yes" or "no" for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.
+Many models can handle both
 
-> You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.
-
-> What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?
-
-![](../images/slides_221.png)
+# Linear models {data-stack-name="Linear models"}
 
 
-TODO: remove knn (covered in EDA)!?!
+## Linear models
+
+Linear Regression (regression)
+Logistic Regression (classification)
+Ridge / Lasso (regularization)
+
+👉 Key idea:
+
+Linear relationship + regularization
+
+
+      ## Introductory Example
+
+      > Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.
+
+      > Assume you have the age, income, and a creditworthiness category of "yes" or "no" for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.
+
+      > You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.
+
+      > What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?
+
+      ![](../images/slides_221.png)
+
+
+      TODO: remove knn (covered in EDA)!?!
 
       # k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
 
@@ -94,43 +115,46 @@ TODO: remove knn (covered in EDA)!?!
       > Customer is creditworthy!
 
 
-## Creation and Use of Models
+      ## Creation and Use of Models
 
-![](../images/slides_188_new.png)
-
-
-## Calculating Accuracies
-
-![](../images/slides_189_new.png)
+      ![](../images/slides_188_new.png)
 
 
-## Determining Parameter k
+      ## Calculating Accuracies
 
-1. Split the original labeled dataset into training and test data.
-
-2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.
-
-3. Run k-NN a few times, changing k and checking the evaluation measure.
-
-4. Optimize k by picking the one with the best evaluation measure.
+      ![](../images/slides_189_new.png)
 
 
-| k | Accuracy |
-| :-: | :-: |
-| 1 | 0.720 |
-| 2 | 0.685 |
-| 3 | 0.740 |
-| 4 | 0.745 |
-| 5 | 0.770 |
-| 6 | 0.740 |
-| 7 | 0.750 |
-| 8 | 0.750 |
-| 9 | 0.765 |
-| 10 | 0.760 |
+      ## Determining Parameter k
+
+      1. Split the original labeled dataset into training and test data.
+
+      2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.
+
+      3. Run k-NN a few times, changing k and checking the evaluation measure.
+
+      4. Optimize k by picking the one with the best evaluation measure.
+
+
+      | k | Accuracy |
+      | :-: | :-: |
+      | 1 | 0.720 |
+      | 2 | 0.685 |
+      | 3 | 0.740 |
+      | 4 | 0.745 |
+      | 5 | 0.770 |
+      | 6 | 0.740 |
+      | 7 | 0.750 |
+      | 8 | 0.750 |
+      | 9 | 0.765 |
+      | 10 | 0.760 |
 
 
 
 # Decision trees {data-stack-name="Decision trees"}
+
+- Decision Trees (classification + regression)
+- Random Forests (ensemble)
 
 
 ## Which one is better?
@@ -185,8 +209,6 @@ The decision tree approach does not require any assumption about the functional 
 | **Measure used** | Gini-Index | Information gain (entropy) | Ratio of information gain | Chi-square split | Optional, mostly Gini-Index |
 | **Type of Splitting** | Binary | Complete, pruning | Complete, pruning | Complete, pruning | Complete |
 
-
-# TBD
 
 
 ## Introductory Example
@@ -311,8 +333,6 @@ The decision tree approach does not require any assumption about the functional 
 
 
 
-# Random Forest {data-stack-name="Random Forest"}
-
 ## Random Forest (I)
 
 > Random forest is an ensemble classifier that consists of many decision trees.
@@ -387,8 +407,9 @@ The decision tree approach does not require any assumption about the functional 
           :::
 
 
+# SVM {data-stack-name="SVM"}
 
-
+## TODO (add contents)
 
 # Neural Networks {data-stack-name="Neural Networks"}
 
@@ -584,8 +605,9 @@ The decision tree approach does not require any assumption about the functional 
 
 
 
-## TODO/TBD: close with ensemble classifiers?
+# Ensembles {data-stack-name="Ensbembles"}
 
+## TODO / see ABD slides
 
 
 ## Survey: Session 7 {data-state="hide-menubar"}

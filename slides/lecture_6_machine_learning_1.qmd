@@ -6,7 +6,21 @@ session: "Session 6"
 date: "2026-04-20"
 ---
 
+<!--
 https://jose.theoj.org/papers/10.21105/jose.00239
+-> slides not useful for ABD
+-> Exercises: penguin dataset, but maybe useful as an inspiration.
+https://github.com/Cambridge-ICCS/practical-ml-with-pytorch/tree/main/exercises
+
+
+https://www.3blue1brown.com/topics/neural-networks
+-> instructive animations on neural networks etc.
+
+https://www.youtube.com/watch?v=jGwO_UgTS7I
+-> Andrew Ng lecture (TODO)
+https://cs229.stanford.edu/
+
+-->
 
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
@@ -22,6 +36,41 @@ https://jose.theoj.org/papers/10.21105/jose.00239
 <!--
 workflow: and explain why each step is necessary for generalizable results
 -->
+
+## Applications of machine learning {data-state="hide-menubar"}
+
+The applications of machine learning
+
+* **E-Commerce & Online Services (Recommender Systems)**
+
+  * Data: clicks, purchases, browsing behavior
+  * Tasks: preference prediction, ranking
+  * Examples: product recommendations, personalized content
+
+* **Logistics & Supply Chain**
+
+  * Data: shipments, inventory, delivery times
+  * Tasks: demand forecasting, delay prediction, classification
+  * Examples: demand prediction, delivery risk classification
+
+* **Finance & Payments**
+
+  * Data: transactions, account behavior
+  * Tasks: classification
+  * Examples: fraud detection, credit scoring
+
+* **Operations & Process Optimization**
+
+  * Data: process logs, operational metrics
+  * Tasks: classification, anomaly detection
+  * Examples: defect detection, process monitoring
+
+* **Text & Document Processing**
+
+  * Data: emails, documents, customer messages
+  * Tasks: classification, information extraction
+  * Examples: spam detection, ticket routing
+
 
 # Foundations {data-stack-name="Foundations"}
 
@@ -97,11 +146,64 @@ Traditional Analytics Process
 
 Note: large ML models may create overfitting issues... -> need for separate test set
 
+
+
+
+
+
+## Best Fit vs. Best Generalization
+
+![](../images/slides_129.png)
+
+
+## Over- and Underfitting
+
+![](../images/slides_131.png)
+
+> Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
+
+::: {.notes}
+
+Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55
+
+:::
+
+<!--
+
+    ## Creation and Use of Models
+
+    ![](../images/slides_197_new.png)
+
+-->
+
+## The Bias-Variance Tradeoff
+
+The prediction error is influenced by three components:
+
+> Error = Bias + Variance + Noise
+
+- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
+
+- Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
+
+- Typically, there is a tradeoff between bias and variance.
+
+- Noise is everything that arises from random variations in the data. It cannot be controlled.
+
+![](../images/slides_132_new.png)
+
+
+
+
 ## Generalization problem
 
 State the generalization problem very clearly.
 
-Ask students for ideas
+## Conceptual solution: Split
+
+briefly illustrate split.
+
 
 # The Machine Learning Workflow {data-stack-name="Workflow"}
 
@@ -123,6 +225,8 @@ Introduce the high-level pipeline (Modern Analytics Process)
     :::
 -->
 
+## Steps
+
 2.1 Labeled Data
 - Input features (X) and target labels (y)
 - Importance of data quality and representativeness
@@ -140,13 +244,46 @@ Introduce the high-level pipeline (Modern Analytics Process)
 - Fit model on training data
 - Conceptual: "learning patterns/parameters"
 
-2.5 Evaluation on Test Data
+2.5 Hyperparameter Tuning (Validation / Cross-Validation)  
+
+2.6 Final Evaluation on Test Data
 - Predict on unseen data
 - Establish generalization performance
 
-2.6 Applying the Model Beyond the Known Sample
+2.7 Applying the Model Beyond the Known Sample
 - Using the model in decision-making or prediction for future cases
 
+## Partitioning the Data
+
+> The partitioning of the data in **Training and Test Data** has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.
+
+> The partitioning of the data in training and test data can be carried out in the following ways:
+
+- By random/stratified/... sampling (problem with the repeatability)
+- according to a list
+- according to rules (e.g. the first/last 50 records or every twelfth)
+
+## Applying Training and Test Data
+
+![](../images/slides_152_new.png)
+
+::: aside
+— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx
+:::
+
+
+## Partitioning
+
+![](../images/slides_187.png)
+
+
+## Leakage
+
+Illustrate leakage **TODO: make-or-break teaching moment**
+
+## Hyperparameter tuning
+
+# Methods {data-stack-name="Methods"}
 
 ## Overview of Supervised ML Algorithms
 
@@ -180,51 +317,38 @@ Note: Emphasize the *why* behind different models:
 Different inductive biases, different levels of flexibility, different data needs.
 
 
+<!--
+    ## Linear World
 
+    ![](../images/slides_134_new.png)
 
-## Linear World
+    ## Quadratic World
 
-![](../images/slides_134_new.png)
+    ![](../images/slides_135_new.png)
 
+    ## Nonlinear World (Type 1)
 
+    ![](../images/slides_136_new.png)
 
+    ## Nonlinear World (Type 2)
 
-## Quadratic World
+    ![](../images/slides_137_new.png)
 
-![](../images/slides_135_new.png)
+    ## Nonlinear World (Type 3)
 
+    ![](../images/slides_138_new.png)
 
+    ## Nonlinear World (Type 4)
 
+    ![](../images/slides_139_new.png)
 
-## Nonlinear World (Type 1)
-
-![](../images/slides_136_new.png)
-
-
-
-
-## Nonlinear World (Type 2)
-
-![](../images/slides_137_new.png)
-
-
-
-
-## Nonlinear World (Type 3)
-
-![](../images/slides_138_new.png)
+-->
 
 
 
+# Feature Engineering {data-stack-name="Feature Engineering"}
 
-## Nonlinear World (Type 4)
-
-![](../images/slides_139_new.png)
-
-
-
-
-## Feature Engineering
+## The feature engineering process
 
 > Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
 
@@ -238,6 +362,16 @@ Different inductive biases, different levels of flexibility, different data need
 — Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.
 :::
 
+
+## Models
+
+“Different models require different feature representations.”
+
+Examples:
+
+SVM → scaling matters
+trees → scaling less important
+linear models → feature engineering critical
 
 ## Variants of Feature Engineering
 
@@ -339,200 +473,15 @@ Different inductive biases, different levels of flexibility, different data need
 > If there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single "other" class.
 
 
+# SMOTE {data-stack-name="SMOTE"}
 
-
-## Partitioning the Data
-
-> The partitioning of the data in **Training and Test Data** has the aim to proof if the analytical results can be generalized. The analysis (e.g. the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.
-
-> The partitioning of the data in training and test data can be carried out in the following ways:
-
-- By random/stratified/... sampling (problem with the repeatability)
-- according to a list
-- according to rules (e.g. the first/last 50 records or every twelfth)
-
-
-
-
-## Applying Training and Test Data
-
-![](../images/slides_152_new.png)
-
-::: aside
-— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx
-:::
-
-
-
-
-## Partitioning
-
-![](../images/slides_187.png)
-
-
-
-
-
-
-# Performance {data-stack-name="Evaluation"}
-
-## 3. Performance Metrics & Model Behavior (15 min)
-Introduce classification performance evaluation:
-
-- Confusion matrix (TP, TN, FP, FN)
-- Accuracy, Precision, Recall
-- F1 Score and when it is useful
-- ROC/AUC (optional, light touch)
-- Bias–Variance tradeoff (intro)
-- Overfitting vs. underfitting
-  - High-level intuition: complexity, flexibility, noise-fitting
-
-TODO: cover cases where some error types are more costly than others
-<!--
-TBD: unclear?
-
-## Data Errors and their Consequences
-
-![](../images/slides_125_new.png)
--->
-
-## Best Fit vs. Best Generalization
-
-![](../images/slides_129.png)
-
-
-## Over- and Underfitting
-
-![](../images/slides_131.png)
-
-> Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
-
-::: {.notes}
-
-Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
-Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55
-
-:::
-
-## Evaluating the quality of Classification (I)
-
-> True positives (TP), true negatives (TN), false positives (FP), and false negatives (FN), are the four different possible outcomes of a single prediction for a two-class case. A false positive is when the outcome is incorrectly classified as "yes", when it is in fact "no". A false negative is when the outcome is incorrectly classified as negative, when it is in fact positive. True positives and true negatives are obviously correct classifications.
-
-![](../images/slides_223.png)
-
-
-
-
-## Evaluating the quality of Classification (II)
-
-> Test metrics are used to assess how accurately the model predicts the known values:
-
-![](../images/slides_192_new.png)
-
-> Most classification algorithms pursue to minimize the misclassification rate. They implicitly assume that all misclassification errors cost equally. In many real-world applications, this assumption is not true. Cost-sensitive learning takes costs, such as the misclassification cost, into consideration. Using costs, the error rate can be calculated via:
-
-![](../images/slides_1922_new.png)
-
-
-
-
-## Evaluating the quality of Classification (III)
-
-> Misclassification rate and accuracy can be misleading, for example in the case of imbalanced samples. Extreme case:
-
-![](../images/slides_193_new.png)
-
-> For problems like this additional measures are required to evaluate a classifier.
-
-> **Sensitivity** (true positive rate, recall) measures the proportion of positives that are correctly identified as such. **Specificity** (true negative rate) measures the proportion of negatives that are correctly identified as such.
-
-![](../images/slides_193_2_new.png)
-
-> Using both measures, we can compute the **Balanced Accuracy**.
-
-![](../images/slides_193_3_new.png)
-
-
-
-
-## Problem of Imbalancing and Accuracy
-
-> Assume the following case: A credit card company wants to create a fraud detection system to include it into their transactional systems. The outcomes should be "Accept" (Y) and "Reject" (N). Because fraud rarely occurs, the data set consists of 320 observations for Y and 139 for N. They are partitioned into training and test set. Finally, the model is trained and tested.
-
-> Because of the majority of the Y class, the training process concentrates on these cases because their correct classification promises the highest accuracy.
-
-> The results of the test of the model is consequently:
-
-![](../images/slides_194_new.png)
-
-> Thus, the model is blind for the N cases. But these are the ones of primary interest for the company.
-
-
-
-
-## Evaluating the quality of Classification (IV)
-
-<div style="display:flex; font-size:1.3em;font-weight:600">
-<div style="width:50%">
-> **Precision** measures the proportion of predicted positives who are true positives. A precision of 0.5 means that whenever the model classifies a positive, there is a 50% chance of it really being a positive. The higher the precision the smaller the number of false positives.
-
-> **Recall** measures the percentage of positives the model is able to catch. It is defined as the number of true positives divided by the total number of positives in the dataset. A recall of 50% would mean that 50% of the positives had been predicted as such by the model while the other 50% of positives have been missed by the model.
-</div>
-<div style="width:50%;text-align:center;">
-![](../images/slides_224.png)
-</div>
-
-</div>
-
-> ::: aside
-— Source: Wikipedia
-:::
-
-
-
-
-## Evaluating the quality of Classification (V)
-
-> The F1 Score can be interpreted as the weighted average of both precision and recall. The main idea of the F1 Score is to strike a balance between both precision and recall and measure it in a single metric.
-
-> ![](../images/slides_196_new.png)
-
-> A F1 score reaches its best value at 1 (perfect precision and recall) and worst at 0.
-
-> It is commonly used in cases of high class imbalance.
-
-
-
-
-## Creation and Use of Models
-
-![](../images/slides_197_new.png)
-
-
-
-## The Bias-Variance Tradeoff
-
-The prediction error is influenced by three components:
-
-> Error = Bias + Variance + Noise
-
-- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
-
-- Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
-
-- Typically, there is a tradeoff between bias and variance.
-
-- Noise is everything that arises from random variations in the data. It cannot be controlled.
-
-![](../images/slides_132_new.png)
-
-
-## TODO: Deployment
-
-Cover explainable AI, responsible use (e.g., hiring)
+## TODO SMOTE for imbalanced data
 
 
 ## Summary {data-state="hide-menubar"}
+
+
+TBD: ML Ops?
 
 
 ## Survey: Session 6 {data-state="hide-menubar"}
