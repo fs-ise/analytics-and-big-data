@@ -37,7 +37,7 @@ LendWise is interested in questions such as:
 
 - Which factors are associated with a higher probability of default in early-career urban borrowers?
 - How can predicted probabilities be translated into default / non-default classifications?
-- How well does the model perform? How informative is the ROC curve and AUC?
+- How well does the model perform? How informative are the ROC curve and the AUC?
 - Does a model work equally well across customer categories?
 
 
@@ -79,7 +79,7 @@ Create a filtered dataset that contains only customers from early-career urban b
 
 ```{python}
 # Your solution here
-# df_A = ...
+# df_ec_urban = ...
 ```
 
 {{< pagebreak >}}
@@ -90,7 +90,7 @@ Create a filtered dataset that contains only customers from early-career urban b
 ## Solution
 
 ```{python}
-df_A = df[df["customer_category"] == "early_career_urban"]
+df_ec_urban = df[df["customer_category"] == "early_career_urban"]
 ```
 
 :::
@@ -120,12 +120,13 @@ from sklearn.linear_model import LogisticRegression
 
 *Note*: You will initially encounter a `ConvergenceWarning`, indicating that the maximum likelihood estimation has not fully converged.
 To address this, increase the `max_iter` parameter to give the optimization algorithm sufficient iterations to converge.
+In practice, scaling predictors can also improve convergence and model stability.
 
 ```{python}
 from sklearn.linear_model import LogisticRegression
 
-y = df_A["default"]
-X = df_A.drop(columns=["default", "customer_category"])
+y = df_ec_urban["default"]
+X = df_ec_urban.drop(columns=["default", "customer_category"])
 
 model = LogisticRegression(max_iter=1000)
 model.fit(X, y)
@@ -151,6 +152,16 @@ coef_df = pd.DataFrame({"feature": X.columns, "coefficient": model.coef_[0]})
 coef_df
 ```
 
+::: {.callout-note title="Note on interpretation"}
+The coefficients shown here indicate the direction and relative strength of relationships.
+However, models from `scikit-learn` do not provide p-values or standard errors.
+
+This means we cannot assess statistical significance directly.
+In applied research, p-values (e.g., from `statsmodels`) are typically used to evaluate whether effects are statistically reliable.
+
+Therefore, the interpretation below focuses on magnitude and direction, not statistical significance.
+:::
+
 :::
 
 - Which variables increase the likelihood of default?  
@@ -173,7 +184,6 @@ In this model, the strongest positive effects are:
 Variables with negative coefficients decrease default risk.  
 In this model:
 
-- `debt_to_income` (0.04) → moderate decrease in default risk
 - `months_with_company` (-0.02) → small decrease
 - `income` (-0.00) → very small (negligible) decrease
 :::
@@ -183,8 +193,10 @@ In this model:
 
 ::: {.sol}
 ::: {.callout-tip title="Solution"}
-The variable with the largest absolute coefficient has the strongest relationship.  
-Here, `credit_utilization` (|1.16|) is the most influential predictor, closely followed by `missed_payments_12m` (|1.06|).
+Among the predictors, `credit_utilization` has the largest coefficient in absolute terms, followed closely by `missed_payments_12m`. This suggests that both variables are strongly associated with default risk in this model.
+
+However, this comparison should be interpreted with caution. Because the predictors are measured on different scales (e.g., proportions, counts, income levels), the magnitude of coefficients is not directly comparable.
+A more rigorous comparison would require standardized variables or an analysis based on meaningful unit changes (e.g., odds ratios).
 :::
 :::
 
@@ -332,26 +344,26 @@ For top 20% risk:
 
 ```{python}
 threshold_risky = np.quantile(y_prob, 0.8)
-y_pred_20 = (y_prob >= threshold_risky).astype(int)
-threshold_risky, y_pred_20.sum()
+y_pred_risky20 = (y_prob >= threshold_risky).astype(int)
+threshold_risky, y_pred_risky20.sum()
 ```
 
-- Selects customers with the highest predicted probabilities in the `y_pred_20` vector
+- Flags the top 20% of customers with the highest predicted default probabilities
 
 For safest 20%:
 
 ```{python}
 threshold_safe = np.quantile(y_prob, 0.2)
-y_pred_80 = (y_prob >= threshold_safe).astype(int)
-threshold_safe, y_pred_80.sum()
+y_pred_safe20 = (y_prob <= threshold_safe).astype(int)
+threshold_safe, y_pred_safe20.sum()
 ```
 
-- Identifies customers with very low predicted risk in the `y_pred_80` vector
+- Flags the bottom 20% of customers with the lowest predicted default probabilities
 
 Low risk customers could be selected as follows:
 
 ```{python}
-safe_customers = df_A[y_pred_80 == 0]
+safe_customers = df_ec_urban[y_pred_safe20 == 1]
 
 safe_customers.head()
 ```
@@ -359,6 +371,11 @@ safe_customers.head()
 :::
 
 # Part 3 — Confusion matrix and metrics
+
+::: .callout-note
+For simplicity, model performance is evaluated on the same data used for estimation. 
+In practice, a train/test split or cross-validation should be used.
+:::
 
 ::: {.direction}
 
@@ -566,7 +583,7 @@ roc_df.head()
 roc_auc
 ```
 
-- 0.5 → random
+- 0.5 → no discriminatory power (equivalent to random guessing)
 - ~0.7 → moderate
 - 1.0 → perfect
 
@@ -586,12 +603,11 @@ roc_auc
 
 :::
 
-
 {{< pagebreak >}}
 
 # Part 5 — Compare early-career urban borrowers and platform workers
 
-Now repeat the same modeling steps the segment of platform workers.
+Now repeat the same modeling steps for the segment of platform workers.
 
 ::: {.direction}
 
@@ -621,17 +637,18 @@ Fit a logistic regression model for platform workers.
 ## Solution
 
 ```{python}
-df_B = df[df["customer_category"] == "platform_worker"]
+df_platform = df[df["customer_category"] == "platform_worker"]
 
-y_B = df_B["default"]
-X_B = df_B.drop(columns=["default", "customer_category"])
+y_platform = df_platform["default"]
+X_platform = df_platform.drop(columns=["default", "customer_category"])
 
-model_B = LogisticRegression()
-model_B.fit(X_B, y_B)
+model_platform = LogisticRegression(max_iter=200)
+model_platform.fit(X_platform, y_platform)
+
+model_platform.intercept_, model_platform.coef_
 ```
 
 :::
-
 
 ### Task 5.2 — Compare coefficients
 
@@ -653,19 +670,27 @@ Compare the coefficients across both categories.
 ## Solution
 
 ```{python}
-coef_A = pd.Series(model.coef_[0], index=X.columns)
-coef_B = pd.Series(model_B.coef_[0], index=X_B.columns)
+coef_ec_urban = pd.Series(model.coef_[0], index=X.columns)
+coef_platform = pd.Series(model_platform.coef_[0], index=X_platform.columns)
 
-comparison = pd.DataFrame({
-    "Category_A": coef_A,
-    "Category_B": coef_B
-})
+comparison = pd.DataFrame(
+    {"Early-career urban borrowers": coef_ec_urban, "Platform workers": coef_platform}
+)
 
 comparison
 ```
 
-:::
+Some predictors matter in both groups, but their strength differs.
 
+For both early-career urban borrowers and platform workers, credit utilization is a strong positive predictor of default, indicating that higher usage of available credit increases risk in both groups.
+
+Income and months with company have small negative effects in both groups, suggesting slightly lower default risk with higher income and longer tenure, though these effects are minor.
+
+Key differences emerge for debt-to-income and missed payments.
+For platform workers, debt-to-income is much more influential, indicating that overall debt burden plays a larger role.
+In contrast, for early-career urban borrowers, missed payments are more important, suggesting recent repayment behavior is a stronger signal of default risk.
+
+:::
 
 ### Task 5.3 — Compare ROC and AUC
 
@@ -687,17 +712,24 @@ Compare the ROC curves and AUC values of the two models.
 ## Solution
 
 ```{python}
-y_prob_B = model_B.predict_proba(X_B)[:, 1]
+y_prob_platform = model_platform.predict_proba(X_platform)[:, 1]
 
-fpr_B, tpr_B, _ = roc_curve(y_B, y_prob_B)
-roc_auc_B = auc(fpr_B, tpr_B)
+fpr_platform, tpr_platform, _ = roc_curve(y_platform, y_prob_platform)
+roc_auc_platform = auc(fpr_platform, tpr_platform)
 
-roc_auc, roc_auc_B
+roc_auc, roc_auc_platform
 ```
 
-- Higher AUC → better ability to distinguish defaults from non-defaults
+The model for early-career urban borrowers achieves a higher AUC (~0.80) than the model for platform workers (~0.72).
+
+This indicates that defaults are easier to classify for early-career urban borrowers, as the model can better distinguish between defaulters and non-defaulters.
+
+A possible explanation is that risk patterns are more clear and consistent among early-career urban borrowers (e.g., strong signals like missed payments).
+In contrast, platform workers may have more heterogeneous or less stable financial situations, making default harder to predict with the available variables.
 
 :::
+
+::: {.direction}
 
 {{< pagebreak >}}
 
@@ -717,4 +749,6 @@ In this notebook, we have learned to:
 
 ::: {.callout-tip title="Session 5 survey"}
 Before you wrap up, please complete the Session 5 survey here: [{{< var sessions.session_5.survey_url >}}]({{< var sessions.session_5.survey_url >}}){target="_blank"}. Thank you 🙏
+:::
+
 :::
