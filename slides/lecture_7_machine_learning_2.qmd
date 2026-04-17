@@ -413,6 +413,8 @@ The decision tree approach does not require any assumption about the functional 
 
 # Neural Networks {data-stack-name="Neural Networks"}
 
+TODO: The "simple calculation example" in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and "cost nudges").
+Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.
 
 ## Functionality of Human Neurons
 

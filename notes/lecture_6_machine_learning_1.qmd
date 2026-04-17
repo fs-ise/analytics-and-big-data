@@ -16,8 +16,21 @@ Note: moved unsupervised ML (clustering) to EDA (mention here only as an example
 
 TODO: suggest code reading/understanding exercises (e.g., "what are the next steps of the procedure?", "annotate what is done in the code blocks", "give pseudo code", "are there any errors (e.g., switched code blocks)?")
 
+Nice introduction:
+https://kuleshov-group.github.io/aml-website (careful: copyright!)
+
+Feature engineering:
+https://www.kaggle.com/learn/feature-engineering
+
+Lecture:
+https://harvard-iacs.github.io/2019-CS109A/lectures/lecture7/presentation/Lecture7_ModeLSelectionRegularization.pdf
+
+
+Nice "whats wrong with the procedure": https://courses.cs.washington.edu/courses/cse446/26sp/schedule/lectures/05-train%20test%20split%20cross%20validation.pdf
+
 Exercises in jupyter:
 https://github.com/intro-stat-learning/ISLP_labs/
+https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
 
 :::
 

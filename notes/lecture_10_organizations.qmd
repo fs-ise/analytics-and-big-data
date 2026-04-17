@@ -10,6 +10,8 @@ format: html
 ::: callout-note
 TODO
 
+Ethics/Fairness: https://developers.google.com/machine-learning/crash-course/fairness
+
 https://github.com/cs124/labs/blob/main/Lab2_LogisticRegression_Solutions.md#ethics-discussion
 
 :::
