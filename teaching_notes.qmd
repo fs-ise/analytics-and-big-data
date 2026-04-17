@@ -71,6 +71,8 @@ TODO :
 TBD: If analytical decisions should support particular actions, a typical task may be related to handling identifiers: removing them for the model training, but adding them again when predictions were made? -> e.g., logistic regression and default prediction?
 TBD: Prepare for "cognitive translation" (between Python code, formulas, different outputs, conceptual procedures like OLS/Max.Likelihood)
 
+Recommendations for building computational notebooks in Jupyter: https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007007
+
 Table illustrating case examples and insights (specific to *business analytics*, and in line with the whole CRISP-DM process):
 
 | Phase                     | Case Example           | Insights                                           |
@@ -83,6 +85,19 @@ Table illustrating case examples and insights (specific to *business analytics*,
 | Big Data                 | TBA                   | Handling extreme events (e.g., Uber crisis example)  |
 | Deployment               | TBA                   | TBA                                                  |
 
+
+## Related courses
+
+- [Berkley: Data 100: Principles and Techniques of Data Science](https://ds100.org/sp26/)
+  - Comprehensive [materials](https://ds100.org/sp26/) (slides, notes, exercises, exams - slides/lectures not always accessible)
+- [Harvard: CS109a: Introduction to Data Science](https://harvard-iacs.github.io/2019-CS109A/)
+  - Comprehensive [materials](https://harvard-iacs.github.io/2019-CS109A/pages/materials.html) (slides, exercises)
+- [Cornell: Applied Machine Learning](https://kuleshov-group.github.io/aml-website/)
+ - [Materials](https://github.com/kuleshov/cornell-cs5785-2025-applied-ml)
+ - [lecture videos](https://www.youtube.com/playlist?list=PL2UML_KCiC0UlY7iCQDSiGDMovaupqc83)
+- [University of Washington: Machine Learning](https://courses.cs.washington.edu/courses/cse446/26sp/schedule/) (contents gradually revealed)
+- [scikit learn course](https://inria.github.io/scikit-learn-mooc/index.html) (??)
+- [Microsoft: ML for begnners](https://github.com/microsoft/ML-For-Beginners?tab=readme-ov-file) (??)
 
 ## Students: Setup for exercises
 
