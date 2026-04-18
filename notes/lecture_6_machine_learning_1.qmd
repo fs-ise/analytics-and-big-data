@@ -19,21 +19,27 @@ TODO: suggest code reading/understanding exercises (e.g., "what are the next ste
 Nice introduction:
 https://kuleshov-group.github.io/aml-website (careful: copyright!)
 
-Feature engineering:
-https://www.kaggle.com/learn/feature-engineering
-
 Lecture:
 https://harvard-iacs.github.io/2019-CS109A/lectures/lecture7/presentation/Lecture7_ModeLSelectionRegularization.pdf
 
-
-Nice "whats wrong with the procedure": https://courses.cs.washington.edu/courses/cse446/26sp/schedule/lectures/05-train%20test%20split%20cross%20validation.pdf
-
-Exercises in jupyter:
-https://github.com/intro-stat-learning/ISLP_labs/
-https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
+https://github.com/kuleshov/cornell-cs5785-2025-applied-ml/blob/main/lecture-notes/lecture2-supervised-learning.ipynb
 
 :::
 
 ## TODO: Group work topics
 
 Check which topics were selected by groups, identify potential overlap and guide topic selection.
+
+
+
+## Exercises
+
+Feature engineering:
+https://www.kaggle.com/learn/feature-engineering
+
+Nice "whats wrong with the procedure":
+https://courses.cs.washington.edu/courses/cse446/26sp/schedule/lectures/05-train%20test%20split%20cross%20validation.pdf
+
+Exercises in jupyter:
+https://github.com/intro-stat-learning/ISLP_labs/
+https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/

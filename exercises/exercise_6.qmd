@@ -7,10 +7,6 @@ title: "Exercise 6: Machine learning I"
 Implement a machine learning model in Python, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.
 :::
 
-::: callout-note
-This should be "as simple as possible"
-:::
-
 https://github.com/justmarkham/scikit-learn-videos
 
 
