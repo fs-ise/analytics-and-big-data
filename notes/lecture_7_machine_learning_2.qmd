@@ -11,10 +11,139 @@ format: html
 
 Lectures
 https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
-
-Neural Networks:
-https://www.youtube.com/watch?v=aircAruvnKk
-https://www.youtube.com/watch?v=IHZwWFHWa-w
-https://www.youtube.com/watch?v=Ilg3gGewQ5U
-
 :::
+
+
+## SVM
+
+<!--
+https://www.youtube.com/watch?v=efR1C6CvhmE
+-->
+
+
+## Maximal margin classifiers (linearly separable)
+
+Small M&A teams are **successful**, large teams **unsuccessful**.
+
+A simple rule uses the **means**.
+SVM instead uses the **closest boundary points** to maximize the margin.
+
+
+```{python}
+#| label: fig-means-vs-margin
+#| fig-cap: "Linearly separable case: margin vs. mean threshold"
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+
+successful = np.array([2, 3, 4, 5])
+unsuccessful = np.array([8, 9, 10, 11])
+
+mean_threshold = (successful.mean() + unsuccessful.mean()) / 2
+
+left_edge = successful.max()
+right_edge = unsuccessful.min()
+margin_threshold = (left_edge + right_edge) / 2
+
+fig, ax = plt.subplots(figsize=(8, 2))
+
+ax.scatter(successful, np.zeros_like(successful), marker="o", s=100, label="Successful (small teams)")
+ax.scatter(unsuccessful, np.zeros_like(unsuccessful), marker="x", s=100, label="Unsuccessful (large teams)")
+
+ax.axvline(mean_threshold, linestyle="--", label="Means threshold")
+ax.axvline(margin_threshold, linestyle="-", label="Max-margin boundary")
+
+ax.set_yticks([])
+ax.set_xlabel("M&A team size")
+ax.legend()
+plt.show()
+```
+
+**Teaching point:**
+SVM ignores most points and focuses on the **closest successful and unsuccessful teams**.
+
+## Support Vector Classifiers (soft margin allowing some misclassification)
+
+Now introduce slight overlap:
+
+* Some small teams fail
+* Some larger teams succeed
+
+```{python}
+#| label: fig-soft-margin
+#| fig-cap: "Soft margin: allowing a few misclassifications"
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+
+successful = np.array([2, 3, 4, 9])      # one large success
+unsuccessful = np.array([5, 8, 10, 11])  # one smaller failure
+
+threshold = 6.5
+
+fig, ax = plt.subplots(figsize=(8, 2))
+
+ax.scatter(successful, np.zeros_like(successful), marker="o", s=100, label="Successful")
+ax.scatter(unsuccessful, np.zeros_like(unsuccessful), marker="x", s=100, label="Unsuccessful")
+
+ax.axvline(threshold, linestyle="-", label="Soft-margin boundary")
+
+# highlight misclassified points
+misclassified = [9, 5]
+for x in misclassified:
+    ax.scatter(x, 0, s=200, facecolors='none', edgecolors='black', linewidths=2)
+
+ax.set_yticks([])
+ax.set_xlabel("M&A team size")
+ax.legend()
+plt.show()
+```
+
+**Teaching point:**
+The model **accepts a few mistakes** to achieve a better overall boundary.
+
+
+## Support Vector Machines (Kernel trick for nonlinear patterns)
+
+Change the M&A example. Assume:
+
+- small → unsuccessful
+- mid-sized → successful
+- large → unsuccessful
+
+```{python}
+#| label: fig-kernel-2d
+#| fig-cap: "Quadratic transformation enables linear separation"
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+
+x_unsuccessful = np.array([2, 3, 4, 11, 12, 13])
+x_successful = np.array([6, 7, 8, 9])
+
+z_unsuccessful = (x_unsuccessful - 7.5)**2
+z_successful = (x_successful - 7.5)**2
+
+fig, ax = plt.subplots(figsize=(6, 5))
+
+ax.scatter(x_unsuccessful, z_unsuccessful, marker="x", s=100, label="Unsuccessful")
+ax.scatter(x_successful, z_successful, marker="o", s=100, label="Successful")
+
+threshold = (z_successful.max() + z_unsuccessful.min()) / 2
+x_line = np.linspace(1, 14, 100)
+ax.plot(x_line, np.ones_like(x_line)*threshold, linestyle="-", label="Linear separator")
+
+ax.set_xlabel("Team size (x)")
+ax.set_ylabel("$(x - 7.5)^2$")
+ax.legend()
+plt.show()
+```
+
+**Teaching point:**
+The kernel trick makes nonlinear patterns **linearly separable in a transformed space**.
+
+## Short wrap-up
+
+* **Maximal margin classifier** → perfect separation
+* **Support vector classifier** → allows some errors
+* **Support vector machine** → handles nonlinear patterns

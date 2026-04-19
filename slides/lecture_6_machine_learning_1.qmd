@@ -6,22 +6,6 @@ session: "Session 6"
 date: "2026-04-20"
 ---
 
-<!--
-https://jose.theoj.org/papers/10.21105/jose.00239
--> slides not useful for ABD
--> Exercises: penguin dataset, but maybe useful as an inspiration.
-https://github.com/Cambridge-ICCS/practical-ml-with-pytorch/tree/main/exercises
-
-
-https://www.3blue1brown.com/topics/neural-networks
--> instructive animations on neural networks etc.
-
-https://www.youtube.com/watch?v=jGwO_UgTS7I
--> Andrew Ng lecture (TODO)
-https://cs229.stanford.edu/
-
--->
-
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
@@ -29,15 +13,12 @@ https://cs229.stanford.edu/
 ::: {.learning-objectives}
 - **Distinguish** between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.
 - **Describe** the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.
-- **Assess** the performance of machine learning models, using the confusion matrix and metrics such as precision, recall and F1 score.
 - **Connect** conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (*see exercise*)
 :::
 
-<!--
-workflow: and explain why each step is necessary for generalizable results
--->
-
 ## Applications of machine learning {data-state="hide-menubar"}
+
+TODO: include specific / few examples, similar to https://www.youtube.com/watch?v=vcE9WGbi4QY
 
 The applications of machine learning
 
@@ -74,21 +55,29 @@ The applications of machine learning
 
 # Foundations {data-stack-name="Foundations"}
 
+## Distinguishing concepts
 
-## Today
+![](../images/ai_ml_dl.png)
 
-Categories of ML: Supervised vs. Unsupervised (10 min)
+Highlight:
+
+- AI often refers to a general system or field of study. ML/DL to techniques/methods/algorithms
+- reinforcement learning: interactive environment
+- deep learning/neural networks: learn abstractions from raw data (feature engineering is more important for supervised ML)
+- genAI/LLM/GPT: unstructured/semistructured/structured output (beyond classification/regression)
+- Prompt: what would the role of genAI be in the context of descriptive, predictive, prescriptive analytics? (descriptive: summarizing/narrative layer; predictive: limited, maybe generating code for predictive models; prescriptive: translating and explaining recommendations/trade-offs)
+
+TODO: definition of machine learning (similar to https://www.youtube.com/watch?v=vcE9WGbi4QY)
+Also: AI vs ML vs deep learning (see https://www.youtube.com/watch?v=chfwJiXvBMA)
+
+## Supervised and Unsupervised Learning
+
+Categories of ML: Supervised vs. Unsupervised
 
 - Define both approaches
 - Connect to what students already know:
   - “Unsupervised → clustering” (covered in exploratory data analysis)
 - Emphasize: focus of this lecture + next lecture is **supervised learning**
-
-
-
-TBD:
-    ## Categories in Machine Learning
-    ![](../images/slides_200.png)
 
 <!--
     ## Supervised Learning
@@ -97,12 +86,9 @@ TBD:
     ![](../images/slides_207.png)
 -->
 
-
-## Supervised and Unsupervised Learning
-
 ![](../images/slides_209.png)
 
-
+$$\underbrace{\text{Dataset}}_\text{Features, Attributes, Targets} + \underbrace{\text{Learning Algorithm}}_\text{Model Class + Objective + Optimizer } \to \text{Predictive Model}$$ 
 
 
 Brief reminder: logistic regression from previous lecture
@@ -110,11 +96,13 @@ Brief reminder: logistic regression from previous lecture
 - What problem does it solve?
 - Why it is already a form of supervised machine learning
 
-Motivation for today:
+<!--
+  Motivation for today:
 
-- Logistic regression is **powerful but limited** (linear decision boundary)
-- Many real-world problems require **non-linear** or more flexible models
-- Today’s goal: understand the **general ML workflow** and explore other supervised ML methods
+  - Logistic regression is **powerful but limited** (linear decision boundary)
+  - Many real-world problems require **non-linear** or more flexible models
+  - Today’s goal: understand the **general ML workflow** and explore other supervised ML methods
+-->
 
 Note/TBD: focus on supervised machine learning.
 
@@ -130,10 +118,10 @@ TODO: add a definition (and intorductory example)
 > **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
 
 
-
-## Statistical Regression vs. Machine Learning Algorithms
-
 ![](../images/slides_107.png)
+
+TODO: note: our focus will be on machine learning. in the big-data section, we will cover neural networks (suitable for complex data, including images, speech, natural language)
+
 
 # The Generalization Problem {data-stack-name="Generalization problem"}
 
@@ -227,30 +215,40 @@ Introduce the high-level pipeline (Modern Analytics Process)
 
 ## Steps
 
+<!--
+workflow: and explain why each step is necessary for generalizable results
+-->
+
 2.1 Labeled Data
+
 - Input features (X) and target labels (y)
 - Importance of data quality and representativeness
 
 2.2 Feature Engineering
+
 - Transformations, encoding, normalization
 - Why features matter more than the model itself
 
 2.3 Train–Test Split
+
 - Why we split data into training and testing sets
 - Preventing information leakage
 - Hold-out, cross-validation (brief mention)
 
 2.4 Model Training
+
 - Fit model on training data
 - Conceptual: "learning patterns/parameters"
 
 2.5 Hyperparameter Tuning (Validation / Cross-Validation)  
 
 2.6 Final Evaluation on Test Data
+
 - Predict on unseen data
 - Establish generalization performance
 
 2.7 Applying the Model Beyond the Known Sample
+
 - Using the model in decision-making or prediction for future cases
 
 ## Partitioning the Data
@@ -344,24 +342,26 @@ Different inductive biases, different levels of flexibility, different data need
 
 -->
 
-
-
 # Feature Engineering {data-stack-name="Feature Engineering"}
 
 ## The feature engineering process
 
-> Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
+Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work.
+If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
 
-> A feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:
+A feature (variable, attribute) is depicted by a column in a dataset.
+Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:
 
 ![](../images/slides_144_new.png)
 
-> Features can be of two major types. **Raw features** are obtained directly from the dataset with no extra data manipulation or engineering. **Derived features** are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing "Birthdate".
+Features can be of two major types.
+**Raw features** are obtained directly from the dataset with no extra data manipulation or engineering.
+**Derived features** are usually obtained from feature engineering, where we extract features from existing data attributes.
+A simple example would be creating a new feature “Age” from an employee dataset containing "Birthdate".
 
 ::: aside
 — Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.
 :::
-
 
 ## Models
 
@@ -476,6 +476,10 @@ linear models → feature engineering critical
 # SMOTE {data-stack-name="SMOTE"}
 
 ## TODO SMOTE for imbalanced data
+
+# Ensembles {data-stack-name="Ensembles"}
+
+## TODO / see ABD slides
 
 
 ## Summary {data-state="hide-menubar"}
