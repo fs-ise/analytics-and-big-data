@@ -72,6 +72,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -103,17 +114,6 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
-  background-image: none;
-}
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
   background-image: none;
 }
 </style>
@@ -233,11 +233,169 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Lectures https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf</p>
-<p>Neural Networks: https://www.youtube.com/watch?v=aircAruvnKk https://www.youtube.com/watch?v=IHZwWFHWa-w https://www.youtube.com/watch?v=Ilg3gGewQ5U</p>
 </div>
 </div>
+<section id="decision-trees" class="level2">
+<h2 class="anchored" data-anchor-id="decision-trees">Decision trees</h2>
+<p>https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8</p>
+<p>TODO: check statement and plot!!</p>
+<!--
+Information gain rewards purity—even if it comes from splitting into many small groups. Gain ratio corrects this by penalizing overly fragmented splits.
+
+::: {#cell-fig-gain-ratio-fragmentation .cell execution_count=1}
+``` {.python .cell-code}
+import numpy as np
+import matplotlib.pyplot as plt
 
 
+def entropy(probs):
+    return -np.sum([p * np.log2(p) for p in probs if p > 0])
+
+
+groups = range(2, 11)
+
+info_gain = []
+split_info = []
+gain_ratio = []
+
+parent_entropy = 1.0  # fixed for illustration
+
+for m in groups:
+    # assume equal-sized groups
+    probs = [1 / m] * m
+    si = entropy(probs)  # split information
+
+    # assume groups become purer as m increases (toy assumption)
+    child_entropy = 1 / m  # smaller with more splits
+
+    ig = parent_entropy - child_entropy
+
+    info_gain.append(ig)
+    split_info.append(si)
+    gain_ratio.append(ig / si)
+
+plt.figure(figsize=(7, 4))
+plt.plot(groups, info_gain, marker="o", label="Information Gain")
+plt.plot(groups, gain_ratio, marker="o", label="Gain Ratio")
+
+plt.xlabel("Number of groups (fragmentation)")
+plt.ylabel("Value")
+plt.title("Gain Ratio penalizes overly fragmented splits")
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+::: {.cell-output .cell-output-display}
+![Information Gain vs Gain Ratio under increasing fragmentation](lecture_7_machine_learning_2_files/figure-html/fig-gain-ratio-fragmentation-output-1.png){#fig-gain-ratio-fragmentation width=589 height=376}
+:::
+:::
+
+
+-->
+</section>
+<section id="svm" class="level2">
+<h2 class="anchored" data-anchor-id="svm">SVM</h2>
+<!--
+https://www.youtube.com/watch?v=efR1C6CvhmE
+
+See also: https://www.mathstat.dal.ca/~aarms2014/StatLearn/docs/09%20_annotated.pdf
+-->
+</section>
+<section id="maximal-margin-classifier" class="level2">
+<h2 class="anchored" data-anchor-id="maximal-margin-classifier">Maximal margin classifier</h2>
+<p>Small M&amp;A teams are <strong>successful</strong>, large teams <strong>unsuccessful</strong>.</p>
+<p>A simple baseline would place the threshold halfway between the <strong>class means</strong>. The maximal margin classifier instead places the threshold halfway between the <strong>closest opposing cases</strong> and maximizes the distance to both classes.</p>
+<div id="cell-fig-maximal-margin-1d" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-maximal-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-maximal-margin-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lecture_7_machine_learning_2_files/figure-html/fig-maximal-margin-1d-output-1.png" width="614" height="222" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maximal-margin-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A naive midpoint between class means versus the maximal-margin threshold
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Teaching point:</strong> The midpoint between means uses the class centers. The maximal margin classifier uses the <strong>edge cases</strong> that define the safest separating threshold. This matches the standard SVM intuition that only the nearest points determine the margin.</p>
+</section>
+<section id="support-vector-classifier-soft-margin" class="level2">
+<h2 class="anchored" data-anchor-id="support-vector-classifier-soft-margin">Support vector classifier (soft margin)</h2>
+<p>Now allow slight overlap:</p>
+<ul>
+<li>one relatively small team is unsuccessful</li>
+<li>one relatively large team is successful</li>
+</ul>
+<p>The support vector classifier keeps a central boundary, but also allows some points to lie <strong>inside the margin</strong> or even on the <strong>wrong side of the boundary</strong>.</p>
+<div id="cell-fig-soft-margin-1d" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-soft-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-soft-margin-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lecture_7_machine_learning_2_files/figure-html/fig-soft-margin-1d-output-1.png" width="614" height="222" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-soft-margin-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Soft-margin classifier: margin bands, an in-margin point, and a misclassified point
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Teaching point:</strong> This is the most important soft-margin visual: one point can be <strong>inside the margin but still correctly classified</strong>, while another can be <strong>across the boundary and misclassified</strong>. That is exactly the role of slack variables in the standard support vector classifier formulation.</p>
+</section>
+<section id="support-vector-machines-kernel-trick-for-nonlinear-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="support-vector-machines-kernel-trick-for-nonlinear-patterns">Support Vector Machines (Kernel trick for nonlinear patterns)</h2>
+<p>Change the M&amp;A example. Assume:</p>
+<ul>
+<li>small → unsuccessful</li>
+<li>mid-sized → successful (“sweet spot”)</li>
+<li>large → unsuccessful</li>
+</ul>
+<div id="cell-fig-nonlinear-1d" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-nonlinear-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nonlinear-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lecture_7_machine_learning_2_files/figure-html/fig-nonlinear-1d-output-1.png" width="614" height="208" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nonlinear-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Nonlinear pattern: only mid-sized M&amp;A teams are successful
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Note: linear separation no longer possible.</p>
+<p>Transformation (Quadratic transformation)</p>
+<div id="cell-fig-kernel-2d" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-kernel-2d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kernel-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lecture_7_machine_learning_2_files/figure-html/fig-kernel-2d-output-1.png" width="514" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kernel-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Quadratic transformation enables linear separation
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Teaching point:</strong> The kernel trick makes nonlinear patterns <strong>linearly separable in a transformed space</strong>.</p>
+</section>
+<section id="short-wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="short-wrap-up">Short wrap-up</h2>
+<ul>
+<li><strong>Maximal margin classifier</strong> → perfect separation</li>
+<li><strong>Support vector classifier</strong> → allows some errors</li>
+<li><strong>Support vector machine</strong> → handles nonlinear patterns</li>
+</ul>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -131,28 +131,6 @@
     }
   </style>
   <style>
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
-    background-image: none;
-  }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -164,6 +142,17 @@
     content: '🔗';
     background-image: none;
   }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -173,6 +162,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -209,126 +209,300 @@
 characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 -->
 </section>
-<section id="classification-vs.-regression-same-models-different-outputs" class="slide level2">
-<h2>Classification vs.&nbsp;Regression: Same models, different outputs</h2>
-<p>Classification → categorical output Regression → numerical output</p>
-<p>Many models can handle both</p>
+<section id="classification-vs.-regression-model-families" class="slide level2">
+<h2>Classification vs.&nbsp;Regression &amp; Model Families</h2>
+<p>Many models can handle <strong>classification</strong> (pedicting categories) and <strong>regression</strong> (predicting numeric values).</p>
+<p><br></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 39%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model family</th>
+<th><strong>Classification</strong></th>
+<th><strong>Regression</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Linear models</strong></td>
+<td>Logistic regression (Ridge/Lasso)</td>
+<td>Linear regression (Ridge/Lasso)</td>
+</tr>
+<tr class="even">
+<td><strong>Distance-based models</strong></td>
+<td>k-NN (classification)</td>
+<td>k-NN (regression)</td>
+</tr>
+<tr class="odd">
+<td><strong>Tree-based models</strong></td>
+<td>Decision trees, Random Forest (classification)</td>
+<td>Decision trees, Random Forest (regression)</td>
+</tr>
+<tr class="even">
+<td><strong>Margin-based models</strong></td>
+<td>Support Vector Machine (SVC)</td>
+<td>Support Vector Regression (SVR)</td>
+</tr>
+<tr class="odd">
+<td><strong>Neural networks</strong></td>
+<td>Neural networks (classification)</td>
+<td>Neural networks (regression)</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><br></p>
+<blockquote>
+<p><em>Which model should we choose for a given predictive task?</em><br>
+→ depends on:</p>
+<ul>
+<li>prediction task (classification vs regression)</li>
+<li>data structure</li>
+<li>complexity of relationships</li>
+<li>need for interpretability vs.&nbsp;performance</li>
+</ul>
+</blockquote>
+<aside class="notes">
+<p>Key idea for this session: We move from:</p>
+<ul>
+<li><strong>Simple &amp; interpretable models</strong> → to</li>
+<li><strong>More flexible &amp; powerful models</strong></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section>
 <section id="linear-models" class="title-slide slide level1 center" data-stack-name="Linear models">
 <h1>Linear models</h1>
 
 </section>
-<section id="linear-models-1" class="slide level2">
-<h2>Linear models</h2>
-<p>Linear Regression (regression) Logistic Regression (classification) Ridge / Lasso (regularization)</p>
-<p>👉 Key idea:</p>
-<p>Linear relationship + regularization</p>
-<pre><code>  ## Introductory Example
+<section id="regularization" class="slide level2">
+<h2>Regularization</h2>
+<!--
+See https://aunnnn.github.io/ml-tutorial/html/blog_content/linear_regression/linear_regression_regularized.html
+-->
+<p>Linear models are simple and interpretable—but they can still <strong>overfit</strong>.</p>
+<ul>
+<li>Especially problematic when:
+<ul>
+<li>many features (<strong>high-dimensional data</strong>)</li>
+<li>features are <strong>correlated or redundant</strong></li>
+<li>noise is present in the data</li>
+</ul></li>
+<li>Without constraints:
+<ul>
+<li>the model fits the training data very well<br>
+</li>
+<li>but performs poorly on new data (<strong>low generalization</strong>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="core-idea-of-regularization" class="slide level2">
+<h2>Core idea of Regularization</h2>
+<blockquote>
+<p>Prefer <strong>simpler models</strong> that fit the data <em>well enough</em></p>
+</blockquote>
+<p>We modify the objective (in linear regression: minimizing RSS / OLS):</p>
+<p><span class="math display">\[
+\text{Loss} = \text{Fit to data} + \lambda \cdot \text{Penalty}
+\]</span></p>
+<ul>
+<li>First term: fit (e.g., squared errors)<br>
+</li>
+<li>Second term: penalizes complexity<br>
+</li>
+<li><span class="math inline">\(\lambda\)</span>: controls the trade-off</li>
+</ul>
+<div class="fragment">
+<p><strong>Common Approaches for Linear Regression</strong></p>
+<ul>
+<li><strong>Ridge (L2)</strong>: shrinks coefficients toward zero<br>
+</li>
+<li><strong>Lasso (L1)</strong>: shrinks and sets some coefficients exactly to zero</li>
+</ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Key takeaway</strong></p>
+<p>Good models balance <strong>fit and simplicity</strong><br>
+→ Regularization helps control complexity and improve generalization</p>
+</blockquote>
+<aside class="notes">
+<blockquote>
+<p>Regularization is not limited to linear models:</p>
+</blockquote>
+<ul>
+<li>Trees → depth constraints, pruning<br>
+</li>
+<li>k-NN → choice of <span class="math inline">\(k\)</span><br>
+</li>
+<li>SVM → margin parameter <span class="math inline">\(C\)</span><br>
+</li>
+<li>Neural networks → weight decay, dropout<br>
+</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+e.g., ridge, lasso, PCA, random-forest: tree-depth boundary
+-->
+</div>
+</section>
+<section id="high-dimensionality-in-linear-regression-models-i" class="slide level2">
+<h2>High dimensionality in linear regression models (I)</h2>
+<p>The figure illustrates the risk of applying OLS when the number of features p is large. The model <span class="math inline">\(R^2\)</span> increases to 1 as the number of features increases, and the training set MSE decreases to 0. At the same time, the MSE on a test set becomes extremely large as the number of features increases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/high-dimensionality.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+<p>In contrast, methods like ridge regression are particularly useful for performing regression in the high-dimensional setting. Essentially, these approaches avoid overfitting by using a less flexible fitting approach than least squares.</p>
 
-  &gt; Credit-Scoring is a typical example for a classification problem. A bank wants to determine the creditworthiness of a customer.
+<aside><div>
+<p>Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;240f.</p>
+</div></aside></section>
+<section id="high-dimensionality-in-linear-regression-models-ii" class="slide level2">
+<h2>High dimensionality in linear regression models (II)</h2>
+<p>OLS is not suitable for high-dimensional data. Especially when the number of features p is as large as, or larger than, the number of observations, OLS cannot be applied. Regardless of whether or not there truly is a relationship between the features and the response, OLS will yield a set of coefficient estimates that result in a perfect fit to the data, such that the residuals are zero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/regression-high-dimensionality.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+<p>The figure shows two cases. When there are 20 observations, n &gt; p and the OLS line does not perfectly fit the data. When there are only two observations, then regardless of the values of those observations, the regression line will fit the data exactly. This is problematic because this perfect fit will almost certainly lead to overfitting of the data.</p>
 
-  &gt; Assume you have the age, income, and a creditworthiness category of "yes" or "no" for a bunch of people and you want to use the age and income to predict the creditworthiness for a new person.
+<aside><div>
+<p>Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;239f.</p>
+</div></aside></section>
+<section id="ridge-regression" class="slide level2">
+<h2>Ridge Regression</h2>
+<p>Ridge Regression is an enhancement of OLS using a technique that constrains or regularizes the coefficient estimates. This is done by shrinking the coefficient estimates towards zero resulting in a gain in robustness and a higher generalization ability.</p>
+<p>Similar to OLS, Ridge Regression estimates the parameters of the function</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta'x_i+v_i\]</span></p>
+<p>but instead of minimizing the residual sum of squares (<span class="math inline">\(v^2\)</span>), the function to minimize is</p>
+<p><span class="math display">\[
+\sum_{i=0}^{n} v_i^2 + \lambda \cdot \sum_{j=1}^{p} \beta_j^2
+=
+\sum_{i=0}^{n} \left(y_i - \beta_0 - \beta' x_i\right)^2 + \lambda \cdot \sum_{j=1}^{p} \beta_j^2
+\]</span></p>
+<p>where <span class="math inline">\(\lambda ≥ 0\)</span> is a tuning parameter, to be determined separately. It is called a shrinkage penalty and has the effect of shrinking the estimates of <span class="math inline">\(\beta_j\)</span> towards zero. This is equivalent to reducing complexity.</p>
+<blockquote>
+<p><span class="math inline">\(\lambda\)</span> is not applied to the intercept <span class="math inline">\(\beta_0\)</span> !</p>
+</blockquote>
+</section>
+<section id="complexity" class="slide level2">
+<h2>Complexity</h2>
+<p>Complexity can be measured as the size of the set of possible outputs for a given set of inputs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/ridge_complexity.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+<p>In this example the interval <span class="math inline">\(0\)</span> to <span class="math inline">\(x^*\)</span> represents the set of possible inputs. Function <span class="math inline">\(h_0\)</span> has the lowest complexity because there is just one output independent of the inputs. <span class="math inline">\(h_2\)</span> has the highest complexity because here the set of possible outputs is the biggest one.</p>
+</section>
+<section id="complexity-und-generalisation" class="slide level2">
+<h2>Complexity und Generalisation</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/ridge_complexity_generalization.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+<!--
+TODO: illustrate ridge regression geometrically?
+-->
+</section>
+<section id="relationship-of-lambda-and-complexity" class="slide level2">
+<h2>Relationship of <span class="math inline">\(\lambda\)</span> and Complexity</h2>
+<p><span class="math inline">\(\lambda \rightarrow \infty\)</span>: Lowest complexity<br>
+The ridge regression coefficients are equal to zero. For every input, the result is <span class="math inline">\(\beta_0\)</span>.</p>
+<p><span class="math inline">\(\lambda = 0\)</span>: Relative high complexity (linear model)<br>
+The penalty term has no effect, and ridge regression will produce the least squares estimates.</p>
+<p>Example:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/ridge_example_labmda_complexity.png" class="quarto-figure quarto-figure-center" height="450"></p>
+</figure>
+</div>
 
-  &gt; You can plot people as points on the plane and label people with an empty circle if they have low credit ratings.
+<aside><div>
+<p>Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;215f.</p>
+</div></aside></section></section>
+<section>
+<section id="distance-based-models-k-nn" class="title-slide slide level1 center" data-stack-name="k-NN">
+<h1>Distance-based models: k-NN</h1>
 
-  &gt; What if a new guy comes in who is 49 years old and who makes 53,000 Euro? What is his likely credit rating label?
+</section>
+<section id="k-nn-for-classification" class="slide level2">
+<h2>k-NN for classification</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>k-Nearest Neighbors (k-NN) is often used for clustering, but it can also be adapted to classification and regression tasks. It is particularly useful in settings where a set of observations has already been labeled, and the objective is to assign labels or predict values for new, unlabeled observations.</p>
+<p>The method operates by identifying the <em>k</em> most similar observations to a given data point, based on a chosen distance metric (e.g., Euclidean distance). In classification tasks, the new observation is assigned the class label that is most frequent among its <em>k</em> nearest neighbors.</p>
+<p><strong>Procedure of k-NN for classification:</strong></p>
+<ol type="1">
+<li>Determine parameter k (= number of nearest neighbors)</li>
+<li>Calculate the distances between the new object and all known labeled objects.</li>
+<li>Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.</li>
+<li>Count the frequencies of the classes of the nearest neighbors.</li>
+<li>Assign the new object to the most frequent class.</li>
+</ol>
+</div><div class="column" style="width:40%;">
+<p><img data-src="../images/knn_classification.png"></p>
+</div></div>
 
-  ![](../images/slides_221.png)
-
-
-  TODO: remove knn (covered in EDA)!?!
-
-  # k-Nearest Neighbors {data-stack-name="k-Nearest Neighbors"}
-
-
-  ## k-Nearest Neighbors
-
-  - k-Nearest Neighbors (k-NN) is an algorithm that can be used when you have a bunch of objects that have been classified or labeled in some way, and other similar objects that have not gotten classified or labeled yet, and you want a way to automatically label them.
-  - The intuition behind k-NN is to consider the most similar other items defined in terms of their attributes, look at their labels, and give the unassigned item the majority vote. If there’s a tie, you randomly select among the labels that have tied for first.
-  - **Procedure of k-NN:**
-    - 1. Determine parameter k (= number of nearest neighbors)
-    - 2. Calculate the distances between the new object and all known labeled objects.
-    - 3. Choose the k objects from all known labeled objects having the smallest distance to the new object as nearest neighbors.
-    - 4. Count the frequencies of the classes of the nearest neighbors.
-    - 5. Assign the new object to the most frequent class.
-
-
-  ## Measuring Similarity
-
-  ![](../images/slides_182_new.png)
-
-
-  ## Unnormalized vs. Normalized
-
-  ![](../images/slides_183_new.png)
-
-
-  ## Example (I)
-
-  ![](../images/slides_184_new.png)
-
-
-  ## Example (II)
-
-  ![](../images/slides_185_new.png)
-
-
-  ## Example (III)
-
-  3. Choose the k nearest neighbors
-
-  | Customer | Age | Monthly Income | Monthly Costs | Creditworthy | Distance |
-  | :-: | :-: | :-: | :-: | :-: | :-: |
-  | A | 0.0000 | 0.0303 | 0.0400 | yes | 0.4347 |
-  | C | 0.1714 | 0.3333 | 0.3600 | yes | 0.1726 |
-  | E | 0.3143 | 0.1818 | 0.2000 | no | 0.2010 |
-  | F | 0.4286 | 0.3939 | 0.6000 | no | 0.4482 |
-  | G | 0.4857 | 0.2121 | 0.1200 | yes | 0.3090 |
-  | X | 0.2286 | 0.3636 | 0.2000 | ? |  |
-
-  4. Count the numbers of class members
-
-  &gt; 3 x yes; 2 x no
-
-  5. Assign object to most frequent class
-
-  &gt; Customer is creditworthy!
-
-
-  ## Creation and Use of Models
-
-  ![](../images/slides_188_new.png)
-
-
-  ## Calculating Accuracies
-
-  ![](../images/slides_189_new.png)
-
-
-  ## Determining Parameter k
-
-  1. Split the original labeled dataset into training and test data.
-
-  2. Pick an evaluation metric. Misclassification rate or accuracy are good ones.
-
-  3. Run k-NN a few times, changing k and checking the evaluation measure.
-
-  4. Optimize k by picking the one with the best evaluation measure.
-
-
-  | k | Accuracy |
-  | :-: | :-: |
-  | 1 | 0.720 |
-  | 2 | 0.685 |
-  | 3 | 0.740 |
-  | 4 | 0.745 |
-  | 5 | 0.770 |
-  | 6 | 0.740 |
-  | 7 | 0.750 |
-  | 8 | 0.750 |
-  | 9 | 0.765 |
-  | 10 | 0.760 |</code></pre>
+<aside class="notes">
+<p>In the case of ties in classification, a predefined rule is applied, such as selecting one of the tied classes at random or weighting neighbors by their distance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Compare with lecture 2 where we used knn for clustering.</p>
+</div></aside></section>
+<section id="k-nn-for-regression" class="slide level2">
+<h2>k-NN for regression</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>k-NN can also be used for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.</p>
+<p>A simple implementation of k-NN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/knn_regression.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
 </section></section>
 <section>
 <section id="decision-trees" class="title-slide slide level1 center" data-stack-name="Decision trees">
@@ -337,6 +511,30 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 <li>Decision Trees (classification + regression)</li>
 <li>Random Forests (ensemble)</li>
 </ul>
+<!--
+
+nice graph: https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8
+
+TODO: switch to M&A decision example
+
+| Deal | market outlook | deal size | due diligence | team experience | success |
+| ---- | -------------- | --------- | ------------- | --------------- | ------- |
+| 1    | strong         | large     | low           | junior          | no      |
+| 2    | strong         | large     | low           | senior          | no      |
+| 3    | moderate       | large     | high          | junior          | yes     |
+| 4    | weak           | medium    | high          | junior          | yes     |
+| 5    | weak           | small     | high          | junior          | yes     |
+| 6    | weak           | small     | high          | senior          | no      |
+| 7    | moderate       | small     | high          | senior          | yes     |
+| 8    | strong         | medium    | low           | junior          | no      |
+| 9    | strong         | small     | high          | junior          | yes     |
+| 10   | weak           | medium    | high          | junior          | yes     |
+| 11   | strong         | medium    | high          | senior          | yes     |
+| 12   | moderate       | medium    | low           | senior          | yes     |
+| 13   | moderate       | large     | high          | junior          | yes     |
+| 14   | weak           | medium    | low           | senior          | no      |
+
+-->
 </section>
 <section id="which-one-is-better" class="slide level2">
 <h2>Which one is better?</h2>
@@ -527,23 +725,15 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </section>
 <section id="random-forest-i" class="slide level2">
 <h2>Random Forest (I)</h2>
-<blockquote>
 <p>Random forest is an ensemble classifier that consists of many decision trees.</p>
-</blockquote>
-<blockquote>
 <p>For every tree a subset of the data objects and a subset of features is randomly chosen. Then the tree is constructed usually using the Gini Index.</p>
-</blockquote>
-<blockquote>
 <p>In the end, a simple majority vote is taken for prediction.</p>
-</blockquote>
 <p><img data-src="../images/slides_246.png"></p>
-<blockquote>
 <p><strong>Algorithm:</strong></p>
-</blockquote>
 <ol type="1">
-<li class="fragment">Create n samples from the original data. Frequent sample size is 2/3.</li>
-<li class="fragment">For each of the samples, grow a tree, with the following modification: at each node, rather than choosing the best split among all predictors, randomly sample m* of the m predictors and choose the best split from among those variables.</li>
-<li class="fragment">Predict by aggregating the predictions of the n trees (majority votes).</li>
+<li>Create n samples from the original data. Frequent sample size is 2/3.</li>
+<li>For each of the samples, grow a tree, with the following modification: at each node, rather than choosing the best split among all predictors, randomly sample m* of the m predictors and choose the best split from among those variables.</li>
+<li>Predict by aggregating the predictions of the n trees (majority votes).</li>
 </ol>
 </section>
 <section id="random-forest-ii" class="slide level2">
@@ -597,206 +787,268 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
       ::: aside
       — Source: Bichler (2015): Course Business Analytics, TU München
       :::</code></pre>
-</section></section>
-<section>
-<section id="svm" class="title-slide slide level1 center" data-stack-name="SVM">
-<h1>SVM</h1>
-
 </section>
-<section id="todo-add-contents" class="slide level2">
-<h2>TODO (add contents)</h2>
-</section></section>
-<section>
-<section id="neural-networks" class="title-slide slide level1 center" data-stack-name="Neural Networks">
-<h1>Neural Networks</h1>
-<p>TODO: The “simple calculation example” in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and “cost nudges”). Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.</p>
-</section>
-<section id="functionality-of-human-neurons" class="slide level2">
-<h2>Functionality of Human Neurons</h2>
-<p><img data-src="../images/slides_251.png"></p>
-<p><img data-src="../images/slides_252.png"></p>
-<blockquote>
-<p><strong>A Look into the Nervous System</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Design of a Neuron</strong></p>
-</blockquote>
-</section>
-<section id="an-easy-example-i" class="slide level2">
-<h2>An Easy Example (I)</h2>
-<blockquote>
-<p><strong>f(x) = Activation function</strong></p>
-</blockquote>
-<blockquote>
-<p>e.g.</p>
-</blockquote>
-<blockquote>
-<p>where t = Stimulus threshold</p>
-</blockquote>
-</section>
-<section id="an-easy-example-ii" class="slide level2">
-<h2>An Easy Example (II)</h2>
-<blockquote>
-<p><strong>f(x) = Activation function</strong></p>
-</blockquote>
-<blockquote>
-<p>e.g.</p>
-</blockquote>
-<blockquote>
-<p>where t = Stimulus threshold</p>
-</blockquote>
-</section>
-<section id="functionality-of-a-neuron" class="slide level2">
-<h2>Functionality of a Neuron</h2>
-<p><img data-src="../images/slides_253.jpg"></p>
-<blockquote>
-<p>For the case of n inputs, we can rewrite the neuron’s function to</p>
-</blockquote>
-<blockquote>
-<p>with b = -t. b is known as the perceptron’s bias. The result of this function would then be fed into an activation function to produce a labeling.</p>
-</blockquote>
-<p><img data-src="../images/slides_254.png"></p>
-<blockquote>
-<p>This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.</p>
-</blockquote>
+<section id="regression-trees" class="slide level2">
+<h2>Regression Trees</h2>
+<p>Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.</p>
+<p>The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year. The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g.&nbsp;for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of <span class="math inline">\(e^5.11\)</span> thousands of dollars, i.e.&nbsp;$165,670, for these players.</p>
+<p>Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are $1,000<em>e^6.00 =<span class="math inline">\(403,428\)</span> and $1,000</em>e^6.74 =<span class="math inline">\(845,346\)</span>.</p>
+<p><img data-src="../images/regression_tree_baseball.png"></p>
 
 <aside><div>
-<p>— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks</p>
+<p>Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;304f.</p>
 </div></aside></section>
-<section id="the-multilayer-perceptron" class="slide level2">
-<h2>The Multilayer Perceptron</h2>
-<blockquote>
-<p>The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.</p>
-</blockquote>
-<blockquote>
-<p><strong>Input Neurons</strong>: receive signals from the outer world.</p>
-</blockquote>
-<blockquote>
-<p><strong>Hidden Neurons</strong>: have an internal representation of the outer world.</p>
-</blockquote>
-<blockquote>
-<p><strong>Output Neurons</strong>: pass signals to the outer world.</p>
-</blockquote>
+<section id="constructing-a-regression-tree-i" class="slide level2">
+<h2>Constructing a regression tree (I)</h2>
+<p>A regression tree partitions the data objects in the feature space into regions <span class="math inline">\(R_j\)</span>, represented by the leafs of the tree. To construct the tree, the goal is to find regions that minimize the RSS, given by</p>
+<p><span class="math display">\[
+RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
+\]</span></p>
+<p>where <span class="math inline">\(\bar{y}_{R_j}\)</span> is the mean value for the training observations within the jth region with <span class="math inline">\(\hat{y}_{R_j} = \bar{y}_{R_j}\)</span>.</p>
+<p>To perform the recursive binary splitting, we first select the feature <span class="math inline">\(X_j\)</span> and the cutpoint <span class="math inline">\(s\)</span> such that splitting the feature space into the regions <span class="math inline">\(X_j &lt; s\)</span> and <span class="math inline">\(X_j \ge s\)</span> leads to the greatest possible reduction in RSS. We consider all features and all possible values of the cutpoint s for each of the features, and then choose the feature and cutpoint such that the resulting tree has the lowest RSS.</p>
+<p><img data-src="../images/regression_tree_construction.png"></p>
+
+<aside><div>
+<p>Source: James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;305f.</p>
+</div></aside></section>
+<section id="constructing-a-regression-tree-ii" class="slide level2">
+<h2>Constructing a regression tree (II)</h2>
+<p>For any feature j and cutpoint s, we seek the value of j and s that minimizes</p>
+<p><span class="math display">\[
+\sum_{i: x_i \in R_1(j,s)} \left(y_i - \bar{y}_{R_1}\right)^2
+\;+\;
+\sum_{i: x_i \in R_2(j,s)} \left(y_i - \bar{y}_{R_2}\right)^2
+\]</span></p>
+<p>where <span class="math inline">\(\bar{y}_{R_1}\)</span> is the mean value for the training observations in <span class="math inline">\(R_1(j,s9\)</span>, and <span class="math inline">\(\bar{y}_{R_2}\)</span> is the mean value for the training observations in <span class="math inline">\(R_2(j,s)\)</span>. After splitting, we repeat the process, looking for the best feature and best cutpoint in order to split the data further so as to minimize the RSS within each of the resulting regions. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations. Once the regions R1, . . . , RJ have been created, we predict the objects from the test set. To handle the problem of overfitting, pruning methods exist even for regression trees.</p>
+
+<aside><div>
+<p>James et al.&nbsp;(2013): An Introduction to Statistical Learning with R Applications, p.&nbsp;307f.</p>
+</div></aside></section>
+<section id="random-forests-for-regression" class="slide level2">
+<h2>Random Forests for Regression</h2>
+<p>Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.</p>
+<p>A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.</p>
+<p>Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.</p>
+<p>The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.</p>
 </section>
-<section id="types-of-activation-functions" class="slide level2">
-<h2>Types of Activation Functions</h2>
-<blockquote>
-<p>A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:</p>
-</blockquote>
+<section id="comparing-the-fitting-ability-of-one-vs.-many-regression-trees" class="slide level2">
+<h2>Comparing the Fitting Ability of one vs.&nbsp;many Regression Trees</h2>
+<p><img data-src="../images/tree_regression_single_vs_multiple.png"></p>
+</section>
+<section id="limitations-of-tree-methods-in-regression" class="slide level2">
+<h2>Limitations of Tree Methods in Regression</h2>
+<p>When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.</p>
+<p>Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g.&nbsp;in the case of data with persistent trends. A solution may be a frequent re-training in this case.</p>
+<p>An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.</p>
+<p>If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.</p>
+</section></section>
+<section>
+<section id="support-vector-machines" class="title-slide slide level1 center" data-stack-name="Support Vector Machines">
+<h1>Support Vector Machines</h1>
+
+</section>
+<section id="the-idea-separating-with-a-line-or-hyperplane" class="slide level2">
+<h2>The idea: separating with a line (or hyperplane)</h2>
+<p>Imagine you have two groups of points. SVM tries to separate them with a <strong>line</strong> (in 2D) or a <strong>hyperplane</strong> (in higher dimensions).</p>
+<p>Mathematically, a hyperplane is:</p>
+<p><span class="math display">\[w^\top x + b = 0\]</span></p>
 <ul>
-<li>tangens</li>
-<li>hyperbolicus</li>
-<li>logistic function (sigmoid)</li>
+<li><span class="math inline">\(x\)</span>: data point (features, e.g., income, age)</li>
+<li><span class="math inline">\(w\)</span>: weight vector (defines orientation)</li>
+<li><span class="math inline">\(b\)</span>: bias (shifts the line)</li>
+</ul>
+<p>The predictions are:</p>
+<ul>
+<li>Class +1 if <span class="math inline">\(w^\top x + b &gt; 0\)</span></li>
+<li>Class −1 if <span class="math inline">\(w^\top x + b &lt; 0\)</span></li>
 </ul>
 </section>
-<section id="design-of-a-multilayer-perceptron" class="slide level2">
-<h2>Design of a Multilayer Perceptron</h2>
-<p><img data-src="../images/slides_319.png"></p>
-
-<p><img data-src="../images/slides_320.png"></p>
-
-<pre><code>          ## Introductory Example
-
-          &gt; Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)
-
-
-
-
-          ## Regression Trees
-
-          &gt; Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.
-
-          &gt; The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.
-
-          &gt; The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.
-
-          &gt; Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.
-
-          ![](../images/slides_322.png)
-
-          ::: aside
-          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.
-          :::
-
-
-
-
-          ## Constructing a Regression Tree (I)
-
-          ![](../images/slides_323.png)
-
-          ::: aside
-          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
-          :::
-
-
-
-
-          ## Constructing a Regression Tree (II)
-
-          ::: aside
-          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
-          :::
-
-
-
-
-          ## Random Forests for Regression
-
-          &gt; Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.
-
-          &gt; A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.
-
-          &gt; Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.
-
-          &gt; The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.
-
-
-
-
-          ## Comparing the Fitting Ability of one vs. many Regression Trees
-
-          **Single Regression Tree**
-
-          **Average of 100 Regression Trees**
-
-          ![](../images/slides_324.png)
-
-          ![](../images/slides_325.png)
-
-
-
-
-          ## Limitations of Tree Methods in Regression
-
-          &gt; When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.
-
-          &gt; Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.
-
-          &gt; An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
-
-          &gt; If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
-
-
-
-
-          ## k-Nearest Neighbors for Regression
-
-          &gt; k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.
-
-          &gt; A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</code></pre>
-<aside><div>
-<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div><div>
-<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div></aside></section></section>
-<section>
-<section id="ensembles" class="title-slide slide level1 center" data-stack-name="Ensbembles">
-<h1>Ensembles</h1>
-
+<section id="the-key-insight-maximize-the-margin" class="slide level2">
+<h2>The key insight: maximize the margin</h2>
+<p>SVM doesn’t pick <em>just any</em> separating line. It chooses the one with the <strong>largest margin</strong> (distance to the closest points).</p>
+<p>Those closest points are called <strong>support vectors</strong>.</p>
+<p>Margin size is:</p>
+<p><span class="math display">\[\text{margin} = \frac{2}{|w|}\]</span></p>
+<p>So maximizing the margin = minimizing <span class="math inline">\(|w|\)</span>.</p>
+<div id="cell-fig-svm-2d-very-tight" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-svm-2d-very-tight" class="quarto-float quarto-figure quarto-figure-center" width="515" height="429">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-svm-2d-very-tight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="lecture_7_machine_learning_2_files/figure-revealjs/fig-svm-2d-very-tight-output-1.png" id="fig-svm-2d-very-tight" width="515" height="429">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-svm-2d-very-tight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="todo-see-abd-slides" class="slide level2">
-<h2>TODO / see ABD slides</h2>
+<section id="the-optimization-problem-hard-margin" class="slide level2">
+<h2>The optimization problem (hard margin)</h2>
+<p>If the data is perfectly separable:</p>
+<p><span class="math display">\[\min_{w,b} \frac{1}{2} |w|^2
+\quad \text{subject to} \quad
+y_i (w^\top x_i + b) \geq 1\]</span></p>
+<ul>
+<li><span class="math inline">\(y_i \in {-1, +1}\)</span>: class labels</li>
+<li>Constraint ensures correct classification with margin</li>
+</ul>
+<p>Interpretation: We want all points correctly classified and as far from the boundary as possible.</p>
+</section>
+<section id="allowing-mistakes-soft-margin" class="slide level2">
+<h2>Allowing mistakes (soft margin)</h2>
+<p>Real-world data is messy. So we allow violations using slack variables <span class="math inline">\(\xi_i\)</span>:</p>
+<p><span class="math display">\[\min_{w,b} \frac{1}{2} |w|^2 + C \sum_i \xi_i
+\quad \text{subject to} \quad
+y_i (w^\top x_i + b) \geq 1 - \xi_i\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\xi_i\)</span>: how much a point violates the margin</p></li>
+<li><p><span class="math inline">\(C\)</span>: regularization parameter (trade-off)</p>
+<ul>
+<li>Large (C): fewer mistakes, tighter fit</li>
+<li>Small (C): more tolerance, smoother boundary</li>
+</ul></li>
+</ul>
+</section>
+<section id="nonlinear-boundaries-via-the-kernel-trick" class="slide level2">
+<h2>Nonlinear boundaries via the kernel trick</h2>
+<p>What if data isn’t linearly separable?</p>
+<p>Instead of transforming data explicitly, SVM uses a <strong>kernel function</strong>:</p>
+<p><span class="math display">\[K(x_i, x_j) = \phi(x_i)^\top \phi(x_j)\]</span></p>
+<p>The <strong>kernel trick</strong> replaces inner products with a kernel function, allowing us to compute similarities as if the data were mapped to a higher-dimensional space—without ever computing <span class="math inline">\(\phi(x)\)</span> directly.</p>
+<p>Common kernels:</p>
+<ul>
+<li>Linear: <span class="math inline">\(K(x_i, x_j) = x_i^\top x_j\)</span></li>
+<li>Polynomial</li>
+<li>RBF (Gaussian): captures complex patterns</li>
+</ul>
+<p>Intuition: SVM can create <strong>curved decision boundaries</strong> by working in an implicit higher-dimensional space.</p>
+</section>
+<section id="final-decision-function" class="slide level2">
+<h2>Final decision function</h2>
+<p>After training, predictions look like:</p>
+<p><span class="math display">\[f(x) = \sum_{i \in SV} \alpha_i y_i K(x_i, x) + b\]</span></p>
+<ul>
+<li>Only <strong>support vectors (SV)</strong> matter</li>
+<li><span class="math inline">\(\alpha_i\)</span>: learned weights</li>
+</ul>
+<p>Since <span class="math inline">\(\alpha_i=0\)</span> for most training points, the decision function depends only on those with non-zero coefficients (the support vectors).</p>
+<div class="fragment">
+<blockquote>
+<p><strong>Why SVMs are useful</strong></p>
+<ul>
+<li>Work well with <strong>small to medium datasets</strong></li>
+<li>Strong theoretical foundation (max-margin principle)</li>
+<li>Effective in <strong>high-dimensional settings</strong> (e.g., text, surveys)</li>
+<li>Flexible via kernels</li>
+</ul>
+</blockquote>
+<aside class="notes">
+<p>Conclude with the big picture: SVM starts with a linear separator, extends it with soft margins, and becomes nonlinear through kernels. That is the reason it fits well into the “margin-based models” family.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="support-vector-regression" class="slide level2">
+<h2>Support Vector Regression</h2>
+<p>Similar to the other regression approaches, Support Vector Regression (SVR) estimates the parameters of the function:</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta_ix_i+v_i\]</span></p>
+<p>The Goal is to find a robust model with a high generalization ability. SVR regards two sources of robustness:</p>
+<ol type="1">
+<li>Eliminating noise</li>
+<li>Handling complexity</li>
+</ol>
+</section>
+<section id="insensitive-loss-function-i" class="slide level2">
+<h2>Insensitive Loss Function (I)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br><br></p>
+<p><strong><span class="math inline">\(\varepsilon\)</span>-insensitive loss</strong></p>
+<p><span class="math display">\[\xi_i =
+\begin{cases}
+|v_i| - \varepsilon, &amp; \text{if } |v_i| &gt; \varepsilon \\
+0, &amp; \text{otherwise}
+\end{cases}\]</span></p>
+<p>does not penalize acceptable deviations (defined by <span class="math inline">\(\varepsilon\)</span>)</p>
+<p><strong>OLS / Ridge</strong></p>
+<p><span class="math display">\[\xi_i = v_i^2\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../images/svr_insensitive_loss_function.png"></p>
+</div></div>
+</section>
+<section id="insensitive-loss-function" class="slide level2">
+<h2>Insensitive Loss Function</h2>
+<p>Using the <span class="math inline">\(\epsilon\)</span>-insensitive loss function, only those data objects are considered in the estimation, which have a distance greater than <span class="math inline">\(\epsilon\)</span> from the regression function:</p>
+<p><img data-src="../images/svr_epsilon_insensitive_loss_function.png"></p>
+<p>Every object inside the <span class="math inline">\(\epsilon\)</span>-insensitive region is ignored. It is regarded as noise.</p>
+<!--
+TODO: include minimization (loss function) statement
+
+TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of classification (not regression!?)
+-->
+</section>
+<section id="kernel-functions" class="slide level2">
+<h2>Kernel functions</h2>
+<p>Kernel Functions are used to project n-dimensional input to m-dimensional input, where m is higher than n:</p>
+<p><img data-src="../images/svr_kernel_function.png"></p>
+<p>Any point x in the original space is mapped into the higher dimensional space. For reason of efficiency, the mapping is not performed in real but instead embedded in the model building process via the kernel function:</p>
+<p>Instead of <span class="math inline">\(\beta_0 + \beta\cdot x = y\)</span> the following is used: <span class="math inline">\(\beta_0 + \beta \cdot \phi(x) = y\)</span>.</p>
+<p>The main idea to use a kernel is: A linear regression curve in higher dimensions becomes a non-linear regression curve in lower dimensions.</p>
+</section>
+<section id="svr-examples-i" class="slide level2">
+<h2>SVR examples (I)</h2>
+<p><br></p>
+<div id="dda356a8" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="808" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="svr-examples-ii" class="slide level2">
+<h2>SVR examples (II)</h2>
+<p><br></p>
+<div id="99b93ba0" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-4-output-1.png" class="quarto-figure quarto-figure-center" width="808" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="svr-examples-iii" class="slide level2">
+<h2>SVR examples (III)</h2>
+<p><br></p>
+<div id="2f2e21c9" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-5-output-1.png" class="quarto-figure quarto-figure-center" width="808" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>TODO</p>
 </section>
 <section id="survey-session-7" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 7</h2>

@@ -142,17 +142,6 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -162,6 +151,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -212,11 +212,195 @@
 </div>
 <p>TBD: spatial/social-media analytics?</p>
 </section>
-<section>
 <section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
 <h1>TODO</h1>
 <p>TBD: broad group work and presentations? (-&gt; TBD: how to make that relevant/documented for the exam??)</p>
 </section>
+
+<section>
+<section id="neural-networks" class="title-slide slide level1 center" data-stack-name="Neural Networks">
+<h1>Neural Networks</h1>
+<p>TODO: The “simple calculation example” in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and “cost nudges”). Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.</p>
+</section>
+<section id="functionality-of-human-neurons" class="slide level2">
+<h2>Functionality of Human Neurons</h2>
+<p><img data-src="../images/slides_251.png"></p>
+<p><img data-src="../images/slides_252.png"></p>
+<blockquote>
+<p><strong>A Look into the Nervous System</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Design of a Neuron</strong></p>
+</blockquote>
+</section>
+<section id="an-easy-example-i" class="slide level2">
+<h2>An Easy Example (I)</h2>
+<blockquote>
+<p><strong>f(x) = Activation function</strong></p>
+</blockquote>
+<blockquote>
+<p>e.g.</p>
+</blockquote>
+<blockquote>
+<p>where t = Stimulus threshold</p>
+</blockquote>
+</section>
+<section id="an-easy-example-ii" class="slide level2">
+<h2>An Easy Example (II)</h2>
+<blockquote>
+<p><strong>f(x) = Activation function</strong></p>
+</blockquote>
+<blockquote>
+<p>e.g.</p>
+</blockquote>
+<blockquote>
+<p>where t = Stimulus threshold</p>
+</blockquote>
+</section>
+<section id="functionality-of-a-neuron" class="slide level2">
+<h2>Functionality of a Neuron</h2>
+<p><img data-src="../images/slides_253.jpg"></p>
+<blockquote>
+<p>For the case of n inputs, we can rewrite the neuron’s function to</p>
+</blockquote>
+<blockquote>
+<p>with b = -t. b is known as the perceptron’s bias. The result of this function would then be fed into an activation function to produce a labeling.</p>
+</blockquote>
+<p><img data-src="../images/slides_254.png"></p>
+<blockquote>
+<p>This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.</p>
+</blockquote>
+
+<aside><div>
+<p>— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks</p>
+</div></aside></section>
+<section id="the-multilayer-perceptron" class="slide level2">
+<h2>The Multilayer Perceptron</h2>
+<blockquote>
+<p>The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.</p>
+</blockquote>
+<blockquote>
+<p><strong>Input Neurons</strong>: receive signals from the outer world.</p>
+</blockquote>
+<blockquote>
+<p><strong>Hidden Neurons</strong>: have an internal representation of the outer world.</p>
+</blockquote>
+<blockquote>
+<p><strong>Output Neurons</strong>: pass signals to the outer world.</p>
+</blockquote>
+</section>
+<section id="types-of-activation-functions" class="slide level2">
+<h2>Types of Activation Functions</h2>
+<blockquote>
+<p>A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:</p>
+</blockquote>
+<ul>
+<li>tangens</li>
+<li>hyperbolicus</li>
+<li>logistic function (sigmoid)</li>
+</ul>
+</section>
+<section id="design-of-a-multilayer-perceptron" class="slide level2">
+<h2>Design of a Multilayer Perceptron</h2>
+<p><img data-src="../images/slides_319.png"></p>
+
+<p><img data-src="../images/slides_320.png"></p>
+
+<pre><code>          ## Introductory Example
+
+          &gt; Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)
+
+
+
+
+          ## Regression Trees
+
+          &gt; Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.
+
+          &gt; The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.
+
+          &gt; The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years&lt;4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.
+
+          &gt; Players with Years&gt;=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.
+
+          ![](../images/slides_322.png)
+
+          ::: aside
+          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.
+          :::
+
+
+
+
+          ## Constructing a Regression Tree (I)
+
+          ![](../images/slides_323.png)
+
+          ::: aside
+          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+          :::
+
+
+
+
+          ## Constructing a Regression Tree (II)
+
+          ::: aside
+          — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+          :::
+
+
+
+
+          ## Random Forests for Regression
+
+          &gt; Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.
+
+          &gt; A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.
+
+          &gt; Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.
+
+          &gt; The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.
+
+
+
+
+          ## Comparing the Fitting Ability of one vs. many Regression Trees
+
+          **Single Regression Tree**
+
+          **Average of 100 Regression Trees**
+
+          ![](../images/slides_324.png)
+
+          ![](../images/slides_325.png)
+
+
+
+
+          ## Limitations of Tree Methods in Regression
+
+          &gt; When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.
+
+          &gt; Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.
+
+          &gt; An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
+
+          &gt; If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
+
+
+
+
+          ## k-Nearest Neighbors for Regression
+
+          &gt; k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.
+
+          &gt; A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</code></pre>
+<aside><div>
+<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
+</div><div>
+<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
+</div></aside></section>
 <section id="reinforcement-learning" class="slide level2">
 <h2>Reinforcement Learning</h2>
 <blockquote>
