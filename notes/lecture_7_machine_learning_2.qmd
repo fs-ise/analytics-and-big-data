@@ -13,25 +13,79 @@ Lectures
 https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
 :::
 
+## Decision trees
+
+https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8
+
+TODO: check statement and plot!!
+
+<!--
+Information gain rewards purity—even if it comes from splitting into many small groups. Gain ratio corrects this by penalizing overly fragmented splits.
+
+```{python}
+#| label: fig-gain-ratio-fragmentation
+#| fig-cap: "Information Gain vs Gain Ratio under increasing fragmentation"
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def entropy(probs):
+    return -np.sum([p * np.log2(p) for p in probs if p > 0])
+
+
+groups = range(2, 11)
+
+info_gain = []
+split_info = []
+gain_ratio = []
+
+parent_entropy = 1.0  # fixed for illustration
+
+for m in groups:
+    # assume equal-sized groups
+    probs = [1 / m] * m
+    si = entropy(probs)  # split information
+
+    # assume groups become purer as m increases (toy assumption)
+    child_entropy = 1 / m  # smaller with more splits
+
+    ig = parent_entropy - child_entropy
+
+    info_gain.append(ig)
+    split_info.append(si)
+    gain_ratio.append(ig / si)
+
+plt.figure(figsize=(7, 4))
+plt.plot(groups, info_gain, marker="o", label="Information Gain")
+plt.plot(groups, gain_ratio, marker="o", label="Gain Ratio")
+
+plt.xlabel("Number of groups (fragmentation)")
+plt.ylabel("Value")
+plt.title("Gain Ratio penalizes overly fragmented splits")
+plt.legend()
+plt.grid()
+plt.show()
+```
+-->
 
 ## SVM
 
 <!--
 https://www.youtube.com/watch?v=efR1C6CvhmE
+
+See also: https://www.mathstat.dal.ca/~aarms2014/StatLearn/docs/09%20_annotated.pdf
 -->
 
-
-## Maximal margin classifiers (linearly separable)
+## Maximal margin classifier
 
 Small M&A teams are **successful**, large teams **unsuccessful**.
 
-A simple rule uses the **means**.
-SVM instead uses the **closest boundary points** to maximize the margin.
-
+A simple baseline would place the threshold halfway between the **class means**.
+The maximal margin classifier instead places the threshold halfway between the **closest opposing cases** and maximizes the distance to both classes.
 
 ```{python}
-#| label: fig-means-vs-margin
-#| fig-cap: "Linearly separable case: margin vs. mean threshold"
+#| label: fig-maximal-margin-1d
+#| fig-cap: "A naive midpoint between class means versus the maximal-margin threshold"
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -40,76 +94,139 @@ successful = np.array([2, 3, 4, 5])
 unsuccessful = np.array([8, 9, 10, 11])
 
 mean_threshold = (successful.mean() + unsuccessful.mean()) / 2
+sv_left = successful.max()
+sv_right = unsuccessful.min()
+margin_threshold = (sv_left + sv_right) / 2
 
-left_edge = successful.max()
-right_edge = unsuccessful.min()
-margin_threshold = (left_edge + right_edge) / 2
+fig, ax = plt.subplots(figsize=(8, 2.2))
 
-fig, ax = plt.subplots(figsize=(8, 2))
+# points on a line
+ax.scatter(successful, np.zeros_like(successful), marker="o", s=90, label="Successful")
+ax.scatter(unsuccessful, np.zeros_like(unsuccessful), marker="x", s=90, label="Unsuccessful")
 
-ax.scatter(successful, np.zeros_like(successful), marker="o", s=100, label="Successful (small teams)")
-ax.scatter(unsuccessful, np.zeros_like(unsuccessful), marker="x", s=100, label="Unsuccessful (large teams)")
+# support vectors
+ax.scatter([sv_left, sv_right], [0, 0], s=220, facecolors="none", edgecolors="black", linewidths=1.8)
 
-ax.axvline(mean_threshold, linestyle="--", label="Means threshold")
-ax.axvline(margin_threshold, linestyle="-", label="Max-margin boundary")
+# thresholds
+ax.axvline(mean_threshold, linestyle="--", label="Midpoint between means")
+ax.axvline(margin_threshold, linestyle="-", label="Max-margin threshold")
+
+# margin illustration
+ax.annotate(
+    "", xy=(sv_left, 0.12), xytext=(margin_threshold, 0.12),
+    arrowprops=dict(arrowstyle="<->", lw=1.2)
+)
+ax.annotate(
+    "", xy=(margin_threshold, 0.12), xytext=(sv_right, 0.12),
+    arrowprops=dict(arrowstyle="<->", lw=1.2)
+)
+ax.text(margin_threshold, 0.18, "margin", ha="center", va="bottom")
 
 ax.set_yticks([])
+ax.set_ylim(-0.15, 0.28)
 ax.set_xlabel("M&A team size")
-ax.legend()
+ax.legend(loc="upper center", ncol=2, frameon=False)
 plt.show()
 ```
 
 **Teaching point:**
-SVM ignores most points and focuses on the **closest successful and unsuccessful teams**.
+The midpoint between means uses the class centers.
+The maximal margin classifier uses the **edge cases** that define the safest separating threshold. This matches the standard SVM intuition that only the nearest points determine the margin. 
 
-## Support Vector Classifiers (soft margin allowing some misclassification)
+## Support vector classifier (soft margin)
 
-Now introduce slight overlap:
+Now allow slight overlap:
 
-* Some small teams fail
-* Some larger teams succeed
+* one relatively small team is unsuccessful
+* one relatively large team is successful
+
+The support vector classifier keeps a central boundary, but also allows some points to lie **inside the margin** or even on the **wrong side of the boundary**.
 
 ```{python}
-#| label: fig-soft-margin
-#| fig-cap: "Soft margin: allowing a few misclassifications"
+#| label: fig-soft-margin-1d
+#| fig-cap: "Soft-margin classifier: margin bands, an in-margin point, and a misclassified point"
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
 
-successful = np.array([2, 3, 4, 9])      # one large success
-unsuccessful = np.array([5, 8, 10, 11])  # one smaller failure
+successful = np.array([2, 3, 4, 9])
+unsuccessful = np.array([5, 8, 10, 11])
 
-threshold = 6.5
+boundary = 6.5
+margin_left = 5.2
+margin_right = 7.8
 
-fig, ax = plt.subplots(figsize=(8, 2))
+fig, ax = plt.subplots(figsize=(8, 2.2))
 
-ax.scatter(successful, np.zeros_like(successful), marker="o", s=100, label="Successful")
-ax.scatter(unsuccessful, np.zeros_like(unsuccessful), marker="x", s=100, label="Unsuccessful")
+# points on a line
+ax.scatter(successful, np.zeros_like(successful), marker="o", s=90, label="Successful")
+ax.scatter(unsuccessful, np.zeros_like(unsuccessful), marker="x", s=90, label="Unsuccessful")
 
-ax.axvline(threshold, linestyle="-", label="Soft-margin boundary")
+# decision boundary and margins
+ax.axvline(boundary, linestyle="-", label="Decision boundary")
+ax.axvline(margin_left, linestyle="--")
+ax.axvline(margin_right, linestyle="--")
 
-# highlight misclassified points
-misclassified = [9, 5]
-for x in misclassified:
-    ax.scatter(x, 0, s=200, facecolors='none', edgecolors='black', linewidths=2)
+# shade soft margin region
+ax.axvspan(margin_left, margin_right, alpha=0.12)
+
+# highlight example points
+inside_margin = 5   # unsuccessful, but inside the margin on the correct side
+misclassified = 9   # successful, but on the wrong side of the boundary
+
+ax.scatter([inside_margin], [0], s=220, facecolors="none", edgecolors="black", linewidths=1.8)
+ax.scatter([misclassified], [0], s=220, facecolors="none", edgecolors="black", linewidths=1.8)
+
+ax.text(inside_margin, 0.14, "inside margin", ha="center", fontsize=9)
+ax.text(misclassified, -0.14, "misclassified", ha="center", fontsize=9)
+
+ax.text(boundary, 0.18, "soft margin", ha="center", va="bottom")
 
 ax.set_yticks([])
+ax.set_ylim(-0.22, 0.25)
 ax.set_xlabel("M&A team size")
-ax.legend()
+ax.legend(loc="upper center", ncol=2, frameon=False)
 plt.show()
 ```
 
 **Teaching point:**
-The model **accepts a few mistakes** to achieve a better overall boundary.
-
+This is the most important soft-margin visual: one point can be **inside the margin but still correctly classified**, while another can be **across the boundary and misclassified**. That is exactly the role of slack variables in the standard support vector classifier formulation. 
 
 ## Support Vector Machines (Kernel trick for nonlinear patterns)
 
 Change the M&A example. Assume:
 
 - small → unsuccessful
-- mid-sized → successful
+- mid-sized → successful ("sweet spot")
 - large → unsuccessful
+
+```{python}
+#| label: fig-nonlinear-1d
+#| fig-cap: "Nonlinear pattern: only mid-sized M&A teams are successful"
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+
+x_unsuccessful = np.array([2, 3, 4, 11, 12, 13])
+x_successful = np.array([6, 7, 8, 9])
+
+fig, ax = plt.subplots(figsize=(8, 2))
+
+ax.scatter(x_unsuccessful, np.zeros_like(x_unsuccessful),
+           marker="x", s=100, label="Unsuccessful (low & high)")
+ax.scatter(x_successful, np.zeros_like(x_successful),
+           marker="o", s=100, label="Successful (mid-sized)")
+
+ax.set_yticks([])
+ax.set_xlabel("M&A team size")
+ax.legend()
+
+plt.show()
+```
+
+Note: linear separation no longer possible.
+
+Transformation (Quadratic transformation)
 
 ```{python}
 #| label: fig-kernel-2d

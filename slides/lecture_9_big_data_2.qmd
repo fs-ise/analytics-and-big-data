@@ -30,6 +30,200 @@ TBD: spatial/social-media analytics?
 TBD: broad group work and presentations? (-> TBD: how to make that relevant/documented for the exam??)
 
 
+# Neural Networks {data-stack-name="Neural Networks"}
+
+TODO: The "simple calculation example" in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and "cost nudges").
+Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.
+
+## Functionality of Human Neurons
+
+![](../images/slides_251.png)
+
+![](../images/slides_252.png)
+
+> **A Look into the Nervous System**
+
+> **Design of a Neuron**
+
+
+
+## An Easy Example (I)
+
+
+> **f(x) = Activation function**
+
+> e.g.
+
+> where t = Stimulus threshold
+
+
+## An Easy Example (II)
+
+> **f(x) = Activation function**
+
+> e.g.
+
+> where t = Stimulus threshold
+
+
+## Functionality of a Neuron
+
+![](../images/slides_253.jpg)
+
+
+> For the case of n inputs, we can rewrite the neuron's function to
+
+> with b = -t. b is known as the perceptron's bias. The result of this function would then be fed into an activation function to produce a labeling.
+
+![](../images/slides_254.png)
+
+> This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.
+
+::: aside
+— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks
+:::
+
+
+
+
+## The Multilayer Perceptron
+
+> The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.
+
+> **Input Neurons**: receive signals from the outer world.
+
+> **Hidden Neurons**: have an internal representation of the outer world.
+
+> **Output Neurons**: pass signals to the outer world.
+
+
+
+
+## Types of Activation Functions
+
+> A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:
+
+- tangens
+- hyperbolicus
+- logistic function (sigmoid)
+
+
+
+
+## Design of a Multilayer Perceptron
+
+![](../images/slides_319.png)
+
+::: aside
+— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+:::
+
+
+![](../images/slides_320.png)
+
+::: aside
+— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+:::
+
+
+
+
+
+
+
+
+              ## Introductory Example
+
+              > Decision Tree for Predicting Fuel Consumption of Cars (in Miles-per-Gallon)
+
+
+
+
+              ## Regression Trees
+
+              > Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.
+
+              > The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.
+
+              > The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years<4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of e^5.11 thousands of dollars, i.e. $165,670, for these players.
+
+              > Players with Years>=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. The predicted salaries for the resulting two groups are 1,000*e^6.00 =$403,428 and 1,000*e^6.74 =$845,346.
+
+              ![](../images/slides_322.png)
+
+              ::: aside
+              — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.
+              :::
+
+
+
+
+              ## Constructing a Regression Tree (I)
+
+              ![](../images/slides_323.png)
+
+              ::: aside
+              — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+              :::
+
+
+
+
+              ## Constructing a Regression Tree (II)
+
+              ::: aside
+              — Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+              :::
+
+
+
+
+              ## Random Forests for Regression
+
+              > Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.
+
+              > A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.
+
+              > Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.
+
+              > The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.
+
+
+
+
+              ## Comparing the Fitting Ability of one vs. many Regression Trees
+
+              **Single Regression Tree**
+
+              **Average of 100 Regression Trees**
+
+              ![](../images/slides_324.png)
+
+              ![](../images/slides_325.png)
+
+
+
+
+              ## Limitations of Tree Methods in Regression
+
+              > When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.
+
+              > Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends. A solution may be a frequent re-training in this case.
+
+              > An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
+
+              > If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
+
+
+
+
+              ## k-Nearest Neighbors for Regression
+
+              > k-Nearest Neighbors cannot only be used for classification but also for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.
+
+              > A simple implementation of KNN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.
+
+
 
 
 ## Reinforcement Learning
