@@ -153,17 +153,6 @@
     content: '🔒';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -173,6 +162,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   </style>
@@ -204,43 +204,46 @@
 <li><strong>Connect</strong> conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (<em>see exercise</em>)</li>
 </ul>
 </div>
-</section>
-<section id="applications-of-machine-learning" class="slide level2" data-state="hide-menubar">
-<h2>Applications of machine learning</h2>
-<p>TODO: include specific / few examples, similar to https://www.youtube.com/watch?v=vcE9WGbi4QY</p>
-<p>The applications of machine learning</p>
-<ul>
-<li><p><strong>E-Commerce &amp; Online Services (Recommender Systems)</strong></p>
-<ul>
-<li>Data: clicks, purchases, browsing behavior</li>
-<li>Tasks: preference prediction, ranking</li>
-<li>Examples: product recommendations, personalized content</li>
-</ul></li>
-<li><p><strong>Logistics &amp; Supply Chain</strong></p>
-<ul>
-<li>Data: shipments, inventory, delivery times</li>
-<li>Tasks: demand forecasting, delay prediction, classification</li>
-<li>Examples: demand prediction, delivery risk classification</li>
-</ul></li>
-<li><p><strong>Finance &amp; Payments</strong></p>
-<ul>
-<li>Data: transactions, account behavior</li>
-<li>Tasks: classification</li>
-<li>Examples: fraud detection, credit scoring</li>
-</ul></li>
-<li><p><strong>Operations &amp; Process Optimization</strong></p>
-<ul>
-<li>Data: process logs, operational metrics</li>
-<li>Tasks: classification, anomaly detection</li>
-<li>Examples: defect detection, process monitoring</li>
-</ul></li>
-<li><p><strong>Text &amp; Document Processing</strong></p>
-<ul>
-<li>Data: emails, documents, customer messages</li>
-<li>Tasks: classification, information extraction</li>
-<li>Examples: spam detection, ticket routing</li>
-</ul></li>
-</ul>
+<!--
+
+## Applications of machine learning {data-state="hide-menubar"}
+
+TODO: include specific / few examples, similar to https://www.youtube.com/watch?v=vcE9WGbi4QY
+TBD: fast ML image processing (e.g., in package routing), accuracy (early signs)
+
+
+The applications of machine learning
+
+* **E-Commerce & Online Services (Recommender Systems)**
+
+  * Data: clicks, purchases, browsing behavior
+  * Tasks: preference prediction, ranking
+  * Examples: product recommendations, personalized content
+
+* **Logistics & Supply Chain**
+
+  * Data: shipments, inventory, delivery times
+  * Tasks: demand forecasting, delay prediction, classification
+  * Examples: demand prediction, delivery risk classification
+
+* **Finance & Payments**
+
+  * Data: transactions, account behavior
+  * Tasks: classification
+  * Examples: fraud detection, credit scoring
+
+* **Operations & Process Optimization**
+
+  * Data: process logs, operational metrics
+  * Tasks: classification, anomaly detection
+  * Examples: defect detection, process monitoring
+
+* **Text & Document Processing**
+
+  * Data: emails, documents, customer messages
+  * Tasks: classification, information extraction
+  * Examples: spam detection, ticket routing
+-->
 </section>
 <section>
 <section id="foundations" class="title-slide slide level1 center" data-stack-name="Foundations">
@@ -249,7 +252,20 @@
 </section>
 <section id="distinguishing-concepts" class="slide level2">
 <h2>Distinguishing concepts</h2>
-<p><img data-src="../images/ai_ml_dl.png"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Artificial Intelligence (AI)</strong> involves techniques that equip computers to emulate human behavior, enabling them to learn, make decisions, recognize patterns, and solve complex problems in a manner akin to human intelligence.</p>
+<p><strong>Machine Learning (ML)</strong> is a subset of AI, uses advanced algorithms to detect patterns in large data sets, allowing machines to learn and adapt. ML algorithms use supervised or unsupervised learning methods.</p>
+<p><strong>Deep Learning (DL)</strong> is a subset of ML which uses neural networks for in-depth data processing and analytical tasks. DL leverages multiple layers of artificial neural networks to extract high-level features from raw input data, simulating the way human brains perceive and understand the world.</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/ai_ml_dl.png" class="quarto-figure quarto-figure-center" style="width:85.0%"></p>
+</figure>
+</div>
+</div></div>
+
+<aside class="notes">
 <p>Highlight:</p>
 <ul>
 <li>AI often refers to a general system or field of study. ML/DL to techniques/methods/algorithms</li>
@@ -259,10 +275,50 @@
 <li>Prompt: what would the role of genAI be in the context of descriptive, predictive, prescriptive analytics? (descriptive: summarizing/narrative layer; predictive: limited, maybe generating code for predictive models; prescriptive: translating and explaining recommendations/trade-offs)</li>
 </ul>
 <p>TODO: definition of machine learning (similar to https://www.youtube.com/watch?v=vcE9WGbi4QY) Also: AI vs ML vs deep learning (see https://www.youtube.com/watch?v=chfwJiXvBMA)</p>
-</section>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Generative AI (genAI) is a subset of DL models that generates content like text, images, or code based on provided input. Trained on vast data sets, these models detect patterns and create outputs without explicit instruction, using a mix of supervised and unsupervised learning.</p>
+</div></aside></section>
 <section id="supervised-and-unsupervised-learning" class="slide level2">
-<h2>Supervised and Unsupervised Learning</h2>
-<p>Categories of ML: Supervised vs.&nbsp;Unsupervised</p>
+<h2>Supervised and unsupervised learning</h2>
+<!--
+    ## Supervised Learning
+    ![](../images/slides_203.png)
+    ## Unsupervised Learning
+    ![](../images/slides_207.png)
+-->
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_209.png" class="quarto-figure quarto-figure-center" style="width:55.0%"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Note</strong>: Our focus will be primarily on supervised machine learning:</p>
+<p><span class="math display">\[\underbrace{\text{Dataset}}_\text{Features, Targets} + \underbrace{\text{Learning Algorithm}}_\text{Model Class + Objective + Optimizer } \to \text{Predictive Model}\]</span></p>
+<!--
+Brief reminder: logistic regression from previous lecture
+
+- What problem does it solve?
+- Why it is already a form of supervised machine learning
+
+  Motivation for today:
+
+  - Logistic regression is **powerful but limited** (linear decision boundary)
+  - Many real-world problems require **non-linear** or more flexible models
+  - Today’s goal: understand the **general ML workflow** and explore other supervised ML methods
+
+-->
+<aside class="notes">
 <ul>
 <li>Define both approaches</li>
 <li>Connect to what students already know:
@@ -271,64 +327,6 @@
 </ul></li>
 <li>Emphasize: focus of this lecture + next lecture is <strong>supervised learning</strong></li>
 </ul>
-<!--
-    ## Supervised Learning
-    ![](../images/slides_203.png)
-    ## Unsupervised Learning
-    ![](../images/slides_207.png)
--->
-<p><img data-src="../images/slides_209.png"></p>
-<p><span class="math display">\[\underbrace{\text{Dataset}}_\text{Features, Attributes, Targets} + \underbrace{\text{Learning Algorithm}}_\text{Model Class + Objective + Optimizer } \to \text{Predictive Model}\]</span></p>
-<p>Brief reminder: logistic regression from previous lecture</p>
-<ul>
-<li>What problem does it solve?</li>
-<li>Why it is already a form of supervised machine learning</li>
-</ul>
-<!--
-  Motivation for today:
-
-  - Logistic regression is **powerful but limited** (linear decision boundary)
-  - Many real-world problems require **non-linear** or more flexible models
-  - Today’s goal: understand the **general ML workflow** and explore other supervised ML methods
--->
-<p>Note/TBD: focus on supervised machine learning.</p>
-<p>TODO: mention focus on primarily (binary) classification tasks</p>
-<p>TODO: add a definition (and intorductory example)</p>
-</section>
-<section id="statistics-vs.-machine-learning" class="slide level2">
-<h2>Statistics vs.&nbsp;Machine Learning</h2>
-<blockquote>
-<p><strong>Statistics</strong> about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g.&nbsp;p-value). The focus is on hypothesis testing.</p>
-</blockquote>
-<blockquote>
-<p><strong>Machine Learning (ML)</strong> aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.</p>
-</blockquote>
-<p><img data-src="../images/slides_107.png"></p>
-<p>TODO: note: our focus will be on machine learning. in the big-data section, we will cover neural networks (suitable for complex data, including images, speech, natural language)</p>
-</section></section>
-<section>
-<section id="the-generalization-problem" class="title-slide slide level1 center" data-stack-name="Generalization problem">
-<h1>The Generalization Problem</h1>
-
-</section>
-<section id="overfitting-example" class="slide level2">
-<h2>Overfitting (example, …)</h2>
-<p>Traditional Analytics Process</p>
-<p><img data-src="../images/slides_117.png"></p>
-<p>Note: large ML models may create overfitting issues… -&gt; need for separate test set</p>
-</section>
-<section id="best-fit-vs.-best-generalization" class="slide level2">
-<h2>Best Fit vs.&nbsp;Best Generalization</h2>
-<p><img data-src="../images/slides_129.png"></p>
-</section>
-<section id="over--and-underfitting" class="slide level2">
-<h2>Over- and Underfitting</h2>
-<p><img data-src="../images/slides_131.png"></p>
-<blockquote>
-<p>Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.</p>
-</blockquote>
-<aside class="notes">
-<p>Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 Measurement Error: 0, 1, 1, 2, 3, 6, 8, 13, 20, 34, 55</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -341,6 +339,42 @@
           display:block!important;
       }</style></aside>
 <!--
+## Statistics vs. Machine Learning
+
+> **Statistics** about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.
+
+> **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
+
+
+![](../images/slides_107.png)
+
+TODO: note: our focus will be on machine learning. in the big-data section, we will cover neural networks (suitable for complex data, including images, speech, natural language)
+
+-->
+</div>
+</section></section>
+<section>
+<section id="the-generalization-problem" class="title-slide slide level1 center" data-stack-name="The generalization problem">
+<h1>The generalization problem</h1>
+
+</section>
+<section id="the-traditional-analytics-process" class="slide level2">
+<h2>The traditional analytics process</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_117.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</section>
+<section id="over--and-underfitting" class="slide level2">
+<h2>Over- and underfitting</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_131.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<p>Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.</p>
+<!--
 
     ## Creation and Use of Models
 
@@ -348,8 +382,18 @@
 
 -->
 </section>
+<section id="best-fit-vs.-best-generalization" class="slide level2">
+<h2>Best fit vs.&nbsp;best generalization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_129.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</section>
 <section id="the-bias-variance-tradeoff" class="slide level2">
-<h2>The Bias-Variance Tradeoff</h2>
+<h2>The bias-variance tradeoff</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>The prediction error is influenced by three components:</p>
 <blockquote>
 <p>Error = Bias + Variance + Noise</p>
@@ -360,26 +404,47 @@
 <li><p>Typically, there is a tradeoff between bias and variance.</p></li>
 <li><p>Noise is everything that arises from random variations in the data. It cannot be controlled.</p></li>
 </ul>
-<p><img data-src="../images/slides_132_new.png"></p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_132_new.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
 </section>
 <section id="generalization-problem" class="slide level2">
 <h2>Generalization problem</h2>
-<p>State the generalization problem very clearly.</p>
-</section>
-<section id="conceptual-solution-split" class="slide level2">
-<h2>Conceptual solution: Split</h2>
-<p>briefly illustrate split.</p>
+<p><strong>Generalization problem (concise):</strong> Modern machine learning models are highly flexible and trained on large datasets. While this enables them to fit complex patterns, it also creates a risk:</p>
+<blockquote>
+<p>the model may <strong>fit the training data extremely well</strong> but fail to capture patterns that hold more generally.</p>
+</blockquote>
+<p>The core question is therefore:</p>
+<blockquote>
+<p>How can we tell whether a model has learned something <strong>generalizable</strong>, rather than just memorizing the data?</p>
+</blockquote>
+<!--
+**Cliffhanger (toward the solution):**
+To answer this, we need a way to **separate learning from evaluation** and test the model under realistic conditions.
+
+👉 This leads directly to the **machine learning workflow**—in particular, the idea of **splitting data and evaluating models on data they have not seen during training**.
+-->
 </section></section>
 <section>
-<section id="the-machine-learning-workflow" class="title-slide slide level1 center" data-stack-name="Workflow">
-<h1>The Machine Learning Workflow</h1>
+<section id="the-machine-learning-workflow" class="title-slide slide level1 center" data-stack-name="The workflow">
+<h1>The machine learning workflow</h1>
 
 </section>
 <section id="the-supervised-machine-learning-workflow" class="slide level2">
-<h2>The Supervised Machine Learning Workflow</h2>
-<p>Introduce the high-level pipeline (Modern Analytics Process)</p>
-<p><img data-src="../images/slides_126_new.png"></p>
+<h2>The supervised machine learning workflow</h2>
+<p><br><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_126_new.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
 <!--
+Introduce the high-level pipeline (Modern Analytics Process)
+
     ## The Data Analytics Process - Technical View
 
     ![](../images/slides_133.png)
@@ -387,114 +452,247 @@
     ::: aside
     — Source: http://blogs.msdn.microsoft.com/martinkearn/2016/03/01/machine-learning-is-for-muggles-too/
     :::
--->
-</section>
-<section id="steps" class="slide level2">
-<h2>Steps</h2>
-<!--
+
+## Steps
+
 workflow: and explain why each step is necessary for generalizable results
+
+2.1 Labeled Data
+
+- Input features (X) and target labels (y)
+- Importance of data quality and representativeness
+
+2.2 Feature Engineering
+
+- Transformations, encoding, normalization
+- Why features matter more than the model itself
+
+2.3 Train–Test Split
+
+- Why we split data into training and testing sets
+- Preventing information leakage
+- Hold-out, cross-validation (brief mention)
+
+2.4 Model Training
+
+- Fit model on training data
+- Conceptual: "learning patterns/parameters"
+
+2.5 Hyperparameter Tuning (Validation / Cross-Validation)  
+
+2.6 Final Evaluation on Test Data
+
+- Predict on unseen data
+- Establish generalization performance
+
+2.7 Applying the Model Beyond the Known Sample
+
+- Using the model in decision-making or prediction for future cases
 -->
-<p>2.1 Labeled Data</p>
-<ul>
-<li>Input features (X) and target labels (y)</li>
-<li>Importance of data quality and representativeness</li>
-</ul>
-<p>2.2 Feature Engineering</p>
-<ul>
-<li>Transformations, encoding, normalization</li>
-<li>Why features matter more than the model itself</li>
-</ul>
-<p>2.3 Train–Test Split</p>
-<ul>
-<li>Why we split data into training and testing sets</li>
-<li>Preventing information leakage</li>
-<li>Hold-out, cross-validation (brief mention)</li>
-</ul>
-<p>2.4 Model Training</p>
-<ul>
-<li>Fit model on training data</li>
-<li>Conceptual: “learning patterns/parameters”</li>
-</ul>
-<p>2.5 Hyperparameter Tuning (Validation / Cross-Validation)</p>
-<p>2.6 Final Evaluation on Test Data</p>
-<ul>
-<li>Predict on unseen data</li>
-<li>Establish generalization performance</li>
-</ul>
-<p>2.7 Applying the Model Beyond the Known Sample</p>
-<ul>
-<li>Using the model in decision-making or prediction for future cases</li>
-</ul>
 </section>
 <section id="partitioning-the-data" class="slide level2">
-<h2>Partitioning the Data</h2>
-<blockquote>
-<p>The partitioning of the data in <strong>Training and Test Data</strong> has the aim to proof if the analytical results can be generalized. The analysis (e.g.&nbsp;the development of a classifier) is carried out on the basis of training data. Subsequently, the results are applied to the test data. If the results are significantly worse than the training data, the model is not generalizable, which is called overfitting.</p>
-</blockquote>
-<blockquote>
-<p>The partitioning of the data in training and test data can be carried out in the following ways:</p>
-</blockquote>
+<h2>Partitioning the data</h2>
+<p>Data is partitioned into <strong>training</strong> and <strong>test sets</strong> to assess whether a model <strong>generalizes</strong> beyond the data used for estimation.</p>
 <ul>
-<li>By random/stratified/… sampling (problem with the repeatability)</li>
-<li>according to a list</li>
-<li>according to rules (e.g.&nbsp;the first/last 50 records or every twelfth)</li>
+<li>The model is <strong>trained</strong> on the training data</li>
+<li>Its performance is <strong>evaluated</strong> on the test data</li>
+</ul>
+<p>If performance is substantially worse on the test data, the model is likely <strong>overfitting</strong>—capturing patterns specific to the training data rather than general relationships.</p>
+<p><strong>How can the data be split?</strong></p>
+<ul>
+<li><strong>Random / stratified sampling</strong> <em>(common, but may limit reproducibility)</em></li>
+<li><strong>Predefined lists</strong></li>
+<li><strong>Rule-based splits</strong> <em>(e.g., first/last observations, time-based rules)</em></li>
 </ul>
 </section>
 <section id="applying-training-and-test-data" class="slide level2">
-<h2>Applying Training and Test Data</h2>
-<p><img data-src="../images/slides_152_new.png"></p>
+<h2>Applying training and test data</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_152_new.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 
+<!--
+## Partitioning
+
+![](../images/slides_187.png){fig-align=center}
+-->
 <aside><div>
 <p>— Source: http://www.cs.kent.edu/~jin/BigData/Lecture10-ML-Classification.pptx</p>
 </div></aside></section>
-<section id="partitioning" class="slide level2">
-<h2>Partitioning</h2>
-<p><img data-src="../images/slides_187.png"></p>
+<section id="problems-with-fixed-training-and-test-samples" class="slide level2">
+<h2>Problems with fixed training and test samples</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br><br> <strong>Test data is used for two things:</strong></p>
+<p><span style="color: red;">1. Optimize the model training</span><br>
+<span style="color: blue;">2. Select the best model via testing the model quality</span></p>
+<p>This contradicts the idea of independent testing and results in:</p>
+<ul>
+<li>Endogenization of the test data</li>
+<li>Selection Bias</li>
+</ul>
+<p><strong>Rule: NEVER use any information from the test data for model training!</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../images/train_test_data.png"></p>
+</div></div>
 </section>
-<section id="leakage" class="slide level2">
-<h2>Leakage</h2>
-<p>Illustrate leakage <strong>TODO: make-or-break teaching moment</strong></p>
+<section id="addressing-the-endogeneity-problem" class="slide level2">
+<h2>Addressing the endogeneity problem</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/addressing_endogeneity.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
 </section>
-<section id="hyperparameter-tuning" class="slide level2">
-<h2>Hyperparameter tuning</h2>
-</section></section>
-<section>
-<section id="methods" class="title-slide slide level1 center" data-stack-name="Methods">
-<h1>Methods</h1>
+<section id="selection-bias" class="slide level2">
+<h2>Selection bias</h2>
+<p>Training and test error can be highly variable, depending on precisely which observations are included in the training set and which observations are included in the validation set (<strong>Selection Bias</strong>).</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br><br><br> Example of different OLS models as a result of different samples:</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="../images/ols_models_selection_bias.png" width="600"></p>
+</div></div>
+<p>To avoid such problems, one can use so-called resampling methods.</p>
+</section>
+<section id="cross-validation" class="slide level2">
+<h2>Cross validation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Cross validation can be used for model selection and adjustment. In these cases, cross validation is applied to the training data set. For every iteration, k-1 folds are used for model fitting and the remaining fold for testing the model (Validation). Every time, the quality measure (e.g.&nbsp;accuracy) for the validation fold is captured. At the end of this step, the average and the standard deviation of the measures are calculated. The best model is the one with the best ratio in high average and low standard deviation.</p>
+<p>Once the model type and its optimal parameters have been selected, a final model is trained using these hyper-parameters on the full training set, and the generalization quality is measured on the test set.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../images/cross_validation.png"></p>
+</div></div>
+</section>
+<section id="cross-validation-and-grid-search" class="slide level2">
+<h2>Cross validation and grid search</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/cross_validation_grid_search.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</section>
+<section id="cross-validation-and-grid-search-in-python" class="slide level2">
+<h2>Cross validation and grid search in Python</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/cross_validation_grid_search_python.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+<!--
+## Variants of hyperparameter optimization
 
+1. **Grid Search** sequentially goes through a preselected list of permutations for each hyperparameter and evaluates the entire search space.
+2. **Random Search** selects values for hyperparameters at random within a predefined distribution.
+
+While a grid search is able to find the best model given the provided options, limited compute resources means that in practice, the search space selected will have to be limited.
+A random search on the other hand does not iterate over the entire search space.
+-->
 </section>
-<section id="overview-of-supervised-ml-algorithms" class="slide level2">
-<h2>Overview of Supervised ML Algorithms</h2>
-<p>Which Method should I choose?</p>
-<p>The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.</p>
-<p>In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.</p>
-<p>For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.</p>
+<section id="feature-leakage" class="slide level2">
+<h2>Feature leakage</h2>
+<p>Feature leakage occurs when a model uses <strong>information that would not be available at prediction time</strong>.</p>
+<div class="fragment">
 <ul>
-<li><strong>Logistic Regression</strong>
+<li><p>The model appears to perform <strong>very well on training/test data</strong></p></li>
+<li><p>But fails in real-world application</p></li>
+<li><p>Typical causes:</p>
 <ul>
-<li>Linear boundary, interpretable, limited for non-linear patterns</li>
-</ul></li>
-<li><strong>Support Vector Machines (SVM)</strong>
-<ul>
-<li>Margin maximization</li>
-<li>Kernel trick for non-linear boundaries</li>
-</ul></li>
-<li><strong>Decision Trees</strong>
-<ul>
-<li>Recursive splitting, intuitive but prone to overfitting</li>
-</ul></li>
-<li><strong>Random Forests / Ensembles</strong> (optional brief preview)
-<ul>
-<li>Reduce overfitting by combining trees</li>
-</ul></li>
-<li><strong>Neural Networks</strong>
-<ul>
-<li>Layers transforming data</li>
-<li>Extremely flexible but data-hungry and less interpretable</li>
+<li>using <strong>future information</strong> (e.g., outcome-related variables)</li>
+<li>leakage from <strong>test set into training</strong></li>
+<li>features that are <strong>proxies of the target</strong></li>
 </ul></li>
 </ul>
-<p>Note: Emphasize the <em>why</em> behind different models: Different inductive biases, different levels of flexibility, different data needs.</p>
+</div>
+<div class="fragment">
+<p><strong>Example</strong></p>
+<ul>
+<li>Predicting customer churn<br>
+</li>
+<li>Feature: <em>“account closed date”</em></li>
+</ul>
+<p>→ This directly reveals the outcome</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Key takeaway</strong>: Only use features that are <strong>available at the time of prediction</strong></p>
+</blockquote>
+<aside class="notes">
+<ol type="1">
+<li>Using future information</li>
+</ol>
+<p>Using variables that are <strong>only known after the event you want to predict</strong></p>
+<p><strong>Examples:</strong> - Predicting loan default<br>
+→ Feature: <em>“number of missed payments in next 3 months”</em> - Predicting delivery delays<br>
+→ Feature: <em>“actual delivery time”</em></p>
+<blockquote>
+<p>Problem: model “sees the future”</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Leakage from test set into training</li>
+</ol>
+<p>Information from the <strong>test data influences the model during training</strong></p>
+<p><strong>Examples:</strong> - Scaling (mean/std) computed on the <strong>full dataset</strong> - Feature selection using <strong>all data before splitting</strong> - Cross-validation done <strong>after preprocessing on full data</strong></p>
+<blockquote>
+<p>Problem: test data is no longer “unseen”</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Features that are proxies of the target</li>
+</ol>
+<p>Variables that are <strong>not the target itself but strongly encode it</strong></p>
+<p><strong>Examples:</strong> - Predicting customer churn<br>
+→ Feature: <em>“account cancellation request submitted”</em> - Predicting fraud<br>
+→ Feature: <em>“transaction flagged by manual review”</em> - Predicting disease<br>
+→ Feature: <em>“treatment prescribed”</em></p>
+<blockquote>
+<p>Problem: model learns shortcuts instead of real patterns</p>
+</blockquote>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!--
+TBD: cover?
+
+## Overview of Supervised ML Algorithms
+
+The choice of the method of data analysis depends on the one hand on the scope of application, but on the other hand on the interrelationships of the data to be analyzed.
+In the Big Data area, data spaces are often highly-dimensional, making it difficult to visualize the interrelationships.
+
+For this reason, the choice of the method can often not be made ex ante. In these cases, different methods are competitively tried to select the most suitable one.
+
+
+- **Logistic Regression**
+  - Linear boundary, interpretable, limited for non-linear patterns
+
+- **Support Vector Machines (SVM)**
+  - Margin maximization
+  - Kernel trick for non-linear boundaries
+
+- **Decision Trees / Random Forest Ensembles**
+  - Recursive splitting, intuitive but prone to overfitting
+  - Reduce overfitting by combining trees
+
+- **Neural Networks**
+  - Layers transforming data
+  - Extremely flexible but data-hungry and less interpretable
+
+::: notes
+Emphasize the *why* behind different models:
+Different inductive biases, different levels of flexibility, different data needs.
+:::
+
     ## Linear World
 
     ![](../images/slides_134_new.png)
@@ -520,30 +718,44 @@ workflow: and explain why each step is necessary for generalizable results
     ![](../images/slides_139_new.png)
 
 -->
+</div>
 </section></section>
 <section>
-<section id="feature-engineering" class="title-slide slide level1 center" data-stack-name="Feature Engineering">
-<h1>Feature Engineering</h1>
+<section id="feature-engineering" class="title-slide slide level1 center" data-stack-name="Feature engineering">
+<h1>Feature engineering</h1>
 
 </section>
 <section id="the-feature-engineering-process" class="slide level2">
 <h2>The feature engineering process</h2>
 <p>Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.</p>
 <p>A feature (variable, attribute) is depicted by a column in a dataset. Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:</p>
-<p><img data-src="../images/slides_144_new.png"></p>
-<p>Features can be of two major types. <strong>Raw features</strong> are obtained directly from the dataset with no extra data manipulation or engineering. <strong>Derived features</strong> are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_144_new.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<p>Features can be of two major types.</p>
+<ul>
+<li><strong>Raw features</strong> are obtained directly from the dataset with no extra data manipulation or engineering.</li>
+<li><strong>Derived features</strong> are usually obtained from feature engineering, where we extract features from existing data attributes. A simple example would be creating a new feature “Age” from an employee dataset containing “Birthdate”.</li>
+</ul>
 
+<!--
+## Models
+
+“Different models require different feature representations.”
+
+Examples:
+
+SVM → scaling matters
+trees → scaling less important
+linear models → feature engineering critical
+-->
 <aside><div>
 <p>— Source: Sarkar, D.: Understanding Feature Engineering, towardsdatascience.com and Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.</p>
 </div></aside></section>
-<section id="models" class="slide level2">
-<h2>Models</h2>
-<p>“Different models require different feature representations.”</p>
-<p>Examples:</p>
-<p>SVM → scaling matters trees → scaling less important linear models → feature engineering critical</p>
-</section>
 <section id="variants-of-feature-engineering" class="slide level2">
-<h2>Variants of Feature Engineering</h2>
+<h2>Variants of feature engineering</h2>
 <p><strong>1. Transformation</strong></p>
 <ul>
 <li>convert features (e.g., birth date → age)</li>
@@ -568,61 +780,61 @@ workflow: and explain why each step is necessary for generalizable results
 </section>
 <section id="scaling" class="slide level2">
 <h2>Scaling</h2>
-<blockquote>
 <p>Most datasets contain features highly varying in magnitudes, units and range.</p>
-</blockquote>
-<blockquote>
 <p>Most machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.</p>
-</blockquote>
-<blockquote>
 <p>To overcome this effect, we scale the features to bring them to the same level of magnitudes. The two most discussed scaling methods are Normalization and Standardization.</p>
-</blockquote>
-<p><img data-src="../images/slides_146_new.png"></p>
-</section>
-<section id="type-conversion-encoding" class="slide level2">
-<h2>Type Conversion (Encoding)</h2>
-<blockquote>
+<p><br></p>
+<p><strong>Normalization (Min–Max Scaling: values in [0,1])</strong></p>
+<p><span class="math display">\[
+\hat{X}_i = \frac{X_i - X_{\min}}{X_{\max} - X_{\min}}
+\]</span></p>
+<p><br></p>
+<p><strong>Standardization (Z-score Scaling: values with mean 0 and stdandard deviation 1)</strong></p>
+<p><span class="math display">\[
+\hat{X}_i = \frac{X_i - \mu}{\sigma}
+\]</span></p>
+
+<aside><div>
+<p>For interpretation, inverse transformations are possible: <span class="math inline">\(X_i = \hat{X}_i \cdot (X_{\max} - X_{\min}) + X_{\min}\)</span> and <span class="math inline">\(X_i = \hat{X}_i \cdot \sigma + \mu\)</span>, respectively.</p>
+</div></aside></section>
+<section id="type-vonversion-encoding" class="slide level2">
+<h2>Type vonversion (encoding)</h2>
 <p>Many machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:</p>
-</blockquote>
-<blockquote>
 <p><strong>Label encoding</strong> refers to transforming the word labels into numerical form so that the algorithms can understand how to operate on them. Every categorical value is assigned to one numerical value, e.g.&nbsp;young → 1, middle_age → 2, old → 3. This only works in specific situations where you have somewhat continuous-like data, e.g.&nbsp;if the categorical feature is ordinal.</p>
-</blockquote>
-<blockquote>
 <p><strong>One hot encoding</strong> is a representation of a categorical variable as binary vectors. Every categorical value is assigned to an artificial binary variable. If the corresponding categorical value occurs in a data row the value of its binary replacement is equal to 1 else 0, e.g.</p>
-</blockquote>
-<p><img data-src="../images/slides_147_new.png"></p>
-<blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_147_new.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 <p>It is usual when creating dummy variables to have one less variable than the number of categories present to avoid perfect collinearity (dummy variable trap).</p>
-</blockquote>
 </section>
 <section id="example-of-feature-engineering-i" class="slide level2">
-<h2>Example of Feature Engineering (I)</h2>
-<blockquote>
+<h2>Example of feature engineering (I)</h2>
 <p>Data sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data “flight date time vs status”. Then, given the date-time data, we have to predict the status of the flight.</p>
-</blockquote>
-<blockquote>
 <p>But the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature “Hour_Of_Day”. Using the “Hour_Of_Day” feature, the machine will learn better as this feature is directly related to the status of the flight.</p>
-</blockquote>
-<p><img data-src="../images/slides_183.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_183.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 
 <aside><div>
 <p>— Source: Shekhar, A.: What Is Feature Engineering for Machine Learning?, medium.com.</p>
 </div></aside></section>
 <section id="example-of-feature-engineering-ii" class="slide level2">
-<h2>Example of Feature Engineering (II)</h2>
-<blockquote>
+<h2>Example of feature engineering (II)</h2>
 <p>Suppose we are given the latitude, longitude and other data with the objective to predict the target feature “Price_Of_House”. Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.</p>
-</blockquote>
-<blockquote>
 <p>In other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example.</p>
-</blockquote>
-<p><img data-src="../images/slides_185.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_185.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 </section>
 <section id="example-of-feature-engineering-iii" class="slide level2">
-<h2>Example of Feature Engineering (III)</h2>
-<blockquote>
+<h2>Example of feature engineering (III)</h2>
 <p>Suppose we are given a feature “Marital_Status” and other data with the objective to classify customers into “Creditworthy” and “Not_Creditworthy”. In the data set the martial status has many different values, for example:</p>
-</blockquote>
 <ul>
 <li>single living alone</li>
 <li>single living with his parents</li>
@@ -635,32 +847,29 @@ workflow: and explain why each step is necessary for generalizable results
 <li>widowed</li>
 <li>…</li>
 </ul>
-<blockquote>
 <p>To avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g.&nbsp;in single, married, widowed.</p>
-</blockquote>
-<blockquote>
 <p>If there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single “other” class.</p>
-</blockquote>
-</section></section>
-<section>
-<section id="smote" class="title-slide slide level1 center" data-stack-name="SMOTE">
-<h1>SMOTE</h1>
+<!--
+TODO: develop/add the following
 
-</section>
-<section id="todo-smote-for-imbalanced-data" class="slide level2">
-<h2>TODO SMOTE for imbalanced data</h2>
-</section></section>
-<section>
-<section id="ensembles" class="title-slide slide level1 center" data-stack-name="Ensembles">
-<h1>Ensembles</h1>
+# SMOTE {data-stack-name="SMOTE"}
 
-</section>
-<section id="todo-see-abd-slides" class="slide level2">
-<h2>TODO / see ABD slides</h2>
+## TODO SMOTE for imbalanced data
+
+# Ensembles {data-stack-name="Ensembles"}
+
+## TODO / see ABD slides
+-->
 </section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
-<p>TBD: ML Ops?</p>
+<ul>
+<li><p>The focus is on <strong>supervised machine learning</strong>, a particular form of machine learning within <strong>AI/ML/DL</strong>, where models learn relationships between <strong>features (X)</strong> and <strong>targets (y)</strong> from labeled data. In contrast, <strong>unsupervised learning</strong> identifies structure in data without predefined labels.</p></li>
+<li><p>Modern machine learning models are often <strong>highly flexible</strong> and trained on <strong>large datasets</strong>, creating the risk of <strong>overfitting</strong>. The central challenge is the <strong>generalization problem</strong>: distinguishing true patterns from those specific to the training data.</p></li>
+<li><p>The <strong>machine learning workflow</strong> addresses this challenge by separating model development and evaluation: feature engineering, data splitting (training vs.&nbsp;test), model training, and performance assessment.</p></li>
+<li><p>Reliable model evaluation requires strict separation of training and test data, supported by techniques such as <strong>cross-validation</strong> and <strong>hyperparameter tuning</strong>, while avoiding issues like <strong>selection bias</strong> and <strong>feature leakage</strong>.</p></li>
+<li><p><strong>Feature engineering</strong> is a critical step that transforms raw data into meaningful representations (e.g., scaling, encoding, feature construction), often having a stronger impact on performance than the choice of model.</p></li>
+</ul>
 </section>
 <section id="survey-session-6" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 6</h2>
@@ -680,15 +889,17 @@ workflow: and explain why each step is necessary for generalizable results
 <p><br><br></p>
 <p><a href="https://forms.gle/AFmpWcopjMtGfNif6">https://forms.gle/AFmpWcopjMtGfNif6</a></p>
 
+<!--
+TODO: add references
+
+# References {data-state="hide-menubar"}
+-->
+
+
 <aside><div>
 <p>Note: Responses may be analyzed and published in anonymized form.</p>
 <p>Please complete the survey before you leave today — thank you 🙏</p>
 </div></aside></section></section>
-<section id="references" class="title-slide slide level1 center" data-state="hide-menubar">
-<h1>References</h1>
-
-
-</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
