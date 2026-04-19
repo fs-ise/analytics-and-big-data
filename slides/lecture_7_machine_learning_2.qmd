@@ -132,7 +132,7 @@ In contrast, methods like ridge regression are particularly useful for performin
 Essentially, these approaches avoid overfitting by using a less flexible fitting approach than least squares.
 
 ::: aside
-Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 240f.
+Source: @James2013, pp.240
 :::
 
 ## High dimensionality in linear regression models (II)
@@ -148,7 +148,7 @@ When there are only two observations, then regardless of the values of those obs
 This is problematic because this perfect fit will almost certainly lead to overfitting of the data.
 
 ::: aside
-Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 239f.
+Source: @James2013, pp. 239.
 :::
 
 ## Ridge Regression
@@ -209,7 +209,7 @@ Example:
 ![](../images/ridge_example_labmda_complexity.png){height=450 fig-align=center}
 
 ::: aside
-Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 215f.
+Source: @James2013, pp. 215.
 :::
 
 # Distance-based models: k-NN {data-stack-name="k-NN"}
@@ -273,10 +273,6 @@ KNN regression uses the same distance functions as KNN classification.
 
 # Decision trees {data-stack-name="Decision trees"}
 
-- Decision Trees (classification + regression)
-- Random Forests (ensemble)
-
-
 <!--
 
 nice graph: https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8
@@ -304,12 +300,14 @@ TODO: switch to M&A decision example
 
 ## Which one is better?
 
-![](../images/slides_199_new.png)
+The following decision trees predict whether a person will respond to recent advertisements:
+
+![](../images/slides_199_new.png){fig-align=center}
 
 
 ## Introductory Example
 
-![](../images/slides_225.png)
+![](../images/slides_225.png){fig-align=center}
 
 ::: aside
 To choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.
@@ -320,162 +318,301 @@ Proportions in the leafs can be interpreted as probabilities.
 
 ## Decision Trees (I)
 
-Decision trees belong to the hierarchical methods of classification. They analyze step-by-step (recursive partitioning).
+**Decision trees** are hierarchical models used for **classification and regression**, based on **recursive partitioning** of the feature space.
 
-A decision tree consists of nodes and borders. The topmost node (without any parent node) is called "root". A node without a child node is called "leaf". Nodes that have parent and child nodes are called "interior nodes". The interior nodes represent the splitting of the included object sets. An interior node has at least two child nodes (sons). If every interior node has exactly two child nodes, the tree is called a "binary tree".
+A decision tree consists of:
 
-A decision tree method starts at the root, which includes all objects. The different features are compared (with an adequate measure) regarding their suitability of classification. The most appropriate feature determines the branching of the current set of objects: regarding this feature, the current set of objects is divided into disjoint subsets (partitioning). This method is now used recursively to the created child nodes (subsets).
+* a **root node** (topmost node, contains all observations)
+* **internal (decision) nodes** (perform splits based on features)
+* **leaf nodes** (terminal nodes containing predictions)
+
+Each internal node splits the data into **disjoint subsets** based on a feature and a **splitting criterion** (e.g., Gini index, entropy, or RSS).
+
+The tree is built **recursively**:
+
+* Start with all observations at the root
+* Select the feature and split that best improves homogeneity
+* Partition the data accordingly
+* Repeat the process for each subset until a stopping criterion is met
+
+If each node has exactly two child nodes, the tree is called a **binary tree**.
 
 
 ## Decision Trees (II)
 
-Graphically, decision tree models divide the dataspace in a large number of subspaces and search for the variables which are able to split the dataspace with the greatest homogeneity. We can think of the decision tree as a map of different path. For a distinct combination of predictor variables and their observed values, we would enter a specific path, which gives the classification in the leaf of the decision tree.
+Decision tree models partition the **feature space** into a set of regions by recursively splitting the data to achieve **maximum homogeneity** within each region.
 
-The decision tree approach does not require any assumption about the functional form of variables or distributions. Furthermore in contrast to parametric models like linear regressions, the decision tree algorithm can model multiple structures as well as complex relationships within the data, which would be difficult to replicate in a linear model.
+They can be interpreted as a set of **decision paths**:
+for a given combination of predictor values, an observation follows a specific path from the root to a **leaf node**, where a prediction (classification or regression) is assigned.
 
-![](../images/slides_241.png)
+Decision trees make **few assumptions** about the functional form of relationships or data distributions.
+In contrast to parametric models (e.g., linear regression), they can capture **nonlinear patterns**, **interactions**, and **complex structures** in the data that are difficult to model with linear approaches.
 
+<br>
 
-## Decision Trees (III)
+![](../images/slides_241.png){height=320px fig-align=center}
 
-![](../images/slides_242.png)
+<!--
+Note: already covered in previous illustration?
+    ## Decision Trees (III)
 
-::: aside
-— Source: http://iopscience.iop.org/article/10.1088/1749-4699/5/1/015004
-:::
+    ![](../images/slides_242.png)
 
-
+    ::: aside
+    — Source: http://iopscience.iop.org/article/10.1088/1749-4699/5/1/015004
+    :::
+-->
 
 ## Overview of important Decision Tree Methods
 
+<br><br>
+
 | Name | CART | ID3 | C5.0 | CHAID | Random Forests |
-| :-: | :-: | :-: | :-: | :-: | :-: |
+| :-- | :-- | :-- | :-- | :-- | :-- |
 | **Idea** | Choose the attribute with the highest information content | One of the first methods from Quinlan; uses the concept of information gain | Like ID3 based on the concept of information gain | Choose the attribute that is most dependent on the target variable | Construct many trees with different sets of features and samples (randomly). Result by voting. |
 | **Measure used** | Gini-Index | Information gain (entropy) | Ratio of information gain | Chi-square split | Optional, mostly Gini-Index |
 | **Type of Splitting** | Binary | Complete, pruning | Complete, pruning | Complete, pruning | Complete |
 
 
 
-## Introductory Example
+## Introductory example
 
-![](../images/slides_205_new.png)
-
-
+![](../images/slides_205_new.png){fig-align=center}
 
 
-## Splitting with Entropy in ID3
+## Splitting with entropy in ID3
 
-![](../images/slides_206_new.png)
+:::: {.columns}
+
+::: {.column width="70%"}
+
+**ID3 uses entropy as a measure of impurity of a node $t$:**
+
+$$
+\text{entropy}(t) = - \sum_{i=1}^{k} p_i \cdot \log_2(p_i)
+$$
+
+where $p_i$ is the **relative frequency** of observations in node $t$ that belong to class $i$.
+
+<br>
+
+**Attribute: Wind**
+
+- **light**: 6 × yes, 2 × no  
+
+$$
+\text{entropy}(\text{light}) =
+- \left(
+\frac{6}{8} \cdot \log_2\left(\frac{6}{8}\right)
++
+\frac{2}{8} \cdot \log_2\left(\frac{2}{8}\right)
+\right)
+= 0.811
+$$
+
+- **strong**: 3 × yes, 3 × no  
+
+$$
+\text{entropy}(\text{strong}) =
+- \left(
+\frac{3}{6} \cdot \log_2\left(\frac{3}{6}\right)
++
+\frac{3}{6} \cdot \log_2\left(\frac{3}{6}\right)
+\right)
+= 1.0
+$$
+
+:::
+
+::: {.column width="30%"}
+![](../images/table_day_wind_tennis.png){fig-align=center}
+:::
+
+::::
 
 
+## Calculating the information gain
 
+The information gain is a measure, that shows (by combination of the entropies) the appropriateness of an attribute for splitting:
 
-## Calculating the Information Gain
+$$
+\text{Information gain} =
+\text{entropy}(t)
+-
+\sum_{i=1}^{m} \frac{t_i}{t} \cdot \text{entropy}(t_i)
+$$
 
-> The information gain is a measure, that shows (by combination of the entropies) the appropriateness of an attribute for splitting:
+where m = number of values (here two: light, strong), $t_i$ = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting.
 
-![](../images/slides_207_1_new.png)
+![](../images/slides_207_2_new.png){fig-align=center}
 
-> where m = number of values (here two: light, strong), ti = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting.
-
-![](../images/slides_207_2_new.png)
-
-
-
+$$
+\text{Information gain} =
+0.94 -
+\left(
+\frac{8}{14} \cdot 0.811
++
+\frac{6}{14} \cdot 1.0
+\right)
+= 0.048
+$$
 
 ## Decision using ID3
 
-> Information gain (outlook) = 0.246
+- Information gain (outlook) = 0.246
+- Information gain (humidity) = 0.151
+- Information gain (windy) = 0.048
+- Information gain (temperature) = 0.029
 
-> Information gain (humidity) = 0.151
+We choose the attribute with the largest information gain (here: outlook) for the first splitting.
 
-> Information gain (wind) = 0.048
+As solution we obtain the following tree:
 
-> Information gain (temperature) = 0.029
-
-> We choose the attribute with the largest information gain (here: outlook) for the first splitting.
-
-> As solution we obtain the following tree:
-
-![](../images/slides_243.png)
-
-
+![](../images/slides_243.png){height=300px fig-align=center}
 
 
 ## Decision using C5.0
 
-> ID3 tends to favor attributes that have a large number of values, resulting in larger trees. For example, if we have an attribute that has a distinct value for each record, then the entropy is 0, thus the information gain is maximal.
+ID3 tends to favor attributes that have a large number of values, resulting in larger trees.
+For example, if we have an attribute that has a distinct value for each record, then the entropy is 0, thus the information gain is maximal.
 
-> To compensate for this, C5.0 is a further development that uses the information gain ratio as a splitting criterion:
+To compensate for this, C5.0 is a further development that uses the information gain ratio as a splitting criterion:
 
-![](../images/slides_209_new.png)
+$$
+\text{Information gain ratio} =
+\frac{
+\text{entropy}(t) - \sum_{i=1}^{m} \frac{t_i}{t} \cdot \text{entropy}(t_i)
+}{
+- \sum_{i=1}^{m} \frac{t_i}{t} \cdot \log_2 \left(\frac{t_i}{t}\right)
+}
+$$
 
-> In the case of our example the GainRatio of Windy is
+In the case of our example the information gain ratio of *windy* is
 
-![](../images/slides_209_2_new.png)
+$$
+\text{Information gain ratio (windy)} =
+\frac{0.048}{
+- \frac{6}{14} \cdot \log_2\left(\frac{6}{14}\right)
+- \frac{8}{14} \cdot \log_2\left(\frac{8}{14}\right)
+}
+= 0.049
+$$
 
-> and the GainRatio of Outlook is
+and the information gain ratio of *outlook* is
 
-![](../images/slides_209_2_new.png)
-
-
-
-
-## Handling Numerical Attributes
-
-> Numerical attributes are usually splitted binary. In contrast to categorical attributes many possible splitting points exist.
-
-> The splitting point with the highest information gain is looked for. For this, the potential attribute is sorted according to its values first and then all possible splitting point and the corresponding information gains are calculated. In extreme cases there exists n-1 possibilities.
-
-![](../images/slides_210_new.png)
-
-
-
-
-## The CART Algorithm
-
-> The CART algorithm (Classification And Regression Trees) constructs trees that have only binary splits. Like C5.0, it is able to handle categorical and numerical attributes.
-
-> As a measure for the impurity of a node t, CART uses the Gini Index. In the case of two classes the Gini Index is defined as:
-
-![](../images/slides_211_new.png)
-
-
-
-
-## Splitting in CART
-
-![](../images/slides_212_new.png)
+$$
+\text{Information gain ratio (outlook)} =
+\frac{0.246}{
+- \frac{5}{14} \cdot \log_2\left(\frac{5}{14}\right)
+- \frac{4}{14} \cdot \log_2\left(\frac{4}{14}\right)
+- \frac{5}{14} \cdot \log_2\left(\frac{5}{14}\right)
+}
+= 0.156
+$$
 
 
+## Handling numerical attributes
+
+Numerical attributes are usually splitted binary. In contrast to categorical attributes many possible splitting points exist.
+
+The splitting point with the highest information gain is looked for.
+For this, the potential attribute is sorted according to its values first and then all possible splitting point and the corresponding information gains are calculated.
+In extreme cases there exists n-1 possibilities.
 
 
-## Coherence between Entropy and Gini Index
+:::: {.columns}
 
-![](../images/slides_213_new.png)
+::: {.column width="60%"}
 
-> **Remark:** Entropy has been scaled from (0, 1) to (0, 0.5)!
+**Test the splitting point $\text{temperature} = 71.5$:**
+
+- $\text{temperature} < 71.5$: 4 × yes, 2 × no  
+
+$$
+\text{Entropy}(< 71.5) =
+- \left(
+\frac{4}{6} \cdot \log_2\left(\frac{4}{6}\right)
++
+\frac{2}{6} \cdot \log_2\left(\frac{2}{6}\right)
+\right)
+= 0.918
+$$
+
+- $\text{temperature} > 71.5$: 5 × yes, 3 × no  
+
+$$
+\text{Entropy}(> 71.5) =
+- \left(
+\frac{5}{8} \cdot \log_2\left(\frac{5}{8}\right)
++
+\frac{3}{8} \cdot \log_2\left(\frac{3}{8}\right)
+\right)
+= 0.954
+$$
+
+**We calculate:**
+
+$$
+\text{Information gain} =
+0.94 -
+\left(
+\frac{6}{14} \cdot 0.918
++
+\frac{8}{14} \cdot 0.954
+\right)
+= 0.00143
+$$
+:::
+
+::: {.column width="30%"}
+![](../images/slides_210_new.png){width=300px fig-align=center}
+:::
+
+::::
+
+<!--
+Note: introduce in the next round:
+
+    ## The CART Algorithm
+
+    The CART algorithm (Classification And Regression Trees) constructs trees that have only binary splits.
+    Like C5.0, it is able to handle categorical and numerical attributes.
+
+    As a measure for the impurity of a node t, CART uses the Gini Index.
+    In the case of two classes the Gini Index is defined as:
+
+    ![](../images/slides_211_new.png)
+
+    ## Splitting in CART
+
+    ![](../images/slides_212_new.png)
 
 
+    ## Coherence between Entropy and Gini Index
 
+    ![](../images/slides_213_new.png){fig-align=center}
+
+    > **Remark:** Entropy has been scaled from (0, 1) to (0, 0.5)!
+-->
 
 ## Overfitting (I)
 
-> Most decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes. If there are no such conflicting objects, the decision tree will correctly classify all training objects.
-
-> If tree performance is measured from the number of correctly classified cases it is common to find that the training data gives an over-optimistic guide to future performance, i.e. with new data. A tree should exhibit generalization, i.e. work well with data other than those used to generate it. When the tree grows during training it often shows a decrease in generalization. This is because the deeper nodes are fitting noise in the training data not representative over the entire universe from which the training set was sampled. This is called 'overfitting'.
-
-![](../images/slides_244.png)
+Most decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes.
+If there are no such conflicting objects, the decision tree will correctly classify all training objects.
 
 
+If tree performance is measured from the number of correctly classified cases it is common to find that the training data gives an over-optimistic guide to future performance, i.e. with new data.
+A tree should exhibit generalization, i.e. work well with data other than those used to generate it. When the tree grows during training it often shows a decrease in generalization.
+This is because the deeper nodes are fitting noise in the training data not representative over the entire universe from which the training set was sampled. This is called 'overfitting'.
+
+![](../images/slides_244.png){fig-align=center}
 
 
 ## Overfitting (II)
 
 > The learner overfits to correctly classify the noisy data objects.
 
-![](../images/slides_245.png)
-
+![](../images/slides_245.png){fig-align=center}
 
 
 ## Random Forest (I)
@@ -487,7 +624,7 @@ Then the tree is constructed usually using the Gini Index.
 
 In the end, a simple majority vote is taken for prediction.
 
-![](../images/slides_246.png)
+![](../images/slides_246.png){fig-align=center}
 
 **Algorithm:**
 
@@ -497,16 +634,13 @@ In the end, a simple majority vote is taken for prediction.
 
 ## Random Forest (II)
 
-> Voting-Principle of Random Forest:
+Voting principle of Random Forest:
+
+![](../images/random_forest_votes.png){width=60% fig-align=center}
 
 > To avoid overfitting effects, the size and the depth of the trees can be restricted.
 
-![](../images/slides_247.png)
-
-
-
-
-
+<!--
 
           ## Introductory Example
 
@@ -534,9 +668,6 @@ In the end, a simple majority vote is taken for prediction.
           — Source: Giant sparse matrix! A sparse matrix is a matrix in which most of the elements are zero. One matrix for every ad! Can be solved by Naïve Bayes! Looking for an alternative
           :::
 
-
-
-
           ## Why not classical linear regression?
 
           > It is possible to implement a linear regression on such a dataset where Y={0,1}.
@@ -550,28 +681,41 @@ In the end, a simple majority vote is taken for prediction.
           ::: aside
           — Source: Bichler (2015): Course Business Analytics, TU München
           :::
-
-
+-->
 
 ## Regression Trees
 
+:::: {.columns}
+
+::: {.column width="60%"}
 Some of the tree approaches can be used for regression too.
 They can be used for nonlinear multiple regression.
 The output must be numerical.
 
 The figure shows a regression tree for predicting the salary of a baseball player, based on the number of years that he has played in the major leagues and the number of hits that he made in the previous year.
-The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years<4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of $e^5.11$ thousands of dollars, i.e. $165,670, for these players.
+The predicted salary is given by the mean value of the salaries in the corresponding leaf, e.g. for the players in the data set with Years<4.5, the mean (log-scaled) salary is 5.11, and so we make a prediction of $e^{5.11}$ thousands of dollars, i.e. $165,670, for these players.
 
 Players with Years>=4.5 are assigned to the right branch, and then that group is further subdivided by Hits.
-The predicted salaries for the resulting two groups are $1,000*e^6.00 =$403,428$ and $1,000*e^6.74 =$845,346$.
+The predicted salaries for the resulting two groups are $1,000*e^{6.00} =\$403,428$ and $1,000*e^{6.74} =\$845,346$.
 
-![](../images/regression_tree_baseball.png)
+:::
+
+::: {.column width="40%"}
+![](../images/regression_tree_baseball.png){fig-align=center}
+:::
+
+::::
+
 
 ::: aside
-Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 304f.
+Source: @James2013, pp.304
 :::
 
 ## Constructing a regression tree (I)
+
+:::: {.columns}
+
+::: {.column width="60%"}
 
 A regression tree partitions the data objects in the feature space into regions $R_j$, represented by the leafs of the tree.
 To construct the tree, the goal is to find regions that minimize the RSS, given by
@@ -586,10 +730,17 @@ where $\bar{y}_{R_j}$ is the mean value for the training observations within the
 To perform the recursive binary splitting, we first select the feature $X_j$ and the cutpoint $s$ such that splitting the feature space into the regions $X_j < s$ and $X_j \ge s$ leads to the greatest possible reduction in RSS.
 We consider all features and all possible values of the cutpoint s for each of the features, and then choose the feature and cutpoint such that the resulting tree has the lowest RSS.
 
+:::
+
+::: {.column width="40%"}
 ![](../images/regression_tree_construction.png)
+:::
+
+::::
+
 
 ::: aside
-Source: James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 305f.
+Source: @James2013, pp. 305
 :::
 
 ## Constructing a regression tree (II)
@@ -609,7 +760,7 @@ Once the regions R1, . . . , RJ have been created, we predict the objects from t
 To handle the problem of overfitting, pruning methods exist even for regression trees.
 
 ::: aside
-James et al. (2013): An Introduction to Statistical Learning with R Applications, p. 307f.
+@James2013, pp.307
 :::
 
 ## Random Forests for Regression
@@ -629,8 +780,9 @@ The disadvantage of Random Forests is that the analysis, which aggregates over t
 
 ## Comparing the Fitting Ability of one vs. many Regression Trees
 
-![](../images/tree_regression_single_vs_multiple.png)
+<br>
 
+![](../images/tree_regression_single_vs_multiple.png){width=70% fig-align=center}
 
 ## Limitations of Tree Methods in Regression
 
@@ -645,7 +797,7 @@ An important strength of Random Forests is that they are able to perform still w
 If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
 
 
-# Support Vector Machines {data-stack-name="Support Vector Machines"}
+# Support vector machines {data-stack-name="Support vector machines"}
 
 ## The idea: separating with a line (or hyperplane)
 
@@ -970,9 +1122,16 @@ plt.show()
 ```
 
 
-## Summary
+## Summary {data-state="hide-menubar"}
 
-TODO
+- Supervised machine learning includes a variety of **model families** (linear, distance-based, tree-based, margin-based, neural networks) that can be applied to both **classification** and **regression** tasks. Model choice depends on data characteristics, problem complexity, and the trade-off between interpretability and predictive performance.
+
+- Different models embody different assumptions and levels of flexibility:  
+  **linear models** are simple and interpretable, while **more flexible models** (e.g., trees, SVMs, neural networks) can capture complex, non-linear relationships but are harder to interpret.
+
+- Controlling **model complexity** is central to achieving good generalization. Techniques such as **regularization (Ridge, Lasso)**, parameter choices (e.g., k in k-NN, depth in trees), and margin control (SVM) balance fit and simplicity.
+
+- Key supervised learning algorithms introduced include **k-Nearest Neighbors (k-NN)** (distance-based), **decision trees and Random Forests** (tree-based and ensemble methods), and **Support Vector Machines (SVMs)** (margin-based models), illustrating different approaches to learning from data with varying assumptions, flexibility, and interpretability.
 
 
 ## Survey: Session 7 {data-state="hide-menubar"}
