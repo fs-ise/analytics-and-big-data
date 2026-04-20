@@ -516,7 +516,6 @@ Typical causes:
 ::: {.callout-note title="Examples"}
 - Scaling (mean/std) computed on the full dataset
 - Feature selection using all data before splitting
-- Cross-validation done after preprocessing on full data
 :::
 :::
 
