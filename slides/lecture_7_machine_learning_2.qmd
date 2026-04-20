@@ -793,14 +793,13 @@ We consider all features and all possible values of the cutpoint s for each of t
 
 ::::
 
-
 ::: aside
 Source: @James2013, pp. 305
 :::
 
 ## Constructing a regression tree (II)
 
-For any feature j and cutpoint s, we seek the value of j and s that minimizes
+For any feature $j$ and cutpoint $s$, we seek the value of $j$ and $s$ that minimizes
 
 $$
 \sum_{i: x_i \in R_1(j,s)} \left(y_i - \bar{y}_{R_1}\right)^2
@@ -820,6 +819,10 @@ To handle the problem of overfitting, pruning methods exist even for regression 
 
 ## Random forests for regression
 
+<!--
+TODO: summarize/structure more clearly
+-->
+
 Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output.
 The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where.
 But the prediction ability is poor compared to other regression approaches.
@@ -828,10 +831,13 @@ A much better prediction quality can be achieved with the creation of an ensembl
 This is done, when applying the random forests approach to a regression task.
 
 Regression forests are an ensemble of different regression trees and are used for nonlinear multiple regression.
-The principle is the same as in classification, except that the output is not the result of a voting but instead
-of an averaging process.
+The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.
 
 The disadvantage of random forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.
+
+<!--
+TODO: remove or explain reference to "bootstrap trees"
+-->
 
 ## Comparing the fitting ability of one vs. many regression trees
 
@@ -841,13 +847,17 @@ The disadvantage of random forests is that the analysis, which aggregates over t
 
 ## Limitations of tree methods in regression
 
+<!--
+TODO: summarize/structure more clearly
+-->
+
 When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training.
 The reason for this lies in their design principle, how the leaves of the trees are created.
 
-Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends.
+Thus, random forests may perform poorly when the target data is out of the range of the original training data, e.g. in the case of data with persistent trends.
 A solution may be a frequent re-training in this case.
 
-An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
+An important strength of random forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.
 
 If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.
 
@@ -1179,14 +1189,23 @@ plt.show()
 
 ## Summary {data-state="hide-menubar"}
 
-- Supervised machine learning includes a variety of **model families** (linear, distance-based, tree-based, margin-based, neural networks) that can be applied to both **classification** and **regression** tasks. Model choice depends on data characteristics, problem complexity, and the trade-off between interpretability and predictive performance.
+- Supervised machine learning includes a variety of **model families** (linear, distance-based, tree-based, margin-based, neural networks) that can be applied to both **classification** and **regression** tasks.
+  Model choice depends on data characteristics, problem complexity, and the trade-off between interpretability and predictive performance.
 
 - Different models embody different assumptions and levels of flexibility:  
-  **linear models** are simple and interpretable, while **more flexible models** (e.g., trees, SVMs, neural networks) can capture complex, non-linear relationships but are harder to interpret.
+  **linear models** are simple and interpretable,
+  while **more flexible models** (e.g., trees, SVMs, neural networks) can capture complex, non-linear relationships but are harder to interpret.
 
-- Controlling **model complexity** is central to achieving good generalization. Techniques such as **regularization (Ridge, Lasso)**, parameter choices (e.g., k in k-NN, depth in trees), and margin control (SVM) balance fit and simplicity.
+- Controlling **model complexity** is central to achieving good generalization.
+  Techniques such as **regularization (Ridge, Lasso)**,
+  parameter choices (e.g., k in k-NN, depth in trees), and
+  margin control (SVM) balance fit and simplicity.
 
-- Key supervised learning algorithms introduced include **k-Nearest Neighbors (k-NN)** (distance-based), **decision trees and Random Forests** (tree-based and ensemble methods), and **Support Vector Machines (SVMs)** (margin-based models), illustrating different approaches to learning from data with varying assumptions, flexibility, and interpretability.
+- Key supervised learning algorithms introduced include
+  **k-Nearest Neighbors (k-NN)** (distance-based),
+  **decision trees and random forests** (tree-based and ensemble methods), and
+  **Support Vector Machines (SVMs)** (margin-based models),
+  illustrating different approaches to learning from data with varying assumptions, flexibility, and interpretability.
 
 
 ## Survey: Session 7 {data-state="hide-menubar"}

@@ -17,7 +17,6 @@ date: "2026-04-20"
 :::
 
 <!--
-
 ## Applications of machine learning {data-state="hide-menubar"}
 
 TODO: include specific / few examples, similar to https://www.youtube.com/watch?v=vcE9WGbi4QY
@@ -148,7 +147,6 @@ Brief reminder: logistic regression from previous lecture
 
 > **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
 
-
 ![](../images/slides_107.png)
 
 TODO: note: our focus will be on machine learning. in the big-data section, we will cover neural networks (suitable for complex data, including images, speech, natural language)
@@ -166,7 +164,8 @@ TODO: note: our focus will be on machine learning. in the big-data section, we w
 
 ![](../images/slides_131.png){fig-align=center}
 
-Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible. This is equivalent to minimizing the risk that the model will have weak predictive ability.
+Due to the problem of overfitting, the main goal is to maximize the prediction quality and not to fit the data that is used for the model estimation as well as possible.
+This is equivalent to minimizing the risk that the model will have weak predictive ability.
 
 <!--
 
@@ -189,19 +188,15 @@ Due to the problem of overfitting, the main goal is to maximize the prediction q
 ::: {.column width="60%"}
 
 ::: {.highlight_must_learn}
-
 The prediction error is influenced by three components:
 
 **Error = Bias + Variance + Noise**
 
-- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
-
+- Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs.
+  It reflects the method quality, e.g. if a method only produces linear models.
 - Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.
-
 - Typically, there is a tradeoff between bias and variance.
-
 - Noise is everything that arises from random variations in the data. It cannot be controlled.
-
 :::
 
 :::
@@ -212,6 +207,9 @@ The prediction error is influenced by three components:
 
 ::::
 
+<!--
+TODO: include the typical bias-variance tradeoff figure: https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff
+-->
 
 ## Generalization problem
 
@@ -304,6 +302,10 @@ If performance is substantially worse on the test data, the model is likely **ov
 * **Predefined lists**
 * **Rule-based splits**
   *(e.g., first/last observations, time-based rules)*
+
+<!--
+TODO/TBD: add stratified sampling example and SMOTE?!
+-->
 
 ## Applying training and test data
 
@@ -695,9 +697,14 @@ It is usual when creating dummy variables to have one less variable than the num
 
 ## Example of feature engineering (I)
 
-Datasets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data "flight date time vs status". Then, given the date-time data, we have to predict the status of the flight.
+Datasets often contain date/time features.
+These features are rarely useful in their original form because they only contain ongoing values.
+However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data "flight date time vs status".
+Then, given the date-time data, we have to predict the status of the flight.
 
-But the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature "Hour_Of_Day". Using the "Hour_Of_Day" feature, the machine will learn better as this feature is directly related to the status of the flight.
+But the status of the flight may depend on the hour of the day, not on the date-time.
+To analyze this, we will create the new feature "Hour_Of_Day".
+Using the "Hour_Of_Day" feature, the machine will learn better as this feature is directly related to the status of the flight.
 
 ![](../images/slides_183.png){fig-align=center}
 
@@ -707,7 +714,9 @@ But the status of the flight may depend on the hour of the day, not on the date-
 
 ## Example of feature engineering (II)
 
-Suppose we are given the latitude, longitude and other data with the objective to predict the target feature "Price_Of_House". Latitude and longitude are not of use in this context if they are alone. So, we will combine the latitude and the longitude to make one feature.
+Suppose we are given the latitude, longitude and other data with the objective to predict the target feature "Price_Of_House".
+Latitude and longitude are not of use in this context if they are alone.
+So, we will combine the latitude and the longitude to make one feature.
 
 In other cases, it might be appropriate to transform latitude and longitude into categories which reflect regions, for example.
 

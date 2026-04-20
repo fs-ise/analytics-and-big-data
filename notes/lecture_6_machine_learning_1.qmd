@@ -3,6 +3,8 @@ title: "Notes: Session 6: Machine learning I"
 format: html
 ---
 
+2026-04-20: 80 min
+
 | Time (min) | Duration | Topic                           | Additional materials |
 |------------|----------|---------------------------------|----------------------|
 | 0–23       | 23       | Foundations                     |                      |
@@ -73,6 +75,13 @@ Problem: the test data does not remain "unseen"
 
 ## Exercises
 
+2026-04-20: 75 min (`Data Analytics with Python.pdf` : partitioning (p.20) and cross-validation (p.41).)
+
+Note: this exercise should be a focused work-through-a-full-cross-validation effort.
+Announce that we will treat ML algorithms as black boxes for now (except for using their specific hyperparameters).
+They all have to be implemented according to the same workflow.
+
+<!--
 Feature engineering:
 https://www.kaggle.com/learn/feature-engineering
 
@@ -82,3 +91,4 @@ https://courses.cs.washington.edu/courses/cse446/26sp/schedule/lectures/05-train
 Exercises in jupyter:
 https://github.com/intro-stat-learning/ISLP_labs/
 https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
+-->

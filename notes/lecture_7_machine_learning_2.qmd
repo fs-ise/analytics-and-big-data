@@ -3,6 +3,8 @@ title: "Notes: Session 7: Machine learning II"
 format: html
 ---
 
+2026-04-20: 95 min (skipped regression trees and support vector regression)
+
 | Time (min) | Duration | Topic | Additional materials |
 |------------|----------|-------|----------------------|
 | 0–90       |       90 |  TODO |                      |
@@ -12,8 +14,16 @@ format: html
 Lectures
 https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
 
-
 :::
+
+## Supervised ML
+
+![](../images/programming_vs_ml.png){width=600px fig-align=center}
+
+- Start by sketching the two process boxes
+- Illustrate what "classical programming" means: manually codifying all conditions and special cases to make the prediction
+- Ask students what the input/output is
+- Highlight for machine learning: at training time, to make predictions, we will use the rules in the sense of classical programming
 
 ## Decision trees
 
@@ -69,6 +79,95 @@ plt.grid()
 plt.show()
 ```
 -->
+
+### ID3 algorithm (entropy)
+
+#### 1) Intuition and Definition
+
+Entropy is a measure of **how mixed or impure the labels** in a dataset are.
+
+* If all observations belong to the same class → **low entropy (0)** → perfectly pure
+* If observations are evenly distributed across classes → **high entropy** → maximum uncertainty
+
+Formally, for a dataset with (K) classes and class probabilities (p_1, \dots, p_K):
+
+$$H = - \sum_{i=1}^{K} p_i \log_2 p_i$$
+
+This captures the **expected amount of information (uncertainty)** in the labels.
+
+
+#### 2) Key Teaching Insight: What Is the Maximum Entropy?
+
+A common misconception is that entropy is always between 0 and 1 — this is only true for **binary classification**.
+In general, entropy depends on the **number of classes (K)**.
+
+Entropy is maximized when all classes are **equally likely**:
+
+$$p_1 = p_2 = \dots = p_K = \frac{1}{K}$$
+
+Substituting into the entropy formula:
+
+$$H = - \sum_{i=1}^{K} \frac{1}{K} \log_2 \left(\frac{1}{K}\right)$$
+
+Now simplify:
+
+$$H = - K \cdot \frac{1}{K} \cdot \log_2 \left(\frac{1}{K}\right)$$
+
+$$H = - \log_2 \left(\frac{1}{K}\right)$$
+
+Using the log rule:
+
+$$\log_2 \left(\frac{1}{K}\right) = -\log_2 K$$
+
+So:
+
+$$H = \log_2 K$$
+
+**Important takeaway:**
+
+- Maximum entropy is **not fixed**
+- It grows with the number of classes
+- For example:
+
+  - $K = 2 \Rightarrow H = 1$
+  - $K = 4 \Rightarrow H = 2$
+  - $K = 8 \Rightarrow H = 3$
+
+
+#### 4) Python Illustration (Entropy vs. Number of Classes)
+
+```{python}
+#| fig-align: center
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Number of classes
+K_values = np.arange(1, 11)
+
+# Maximum entropy H = log2(K)
+entropy_values = np.log2(K_values)
+
+plt.figure()
+plt.plot(K_values, entropy_values, marker="o")
+plt.xlabel("Number of classes (K)")
+plt.ylabel("Maximum entropy H = log2(K)")
+plt.title("Maximum Entropy as a Function of Number of Classes")
+plt.grid()
+
+plt.show()
+```
+
+Entropy is best understood as:
+
+> “A measure of how uncertain we are about the class label.”
+
+- **Low entropy** → clear, predictable classification
+- **High entropy** → mixed, uncertain data
+- **Maximum entropy = $\log_2(K)$** → depends on how many classes exist
+
+This is exactly why decision trees aim to **reduce entropy** through splits (information gain).
+
 
 ## SVM
 
@@ -263,12 +362,14 @@ The kernel trick makes nonlinear patterns **linearly separable in a transformed 
 
 ## Short wrap-up
 
-* **Maximal margin classifier** → perfect separation
-* **Support vector classifier** → allows some errors
-* **Support vector machine** → handles nonlinear patterns
+- **Maximal margin classifier** → perfect separation
+- **Support vector classifier** → allows some errors
+- **Support vector machine** → handles nonlinear patterns
 
 
 # Exercises
+
+2026-04-20: 80 min (`Data Analytics with Python.pdf` : Ridge Regression (p.57), Decision Trees and Random Forests (p.28), and Support Vector Regression (p.20))
 
 TODO: add to exercise:
 If a model is trained on scaled data, it will only work with scaled data. Note, that the scaling
