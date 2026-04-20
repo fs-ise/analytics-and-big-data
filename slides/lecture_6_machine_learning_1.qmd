@@ -65,12 +65,16 @@ The applications of machine learning
 
 ::: {.column width="50%"}
 
+::: {.highlight_must_learn}
+
 **Artificial Intelligence (AI)** involves techniques that equip computers to emulate human behavior, enabling them to learn, make decisions, recognize patterns, and solve complex problems in a manner akin to human intelligence.
 
-**Machine Learning (ML)** is a subset of AI, uses advanced algorithms to detect patterns in large data sets, allowing machines to learn and adapt. ML algorithms use supervised or unsupervised learning methods.
+**Machine Learning (ML)** is a subset of AI and uses advanced algorithms to detect patterns in large datasets, allowing machines to learn and adapt. ML algorithms use supervised or unsupervised learning methods.
 
-**Deep Learning (DL)** is a subset of ML which uses neural networks for in-depth data processing and analytical tasks.
-DL leverages multiple layers of artificial neural networks to extract high-level features from raw input data, simulating the way human brains perceive and understand the world.
+**Deep Learning (DL)** is a subset of ML that uses neural networks for in-depth data processing and analytical tasks.
+It leverages multiple layers of artificial neural networks to extract high-level features from raw input data, simulating the way human brains perceive and understand the world.
+
+:::
 
 :::
 
@@ -81,7 +85,7 @@ DL leverages multiple layers of artificial neural networks to extract high-level
 ::::
 
 ::: aside
-Generative AI (genAI) is a subset of DL models that generates content like text, images, or code based on provided input. Trained on vast data sets, these models detect patterns and create outputs without explicit instruction, using a mix of supervised and unsupervised learning.
+Generative AI (genAI) is a subset of DL models that generates content like text, images, or code based on provided input. Trained on vast datasets, these models detect patterns and create outputs without explicit instruction, using a mix of supervised and unsupervised learning.
 :::
 
 
@@ -174,8 +178,9 @@ Due to the problem of overfitting, the main goal is to maximize the prediction q
 
 ## Best fit vs. best generalization
 
+::: {.highlight_must_learn}
 ![](../images/slides_129.png){fig-align=center}
-
+:::
 
 ## The bias-variance tradeoff
 
@@ -183,9 +188,11 @@ Due to the problem of overfitting, the main goal is to maximize the prediction q
 
 ::: {.column width="60%"}
 
+::: {.highlight_must_learn}
+
 The prediction error is influenced by three components:
 
-> Error = Bias + Variance + Noise
+**Error = Bias + Variance + Noise**
 
 - Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g. if a method only produces linear models.
 
@@ -194,6 +201,8 @@ The prediction error is influenced by three components:
 - Typically, there is a tradeoff between bias and variance.
 
 - Noise is everything that arises from random variations in the data. It cannot be controlled.
+
+:::
 
 :::
 
@@ -206,7 +215,7 @@ The prediction error is influenced by three components:
 
 ## Generalization problem
 
-**Generalization problem (concise):**
+**Generalization problem:**
 Modern machine learning models are highly flexible and trained on large datasets. While this enables them to fit complex patterns, it also creates a risk:
 
 > the model may **fit the training data extremely well** but fail to capture patterns that hold more generally.
@@ -315,8 +324,12 @@ If performance is substantially worse on the test data, the model is likely **ov
 :::: {.columns}
 
 ::: {.column width="50%"}
+
 <br><br>
-**Test data is used for two things:**
+
+::: {.highlight_must_learn}
+
+**Problematic use of test data for two purposes:**
 
 <span style="color: red;">1. Optimize the model training</span>  
 <span style="color: blue;">2. Select the best model via testing the model quality</span>  
@@ -324,9 +337,12 @@ If performance is substantially worse on the test data, the model is likely **ov
 This contradicts the idea of independent testing and results in:
 
   - Endogenization of the test data
-  - Selection Bias
+  - Selection bias
 
 **Rule: NEVER use any information from the test data for model training!**
+
+:::
+
 :::
 
 
@@ -343,14 +359,13 @@ This contradicts the idea of independent testing and results in:
 
 <br>
 
+::: {.highlight_must_learn}
 ![](../images/addressing_endogeneity.png){width=60% fig-align=center}
-
+:::
 
 ## Selection bias
 
-Training and test error can be highly variable, depending on precisely which observations are included in the training set and which observations are included in the validation set (**Selection Bias**).
-
-
+Training and test error can be highly variable, depending on precisely which observations are included in the training set and which observations are included in the validation set (**selection bias**).
 
 :::: {.columns}
 
@@ -360,22 +375,88 @@ Example of different OLS models as a result of different samples:
 :::
 
 ::: {.column width="60%"}
-![](../images/ols_models_selection_bias.png){width=600px}
+
+```{python}
+# Clear, high-variance selection bias illustration (Quarto / revealjs friendly)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+# --- True data generating process ---
+n = 200
+x = np.linspace(0, 10, n)
+y = 5 - 1.2 * x + np.random.normal(0, 1.0, n)
+
+# Full sample regression (reference)
+coef_full = np.polyfit(x, y, 1)
+y_full = np.polyval(coef_full, x)
+
+# --- Plot ---
+fig, ax = plt.subplots(figsize=(9, 6))
+
+# Background data
+ax.scatter(x, y, alpha=0.15)
+
+# --- Construct clearly different biased samples ---
+for _ in range(80):
+    mode = np.random.choice(["left", "right", "middle", "extremes"])
+
+    if mode == "left":
+        mask = x < np.random.uniform(3, 6)
+
+    elif mode == "right":
+        mask = x > np.random.uniform(4, 7)
+
+    elif mode == "middle":
+        center = np.random.uniform(3, 7)
+        width = np.random.uniform(0.5, 1.5)
+        mask = (x > center - width) & (x < center + width)
+
+    elif mode == "extremes":
+        # Only very low + very high x → unstable slopes
+        threshold_low = np.random.uniform(2, 4)
+        threshold_high = np.random.uniform(6, 8)
+        mask = (x < threshold_low) | (x > threshold_high)
+
+    x_sample = x[mask]
+    y_sample = y[mask]
+
+    # Keep small samples → high variance lines
+    if 5 < len(x_sample) < 60:
+        coef = np.polyfit(x_sample, y_sample, 1)
+        y_pred = np.polyval(coef, x)
+
+        ax.plot(x, y_pred, color="green", alpha=0.35, linewidth=1.5)
+
+# Full sample regression (central reference)
+ax.plot(x, y_full, color="red", linewidth=3, label="Full sample fit")
+
+# Formatting
+ax.axhline(0, linewidth=1)
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_title("Illustration of selection bias (linear regression)")
+ax.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
 :::
 
 ::::
 
 To avoid such problems, one can use so-called resampling methods.
 
-
 ## Cross validation
-
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 Cross validation can be used for model selection and adjustment.
-In these cases, cross validation is applied to the training data set.
+In these cases, cross validation is applied to the training dataset.
 For every iteration, k-1 folds are used for model fitting and the remaining fold for testing the model (Validation). Every time, the quality measure (e.g. accuracy) for the validation fold is captured.
 At the end of this step, the average and the standard deviation of the measures are calculated.
 The best model is the one with the best ratio in high average and low standard deviation.
@@ -392,7 +473,9 @@ Once the model type and its optimal parameters have been selected, a final model
 
 ## Cross validation and grid search
 
+::: {.highlight_must_learn}
 ![](../images/cross_validation_grid_search.png){width=70% fig-align=center}
+:::
 
 ## Cross validation and grid search in Python
 
@@ -410,69 +493,42 @@ A random search on the other hand does not iterate over the entire search space.
 
 ## Feature leakage
 
+::: {.highlight_must_learn}
 Feature leakage occurs when a model uses **information that would not be available at prediction time**.
-
+The model appears to perform very well on training/test data, but fails in real-world application.
+:::
 . . .
 
-- The model appears to perform **very well on training/test data**
-- But fails in real-world application
+::: {.highlight_must_learn}
+Typical causes:
 
-- Typical causes:
-  - using **future information** (e.g., outcome-related variables)
-  - leakage from **test set into training**
-  - features that are **proxies of the target**
+1. Using future information or features that are proxies of the target
 
-. . . 
-
-**Example**
-
-- Predicting customer churn  
-- Feature: *“account closed date”*  
-
-→ This directly reveals the outcome
-
-. . . 
-
-> **Key takeaway**: Only use features that are **available at the time of prediction**
-
-::: notes
-
-1. Using future information
-
-Using variables that are **only known after the event you want to predict**
-
-**Examples:**
+::: {.callout-note title="Examples"}
+- Predicting fraud  
+  → Feature: *“transaction flagged by manual review”*
 - Predicting loan default  
   → Feature: *“number of missed payments in next 3 months”*
-- Predicting delivery delays  
-  → Feature: *“actual delivery time”*
-
-> Problem: model “sees the future”
+:::
 
 2. Leakage from test set into training
 
+::: {.callout-note title="Examples"}
+- Scaling (mean/std) computed on the full dataset
+- Feature selection using all data before splitting
+- Cross-validation done after preprocessing on full data
+:::
+:::
+
+::: notes
 Information from the **test data influences the model during training**
-
-**Examples:**
-- Scaling (mean/std) computed on the **full dataset**
-- Feature selection using **all data before splitting**
-- Cross-validation done **after preprocessing on full data**
-
-> Problem: test data is no longer “unseen”
-
-3. Features that are proxies of the target
-
 Variables that are **not the target itself but strongly encode it**
 
-**Examples:**
-- Predicting customer churn  
-  → Feature: *“account cancellation request submitted”*
-- Predicting fraud  
-  → Feature: *“transaction flagged by manual review”*
-- Predicting disease  
-  → Feature: *“treatment prescribed”*
-
+> Problem: model “sees the future”
+> Problem: test data is no longer “unseen”
 > Problem: model learns shortcuts instead of real patterns
+
+> **Key takeaway**: Only use features that are **available at the time of prediction**
 
 :::
 
@@ -539,7 +595,7 @@ Different inductive biases, different levels of flexibility, different data need
 ## The feature engineering process
 
 Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work.
-If feature engineering is done correctly, it increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
+When done correctly, feature engineering increases the predictive power of machine learning algorithms by creating features from raw data that help facilitate the machine learning process.
 
 A feature (variable, attribute) is depicted by a column in a dataset.
 Considering a generic two-dimensional dataset, each observation is depicted by a row and each feature by a column, which will have a specific value for an observation:
@@ -570,33 +626,34 @@ linear models → feature engineering critical
 
 ## Variants of feature engineering
 
+::: {.highlight_must_learn}
 **1. Transformation**
 
-- convert features (e.g., birth date → age)
-- build lag structures (e.g., time-lags)
-- normalization / standardization / scaling
+- Convert features (e.g., birth date → age)
+- Build lag structures (e.g., time-lags)
+- Normalization / standardization / scaling
 
-**2. Type Conversion**
+**2. Type conversion**
 
-- if numerical type is needed, transform categorical into numerical data using dummy features
-- if categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)
+- If numerical type is needed, transform categorical into numerical data using dummy features
+- If categorical type is needed or more informative, discretize numerical features (e.g., income → poor / rich classes)
 
-**3. Feature Combination**
+**3. Feature combination**
 
-- create interaction features (e.g., school_score = num_schools × median_school
+- Create interaction features (e.g., school_score = num_schools × median_school
   with num_schools = number of schools within 5 miles of a property and
   median_school = median quality score of those schools)
-- combine categories (e.g., when there are very few observations or too many dummy features)
+- Combine categories (e.g., when there are very few observations or too many dummy features)
 
-**4. Feature Composition**
+**4. Feature composition**
 
-- build ratios (e.g., returns from prices)
+- Build ratios (e.g., returns from prices)
 - Principal Component Analysis (Dimensionality Reduction)
-
+:::
 
 ## Scaling
 
-Most datasets contain features highly varying in magnitudes, units and range.
+Most datasets contain features that vary widely in magnitudes, units, and range.
 
 Most machine learning algorithms have problems with this because they use distance measures or calculate gradients. The features with high magnitudes will weigh in a lot more in the distance calculations than features with low magnitudes and gradients may end up taking a long time or are not accurately calculable.
 
@@ -612,7 +669,7 @@ $$
 
 <br>
 
-**Standardization (Z-score Scaling: values with mean 0 and stdandard deviation 1)**
+**Standardization (Z-score Scaling: values with mean 0 and standard deviation 1)**
 
 $$
 \hat{X}_i = \frac{X_i - \mu}{\sigma}
@@ -625,7 +682,7 @@ $X_i = \hat{X}_i \cdot (X_{\max} - X_{\min}) + X_{\min}$ and $X_i = \hat{X}_i \c
 
 :::
 
-## Type vonversion (encoding)
+## Type conversion (encoding)
 
 Many machine learning algorithms cannot work with categorical data directly. To convert categorical data to numbers, there exist two variants:
 
@@ -639,7 +696,7 @@ It is usual when creating dummy variables to have one less variable than the num
 
 ## Example of feature engineering (I)
 
-Data sets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data "flight date time vs status". Then, given the date-time data, we have to predict the status of the flight.
+Datasets often contain date/time features. These features are rarely useful in their original form because they only contain ongoing values. However, they can be useful for extracting cyclical factors, such as weekly or seasonal effects. Suppose, we are given a data "flight date time vs status". Then, given the date-time data, we have to predict the status of the flight.
 
 But the status of the flight may depend on the hour of the day, not on the date-time. To analyze this, we will create the new feature "Hour_Of_Day". Using the "Hour_Of_Day" feature, the machine will learn better as this feature is directly related to the status of the flight.
 
@@ -660,7 +717,8 @@ In other cases, it might be appropriate to transform latitude and longitude into
 
 ## Example of feature engineering (III)
 
-Suppose we are given a feature "Marital_Status" and other data with the objective to classify customers into "Creditworthy" and "Not_Creditworthy". In the data set the martial status has many different values, for example:
+Suppose we are given a feature "Marital_Status" and other data with the objective to classify customers into "Creditworthy" and "Not_Creditworthy".
+In the dataset the marital status has many different values, for example:
 
 - single living alone
 - single living with his parents
@@ -673,7 +731,7 @@ Suppose we are given a feature "Marital_Status" and other data with the objectiv
 - widowed
 - ...
 
-To avoid a transformation into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.
+To avoid transforming into too many and maybe dominating dummy features, we can group the similar classes, e.g. in single, married, widowed.
 
 If there exist some remaining sparse classes which cannot be assigned in a meaningful way they can be joined into a single "other" class.
 
@@ -692,9 +750,11 @@ TODO: develop/add the following
 
 ## Summary {data-state="hide-menubar"}
 
-- The focus is on **supervised machine learning**, a particular form of machine learning within **AI/ML/DL**, where models learn relationships between **features (X)** and **targets (y)** from labeled data. In contrast, **unsupervised learning** identifies structure in data without predefined labels.
+- The focus is on **supervised machine learning**, a particular form of machine learning within **AI/ML/DL**, where models learn relationships between **features (X)** and **targets (y)** from labeled data.
+  In contrast, **unsupervised learning** identifies structure in data without predefined labels.
 
-- Modern machine learning models are often **highly flexible** and trained on **large datasets**, creating the risk of **overfitting**. The central challenge is the **generalization problem**: distinguishing true patterns from those specific to the training data.
+- Modern machine learning models are often **highly flexible** and trained on **large datasets**, creating the risk of **overfitting**.
+  The central challenge is the **generalization problem**: distinguishing true patterns from those specific to the training data.
 
 - The **machine learning workflow** addresses this challenge by separating model development and evaluation: feature engineering, data splitting (training vs. test), model training, and performance assessment.
 
@@ -722,7 +782,6 @@ Note: Responses may be analyzed and published in anonymized form.
 
 Please complete the survey before you leave today — thank you 🙏
 :::
-
 
 <!--
 TODO: add references

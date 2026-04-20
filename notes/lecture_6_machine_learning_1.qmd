@@ -43,7 +43,33 @@ https://cs229.stanford.edu/
 
 Check which topics were selected by groups, identify potential overlap and guide topic selection.
 
+## Supervised ML
 
+Add illustration like https://blog.infocruncher.com/2023/02/17/ml-training/
+- Classical programming: rules + data -> answers
+- Supervised ML: data + answers -> rules
+
+## Bias-Variance tradeoff
+
+Variance: draw many training datasets from the population, train the model on each one, analyze fluctuation in predictions
+
+## Training/Test data
+
+Highlight: tabular data (features in rows). Only for deep learning, unstructured data can be used as an input (learns pattersn automatically)
+
+
+## Problems with fixed training and test samples
+
+Optimizing the model training: refers to
+
+- Hyperparameter tuning
+- Feature engineering decisions
+- Model design choices
+- Training procedure tweaks
+
+Problem: the test data does not remain "unseen"
+
+“Endogenization of the test data” means that the test set—supposed to be an external, independent benchmark—becomes internally involved in the model-building process.
 
 ## Exercises
 

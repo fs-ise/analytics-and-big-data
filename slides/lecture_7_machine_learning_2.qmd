@@ -11,9 +11,9 @@ date: "2026-04-20"
 <br><br><br><br><br>
 
 ::: {.learning-objectives}
-- **Compare** selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.
-- **Explain** the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).
-- **Select and justify** an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.
+* **Compare** key supervised learning approaches (linear models, k-NN, decision trees, random forests, and support vector machines) with respect to their assumptions, flexibility, interpretability, and typical application scenarios.
+* **Explain** the core mechanics of selected algorithms, including regularization in linear models, distance-based prediction (k-NN), recursive partitioning (decision trees), ensemble learning (random forests), and margin maximization (SVMs).
+* **Select and justify** an appropriate modeling approach for a given predictive task, considering data characteristics, performance metrics, and the trade-off between interpretability and predictive power.
 :::
 
 <!--
@@ -23,7 +23,7 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 
 ## Classification vs. Regression & Model Families
 
-Many models can handle **classification** (pedicting categories) and **regression** (predicting numeric values).
+Many models can handle **classification** (predicting categories) and **regression** (predicting numeric values).
 
 <br>
 
@@ -81,7 +81,7 @@ Linear models are simple and interpretable—but they can still **overfit**.
 
 > Prefer **simpler models** that fit the data *well enough*
 
-We modify the objective (in linear regression: minimizing RSS / OLS):
+We modify the objective or loss function (in linear regression: minimizing RSS / OLS):
 
 $$
 \text{Loss} = \text{Fit to data} + \lambda \cdot \text{Penalty}
@@ -175,6 +175,8 @@ This is equivalent to reducing complexity.
 
 > $\lambda$ is not applied to the intercept $\beta_0$ !
 
+<!--
+TODO: check explanation before including
 ## Complexity
 
 Complexity can be measured as the size of the set of possible outputs for a given set of inputs.
@@ -184,8 +186,9 @@ Complexity can be measured as the size of the set of possible outputs for a give
 In this example the interval $0$ to $x^*$ represents the set of possible inputs.
 Function $h_0$ has the lowest complexity because there is just one output independent of the inputs.
 $h_2$ has the highest complexity because here the set of possible outputs is the biggest one.
+-->
 
-## Complexity und Generalisation
+## Complexity and generalisation
 
 <br>
 
@@ -310,14 +313,18 @@ The following decision trees predict whether a person will respond to recent adv
 ![](../images/slides_225.png){fig-align=center}
 
 ::: aside
+Proportions in the leaves can be interpreted as probabilities.
+:::
+
+::: notes
 To choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.
 
-Proportions in the leafs can be interpreted as probabilities.
 :::
 
 
 ## Decision Trees (I)
 
+::: {.highlight_must_learn}
 **Decision trees** are hierarchical models used for **classification and regression**, based on **recursive partitioning** of the feature space.
 
 A decision tree consists of:
@@ -336,7 +343,7 @@ The tree is built **recursively**:
 * Repeat the process for each subset until a stopping criterion is met
 
 If each node has exactly two child nodes, the tree is called a **binary tree**.
-
+:::
 
 ## Decision Trees (II)
 
@@ -394,8 +401,6 @@ $$
 
 where $p_i$ is the **relative frequency** of observations in node $t$ that belong to class $i$.
 
-<br>
-
 **Attribute: Wind**
 
 - **light**: 6 × yes, 2 × no  
@@ -430,6 +435,12 @@ $$
 
 ::::
 
+::: {.learning_note .fragment}
+No need to memorize the formula.
+However, you should be able to calculate entropy and   
+apply the algorithm on paper when the formula and data are provided.
+This also applies to ID5.0.
+:::
 
 ## Calculating the information gain
 
@@ -442,9 +453,14 @@ $$
 \sum_{i=1}^{m} \frac{t_i}{t} \cdot \text{entropy}(t_i)
 $$
 
-where m = number of values (here two: light, strong), $t_i$ = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting.
+where 
 
-![](../images/slides_207_2_new.png){fig-align=center}
+- m = number of values (here two: light, strong)
+- $t_i$ = number of data sets with strong or light wind (8 resp. 6)
+- t = total number of data sets (14) and 
+- entropy(t) = entropy before splitting.
+
+![](../images/slides_207_2_new.png){width=600px fig-align=center}
 
 $$
 \text{Information gain} =
@@ -464,11 +480,29 @@ $$
 - Information gain (windy) = 0.048
 - Information gain (temperature) = 0.029
 
-We choose the attribute with the largest information gain (here: outlook) for the first splitting.
+We choose the attribute with the largest information gain  
+
+→ **Outlook** is used for the first split
+
+## How ID3 builds the tree
+
+ID3 is a **greedy, recursive procedure**:
+
+At each node:
+
+1. Compute information gain for all remaining attributes  
+2. Select the best attribute (highest gain)  
+3. Split the data  
+4. Repeat the process within each subset  
+
+This continues until:
+
+- nodes are pure, or  
+- no attributes remain
 
 As solution we obtain the following tree:
 
-![](../images/slides_243.png){height=300px fig-align=center}
+![](../images/slides_243.png){height=220px fig-align=center}
 
 
 ## Decision using C5.0
@@ -595,7 +629,11 @@ Note: introduce in the next round:
     > **Remark:** Entropy has been scaled from (0, 1) to (0, 0.5)!
 -->
 
-## Overfitting (I)
+<!--
+TODO: also show the resulting tree for ID5! (ideally, it should be a bit different from ID3)
+-->
+
+## Overfitting
 
 Most decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes.
 If there are no such conflicting objects, the decision tree will correctly classify all training objects.
@@ -607,12 +645,13 @@ This is because the deeper nodes are fitting noise in the training data not repr
 
 ![](../images/slides_244.png){fig-align=center}
 
-
+<!--
 ## Overfitting (II)
 
 > The learner overfits to correctly classify the noisy data objects.
 
 ![](../images/slides_245.png){fig-align=center}
+-->
 
 
 ## Random Forest (I)
@@ -717,7 +756,7 @@ Source: @James2013, pp.304
 
 ::: {.column width="60%"}
 
-A regression tree partitions the data objects in the feature space into regions $R_j$, represented by the leafs of the tree.
+A regression tree partitions the data objects in the feature space into regions $R_j$, represented by the leaves of the tree.
 To construct the tree, the goal is to find regions that minimize the RSS, given by
 
 $$
@@ -830,7 +869,7 @@ So maximizing the margin = minimizing $|w|$.
 
 
 ```{python}
-#| label: fig-svm-2d-very-tight
+#| fig-align: center
 #| echo: false
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1005,7 +1044,7 @@ $$\xi_i = v_i^2$$
 
 ::::
 
-## Insensitive Loss Function
+## Insensitive Loss Function (II)
 
 Using the $\epsilon$-insensitive loss function, only those data objects are considered in the estimation, which have a distance greater than $\epsilon$ from the regression function:
 

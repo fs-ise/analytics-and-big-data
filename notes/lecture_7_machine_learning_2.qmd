@@ -11,6 +11,8 @@ format: html
 
 Lectures
 https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
+
+
 :::
 
 ## Decision trees
@@ -264,3 +266,10 @@ The kernel trick makes nonlinear patterns **linearly separable in a transformed 
 * **Maximal margin classifier** → perfect separation
 * **Support vector classifier** → allows some errors
 * **Support vector machine** → handles nonlinear patterns
+
+
+# Exercises
+
+TODO: add to exercise:
+If a model is trained on scaled data, it will only work with scaled data. Note, that the scaling
+must be exactly the same as for the training data. Thus, it is necessary, to keep the scaler.
