@@ -72,17 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -92,17 +81,6 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
-  background-image: none;
-}
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -116,8 +94,59 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
   content: '🛠️';
   background-image: none;
 }
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -204,6 +233,7 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
+<p>2026-04-20: 95 min (skipped regression trees and support vector regression)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -235,6 +265,20 @@ Note
 <p>Lectures https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf</p>
 </div>
 </div>
+<section id="supervised-ml" class="level2">
+<h2 class="anchored" data-anchor-id="supervised-ml">Supervised ML</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/programming_vs_ml.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+<ul>
+<li>Start by sketching the two process boxes</li>
+<li>Illustrate what “classical programming” means: manually codifying all conditions and special cases to make the prediction</li>
+<li>Ask students what the input/output is</li>
+<li>Highlight for machine learning: at training time, to make predictions, we will use the rules in the sense of classical programming</li>
+</ul>
+</section>
 <section id="decision-trees" class="level2">
 <h2 class="anchored" data-anchor-id="decision-trees">Decision trees</h2>
 <p>https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8</p>
@@ -293,6 +337,68 @@ plt.show()
 
 
 -->
+<section id="id3-algorithm-entropy" class="level3">
+<h3 class="anchored" data-anchor-id="id3-algorithm-entropy">ID3 algorithm (entropy)</h3>
+<section id="intuition-and-definition" class="level4">
+<h4 class="anchored" data-anchor-id="intuition-and-definition">1) Intuition and Definition</h4>
+<p>Entropy is a measure of <strong>how mixed or impure the labels</strong> in a dataset are.</p>
+<ul>
+<li>If all observations belong to the same class → <strong>low entropy (0)</strong> → perfectly pure</li>
+<li>If observations are evenly distributed across classes → <strong>high entropy</strong> → maximum uncertainty</li>
+</ul>
+<p>Formally, for a dataset with (K) classes and class probabilities (p_1, , p_K):</p>
+<p><span class="math display">\[H = - \sum_{i=1}^{K} p_i \log_2 p_i\]</span></p>
+<p>This captures the <strong>expected amount of information (uncertainty)</strong> in the labels.</p>
+</section>
+<section id="key-teaching-insight-what-is-the-maximum-entropy" class="level4">
+<h4 class="anchored" data-anchor-id="key-teaching-insight-what-is-the-maximum-entropy">2) Key Teaching Insight: What Is the Maximum Entropy?</h4>
+<p>A common misconception is that entropy is always between 0 and 1 — this is only true for <strong>binary classification</strong>. In general, entropy depends on the <strong>number of classes (K)</strong>.</p>
+<p>Entropy is maximized when all classes are <strong>equally likely</strong>:</p>
+<p><span class="math display">\[p_1 = p_2 = \dots = p_K = \frac{1}{K}\]</span></p>
+<p>Substituting into the entropy formula:</p>
+<p><span class="math display">\[H = - \sum_{i=1}^{K} \frac{1}{K} \log_2 \left(\frac{1}{K}\right)\]</span></p>
+<p>Now simplify:</p>
+<p><span class="math display">\[H = - K \cdot \frac{1}{K} \cdot \log_2 \left(\frac{1}{K}\right)\]</span></p>
+<p><span class="math display">\[H = - \log_2 \left(\frac{1}{K}\right)\]</span></p>
+<p>Using the log rule:</p>
+<p><span class="math display">\[\log_2 \left(\frac{1}{K}\right) = -\log_2 K\]</span></p>
+<p>So:</p>
+<p><span class="math display">\[H = \log_2 K\]</span></p>
+<p><strong>Important takeaway:</strong></p>
+<ul>
+<li><p>Maximum entropy is <strong>not fixed</strong></p></li>
+<li><p>It grows with the number of classes</p></li>
+<li><p>For example:</p>
+<ul>
+<li><span class="math inline">\(K = 2 \Rightarrow H = 1\)</span></li>
+<li><span class="math inline">\(K = 4 \Rightarrow H = 2\)</span></li>
+<li><span class="math inline">\(K = 8 \Rightarrow H = 3\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="python-illustration-entropy-vs.-number-of-classes" class="level4">
+<h4 class="anchored" data-anchor-id="python-illustration-entropy-vs.-number-of-classes">4) Python Illustration (Entropy vs.&nbsp;Number of Classes)</h4>
+<div id="4b129357" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lecture_7_machine_learning_2_files/figure-html/cell-3-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="589" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Entropy is best understood as:</p>
+<blockquote class="blockquote">
+<p>“A measure of how uncertain we are about the class label.”</p>
+</blockquote>
+<ul>
+<li><strong>Low entropy</strong> → clear, predictable classification</li>
+<li><strong>High entropy</strong> → mixed, uncertain data</li>
+<li><strong>Maximum entropy = <span class="math inline">\(\log_2(K)\)</span></strong> → depends on how many classes exist</li>
+</ul>
+<p>This is exactly why decision trees aim to <strong>reduce entropy</strong> through splits (information gain).</p>
+</section>
+</section>
 </section>
 <section id="svm" class="level2">
 <h2 class="anchored" data-anchor-id="svm">SVM</h2>
@@ -306,7 +412,7 @@ See also: https://www.mathstat.dal.ca/~aarms2014/StatLearn/docs/09%20_annotated.
 <h2 class="anchored" data-anchor-id="maximal-margin-classifier">Maximal margin classifier</h2>
 <p>Small M&amp;A teams are <strong>successful</strong>, large teams <strong>unsuccessful</strong>.</p>
 <p>A simple baseline would place the threshold halfway between the <strong>class means</strong>. The maximal margin classifier instead places the threshold halfway between the <strong>closest opposing cases</strong> and maximizes the distance to both classes.</p>
-<div id="cell-fig-maximal-margin-1d" class="cell" data-execution_count="2">
+<div id="cell-fig-maximal-margin-1d" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-maximal-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -330,7 +436,7 @@ Figure&nbsp;1: A naive midpoint between class means versus the maximal-margin th
 <li>one relatively large team is successful</li>
 </ul>
 <p>The support vector classifier keeps a central boundary, but also allows some points to lie <strong>inside the margin</strong> or even on the <strong>wrong side of the boundary</strong>.</p>
-<div id="cell-fig-soft-margin-1d" class="cell" data-execution_count="3">
+<div id="cell-fig-soft-margin-1d" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-soft-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -354,7 +460,7 @@ Figure&nbsp;2: Soft-margin classifier: margin bands, an in-margin point, and a m
 <li>mid-sized → successful (“sweet spot”)</li>
 <li>large → unsuccessful</li>
 </ul>
-<div id="cell-fig-nonlinear-1d" class="cell" data-execution_count="4">
+<div id="cell-fig-nonlinear-1d" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div id="fig-nonlinear-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -370,7 +476,7 @@ Figure&nbsp;3: Nonlinear pattern: only mid-sized M&amp;A teams are successful
 </div>
 <p>Note: linear separation no longer possible.</p>
 <p>Transformation (Quadratic transformation)</p>
-<div id="cell-fig-kernel-2d" class="cell" data-execution_count="5">
+<div id="cell-fig-kernel-2d" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div id="fig-kernel-2d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -396,6 +502,7 @@ Figure&nbsp;4: Quadratic transformation enables linear separation
 </section>
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
+<p>2026-04-20: 80 min (<code>Data Analytics with Python.pdf</code> : Ridge Regression (p.57), Decision Trees and Random Forests (p.28), and Support Vector Regression (p.20))</p>
 <p>TODO: add to exercise: If a model is trained on scaled data, it will only work with scaled data. Note, that the scaling must be exactly the same as for the training data. Thus, it is necessary, to keep the scaler.</p>
 
 

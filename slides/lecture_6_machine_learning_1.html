@@ -131,6 +131,17 @@
     }
   </style>
   <style>
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -140,17 +151,6 @@
   div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
     content: '🔒';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -164,15 +164,15 @@
     content: '🔗';
     background-image: none;
   }
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -205,7 +205,6 @@
 </ul>
 </div>
 <!--
-
 ## Applications of machine learning {data-state="hide-menubar"}
 
 TODO: include specific / few examples, similar to https://www.youtube.com/watch?v=vcE9WGbi4QY
@@ -347,7 +346,6 @@ Brief reminder: logistic regression from previous lecture
 
 > **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
 
-
 ![](../images/slides_107.png)
 
 TODO: note: our focus will be on machine learning. in the big-data section, we will cover neural networks (suitable for complex data, including images, speech, natural language)
@@ -402,10 +400,10 @@ TODO: note: our focus will be on machine learning. in the big-data section, we w
 <p>The prediction error is influenced by three components:</p>
 <p><strong>Error = Bias + Variance + Noise</strong></p>
 <ul>
-<li><p>Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g.&nbsp;if a method only produces linear models.</p></li>
-<li><p>Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.</p></li>
-<li><p>Typically, there is a tradeoff between bias and variance.</p></li>
-<li><p>Noise is everything that arises from random variations in the data. It cannot be controlled.</p></li>
+<li>Bias is the inability of the used method to learn the relevant relations between the inputs and the outputs. It reflects the method quality, e.g.&nbsp;if a method only produces linear models.</li>
+<li>Variance represents the deviation resulting from the sensitivity of the created model to small fluctuations in the data.</li>
+<li>Typically, there is a tradeoff between bias and variance.</li>
+<li>Noise is everything that arises from random variations in the data. It cannot be controlled.</li>
 </ul>
 </div>
 </div><div class="column" style="width:40%;">
@@ -415,6 +413,9 @@ TODO: note: our focus will be on machine learning. in the big-data section, we w
 </figure>
 </div>
 </div></div>
+<!--
+TODO: include the typical bias-variance tradeoff figure: https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff
+-->
 </section>
 <section id="generalization-problem" class="slide level2">
 <h2>Generalization problem</h2>
@@ -508,6 +509,9 @@ workflow: and explain why each step is necessary for generalizable results
 <li><strong>Predefined lists</strong></li>
 <li><strong>Rule-based splits</strong> <em>(e.g., first/last observations, time-based rules)</em></li>
 </ul>
+<!--
+TODO/TBD: add stratified sampling example and SMOTE?!
+-->
 </section>
 <section id="applying-training-and-test-data" class="slide level2">
 <h2>Applying training and test data</h2>
@@ -563,7 +567,7 @@ workflow: and explain why each step is necessary for generalizable results
 <div class="column" style="width:40%;">
 <p><br><br><br> Example of different OLS models as a result of different samples:</p>
 </div><div class="column" style="width:60%;">
-<div id="d477a85b" class="cell" data-execution_count="1">
+<div id="7a07f4e9" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>

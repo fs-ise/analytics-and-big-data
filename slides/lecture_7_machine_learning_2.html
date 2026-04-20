@@ -162,17 +162,6 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -193,6 +182,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -1044,7 +1044,7 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 </div></aside></section>
 <section id="constructing-a-regression-tree-ii" class="slide level2">
 <h2>Constructing a regression tree (II)</h2>
-<p>For any feature j and cutpoint s, we seek the value of j and s that minimizes</p>
+<p>For any feature <span class="math inline">\(j\)</span> and cutpoint <span class="math inline">\(s\)</span>, we seek the value of <span class="math inline">\(j\)</span> and <span class="math inline">\(s\)</span> that minimizes</p>
 <p><span class="math display">\[
 \sum_{i: x_i \in R_1(j,s)} \left(y_i - \bar{y}_{R_1}\right)^2
 \;+\;
@@ -1057,10 +1057,16 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 </div></aside></section>
 <section id="random-forests-for-regression" class="slide level2">
 <h2>Random forests for regression</h2>
+<!--
+TODO: summarize/structure more clearly
+-->
 <p>Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.</p>
 <p>A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the random forests approach to a regression task.</p>
 <p>Regression forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.</p>
 <p>The disadvantage of random forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.</p>
+<!--
+TODO: remove or explain reference to "bootstrap trees"
+-->
 </section>
 <section id="comparing-the-fitting-ability-of-one-vs.-many-regression-trees" class="slide level2">
 <h2>Comparing the fitting ability of one vs.&nbsp;many regression trees</h2>
@@ -1073,9 +1079,12 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 </section>
 <section id="limitations-of-tree-methods-in-regression" class="slide level2">
 <h2>Limitations of tree methods in regression</h2>
+<!--
+TODO: summarize/structure more clearly
+-->
 <p>When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.</p>
-<p>Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g.&nbsp;in the case of data with persistent trends. A solution may be a frequent re-training in this case.</p>
-<p>An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.</p>
+<p>Thus, random forests may perform poorly when the target data is out of the range of the original training data, e.g.&nbsp;in the case of data with persistent trends. A solution may be a frequent re-training in this case.</p>
+<p>An important strength of random forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.</p>
 <p>If there is any missing value for a feature during the application there usually are enough trees remaining that do not use this feature to produce accurate predictions.</p>
 </section></section>
 <section>
@@ -1106,7 +1115,7 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 <p>Margin size is:</p>
 <p><span class="math display">\[\text{margin} = \frac{2}{|w|}\]</span></p>
 <p>So maximizing the margin = minimizing <span class="math inline">\(|w|\)</span>.</p>
-<div id="12373f69" class="cell" data-execution_count="1">
+<div id="38949704" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1241,7 +1250,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-i" class="slide level2">
 <h2>SVR examples (I)</h2>
 <p><br></p>
-<div id="b778d146" class="cell" data-execution_count="2">
+<div id="0befe4c4" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1254,7 +1263,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-ii" class="slide level2">
 <h2>SVR examples (II)</h2>
 <p><br></p>
-<div id="9bbac5b6" class="cell" data-execution_count="3">
+<div id="5cf3a20e" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1267,7 +1276,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-iii" class="slide level2">
 <h2>SVR examples (III)</h2>
 <p><br></p>
-<div id="041bc2de" class="cell" data-execution_count="4">
+<div id="25b613d1" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1284,7 +1293,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <li><p>Different models embody different assumptions and levels of flexibility:<br>
 <strong>linear models</strong> are simple and interpretable, while <strong>more flexible models</strong> (e.g., trees, SVMs, neural networks) can capture complex, non-linear relationships but are harder to interpret.</p></li>
 <li><p>Controlling <strong>model complexity</strong> is central to achieving good generalization. Techniques such as <strong>regularization (Ridge, Lasso)</strong>, parameter choices (e.g., k in k-NN, depth in trees), and margin control (SVM) balance fit and simplicity.</p></li>
-<li><p>Key supervised learning algorithms introduced include <strong>k-Nearest Neighbors (k-NN)</strong> (distance-based), <strong>decision trees and Random Forests</strong> (tree-based and ensemble methods), and <strong>Support Vector Machines (SVMs)</strong> (margin-based models), illustrating different approaches to learning from data with varying assumptions, flexibility, and interpretability.</p></li>
+<li><p>Key supervised learning algorithms introduced include <strong>k-Nearest Neighbors (k-NN)</strong> (distance-based), <strong>decision trees and random forests</strong> (tree-based and ensemble methods), and <strong>Support Vector Machines (SVMs)</strong> (margin-based models), illustrating different approaches to learning from data with varying assumptions, flexibility, and interpretability.</p></li>
 </ul>
 </section>
 <section id="survey-session-7" class="slide level2" data-state="hide-menubar">
