@@ -151,15 +151,15 @@
     }
   </style>
   <style>
-  div.callout-self-service.callout {
-    border-left-color: #198754;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-resource.callout {
@@ -173,6 +173,17 @@
     content: '🔗';
     background-image: none;
   }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -182,17 +193,6 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
-    background-image: none;
-  }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
     background-image: none;
   }
   </style>
@@ -219,9 +219,9 @@
 <p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
-<li><strong>Compare</strong> selected supervised machine learning algorithms with respect to their assumptions, flexibility, interpretability, and typical application scenarios.</li>
-<li><strong>Explain</strong> the mechanics of selected algorithms, including distance-based classification (k-NN), recursive partitioning (decision trees), and layered weighted transformations (neural networks).</li>
-<li><strong>Select and justify</strong> an appropriate method for a given predictive task, taking into account data characteristics, performance metrics, and trade-offs between interpretability and predictive power.</li>
+<li><strong>Compare</strong> key supervised learning approaches (linear models, k-NN, decision trees, random forests, and support vector machines) with respect to their assumptions, flexibility, interpretability, and typical application scenarios.</li>
+<li><strong>Explain</strong> the core mechanics of selected algorithms, including regularization in linear models, distance-based prediction (k-NN), recursive partitioning (decision trees), ensemble learning (random forests), and margin maximization (SVMs).</li>
+<li><strong>Select and justify</strong> an appropriate modeling approach for a given predictive task, considering data characteristics, performance metrics, and the trade-off between interpretability and predictive power.</li>
 </ul>
 </div>
 <!--
@@ -231,7 +231,7 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </section>
 <section id="classification-vs.-regression-model-families" class="slide level2">
 <h2>Classification vs.&nbsp;Regression &amp; Model Families</h2>
-<p>Many models can handle <strong>classification</strong> (pedicting categories) and <strong>regression</strong> (predicting numeric values).</p>
+<p>Many models can handle <strong>classification</strong> (predicting categories) and <strong>regression</strong> (predicting numeric values).</p>
 <p><br></p>
 <table class="caption-top">
 <colgroup>
@@ -336,7 +336,7 @@ See https://aunnnn.github.io/ml-tutorial/html/blog_content/linear_regression/lin
 <blockquote>
 <p>Prefer <strong>simpler models</strong> that fit the data <em>well enough</em></p>
 </blockquote>
-<p>We modify the objective (in linear regression: minimizing RSS / OLS):</p>
+<p>We modify the objective or loss function (in linear regression: minimizing RSS / OLS):</p>
 <p><span class="math display">\[
 \text{Loss} = \text{Fit to data} + \lambda \cdot \text{Penalty}
 \]</span></p>
@@ -432,19 +432,21 @@ e.g., ridge, lasso, PCA, random-forest: tree-depth boundary
 <blockquote>
 <p><span class="math inline">\(\lambda\)</span> is not applied to the intercept <span class="math inline">\(\beta_0\)</span> !</p>
 </blockquote>
+<!--
+TODO: check explanation before including
+## Complexity
+
+Complexity can be measured as the size of the set of possible outputs for a given set of inputs.
+
+![](../images/ridge_complexity.png){height=500 fig-align=center}
+
+In this example the interval $0$ to $x^*$ represents the set of possible inputs.
+Function $h_0$ has the lowest complexity because there is just one output independent of the inputs.
+$h_2$ has the highest complexity because here the set of possible outputs is the biggest one.
+-->
 </section>
-<section id="complexity" class="slide level2">
-<h2>Complexity</h2>
-<p>Complexity can be measured as the size of the set of possible outputs for a given set of inputs.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/ridge_complexity.png" class="quarto-figure quarto-figure-center" height="500"></p>
-</figure>
-</div>
-<p>In this example the interval <span class="math inline">\(0\)</span> to <span class="math inline">\(x^*\)</span> represents the set of possible inputs. Function <span class="math inline">\(h_0\)</span> has the lowest complexity because there is just one output independent of the inputs. <span class="math inline">\(h_2\)</span> has the highest complexity because here the set of possible outputs is the biggest one.</p>
-</section>
-<section id="complexity-und-generalisation" class="slide level2">
-<h2>Complexity und Generalisation</h2>
+<section id="complexity-and-generalisation" class="slide level2">
+<h2>Complexity and generalisation</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -569,12 +571,25 @@ TODO: switch to M&A decision example
 </figure>
 </div>
 
-<aside><div>
+<aside class="notes">
 <p>To choose the relevant features, you can apply several methods and after this you may train a selection model using for example logistic regression. The whole process would be very time-consuming and even costly. As an alternative, you can apply a decision tree algorithm which is a stepwise or recursive classification mechanism.</p>
-<p>Proportions in the leafs can be interpreted as probabilities.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Proportions in the leaves can be interpreted as probabilities.</p>
 </div></aside></section>
 <section id="decision-trees-i" class="slide level2">
 <h2>Decision Trees (I)</h2>
+<div class="highlight_must_learn">
 <p><strong>Decision trees</strong> are hierarchical models used for <strong>classification and regression</strong>, based on <strong>recursive partitioning</strong> of the feature space.</p>
 <p>A decision tree consists of:</p>
 <ul>
@@ -591,6 +606,7 @@ TODO: switch to M&A decision example
 <li>Repeat the process for each subset until a stopping criterion is met</li>
 </ul>
 <p>If each node has exactly two child nodes, the tree is called a <strong>binary tree</strong>.</p>
+</div>
 </section>
 <section id="decision-trees-ii" class="slide level2">
 <h2>Decision Trees (II)</h2>
@@ -681,7 +697,6 @@ Note: already covered in previous illustration?
 \text{entropy}(t) = - \sum_{i=1}^{k} p_i \cdot \log_2(p_i)
 \]</span></p>
 <p>where <span class="math inline">\(p_i\)</span> is the <strong>relative frequency</strong> of observations in node <span class="math inline">\(t\)</span> that belong to class <span class="math inline">\(i\)</span>.</p>
-<p><br></p>
 <p><strong>Attribute: Wind</strong></p>
 <ul>
 <li><strong>light</strong>: 6 × yes, 2 × no</li>
@@ -714,6 +729,10 @@ Note: already covered in previous illustration?
 </figure>
 </div>
 </div></div>
+<div class="learning_note fragment">
+<p>No need to memorize the formula. However, you should be able to calculate entropy and<br>
+apply the algorithm on paper when the formula and data are provided. This also applies to C5.0.</p>
+</div>
 </section>
 <section id="calculating-the-information-gain" class="slide level2">
 <h2>Calculating the information gain</h2>
@@ -724,10 +743,16 @@ Note: already covered in previous illustration?
 -
 \sum_{i=1}^{m} \frac{t_i}{t} \cdot \text{entropy}(t_i)
 \]</span></p>
-<p>where m = number of values (here two: light, strong), <span class="math inline">\(t_i\)</span> = number of data sets with strong or light wind (8 resp. 6), t = total number of data sets (14) and entropy(t) = entropy before splitting.</p>
+<p>where</p>
+<ul>
+<li>m = number of values (here two: light, strong)</li>
+<li><span class="math inline">\(t_i\)</span> = number of data sets with strong or light wind (8 resp. 6)</li>
+<li>t = total number of data sets (14) and</li>
+<li>entropy(t) = entropy before splitting.</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_207_2_new.png" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="../images/slides_207_2_new.png" class="quarto-figure quarto-figure-center" width="600"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -749,11 +774,32 @@ Note: already covered in previous illustration?
 <li>Information gain (windy) = 0.048</li>
 <li>Information gain (temperature) = 0.029</li>
 </ul>
-<p>We choose the attribute with the largest information gain (here: outlook) for the first splitting.</p>
+<p>We choose the attribute with the largest information gain</p>
+<p>→ <strong>Outlook</strong> is used for the first split</p>
+</section>
+<section id="how-id3-builds-the-tree" class="slide level2">
+<h2>How ID3 builds the tree</h2>
+<p>ID3 is a <strong>greedy, recursive procedure</strong>:</p>
+<p>At each node:</p>
+<ol type="1">
+<li>Compute information gain for all remaining attributes<br>
+</li>
+<li>Select the best attribute (highest gain)<br>
+</li>
+<li>Split the data<br>
+</li>
+<li>Repeat the process within each subset</li>
+</ol>
+<p>This continues until:</p>
+<ul>
+<li>nodes are pure, or<br>
+</li>
+<li>no attributes remain</li>
+</ul>
 <p>As solution we obtain the following tree:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_243.png" class="quarto-figure quarto-figure-center" height="300"></p>
+<p><img data-src="../images/slides_243.png" class="quarto-figure quarto-figure-center" height="220"></p>
 </figure>
 </div>
 </section>
@@ -862,9 +908,12 @@ Note: introduce in the next round:
 
     > **Remark:** Entropy has been scaled from (0, 1) to (0, 0.5)!
 -->
+<!--
+TODO: also show the resulting tree for C5! (ideally, it should be a bit different from ID3)
+-->
 </section>
-<section id="overfitting-i" class="slide level2">
-<h2>Overfitting (I)</h2>
+<section id="overfitting" class="slide level2">
+<h2>Overfitting</h2>
 <p>Most decision tree algorithms partition training data until every node contains objects of a single class, or until further partitioning is impossible because two objects have the same value for each attribute but belong to different classes. If there are no such conflicting objects, the decision tree will correctly classify all training objects.</p>
 <p>If tree performance is measured from the number of correctly classified cases it is common to find that the training data gives an over-optimistic guide to future performance, i.e.&nbsp;with new data. A tree should exhibit generalization, i.e.&nbsp;work well with data other than those used to generate it. When the tree grows during training it often shows a decrease in generalization. This is because the deeper nodes are fitting noise in the training data not representative over the entire universe from which the training set was sampled. This is called ‘overfitting’.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -872,17 +921,13 @@ Note: introduce in the next round:
 <p><img data-src="../images/slides_244.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</section>
-<section id="overfitting-ii" class="slide level2">
-<h2>Overfitting (II)</h2>
-<blockquote>
-<p>The learner overfits to correctly classify the noisy data objects.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_245.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
+<!--
+## Overfitting (II)
+
+> The learner overfits to correctly classify the noisy data objects.
+
+![](../images/slides_245.png){fig-align=center}
+-->
 </section>
 <section id="random-forest-i" class="slide level2">
 <h2>Random Forest (I)</h2>
@@ -977,7 +1022,7 @@ Note: introduce in the next round:
 <h2>Constructing a regression tree (I)</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>A regression tree partitions the data objects in the feature space into regions <span class="math inline">\(R_j\)</span>, represented by the leafs of the tree. To construct the tree, the goal is to find regions that minimize the RSS, given by</p>
+<p>A regression tree partitions the data objects in the feature space into regions <span class="math inline">\(R_j\)</span>, represented by the leaves of the tree. To construct the tree, the goal is to find regions that minimize the RSS, given by</p>
 <p><span class="math display">\[
 RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 \]</span></p>
@@ -1054,16 +1099,11 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 <p>Margin size is:</p>
 <p><span class="math display">\[\text{margin} = \frac{2}{|w|}\]</span></p>
 <p>So maximizing the margin = minimizing <span class="math inline">\(|w|\)</span>.</p>
-<div id="cell-fig-svm-2d-very-tight" class="cell" data-execution_count="1">
+<div id="dc723d2e" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="fig-svm-2d-very-tight" class="quarto-float quarto-figure quarto-figure-center" width="515" height="429">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-svm-2d-very-tight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="lecture_7_machine_learning_2_files/figure-revealjs/fig-svm-2d-very-tight-output-1.png" id="fig-svm-2d-very-tight" width="515" height="429">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-svm-2d-very-tight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-2-output-1.png" class="quarto-figure quarto-figure-center" width="515" height="429"></p>
 </figure>
 </div>
 </div>
@@ -1172,8 +1212,8 @@ y_i (w^\top x_i + b) \geq 1 - \xi_i\]</span></p>
 <p><img data-src="../images/svr_insensitive_loss_function.png"></p>
 </div></div>
 </section>
-<section id="insensitive-loss-function" class="slide level2">
-<h2>Insensitive Loss Function</h2>
+<section id="insensitive-loss-function-ii" class="slide level2">
+<h2>Insensitive Loss Function (II)</h2>
 <p>Using the <span class="math inline">\(\epsilon\)</span>-insensitive loss function, only those data objects are considered in the estimation, which have a distance greater than <span class="math inline">\(\epsilon\)</span> from the regression function:</p>
 <p><img data-src="../images/svr_epsilon_insensitive_loss_function.png"></p>
 <p>Every object inside the <span class="math inline">\(\epsilon\)</span>-insensitive region is ignored. It is regarded as noise.</p>
@@ -1194,7 +1234,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-i" class="slide level2">
 <h2>SVR examples (I)</h2>
 <p><br></p>
-<div id="be0971de" class="cell" data-execution_count="2">
+<div id="bacf9e65" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1207,7 +1247,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-ii" class="slide level2">
 <h2>SVR examples (II)</h2>
 <p><br></p>
-<div id="f80f9ec6" class="cell" data-execution_count="3">
+<div id="c5287161" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1220,7 +1260,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-iii" class="slide level2">
 <h2>SVR examples (III)</h2>
 <p><br></p>
-<div id="43728f74" class="cell" data-execution_count="4">
+<div id="127bcb2b" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
