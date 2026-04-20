@@ -151,6 +151,28 @@
     }
   </style>
   <style>
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -171,28 +193,6 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
     background-image: none;
   }
   </style>
@@ -219,7 +219,6 @@
 <p><br><br><br><br><br></p>
 <div class="learning-objectives">
 <ul>
-<li><strong>Compare</strong> key supervised learning approaches (linear models, k-NN, decision trees, random forests, and support vector machines) with respect to their assumptions, flexibility, interpretability, and typical application scenarios.</li>
 <li><strong>Explain</strong> the core mechanics of selected algorithms, including regularization in linear models, distance-based prediction (k-NN), recursive partitioning (decision trees), ensemble learning (random forests), and margin maximization (SVMs).</li>
 <li><strong>Select and justify</strong> an appropriate modeling approach for a given predictive task, considering data characteristics, performance metrics, and the trade-off between interpretability and predictive power.</li>
 </ul>
@@ -229,8 +228,8 @@
 characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 -->
 </section>
-<section id="classification-vs.-regression-model-families" class="slide level2">
-<h2>Classification vs.&nbsp;Regression &amp; Model Families</h2>
+<section id="models-for-classification-vs.-regression" class="slide level2">
+<h2>Models for classification vs.&nbsp;regression</h2>
 <p>Many models can handle <strong>classification</strong> (predicting categories) and <strong>regression</strong> (predicting numeric values).</p>
 <p><br></p>
 <table class="caption-top">
@@ -259,13 +258,13 @@ characteristics: (e.g., dimensionality, non-linearity, class imbalance)
 </tr>
 <tr class="odd">
 <td><strong>Tree-based models</strong></td>
-<td>Decision trees, Random Forest (classification)</td>
-<td>Decision trees, Random Forest (regression)</td>
+<td>Decision trees, random forest</td>
+<td>Regression trees, random forest</td>
 </tr>
 <tr class="even">
 <td><strong>Margin-based models</strong></td>
-<td>Support Vector Machine (SVC)</td>
-<td>Support Vector Regression (SVR)</td>
+<td>Support vector machine (SVC)</td>
+<td>Support vector regression (SVR)</td>
 </tr>
 <tr class="odd">
 <td><strong>Neural networks</strong></td>
@@ -331,11 +330,37 @@ See https://aunnnn.github.io/ml-tutorial/html/blog_content/linear_regression/lin
 </ul></li>
 </ul>
 </section>
+<section id="high-dimensionality-in-linear-regression-i" class="slide level2">
+<h2>High dimensionality in linear regression (I)</h2>
+<p>The figure illustrates the risk of applying OLS when the number of features <span class="math inline">\(p\)</span> is large. The model’s <span class="math inline">\(R^2\)</span> increases to 1 as the number of features increases, and the training set MSE decreases to 0. At the same time, the MSE on a test set becomes extremely large as the number of features increases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/high-dimensionality.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+<p>In contrast, methods like ridge regression are particularly useful for performing regression in the high-dimensional setting. Essentially, these approaches avoid overfitting by using a less flexible fitting approach than least squares.</p>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="James2013">James (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>, pp.240</p>
+</div></aside></section>
+<section id="high-dimensionality-in-linear-regression-ii" class="slide level2">
+<h2>High dimensionality in linear regression (II)</h2>
+<p>OLS is not suitable for high-dimensional data. Especially when the number of features p is as large as, or larger than, the number of observations, OLS cannot be applied. Regardless of whether or not there truly is a relationship between the features and the response, OLS will yield a set of coefficient estimates that result in a perfect fit to the data, such that the residuals are zero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/regression-high-dimensionality.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+<p>The figure shows two cases. When there are 20 observations, n &gt; p and the OLS line does not perfectly fit the data. When there are only two observations, then regardless of the values of those observations, the regression line will fit the data exactly. This is problematic because this perfect fit will almost certainly lead to overfitting of the data.</p>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="James2013">James (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>, pp.&nbsp;239.</p>
+</div></aside></section>
 <section id="core-idea-of-regularization" class="slide level2">
-<h2>Core idea of Regularization</h2>
-<blockquote>
+<h2>Core idea of regularization</h2>
 <p>Prefer <strong>simpler models</strong> that fit the data <em>well enough</em></p>
-</blockquote>
+<p><br></p>
+<div class="highlight_must_learn">
 <p>We modify the objective or loss function (in linear regression: minimizing RSS / OLS):</p>
 <p><span class="math display">\[
 \text{Loss} = \text{Fit to data} + \lambda \cdot \text{Penalty}
@@ -347,8 +372,9 @@ See https://aunnnn.github.io/ml-tutorial/html/blog_content/linear_regression/lin
 </li>
 <li><span class="math inline">\(\lambda\)</span>: controls the trade-off</li>
 </ul>
+</div>
 <div class="fragment">
-<p><strong>Common Approaches for Linear Regression</strong></p>
+<p><strong>Common approaches for linear regression</strong></p>
 <ul>
 <li><strong>Ridge (L2)</strong>: shrinks coefficients toward zero<br>
 </li>
@@ -391,37 +417,11 @@ e.g., ridge, lasso, PCA, random-forest: tree-depth boundary
 -->
 </div>
 </section>
-<section id="high-dimensionality-in-linear-regression-models-i" class="slide level2">
-<h2>High dimensionality in linear regression models (I)</h2>
-<p>The figure illustrates the risk of applying OLS when the number of features p is large. The model <span class="math inline">\(R^2\)</span> increases to 1 as the number of features increases, and the training set MSE decreases to 0. At the same time, the MSE on a test set becomes extremely large as the number of features increases.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/high-dimensionality.png" class="quarto-figure quarto-figure-center" height="400"></p>
-</figure>
-</div>
-<p>In contrast, methods like ridge regression are particularly useful for performing regression in the high-dimensional setting. Essentially, these approaches avoid overfitting by using a less flexible fitting approach than least squares.</p>
-
-<aside><div>
-<p>Source: <span class="citation" data-cites="James2013">James (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>, pp.240</p>
-</div></aside></section>
-<section id="high-dimensionality-in-linear-regression-models-ii" class="slide level2">
-<h2>High dimensionality in linear regression models (II)</h2>
-<p>OLS is not suitable for high-dimensional data. Especially when the number of features p is as large as, or larger than, the number of observations, OLS cannot be applied. Regardless of whether or not there truly is a relationship between the features and the response, OLS will yield a set of coefficient estimates that result in a perfect fit to the data, such that the residuals are zero.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/regression-high-dimensionality.png" class="quarto-figure quarto-figure-center" height="400"></p>
-</figure>
-</div>
-<p>The figure shows two cases. When there are 20 observations, n &gt; p and the OLS line does not perfectly fit the data. When there are only two observations, then regardless of the values of those observations, the regression line will fit the data exactly. This is problematic because this perfect fit will almost certainly lead to overfitting of the data.</p>
-
-<aside><div>
-<p>Source: <span class="citation" data-cites="James2013">James (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>, pp.&nbsp;239.</p>
-</div></aside></section>
 <section id="ridge-regression" class="slide level2">
-<h2>Ridge Regression</h2>
-<p>Ridge Regression is an enhancement of OLS using a technique that constrains or regularizes the coefficient estimates. This is done by shrinking the coefficient estimates towards zero resulting in a gain in robustness and a higher generalization ability.</p>
-<p>Similar to OLS, Ridge Regression estimates the parameters of the function</p>
-<p><span class="math display">\[y_i = \beta_0 + \beta'x_i+v_i\]</span></p>
+<h2>Ridge regression</h2>
+<p>Ridge regression is an enhancement of OLS using a technique that constrains or regularizes the coefficient estimates. This is done by shrinking the coefficient estimates towards zero resulting in a gain in robustness and a higher generalization ability.</p>
+<p>Similar to OLS, ridge regression estimates the parameters of the function</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta' x_i + v_i\]</span></p>
 <p>but instead of minimizing the residual sum of squares (<span class="math inline">\(v^2\)</span>), the function to minimize is</p>
 <p><span class="math display">\[
 \sum_{i=0}^{n} v_i^2 + \lambda \cdot \sum_{j=1}^{p} \beta_j^2
@@ -458,7 +458,7 @@ TODO: illustrate ridge regression geometrically?
 -->
 </section>
 <section id="relationship-of-lambda-and-complexity" class="slide level2">
-<h2>Relationship of <span class="math inline">\(\lambda\)</span> and Complexity</h2>
+<h2>Relationship of <span class="math inline">\(\lambda\)</span> and complexity</h2>
 <p><span class="math inline">\(\lambda \rightarrow \infty\)</span>: Lowest complexity<br>
 The ridge regression coefficients are equal to zero. For every input, the result is <span class="math inline">\(\beta_0\)</span>.</p>
 <p><span class="math inline">\(\lambda = 0\)</span>: Relative high complexity (linear model)<br>
@@ -466,7 +466,7 @@ The penalty term has no effect, and ridge regression will produce the least squa
 <p>Example:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/ridge_example_labmda_complexity.png" class="quarto-figure quarto-figure-center" height="450"></p>
+<p><img data-src="../images/ridge_example_lambda_complexity.png" class="quarto-figure quarto-figure-center" height="450"></p>
 </figure>
 </div>
 
@@ -510,14 +510,14 @@ The penalty term has no effect, and ridge regression will produce the least squa
           display:block!important;
       }</style></aside>
 <aside><div>
-<p>Compare with lecture 2 where we used knn for clustering.</p>
+<p>Compare with lecture 2 where we used k-NN for clustering.</p>
 </div></aside></section>
 <section id="k-nn-for-regression" class="slide level2">
 <h2>k-NN for regression</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>k-NN can also be used for regression. The only difference in regression is that the prediction is not the result of a majority vote but of an averaging process.</p>
-<p>A simple implementation of k-NN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. KNN regression uses the same distance functions as KNN classification.</p>
+<p>A simple implementation of k-NN regression is to calculate the average of the numerical target of the k-nearest neighbors. Another approach uses an inverse distance weighted average of the K-nearest neighbors. k-NN regression uses the same distance functions as k-NN classification.</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -564,7 +564,7 @@ TODO: switch to M&A decision example
 </div>
 </section>
 <section id="introductory-example" class="slide level2">
-<h2>Introductory Example</h2>
+<h2>Introductory example</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_225.png" class="quarto-figure quarto-figure-center"></p>
@@ -588,7 +588,7 @@ TODO: switch to M&A decision example
 <p>Proportions in the leaves can be interpreted as probabilities.</p>
 </div></aside></section>
 <section id="decision-trees-i" class="slide level2">
-<h2>Decision Trees (I)</h2>
+<h2>Decision trees (I)</h2>
 <div class="highlight_must_learn">
 <p><strong>Decision trees</strong> are hierarchical models used for <strong>classification and regression</strong>, based on <strong>recursive partitioning</strong> of the feature space.</p>
 <p>A decision tree consists of:</p>
@@ -609,7 +609,7 @@ TODO: switch to M&A decision example
 </div>
 </section>
 <section id="decision-trees-ii" class="slide level2">
-<h2>Decision Trees (II)</h2>
+<h2>Decision trees (II)</h2>
 <p>Decision tree models partition the <strong>feature space</strong> into a set of regions by recursively splitting the data to achieve <strong>maximum homogeneity</strong> within each region.</p>
 <p>They can be interpreted as a set of <strong>decision paths</strong>: for a given combination of predictor values, an observation follows a specific path from the root to a <strong>leaf node</strong>, where a prediction (classification or regression) is assigned.</p>
 <p>Decision trees make <strong>few assumptions</strong> about the functional form of relationships or data distributions. In contrast to parametric models (e.g., linear regression), they can capture <strong>nonlinear patterns</strong>, <strong>interactions</strong>, and <strong>complex structures</strong> in the data that are difficult to model with linear approaches.</p>
@@ -631,7 +631,7 @@ Note: already covered in previous illustration?
 -->
 </section>
 <section id="overview-of-important-decision-tree-methods" class="slide level2">
-<h2>Overview of important Decision Tree Methods</h2>
+<h2>Overview of important decision tree methods</h2>
 <p><br><br></p>
 <table class="caption-top" style="width:100%;">
 <colgroup>
@@ -649,7 +649,7 @@ Note: already covered in previous illustration?
 <th style="text-align: left;">ID3</th>
 <th style="text-align: left;">C5.0</th>
 <th style="text-align: left;">CHAID</th>
-<th style="text-align: left;">Random Forests</th>
+<th style="text-align: left;">Random forests</th>
 </tr>
 </thead>
 <tbody>
@@ -659,7 +659,7 @@ Note: already covered in previous illustration?
 <td style="text-align: left;">One of the first methods from Quinlan; uses the concept of information gain</td>
 <td style="text-align: left;">Like ID3 based on the concept of information gain</td>
 <td style="text-align: left;">Choose the attribute that is most dependent on the target variable</td>
-<td style="text-align: left;">Construct many trees with different sets of features and samples (randomly). Result by voting.</td>
+<td style="text-align: left;">Construct many trees with different sets of features and samples (randomly). The result is obtained by voting.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Measure used</strong></td>
@@ -736,7 +736,7 @@ apply the algorithm on paper when the formula and data are provided. This also a
 </section>
 <section id="calculating-the-information-gain" class="slide level2">
 <h2>Calculating the information gain</h2>
-<p>The information gain is a measure, that shows (by combination of the entropies) the appropriateness of an attribute for splitting:</p>
+<p>The information gain is a measure that shows (by combination of the entropies) the appropriateness of an attribute for splitting:</p>
 <p><span class="math display">\[
 \text{Information gain} =
 \text{entropy}(t)
@@ -796,7 +796,7 @@ apply the algorithm on paper when the formula and data are provided. This also a
 </li>
 <li>no attributes remain</li>
 </ul>
-<p>As solution we obtain the following tree:</p>
+<p>As solution we, obtain the following tree:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_243.png" class="quarto-figure quarto-figure-center" height="220"></p>
@@ -834,10 +834,14 @@ apply the algorithm on paper when the formula and data are provided. This also a
 }
 = 0.156
 \]</span></p>
-</section>
+
+<aside><div>
+<p><span class="math inline">\(t\)</span> = total number of observations in the current node (before the split)<br>
+<span class="math inline">\(t_i\)</span> = number of observations in the i-th child node (after the split)</p>
+</div></aside></section>
 <section id="handling-numerical-attributes" class="slide level2">
 <h2>Handling numerical attributes</h2>
-<p>Numerical attributes are usually splitted binary. In contrast to categorical attributes many possible splitting points exist.</p>
+<p>Numerical attributes are (typically) split into two groups. In contrast to categorical attributes many possible splitting points exist.</p>
 <p>The splitting point with the highest information gain is looked for. For this, the potential attribute is sorted according to its values first and then all possible splitting point and the corresponding information gains are calculated. In extreme cases there exists n-1 possibilities.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -922,6 +926,9 @@ TODO: also show the resulting tree for C5! (ideally, it should be a bit differen
 </figure>
 </div>
 <!--
+TODO: include max depth.
+-->
+<!--
 ## Overfitting (II)
 
 > The learner overfits to correctly classify the noisy data objects.
@@ -930,7 +937,7 @@ TODO: also show the resulting tree for C5! (ideally, it should be a bit differen
 -->
 </section>
 <section id="random-forest-i" class="slide level2">
-<h2>Random Forest (I)</h2>
+<h2>Random forest (I)</h2>
 <p>Random forest is an ensemble classifier that consists of many decision trees.</p>
 <p>For every tree a subset of the data objects and a subset of features is randomly chosen. Then the tree is constructed usually using the Gini Index.</p>
 <p>In the end, a simple majority vote is taken for prediction.</p>
@@ -941,14 +948,14 @@ TODO: also show the resulting tree for C5! (ideally, it should be a bit differen
 </div>
 <p><strong>Algorithm:</strong></p>
 <ol type="1">
-<li>Create n samples from the original data. Frequent sample size is 2/3.</li>
+<li>Create n samples from the original data. The sample size is often 2/3.</li>
 <li>For each of the samples, grow a tree, with the following modification: at each node, rather than choosing the best split among all predictors, randomly sample m* of the m predictors and choose the best split from among those variables.</li>
 <li>Predict by aggregating the predictions of the n trees (majority votes).</li>
 </ol>
 </section>
 <section id="random-forest-ii" class="slide level2">
-<h2>Random Forest (II)</h2>
-<p>Voting principle of Random Forest:</p>
+<h2>Random forest (II)</h2>
+<p>Voting principle of random forest:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/random_forest_votes.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
@@ -1001,7 +1008,7 @@ TODO: also show the resulting tree for C5! (ideally, it should be a bit differen
 -->
 </section>
 <section id="regression-trees" class="slide level2">
-<h2>Regression Trees</h2>
+<h2>Regression trees</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Some of the tree approaches can be used for regression too. They can be used for nonlinear multiple regression. The output must be numerical.</p>
@@ -1043,20 +1050,20 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 \;+\;
 \sum_{i: x_i \in R_2(j,s)} \left(y_i - \bar{y}_{R_2}\right)^2
 \]</span></p>
-<p>where <span class="math inline">\(\bar{y}_{R_1}\)</span> is the mean value for the training observations in <span class="math inline">\(R_1(j,s9\)</span>, and <span class="math inline">\(\bar{y}_{R_2}\)</span> is the mean value for the training observations in <span class="math inline">\(R_2(j,s)\)</span>. After splitting, we repeat the process, looking for the best feature and best cutpoint in order to split the data further so as to minimize the RSS within each of the resulting regions. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations. Once the regions R1, . . . , RJ have been created, we predict the objects from the test set. To handle the problem of overfitting, pruning methods exist even for regression trees.</p>
+<p>where <span class="math inline">\(\bar{y}_{R_1}\)</span> is the mean value for the training observations in <span class="math inline">\(R_1(j,s)\)</span>, and <span class="math inline">\(\bar{y}_{R_2}\)</span> is the mean value for the training observations in <span class="math inline">\(R_2(j,s)\)</span>. After splitting, we repeat the process, looking for the best feature and best cutpoint in order to split the data further so as to minimize the RSS within each of the resulting regions. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations. Once the regions R1, . . . , RJ have been created, we predict the objects from the test set. To handle the problem of overfitting, pruning methods exist even for regression trees.</p>
 
 <aside><div>
 <p><span class="citation" data-cites="James2013">James (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>, pp.307</p>
 </div></aside></section>
 <section id="random-forests-for-regression" class="slide level2">
-<h2>Random Forests for Regression</h2>
+<h2>Random forests for regression</h2>
 <p>Due to the usage of means as predictors a regression tree usually simplifies the true relationship between the inputs and the output. The advantage over traditional statistical methods is, that it can give valuable insights about which variables are important and where. But the prediction ability is poor compared to other regression approaches.</p>
-<p>A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the Random Forests approach to a regression task.</p>
-<p>Regression Forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.</p>
-<p>The disadvantage of Random Forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.</p>
+<p>A much better prediction quality can be achieved with the creation of an ensemble of trees, use them for prediction and averaging their results. This is done, when applying the random forests approach to a regression task.</p>
+<p>Regression forests are an ensemble of different regression trees and are used for nonlinear multiple regression. The principle is the same as in classification, except that the output is not the result of a voting but instead of an averaging process.</p>
+<p>The disadvantage of random forests is that the analysis, which aggregates over the results of many bootstrap trees, does not produce a single, easily interpretable tree diagram.</p>
 </section>
 <section id="comparing-the-fitting-ability-of-one-vs.-many-regression-trees" class="slide level2">
-<h2>Comparing the Fitting Ability of one vs.&nbsp;many Regression Trees</h2>
+<h2>Comparing the fitting ability of one vs.&nbsp;many regression trees</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1065,7 +1072,7 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 </div>
 </section>
 <section id="limitations-of-tree-methods-in-regression" class="slide level2">
-<h2>Limitations of Tree Methods in Regression</h2>
+<h2>Limitations of tree methods in regression</h2>
 <p>When applied to regression problems, tree methods have the limitation that they cannot exceed the range of values of the target variable used in training. The reason for this lies in their design principle, how the leaves of the trees are created.</p>
 <p>Thus, Random Forests may perform poorly when the target data is out of the range of the original training data, e.g.&nbsp;in the case of data with persistent trends. A solution may be a frequent re-training in this case.</p>
 <p>An important strength of Random Forests is that they are able to perform still well in the case of missing data. According to their construction principle, not every tree is using the same features.</p>
@@ -1099,7 +1106,7 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 <p>Margin size is:</p>
 <p><span class="math display">\[\text{margin} = \frac{2}{|w|}\]</span></p>
 <p>So maximizing the margin = minimizing <span class="math inline">\(|w|\)</span>.</p>
-<div id="dc723d2e" class="cell" data-execution_count="1">
+<div id="12373f69" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1185,8 +1192,8 @@ y_i (w^\top x_i + b) \geq 1 - \xi_i\]</span></p>
 </div>
 </section>
 <section id="support-vector-regression" class="slide level2">
-<h2>Support Vector Regression</h2>
-<p>Similar to the other regression approaches, Support Vector Regression (SVR) estimates the parameters of the function:</p>
+<h2>Support vector regression</h2>
+<p>Similar to the other regression approaches, support vector regression (SVR) estimates the parameters of the function:</p>
 <p><span class="math display">\[y_i = \beta_0 + \beta_ix_i+v_i\]</span></p>
 <p>The Goal is to find a robust model with a high generalization ability. SVR regards two sources of robustness:</p>
 <ol type="1">
@@ -1195,7 +1202,7 @@ y_i (w^\top x_i + b) \geq 1 - \xi_i\]</span></p>
 </ol>
 </section>
 <section id="insensitive-loss-function-i" class="slide level2">
-<h2>Insensitive Loss Function (I)</h2>
+<h2>Insensitive loss function (I)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br></p>
@@ -1213,7 +1220,7 @@ y_i (w^\top x_i + b) \geq 1 - \xi_i\]</span></p>
 </div></div>
 </section>
 <section id="insensitive-loss-function-ii" class="slide level2">
-<h2>Insensitive Loss Function (II)</h2>
+<h2>Insensitive loss function (II)</h2>
 <p>Using the <span class="math inline">\(\epsilon\)</span>-insensitive loss function, only those data objects are considered in the estimation, which have a distance greater than <span class="math inline">\(\epsilon\)</span> from the regression function:</p>
 <p><img data-src="../images/svr_epsilon_insensitive_loss_function.png"></p>
 <p>Every object inside the <span class="math inline">\(\epsilon\)</span>-insensitive region is ignored. It is regarded as noise.</p>
@@ -1234,7 +1241,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-i" class="slide level2">
 <h2>SVR examples (I)</h2>
 <p><br></p>
-<div id="bacf9e65" class="cell" data-execution_count="2">
+<div id="b778d146" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1247,7 +1254,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-ii" class="slide level2">
 <h2>SVR examples (II)</h2>
 <p><br></p>
-<div id="c5287161" class="cell" data-execution_count="3">
+<div id="9bbac5b6" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1260,7 +1267,7 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-iii" class="slide level2">
 <h2>SVR examples (III)</h2>
 <p><br></p>
-<div id="127bcb2b" class="cell" data-execution_count="4">
+<div id="041bc2de" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
