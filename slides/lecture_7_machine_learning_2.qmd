@@ -439,7 +439,7 @@ $$
 No need to memorize the formula.
 However, you should be able to calculate entropy and   
 apply the algorithm on paper when the formula and data are provided.
-This also applies to ID5.0.
+This also applies to C5.0.
 :::
 
 ## Calculating the information gain
@@ -630,7 +630,7 @@ Note: introduce in the next round:
 -->
 
 <!--
-TODO: also show the resulting tree for ID5! (ideally, it should be a bit different from ID3)
+TODO: also show the resulting tree for C5! (ideally, it should be a bit different from ID3)
 -->
 
 ## Overfitting
