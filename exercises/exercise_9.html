@@ -72,6 +72,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -81,17 +92,6 @@ div.callout-objective.callout-style-default > .callout-header {
 div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
   content: '🎯';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -105,15 +105,15 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
   content: '🛠️';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 </style>
@@ -163,6 +163,10 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <span class="menu-text">Evaluations</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../news.html"> 
+<span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data" rel="noopener noreferrer" target="_blank"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:github-01" aria-label="GitHub" title="GitHub"></iconify-icon></span></a>
   </li>  
@@ -205,22 +209,24 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 
 
 <div class="learning-objectives">
-<p>Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python. Apply large language models or other scalable methods to extract, classify, or summarize unstructured data.</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p>TODO</p>
-<p>TBD: API Keys?!</p>
 </div>
-</div>
+<section id="part-1-by-hand-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-by-hand-calculation">Part 1: by-hand calculation:</h2>
+<p>https://www.ismll.uni-hildesheim.de/lehre/ml-19w/exercises/tutorial07.pdf</p>
+</section>
+<section id="part-2-interactive-playground" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-interactive-playground">Part 2: interactive playground</h2>
+<p>insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises -&gt; even if all inputs are 0, the output can be non-zero. (due to biases)</p>
+<p>Generally: https://playground.tensorflow.org/ -&gt; check different datasets!</p>
+</section>
+<section id="part-3-code-reading-and-best-practices-in-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-code-reading-and-best-practices-in-modeling">Part 3: Code reading and best practices in modeling</h2>
+<ul>
+<li>sklearn vs pytorch</li>
+<li>examples with architecture choices/understanding</li>
+</ul>
+</section>
 <section id="exam-prep" class="level2">
 <h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
 <p>TODO : include specific questions/tasks that could be included in the exam.</p>

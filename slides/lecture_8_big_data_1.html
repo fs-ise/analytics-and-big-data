@@ -151,6 +151,17 @@
     }
   </style>
   <style>
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
+    background-image: none;
+  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -182,17 +193,6 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
-    background-image: none;
-  }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
     background-image: none;
   }
   </style>
@@ -227,8 +227,487 @@
 <p>TODO: Explain how big data environments reshape model development, validation, and deployment. This creates continuity with: Generalization problem, Overfitting, Model evaluation</p>
 </section>
 <section>
-<section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
-<h1>TODO</h1>
+<section id="big-data" class="title-slide slide level1 center" data-stack-name="Big data">
+<h1>Big data</h1>
+<!--
+TODO: refer to the introduction (growth of data, ...)
+TODO: highlight the Big-Data Vs with specific examples. illustrate the data vividly, but also highlight the analytical models and business outcomes (starting to move towards the systems and organizational deployment of analytics)
+
+    ## What is Big Data?
+
+    > The basic idea behind the phrase 'Big Data' is that everything we do is increasingly leaving a digital trace (or data), which we (and others) can use and analyze.  
+    > -- Bernard Marr
+
+    > Big Data is the frontier of a firm’s ability to store, process, and access (SPA) all the data it needs to operate effectively, make decisions, reduce risks, and serve customers.  
+    > -- Forrester
+
+    > Big Data is not about the size of the data, it's about the value within the data.  
+    > -- David Wellman
+-->
+</section>
+<section id="vs-of-big-data" class="slide level2">
+<h2>4V’s of Big Data</h2>
+<div class="highlight_must_learn">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_61.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+
+<aside><div>
+<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
+</div></aside></section>
+<section id="big-data-changes-the-managerial-problem" class="slide level2">
+<h2>Big data changes the managerial problem</h2>
+<blockquote>
+<p>Big data matters when the <strong>properties of the data</strong> change what managers can decide, automate, or compete on.</p>
+</blockquote>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>V</th>
+<th>Business dilemma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Volume</strong></td>
+<td>Too many operational combinations to optimize manually</td>
+</tr>
+<tr class="even">
+<td><strong>Velocity</strong></td>
+<td>Decisions must be made before the moment passes</td>
+</tr>
+<tr class="odd">
+<td><strong>Variety</strong></td>
+<td>Many data worlds must be integrated</td>
+</tr>
+<tr class="even">
+<td><strong>Veracity</strong></td>
+<td>Data may look precise but still be false</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Rationale and key points to cover:</p>
+<p>This opening slide should shift the students away from the generic definition of big data as “lots of data.” The key teaching message is that each V corresponds to a different managerial dilemma.</p>
+<p>Volume is not just about storage; it is about decision complexity. Velocity is not just about speed; it is about making a decision while the event is still unfolding. Variety is not just about having structured and unstructured data; it is about integrating data worlds that were previously separate. Veracity is not just about data quality; it is about whether managers can trust what the data appears to say.</p>
+<p>Use this as the conceptual frame for the four business examples that follow.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="volume-ups-route-optimization" class="slide level2">
+<h2>Volume: UPS route optimization</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Managerial dilemma</strong></p>
+<p>How do you optimize millions of delivery decisions when every route has thousands of possible variants?</p>
+<p><strong>Key data facts</strong></p>
+<ul>
+<li>250M+ address data points</li>
+<li>200,000+ route options per typical route</li>
+<li>Parcels, drivers, fleet, road network, customer constraints</li>
+<li>Real-time updates from operations and telematics</li>
+</ul>
+<p><strong>Models:</strong> vehicle routing · scheduling · ETA prediction · dynamic re-optimization<br>
+<strong>Outcomes:</strong> fewer miles · lower fuel costs · better on-time delivery · operational data advantage</p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="../images/ups_redcharlie-UnuC022bG04-unsplash.jpg" alt="UPS delivery truck or route optimization image" width="450"></p>
+</div></div>
+<aside class="notes">
+<p>Rationale and key points to cover:</p>
+<p>This slide illustrates volume as operational complexity. The point is not merely that UPS has “a lot of data.” The deeper point is that parcel logistics creates an enormous number of possible decisions: which parcels go into which vehicle, in which order, driven by which driver, through which road network, under which delivery and pickup constraints.</p>
+<p>Emphasize that a route is not simply a map from A to B. It includes today’s parcels, promised delivery windows, pickup commitments, driver constraints, fleet capacity, customer requirements, historical travel times, current network conditions, road restrictions, and operational updates during the day.</p>
+<p>The analytical problem is therefore combinatorial. A human dispatcher cannot compare hundreds of thousands of possible stop sequences. The firm needs optimization models, routing heuristics, scheduling systems, and ETA prediction. More advanced versions also support dynamic re-optimization when traffic, delays, or operational disruptions occur.</p>
+<p>The competitive implication is that small improvements per route become enormous at system scale. Saving a few minutes or a few kilometers per driver per day can translate into major annual savings in fuel, labor, emissions, and service reliability. This creates an operational data advantage: firms with richer route histories, denser delivery networks, and better optimization infrastructure can operate at lower cost and higher reliability.</p>
+<p>References for data and claims:</p>
+<ul>
+<li>UPS ORION materials describe large-scale route optimization using more than 250 million address data points and evaluating more than 200,000 route options for a typical route.</li>
+<li>UPS has reported ORION-related savings on the order of 100 million miles and around 10 million gallons of fuel per year.</li>
+<li>Useful source search terms: “UPS ORION 250 million address data points”, “UPS ORION 200,000 route options”, “UPS ORION 100 million miles 10 million gallons”.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="velocity-visa-fraud-detection" class="slide level2">
+<h2>Velocity: Visa fraud detection</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Managerial dilemma</strong></p>
+<p>Can fraud be detected <strong>before</strong> the transaction is approved?</p>
+<p><strong>Key data facts</strong></p>
+<ul>
+<li>Up to <strong>83,000 transactions / second</strong></li>
+<li>≈ <strong>7.17B decisions / day</strong> at peak capacity</li>
+<li>500+ data points per transaction</li>
+<li>Fraud is rare, but losses are massive</li>
+<li>Visa reported <strong>$40B+ fraud blocked in 2023</strong></li>
+</ul>
+<p><strong>Models:</strong> real-time risk scoring · anomaly detection · streaming ML · network analysis<br>
+<strong>Outcomes:</strong> approve · decline · challenge · escalate — all within milliseconds</p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="../images/payment_nathan-dumlao-oRKF_ZBJYGM-unsplash.jpg" alt="Digital payment or fraud detection image" width="450"></p>
+</div></div>
+<aside class="notes">
+<p>Rationale and key points to cover:</p>
+<p>This slide illustrates velocity as the need to decide while the business event is still happening. In payment fraud detection, the decision must be made before the customer leaves the checkout page or terminal. The system cannot wait for an overnight batch report.</p>
+<p>The key teaching point is the millisecond decision window. The model must ingest transaction data, compare it against historical patterns, evaluate location, merchant, amount, device, account history, and behavioral signals, and then decide whether the transaction should be approved, declined, challenged, or escalated.</p>
+<p>This is also a useful example of rare-event analytics. Fraudulent transactions may be a tiny share of all transactions, but at Visa scale even a very small percentage can imply very large losses. False positives also matter: blocking genuine customers damages trust, merchant revenue, and user experience. The analytical challenge is therefore not simply “detect fraud”; it is “detect fraud while minimizing false declines, in milliseconds, at massive scale.”</p>
+<p>The models typically include supervised machine learning, anomaly detection, streaming analytics, graph and network analysis, and real-time decision rules. The models are embedded directly in the transaction infrastructure.</p>
+<p>The competitive implication is trust. Payment networks compete partly on reliability, fraud protection, authorization quality, and customer experience. Better fraud analytics can reduce losses, increase legitimate approval rates, and make merchants and banks more willing to rely on the network.</p>
+<p>References for data and claims:</p>
+<ul>
+<li>Visa reports infrastructure capacity of up to 83,000 transactions per second.</li>
+<li>83,000 × 86,400 seconds per day = 7,171,200,000 theoretical peak transaction decisions per day.</li>
+<li>Visa describes using 500+ data points in fraud detection and reported blocking over $40 billion in fraud in 2023.</li>
+<li>ECB/EBA payment fraud reports can be used to illustrate that fraud rates are small as a percentage of transaction value but still correspond to billions in absolute losses.</li>
+<li>Useful source search terms: “Visa 83,000 transactions per second”, “Visa 500 data points fraud”, “Visa blocked 40 billion fraud 2023”, “ECB EBA payment fraud 2024 0.002 percent”.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="variety-walmart-ambient-iot-supply-chain" class="slide level2">
+<h2>Variety: Walmart ambient IoT supply chain</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Managerial dilemma</strong></p>
+<p>How do you coordinate inventory when the relevant data comes from many different worlds?</p>
+<p><strong>Key data facts</strong></p>
+<ul>
+<li>Target: <strong>90M pallets</strong> by end of 2026</li>
+<li>Active in <strong>500 Walmart locations</strong></li>
+<li>Potential scale: 4,600 stores + 40+ distribution centers</li>
+<li>Sensor data: location, movement, temperature, humidity, dwell time</li>
+<li>Combined with inventory, supplier, store, and replenishment data</li>
+</ul>
+<p><strong>Models:</strong> sensor fusion · demand forecasting · replenishment optimization · exception detection<br>
+<strong>Outcomes:</strong> fewer stockouts · fresher products · less waste · tighter supplier coordination</p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="../images/walmart_flickr_5391507982_a34b093cd4_k.jpg" alt="Retail supply chain or IoT pallet tracking image" width="450"></p>
+</div></div>
+<aside class="notes">
+<p>Rationale and key points to cover:</p>
+<p>This slide illustrates variety as the integration of heterogeneous data worlds. Walmart’s supply-chain example is useful because the relevant data are not all in one system. They come from physical pallets, ambient IoT sensors, store inventory systems, supplier systems, distribution centers, transport flows, and AI-based replenishment systems.</p>
+<p>The important teaching point is that the same business object—the pallet—becomes a digital object. It can produce information about where it is, how long it has been there, whether it was exposed to temperature or humidity deviations, and whether it is moving through the supply chain as expected.</p>
+<p>This is especially important for food and grocery supply chains, where freshness, waste, stockouts, and timing matter. Data variety allows Walmart to connect physical product flow with digital planning and replenishment decisions.</p>
+<p>Typical analytical models include sensor fusion, demand forecasting, replenishment optimization, dwell-time analytics, exception detection, and cold-chain monitoring. More advanced versions can be described as supply-chain control towers or digital twins.</p>
+<p>The competitive implication is coordination. Walmart can use these data not only internally but also to structure supplier behavior. The firm gains better visibility over inbound flows, supplier performance, inventory accuracy, and store-level availability. This can reduce waste, improve freshness, reduce stockouts, and strengthen Walmart’s cost and availability advantage.</p>
+<p>References for data and claims:</p>
+<ul>
+<li>Wiliot announced collaboration with Walmart to scale ambient IoT tracking toward 90 million pallets by the end of 2026.</li>
+<li>Wiliot/Walmart materials mention deployment across hundreds of Walmart locations and potential expansion across Walmart’s store and distribution-center network.</li>
+<li>Wiliot describes ambient IoT sensors collecting location and condition data such as temperature and humidity.</li>
+<li>Useful source search terms: “Wiliot Walmart 90 million pallets 2026”, “Walmart ambient IoT pallets 500 locations”, “Wiliot Walmart temperature humidity pallets”.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="veracity-digital-advertising-fraud" class="slide level2">
+<h2>Veracity: Digital advertising fraud</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Managerial dilemma</strong></p>
+<p>The dashboard says there were clicks and impressions — but were they real?</p>
+<p><strong>Key data facts</strong></p>
+<ul>
+<li>Fraudulent impressions, clicks, conversions, or data events</li>
+<li>DoubleVerify measures <strong>8.3T+ media transactions / year</strong></li>
+<li>Ad fraud losses projected at <strong>$172B by 2028</strong></li>
+<li>One fraud operation fell from <strong>2.5B</strong> to <strong>100M</strong> daily bid requests after mitigation</li>
+</ul>
+<p><strong>Models:</strong> bot detection · invalid traffic scoring · anomaly detection · graph analysis<br>
+<strong>Outcomes:</strong> block fake traffic · clean attribution · reallocate spend · protect ROI</p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="../images/digital_ads_stephen-phillips-hostreviews-co-uk-shr_Xn8S8QU-unsplash.jpg" alt="Digital advertising fraud or bot traffic image" width="450"></p>
+</div></div>
+<aside class="notes">
+<p>Rationale and key points to cover:</p>
+<p>This slide illustrates veracity: whether the data can be trusted. Digital advertising is a strong example because the data may look extremely precise. A dashboard can report impressions, clicks, conversions, engagement rates, and cost per acquisition. But the central managerial question is whether these events reflect real human attention and real customer intent.</p>
+<p>This is a better teaching example than a simple sensor failure because the ambiguity is managerial and economic. A click may exist in the data but still be generated by a bot. An impression may be counted but never actually seen by a human. A conversion may be attributed to a campaign but be manipulated by fraud or poor measurement.</p>
+<p>The analytical models include bot detection, invalid-traffic classification, anomaly detection, device and behavioral fingerprinting, graph analysis, publisher-quality scoring, and campaign-level traffic-quality models.</p>
+<p>The decision consequences are significant. Advertisers may block traffic, exclude publishers, shift budgets, reprice impressions, revise attribution models, or stop campaigns. Without veracity, the organization may optimize toward fake engagement. This is a powerful teaching point: bad data can make analytics actively harmful because the model learns from signals that do not correspond to real business value.</p>
+<p>The competitive implication is marketing efficiency and trust. Firms with better traffic-quality analytics can spend advertising budgets more effectively, avoid waste, protect brands, and build more reliable attribution systems.</p>
+<p>References for data and claims:</p>
+<ul>
+<li>IAB defines ad fraud and invalid traffic as fraudulent representation of impressions, clicks, conversions, or other data events.</li>
+<li>DoubleVerify reports measuring over 8.3 trillion media transactions annually.</li>
+<li>DoubleVerify cites Juniper estimates that global ad fraud losses could reach $172 billion by 2028.</li>
+<li>HUMAN Security reported mitigation of a fraud operation that reduced activity from 2.5 billion daily bid requests to 100 million daily bid requests.</li>
+<li>Useful source search terms: “IAB ad fraud invalid traffic impressions clicks conversions”, “DoubleVerify 8.3 trillion media transactions”, “Juniper ad fraud 172 billion 2028”, “HUMAN 2.5 billion daily bid requests 100 million”.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="todo-too-simple-but-maybe-integrate-in-the-end-of-the-first-section-key-takeaway" class="slide level2">
+<h2>TODO: too simple, but maybe integrate in the “end of the first section” (Key takeaway)</h2>
+<p>Big data is not one problem.</p>
+<p>It creates <strong>four different managerial dilemmas</strong>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>V</th>
+<th>Core challenge</th>
+<th>Business response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Volume</td>
+<td>Too many combinations</td>
+<td>Optimize</td>
+</tr>
+<tr class="even">
+<td>Velocity</td>
+<td>Too little time</td>
+<td>Decide instantly</td>
+</tr>
+<tr class="odd">
+<td>Variety</td>
+<td>Too many data worlds</td>
+<td>Integrate</td>
+</tr>
+<tr class="even">
+<td>Veracity</td>
+<td>Too little trust</td>
+<td>Validate</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Rationale and key points to cover:</p>
+<p>Use this closing slide to consolidate the examples.</p>
+<p>The most important message is that each V changes the managerial problem in a different way. Volume creates optimization challenges. Velocity creates real-time decision challenges. Variety creates integration and coordination challenges. Veracity creates trust and validation challenges.</p>
+<p>A useful closing question for students:</p>
+<p>“Which of these four dilemmas is most difficult to solve technologically, and which is most difficult to solve organizationally?”</p>
+<p>This helps transition from technical analytics to organizational capability. Firms do not compete simply by owning data. They compete by building decision systems, routines, governance structures, and analytical capabilities that turn data properties into better business outcomes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+
+    ## Volume (Scale)
+
+    :::: {.columns}
+
+    ::: {.column width="50%"}
+    ![](../images/slides_62.png){width="80%"}
+    :::
+
+    ::: {.column width="50%"}
+    ![](../images/slides_63.png){width="80%"}
+    :::
+
+    ::::
+
+    ## The Model of Generating and Consuming Data has Changed
+
+    ![](../images/slides_76_new.png){fig-align="center" width="50%"}
+
+
+    ## Collecting Data
+
+    ![](../images/slides_77_new.png){fig-align="center" width="50%"}
+
+    ::: aside
+    — Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx
+    :::
+
+
+    ## Types of Data People are Creating \(I\)
+
+    Activity Data
+
+    Simple activities like listening to music or reading a book are now generating data.
+    Digital music players and eBooks collect data on our activities. Your smartphone collects
+    data on how you use it and your web browser collects information on what you are searching for.
+    Your credit card company collects data on where you shop and the shops collect data on what you buy.
+    It is hard to imagine any activity that does not generate data.
+
+    Conversation Data
+
+    Our conversations are now digitally recorded. It all started with emails, but nowadays most
+    of our conversations leave a digital trail. Consider all the conversations we have on social media
+    sites like Facebook or Twitter. Even many of our phone conversations are now digitally recorded.
+
+    Photo and Video Image Data
+
+    Think about all the pictures we take on our smartphones or digital cameras. We upload and share
+    hundreds of thousands of them on social media sites every second. An increasing number of cameras
+    record video images, and we upload hundreds of hours of video to YouTube and other platforms every minute.
+
+    ::: aside
+    — Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
+    :::
+
+
+    ## Types of Data People are Creating \(II\)
+
+    Sensor Data
+
+    We are increasingly surrounded by sensors that collect and share data. Take your smart phone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelerometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.
+
+    The Internet of Things Data
+
+    We now have smart TVs that are able to collect and process data, we have smart watches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.
+
+    ::: aside
+    — Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
+    :::
+
+
+    ## Variety \(Complexity\)
+
+    ![](../images/slides_77_new.png){fig-align="center" width="50%"}
+
+    ::: aside
+    — Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx
+    :::
+
+
+    ## A Single View to the Customer
+
+    ![](../images/slides_81_new.png){fig-align="center" width="50%"}
+
+    ::: aside
+    — Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx
+    :::
+
+
+    ## Velocity \(Speed\)
+
+    ![](../images/slides_97.png){width="30%"}
+
+    Data is being generated fast and needs to be processed fast.
+
+    - Late decisions result in missing opportunities
+
+    Examples
+
+    - E-Promotions: Based on your current location, your purchase history, and your interests → send promotions immediately for the store next to you.
+    - Healthcare monitoring: Sensors track your activities and health → any abnormal measurements require immediate reaction.
+    - Production and Logistics: With real-time POS data, Langnese can adjust production and delivery instantly → saving millions of euros monthly.
+
+    ::: aside
+    — Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx
+    :::
+
+
+    ## Real\-Time Analytics
+
+    ![](../images/slides_83_new.png){fig-align="center" width="50%"}
+
+    ::: aside
+    — Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx
+    :::
+
+
+    ## Veracity \(Uncertainty\)
+
+    ![](../images/slides_99.png){width="50%"}
+
+    Organizations must now analyze both structured and unstructured data that is uncertain and imprecise.
+
+    In many cases, it is not known whether the data is correct (e.g. fake news) or representative (e.g. biased expressions of opinion in forums).
+
+    It may be prudent to assign a Data Veracity score and ranking for specific data sets to avoid making decisions based on analysis of uncertain and imprecise data.
+
+
+    ## How is Big Data actually used?
+
+    - Better understand and target customers
+    Companies expand their traditional data with social media data, browser, text analytics or sensor data to get a more complete picture of their customers.
+
+    - Understand and Optimize Business Processes
+    Retailers are able to optimize their stock based on predictive models generated from social media data, web search trends, weather forecasts...
+
+    - Improving Health
+    Use the data from smart watches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …
+
+    - Improving Security and Law Enforcement
+    Use big data analytics to predict criminal activity, foil terrorist plots, detect cyber attacks, and detect fraudulent credit card transactions.
+
+    - Improving and Optimizing Cities and Countries (Smart Cities)
+    Optimize traffic flows based on real time traffic information, social media and weather data. A bus would wait for a delayed train and traffic signals predict traffic volumes.
+
+    ::: aside
+    — Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
+    :::
+
+-->
+</section>
+<section id="turning-big-data-into-value" class="slide level2">
+<h2>Turning Big Data into Value</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_86_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+
+<aside><div>
+<p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
+</div></aside></section></section>
+<section id="architecture" class="title-slide slide level1 center" data-stack-name="Architecture">
+<h1>Architecture</h1>
+
+</section>
+
+<section>
+<section id="todo-data-lake-vs-data-warehouse-as-alternative-architectures-clarify-the-difference" class="title-slide slide level1 center">
+<h1>TODO: data lake vs data warehouse as alternative architectures? clarify the difference!</h1>
 
 </section>
 <section id="limitations-of-the-data-warehouse-approach" class="slide level2">
@@ -242,164 +721,20 @@
 </ul>
 <p>This results in the following problem areas in today’s world:</p>
 <ul>
-<li>Lack of flexibility due to high effort for changes</li>
-<li>Time expenditure due to transfer from the operational sources and the aggregations</li>
-<li>Past orientation of data (snapshot of the past); there is an increasing need for ad hoc and real-time analyses</li>
-<li>Partial knowledge, as only structured data is stored, with increasing need for social media data, etc.</li>
-<li>Patchwork: due to gradual introduction of data warehouses, many isolated solutions exist and are operated separately both technically and methodologically</li>
+<li><strong>Lack of flexibility</strong> due to high effort for changes</li>
+<li><strong>Time expenditure</strong> due to transfer from the operational sources and the aggregations</li>
+<li><strong>Past orientation</strong> of data (snapshot of the past); there is an increasing need for ad hoc and real-time analyses</li>
+<li><strong>Partial knowledge</strong>, as only structured data is stored, with increasing need for social media data, etc.</li>
+<li><strong>Patchwork</strong>: due to gradual introduction of data warehouses, many isolated solutions exist and are operated separately both technically and methodologically</li>
 </ul>
 </section>
-<section id="what-is-big-data" class="slide level2">
-<h2>What is Big Data?</h2>
-<p>The basic idea behind the phrase ‘Big Data’ is that everything we do is increasingly leaving a digital trace (or data), which we (and others) can use and analyze. &gt; – Bernard Marr</p>
-<p>Big Data is the frontier of a firm’s ability to store, process, and access (SPA) all the data it needs to operate effectively, make decisions, reduce risks, and serve customers. &gt; – Forrester</p>
-<p>Big Data is not about the size of the data, it’s about the value within the data. &gt; – David Wellman</p>
-</section>
-<section id="vs-of-big-data" class="slide level2">
-<h2>4V’s of Big Data</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_61.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="volume-scale" class="slide level2">
-<h2>Volume (Scale)</h2>
-<p><img data-src="../images/slides_62.png" style="width:50.0%"></p>
-<p><img data-src="../images/slides_63.png" style="width:50.0%"></p>
-</section>
-<section id="the-model-of-generating-and-consuming-data-has-changed" class="slide level2">
-<h2>The Model of Generating and Consuming Data has Changed</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_76_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section id="collecting-data" class="slide level2">
-<h2>Collecting Data</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_77_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="types-of-data-people-are-creating-i" class="slide level2">
-<h2>Types of Data People are Creating (I)</h2>
-<p>Activity Data</p>
-<p>Simple activities like listening to music or reading a book are now generating data. Digital music players and eBooks collect data on our activities. Your smartphone collects data on how you use it and your web browser collects information on what you are searching for. Your credit card company collects data on where you shop and the shops collect data on what you buy. It is hard to imagine any activity that does not generate data.</p>
-<p>Conversation Data</p>
-<p>Our conversations are now digitally recorded. It all started with emails, but nowadays most of our conversations leave a digital trail. Consider all the conversations we have on social media sites like Facebook or Twitter. Even many of our phone conversations are now digitally recorded.</p>
-<p>Photo and Video Image Data</p>
-<p>Think about all the pictures we take on our smartphones or digital cameras. We upload and share hundreds of thousands of them on social media sites every second. An increasing number of cameras record video images, and we upload hundreds of hours of video to YouTube and other platforms every minute.</p>
-
-<aside><div>
-<p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
-</div></aside></section>
-<section id="types-of-data-people-are-creating-ii" class="slide level2">
-<h2>Types of Data People are Creating (II)</h2>
-<p>Sensor Data</p>
-<p>We are increasingly surrounded by sensors that collect and share data. Take your smart phone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelerometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.</p>
-<p>The Internet of Things Data</p>
-<p>We now have smart TVs that are able to collect and process data, we have smart watches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g.&nbsp;the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.</p>
-
-<aside><div>
-<p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
-</div></aside></section>
-<section id="variety-complexity" class="slide level2">
-<h2>Variety (Complexity)</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_77_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="a-single-view-to-the-customer" class="slide level2">
-<h2>A Single View to the Customer</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_81_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="velocity-speed" class="slide level2">
-<h2>Velocity (Speed)</h2>
-<p><img data-src="../images/slides_97.png" style="width:50.0%"></p>
-<p>Data is being generated fast and needs to be processed fast.</p>
-<ul>
-<li>Late decisions result in missing opportunities</li>
-</ul>
-<p>Examples</p>
-<ul>
-<li>E-Promotions: Based on your current location, your purchase history, and your interests → send promotions immediately for the store next to you.</li>
-<li>Healthcare monitoring: Sensors track your activities and health → any abnormal measurements require immediate reaction.</li>
-<li>Production and Logistics: With real-time POS data, Langnese can adjust production and delivery instantly → saving millions of euros monthly.</li>
-</ul>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="real-time-analytics" class="slide level2">
-<h2>Real-Time Analytics</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_83_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="veracity-uncertainty" class="slide level2">
-<h2>Veracity (Uncertainty)</h2>
-<p><img data-src="../images/slides_99.png" style="width:50.0%"></p>
-<p>Organizations must now analyze both structured and unstructured data that is uncertain and imprecise.</p>
-<p>In many cases, it is not known whether the data is correct (e.g.&nbsp;fake news) or representative (e.g.&nbsp;biased expressions of opinion in forums).</p>
-<p>It may be prudent to assign a Data Veracity score and ranking for specific data sets to avoid making decisions based on analysis of uncertain and imprecise data.</p>
-</section>
-<section id="how-is-big-data-actually-used" class="slide level2">
-<h2>How is Big Data actually used?</h2>
-<ul>
-<li><p>Better understand and target customers Companies expand their traditional data with social media data, browser, text analytics or sensor data to get a more complete picture of their customers.</p></li>
-<li><p>Understand and Optimize Business Processes Retailers are able to optimize their stock based on predictive models generated from social media data, web search trends, weather forecasts…</p></li>
-<li><p>Improving Health Use the data from smart watches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …</p></li>
-<li><p>Improving Security and Law Enforcement Use big data analytics to predict criminal activity, foil terrorist plots, detect cyber attacks, and detect fraudulent credit card transactions.</p></li>
-<li><p>Improving and Optimizing Cities and Countries (Smart Cities) Optimize traffic flows based on real time traffic information, social media and weather data. A bus would wait for a delayed train and traffic signals predict traffic volumes.</p></li>
-</ul>
-
-<aside><div>
-<p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
-</div></aside></section>
-<section id="turning-big-data-into-value" class="slide level2">
-<h2>Turning Big Data into Value</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_86_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
-</div></aside></section>
 <section id="the-four-layers-of-big-data-i" class="slide level2">
 <h2>The Four Layers of Big Data (I)</h2>
 <p>Data Source Layer</p>
 <p>This is where the data arrives at the organization. It includes everything from sales records, customer database, feedback, social media channels, marketing list, email archives etc.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_87_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_87_new.png" class="quarto-figure quarto-figure-center" width="300"></p>
 </figure>
 </div>
 
@@ -492,148 +827,122 @@
 </figure>
 </div>
 
-<pre><code>            ## Sampling
-
-            A population can be defined as including all people or items with the characteristic one wishes to understand.
-
-            Sampling is about to find a representative subset of that population.
-
-            Data represents the traces of the real-world processes, and exactly which traces we gather are decided by our sampling method.
-
-            There are two sources of randomness and uncertainty:
-
-            - the randomness and uncertainty underlying the process itself, and
-            - the uncertainty associated with the underlying sampling method.
-
-
-
-
-            ## Sampling in Times of Big Data
-
-            **Question:**
-
-            Is there any need for sampling in times of Big Data? Why not "N=ALL"?
-
-            **Answer:**
-
-            Data is not objective! Data does not speak for itself. Data is just a quantitative echo of the events of our society.
-
-            **Examples:**
-
-            - When analyzing the probability of customers terminating the relationship, a very small proportion of terminating customers (e.g. 0.2%) on the whole may result in a bias.
-            - When analyzing political attitudes via social media data, there might be a bias if people with specific attitudes are posting more frequently.
-
-
-
-
-            ## Reasons for Sampling
-
-            - The volume of data is too large to capture and process
-            - Design the analytics process using a subset of the data for performance reasons. Later use the complete data set.
-            - The data set doesn't perfectly represent the target population.
-            - The data set is imbalanced.
-            - Use sampling to partition into training and test data.
-            - ...
-
-
-
-
-            ## Popular Methods of Sampling (I)
-
-            ![](../images/slides_135.png)
-
-
-
-
-            ## Popular Methods of Sampling (II)
-
-            ![](../images/slides_167.png)
-
-
-            ---
-
-
-            ## Systematic Sampling
-
-            ![](../images/slides_176.png)
-
-
-
-
-            ## Random Sampling
-
-            ![](../images/slides_177.png)
-
-
-
-
-            ## Proportional Sampling
-
-            ![](../images/slides_178.png)
-
-
-
-
-            ## Downsampling
-
-            ![](../images/slides_179.png)
-
-
-
-
-            ## SMOTE
-
-            &lt;div style="display:flex"&gt;
-            &lt;div style="width:60%"&gt;
-            &gt; SMOTE (Synthetic Minority Oversampling Technique) is an oversampling technique where the synthetic samples are generated for the minority class. At first the total number of oversampling observations N is set up. Usually, it is selected such that the resulting class distribution is 1:1. Now, the iteration starts by first selecting a minority class instance at random. Next, the k nearest neighbors for that instance are obtained. For every neighbor calculate the difference as distance and multiply this difference by a random value between 0 and 1. Adding the result to the chosen instance creates a new synthetic instance. This is done until the number of needed instances is reached.
-            &lt;/div&gt;
-
-            &lt;div style="float:right;width:40%"&gt;
-            ![](../images/slides_180.png)
-            &lt;/div&gt;
-            &lt;/div&gt;
-
-            ::: aside
-            — Source: https://github.com/minoue-xx/Oversampling-Imbalanced-Data
-            :::
-
-
-
-
-            ## Use Cases of Data Analytics - Examples
-
-            ![](../images/slides_98_new.png)
-
-
-
-
-            ## Fundamental Skills of Data Analytics
-
-            ![](../images/slides_105.png)
-
-
-
-            ## The Data Analytics Process
-
-            ![](../images/slides_106.png)
-
-            ::: aside
-            — Source: http://www.datasciencecentral.com/profiles/blogs/data-science-simplified-principles-and-process
-            :::
-
-
-
-
-            ## Need for Knowledge about the Algorithms
-
-            &gt; The distance between using Excel and VBA for modeling in credit scoring, for example, and using machine learning algorithms and R or Python to enhance the results, is not that great, compared to the distance between someone running a packaged algorithm they don’t really understand and someone who understands the mathematical and statistical operations within an algorithm and can optimize or adapt it as needed – and do so in the context of their deep industry experience.
-
-            ::: aside
-            — Source: Dataiku - Data Science for Banking and Insurance
-            :::</code></pre>
 <aside><div>
 <p>— Source: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/</p>
-</div></aside></section>
+</div></aside></section></section>
+<section>
+<section id="text-analytics" class="title-slide slide level1 center" data-stack-name="Text analytics">
+<h1>Text analytics</h1>
+<p>TODO: structure: see “Text representation pipeline” note (obsidian)</p>
+<p>https://github.com/iam-salma/NLP-Bootcamp-with-python</p>
+</section>
+<section id="paradigm-1-sparse-representations-classical-nlp" class="level3">
+<h3>Paradigm 1: Sparse Representations (Classical NLP)</h3>
+<ul>
+<li><p>Core challenge: <em>How do we turn text into analyzable data?</em></p></li>
+<li><p>Basic pipeline:</p>
+<ul>
+<li>preprocessing (tokenization, cleaning)</li>
+<li>feature engineering (Bag-of-Words, TF-IDF)</li>
+</ul></li>
+<li><p>Output: <strong>sparse feature vectors → ML models</strong></p></li>
+<li><p>Use case: classification (e.g., sentiment analysis)</p></li>
+<li><p>Key idea: <em>text → structured matrix → prediction</em></p></li>
+</ul>
+</section>
+<section id="paradigm-2-dense-representations-embeddings" class="level3">
+<h3>Paradigm 2: Dense Representations (Embeddings)</h3>
+<ul>
+<li><p>Motivation: capture <strong>semantic meaning</strong></p></li>
+<li><p>Introduce embeddings (e.g., BERT)</p></li>
+<li><p>Output: <strong>dense vectors → ML / clustering / similarity</strong></p></li>
+<li><p>Use cases:</p>
+<ul>
+<li>semantic search</li>
+<li>clustering documents</li>
+<li>regression/classification</li>
+</ul></li>
+<li><p>Key shift: <em>better features, same analytics logic</em></p></li>
+</ul>
+</section>
+<section id="paradigm-3-ai-assisted-analytics-llms-systems" class="level3">
+<h3>Paradigm 3: AI-Assisted Analytics (LLMs &amp; Systems)</h3>
+<ul>
+<li><p>Embeddings as foundation for systems:</p>
+<ul>
+<li>retrieval (finding relevant documents)</li>
+<li>similarity-based analytics</li>
+</ul></li>
+<li><p>Extend to LLM-based workflows (e.g., GPT-4):</p>
+<ul>
+<li>direct classification via prompting</li>
+<li>information extraction</li>
+<li>summarization</li>
+</ul></li>
+<li><p>Concept: <strong>Retrieval-Augmented Generation (RAG)</strong></p>
+<ul>
+<li>embeddings → retrieve relevant data</li>
+<li>LLM → analyze / generate output</li>
+</ul></li>
+<li><p>Key shift: <em>model integrates feature extraction + prediction</em></p></li>
+</ul>
+</section>
+<section id="comparison-analytical-perspective" class="level3">
+<h3>5. Comparison &amp; Analytical Perspective</h3>
+<ul>
+<li>Three ways to turn text into insights:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Representation</th>
+<th>Role in Analytics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sparse</td>
+<td>TF-IDF</td>
+<td>baseline, interpretable</td>
+</tr>
+<tr class="even">
+<td>Dense</td>
+<td>embeddings</td>
+<td>semantic features</td>
+</tr>
+<tr class="odd">
+<td>LLM-based</td>
+<td>implicit</td>
+<td>flexible, system-level analytics</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Emphasize: <strong>choice depends on task, cost, and requirements</strong></li>
+</ul>
+</section>
+<section id="takeaway-the-future-of-text-analytics" class="level3">
+<h3>6. Takeaway: The Future of Text Analytics</h3>
+<ul>
+<li><p>Text is no longer “unstructured” → it’s <strong>transformable data</strong></p></li>
+<li><p>Evolution:</p>
+<ul>
+<li>manual features → learned representations → AI-assisted analysis</li>
+</ul></li>
+<li><p>Role of analytics:</p>
+<ul>
+<li>selecting representations</li>
+<li>designing pipelines/systems</li>
+<li>evaluating outcomes</li>
+</ul></li>
+</ul>
+<!--
+## **One-line narrative**
+
+> “We move from manually structuring text for models → to learning representations → to using AI systems that directly turn language into insights.”
+-->
+</section>
 <section id="todo-deployment" class="slide level2">
 <h2>TODO Deployment</h2>
 <p>Cover ML Ops pipelines, scaling (parallel architectures)</p>

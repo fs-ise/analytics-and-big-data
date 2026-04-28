@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exercise 8: Text analytics and machine learning</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="exercise_8_text_analytics_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exercise_8_text_analytics_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="exercise_8_text_analytics_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="exercise_8_text_analytics_files/libs/quarto-html/popper.min.js"></script>
+<script src="exercise_8_text_analytics_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exercise_8_text_analytics_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exercise_8_text_analytics_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exercise_8_text_analytics_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exercise_8_text_analytics_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exercise_8_text_analytics_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exercise_8_text_analytics_files/libs/bootstrap/bootstrap-7f8d28353e1b7aed8a50cdb71f958a5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exercise 8: Text analytics and machine learning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="case-understanding-movie-reviews" class="level1">
+<h1>Case: Understanding movie reviews</h1>
+<p>You are a data analyst working for <strong>ReviewSense</strong>, a fictional analytics team that supports a streaming platform. The platform collects many user reviews for movies and series. Management wants to understand whether text analytics can help to classify reviews as positive or negative and to identify semantically similar reviews.</p>
+<p>The central question in this notebook is:</p>
+<blockquote class="blockquote">
+<p>How do different text representations change what we can compare, visualize, and predict?</p>
+</blockquote>
+<p>We use a small public sample of the <strong>IMDB movie review sentiment dataset</strong>. The dataset contains movie reviews with binary sentiment labels. For this exercise, the course repository should contain a prepared subset:</p>
+<pre class="text"><code>data/imdb_reviews_sample.csv</code></pre>
+<p>Expected columns:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>review</code></td>
+<td>review text</td>
+<td>text</td>
+</tr>
+<tr class="even">
+<td><code>sentiment</code></td>
+<td>sentiment label: <code>positive</code> or <code>negative</code></td>
+<td>categorical</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Dataset note">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Dataset note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use a local course copy of the IMDB sample rather than downloading the full dataset during class. This makes the exercise more reliable and keeps the focus on representation, similarity, visualization, and prediction. A small sample of 1,000–3,000 reviews is sufficient for this exercise.</p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="part-1-case-and-dataset" class="level1">
+<h1>Part 1: Case and dataset <a id="part-1" href=""></a></h1>
+<section id="task-1.1-load-and-inspect-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.1-load-and-inspect-the-dataset">Task 1.1 — Load and inspect the dataset</h2>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<div id="968b350a" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/imdb_reviews_sample.csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="24ca5043" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"sentiment"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected answers:</p>
+<ol type="1">
+<li>The unit of observation is one movie review.</li>
+<li>The target variable is <code>sentiment</code>.</li>
+<li>The relevant information is unstructured text rather than already separated numeric or categorical columns.</li>
+<li>Standard machine-learning models require numeric inputs. The review text must first be transformed into numerical features.</li>
+</ol>
+</section>
+<section id="task-1.2-prepare-text-labels-and-a-train-test-split" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.2-prepare-text-labels-and-a-train-test-split">Task 1.2 — Prepare text, labels, and a train-test split</h2>
+</section>
+<section id="solution-1" class="level2">
+<h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
+<div id="0dba0d79" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">"review"</span>, <span class="st">"sentiment"</span>]).copy()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Many IMDB review exports contain HTML line breaks such as &lt;br /&gt;.</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># This light cleaning keeps the task simple but removes a common artifact.</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"clean_review"</span>] <span class="op">=</span> (</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">"review"</span>]</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">str</span>.replace(<span class="vs">r"&lt;br</span><span class="dv">\s</span><span class="op">*</span><span class="vs">/</span><span class="op">?</span><span class="vs">&gt;"</span>, <span class="st">" "</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">str</span>.replace(<span class="vs">r"</span><span class="dv">\s</span><span class="op">+</span><span class="vs">"</span>, <span class="st">" "</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">str</span>.strip()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"label"</span>] <span class="op">=</span> df[<span class="st">"sentiment"</span>].<span class="bu">map</span>({<span class="st">"negative"</span>: <span class="dv">0</span>, <span class="st">"positive"</span>: <span class="dv">1</span>})</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[<span class="st">"clean_review"</span>]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"label"</span>]</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    X,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    y,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    random_state<span class="op">=</span><span class="dv">42</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    stratify<span class="op">=</span>y,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train.shape, X_test.shape)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_train.value_counts(normalize<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_test.value_counts(normalize<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-2-sparse-text-representations" class="level1">
+<h1>Part 2: Sparse text representations <a id="part-2" href=""></a></h1>
+<section id="task-2.1-create-bag-of-words-and-tf-idf-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="task-2.1-create-bag-of-words-and-tf-idf-matrices">Task 2.1 — Create Bag-of-Words and TF-IDF matrices</h2>
+</section>
+<section id="solution-2" class="level2">
+<h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
+<div id="2e5470aa" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer, TfidfVectorizer</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>count_vectorizer <span class="op">=</span> CountVectorizer(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    stop_words<span class="op">=</span><span class="st">"english"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">5000</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>X_train_bow <span class="op">=</span> count_vectorizer.fit_transform(X_train)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>X_test_bow <span class="op">=</span> count_vectorizer.transform(X_test)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>tfidf_vectorizer <span class="op">=</span> TfidfVectorizer(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    stop_words<span class="op">=</span><span class="st">"english"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">5000</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    min_df<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>X_train_tfidf <span class="op">=</span> tfidf_vectorizer.fit_transform(X_train)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>X_test_tfidf <span class="op">=</span> tfidf_vectorizer.transform(X_test)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>sparsity <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> (X_train_tfidf.nnz <span class="op">/</span> (X_train_tfidf.shape[<span class="dv">0</span>] <span class="op">*</span> X_train_tfidf.shape[<span class="dv">1</span>]))</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bag-of-Words shape:"</span>, X_train_bow.shape)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"TF-IDF shape:"</span>, X_train_tfidf.shape)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"TF-IDF sparsity:"</span>, <span class="bu">round</span>(sparsity, <span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>The number of rows corresponds to the number of training reviews.</li>
+<li>The number of columns corresponds to the vocabulary retained by the vectorizer.</li>
+<li>A high sparsity value means that most document-feature combinations are zero. This is typical for classical text representations.</li>
+</ul>
+</section>
+<section id="task-2.2-inspect-sparse-features-for-one-review" class="level2">
+<h2 class="anchored" data-anchor-id="task-2.2-inspect-sparse-features-for-one-review">Task 2.2 — Inspect sparse features for one review</h2>
+</section>
+<section id="solution-3" class="level2">
+<h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
+<div id="a168b8c9" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>review_id <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>feature_names <span class="op">=</span> np.array(tfidf_vectorizer.get_feature_names_out())</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> X_train_tfidf[review_id].toarray().ravel()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>top_positions <span class="op">=</span> row.argsort()[::<span class="op">-</span><span class="dv">1</span>][:<span class="dv">15</span>]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>top_features <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"feature"</span>: feature_names[top_positions],</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tfidf"</span>: row[top_positions],</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>display(X_train.iloc[review_id])</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>display(top_features)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A good answer should recognize that TF-IDF features are interpretable because they correspond to words or short phrases. However, they mainly show lexical signals. They do not fully capture context, irony, negation, or meaning beyond word occurrence.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-2.3-find-similar-reviews-using-tf-idf" class="level2">
+<h2 class="anchored" data-anchor-id="task-2.3-find-similar-reviews-using-tf-idf">Task 2.3 — Find similar reviews using TF-IDF</h2>
+</section>
+<section id="solution-4" class="level2">
+<h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
+<div id="c663da03" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>similarities <span class="op">=</span> cosine_similarity(X_train_tfidf[query_id], X_train_tfidf).ravel()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>top_ids <span class="op">=</span> similarities.argsort()[::<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>:<span class="dv">6</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>similar_reviews_tfidf <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"similarity"</span>: similarities[top_ids],</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sentiment"</span>: y_train.iloc[top_ids].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">"negative"</span>, <span class="dv">1</span>: <span class="st">"positive"</span>}).values,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: X_train.iloc[top_ids].values,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query review:"</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train.iloc[query_id])</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query sentiment:"</span>, <span class="st">"positive"</span> <span class="cf">if</span> y_train.iloc[query_id] <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="st">"negative"</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>display(similar_reviews_tfidf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>TF-IDF similarity is often driven by shared words and phrases.</li>
+<li>Retrieved reviews may be similar in topic or wording, but not necessarily in deeper meaning.</li>
+<li>Sparse similarity can be useful, but it is limited when two texts express similar ideas with different words.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-3-dense-representations" class="level1">
+<h1>Part 3: Dense representations <a id="part-3" href=""></a></h1>
+<section id="task-3.1-create-sentence-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-3.1-create-sentence-embeddings">Task 3.1 — Create sentence embeddings</h2>
+</section>
+<section id="solution-5" class="level2">
+<h2 class="anchored" data-anchor-id="solution-5">Solution</h2>
+<div id="6ef0065b" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sentence_transformers <span class="im">import</span> SentenceTransformer</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>embedding_model <span class="op">=</span> SentenceTransformer(<span class="st">"all-MiniLM-L6-v2"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>X_train_emb <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    X_train.tolist(),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    show_progress_bar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>X_test_emb <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    X_test.tolist(),</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    show_progress_bar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training embeddings:"</span>, X_train_emb.shape)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test embeddings:"</span>, X_test_emb.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>With <code>all-MiniLM-L6-v2</code>, each review is represented by a 384-dimensional vector.</li>
+<li>The representation is dense because most values are non-zero.</li>
+<li>The dimensions are learned features rather than directly named words, so they are less transparent than TF-IDF columns.</li>
+</ul>
+</section>
+<section id="task-3.2-find-similar-reviews-using-dense-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-3.2-find-similar-reviews-using-dense-embeddings">Task 3.2 — Find similar reviews using dense embeddings</h2>
+</section>
+<section id="solution-6" class="level2">
+<h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
+<div id="d7d368a5" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>similarities_dense <span class="op">=</span> cosine_similarity(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    X_train_emb[query_id].reshape(<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    X_train_emb,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>).ravel()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>top_ids_dense <span class="op">=</span> similarities_dense.argsort()[::<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>:<span class="dv">6</span>]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>similar_reviews_dense <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"similarity"</span>: similarities_dense[top_ids_dense],</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sentiment"</span>: y_train.iloc[top_ids_dense].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">"negative"</span>, <span class="dv">1</span>: <span class="st">"positive"</span>}).values,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: X_train.iloc[top_ids_dense].values,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query review:"</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train.iloc[query_id])</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query sentiment:"</span>, <span class="st">"positive"</span> <span class="cf">if</span> y_train.iloc[query_id] <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="st">"negative"</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>display(similar_reviews_dense)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<p>Dense embeddings often retrieve reviews that are similar in overall meaning even if they do not share many exact words. However, dense similarity is not identical to sentiment similarity. Two reviews can be semantically close because they discuss similar topics, genres, actors, or plot elements, while still expressing different evaluations.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-3.3-visualize-dense-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-3.3-visualize-dense-embeddings">Task 3.3 — Visualize dense embeddings</h2>
+</section>
+<section id="solution-7" class="level2">
+<h2 class="anchored" data-anchor-id="solution-7">Solution</h2>
+<div id="5f7c66e0" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sample_size <span class="op">=</span> <span class="bu">min</span>(<span class="dv">500</span>, <span class="bu">len</span>(df))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>sample_df <span class="op">=</span> df.sample(n<span class="op">=</span>sample_size, random_state<span class="op">=</span><span class="dv">42</span>).copy()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>sample_embeddings <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    sample_df[<span class="st">"review"</span>].tolist(),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    show_progress_bar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> pca.fit_transform(sample_embeddings)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>sample_df[<span class="st">"dim_1"</span>] <span class="op">=</span> coords[:, <span class="dv">0</span>]</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>sample_df[<span class="st">"dim_2"</span>] <span class="op">=</span> coords[:, <span class="dv">1</span>]</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    sample_df[<span class="st">"dim_1"</span>],</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    sample_df[<span class="st">"dim_2"</span>],</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>sample_df[<span class="st">"label"</span>],</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.65</span>,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"PCA dimension 1"</span>)</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"PCA dimension 2"</span>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Dense review embeddings reduced to two dimensions"</span>)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>There may be some separation, but do not expect a perfect positive/negative split.</li>
+<li>The plot may reveal topic-based or style-based neighborhoods as well as sentiment-related patterns.</li>
+<li>PCA compresses hundreds of dimensions into two dimensions, so the plot is only a simplified view of the embedding space.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-4-classification" class="level1">
+<h1>Part 4: Classification <a id="part-4" href=""></a></h1>
+<section id="task-4.1-train-a-classifier-on-tf-idf-features" class="level2">
+<h2 class="anchored" data-anchor-id="task-4.1-train-a-classifier-on-tf-idf-features">Task 4.1 — Train a classifier on TF-IDF features</h2>
+</section>
+<section id="solution-8" class="level2">
+<h2 class="anchored" data-anchor-id="solution-8">Solution</h2>
+<div id="a6594dcf" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>tfidf_clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>tfidf_clf.fit(X_train_tfidf, y_train)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>y_pred_tfidf <span class="op">=</span> tfidf_clf.predict(X_test_tfidf)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>tfidf_train_time <span class="op">=</span> time.time() <span class="op">-</span> start_time</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>tfidf_accuracy <span class="op">=</span> accuracy_score(y_test, y_pred_tfidf)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accuracy:"</span>, <span class="bu">round</span>(tfidf_accuracy, <span class="dv">3</span>))</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training time:"</span>, <span class="bu">round</span>(tfidf_train_time, <span class="dv">3</span>), <span class="st">"seconds"</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred_tfidf, target_names<span class="op">=</span>[<span class="st">"negative"</span>, <span class="st">"positive"</span>]))</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_test, y_pred_tfidf))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A good interpretation should note that TF-IDF combined with logistic regression is often a strong baseline for sentiment classification. It is relatively interpretable because features correspond to words or phrases, and coefficients can be inspected.</p>
+</section>
+<section id="task-4.2-train-a-classifier-on-dense-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-4.2-train-a-classifier-on-dense-embeddings">Task 4.2 — Train a classifier on dense embeddings</h2>
+</section>
+<section id="solution-9" class="level2">
+<h2 class="anchored" data-anchor-id="solution-9">Solution</h2>
+<div id="62287a5c" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dense_clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>dense_clf.fit(X_train_emb, y_train)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>y_pred_dense <span class="op">=</span> dense_clf.predict(X_test_emb)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>dense_train_time <span class="op">=</span> time.time() <span class="op">-</span> start_time</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>dense_accuracy <span class="op">=</span> accuracy_score(y_test, y_pred_dense)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accuracy:"</span>, <span class="bu">round</span>(dense_accuracy, <span class="dv">3</span>))</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training time:"</span>, <span class="bu">round</span>(dense_train_time, <span class="dv">3</span>), <span class="st">"seconds"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred_dense, target_names<span class="op">=</span>[<span class="st">"negative"</span>, <span class="st">"positive"</span>]))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_test, y_pred_dense))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<p>The dense model may perform better, worse, or similarly depending on the dataset size, model, and preprocessing. Generic pretrained embeddings are useful because they encode semantic information, but TF-IDF can be very competitive for supervised sentiment classification. The important learning outcome is not that dense vectors always win, but that they represent texts differently.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-4.3-compare-sparse-and-dense-models" class="level2">
+<h2 class="anchored" data-anchor-id="task-4.3-compare-sparse-and-dense-models">Task 4.3 — Compare sparse and dense models</h2>
+</section>
+<section id="solution-10" class="level2">
+<h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
+<div id="2a76c30c" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"representation"</span>: [<span class="st">"TF-IDF"</span>, <span class="st">"Dense embeddings"</span>],</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"accuracy"</span>: [tfidf_accuracy, dense_accuracy],</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"training_time_seconds"</span>: [tfidf_train_time, dense_train_time],</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A possible interpretation:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>TF-IDF + logistic regression</th>
+<th>Dense embeddings + logistic regression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Accuracy</td>
+<td>Often strong for sentiment</td>
+<td>Often strong, but not automatically better</td>
+</tr>
+<tr class="even">
+<td>Training time</td>
+<td>Usually fast</td>
+<td>Embedding creation may be slower</td>
+</tr>
+<tr class="odd">
+<td>Feature interpretability</td>
+<td>High</td>
+<td>Lower</td>
+</tr>
+<tr class="even">
+<td>Captures exact words</td>
+<td>Yes</td>
+<td>Less directly</td>
+</tr>
+<tr class="odd">
+<td>Captures semantic similarity</td>
+<td>Limited</td>
+<td>Stronger</td>
+</tr>
+<tr class="even">
+<td>Suitable baseline?</td>
+<td>Yes</td>
+<td>Yes, especially for semantic tasks</td>
+</tr>
+</tbody>
+</table>
+<p>The comparison should emphasize trade-offs rather than a single winner.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-5-edge-cases-and-reflection" class="level1">
+<h1>Part 5: Edge cases and reflection <a id="part-5" href=""></a></h1>
+<section id="task-5.1-predict-edge-cases" class="level2">
+<h2 class="anchored" data-anchor-id="task-5.1-predict-edge-cases">Task 5.1 — Predict edge cases</h2>
+</section>
+<section id="solution-11" class="level2">
+<h2 class="anchored" data-anchor-id="solution-11">Solution</h2>
+<div id="dcac73b9" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>edge_cases <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: [</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"This movie was sick in the best possible way."</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"This movie made me sick."</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Not bad at all."</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"A masterpiece? Not really."</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"The acting was fine, but the story went nowhere."</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"I expected more."</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"The plot was unpredictable and surprisingly moving."</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"I would not say it is a bad movie."</span>,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"expected_sentiment"</span>: [</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"positive"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"negative"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"positive"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"negative"</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"negative"</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"negative"</span>,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"positive"</span>,</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"positive_or_ambiguous"</span>,</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>label_map <span class="op">=</span> {<span class="dv">0</span>: <span class="st">"negative"</span>, <span class="dv">1</span>: <span class="st">"positive"</span>}</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>edge_tfidf <span class="op">=</span> tfidf_vectorizer.transform(edge_cases[<span class="st">"review"</span>])</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>edge_cases[<span class="st">"tfidf_prediction"</span>] <span class="op">=</span> pd.Series(</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    tfidf_clf.predict(edge_tfidf)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>).<span class="bu">map</span>(label_map)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>edge_emb <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    edge_cases[<span class="st">"review"</span>].tolist(),</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>edge_cases[<span class="st">"dense_prediction"</span>] <span class="op">=</span> pd.Series(</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    dense_clf.predict(edge_emb)</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>).<span class="bu">map</span>(label_map)</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>edge_cases</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>Negation, irony, slang, and understatement can be difficult.</li>
+<li>TF-IDF may rely heavily on visible sentiment words such as <code>bad</code>, <code>sick</code>, or <code>masterpiece</code>.</li>
+<li>Dense embeddings may better capture some paraphrases, but they can also fail when the sentence is short, ironic, or context-dependent.</li>
+<li>The synthetic examples are useful for qualitative failure analysis, not for measuring general performance.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-5.2-reflection-from-words-to-meaning-to-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="task-5.2-reflection-from-words-to-meaning-to-prediction">Task 5.2 — Reflection: From words to meaning to prediction</h2>
+</section>
+<section id="solution-12" class="level2">
+<h2 class="anchored" data-anchor-id="solution-12">Solution</h2>
+<p>Possible answers:</p>
+<ol type="1">
+<li><p>Sparse representations make lexical patterns visible. They show which words or phrases appear in documents and are relatively interpretable.</p></li>
+<li><p>Dense representations make semantic neighborhoods visible. Texts can be close even when they do not share many exact words.</p></li>
+<li><p>A company might prefer TF-IDF when interpretability, speed, simplicity, and low infrastructure costs matter. TF-IDF is also a strong baseline for many supervised text-classification tasks.</p></li>
+<li><p>Dense embeddings may be preferable when semantic similarity, paraphrases, retrieval, clustering, or transfer to new but related texts are important.</p></li>
+<li><p>Before deployment, one should check performance on recent and domain-specific data, subgroup differences, false-positive and false-negative costs, data privacy, retraining needs, model monitoring, and how model outputs will affect organizational decisions.</p></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="wrap-up" class="level1">
+<h1>Wrap-up <a id="wrap-up" href=""></a></h1>
+<div class="callout callout-style-default callout-tip callout-titled" title="Session 8 survey">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Session 8 survey
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you wrap up, please complete the Session 8 survey here: <a href="https://forms.gle/hNuAD8UZvC8KYo4a8" target="_blank">https://forms.gle/hNuAD8UZvC8KYo4a8</a>. Thank you 🙏</p>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
