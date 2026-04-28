@@ -17,6 +17,12 @@ https://www.youtube.com/watch?v=IHZwWFHWa-w
 https://www.youtube.com/watch?v=Ilg3gGewQ5U
 
 
+Comprehensive resource (formal specification and implementation): https://d2l.ai/index.html
+
+TBD/whether and where to cover:
+Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.
+Apply large language models or other scalable methods to extract, classify, or summarize unstructured data.
+TBD: API Keys?!
 :::
 
 

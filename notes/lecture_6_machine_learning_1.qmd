@@ -82,6 +82,9 @@ Announce that we will treat ML algorithms as black boxes for now (except for usi
 They all have to be implemented according to the same workflow.
 
 <!--
+
+https://learningds.org/ch/16/ms_intro.html
+
 Feature engineering:
 https://www.kaggle.com/learn/feature-engineering
 
@@ -91,4 +94,6 @@ https://courses.cs.washington.edu/courses/cse446/26sp/schedule/lectures/05-train
 Exercises in jupyter:
 https://github.com/intro-stat-learning/ISLP_labs/
 https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
+
+https://inria.github.io/scikit-learn-mooc/python_scripts/02_numerical_pipeline_cross_validation.html
 -->

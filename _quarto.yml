@@ -23,6 +23,8 @@ website:
         href: preparation.qmd
       - text: "Evaluations"
         href: evaluations.qmd
+      - text: "News"
+        href: news.qmd
       - text: '{{< iconify hugeicons:github-01 title="GitHub" label="GitHub" >}}'
         href: "https://github.com/fs-ise/analytics-and-big-data"
         target: _blank

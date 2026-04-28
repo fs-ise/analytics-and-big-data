@@ -14,6 +14,10 @@ format: html
 Lectures
 https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
 
+TODO: better prepare the explanation of decision trees (entropy, information gain) (see https://www.cs.cmu.edu/~aarti/Class/10315_Fall20/recs/DecisionTreesBoostingExampleProblem.pdf)  
+TODO: check regression trees carefully  
+TODO: prepare explanation and visualization of SVMs (on the slides)
+
 :::
 
 ## Supervised ML
@@ -374,3 +378,7 @@ The kernel trick makes nonlinear patterns **linearly separable in a transformed 
 TODO: add to exercise:
 If a model is trained on scaled data, it will only work with scaled data. Note, that the scaling
 must be exactly the same as for the training data. Thus, it is necessary, to keep the scaler.
+
+<!--
+https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
+-->

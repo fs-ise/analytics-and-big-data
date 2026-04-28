@@ -3,15 +3,35 @@ title: "Exercise 9: Big data II"
 ---
 
 ::: {.learning-objectives}
-Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.
-Apply large language models or other scalable methods to extract, classify, or summarize unstructured data.
-:::
-
-::: callout-note
 TODO
-
-TBD: API Keys?!
 :::
+
+
+## Part 1: by-hand calculation:
+
+
+https://www.ismll.uni-hildesheim.de/lehre/ml-19w/exercises/tutorial07.pdf
+
+
+
+
+## Part 2: interactive playground
+
+insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises
+-> even if all inputs are 0, the output can be non-zero. (due to biases)
+
+Generally: 
+https://playground.tensorflow.org/
+-> check different datasets!
+
+
+
+## Part 3: Code reading and best practices in modeling
+
+- sklearn vs pytorch
+- examples with architecture choices/understanding
+
+
 
 ## Exam prep
 
