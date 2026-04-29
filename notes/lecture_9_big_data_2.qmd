@@ -25,6 +25,14 @@ Apply large language models or other scalable methods to extract, classify, or s
 TBD: API Keys?!
 :::
 
+## Introductory comments
+
+NN : very inspiring class of models and algorithms, which model how nature solves particular problems. NN: brain, but also: genetic algorithms, or ant algorithms for search problems.
+
+Maybe start with something like:
+https://web.stanford.edu/~jurafsky/slp3/slides/nn25aug.pdf
+
+
 
 ## Survey
 

@@ -20,15 +20,6 @@ TODO: prepare explanation and visualization of SVMs (on the slides)
 
 :::
 
-## Supervised ML
-
-![](../images/programming_vs_ml.png){width=600px fig-align=center}
-
-- Start by sketching the two process boxes
-- Illustrate what "classical programming" means: manually codifying all conditions and special cases to make the prediction
-- Ask students what the input/output is
-- Highlight for machine learning: at training time, to make predictions, we will use the rules in the sense of classical programming
-
 ## Decision trees
 
 https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8

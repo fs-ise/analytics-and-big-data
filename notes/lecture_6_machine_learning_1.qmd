@@ -47,18 +47,41 @@ Check which topics were selected by groups, identify potential overlap and guide
 
 ## Supervised ML
 
-Add illustration like https://blog.infocruncher.com/2023/02/17/ml-training/
-- Classical programming: rules + data -> answers
-- Supervised ML: data + answers -> rules
+![](../images/programming_vs_ml.png){width=600px fig-align=center}
+
+- Start by sketching the two process boxes
+- Illustrate what "classical programming" means: manually codifying all conditions and special cases to make the prediction
+- Ask students what the input/output is
+- Highlight for machine learning: at training time, to make predictions, we will use the rules in the sense of classical programming
+
+Reminder: In the earlier lectures, we already saw appropriate evaluation measures (confusion matrix, F1, ... for classification, $R^2$ for regression)
+
+Highlight: The *objective function* typically includes a *loss function* (e.g., RSS in OLS) that quantifies how well or poorly the model fits the observed data. (May also include regularization terms)
+
 
 ## Bias-Variance tradeoff
 
 Variance: draw many training datasets from the population, train the model on each one, analyze fluctuation in predictions
 
+## Generalization Problem
+
+**Question** (go back to the supervised-ML slide showing “Dataset + Learning algorithm (model class + objective + optimizer) → predictive model”):
+How can we improve *generalization* (performance on unseen data)?
+
+- Use train/test splits (or cross-validation) to evaluate generalization performance
+- Control model complexity through regularization by modifying the objective/loss function
+   (e.g., penalizing too many features or overly complex nonlinear relationships)
+
+Emphasize the objective-function connection mathematically:
+
+$$\min_{\theta}; \text{Loss}(\theta) + \lambda \cdot \text{Complexity}(\theta)$$
+
+That equation often helps students understand that regularization literally changes the optimization target.
+
+
 ## Training/Test data
 
-Highlight: tabular data (features in rows). Only for deep learning, unstructured data can be used as an input (learns pattersn automatically)
-
+Highlight: tabular data (features in rows). Only for deep learning, unstructured data can be used as an input (learns patterns automatically)
 
 ## Problems with fixed training and test samples
 
@@ -72,6 +95,22 @@ Optimizing the model training: refers to
 Problem: the test data does not remain "unseen"
 
 “Endogenization of the test data” means that the test set—supposed to be an external, independent benchmark—becomes internally involved in the model-building process.
+
+
+## Selection bias
+
+> **Model-selection bias** occurs when a model appears better simply because many hyperparameter configurations were tried and the best-performing one was selected.
+
+Grid search and cross-validation reduce the risk of selecting a hyperparameter setting that only performs well on a single accidental split of the data.
+
+- **Grid search** explores different hyperparameter configurations systematically.
+- **Cross-validation** evaluates each configuration robustly across multiple train/validation splits.
+
+Key point:
+
+- Grid search performs **model selection**.
+- Cross-validation provides a more reliable estimate of **generalization performance** during that selection process.
+- A final untouched test set helps address remaining model-selection bias.
 
 ## Exercises
 
