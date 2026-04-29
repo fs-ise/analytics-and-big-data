@@ -3,7 +3,7 @@ project:
   output-dir: ../_site/exercises   # base (will be overridden by profiles)
   title: Exercises
 
-bibliography: ../assets/references.bib
+bibliography: ../references.bib
 csl: ../assets/apa.csl
 
 filters:

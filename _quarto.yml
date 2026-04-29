@@ -39,7 +39,7 @@ format:
     toc: false
     number-sections: false
 
-bibliography: assets/references.bib
+bibliography: references.bib
 csl: assets/apa.csl
 
 filters:
