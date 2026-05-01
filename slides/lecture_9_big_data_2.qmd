@@ -6,8 +6,6 @@ session: "Session 9"
 date: "2026-05-04"
 ---
 
-https://jose.theoj.org/papers/10.21105/jose.00042
-
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
@@ -22,181 +20,194 @@ https://jose.theoj.org/papers/10.21105/jose.00042
 :::
 
 
-good MIT intro:
-https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L1.pdf
-
-https://aaubs.github.io/ds23/en/m3/01_intro-to-traditional-dl/
-
-Maybe: https://github.com/microsoft/ai-for-beginners
-
-Check: https://playground.tensorflow.org/
-
-
 TODO: must address these questisons:
+
 - To what extent do neural networks reduce the need for manual feature engineering?
 - Distinguish "Recurrent Neural Networks, Convolutional Neural Networks, Feedforward Neural Networks" 
-
-
-# TODO {data-stack-name="TODO"}
-
-
-TBD: broad group work and presentations? (-> TBD: how to make that relevant/documented for the exam??)
-
-
-# Neural Networks {data-stack-name="Neural Networks"}
 
 TODO: The "simple calculation example" in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and "cost nudges").
 Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.
 
-## Functionality of Human Neurons
+# Foundations {data-stack-name="Foundations"}
 
-![](../images/slides_251.png)
+## From biological neurons to artificial neural networks
 
-![](../images/slides_252.png)
+<br>
 
-> **A Look into the Nervous System**
+![](../images/neuron.jpeg){fig-align=center width=40%}
 
-> **Design of a Neuron**
+<!--
+https://pressbooks.cuny.edu/sensationandperception/chapter/how-neurons-work/
+-->
 
+**Key milestones**
 
+- **1943** (Warren McCulloch & Walter Pitts) — Mathematical model of artificial neurons
+- **1958** (Frank Rosenblatt) — Development of the *Perceptron*
+- **2010s** (Geoffrey Hinton, Yann LeCun & Yoshua Bengio) — Revival of modern deep learning
+- **2020s** (GPT models, OpenAI) — Emergence and widespread adoption of large language models (LLMs) and multimodal AI systems
 
-## An Easy Example (I)
+::: notes
+Highlight: multimodal AI (big-data) is closely connected to neural networks
 
+Inputs correspond to dendrites, outputs to axons
 
-> **f(x) = Activation function**
+The foundations of neural networks were developed 80 years ago.
+Why did we have to wait for the AI breakthroughs for so long?
 
-> e.g.
+-> AI-Winters: 1974-1980, 1987-1993
 
-> where t = Stimulus threshold
-
-
-## An Easy Example (II)
-
-> **f(x) = Activation function**
-
-> e.g.
-
-> where t = Stimulus threshold
-
-
-## Functionality of a Neuron
-
-![](../images/slides_253.jpg)
+-> availability of computing power and data (next slide) 
+:::
 
 
-> For the case of n inputs, we can rewrite the neuron's function to
+## Performance of machine learning and neural networks
 
-> with b = -t. b is known as the perceptron's bias. The result of this function would then be fed into an activation function to produce a labeling.
+::: columns
 
-![](../images/slides_254.png)
+:::: {.column width="50%"}
+<br><br>
+![](../images/neural_networks_performance_comparison_data.png){fig-align=center width=90%}
 
-> This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.
+::::
+
+:::: {.column width="50%"}
+
+**Key drivers of recent progress in neural networks**
+
+- Availability of large-scale datasets
+- Increasing computational power (especially GPUs/TPUs)
+- Advances in algorithms and neural network architectures
+- Specialization of neural networks:
+
+    - Convolutional Neural Networks (CNNs) for image and video recognition
+    - Recurrent Neural Networks (RNNs) for sequential and time-series data
+    - Transformers for language processing and generative AI
+    - Graph Neural Networks (GNNs) for network and relational data
+    - Diffusion Models for image and media generation
+
+::::
+
+:::
 
 ::: aside
-— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks
+In small-data regimes, experiments are needed to identify algorithms that perform best for a given dataset.
 :::
 
-
-
-
-## The Multilayer Perceptron
-
-> The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.
-
-> **Input Neurons**: receive signals from the outer world.
-
-> **Hidden Neurons**: have an internal representation of the outer world.
-
-> **Output Neurons**: pass signals to the outer world.
-
-
-
-
-## Types of Activation Functions
-
-> A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:
-
-- tangens
-- hyperbolicus
-- logistic function (sigmoid)
-
-
-
-
-## Design of a Multilayer Perceptron
-
-![](../images/slides_319.png)
-
-::: aside
-— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+::: notes
+TPU: Tensor processing unit (for matrix and tensor operations in AI)
 :::
 
+## Architecture of a neural network
 
-![](../images/slides_320.png)
+TODO...
 
-::: aside
-— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
-:::
-
+    ## An Easy Example (I)
 
 
+    > **f(x) = Activation function**
 
-# From analytics to (autonomous) action
+    > e.g.
 
-Focusing more and more on systems that act autonomously (e..g, reinforcement, ...)
-
-
-## Reinforcement Learning
-
-> The solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.
-
-> Supervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.
-
-> For example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.
-
-> Unfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.
-
-> For these cases there exist a different approach known as reinforcement learning.
+    > where t = Stimulus threshold
 
 
+    ## An Easy Example (II)
+
+    > **f(x) = Activation function**
+
+    > e.g.
+
+    > where t = Stimulus threshold
 
 
-## Reinforcement Learning
+    ## Functionality of a Neuron
 
-![](../images/slides_211.jpg)
-
-> The agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward.
+    ![](../images/slides_253.jpg)
 
 
+    > For the case of n inputs, we can rewrite the neuron's function to
 
+    > with b = -t. b is known as the perceptron's bias. The result of this function would then be fed into an activation function to produce a labeling.
 
-## AlphaGo
+    ![](../images/slides_254.png)
 
-> Go is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.
+    > This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.
 
-> The core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.
-
-> A newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.
-
-::: {.notes}
-
-Chess 2^64 legal positions, Go 2^120!!!
-
-:::
+    ::: aside
+    — Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks
+    :::
 
 
 
 
-## Libratus
+    ## The Multilayer Perceptron
 
-> An artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.
+    > The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.
 
-> Poker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.
+    > **Input Neurons**: receive signals from the outer world.
 
-> “We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy.
+    > **Hidden Neurons**: have an internal representation of the outer world.
+
+    > **Output Neurons**: pass signals to the outer world.
 
 
 
+
+    ## Types of Activation Functions
+
+    > A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:
+
+    - tangens
+    - hyperbolicus
+    - logistic function (sigmoid)
+
+
+
+
+    ## Design of a Multilayer Perceptron
+
+    ![](../images/slides_319.png)
+
+    ::: aside
+    — Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+    :::
+
+
+    ![](../images/slides_320.png)
+
+    ::: aside
+    — Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
+    :::
+
+
+# Design and training of neural networks {data-stack-name="Design and training"}
+
+TODO: understand where clear default choices exist and where tuning and experimentation is necessary
+
+## Decisions / Process
+
+## Choice of architecture
+
+## Tuning/Experimentation
+
+## Python code example
+
+
+# Specialized NNs {data-stack-name="Specialized NNs"}
+
+## CNN
+
+.. How images are processsed
+
+## RNN
+
+..How text of different lengths is processed
+
+## Transformers
+
+
+<!--
 
 ## Types of Artificial Intelligence
 
@@ -207,8 +218,6 @@ Chess 2^64 legal positions, Go 2^120!!!
 > Well-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E.
 
 
-
-
 ## ChatGPT
 
 > ChatGPT is a generative AI that produces human-like text and communicates with humans.
@@ -216,9 +225,6 @@ Chess 2^64 legal positions, Go 2^120!!!
 > The "GPT" in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.
 
 > GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.
-
-
-
 
 ## ChatGPT - Approach
 
@@ -231,26 +237,14 @@ Chess 2^64 legal positions, Go 2^120!!!
 ![](../images/slides_217.png)
 
 
-
-
-## ChatGPT - Semantic Spaces (I)
-
-![](../images/slides_218.png)
-
-
-
-
-## ChatGPT - Semantic Spaces (II)
-
-![](../images/slides_176_new.png)
-
-
-
-
 ## ChatGPT - Evaluation Component
 
 ![](../images/slides_220.png)
+-->
 
+
+
+# TODO: add as reference material: https://www.youtube.com/watch?v=aircAruvnKk
 
 
 ## Survey: Session 9 {data-state="hide-menubar"}

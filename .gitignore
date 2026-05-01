@@ -14,4 +14,7 @@ _freeze/
 slides/.jupyter_cache/
 slides/cache/
 
+.jupyter_cache/
+exercises/.jupyter_cache/
+
 *_files/

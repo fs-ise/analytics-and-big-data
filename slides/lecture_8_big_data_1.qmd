@@ -4,6 +4,8 @@ subtitle: "Big data I"
 section_label: "Analytical modeling"
 session: "Session 8"
 date: "2026-05-04"
+nocite: |
+  @ManningSchutze1999
 ---
 
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
@@ -466,7 +468,9 @@ This helps transition from technical analytics to organizational capability. Fir
 
 # Architecture {data-stack-name="Architecture"}
 
-# TODO: data lake vs data warehouse as alternative architectures? clarify the difference!
+## TODO: data lake vs data warehouse as alternative architectures? clarify the difference!
+
+TODO
 
 ## Limitations of the Data Warehouse Approach
 
@@ -584,14 +588,120 @@ Aggregation is done just in time. Thus, the schema of the data warehouse is just
 :::
 
 
+
+
+
+
+
 # Text analytics {data-stack-name="Text analytics"}
 
+## Text analytics
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+The vast majority of global data is stored in unstructured formats.
+For example:
+
+- emails and internal communication
+- customer support tickets
+- meeting notes and reports
+- product reviews and social media posts
+- annual reports and corporate filings
+- contracts and legal documents
+- job descriptions and résumés
+- scientific and market research reports
+- CRM notes and sales reports
+- helpdesk and incident reports
+
+:::
+
+::: {.column width="50%"}
+**Text analytics** combines methods from natural language processing, machine learning, information retrieval, and statistics to systematically analyze large volumes of textual data and derive actionable insights.
+
+![](../images/text_analytics.png){width=70%}
+
+:::
+
+::::
+
+::: aside
+*Text mining* is often viewed as a subset of the broader field of text analytics, emphasizing the discovery of previously unknown patterns in textual data.
+Here, we use the broader term *text analytics*.
+:::
+
+## Application areas
+
+![](../images/text_analytics_applications.png){fig-align=center width=75%}
+
+## Text preprocessing
+
+:::: {.columns}
+
+::: {.column width="80%"}
 TODO: structure: see "Text representation pipeline" note (obsidian)
 
-https://github.com/iam-salma/NLP-Bootcamp-with-python
+show an example of python (regex)?
 
-### Paradigm 1: Sparse Representations (Classical NLP)
+TBD: concept of "noise"?
 
+:::
+
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 15.5%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 16.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
+
+<!--
+
+![](../images/text_analytics_pipeline.png)
+-->
+
+
+## Feature Generation Paradigm 1: Sparse Representations (Classical NLP)
+
+:::: {.columns}
+
+::: {.column width="80%"}
 * Core challenge: *How do we turn text into analyzable data?*
 
 * Basic pipeline:
@@ -602,8 +712,52 @@ https://github.com/iam-salma/NLP-Bootcamp-with-python
 * Use case: classification (e.g., sentiment analysis)
 * Key idea: *text → structured matrix → prediction*
 
+:::
 
-### Paradigm 2: Dense Representations (Embeddings)
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
+
+
+## Feature Generation Paradigm 2: Dense Representations (Embeddings)
 
 * Motivation: capture **semantic meaning**
 
@@ -619,7 +773,7 @@ https://github.com/iam-salma/NLP-Bootcamp-with-python
 
 * Key shift: *better features, same analytics logic*
 
-### Paradigm 3: AI-Assisted Analytics (LLMs & Systems)
+## Feature Generation Paradigm 3: AI-Assisted Analytics (LLMs & Systems)
 
 * Embeddings as foundation for systems:
 
@@ -639,7 +793,7 @@ https://github.com/iam-salma/NLP-Bootcamp-with-python
 
 * Key shift: *model integrates feature extraction + prediction*
 
-### 5. Comparison & Analytical Perspective
+## Feature Generation Paradigms: Comparison & Analytical Perspective
 
 * Three ways to turn text into insights:
 
@@ -651,7 +805,8 @@ https://github.com/iam-salma/NLP-Bootcamp-with-python
 
 * Emphasize: **choice depends on task, cost, and requirements**
 
-### 6. Takeaway: The Future of Text Analytics
+
+Takeaway: The Future of Text Analytics
 
 * Text is no longer “unstructured” → it’s **transformable data**
 * Evolution:
@@ -663,17 +818,86 @@ https://github.com/iam-salma/NLP-Bootcamp-with-python
   * designing pipelines/systems
   * evaluating outcomes
 
+## Feature selection
+
+:::: {.columns}
+
+::: {.column width="80%"}
+Pruning (p.28): approaches
+
+-> particularly relevant for sparse vectors (dense vectors already offer a compressed representation)
+
+:::
+
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 46.5%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 48.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
+
+
+
+## Pattern discovery
+
+Similar documents (stories, products, e-mails)
+
+Jaccard (p.31, ...) for sparse vectors (distance-based clustering)
+Dense (semantic) vectors: k-means
+
+
+## Classification
+
+TODO (sentiment??)
+
+## Regression
+
+TODO (?)^
 
 <!--
 ## **One-line narrative**
 
 > “We move from manually structuring text for models → to learning representations → to using AI systems that directly turn language into insights.”
--->
-
 
 ## TODO Deployment
 
 Cover ML Ops pipelines, scaling (parallel architectures)
+-->
 
 
 ## Survey: Session 8 {data-state="hide-menubar"}
