@@ -4,6 +4,7 @@ subtitle: "Machine learning II"
 section_label: "Analytical modeling"
 session: "Session 7"
 date: "2026-04-20"
+cover-image: "../images/coverpage_ml_algorithms.png"
 ---
 
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}

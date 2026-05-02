@@ -1,11 +1,31 @@
-<section id="$idprefix$title-slide" class="title-slide slide level1" data-state="hide-menubar">
+<section
+  id="$idprefix$title-slide"
+  class="title-slide slide level1"
+  data-state="hide-menubar"
+  $if(cover-image)$
+  data-background-image="$cover-image$"
+  data-background-size="cover"
+  data-background-position="center"
+  data-background-repeat="no-repeat"
+  $endif$
+>
+
   <h1 class="title">$title$</h1>
 
-  <p></p>$if(session)$ $session$:$endif$ $if(subtitle)$$subtitle$ $endif$</p>
+  $if(session)$
+  <p class="session">$session$</p>
+  $endif$
+
+  $if(subtitle)$
+  <p class="subtitle">$subtitle$</p>
+  $endif$
 
   $if(author)$
   <p class="author">$for(author)$$author$$sep$, $endfor$</p>
   $endif$
-  $if(date)$<p class="date">($date$)</p>$endif$
+
+  $if(date)$
+  <p class="date">($date$)</p>
+  $endif$
 
 </section>

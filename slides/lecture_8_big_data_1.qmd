@@ -4,6 +4,7 @@ subtitle: "Big data I"
 section_label: "Analytical modeling"
 session: "Session 8"
 date: "2026-05-04"
+cover-image: "../images/coverpage_big_data.png"
 nocite: |
   @ManningSchutze1999
 ---
