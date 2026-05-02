@@ -3,46 +3,9 @@ title: "Preparation"
 format: html
 ---
 
-::: {.column-page}
-
-```{mermaid}
-%%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%
-gantt
-    title Big Data & Analytics — Prep plan (everything done before teaching)
-    dateFormat YYYY-MM-DD
-    axisFormat %Y-%m-%d
-    excludes weekends
-
-    section Milestones
-    First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d
-
-    section Week 1
-    Foundations (Session 1) :found, 2026-03-02, 2d
-    Structured Data (Sessions 2–7) :struct, after found, 3d
-
-    section Week 2
-    Big Data (Sessions 8–9) :big, 2026-03-09, 3d
-    Organizations (Sessions 10–11) :org, after big, 2d
-```
-:::
-
 ::: {.callout-important title="Materials"}
 See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
 :::
-
-## Preparation overview
-
-- [x] Select contents for each session
-- [x] Find contents: Exploratory data analysis
-- [x] Find contents: Regression I
-- [x] Find contents: Regression II
-- [x] Find contents: Machine learning I
-- [x] Find contents: Machine learning II
-- [ ] Find contents: Big data I
-- [ ] Find contents: Big data II
-
-- [x] Check: Jupyter Exercise setup: export of jupyter notebooks
-- [ ] Check: Jupyter Exercise setup: running jupyter notebooks (GitHub?)
 
 Generally: generation of PDFs: local only?
 
@@ -235,10 +198,6 @@ https://www.coursera.org/learn/data-analysis-with-python
 -> accessible (good examples?!)
 
 Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI
-
-inspiration for model choice/test/exam questions:
-
-Use Cases Quiz: ![](../images/slides_210.png)
 
 
 ## Notes (Quarto/revealjs)

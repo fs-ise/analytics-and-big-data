@@ -1,0 +1,6 @@
+bokeh
+bokeh_sampledata
+matplotlib
+pandas
+geopandas
+sentence_transformers

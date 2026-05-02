@@ -8,7 +8,21 @@ date: "2026-05-04"
 
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
-<br><br><br><br><br>
+<br><br><br>
+
+::: {.learning-objectives}
+
+* **Explain and interpret** the core ideas and mathematical operations underlying artificial neural networks
+* **Distinguish** between major neural network architectures (MLP, CNN, RNN, TM) and identify the types of data for which they are most appropriate.
+* **Understand** the design and training process of neural networks, including architecture selection and optimization.
+:::
+
+<!--
+, including artificial neurons, weighted sums, biases, activation functions, hidden layers, loss functions, and the intuition behind gradient-based learning and backpropagation.
+
+including feedforward neural networks (multilayer perceptrons), convolutional neural networks (CNNs), recurrent neural networks (RNNs), and transformer models
+
+ procedures, and the distinction between choices driven by the data/problem structure and those requiring experimentation
 
 ::: {.learning-objectives}
 **Tentatively**
@@ -18,15 +32,8 @@ date: "2026-05-04"
 - **Apply** large language models or other scalable methods to extract, classify, or summarize unstructured data.
 - **Evaluate** the reliability, bias, and limitations of API- and LLM-based analytics workflows.
 :::
+-->
 
-
-TODO: must address these questisons:
-
-- To what extent do neural networks reduce the need for manual feature engineering?
-- Distinguish "Recurrent Neural Networks, Convolutional Neural Networks, Feedforward Neural Networks" 
-
-TODO: The "simple calculation example" in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and "cost nudges").
-Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.
 
 # Foundations {data-stack-name="Foundations"}
 
@@ -186,6 +193,9 @@ TODO...
 TODO: understand where clear default choices exist and where tuning and experimentation is necessary
 
 ## Decisions / Process
+
+TODO: must address this questison: To what extent do neural networks reduce the need for manual feature engineering?
+TBD: here and/or in the previous founcations section
 
 ## Choice of architecture
 

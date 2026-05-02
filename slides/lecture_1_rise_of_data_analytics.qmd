@@ -941,9 +941,9 @@ digraph learning_flow {
     BUT: VSCode seems to be the better supported/more popular and reliable version...
     Note: pin the image version (to enable caching and prevent re-loading)
 
-    Note: only microsoft is cached.
+    Note: only Microsoft is cached.
     -> TODO: test whether pip-install through devcontainer setup works.
-    -> microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
+    -> Microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
 -->
 
 :::

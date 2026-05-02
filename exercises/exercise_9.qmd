@@ -7,11 +7,337 @@ TODO
 :::
 
 
-## Part 1: by-hand calculation:
+## Part 1: Forward pass and weight update
+
+<!--
+Note: use https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
+-> task: 2x forward pass (results of backpropagation are provided)
 
 
-https://www.ismll.uni-hildesheim.de/lehre/ml-19w/exercises/tutorial07.pdf
+## Learning objectives
 
+After completing this exercise, students should be able to:
+
+* perform a forward pass in a feedforward neural network
+* calculate neuron activations using the sigmoid activation function
+* interpret neural network outputs
+* understand how updated weights influence predictions
+* compare model outputs before and after backpropagation
+-->
+
+We use the following neural network with one hidden layer, a sigmoid activation function, and biases for hidden and output layer:
+
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import networkx as nx
+
+G = nx.DiGraph()
+
+# ----------------------------
+# Compact node positions
+# ----------------------------
+pos = {
+    "i1": (0, 1),
+    "i2": (0, 0),
+    "h1": (1.5, 1),
+    "h2": (1.5, 0),
+    "o1": (3, 1),
+    "o2": (3, 0),
+    "b1": (0, -1),
+    "b2": (1.5, -1),
+}
+
+# ----------------------------
+# Edges
+# ----------------------------
+edges = [
+    ("i1", "h1", 0.15),
+    ("i1", "h2", 0.20),
+    ("i2", "h1", 0.25),
+    ("i2", "h2", 0.30),
+    ("h1", "o1", 0.40),
+    ("h1", "o2", 0.45),
+    ("h2", "o1", 0.50),
+    ("h2", "o2", 0.55),
+    ("b1", "h1", 0.35),
+    ("b1", "h2", 0.35),
+    ("b2", "o1", 0.60),
+    ("b2", "o2", 0.60),
+]
+
+G.add_weighted_edges_from(edges)
+
+# ----------------------------
+# Colors
+# ----------------------------
+node_colors = []
+
+for node in G.nodes():
+    if node.startswith("i"):
+        node_colors.append("#dcefd5")
+    elif node.startswith(("h", "o")):
+        node_colors.append("#d8e6f3")
+    else:
+        node_colors.append("#dddddd")
+
+# ----------------------------
+# Plot
+# ----------------------------
+fig, ax = plt.subplots()
+
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_size=1400,
+    node_color=node_colors,
+    arrows=True,
+    width=1.8,
+    font_size=10,
+    font_weight="bold",
+    ax=ax,
+)
+
+# ----------------------------
+# Edge labels
+# ----------------------------
+edge_labels = {(u, v): f"{w:.2f}" for u, v, w in edges}
+
+nx.draw_networkx_edge_labels(
+    G,
+    pos,
+    edge_labels=edge_labels,
+    font_size=8,
+    font_color="red",
+    rotate=False,
+    label_pos=0.58,
+    bbox=dict(
+        facecolor="white",
+        edgecolor="none",
+        alpha=0.8,
+        pad=0.1,
+    ),
+)
+
+ax.set_axis_off()
+
+plt.tight_layout()
+plt.show()
+```
+
+# Initial Parameters
+
+## Inputs
+
+$$i_1 = 0.05$$
+
+$$i_2 = 0.10$$
+
+<!--
+
+## Target outputs
+
+[
+t_1 = 0.01
+]
+
+[
+t_2 = 0.99
+]
+
+-->
+
+
+
+
+# Task 1 — Forward Pass
+
+Using the initial weights and biases:
+
+1. Calculate the net input for hidden neuron (h_1)
+2. Calculate the activation/output of (h_1)
+3. Calculate the net input for hidden neuron (h_2)
+4. Calculate the activation/output of (h_2)
+5. Calculate the net input for output neuron (o_1)
+6. Calculate the activation/output of (o_1)
+7. Calculate the net input for output neuron (o_2)
+8. Calculate the activation/output of (o_2)
+
+Document all intermediate calculations.
+
+---
+
+# Task 2 — Interpret the Prediction
+
+Compare the predicted outputs with the target outputs.
+
+Answer the following questions:
+
+1. Which output neuron currently has the larger prediction error?
+2. Does the network already perform well?
+3. What does the error suggest about the current weights?
+
+---
+
+# Weight Update After Backpropagation
+
+After one step of backpropagation and gradient descent (learning rate (\eta = 0.5)), the weights were updated as follows:
+
+
+```{python}
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+
+import matplotlib.pyplot as plt
+import networkx as nx
+
+G = nx.DiGraph()
+
+# ----------------------------
+# Compact node positions
+# ----------------------------
+pos = {
+    "i1": (0, 1),
+    "i2": (0, 0),
+
+    "h1": (1.5, 1),
+    "h2": (1.5, 0),
+
+    "o1": (3, 1),
+    "o2": (3, 0),
+
+    "b1": (0, -1),
+    "b2": (1.5, -1),
+}
+
+# ----------------------------
+# Updated weights
+# ----------------------------
+edges = [
+    ("i1", "h1", 0.15),
+    ("i1", "h2", 0.20),
+
+    ("i2", "h1", 0.25),
+    ("i2", "h2", 0.30),
+
+    ("h1", "o1", 0.36),
+    ("h1", "o2", 0.41),
+
+    ("h2", "o1", 0.51),
+    ("h2", "o2", 0.56),
+
+    ("b1", "h1", 0.35),
+    ("b1", "h2", 0.35),
+
+    ("b2", "o1", 0.60),
+    ("b2", "o2", 0.60),
+]
+
+G.add_weighted_edges_from(edges)
+
+# ----------------------------
+# Node colors
+# ----------------------------
+node_colors = []
+
+for node in G.nodes():
+    if node.startswith("i"):
+        node_colors.append("#dcefd5")
+    elif node.startswith(("h", "o")):
+        node_colors.append("#d8e6f3")
+    else:
+        node_colors.append("#dddddd")
+
+# ----------------------------
+# Plot
+# ----------------------------
+fig, ax = plt.subplots()
+
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_size=1400,
+    node_color=node_colors,
+    arrows=True,
+    width=1.8,
+    font_size=10,
+    font_weight="bold",
+    ax=ax,
+)
+
+# ----------------------------
+# Edge labels
+# ----------------------------
+edge_labels = {
+    (u, v): f"{w:.2f}"
+    for u, v, w in edges
+}
+
+nx.draw_networkx_edge_labels(
+    G,
+    pos,
+    edge_labels=edge_labels,
+    font_size=8,
+    font_color="red",
+    rotate=False,
+    label_pos=0.58,
+    bbox=dict(
+        facecolor="white",
+        edgecolor="none",
+        alpha=0.8,
+        pad=0.1,
+    ),
+)
+
+ax.set_axis_off()
+
+plt.tight_layout()
+plt.show()
+```
+
+Biases remain unchanged.
+
+
+# Task 3 — Forward Pass with Updated Weights
+
+Using the same inputs:
+
+$$i_1 = 0.05$$
+
+$$i_2 = 0.10$$
+
+and the updated weights above:
+
+1. Recalculate the hidden layer activations
+2. Recalculate the output layer activations
+3. Compute the new outputs (o_1) and (o_2)
+
+---
+
+# Task 4 — Compare the Results
+
+Compare the outputs before and after the weight update.
+
+Discuss:
+
+1. Did the outputs move closer to the target values?
+2. Which output improved the most?
+3. Why does repeatedly applying backpropagation improve the network?
+4. What would happen if we repeated this process thousands of times?
+
+---
+
+# Optional Extension
+
+Calculate the total squared error before and after the weight update:
+
+E_{total}=\sum \frac{1}{2}(target-output)^2
+
+Interpret the change in total error.
 
 
 
@@ -23,6 +349,8 @@ insight from https://developers.google.com/machine-learning/crash-course/neural-
 Generally: 
 https://playground.tensorflow.org/
 -> check different datasets!
+Explanation: https://www.youtube.com/watch?v=ru9dXF04iSE&t=10s
+-> tasks/learnings are not clearly evident/articulated 
 
 
 
@@ -31,6 +359,11 @@ https://playground.tensorflow.org/
 - sklearn vs pytorch
 - examples with architecture choices/understanding
 
+
+
+## Part 4: quizz
+
+https://chatgpt.com/c/69f45314-a074-83eb-b4d5-377c0f9f7270
 
 
 ## Exam prep

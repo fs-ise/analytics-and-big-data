@@ -582,12 +582,12 @@ For each method, classify it as:
 
 Methods:
 
-- histogram: 
-- boxplot: 
-- frequency table: 
-- correlation: 
-- scatterplot: 
-- clustering: 
+- Histogram: 
+- Boxplot: 
+- Frequency table: 
+- Correlation: 
+- Scatterplot: 
+- Clustering: 
 
 {{< pagebreak >}}
 :::
