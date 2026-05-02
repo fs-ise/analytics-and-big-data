@@ -17,24 +17,6 @@ date: "2026-05-04"
 * **Understand** the design and training process of neural networks, including architecture selection and optimization.
 :::
 
-<!--
-, including artificial neurons, weighted sums, biases, activation functions, hidden layers, loss functions, and the intuition behind gradient-based learning and backpropagation.
-
-including feedforward neural networks (multilayer perceptrons), convolutional neural networks (CNNs), recurrent neural networks (RNNs), and transformer models
-
- procedures, and the distinction between choices driven by the data/problem structure and those requiring experimentation
-
-::: {.learning-objectives}
-**Tentatively**
-
-- **Explain** the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).
-- **Acquire and preprocess** large-scale or unstructured data using APIs and appropriate tools in Python.
-- **Apply** large language models or other scalable methods to extract, classify, or summarize unstructured data.
-- **Evaluate** the reliability, bias, and limitations of API- and LLM-based analytics workflows.
-:::
--->
-
-
 # Foundations {data-stack-name="Foundations"}
 
 ## From biological neurons to artificial neural networks
@@ -105,87 +87,265 @@ In small-data regimes, experiments are needed to identify algorithms that perfor
 TPU: Tensor processing unit (for matrix and tensor operations in AI)
 :::
 
-## Architecture of a neural network
 
-TODO...
+## The perceptron
 
-    ## An Easy Example (I)
+:::: {.columns}
 
+::: {.column width="50%"}
+A perceptron is one of the earliest forms of neural networks.
+A **classical perceptron** is characterized by:
 
-    > **f(x) = Activation function**
+$$z = w^T x + b$$
 
-    > e.g.
+followed by a **threshold activation**:
 
-    > where t = Stimulus threshold
+$$\hat{y} =
+\begin{cases}
+1 & \text{if } w^T x + b > 0 \\
+0 & \text{otherwise}
+\end{cases}$$
 
+- This corresponds to a linear classifier
+- The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them
+- After each sample, the weights $w$ are adjusted to minimize a loss function, which quantifies the difference between the predicted and target outputs
+:::
 
-    ## An Easy Example (II)
+::: {.column width="50%"}
+<br><br>
+![](../images/neural_network_perceptron_linear_classifier.png){width=70% fig-align=center}
+:::
 
-    > **f(x) = Activation function**
-
-    > e.g.
-
-    > where t = Stimulus threshold
-
-
-    ## Functionality of a Neuron
-
-    ![](../images/slides_253.jpg)
-
-
-    > For the case of n inputs, we can rewrite the neuron's function to
-
-    > with b = -t. b is known as the perceptron's bias. The result of this function would then be fed into an activation function to produce a labeling.
-
-    ![](../images/slides_254.png)
-
-    > This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.
-
-    ::: aside
-    — Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks
-    :::
+::::
 
 
+## From perceptron to deep neural networks
+
+::: {.highlight_must_learn}
+
+:::: {.columns}
+
+::: {.column width="47%"}
+
+Limitation of a single perceptron:
+It cannot build abstract intermediate representations and can only learn linear decision boundaries.
+
+Solution:
+Multilayer neural networks combine:
+
+- **Multiple hidden layers**, which enable increasingly abstract representations
+- **Nonlinear activation functions**, which make nonlinear learning possible
+
+Layers:
+
+- Input neurons: raw data (e.g., images, audio, video)
+- Hidden neurons: the weights and biases store abstract representations learned from the data (e.g., edges, parts of an image)
+- Output neuron: prediction (e.g., one neuron for binary, multiple for multi-class)
+
+Note: the number of layers and neurons is specified ex-ante and does not change in the training process.
+
+:::
+
+::: {.column width="53%"}
+<br><br>
+![](../images/neural_network_layers.png)
+:::
+
+::::
+
+:::
+
+::: {.learning_note .fragment}
+🎥 Grant Anderson (3Blue1Brown) provides a series of instructive  
+animated explanations, including one on [Neural Networks](https://www.youtube.com/watch?v=aircAruvnKk).
+:::
+
+## Functionality of a neuron
+
+::: {.highlight_must_learn}
+
+<br>
+![](/images/neural_network_neuron.png){fig-align=center width=65%}
+<br>
+:::
+
+::: aside
+In a classical perceptron, the activation is typically binary (0 or 1), representing whether the neuron “fires.”  
+In modern neural networks, activations are usually continuous-valued scalars determined by the activation function.
+:::
 
 
-    ## The Multilayer Perceptron
+## Types of activation functions
 
-    > The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.
+<br>
 
-    > **Input Neurons**: receive signals from the outer world.
+![](../images/neural_networks_comparison_sigmoid_relu.png){fig-align=center width=70%}
 
-    > **Hidden Neurons**: have an internal representation of the outer world.
+## Training of a multilayer perceptron
 
-    > **Output Neurons**: pass signals to the outer world.
+<br>
 
-
-
-
-    ## Types of Activation Functions
-
-    > A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:
-
-    - tangens
-    - hyperbolicus
-    - logistic function (sigmoid)
+![](../images/neural_network_design.png){fig-align=center width=70%}
 
 
+## Forward pass
+
+TODO: illustrate forward pass (aside: random? initial weights, training sample i)
+
+## Loss function
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br><br>
+![](../images/neural_network_loss_function.png)
+:::
+
+::: {.column width="50%"}
+The network’s prediction error is measured with a **loss function**.
+
+For one training example $i$:
+
+$$E_i = \frac{1}{2} \sum_{j=1}^{m} (o_{ij} - t_{ij})^2$$
+
+This is the squared error loss across all **output neurons**.
+
+Across all $h$ training examples, the total loss is:
+
+$$E = \sum_{i=1}^{h} E_i$$
+
+Backpropagation adjusts the weights to reduce this total loss.
+:::
+
+::::
+
+## Backpropagation
+
+<!--
+**TODO: Cost function, Learning: gradient descent + back propagation (see slides PR)**
+-->
+
+The Backpropagation algorithm is used for calculating the weights.
+In a training phase, the weights are iteratively calculated using training data sets in such a way that the difference between the calculated and the expected (true) results is minimized.
+Because the simultaneous calculation of all weights is not possible, they must be found via a learning process.
+The backpropagation algorithm looks for the minimum of the cost function in weight space using the method of gradient descent.
+
+```Markdown
+initialize weights and biases
+
+repeat until stopping criterion is met:
+
+    total_error = 0
+
+    for each training example:
+
+        pass input forward through all layers
+        compare predicted output with target value
+        add error to total_error
+        propagate error backward through all layers
+        update weights and biases
+
+    check whether total_error is small enough
+```
+
+<!--
+
+The procedure in principle:
+
+1. Define the initial weights
+2. Put the training set into the input layer
+3. Calculate the result (value of the output layer) via successive processing one layer after the other
+4. Compare the output values and target values and calculate the difference
+5. Iterate steps (2) to (4) for every training set
+6. Calculate the total error. Adjust the weights beginning with the output layer towards the input layer (backpropagation)
+7. Iterate steps (2) to (6) until the total error reaches the defined error-level or the number of maximum iterations is reached.
+-->
 
 
-    ## Design of a Multilayer Perceptron
+## Using the loss function to adjust weights
 
-    ![](../images/slides_319.png)
+The loss function $E$ has to be minimized.
+Because it depends on the output neurons $o_j$, it automatically depends on their weights to the precedent layer(s):
 
-    ::: aside
-    — Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
-    :::
+$$o_j=f(s(x)_j) \text{    with    } s(x)_j =\sum_k^n w_{jk}\cdot x_k$$
 
+Thus, the weights have to be found where $E$ is minimal.
 
-    ![](../images/slides_320.png)
+<br>
 
-    ::: aside
-    — Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf
-    :::
+Examples of the loss function with **two weights** (simplified):
+
+<br>
+
+![](../images/neuronal_networks_gradient_illustration.png){width=50% fig-align=center}
+
+## Gradient descent
+
+To minimize the loss function $E$ the backpropagation algorithm uses the method of gradient descent.
+This method searches those weights, where the vector containing the partial first derivatives of the loss function $\nabla E$ (gradient) is equal to the zero vector (minimum):
+
+$$
+\nabla E =
+\left(
+\frac{\partial E}{\partial w_1},
+\frac{\partial E}{\partial w_2},
+\ldots,
+\frac{\partial E}{\partial w_m}
+\right)
+$$
+
+To adjust the weight $w_{ij}$, which connects neuron $i$ to neuron $j$, gradient descent updates the weight in the negative gradient direction:
+
+$$
+\Delta w_{ij}
+= -a \cdot \frac{\partial E}{\partial w_{ij}}
+$$
+
+$$
+\Delta w_{ij}
+= -a \cdot \sum_{j=1}^{m}
+(o_{ij} - t_{ij}) \cdot (-x_i)
+= a \cdot \sum_{j=1}^{m}
+(o_{ij} - t_{ij}) \cdot x_i
+$$
+
+where $a$ represents the predefined learning rate.
+The adjusted weight is then computed as:
+
+$$
+w_{ij}^{\text{new}}
+=
+w_{ij}^{\text{old}}
++
+\Delta w_{ij}
+$$
+
+. . . 
+
+> Because neural networks have many parameters, each update changes the model in many dimensions at once.
+> The learning rate therefore has to be chosen carefully: large steps can destabilize training, while very small steps can make learning inefficient.
+
+<!--
+TODO: cover example of backpropagation? http://hmkcode.github.io/ai/backpropagation-step-by-step
+-->
+
+# Specialized NNs {data-stack-name="Specialized NNs"}
+
+<!--
+> GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.
+-->
+
+TODO: overview (feedforward, perceptron, ...)
+
+## CNN
+
+.. How images are processsed
+
+## RNN
+
+..How text of different lengths is processed
+
+## Transformers
 
 
 # Design and training of neural networks {data-stack-name="Design and training"}
@@ -204,57 +364,7 @@ TBD: here and/or in the previous founcations section
 ## Python code example
 
 
-# Specialized NNs {data-stack-name="Specialized NNs"}
 
-## CNN
-
-.. How images are processsed
-
-## RNN
-
-..How text of different lengths is processed
-
-## Transformers
-
-
-<!--
-
-## Types of Artificial Intelligence
-
-> **Discriminative AI** is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.
-
-> **Generative AI** is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.
-
-> Well-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E.
-
-
-## ChatGPT
-
-> ChatGPT is a generative AI that produces human-like text and communicates with humans.
-
-> The "GPT" in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.
-
-> GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.
-
-## ChatGPT - Approach
-
-> ChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.
-
-![](../images/slides_216.png)
-
-> The most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task.
-
-![](../images/slides_217.png)
-
-
-## ChatGPT - Evaluation Component
-
-![](../images/slides_220.png)
--->
-
-
-
-# TODO: add as reference material: https://www.youtube.com/watch?v=aircAruvnKk
 
 
 ## Survey: Session 9 {data-state="hide-menubar"}

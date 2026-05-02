@@ -40,6 +40,8 @@ Ideally, students should have a solid intuition, seen the math, and know when (n
 
 Comprehensive resource (formal specification and implementation): https://d2l.ai/index.html
 
+Interactiv js visualization of NNs: https://github.com/hmkcode/netflow.js
+
 TBD/whether and where to cover:
 Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.
 Apply large language models or other scalable methods to extract, classify, or summarize unstructured data.
