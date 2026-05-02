@@ -4,7 +4,7 @@ subtitle: "Regression I"
 section_label: "Analytical modeling"
 session: "Session 4"
 date: "2026-03-30"
-
+cover-image: "../images/coverpage_linear_regression.png"
 execute:
   echo: false
   warning: false
