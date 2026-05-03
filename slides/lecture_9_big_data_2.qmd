@@ -188,6 +188,10 @@ In modern neural networks, activations are usually continuous-valued scalars det
 
 ![](../images/neural_networks_comparison_sigmoid_relu.png){fig-align=center width=70%}
 
+::: aside
+ReLU: Rectified Linear Unit.
+:::
+
 ::: notes
 
 Advantage of Sigmoid activation: smooth, supports gradient descent
@@ -198,14 +202,19 @@ ReLu: for efficient computation
 
 ## Training of a multilayer perceptron
 
+- Weights are initialized with carefully selected random values
+- For each training item, the predicted output is calculated ("forward pass")
+
 <br>
 
 ![](../images/neural_network_design.png){fig-align=center width=70%}
 
 
+<!--
 ## Forward pass
 
 TODO: illustrate the use of training data for forward pass (aside: random? initial weights, training sample i)
+-->
 
 ## Loss function
 
@@ -244,12 +253,18 @@ The $1/2$ makes the math cleaner for the derivatives.
 
 <!--
 **TODO: Cost function, Learning: gradient descent + back propagation (see slides PR)**
--->
 
 The Backpropagation algorithm is used for calculating the weights.
 In a training phase, the weights are iteratively calculated using training data sets in such a way that the difference between the calculated and the expected (true) results is minimized.
 Because the simultaneous calculation of all weights is not possible, they must be found via a learning process.
 The backpropagation algorithm looks for the minimum of the cost function in weight space using the method of gradient descent.
+-->
+
+::: {.highlight_must_learn}
+
+Backpropagation calculates the gradients of the loss function with respect to the network’s weights. These gradients are then used by an optimizer, to iteratively update the weights and reduce the difference between predicted and true outputs.
+
+<br>
 
 ```Markdown
 initialize weights and biases
@@ -268,6 +283,8 @@ repeat until stopping criterion is met:
 
     check whether total_error is small enough
 ```
+<br>
+:::
 
 <!--
 
@@ -441,12 +458,6 @@ TBD: similar to SVM: kernels facilitate learning in higher-dimensional transform
 Start with choices that are mostly determined by the **data structure** and the **prediction task**.  
 Then tune the parts that require experimentation.
 
-::: {.fragment}
-**Rule of thumb:** data structure determines the architecture; prediction task determines the output layer and loss.
-:::
-
-<br>
-
 
 **Architecture family**
 
@@ -473,6 +484,13 @@ Then tune the parts that require experimentation.
 | Binary classification | 1 neuron | Sigmoid | Binary cross-entropy |
 | Multi-class classification | One neuron per class | Softmax | Categorical cross-entropy |
 </div>
+
+<br>
+
+::: {.fragment}
+**Rule of thumb:** data structure determines the architecture; prediction task determines the output layer and loss.
+:::
+
 
 :::
 
@@ -571,11 +589,10 @@ However, feature engineering does not disappear. We still need to decide:
 - which data are provided as input
 - how inputs are encoded and normalized
 - whether domain-specific variables or transformations are added
-- which architecture matches the structure of the data
 
 :::
 
-![](../images/neural_networks_features.png){width=50% fig-align=center}
+![](../images/neural_networks_features.png){width=55% fig-align=center}
 
 ## Python code example
 
@@ -709,8 +726,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 # Training loop
 for epoch in range(100):
 
-    # Forward pass
-    predictions = model(X)
+    predictions = model(X)  # Forward pass
     loss = criterion(predictions, y)
 
     # Backpropagation

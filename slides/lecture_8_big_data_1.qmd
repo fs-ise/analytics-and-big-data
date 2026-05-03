@@ -893,11 +893,15 @@ line-height:1;
 
 ::: {.column width="80%"}
 
+::: {.highlight_must_learn}
+
 - Words are represented as **dense vectors** of real numbers, e.g., **50–300 values per word**
 - Dense vectors capture semantic meaning, i.e., similar words get **similar vector representations**
 - Well-known methods: **Word2Vec**, **GloVe**, **fastText**, **BERT**
 
 ![](../images/sparse_dense_vectors.png){width=80% fig-align=center}
+
+:::
 
 <!--
   - better at handling **synonyms** and related terms than bag-of-words
@@ -1256,6 +1260,10 @@ line-height:1;
 
 ::::
 
+
+::: aside
+Besides clustering, text-based features can also be used for classification or regression.
+:::
 
 <!--
 ## Classification
