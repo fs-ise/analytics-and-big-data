@@ -416,6 +416,12 @@ Inception-ResNet-v2: coders basically build DAGs in code and generate the archit
 
 ![](../images/convolutional_network_principles.png){width=80% fig-align=center}
 
+::: notes
+Convolution layers: effectively multiply the number of input neurons, e.g., a 28x28x1 grayscale image with 32 filters leads to 28x28x32=25,088 activations.
+
+TBD: similar to SVM: kernels facilitate learning in higher-dimensional transformations.
+:::
+
 ## Recurrent neural networks (RNN)
 
 ![](../images/recurrent_neural_network.png){width=70% fig-align=center}
