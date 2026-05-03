@@ -14,15 +14,11 @@ nocite: |
 
 ::: {.learning-objectives}
 - **Explain** the characteristics of big data and their implications for analytics workflows.
-- **Assess** key challenges of big data, including scalability, heterogeneity, and data quality.
-- **Outline** distributed data architectures and their role in large-scale analytics.
+- **Compare** data warehouse, data lake, and logical data warehouse architectures.
+- **Describe** the text analytics pipeline from preprocessing to representation and modeling.
 :::
 
-TODO: Explain how big data environments reshape model development, validation, and deployment. This creates continuity with: Generalization problem, Overfitting, Model evaluation
-
-
 # Big data {data-stack-name="Big data"}
-
 
 <!--
 TODO: refer to the introduction (growth of data, ...)
@@ -41,29 +37,16 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 -->
 
 
-## 4V’s of Big Data
+## 4V’s of big data
+
+Big data matters when the **properties of the data** change what managers can decide, automate, or compete on.
 
 ::: {.highlight_must_learn}
 
-![](../images/slides_61.png){fig-align="center" width="50%"}
+![](../images/big_data_v.png){fig-align="center" width="70%"}
 
 :::
 
-::: aside
-— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx
-:::
-
-
-## Big data changes the managerial problem
-
-> Big data matters when the **properties of the data** change what managers can decide, automate, or compete on.
-
-| V | Business dilemma |
-|---|---|
-| **Volume** | Too many operational combinations to optimize manually |
-| **Velocity** | Decisions must be made before the moment passes |
-| **Variety** | Many data worlds must be integrated |
-| **Veracity** | Data may look precise but still be false |
 
 ::: notes
 Rationale and key points to cover:
@@ -133,6 +116,7 @@ References for data and claims:
 
 Can fraud be detected **before** the transaction is approved?
 
+
 **Key data facts**
 
 - Up to **83,000 transactions / second**
@@ -140,6 +124,7 @@ Can fraud be detected **before** the transaction is approved?
 - 500+ data points per transaction
 - Fraud is rare, but losses are massive
 - Visa reported **$40B+ fraud blocked in 2023**
+
 
 **Models:** real-time risk scoring · anomaly detection · streaming ML · network analysis  
 **Outcomes:** approve · decline · challenge · escalate — all within milliseconds
@@ -275,34 +260,15 @@ References for data and claims:
 - Useful source search terms: "IAB ad fraud invalid traffic impressions clicks conversions", "DoubleVerify 8.3 trillion media transactions", "Juniper ad fraud 172 billion 2028", "HUMAN 2.5 billion daily bid requests 100 million".
 :::
 
+## Turning big data into value
 
-## TODO: too simple, but maybe integrate in the "end of the first section" (Key takeaway)
+<br>
 
-Big data is not one problem.
+![](../images/slides_86_new.png){fig-align="center" width="65%"}
 
-It creates **four different managerial dilemmas**:
-
-| V | Core challenge | Business response |
-|---|---|---|
-| Volume | Too many combinations | Optimize |
-| Velocity | Too little time | Decide instantly |
-| Variety | Too many data worlds | Integrate |
-| Veracity | Too little trust | Validate |
-
-::: notes
-Rationale and key points to cover:
-
-Use this closing slide to consolidate the examples.
-
-The most important message is that each V changes the managerial problem in a different way. Volume creates optimization challenges. Velocity creates real-time decision challenges. Variety creates integration and coordination challenges. Veracity creates trust and validation challenges.
-
-A useful closing question for students:
-
-"Which of these four dilemmas is most difficult to solve technologically, and which is most difficult to solve organizationally?"
-
-This helps transition from technical analytics to organizational capability. Firms do not compete simply by owning data. They compete by building decision systems, routines, governance structures, and analytical capabilities that turn data properties into better business outcomes.
+::: aside
+— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
 :::
-
 
 
 <!--
@@ -457,22 +423,13 @@ This helps transition from technical analytics to organizational capability. Fir
 
 -->
 
-## Turning Big Data into Value
-
-![](../images/slides_86_new.png){fig-align="center" width="50%"}
-
-::: aside
-— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
-:::
-
-
 # Architecture {data-stack-name="Architecture"}
 
 ## TODO: data lake vs data warehouse as alternative architectures? clarify the difference!
 
 TODO
 
-## Limitations of the Data Warehouse Approach
+## Limitations of the data warehouse approach
 
 Traditional DWH solutions are designed to provide a single point of truth. Important aspects are:
 
@@ -490,7 +447,7 @@ This results in the following problem areas in today's world:
 - **Patchwork**: due to gradual introduction of data warehouses, many isolated solutions exist and are operated separately both technically and methodologically
 
 
-## The Four Layers of Big Data \(I\)
+## The four layers of big data \(I\)
 
 Data Source Layer
 
@@ -504,7 +461,7 @@ It includes everything from sales records, customer database, feedback, social m
 :::
 
 
-## Identify and Prioritize Data Sources
+## Identify and prioritize data sources
 
 ![](../images/slides_88_new.png){fig-align="center" width="50%"}
 
@@ -513,7 +470,7 @@ It includes everything from sales records, customer database, feedback, social m
 :::
 
 
-## The Four Layers of Big Data (II)
+## The four layers of big data (II)
 
 ![](../images/slides_89_new.png){fig-align="center" width="50%"}
 
@@ -522,7 +479,7 @@ It includes everything from sales records, customer database, feedback, social m
 :::
 
 
-## The Four Layers of Big Data (III)
+## The four layers of big data (III)
 
 ![](../images/slides_90_new.png){fig-align="center" width="50%"}
 
@@ -531,7 +488,7 @@ It includes everything from sales records, customer database, feedback, social m
 :::
 
 
-## The Four Layers of Big Data (IV)
+## The four layers of big data (IV)
 
 ![](../images/slides_91_new.png){fig-align="center" width="50%"}
 
@@ -540,7 +497,7 @@ It includes everything from sales records, customer database, feedback, social m
 :::
 
 
-## From Data Warehouse to Data Lake
+## From data warehouse to data lake
 
 Instead of recording millions of transactions, today's organizations are recording billions of interactions. Companies are capturing more and more data that can open business opportunities and unlock new sources of value for organizations.
 
@@ -555,7 +512,7 @@ A clean separation between data movement and data transformation has the benefit
 :::
 
 
-## The Data Lake
+## The data lake
 
 A data lake is a method of storing data within a system in its natural format, that facilitates the collocation of data in various schemata and structural forms. The idea of data lake is to have a single store of all data in the enterprise ranging from raw data to transformed data which is used for various tasks including reporting, visualization, analytics and machine learning.
 
@@ -566,12 +523,12 @@ A data lake is a method of storing data within a system in its natural format, t
 :::
 
 
-## Modern Data Analytics Architecture
+## Modern data analytics architecture
 
 ![](../images/slides_94_new.png){fig-align="center" width="50%"}
 
 
-## Logical Data Warehouse
+## Logical data warehouse
 
 A "logical data warehouse" provides analytical company data without first physically moving it to a physical data warehouse.
 
@@ -586,8 +543,6 @@ Aggregation is done just in time. Thus, the schema of the data warehouse is just
 ::: aside
 — Source: http://www.datavirtualizationblog.com/emergence-logical-data-warehouse/
 :::
-
-
 
 
 
@@ -641,11 +596,25 @@ Here, we use the broader term *text analytics*.
 :::: {.columns}
 
 ::: {.column width="80%"}
-TODO: structure: see "Text representation pipeline" note (obsidian)
+Typical sources of **noise**
 
-show an example of python (regex)?
+- punctuation, HTML tags, URLs, emojis
+- inconsistent casing and formatting
+- very frequent but low-information words (**stopwords**)
+- morphological variants (*user*, *users*, *using*)
 
-TBD: concept of "noise"?
+Preprocessing options *(choose what fits the analytical approach)*
+
+1. **Text cleanup**  
+   remove punctuation / HTML / special characters
+2. **Tokenization**  
+   split text into words or *n*-grams
+3. **Stopword removal**  
+   remove frequent low-information words
+4. **Stemming / lemmatization**  
+   reduce related word forms to a common base
+5. **Advanced linguistic processing**  
+   POS tagging, parsing, word sense disambiguation, synonym / pronoun normalization
 
 :::
 
@@ -697,20 +666,113 @@ line-height:1;
 -->
 
 
-## Feature Generation Paradigm 1: Sparse Representations (Classical NLP)
+## Text processing: Examples
 
 :::: {.columns}
 
 ::: {.column width="80%"}
-* Core challenge: *How do we turn text into analyzable data?*
 
-* Basic pipeline:
+Stopword removal:
 
-  * preprocessing (tokenization, cleaning)
-  * feature engineering (Bag-of-Words, TF-IDF)
-* Output: **sparse feature vectors → ML models**
-* Use case: classification (e.g., sentiment analysis)
-* Key idea: *text → structured matrix → prediction*
+```{python}
+#| echo: true
+from sklearn.feature_extraction.text import CountVectorizer
+
+documents = ["Jupiter is the largest gas planet."]
+
+vectorizer = CountVectorizer(stop_words="english")
+matrix = vectorizer.fit_transform(documents)
+print(vectorizer.get_feature_names_out())
+```
+
+<!--
+Stemming:
+
+```python
+from nltk.stem.porter import PorterStemmer
+
+stemmer = PorterStemmer()
+tokens = ["Jupiter", "is", "the", "largest", "gas", "planet"]
+
+stems = []
+for item in tokens:
+    stems.append(stemmer.stem(item))
+
+stems
+```
+-->
+
+
+:::
+
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 15.5%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 16.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
+
+## Feature generation: Sparse sepresentations (classical NLP)
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+A document is treated as a **bag of words** or terms.
+
+- each word or term becomes a **feature**
+- word order is ignored
+- each document is represented as a **vector**
+- the result is a structured **document-term matrix**
+
+**Key idea**: Text is transformed into numerical features that can be used by classical machine learning models.
+
+<br>
+**Ways to create vectors**
+
+<div class="smaller">
+| Technique | Feature value |
+|---|---|
+| **Binary term occurrence** | term appears: yes / no |
+| **Term occurrence** | number of times a term appears |
+| **Term frequency** | occurrences divided by document length |
+| **TF-IDF** | frequency weighted by how distinctive the term is |
+</div>
 
 :::
 
@@ -757,8 +819,92 @@ line-height:1;
 ::::
 
 
-## Feature Generation Paradigm 2: Dense Representations (Embeddings)
+## Feature generation: TF-IDF example
 
+:::: {.columns}
+
+::: {.column width="80%"}
+
+TF-IDF (term frequency-inverse document frequency) measures how important a term is to a document relative to a corpus
+
+  - $tf$ (ferm frequency): how often a term appears in a document
+  - $idf$ (inverse document frequency): how rare a term is across the corpus
+
+  $$idf_i = log(\frac{N}{df_i})$$
+  
+with $N$: total number of documents  
+$df_i$: the number of documents in which $t_i$ appears.
+
+TF-IDF weight: 
+
+$$w_{ij} = tf_{ij} \times idf_i$$
+
+- Gives more weight to rare words
+- Gives less weight to common words (domain-specific stopwords)
+
+:::
+
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
+
+
+## Feature generation: Dense representations (embeddings)
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+**Dense representations (Embeddings)**
+
+- **Motivation:** capture **semantic meaning**
+- Words are represented as **dense vectors** of real numbers  
+  - e.g., **50–300 values per word**
+- Similar words occurring in similar contexts get **similar vector representations**
+  - better at handling **synonyms** and related terms than bag-of-words
+- Well-known methods:
+  - **Word2Vec**, **GloVe**, **fastText**, **BERT**
+
+
+<!--
 * Motivation: capture **semantic meaning**
 
 * Introduce embeddings (e.g., BERT)
@@ -772,8 +918,59 @@ line-height:1;
   * regression/classification
 
 * Key shift: *better features, same analytics logic*
+-->
 
-## Feature Generation Paradigm 3: AI-Assisted Analytics (LLMs & Systems)
+:::
+
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
+
+## Feature generation: Transformer-based analytics
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+TODO: semantic vectors + positional encoding?! (no stopword removal?)
 
 * Embeddings as foundation for systems:
 
@@ -793,30 +990,51 @@ line-height:1;
 
 * Key shift: *model integrates feature extraction + prediction*
 
-## Feature Generation Paradigms: Comparison & Analytical Perspective
+:::
 
-* Three ways to turn text into insights:
+::: {.column width="20%"}
 
-| Approach  | Representation | Role in Analytics                |
-| --------- | -------------- | -------------------------------- |
-| Sparse    | TF-IDF         | baseline, interpretable          |
-| Dense     | embeddings     | semantic features                |
-| LLM-based | implicit       | flexible, system-level analytics |
+<div style="position: relative; width: 100%;">
 
-* Emphasize: **choice depends on task, cost, and requirements**
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
 
 
-Takeaway: The Future of Text Analytics
-
-* Text is no longer “unstructured” → it’s **transformable data**
-* Evolution:
-
-  * manual features → learned representations → AI-assisted analysis
-* Role of analytics:
-
-  * selecting representations
-  * designing pipelines/systems
-  * evaluating outcomes
 
 ## Feature selection
 
@@ -875,10 +1093,58 @@ line-height:1;
 
 ## Pattern discovery
 
+:::: {.columns}
+
+::: {.column width="80%"}
+
 Similar documents (stories, products, e-mails)
 
 Jaccard (p.31, ...) for sparse vectors (distance-based clustering)
 Dense (semantic) vectors: k-means
+
+:::
+
+::: {.column width="20%"}
+
+<div style="position: relative; width: 100%;">
+
+<img src="../images/text_analytics_pipeline.png"
+     style="width:100%; opacity:0.92;">
+
+<!-- subtle highlight -->
+
+<div style="
+position: absolute;
+left: 12%;
+top: 62%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+</div>
+
+<!-- arrow -->
+
+<div style="
+position:absolute;
+left: 2%;
+top: 63.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+➜
+</div>
+
+</div>
+
+:::
+
+::::
 
 
 ## Classification
