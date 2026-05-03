@@ -40,6 +40,9 @@ Comprehensive resource (formal specification and implementation): https://d2l.ai
 
 Interactiv js visualization of NNs: https://github.com/hmkcode/netflow.js
 
+insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises
+-> even if all inputs are 0, the output can be non-zero. (due to biases)
+
 TBD/whether and where to cover:
 Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python.
 Apply large language models or other scalable methods to extract, classify, or summarize unstructured data.
@@ -56,6 +59,13 @@ NN : very inspiring class of models and algorithms, which model how nature solve
 Maybe start with something like:
 https://web.stanford.edu/~jurafsky/slp3/slides/nn25aug.pdf
 
+
+
+
+## Exercise
+
+Explanation: https://www.youtube.com/watch?v=ru9dXF04iSE&t=10s
+-> tasks/learnings are not clearly evident/articulated 
 
 
 ## Survey

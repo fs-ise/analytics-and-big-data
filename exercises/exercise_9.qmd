@@ -1,374 +1,238 @@
 ---
-title: "Exercise 9: Big data II"
+title: "Exercise 9: Big data and neural networks"
 ---
 
-::: {.learning-objectives}
-TODO
+::: {.direction}
+
+In this notebook, we cover:
+
+| Part    | Topic                                      | Time   |
+| ------- | ------------------------------------------ | ------ |
+| 1       | Backpropagation step by step               | 25 min |
+| 2       | Interactive neural networks                | 20 min |
+| 3       | Code understanding: PyTorch model objects  | 10 min |
+| 4       | AI/ML use cases quiz: NovaStream           | 25 min |
+|         | Wrap-up                                    | 5 min  |
+
 :::
 
+## Part 1: Backpropagation step by step
 
-## Part 1: Forward pass and weight update
+Go to [http://hmkcode.github.io/ai/backpropagation-step-by-step](http://hmkcode.github.io/ai/backpropagation-step-by-step) and study the backpropagation algorithm in one iteration.
 
-<!--
-Note: use https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
--> task: 2x forward pass (results of backpropagation are provided)
+Note that for simplification, the example uses no activation function.
+
+## Part 2: Interactive neural networks
+
+Go to the [Tensorflow Playground](https://playground.tensorflow.org/) and experiment with classification problems.
+Your goal is to achieve a low test loss with the simplest possible model.
+
+### Task 1 — Two clusters
+
+Select the dataset with two separated clusters.
+
+Find the smallest model that achieves a test loss close to zero.
+
+Document:
+
+- input features
+- hidden layers and neurons
+- activation function
+- final test loss
+
+Briefly explain why this dataset is easy to classify.
 
 
-## Learning objectives
+### Task 2 — Circle dataset
 
-After completing this exercise, students should be able to:
+Select the circle dataset.
 
-* perform a forward pass in a feedforward neural network
-* calculate neuron activations using the sigmoid activation function
-* interpret neural network outputs
-* understand how updated weights influence predictions
-* compare model outputs before and after backpropagation
--->
+Compare two models:
 
-We use the following neural network with one hidden layer, a sigmoid activation function, and biases for hidden and output layer:
+1. using only `x_1` and `x_2`
+2. using additional features such as `x_1^2` and `x_2^2`
 
-```{python}
-#| echo: false
+Which model performs better with fewer neurons? What does this show about feature engineering?
 
-import matplotlib.pyplot as plt
-import networkx as nx
 
-G = nx.DiGraph()
+### Task 3 — Spiral dataset
 
-# ----------------------------
-# Compact node positions
-# ----------------------------
-pos = {
-    "i1": (0, 1),
-    "i2": (0, 0),
-    "h1": (1.5, 1),
-    "h2": (1.5, 0),
-    "o1": (3, 1),
-    "o2": (3, 0),
-    "b1": (0, -1),
-    "b2": (1.5, -1),
-}
+Select the spiral dataset.
 
-# ----------------------------
-# Edges
-# ----------------------------
-edges = [
-    ("i1", "h1", 0.15),
-    ("i1", "h2", 0.20),
-    ("i2", "h1", 0.25),
-    ("i2", "h2", 0.30),
-    ("h1", "o1", 0.40),
-    ("h1", "o2", 0.45),
-    ("h2", "o1", 0.50),
-    ("h2", "o2", 0.55),
-    ("b1", "h1", 0.35),
-    ("b1", "h2", 0.35),
-    ("b2", "o1", 0.60),
-    ("b2", "o2", 0.60),
-]
+Try to achieve a low test loss by changing:
 
-G.add_weighted_edges_from(edges)
+- number of hidden layers
+- number of neurons
+- activation function
 
-# ----------------------------
-# Colors
-# ----------------------------
-node_colors = []
+Briefly explain why this dataset needs a more complex model.
 
-for node in G.nodes():
-    if node.startswith("i"):
-        node_colors.append("#dcefd5")
-    elif node.startswith(("h", "o")):
-        node_colors.append("#d8e6f3")
-    else:
-        node_colors.append("#dddddd")
+### Task 4 — Reflection
 
-# ----------------------------
-# Plot
-# ----------------------------
-fig, ax = plt.subplots()
+Answer in 3–5 sentences:
 
-nx.draw(
-    G,
-    pos,
-    with_labels=True,
-    node_size=1400,
-    node_color=node_colors,
-    arrows=True,
-    width=1.8,
-    font_size=10,
-    font_weight="bold",
-    ax=ax,
+- Which dataset was easiest?
+- Which dataset required the most complex model?
+- Why should we prefer a simpler model when test loss is similar?
+
+
+
+## Part 3: Code understanding — PyTorch model objects
+
+In `sklearn`, we often specify the model through parameters such as strings or tuples:
+
+```python
+MLPClassifier(
+    hidden_layer_sizes=(32, 16),
+    activation="relu",
+    solver="adam"
 )
+````
 
-# ----------------------------
-# Edge labels
-# ----------------------------
-edge_labels = {(u, v): f"{w:.2f}" for u, v, w in edges}
+In PyTorch, we usually define a model as an object. The model inherits functionality from `nn.Module`.
+Inspect the following model:
 
-nx.draw_networkx_edge_labels(
-    G,
-    pos,
-    edge_labels=edge_labels,
-    font_size=8,
-    font_color="red",
-    rotate=False,
-    label_pos=0.58,
-    bbox=dict(
-        facecolor="white",
-        edgecolor="none",
-        alpha=0.8,
-        pad=0.1,
-    ),
+```python
+import torch.nn as nn
+
+class MLP(nn.Module):
+    def __init__(self, input_dim, hidden_layers, output_dim):
+        super().__init__()
+
+        layers = []
+        prev_dim = input_dim
+
+        for h in hidden_layers:
+            layers.append(nn.Linear(prev_dim, h))
+            layers.append(nn.ReLU())
+            prev_dim = h
+
+        layers.append(nn.Linear(prev_dim, output_dim))
+
+        self.model = nn.Sequential(*layers)
+
+    def forward(self, x):
+        return self.model(x)
+
+
+model = MLP(
+    input_dim=10,
+    hidden_layers=[8, 4],
+    output_dim=1
 )
-
-ax.set_axis_off()
-
-plt.tight_layout()
-plt.show()
 ```
 
-# Initial Parameters
+Write down the sequence of layers created by this model.
 
-## Inputs
+Use this format:
 
-$$i_1 = 0.05$$
-
-$$i_2 = 0.10$$
-
-<!--
-
-## Target outputs
-
-[
-t_1 = 0.01
-]
-
-[
-t_2 = 0.99
-]
-
--->
-
-
-
-
-# Task 1 — Forward Pass
-
-Using the initial weights and biases:
-
-1. Calculate the net input for hidden neuron (h_1)
-2. Calculate the activation/output of (h_1)
-3. Calculate the net input for hidden neuron (h_2)
-4. Calculate the activation/output of (h_2)
-5. Calculate the net input for output neuron (o_1)
-6. Calculate the activation/output of (o_1)
-7. Calculate the net input for output neuron (o_2)
-8. Calculate the activation/output of (o_2)
-
-Document all intermediate calculations.
-
----
-
-# Task 2 — Interpret the Prediction
-
-Compare the predicted outputs with the target outputs.
-
-Answer the following questions:
-
-1. Which output neuron currently has the larger prediction error?
-2. Does the network already perform well?
-3. What does the error suggest about the current weights?
-
----
-
-# Weight Update After Backpropagation
-
-After one step of backpropagation and gradient descent (learning rate (\eta = 0.5)), the weights were updated as follows:
-
-
-```{python}
-#| echo: false
-#| fig-width: 6
-#| fig-height: 4
-
-import matplotlib.pyplot as plt
-import networkx as nx
-
-G = nx.DiGraph()
-
-# ----------------------------
-# Compact node positions
-# ----------------------------
-pos = {
-    "i1": (0, 1),
-    "i2": (0, 0),
-
-    "h1": (1.5, 1),
-    "h2": (1.5, 0),
-
-    "o1": (3, 1),
-    "o2": (3, 0),
-
-    "b1": (0, -1),
-    "b2": (1.5, -1),
-}
-
-# ----------------------------
-# Updated weights
-# ----------------------------
-edges = [
-    ("i1", "h1", 0.15),
-    ("i1", "h2", 0.20),
-
-    ("i2", "h1", 0.25),
-    ("i2", "h2", 0.30),
-
-    ("h1", "o1", 0.36),
-    ("h1", "o2", 0.41),
-
-    ("h2", "o1", 0.51),
-    ("h2", "o2", 0.56),
-
-    ("b1", "h1", 0.35),
-    ("b1", "h2", 0.35),
-
-    ("b2", "o1", 0.60),
-    ("b2", "o2", 0.60),
-]
-
-G.add_weighted_edges_from(edges)
-
-# ----------------------------
-# Node colors
-# ----------------------------
-node_colors = []
-
-for node in G.nodes():
-    if node.startswith("i"):
-        node_colors.append("#dcefd5")
-    elif node.startswith(("h", "o")):
-        node_colors.append("#d8e6f3")
-    else:
-        node_colors.append("#dddddd")
-
-# ----------------------------
-# Plot
-# ----------------------------
-fig, ax = plt.subplots()
-
-nx.draw(
-    G,
-    pos,
-    with_labels=True,
-    node_size=1400,
-    node_color=node_colors,
-    arrows=True,
-    width=1.8,
-    font_size=10,
-    font_weight="bold",
-    ax=ax,
-)
-
-# ----------------------------
-# Edge labels
-# ----------------------------
-edge_labels = {
-    (u, v): f"{w:.2f}"
-    for u, v, w in edges
-}
-
-nx.draw_networkx_edge_labels(
-    G,
-    pos,
-    edge_labels=edge_labels,
-    font_size=8,
-    font_color="red",
-    rotate=False,
-    label_pos=0.58,
-    bbox=dict(
-        facecolor="white",
-        edgecolor="none",
-        alpha=0.8,
-        pad=0.1,
-    ),
-)
-
-ax.set_axis_off()
-
-plt.tight_layout()
-plt.show()
+```text
+Input: 10 features
+Linear: 10 -> ...
+ReLU
+Linear: ... -> ...
+ReLU
+Linear: ... -> 1
+Output: 1 value
 ```
 
-Biases remain unchanged.
+Then answer briefly:
+
+1. How many hidden layers does the model have?
+2. How many trainable `Linear` layers does it have?
+3. What would change if `hidden_layers=[32, 16, 8]`?
 
 
-# Task 3 — Forward Pass with Updated Weights
+::: {.sol}
 
-Using the same inputs:
+## Expected solution sketch
 
-$$i_1 = 0.05$$
+Task 1:
 
-$$i_2 = 0.10$$
+```text
+Input: 10 features
+Linear: 10 -> 8
+ReLU
+Linear: 8 -> 4
+ReLU
+Linear: 4 -> 1
+Output: 1 value
+```
 
-and the updated weights above:
+:::
 
-1. Recalculate the hidden layer activations
-2. Recalculate the output layer activations
-3. Compute the new outputs (o_1) and (o_2)
+## Part 4: AI/ML Use Cases Quiz — NovaStream
 
----
+**Background**
 
-# Task 4 — Compare the Results
+*NovaStream* is a rapidly growing digital streaming startup offering movies, series, podcasts, music, and livestream content through a subscription-based platform. Due to strong recent growth, the company plans to scale its operations, improve personalization, optimize infrastructure usage, and strengthen platform security.
 
-Compare the outputs before and after the weight update.
+Management believes that data-driven and AI-supported decision-making will be critical for future growth. As a result, the company faces a variety of analytical questions that must be addressed using suitable analytical modeling approaches.
 
-Discuss:
+### Task
 
-1. Did the outputs move closer to the target values?
-2. Which output improved the most?
-3. Why does repeatedly applying backpropagation improve the network?
-4. What would happen if we repeated this process thousands of times?
+For each use case below:
 
----
+* Select a suitable analytical modeling approach covered in the lectures.
+* Justify your choice with reference to:
 
-# Optional Extension
+  * the nature of the available input data,
+  * the expected targets or outputs,
+  * and the suitability of the selected analytical model for the task.
 
-Calculate the total squared error before and after the weight update:
+Briefly explain why your chosen approach is appropriate compared to possible alternatives.
 
-E_{total}=\sum \frac{1}{2}(target-output)^2
-
-Interpret the change in total error.
-
-
-
-## Part 2: interactive playground
-
-insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises
--> even if all inputs are 0, the output can be non-zero. (due to biases)
-
-Generally: 
-https://playground.tensorflow.org/
--> check different datasets!
-Explanation: https://www.youtube.com/watch?v=ru9dXF04iSE&t=10s
--> tasks/learnings are not clearly evident/articulated 
+Some use cases may not fit perfectly into the standard analytical models discussed in class. In such cases, explain the limitations of standard approaches and discuss which additional analytical or optimization methods may be more appropriate.
 
 
+| #                | Use Case                                                                                                                                                                                                                                                                                                                                                          | Selected Analytical Modeling Approach | Justification |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------- |
+| 1                | NovaStream wants to identify subscribers who are likely to cancel their subscription within the next 30 days. Available data includes viewing behavior, subscription history, customer support interactions, app usage patterns, and payment information. Early identification would allow the company to proactively offer incentives and reduce customer churn. |                                       |               |
+| 2                | To improve user engagement, NovaStream wants to recommend movies, series, podcasts, and songs that individual users are likely to consume next. The platform collects information about viewing history, ratings, watch duration, search queries, and similarities between users.                                                                                 |                                       |               |
+| 3                | NovaStream plans to expand internationally and wants to automatically generate subtitles for livestreams and recorded content in multiple languages. The company wants the generated subtitles to adapt well to conversational language and different speaking styles.                                                                                            |                                       |               |
+| 4                | The startup has noticed suspicious activity involving accounts that appear to be shared simultaneously across many devices and geographic regions. NovaStream wants to automatically detect unusual behavior patterns that may indicate fraudulent usage or unauthorized account sharing.                                                                         |                                       |               |
+| 5                | Due to rapid growth, NovaStream’s infrastructure team must better predict future server demand and bandwidth consumption in order to avoid outages during peak usage periods while also minimizing unnecessary cloud costs. Historical usage data across days, weeks, and special events is available.                                                            |                                       |               |
+| 6                | Users can upload custom cover images for podcasts and playlists. NovaStream wants to automatically classify uploaded images into categories such as sports, entertainment, education, politics, or technology in order to improve search and content discovery.                                                                                                   |                                       |               |
+| 7                | The marketing department wants to identify groups of customers with similar viewing and listening behavior in order to design more targeted campaigns and personalized subscription offers. The company does not currently have predefined customer categories.                                                                                                   |                                       |               |
+| 8                | NovaStream wants to predict which song, video, or podcast episode a user is most likely to consume next based on recent interaction sequences, time of day, device usage, and historical consumption patterns.                                                                                                                                                    |                                       |               |
+| 9                | Product managers want to understand which combinations of movies, series, podcasts, or songs are frequently consumed together in order to improve homepage design, bundled recommendations, and promotional campaigns.                                                                                                                                            |                                       |               |
+| 10               | During livestream events, NovaStream offers real-time chat functionality. To maintain a safe platform environment, the company wants to automatically detect toxic, hateful, or abusive chat messages as they are posted.                                                                                                                                         |                                       |               |
+| 11 *(Challenge)* | NovaStream is introducing a same-day merchandise delivery service for selected cities. The company wants to determine optimal delivery routes for drivers while minimizing transportation costs and ensuring that promised delivery times are met despite changing traffic conditions.                                                                            |                                       |               |
+| 12 *(Challenge)* | To accelerate growth, NovaStream plans to dynamically adjust subscription prices and promotional discounts depending on customer demand, competitor actions, viewing behavior, and seasonal effects. The company wants to continuously optimize pricing decisions over time.                                                                                      |                                       |               |
 
-## Part 3: Code reading and best practices in modeling
+::: {.sol}
 
-- sklearn vs pytorch
-- examples with architecture choices/understanding
+# Optional Reflection Questions
+
+1. Which of the use cases involve supervised learning?
+2. Which use cases involve sequential or temporal data?
+3. Which use cases are especially suitable for deep learning approaches?
+4. In which cases might feature engineering still be beneficial?
+5. Which use cases could raise ethical, legal, or privacy concerns?
+6. Which tasks require labeled training data and which do not?
+7. Which challenge tasks are not purely prediction problems?
+8. Where might optimization or decision models be more suitable than predictive models?
 
 
+# Instructor Notes / Example Solution Area
 
-## Part 4: quizz
+| #  | Likely Suitable Approaches                                              |
+| -- | ----------------------------------------------------------------------- |
+| 1  | Logistic Regression, Random Forest, Neural Networks                     |
+| 2  | Recommendation Systems, Neural Networks, Transformers                   |
+| 3  | Transformers, RNN/LSTM                                                  |
+| 4  | Anomaly Detection, Neural Networks                                      |
+| 5  | Linear Regression, Time-Series Models, RNN/LSTM                         |
+| 6  | CNN                                                                     |
+| 7  | Clustering (e.g., K-Means)                                              |
+| 8  | RNN/LSTM, Transformer                                                   |
+| 9  | Association Rule Mining                                                 |
+| 10 | Transformer-based NLP models, Neural Networks                           |
+| 11 | Vehicle Routing / Operations Research / Optimization Algorithms         |
+| 12 | Reinforcement Learning, Dynamic Pricing Models, Optimization Approaches |
 
-https://chatgpt.com/c/69f45314-a074-83eb-b4d5-377c0f9f7270
+:::
 
-
-## Exam prep
-
-TODO : include specific questions/tasks that could be included in the exam.
 
 ::: {.callout-tip title="Session 9 survey"}
 Before you wrap up, please complete the Session 9 survey here: [{{< var sessions.session_9.survey_url >}}]({{< var sessions.session_9.survey_url >}}){target="_blank"}. Thank you 🙏

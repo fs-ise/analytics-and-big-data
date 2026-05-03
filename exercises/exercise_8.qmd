@@ -1,5 +1,6 @@
 ---
 title: "Exercise 8: Big data and text analytics"
+format: html
 ---
 
 ::: {.direction}
@@ -16,12 +17,7 @@ In this notebook, we implement and compare different text analytics methods:
 | [Wrap-up](#wrap-up)                                      |          5 |
 | **Overall**                                               |     **90** |
 
-> **Recommended workflow:**
->
-> 1. ✏️ **Think first:** In the PDF, describe what each representation captures before you run the code.
-> 2. 💻 **Then code:** Implement the steps in the Jupyter notebook.
-> 3. 🔎 **Reflect:** Do not only report accuracy. Compare what the different representations make visible or invisible.
->
+
 > Resume your Codespace at [analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks){target="_blank"}.
 
 :::
@@ -36,9 +32,7 @@ We use a small public sample of the **IMDB movie review sentiment dataset**.
 The dataset contains movie reviews with binary sentiment labels.
 For this exercise, the course repository should contain a prepared subset:
 
-```text
-data/imdb_reviews_sample.csv
-```
+[data/imdb_reviews_sample.csv](https://github.com/fs-ise/analytics-and-big-data/raw/refs/heads/main/exercises/data/imdb_reviews_sample.csv)
 
 Expected columns:
 
@@ -103,7 +97,7 @@ df["sentiment"].value_counts()
 
 ::: {.direction}
 
-Create a lightly cleaned text column (remove html `<br>` tags, and multiple spaces), create a numeric target variable, and split the data into training and test data.
+Create a lightly cleaned text column (use regex replacement to remove html `<br>` tags, and multiple spaces), create a numeric target variable, and split the data into training and test data.
 
 ```{python}
 #| eval: false
@@ -123,7 +117,6 @@ from sklearn.model_selection import train_test_split
 # X_train, X_test, y_train, y_test = train_test_split(...)
 ```
 
-*Note.* Use a [stratified split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) so that the share of positive and negative reviews is similar in the training and test data.
 
 :::
 
@@ -435,6 +428,8 @@ Questions:
 ## Solution
 
 ```{python}
+#| eval: false
+
 from sentence_transformers import SentenceTransformer
 
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -493,6 +488,7 @@ Questions:
 ## Solution
 
 ```{python}
+#| eval: false
 from sklearn.metrics.pairwise import cosine_similarity
 
 query_id = 0
@@ -570,6 +566,7 @@ Questions:
 ## Solution
 
 ```{python}
+#| eval: false
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
@@ -665,6 +662,7 @@ Questions:
 ## Solution
 
 ```{python}
+#| eval: false
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import time
@@ -727,6 +725,7 @@ Questions:
 ## Solution
 
 ```{python}
+#| eval: false
 start_time = time.time()
 
 dense_clf = LogisticRegression(max_iter=1000)
@@ -774,7 +773,6 @@ Then complete the interpretation table below.
 | Feature interpretability |  |  |
 | Captures exact words |  |  |
 | Captures semantic similarity |  |  |
-| Suitable baseline? |  |  |
 
 <br><br><br><br><br><br>
 
@@ -785,11 +783,15 @@ Then complete the interpretation table below.
 ## Solution
 
 ```{python}
-results = pd.DataFrame({
-    "representation": ["TF-IDF", "Dense embeddings"],
-    "accuracy": [tfidf_accuracy, dense_accuracy],
-    "training_time_seconds": [tfidf_train_time, dense_train_time],
-})
+#| eval: false
+
+results = pd.DataFrame(
+    {
+        "representation": ["TF-IDF", "Dense embeddings"],
+        "accuracy": [tfidf_accuracy, dense_accuracy],
+        "training_time_seconds": [tfidf_train_time, dense_train_time],
+    }
+)
 
 results
 ```
@@ -803,7 +805,6 @@ A possible interpretation:
 | Feature interpretability | High | Lower |
 | Captures exact words | Yes | Less directly |
 | Captures semantic similarity | Limited | Stronger |
-| Suitable baseline? | Yes | Yes, especially for semantic tasks |
 
 The comparison should emphasize trade-offs rather than a single winner.
 
@@ -819,11 +820,6 @@ We now test how the models behave on short, manually created edge cases.
 These cases are not meant to be a representative dataset.
 They are a stress test that helps us discuss robustness, ambiguity, and generalization.
 
-:::
-
-## Task 5.1 — Predict edge cases
-
-::: {.direction}
 
 Create a small synthetic test set with ambiguous or difficult examples.
 Apply both models and compare predictions.
@@ -878,6 +874,7 @@ Questions:
 ## Solution
 
 ```{python}
+#| eval: false
 edge_cases = pd.DataFrame(
     {
         "review": [
@@ -926,62 +923,10 @@ Expected interpretation:
 
 :::
 
-{{< pagebreak >}}
-
-## Task 5.2 — Reflection: From words to meaning to prediction
-
 ::: {.direction}
-
-Answer the following questions in your own words.
-
-1. What does the sparse representation make visible?
-
-<br><br><br><br>
-
-2. What does the dense representation make visible?
-
-<br><br><br><br>
-
-3. When might a company prefer TF-IDF despite the availability of dense embeddings?
-
-<br><br><br><br>
-
-4. When might dense embeddings be preferable?
-
-<br><br><br><br>
-
-5. What would you check before deploying such a model in a real organization?
-
-<br><br><br><br>
-
-:::
-
-::: {.sol}
-
-## Solution
-
-Possible answers:
-
-1. Sparse representations make lexical patterns visible.
-   They show which words or phrases appear in documents and are relatively interpretable.
-
-2. Dense representations make semantic neighborhoods visible.
-   Texts can be close even when they do not share many exact words.
-
-3. A company might prefer TF-IDF when interpretability, speed, simplicity, and low infrastructure costs matter.
-   TF-IDF is also a strong baseline for many supervised text-classification tasks.
-
-4. Dense embeddings may be preferable when semantic similarity, paraphrases, retrieval, clustering, or transfer to new but related texts are important.
-
-5. Before deployment, one should check performance on recent and domain-specific data, subgroup differences, false-positive and false-negative costs, data privacy, retraining needs, model monitoring, and how model outputs will affect organizational decisions.
-
-:::
-
 {{< pagebreak >}}
 
 # Wrap-up <a id="wrap-up"></a>
-
-::: {.direction}
 
 In this exercise, we moved from manually transforming text into sparse matrices to using learned dense representations.
 The key lesson is not that one representation is always better.
@@ -993,19 +938,7 @@ Rather, each representation supports a different analytical perspective:
 | TF-IDF | Weight characteristic words | Strong interpretable baseline | Still mostly lexical |
 | Dense embeddings | Encode semantic relationships | Useful for similarity and generalization | Less transparent and more resource-intensive |
 
-The overall pipeline was:
-
-1. Load text data
-2. Prepare labels
-3. Create sparse features
-4. Create dense embeddings
-5. Compare similarity
-6. Visualize embeddings
-7. Train classifiers
-8. Evaluate and reflect on edge cases
-
 :::
-
 
 ::: {.callout-tip title="Session 8 survey"}
 Before you wrap up, please complete the Session 8 survey here: [{{< var sessions.session_8.survey_url >}}]({{< var sessions.session_8.survey_url >}}){target="_blank"}. Thank you 🙏
