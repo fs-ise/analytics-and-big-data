@@ -4,6 +4,8 @@ subtitle: "Big data II"
 section_label: "Analytical modeling"
 session: "Session 9"
 date: "2026-05-04"
+nocite: |
+    @ZhangEtAl2023
 ---
 
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
@@ -27,6 +29,8 @@ date: "2026-05-04"
 
 <!--
 https://pressbooks.cuny.edu/sensationandperception/chapter/how-neurons-work/
+
+TODO: replace illustration with something similar: https://iabac.org/blog/what-are-artificial-neural-networks
 -->
 
 **Key milestones**
@@ -162,11 +166,14 @@ animated explanations, including one on [Neural Networks](https://www.youtube.co
 
 ## Functionality of a neuron
 
+<br>
+
 ::: {.highlight_must_learn}
 
-<br>
+::: {style="text-align: center;"}
 ![](/images/neural_network_neuron.png){fig-align=center width=65%}
-<br>
+:::
+
 :::
 
 ::: aside
@@ -181,6 +188,14 @@ In modern neural networks, activations are usually continuous-valued scalars det
 
 ![](../images/neural_networks_comparison_sigmoid_relu.png){fig-align=center width=70%}
 
+::: notes
+
+Advantage of Sigmoid activation: smooth, supports gradient descent
+Note: in the case of Sigmoid activation, the NN is basically a network of logistic regressions
+ReLu: for efficient computation
+
+:::
+
 ## Training of a multilayer perceptron
 
 <br>
@@ -190,14 +205,14 @@ In modern neural networks, activations are usually continuous-valued scalars det
 
 ## Forward pass
 
-TODO: illustrate forward pass (aside: random? initial weights, training sample i)
+TODO: illustrate the use of training data for forward pass (aside: random? initial weights, training sample i)
 
 ## Loss function
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-<br><br>
+<br><br><br>
 ![](../images/neural_network_loss_function.png)
 :::
 
@@ -218,6 +233,12 @@ Backpropagation adjusts the weights to reduce this total loss.
 :::
 
 ::::
+
+::: notes
+
+The $1/2$ makes the math cleaner for the derivatives.
+
+:::
 
 ## Backpropagation
 
@@ -335,37 +356,419 @@ TODO: cover example of backpropagation? http://hmkcode.github.io/ai/backpropagat
 > GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.
 -->
 
-TODO: overview (feedforward, perceptron, ...)
+## Overview
 
-## CNN
+::: {.highlight_must_learn}
 
-.. How images are processsed
+:::: {.columns}
 
-## RNN
+::: {.column width="75%"}
+Basic neural networks are often introduced as **fully connected feed-forward networks**.
+Specialized architectures go beyond this and differ in the following design choices:
 
-..How text of different lengths is processed
+<br>
+<div class="smaller">
+
+<!--
+| Design choice | What changes? | Examples |
+|---|--------|----------|
+| **Input structure assumed** | tabular, spatial, sequential, relational, generative/noise-to-data | images, text, time series, graphs, generated media |
+| **Neuron / unit type** | dense units, recurrent cells, gates, attention heads, generator/discriminator modules | MLP, LSTM/GRU, Transformer, GAN |
+| **Layer operation** | matrix multiplication, convolution, recurrence, attention, adversarial training | fully connected, conv, RNN, self-attention |
+| **Connectivity pattern** | all-to-all, local windows, temporal loops, token-to-token comparison | dense layers, moving filters, hidden states, attention |
+-->
+
+| Design choice | How architectures differ |
+|---|---------|
+| **Input structure assumed** | Different architectures are built for different data structures, such as tabular data (MLPs), spatial data and images (CNNs), sequence data (RNNs or Transformers), relational data (graph neural networks), or ; generative tasks (GANs). |
+| **Neuron / unit type** | The basic unit may be a dense neuron, recurrent cell, gated LSTM/GRU cell, attention head, or a generator/discriminator module. |
+| **Layer operation** | Layers may perform matrix multiplication, convolution with moving filters, recurrent state updates, self-attention, or adversarial generator/discriminator training. |
+| **Connectivity pattern** | Information may flow through all-to-all dense connections, local sliding windows, temporal loops with hidden states, or token-to-token attention. |
+
+
+</div>
+<br>
+
+**Focus in this section**: We use **CNNs**, **RNNs**, and **Transformers** as key examples because they show three central architectural ideas:
+
+- **Convolution through moving filters**
+- **Memory through recurrence**, and
+- **Attention**.
+
+:::
+
+::: {.column width="25%"}
+![Example architecture: Inception-ResNet-v2](../images/inception_resnet_v2_network.png)
+:::
+
+::::
+
+:::
+
+::: notes
+This slide should not present CNNs, RNNs, and Transformers as three isolated summaries. The teaching point is that specialized neural networks encode assumptions about data structure. CNNs reuse local filters over spatial data; RNNs reuse recurrent cells over time; Transformers compare tokens through attention. GANs are useful as an additional example because their specialization is not mainly a layer type, but a training setup with two networks: generator and discriminator.
+
+Inception-ResNet-v2: coders basically build DAGs in code and generate the architecture charts as an overview.
+:::
+
+
+## Convolutional neural networks (CNN)
+
+![](../images/convolutional_network_principles.png){width=80% fig-align=center}
+
+## Recurrent neural networks (RNN)
+
+![](../images/recurrent_neural_network.png){width=70% fig-align=center}
 
 ## Transformers
 
+![](../images/transformer_architecture.png){width=80% fig-align=center}
 
 # Design and training of neural networks {data-stack-name="Design and training"}
 
-TODO: understand where clear default choices exist and where tuning and experimentation is necessary
 
-## Decisions / Process
+## Modeling: choose the architecture and training setup
 
-TODO: must address this questison: To what extent do neural networks reduce the need for manual feature engineering?
-TBD: here and/or in the previous founcations section
+::: {.highlight_must_learn}
 
-## Choice of architecture
+{{< iconify fluent-mdl2:insights >}}  **Best-practice logic**
+Start with choices that are mostly determined by the **data structure** and the **prediction task**.  
+Then tune the parts that require experimentation.
 
-## Tuning/Experimentation
+::: {.fragment}
+**Rule of thumb:** data structure determines the architecture; prediction task determines the output layer and loss.
+:::
+
+<br>
+
+
+**Architecture family**
+
+<div class="smaller">
+| Data structure | Typical model | Inductive bias |
+|---|---|---|
+| 📊 Tabular data | MLP | fully connected |
+| 📷 Images | CNN | local / spatial |
+| 🎧 Audio | CNN / RNN / Transformer | local, sequential, attention |
+| ⏱️ Time series | RNN / Transformer | temporal order |
+| 📝 Text / language | Transformer | global attention |
+</div>
+
+
+<br>
+
+
+**Output layer and loss function**
+
+<div class="smaller">
+| Prediction task | Output layer | Output activation | Loss function |
+|---|---:|:---:|---|
+| Regression | 1 neuron | Linear | MSE |
+| Binary classification | 1 neuron | Sigmoid | Binary cross-entropy |
+| Multi-class classification | One neuron per class | Softmax | Categorical cross-entropy |
+</div>
+
+:::
+
+## Training setup choices
+
+::: {.highlight_must_learn}
+
+Besides the selection of the model type, output layer, and loss function (see previous slide), these choices are usually standardized:
+
+- **Adam** is a strong default optimizer
+- Hidden layers usually start with **ReLU**
+
+These choices require **more experimentation** to tune complexity and parameters:
+
+::: {.columns}
+
+::: {.column width="33%"}
+
+::: {.design-card}
+1. Network structure  
+*How much can the model represent?*
+
+**Depth**  
+number of layers
+
+- shallow → simple patterns
+- deep → complex abstractions
+
+**Width**  
+neurons per layer
+
+Typical starts:  
+`32`, `64`, `128`, `256`
+:::
+
+:::
+
+::: {.column width="33%"}
+
+::: {.design-card}
+2. Learning rate $\eta$  
+*How large are the update steps?*
+
+$$
+w := w - \eta \nabla_w J
+$$
+
+- too high → unstable
+- too low → slow
+
+Typical range:  
+$10^{-3}$ to $10^{-4}$
+
+<br><br>
+:::
+
+
+:::
+
+::: {.column width="33%"}
+
+::: {.design-card}
+3. Regularization  
+*How do we reduce overfitting?*
+
+- **Dropout**  
+  randomly disables units
+- **Weight decay**  
+  penalizes large weights
+- **Early stopping**  
+  stops before overfitting
+<br><br><br><br>
+
+:::
+
+:::
+
+:::
+
+
+:::
+
+::: notes
+Optimizer: updates weights (similar to  $w^{new} = w^{old} - a \cdot \frac{\partial E}{\partial w}$, but more advanced: using information from previous gradients).
+:::
+
+## Note: Neural networks and feature engineering
+
+::: {.highlight_must_learn}
+
+Traditional machine learning often relies strongly on **manual feature engineering**:
+humans design useful input variables before training the model.
+Neural networks can reduce this need because hidden layers learn **intermediate representations** from data.
+However, feature engineering does not disappear. We still need to decide:
+
+- which data are provided as input
+- how inputs are encoded and normalized
+- whether domain-specific variables or transformations are added
+- which architecture matches the structure of the data
+
+:::
+
+![](../images/neural_networks_features.png){width=50% fig-align=center}
 
 ## Python code example
 
+The `sklearn` library provides basic feedforward networks, incluing  MLPClassifier and MLPRegressor.
+It does not offer CNNs, RNNs, or other advanced neural networks.
+
+<br>
+
+```python
+from sklearn.neural_network import MLPClassifier
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+
+model = MLPClassifier(
+    hidden_layer_sizes=(32, 16),  # architecture (depth + width)
+    activation="relu",            # hidden activation
+    solver="adam",                # optimizer
+    learning_rate_init=0.001,     # learning rate
+    alpha=0.0001,                 # L2 regularization (weight decay)
+    max_iter=200
+)
+model.fit(X_train, y_train)
+```
+
+## Pytorch (I)
+
+For advanced neural networks and production environments, `pytorch` and `tensorflow` are suitable libraries.
+
+<!--
+Full example:
+
+        ```python
+        import torch
+        import torch.nn as nn
+        import torch.optim as optim
+
+        # -----------------------------
+        # 1. 🧩 CHOOSE ARCHITECTURE
+        # -----------------------------
+
+        class MLP(nn.Module):
+            def __init__(self, input_dim, hidden_layers, output_dim):
+                super().__init__()
+
+                layers = []
+                prev_dim = input_dim
+
+                # 🔧 Depth & Width (change here!)
+                for h in hidden_layers:
+                    layers.append(nn.Linear(prev_dim, h))
+                    layers.append(nn.ReLU())  # standard default
+                    prev_dim = h
+
+                layers.append(nn.Linear(prev_dim, output_dim))
+
+                self.model = nn.Sequential(*layers)
+
+            def forward(self, x):
+                return self.model(x)
 
 
+        # Example: change architecture here 👇
+        model = MLP(
+            input_dim=10,
+            hidden_layers=[32, 16],   # 🔁 try: [8], [64, 64], [128, 64, 32]
+            output_dim=1              # regression
+        )
 
+
+        # -----------------------------
+        # TRAINING SETUP
+        # -----------------------------
+
+        # Loss (depends on task)
+        criterion = nn.MSELoss()   # regression
+
+        # 🔧 Learning rate (critical parameter!)
+        learning_rate = 1e-3       # 🔁 try: 1e-1, 1e-4
+
+        # 🔧 Optimizer
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+
+        # -----------------------------
+        # 2. 🔄 TRAINING LOOP
+        # -----------------------------
+
+        # Dummy data (replace with real dataset)
+        X = torch.randn(100, 10)
+        y = torch.sum(X, dim=1, keepdim=True)  # simple target
+
+        for epoch in range(100):
+
+            # Forward pass
+            predictions = model(X)
+            loss = criterion(predictions, y)
+
+            # Backpropagation
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            if epoch % 10 == 0:
+                print(f"Epoch {epoch}, Loss: {loss.item():.4f}")
+        ```
+-->
+
+::: {.tall-code-box}
+
+```{.python}
+import torch
+
+X = torch.randn(100, 10)
+y = torch.sum(X, dim=1, keepdim=True)  # simple target
+
+# TODO: specify MLP
+
+model = MLP(
+    input_dim=10,
+    hidden_layers=[32, 16],   # try: [8], [64, 64], [128, 64, 32]
+    output_dim=1              # regression
+)
+
+# Training setup
+criterion = nn.MSELoss()   # regression
+learning_rate = 1e-3       # try: 1e-1, 1e-4
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+# Training loop
+for epoch in range(100):
+
+    # Forward pass
+    predictions = model(X)
+    loss = criterion(predictions, y)
+
+    # Backpropagation
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    print(f"Epoch {epoch}, Loss: {loss.item():.4f}")
+```
+:::
+
+::: notes
+The architecture (whether it is a CNN/RNN/Transformer/... is not specified as a parameter, but implied by the design of layers).
+:::
+
+## Pytorch (II)
+
+::: {.tall-code-box}
+```python
+import torch.nn as nn
+
+# Specify MLP
+class MLP(nn.Module):
+    def __init__(self, input_dim, hidden_layers, output_dim):
+        super().__init__()
+
+        layers = []
+        prev_dim = input_dim
+
+        # Depth and width
+        for h in hidden_layers:
+            layers.append(nn.Linear(prev_dim, h))
+            layers.append(nn.ReLU())
+            prev_dim = h
+
+        layers.append(nn.Linear(prev_dim, output_dim))
+
+        self.model = nn.Sequential(*layers)
+
+    def forward(self, x):
+        return self.model(x)
+
+# ...
+
+model = MLP(
+    input_dim=10,
+    hidden_layers=[32, 16],
+    output_dim=1
+)
+
+```
+:::
+
+## Summary {data-state="hide-menubar"}
+
+- Neural networks transform inputs into outputs through **weighted connections**, **biases**, and **activation functions**.  
+  A single perceptron can only learn **linear decision boundaries**; multilayer networks with nonlinear activations can model more complex patterns.
+
+- Training consists of a **forward pass**, loss calculation, **backpropagation**, and parameter updates via an optimizer such as gradient descent or Adam.
+
+- Different neural network architectures encode different assumptions about data:  
+  **MLPs** for tabular data, **CNNs** for spatial data, **RNNs** for sequences, and **Transformers** for attention-based language tasks.
+
+- Designing neural networks means choosing the architecture, output layer, loss function, learning rate, optimizer, and regularization strategy, then iteratively evaluating and adjusting these choices.
 
 ## Survey: Session 9 {data-state="hide-menubar"}
 
