@@ -6,19 +6,20 @@ title: "Exercise 9: Big data and neural networks"
 
 In this notebook, we cover:
 
-| Part    | Topic                                      | Time   |
-| ------- | ------------------------------------------ | ------ |
-| 1       | Backpropagation step by step               | 25 min |
-| 2       | Interactive neural networks                | 20 min |
-| 3       | Code understanding: PyTorch model objects  | 10 min |
-| 4       | AI/ML use cases quiz: NovaStream           | 25 min |
-|         | Wrap-up                                    | 5 min  |
+| Exercise part                                                 | Time (min)  |
+| ------------------------------------------------------------- | ----------: |
+| [Part 1: Backpropagation step by step](#part-1)               | 25 min      |
+| [Part 2: Interactive neural networks](#part-2)                | 20 min      |
+| [Part 3: Code understanding: PyTorch model objects](#part-3)  | 10 min      |
+| [Part 4: Use cases quiz: NovaStream](#part-4)                 | 25 min      |
+| [Wrap-up](#wrap-up)                                            | 5 min       |
+| Total                                                         | 90 min      |
 
 <br><br>
 
 :::
 
-## Part 1: Backpropagation step by step
+## Part 1: Backpropagation step by step <a id="part-1"></a>
 
 Go to [http://hmkcode.github.io/ai/backpropagation-step-by-step](http://hmkcode.github.io/ai/backpropagation-step-by-step) and study the backpropagation algorithm in one iteration.
 
@@ -26,7 +27,7 @@ Note that for simplification, the example uses no activation function.
 
 {{< pagebreak >}}
 
-## Part 2: Interactive neural networks
+## Part 2: Interactive neural networks <a id="part-2"></a>
 
 Go to the [Tensorflow Playground](https://playground.tensorflow.org/) and experiment with classification problems.
 Your goal is to achieve a low test loss with the simplest possible model.
@@ -66,7 +67,7 @@ Briefly explain:
 
 {{< pagebreak >}}
 
-## Part 3: Code understanding — PyTorch model objects
+## Part 3: Code understanding — PyTorch model objects <a id="part-3"></a>
 
 In `sklearn`, we often specify the model through parameters such as strings or tuples:
 
@@ -154,7 +155,7 @@ Output: 1 value
 
 {{< pagebreak >}}
 
-## Part 4: AI/ML Use Cases Quiz — NovaStream
+## Part 4: Use Cases Quiz — NovaStream <a id="part-4"></a>
 
 **Background**
 
@@ -179,17 +180,27 @@ Some use cases may not fit perfectly into the standard analytical models discuss
 
 
 | #                | Use Case                                                                                                                                                                                                                                                                                                                                                          | Recommendation         |
-| ------ | ---------------------- | ------------------------------------- |
+| --- | ---------------------- | -------------------------------- |
 | 1                | NovaStream wants to identify subscribers who are likely to cancel their subscription within the next 30 days. Available data includes viewing behavior, subscription history, customer support interactions, app usage patterns, and payment information. Early identification would allow the company to proactively offer incentives and reduce customer churn. |                                       |
 | 2                | To improve user engagement, NovaStream wants to recommend movies, series, podcasts, and songs that individual users are likely to consume next. The platform collects information about viewing history, ratings, watch duration, search queries, and similarities between users.                                                                                 |                                       |
 | 3                | NovaStream plans to expand internationally and wants to automatically generate subtitles for livestreams and recorded content in multiple languages. The company wants the generated subtitles to adapt well to conversational language and different speaking styles.                                                                                            |                                       |
 | 4                | The startup has noticed suspicious activity involving accounts that appear to be shared simultaneously across many devices and geographic regions. NovaStream wants to automatically detect unusual behavior patterns that may indicate fraudulent usage or unauthorized account sharing.                                                                         |                                       |
 | 5        | To accelerate growth, NovaStream plans to dynamically adjust subscription prices and promotional discounts depending on customer demand, competitor actions, viewing behavior, and seasonal effects. The company wants to continuously optimize pricing decisions over time.                                                                                      |                                       |
+
+{{< pagebreak >}}
+
+| #                | Use Case                                                                                                                                                                                                                                                                                                                                                          | Recommendation         |
+| --- | ---------------------- | -------------------------------- |
 | 6                | Users can upload custom cover images for podcasts and playlists. NovaStream wants to automatically classify uploaded images into categories such as sports, entertainment, education, politics, or technology in order to improve search and content discovery.                                                                                                   |                                       |
 | 7         | NovaStream is introducing a same-day merchandise delivery service for selected cities. The company wants to determine optimal delivery routes for drivers while minimizing transportation costs and ensuring that promised delivery times are met despite changing traffic conditions.                                                                            |                                       |
 | 8                | NovaStream wants to predict which song, video, or podcast episode a user is most likely to consume next based on recent interaction sequences, time of day, device usage, and historical consumption patterns.                                                                                                                                                    |                                       |
 | 9                | Product managers want to understand which combinations of movies, series, podcasts, or songs are frequently consumed together in order to improve homepage design, bundled recommendations, and promotional campaigns.                                                                                                                                            |                                       |
 | 10               | During livestream events, NovaStream offers real-time chat functionality. To maintain a safe platform environment, the company wants to automatically detect toxic, hateful, or abusive chat messages as they are posted.                                                                                                                                         |                                       |
+
+{{< pagebreak >}}
+
+| #                | Use Case                                                                                                                                                                                                                                                                                                                                                          | Recommendation         |
+| --- | ---------------------- | -------------------------------- |
 | 11                | The marketing department wants to identify groups of customers with similar viewing and listening behavior in order to design more targeted campaigns and personalized subscription offers. The company does not currently have predefined customer categories.                                                                                                   |                                       |
 | 12                | Due to rapid growth, NovaStream’s infrastructure team must better predict future server demand and bandwidth consumption in order to avoid outages during peak usage periods while also minimizing unnecessary cloud costs. Historical usage data across days, weeks, and special events is available.                                                            |                                       |
 
@@ -241,7 +252,7 @@ In this exercise, we explored how neural networks learn and how analytical model
 | PyTorch models | Neural networks can be defined as sequences of layers and activation functions |
 | Analytical use cases | Different problems require different analytical approaches |
 
-In the last sessions, we covered a range of models for tabular and unstructured data in regression, classification, and prediction tasks.#
+In the last sessions, we covered a range of models for tabular and unstructured data in regression, classification, and prediction tasks.
 At the same time, other problems may require different models, such as time-series forecasting or route optimization.
 
 :::

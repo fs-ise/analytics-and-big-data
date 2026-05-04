@@ -970,6 +970,8 @@ line-height:1;
 
 The `sentence_transformers` library offers pre-trained models for dense vectors:
 
+<br>
+
 ```python
 from sentence_transformers import SentenceTransformer
 

@@ -14,4 +14,99 @@ Check for NLP assignments: https://github.com/microsoft/ai-for-beginners
 
 https://github.com/iam-salma/NLP-Bootcamp-with-python
 
+TODO: check this! https://chatgpt.com/c/69f5d4f4-aaf4-83eb-99f2-012d14291819
+
+TODO: Explain how big data environments reshape model development, validation, and deployment. This creates continuity with: Generalization problem, Overfitting, Model evaluation
+
+
 :::
+
+## Text analytics: Sparse vectors
+
+**TF-IDF:**
+
+Explain how $idf_i$ changes:
+
+- when $\frac{N}{df_i}$ gets smaller and approaches 1, the log approaches 0 and the $tf_{ij}$ will have low weights in the TF-IDF
+- if the term is very rare, the $\frac{N}{df_i}$ gets large and the terms will have more weight in the TF-IDF (at teh same time, `log` ensures that outliers/very rare terms do not have an excessive influence on TF-IDF)
+
+**Example with a mini corpus after preprocessing**
+
+<div class="smaller">
+
+| Document | Tokens |
+|---|---|
+| D1 | `jupiter largest gas planet` |
+| D2 | `saturn gas planet rings` |
+| D3 | `mars rocky planet` |
+
+</div>
+
+<br>
+
+Vocabulary:
+
+<div style="font-family: monospace; font-size: 0.75em;">
+[gas, jupiter, largest, mars, planet, rings, rocky, saturn]
+</div>
+
+<br>
+
+Sparse vector for **D1**:
+
+<div style="
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+gap: 0.35em;
+font-family: monospace;
+font-size: 0.7em;
+text-align: center;
+">
+
+<div>gas</div>
+<div>jupiter</div>
+<div>largest</div>
+<div>mars</div>
+<div>planet</div>
+<div>rings</div>
+<div>rocky</div>
+<div>saturn</div>
+
+<div style="background:#cfe8d6; padding:0.35em; border-radius:6px;">1</div>
+<div style="background:#cfe8d6; padding:0.35em; border-radius:6px;">1</div>
+<div style="background:#cfe8d6; padding:0.35em; border-radius:6px;">1</div>
+<div style="background:#eeeeee; padding:0.35em; border-radius:6px;">0</div>
+<div style="background:#cfe8d6; padding:0.35em; border-radius:6px;">1</div>
+<div style="background:#eeeeee; padding:0.35em; border-radius:6px;">0</div>
+<div style="background:#eeeeee; padding:0.35em; border-radius:6px;">0</div>
+<div style="background:#eeeeee; padding:0.35em; border-radius:6px;">0</div>
+
+</div>
+
+<br>
+
+<div class="smaller">
+
+| Representation | Vector for D1 |
+|---|---|
+| Binary occurrence | `[1, 1, 1, 0, 1, 0, 0, 0]` |
+| Term occurrence | `[1, 1, 1, 0, 1, 0, 0, 0]` |
+| Term frequency | `[.25, .25, .25, 0, .25, 0, 0, 0]` |
+| TF-IDF | `[.18, .48, .48, 0, 0, 0, 0, 0]` |
+
+</div>
+
+Note: using $log_{10}$ for ease of calculation (libraries often use the natural $log_2$).
+
+- $w_{Gas;D1} = 1\times log(\frac{3}{2}) = 0.18$
+- $w_{Jupyter;D1} = 1\times log(\frac{3}{1}) = 0.48$
+- $w_{largest;D1} = 1\times log(\frac{3}{1}) = 0.48$
+- $w_{Planet;D1} = 1\times log(\frac{3}{3}) = 0$
+
+Note: `Planet` has $idf=0$ and will be eliminated from TF-IDF.
+
+Most entries are zero because each document only uses a small part of the full vocabulary.
+
+## Dense representations
+
+Highlight that dense representations allow us to determine semantic similarity based on mathematical operations.
