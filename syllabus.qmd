@@ -7,7 +7,7 @@ format: html
 
 Building on previous sessions:
 
-- Regression I builds the basics, Regression II introduces model tuning (forward/backward variable selection in multiple regression, non-linear transformations, logistic regression)
+- Regression 1 builds the basics, Regression 2 introduces model tuning (forward/backward variable selection in multiple regression, non-linear transformations, logistic regression)
 - ML I builds the basics, ML II introduces feature engineering, ensemble models, ...
 
 :::
