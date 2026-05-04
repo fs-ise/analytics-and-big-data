@@ -596,7 +596,7 @@ However, feature engineering does not disappear. We still need to decide:
 
 ## Python code example
 
-The `sklearn` library provides basic feedforward networks, incluing  MLPClassifier and MLPRegressor.
+The `sklearn` library provides basic feedforward networks, incluing MLPClassifier and MLPRegressor.
 It does not offer CNNs, RNNs, or other advanced neural networks.
 
 <br>
@@ -622,85 +622,6 @@ model.fit(X_train, y_train)
 ## Pytorch (I)
 
 For advanced neural networks and production environments, `pytorch` and `tensorflow` are suitable libraries.
-
-<!--
-Full example:
-
-        ```python
-        import torch
-        import torch.nn as nn
-        import torch.optim as optim
-
-        # -----------------------------
-        # 1. 🧩 CHOOSE ARCHITECTURE
-        # -----------------------------
-
-        class MLP(nn.Module):
-            def __init__(self, input_dim, hidden_layers, output_dim):
-                super().__init__()
-
-                layers = []
-                prev_dim = input_dim
-
-                # 🔧 Depth & Width (change here!)
-                for h in hidden_layers:
-                    layers.append(nn.Linear(prev_dim, h))
-                    layers.append(nn.ReLU())  # standard default
-                    prev_dim = h
-
-                layers.append(nn.Linear(prev_dim, output_dim))
-
-                self.model = nn.Sequential(*layers)
-
-            def forward(self, x):
-                return self.model(x)
-
-
-        # Example: change architecture here 👇
-        model = MLP(
-            input_dim=10,
-            hidden_layers=[32, 16],   # 🔁 try: [8], [64, 64], [128, 64, 32]
-            output_dim=1              # regression
-        )
-
-
-        # -----------------------------
-        # TRAINING SETUP
-        # -----------------------------
-
-        # Loss (depends on task)
-        criterion = nn.MSELoss()   # regression
-
-        # 🔧 Learning rate (critical parameter!)
-        learning_rate = 1e-3       # 🔁 try: 1e-1, 1e-4
-
-        # 🔧 Optimizer
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-
-
-        # -----------------------------
-        # 2. 🔄 TRAINING LOOP
-        # -----------------------------
-
-        # Dummy data (replace with real dataset)
-        X = torch.randn(100, 10)
-        y = torch.sum(X, dim=1, keepdim=True)  # simple target
-
-        for epoch in range(100):
-
-            # Forward pass
-            predictions = model(X)
-            loss = criterion(predictions, y)
-
-            # Backpropagation
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-
-            if epoch % 10 == 0:
-                print(f"Epoch {epoch}, Loss: {loss.item():.4f}")
-        ```
--->
 
 ::: {.tall-code-box}
 

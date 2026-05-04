@@ -332,11 +332,11 @@ References for data and claims:
 
     Sensor Data
 
-    We are increasingly surrounded by sensors that collect and share data. Take your smart phone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelerometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.
+    We are increasingly surrounded by sensors that collect and share data. Take your smartphone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelerometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.
 
     The Internet of Things Data
 
-    We now have smart TVs that are able to collect and process data, we have smart watches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.
+    We now have smart TVs that are able to collect and process data, we have smartwatches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.
 
     ::: aside
     — Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
@@ -409,10 +409,10 @@ References for data and claims:
     Retailers are able to optimize their stock based on predictive models generated from social media data, web search trends, weather forecasts...
 
     - Improving Health
-    Use the data from smart watches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …
+    Use the data from smartwatches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …
 
     - Improving Security and Law Enforcement
-    Use big data analytics to predict criminal activity, foil terrorist plots, detect cyber attacks, and detect fraudulent credit card transactions.
+    Use big data analytics to predict criminal activity, foil terrorist plots, detect cyberattacks, and detect fraudulent credit card transactions.
 
     - Improving and Optimizing Cities and Countries (Smart Cities)
     Optimize traffic flows based on real time traffic information, social media and weather data. A bus would wait for a delayed train and traffic signals predict traffic volumes.
@@ -545,13 +545,9 @@ Aggregation is done just in time. Thus, the schema of the data warehouse is just
 :::
 
 
-
-
-
 # Text analytics {data-stack-name="Text analytics"}
 
 ## Text analytics
-
 
 :::: {.columns}
 
@@ -747,7 +743,7 @@ line-height:1;
 
 ::::
 
-## Feature generation: Sparse sepresentations (classical NLP)
+## Feature generation: Sparse representations (classical NLP)
 
 :::: {.columns}
 
@@ -1123,9 +1119,9 @@ line-height:1;
 ::: {.column width="80%"}
 
 In one-hot encoded documents, or in large corpora, feature selection can help to facilitate computation and avoid overfitting.
-Two  major feature selection approaches in the context of text analytics are:
+Two major feature selection approaches in the context of text analytics are:
 
-**Pruning methods**: removing words that are too infrequent or to frequent, based on absolute or percentual thresholds.
+**Pruning methods**: removing words that are too infrequent or to frequent, based on absolute or percental thresholds.
 
 **Token filtering based on part-of-speech (POS)**: sometimes, the analyses focus on particular classes of words. For example:
 
