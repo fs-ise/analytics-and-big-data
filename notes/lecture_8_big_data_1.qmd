@@ -3,9 +3,13 @@ title: "Notes: Session 8: Big Data I"
 format: html
 ---
 
+2026-05-04: 95 min (lecture)
+
 | Time (min) | Duration | Topic | Additional materials |
 |------------|----------|-------|----------------------|
-| 0–90       | 90       | TODO  |                      |
+| 0–30       | 30       | Big Data / 4V   |                      |
+| 30–50      | 20       | Architecture    |                      |
+| 50–90      | 40       | Text analytics  |                      |
 
 ::: callout-note
 TODO
@@ -22,6 +26,8 @@ TODO: Explain how big data environments reshape model development, validation, a
 :::
 
 ## Text analytics: Sparse vectors
+
+Aka. first-generation / bag of words models
 
 **TF-IDF:**
 
@@ -110,3 +116,7 @@ Most entries are zero because each document only uses a small part of the full v
 ## Dense representations
 
 Highlight that dense representations allow us to determine semantic similarity based on mathematical operations.
+
+
+## Exercises
+
