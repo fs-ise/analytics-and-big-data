@@ -112,7 +112,7 @@ $$\hat{y} =
 
 - This corresponds to a linear classifier
 - The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them
-- After each sample, the weights $w$ are adjusted to minimize a loss function, which quantifies the difference between the predicted and target outputs
+- After each sample, the weights $w$ are adjusted to minimize a loss function, which quantifies the difference between the predicted and true outputs
 :::
 
 ::: {.column width="50%"}
@@ -138,7 +138,7 @@ Solution:
 Multilayer neural networks combine:
 
 - **Multiple hidden layers**, which enable increasingly abstract representations
-- **Nonlinear activation functions**, which make nonlinear learning possible
+- **Activation functions**, which make nonlinear learning possible
 
 Layers:
 
@@ -232,7 +232,7 @@ For one training example $i$:
 
 $$E_i = \frac{1}{2} \sum_{j=1}^{m} (o_{ij} - t_{ij})^2$$
 
-This is the squared error loss across all **output neurons**.
+This is the squared error loss across all **output neurons $j$**.
 
 Across all $h$ training examples, the total loss is:
 
@@ -698,6 +698,10 @@ model = MLP(
 )
 
 ```
+:::
+
+::: aside
+See [torch.nn.Module](https://docs.pytorch.org/docs/2.11/generated/torch.nn.Module.html) for inherited methods.
 :::
 
 ## Summary {data-state="hide-menubar"}
