@@ -770,7 +770,6 @@ class MLP(nn.Module):
         return self.model(x)
 
 # ...
-
 model = MLP(
     input_dim=10,
     hidden_layers=[32, 16],

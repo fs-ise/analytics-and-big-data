@@ -30,11 +30,7 @@ Management wants to understand whether text analytics can help to classify revie
 
 We use a small public sample of the **IMDB movie review sentiment dataset**.
 The dataset contains movie reviews with binary sentiment labels.
-For this exercise, the course repository should contain a prepared subset:
-
-[data/imdb_reviews_sample.csv](https://github.com/fs-ise/analytics-and-big-data/raw/refs/heads/main/exercises/data/imdb_reviews_sample.csv)
-
-Expected columns:
+For this exercise, the course repository should contain a prepared subset ([data/imdb_reviews_sample.csv](https://github.com/fs-ise/analytics-and-big-data/raw/refs/heads/main/exercises/data/imdb_reviews_sample.csv)) with thefollowing columns:
 
 | Variable | Meaning | Type |
 |---|---|---|
@@ -457,6 +453,8 @@ Expected interpretation:
 
 :::
 
+{{< pagebreak >}}
+
 ## Task 3.2 — Find similar reviews using dense embeddings
 
 ::: {.direction}
@@ -687,6 +685,8 @@ A good interpretation should note that TF-IDF combined with logistic regression 
 It is relatively interpretable because features correspond to words or phrases, and coefficients can be inspected.
 
 :::
+
+{{< pagebreak >}}
 
 ## Task 4.2 — Train a classifier on dense embeddings
 
