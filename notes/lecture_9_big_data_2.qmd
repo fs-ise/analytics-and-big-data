@@ -3,6 +3,8 @@ title: "Notes: Session 9: Big Data II"
 format: html
 ---
 
+2026-05-04: 80 min
+
 | Time (min) | Duration | Topic | Additional materials |
 |------------|----------|-------|----------------------|
 | 0–90       | 90       | TODO  |                      |
@@ -11,6 +13,9 @@ format: html
 
 TODO
 
+- Clarify explanations of RNN and transformers
+- Extend: example of backpropagation (in class - Note: when using the [http://hmkcode.github.io/ai/backpropagation-step-by-step](http://hmkcode.github.io/ai/backpropagation-step-by-step) example - fix typos!)
+- Fix inconsistent notation (learning rate: a and \eta)
 - Glossay (inductive bias, ...)
     - The inductive bias of a neural network is the set of assumptions built into the model that shape what kinds of patterns it is likely to learn from data.
 
@@ -68,6 +73,8 @@ https://web.stanford.edu/~jurafsky/slp3/slides/nn25aug.pdf
 
 
 ## Exercise
+
+2026-05-04: 80 min
 
 Explanation: https://www.youtube.com/watch?v=ru9dXF04iSE&t=10s
 -> tasks/learnings are not clearly evident/articulated 

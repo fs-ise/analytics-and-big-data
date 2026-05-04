@@ -12,7 +12,11 @@ format: html
 | 50–90      | 40       | Text analytics  |                      |
 
 ::: callout-note
+
 TODO
+
+- Extend text analytics slides to illustrate "Relevance today" (moving towards a systems perspective; used in LLMs (as input); RAG (explain), information retrieval (e.g., obsidian))
+
 
 Check for NLP assignments: https://github.com/microsoft/ai-for-beginners
 
@@ -122,3 +126,8 @@ Highlight that dense representations allow us to determine semantic similarity b
 
 ## Exercises
 
+2026-05-04: 70 min
+
+TODO
+
+- Reduce imdb dataset to 1500 or 2000 ? (faster computations of the dense vectors)

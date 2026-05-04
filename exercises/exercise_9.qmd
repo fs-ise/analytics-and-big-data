@@ -220,20 +220,20 @@ Some use cases may not fit perfectly into the standard analytical models discuss
 
 # Instructor Notes / Example Solution Area
 
-| #  | Likely Suitable Approaches                                              |
-| -- | ----------------------------------------------------------------------- |
-| 1  | Logistic Regression, Random Forest, Neural Networks                     |
-| 2  | Recommendation Systems, Neural Networks, Transformers                   |
-| 3  | Transformers, RNN/LSTM                                                  |
-| 4  | Anomaly Detection, Neural Networks                                      |
-| 5  | Linear Regression, Time-Series Models, RNN/LSTM                         |
-| 6  | CNN                                                                     |
-| 7  | Clustering (e.g., K-Means)                                              |
-| 8  | RNN/LSTM, Transformer                                                   |
-| 9  | Association Rule Mining                                                 |
-| 10 | Transformer-based NLP models, Neural Networks                           |
-| 11 | Vehicle Routing / Operations Research / Optimization Algorithms         |
-| 12 | Reinforcement Learning, Dynamic Pricing Models, Optimization Approaches |
+| #  | Summary Statement                                       | Likely Suitable Approaches                                              |
+| -- | ------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 1  | Predict customers likely to cancel soon.                | Logistic Regression, Random Forest, Neural Networks                     |
+| 2  | Recommend personalized media content to users.          | Recommendation Systems, Neural Networks, Transformers                   |
+| 3  | Generate multilingual subtitles from spoken content.    | Transformers, RNN/LSTM                                                  |
+| 4  | Detect suspicious or fraudulent account behavior.       | Anomaly Detection, Neural Networks                                      |
+| 5  | Optimize subscription prices and discounts dynamically. | Reinforcement Learning, Dynamic Pricing Models, Optimization Approaches |
+| 6  | Classify uploaded images into content categories.       | CNN                                                                     |
+| 7  | Optimize same-day delivery routes under constraints.    | Vehicle Routing / Operations Research / Optimization Algorithms         |
+| 8  | Predict the next item a user will consume.              | RNN/LSTM, Time series, Transformer                                                   |
+| 9  | Identify media items frequently consumed together.      | k-Means, Association Rule Mining                                                 |
+| 10 | Detect toxic or abusive chat messages in real time.     | Transformer-based NLP models, Neural Networks                           |
+| 11 | Segment customers into behavior-based groups.           | Clustering, e.g., K-Means                                               |
+| 12 | Forecast future server and bandwidth demand.            | Linear Regression, Time-Series Models, RNN/LSTM                         |
 
 :::
 
