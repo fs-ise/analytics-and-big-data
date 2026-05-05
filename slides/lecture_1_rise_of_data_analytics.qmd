@@ -137,11 +137,11 @@ plt.show()
 **Enterprise and transactional data**  
 Enterprise systems such as ERP, CRM, and supply chain platforms generate large volumes of structured data through everyday business transactions.
 
-**eCommerce**  
+**E-commerce**  
 Every search, click, purchase, and review creates behavioral and transactional data used for recommendations and personalized marketing.
 
 **Social media and user-generated content**  
-Platforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live streaming.
+Platforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live-streaming.
 
 **IoT and smart devices**  
 Connected devices—from wearables to industrial sensors—continuously produce real-time data across interconnected systems.
@@ -468,8 +468,6 @@ Figure based on the work of @HendrycksEtAl2025 on *Artificial General Intelligen
 
       Which one is Explanation, which Prediction?
 
-      counterfactual : den Tatsachen widersprechend
-
       :::
 
       ## Explanation vs. Prediction (II)
@@ -573,7 +571,7 @@ Source: http://www.bvl.de/misc/filePush.php?mimeType=application/pdf&fullPath=/f
 
 ## Analytical models
 
-There is a a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes.
+There is a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes.
 While these fields often focus on methodological development, business analytics emphasizes applying these approaches to support understanding and decision-making in organizational contexts.
 
 <br>
@@ -954,7 +952,7 @@ Read the _Competing on Analytics_ paper by @Davenport2006.
 Prepare to discuss the following questions:
 
 1. **What does it mean for a company to “compete on analytics”?**  
-   How is this different from simply using data or reports in decision making?
+   How is this different from simply using data or reports in decision-making?
 
 2. **What organizational capabilities are required to compete on analytics?**  
    Consider aspects such as leadership, culture, people, and technology.

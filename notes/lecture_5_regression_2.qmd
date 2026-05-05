@@ -162,7 +162,7 @@ We use the **score approach**, where the score is: $p(x)=P(Y=1\mid x)$
 
 ## From Logit to Sigmoid (whiteboard)
 
-Start with the **logit formulation** and define:
+Start with the **Logit formulation** and define:
 $$\log\left(\frac{y}{1-y}\right)=\beta_0 + \beta_1 x = z$$
 
 **Solve for (y)**

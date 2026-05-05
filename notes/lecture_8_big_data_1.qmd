@@ -38,7 +38,7 @@ Aka. first-generation / bag of words models
 Explain how $idf_i$ changes:
 
 - when $\frac{N}{df_i}$ gets smaller and approaches 1, the log approaches 0 and the $tf_{ij}$ will have low weights in the TF-IDF
-- if the term is very rare, the $\frac{N}{df_i}$ gets large and the terms will have more weight in the TF-IDF (at teh same time, `log` ensures that outliers/very rare terms do not have an excessive influence on TF-IDF)
+- if the term is very rare, the $\frac{N}{df_i}$ gets large and the terms will have more weight in the TF-IDF (at the same time, `log` ensures that outliers/very rare terms do not have an excessive influence on TF-IDF)
 
 **Example with a mini corpus after preprocessing**
 

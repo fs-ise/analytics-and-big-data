@@ -16,7 +16,7 @@ TODO
 - Clarify explanations of RNN and transformers
 - Extend: example of backpropagation (in class - Note: when using the [http://hmkcode.github.io/ai/backpropagation-step-by-step](http://hmkcode.github.io/ai/backpropagation-step-by-step) example - fix typos!)
 - Fix inconsistent notation (learning rate: a and \eta)
-- Glossay (inductive bias, ...)
+- Glossary (inductive bias, ...)
     - The inductive bias of a neural network is the set of assumptions built into the model that shape what kinds of patterns it is likely to learn from data.
 
 
@@ -48,9 +48,9 @@ Ideally, students should have a solid intuition, seen the math, and know when (n
 
 Comprehensive resource (formal specification and implementation): https://d2l.ai/index.html
 
-Interactiv js visualization of NNs: https://github.com/hmkcode/netflow.js
+Interactive js visualization of NNs: https://github.com/hmkcode/netflow.js
 
-insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises
+Insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises
 -> even if all inputs are 0, the output can be non-zero. (due to biases)
 
 TBD/whether and where to cover:

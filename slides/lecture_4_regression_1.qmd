@@ -817,7 +817,7 @@ Evaluation focuses on three complementary questions:
 
 ## Model assumptions
 
-Regression models rely the following **assumptions**:
+Regression models rely on the following **assumptions**:
 
 * Linear relationship between predictors and outcome
 * Independent observations
@@ -1270,7 +1270,7 @@ Saving a model makes it possible to reuse it in applications, dashboards, script
 :::
 
 ::: notes
-You may mention that joblib is commonly used for scikit-learn objects.
+You may mention that `joblib` is commonly used for scikit-learn objects.
 Also useful to note that deployment requires the same variable names and preprocessing steps as in training.
 :::
 

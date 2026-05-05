@@ -24,7 +24,7 @@ Prepare to discuss the following questions:
 :::
 
 1. **What does it mean for a company to “compete on analytics”?**  
-   How is this different from simply using data or reports in decision making?
+   How is this different from simply using data or reports in decision-making?
 
 :::{.direction}
 <br><br><br><br><br><br><br><br><br>
@@ -35,14 +35,14 @@ To “compete on analytics” means that a company uses data, statistical analys
 Analytics is not just a support tool; it becomes a basis for competitive advantage.
 @Davenport2006 argues that such firms do not merely know what happened in the past, but use predictive and optimization methods to determine what will happen, what customers will do, what prices maximize profit, and how processes can be improved.
 
-This is different from simply using data or reports in decision making. Many firms use descriptive statistics and reports, but analytics competitors go further by:
+This is different from simply using data or reports in decision-making. Many firms use descriptive statistics and reports, but analytics competitors go further by:
 
 - applying advanced models rather than only dashboards or summaries,
 - embedding analytics across multiple functions rather than in isolated departments,
 - coordinating these efforts under an enterprise strategy,
 - and repeatedly using evidence to improve decisions over time.
 
-In short, ordinary data use supports decisions; competing on analytics makes superior, repeatable, organization-wide decision making a source of advantage.
+In short, ordinary data use supports decisions; competing on analytics makes superior, repeatable, organization-wide decision-making a source of advantage.
 :::
 
 2. **What organizational capabilities are required to compete on analytics?**  
@@ -56,11 +56,11 @@ In short, ordinary data use supports decisions; competing on analytics makes sup
 According to @Davenport2006, companies that compete on analytics need a combination of organizational and technical capabilities.
 There is a need for:
 
-1. **Strong senior leadership**, ideally from the CEO. Top executives must actively champion data-based decision making and signal that analytics is central to strategy.
+1. **Strong senior leadership**, ideally from the CEO. Top executives must actively champion data-based decision-making and signal that analytics is central to strategy.
 
 2. **Analytics-oriented culture**. Employees are expected to justify decisions with evidence, performance is measured quantitatively, and the organization develops a “test and learn” mindset in which ideas are validated through experiments.
 
-3. **The right people**. This includes not only technically skilled analysts, but also people who can translate complex analyses into business language and work closely with decision makers.
+3. **The right people**. This includes not only technically skilled analysts, but also people who can translate complex analyses into business language and work closely with decision-makers.
   Analytical talent must be numerous enough to matter and visible enough to influence the business.
 
 4. **Enterprise approach**. Analytics should not be fragmented across departments with separate tools and inconsistent data definitions.

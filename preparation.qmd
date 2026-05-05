@@ -4,17 +4,17 @@ format: html
 ---
 
 ::: {.callout-important title="Materials"}
-See **/home/gerit/workspace/projects/bda/nextcloud** (lecture_x)
+See [Nextcloud](/home/gerit/workspace/projects/bda/nextcloud) (lecture_x)
 :::
 
 Generally: generation of PDFs: local only?
 
 - Include "must-learn" markers: ``<!-- _class: must_learn -->``
 
-Plan to record timing (data in the repository) and data from google surveys - **TODO: session/exercise structure should be reflected in each survey**
+Plan to record timing (data in the repository) and data from Google surveys - **TODO: session/exercise structure should be reflected in each survey**
 -> run separate surveys for the lecture/exercise to use the timestamps for the duration
 
-TODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)
+TODO: HTML notebook creation (via make exercises) appears to be overridden by the quarto render (e.g., HTML assignments are slides not Jupyter notebooks on the overview page)
 
 Consistently include "vocabulary" sections at the end (like in regression 1)
 
@@ -165,7 +165,7 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 
 ## TBD:
 
-- [ ] Test exercise sheets: [GitHub jupyterlab](https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning?utm_source=chatgpt.com#opening-your-codespace-in-jupyterlab) with pre-installation of pandas etc. and PDF generation
+- [ ] Test exercise sheets: [GitHub JupyterLab](https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning?utm_source=chatgpt.com#opening-your-codespace-in-jupyterlab) with pre-installation of pandas etc. and PDF generation
 TBD: exercise sheets in a separate repository?
 - [ ] Excerpts for teaching hub
 - [ ] Exercise sheets: solutions?!
@@ -187,7 +187,7 @@ Slides:
 Exercise sheets:
 
 - [ ] Specify exercise goals and state typical exam questions
-- [ ] Identify suitable exercise materials (rossbach, hopf, prester)
+- [ ] Identify suitable exercise materials (Rossbach, Hopf, Prester)
 - [ ] Prepare and test-run
 - [ ] Setup teaching-notes
 
@@ -200,7 +200,7 @@ https://www.coursera.org/learn/data-analysis-with-python
 Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI
 
 
-## Notes (Quarto/revealjs)
+## Notes (Quarto/reveal js)
 
 Hide slide in PDF export:
 

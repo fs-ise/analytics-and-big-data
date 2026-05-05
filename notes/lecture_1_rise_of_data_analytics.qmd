@@ -71,7 +71,7 @@ I will work with the notebook group.
         :::
 -->
 
-## Benefits of jupyter notebooks
+## Benefits of Jupyter notebooks
 
 - one document instead of multiple (easier to keep in sync, harder for files to get lost / matters more if the analyses are more complex, if there are more "moving parts")
 - option to collapse/hide cells (communicating with business stakeholders)
@@ -99,7 +99,7 @@ Introduce system (badges) - similar to https://eduki.com/de/material/306565/schi
 - no - it is about data/computation/algorithms/processes. 2 points
 - yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.
 
-TODO: explicitly address the question why we select Python/jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
+TODO: explicitly address the question why we select Python/Jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
 
 -> LLMs are language models: they are good at handling language (not necessarily at handling data) - so if we use a _programming_ language to analyze data, LLMs can help us. More than they could help us operate a GUI.
 -> LLMs are not directly trained with user-GUI interactions (workflows are weakly documented and harder to analyze/version/control)
@@ -151,11 +151,12 @@ right-click, create console
 
 ## Notebook exercise
 
-See how far you get: helps me understand how much students already know.,
+See how far you get: helps me understand how much students already know.
 
 Ask students who shared their solutions whether they can send them to me / that I make them available
 
-Expectation management: you bring different levels of experience with Jupyter Notebooks. So we can also learn from each other and I believe we should all be very comfortable with Jupyter notebooks at the end of the course.
+Expectation management: you bring different levels of experience with Jupyter Notebooks.
+So we can also learn from each other and I believe we should all be very comfortable with Jupyter notebooks at the end of the course.
 
 
 Jupyter notebooks: Zoom in a lot (close the left sidebar)
@@ -171,7 +172,7 @@ Jupyter notebooks: Zoom in a lot (close the left sidebar)
 
         - "Simple question" (e.g., Amazon is successful because we all order online. Explain why you (dis)agree with the statement. -> explain how it exemplifies the rise of modern analytics, referring to the four "pillars")
         - table with questions and choices (primary analytical purpose): descriptive, predictive, prescriptive
-        - TBD: questions related to the jupyter ecosystem?
+        - TBD: questions related to the Jupyter ecosystem?
 
         **TODO: add a setup explanation + tests for available python version and packages**
 

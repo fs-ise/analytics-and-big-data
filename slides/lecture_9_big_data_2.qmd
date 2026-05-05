@@ -196,7 +196,7 @@ ReLU: Rectified Linear Unit.
 
 Advantage of Sigmoid activation: smooth, supports gradient descent
 Note: in the case of Sigmoid activation, the NN is basically a network of logistic regressions
-ReLu: for efficient computation
+ReLU: for efficient computation
 
 :::
 
@@ -596,7 +596,7 @@ However, feature engineering does not disappear. We still need to decide:
 
 ## Python code example
 
-The `sklearn` library provides basic feedforward networks, incluing MLPClassifier and MLPRegressor.
+The `sklearn` library provides basic feedforward networks, including `MLPClassifier` and `MLPRegressor`.
 It does not offer CNNs, RNNs, or other advanced neural networks.
 
 <br>
@@ -619,7 +619,7 @@ model = MLPClassifier(
 model.fit(X_train, y_train)
 ```
 
-## Pytorch (I)
+## PyTorch (I)
 
 For advanced neural networks and production environments, `pytorch` and `tensorflow` are suitable libraries.
 
@@ -663,7 +663,7 @@ for epoch in range(100):
 The architecture (whether it is a CNN/RNN/Transformer/... is not specified as a parameter, but implied by the design of layers).
 :::
 
-## Pytorch (II)
+## PyTorch (II)
 
 ::: {.tall-code-box}
 ```python

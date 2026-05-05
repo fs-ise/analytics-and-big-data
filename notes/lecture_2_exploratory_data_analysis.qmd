@@ -84,7 +84,7 @@ TODO: Illustrate how k-means clustering works for a given k (random centroids/as
 TODO: include an example for tidying data with different observational units (e.g., different levels like department sales vs. package deliveries to customers)
 
 Note: focus on pandas df (not so much on other Python datatypes)
-Possible extension: financial API (code for the api call should be included)
+Possible extension: financial API (code for the API call should be included)
 
 Implementation in Python/pandas: level of difficulty: use the library documentation vs. use ChatGPT
 

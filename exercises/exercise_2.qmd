@@ -8,8 +8,8 @@ In this notebook, we cover:
 
 | Exercise part                          | Time (min) |
 |----------------------------------------|------------|
-| [Data structuring I](#structuring_1)   |     15     |
-| [Data structuring II](#structuring_2)  |     20     |
+| [Data structuring 1](#structuring_1)   |     15     |
+| [Data structuring 2](#structuring_2)  |     20     |
 | [Data cleansing](#cleansing)           |     20     |
 | [EDA: Clustering](#clustering)         |     25     |
 | [Wrap-up](#wrap-up)                    |     10     |
@@ -31,7 +31,7 @@ In this notebook, we cover:
 
 :::
 
-# Part 1: Data structuring I <a id="structuring_1"></a>
+# Part 1: Data structuring 1 <a id="structuring_1"></a>
 
 We start with the `market_data_log.csv` dataset.
 
@@ -312,7 +312,7 @@ df_wide.head()
 
 {{< pagebreak >}}
 
-# Part 2: Data structuring II <a id="structuring_2"></a>
+# Part 2: Data structuring 2 <a id="structuring_2"></a>
 
 Dataset `sales_data_channels_full_year.csv`
 
@@ -1253,10 +1253,10 @@ plt.show()
 
 ---
 
-### 4. Create grouped boxplots
+### 4. Create grouped box plots
 
-* Generate a boxplot, grouped according to the clusters, to compare differences in `revenue`.
-* Try to complete the task relying only on the [pandas documentation for boxplots](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html).
+* Generate a box plot, grouped according to the clusters, to compare differences in `revenue`.
+* Try to complete the task relying only on the [pandas documentation for box plots](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html).
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -1374,7 +1374,7 @@ df_firm_data.head()
 
 {{< pagebreak >}}
 
-### 4. Create grouped boxplots
+### 4. Create grouped box plots
 
 We compare `revenue` across clusters:
 
@@ -1390,7 +1390,7 @@ plt.show()
 ```
 
 **Interpretation:**
-The boxplots reveal how revenue differs across clusters, helping to characterize the identified firm profiles.
+The box plots reveal how revenue differs across clusters, helping to characterize the identified firm profiles.
 
 :::
 

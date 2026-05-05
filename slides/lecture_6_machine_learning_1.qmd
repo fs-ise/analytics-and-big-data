@@ -68,7 +68,8 @@ The applications of machine learning
 
 **Artificial Intelligence (AI)** involves techniques that equip computers to emulate human behavior, enabling them to learn, make decisions, recognize patterns, and solve complex problems in a manner akin to human intelligence.
 
-**Machine Learning (ML)** is a subset of AI and uses advanced algorithms to detect patterns in large datasets, allowing machines to learn and adapt. ML algorithms use supervised or unsupervised learning methods.
+**Machine Learning (ML)** is a subset of AI and uses advanced algorithms to detect patterns in large datasets, allowing machines to learn and adapt.
+ML algorithms use supervised or unsupervised learning methods.
 
 **Deep Learning (DL)** is a subset of ML that uses neural networks for in-depth data processing and analytical tasks.
 It leverages multiple layers of artificial neural networks to extract high-level features from raw input data, simulating the way human brains perceive and understand the world.
@@ -84,7 +85,8 @@ It leverages multiple layers of artificial neural networks to extract high-level
 ::::
 
 ::: aside
-Generative AI (genAI) is a subset of DL models that generates content like text, images, or code based on provided input. Trained on vast datasets, these models detect patterns and create outputs without explicit instruction, using a mix of supervised and unsupervised learning.
+Generative AI (genAI) is a subset of DL models that generates content like text, images, or code based on provided input.
+Trained on vast datasets, these models detect patterns and create outputs without explicit instruction, using a mix of supervised and unsupervised learning.
 :::
 
 
@@ -94,7 +96,7 @@ Highlight:
 - AI often refers to a general system or field of study. ML/DL to techniques/methods/algorithms
 - reinforcement learning: interactive environment
 - deep learning/neural networks: learn abstractions from raw data (feature engineering is more important for supervised ML)
-- genAI/LLM/GPT: unstructured/semistructured/structured output (beyond classification/regression)
+- genAI/LLM/GPT: unstructured/semi-structured/structured output (beyond classification/regression)
 - Prompt: what would the role of genAI be in the context of descriptive, predictive, prescriptive analytics? (descriptive: summarizing/narrative layer; predictive: limited, maybe generating code for predictive models; prescriptive: translating and explaining recommendations/trade-offs)
 
 TODO: definition of machine learning (similar to https://www.youtube.com/watch?v=vcE9WGbi4QY)
@@ -143,9 +145,15 @@ Brief reminder: logistic regression from previous lecture
 <!--
 ## Statistics vs. Machine Learning
 
-> **Statistics** about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models. It insists on proper and rigorous methodology, and is comfortable with making and noting assumptions. It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value). The focus is on hypothesis testing.
+> **Statistics** about finding valid conclusions about the underlying applied theory, and on the interpretation of parameters in their models.
+  It insists on proper and rigorous methodology, and is comfortable making and noting assumptions.
+  It cares about how the data was collected and the resulting properties of the estimator or experiment (e.g. p-value).
+  The focus is on hypothesis testing.
 
-> **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction). It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions. Much of ML is motivated by problems that need to have answers. ML is happy to treat the algorithm as a black box as long as it works.
+> **Machine Learning (ML)** aims to derive practice-relevant findings from existing data and to apply the trained models to data not previously seen (prediction).
+  It tries to predict or classify with the most accuracy. It cares deeply about scalability and uses the predictions to make decisions.
+  Much of ML is motivated by problems that need to have answers.
+  ML is happy to treat the algorithm as a black box as long as it works.
 
 ![](../images/slides_107.png)
 
@@ -630,7 +638,7 @@ linear models → feature engineering critical
 ::: {.highlight_must_learn}
 **1. Transformation**
 
-- Convert features (e.g., birth date → age)
+- Convert features (e.g., birthdate → age)
 - Build lag structures (e.g., time-lags)
 - Normalization / standardization / scaling
 
@@ -641,8 +649,8 @@ linear models → feature engineering critical
 
 **3. Feature combination**
 
-- Create interaction features (e.g., school_score = num_schools × median_school
-  with num_schools = number of schools within 5 miles of a property and
+- Create interaction features (e.g., `school_score` = `num_schools` × `median_school`
+  with `num_schools` = number of schools within 5 miles of a property and
   median_school = median quality score of those schools)
 - Combine categories (e.g., when there are very few observations or too many dummy features)
 

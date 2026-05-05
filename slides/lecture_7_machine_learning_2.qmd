@@ -95,7 +95,7 @@ Source: @James2013, pp.240
 
 OLS is not suitable for high-dimensional data.
 Especially when the number of features p is as large as, or larger than, the number of observations, OLS cannot be applied.
-Regardless of whether or not there truly is a relationship between the features and the response, OLS will yield a set of coefficient estimates that result in a perfect fit to the data, such that the residuals are zero.
+Regardless of whether there truly is a relationship between the features and the response, OLS will yield a set of coefficient estimates that result in a perfect fit to the data, such that the residuals are zero.
 
 ![](../images/regression-high-dimensionality.png){height=400 fig-align=center}
 
@@ -780,7 +780,7 @@ RSS = \sum_{j=1}^{J} \sum_{i \in R_j} \left(y_i - \bar{y}_{R_j}\right)^2
 $$
 
 
-where $\bar{y}_{R_j}$ is the mean value for the training observations within the jth region with $\hat{y}_{R_j} = \bar{y}_{R_j}$.
+where $\bar{y}_{R_j}$ is the mean value for the training observations within the $j$th region with $\hat{y}_{R_j} = \bar{y}_{R_j}$.
 
 To perform the recursive binary splitting, we first select the feature $X_j$ and the cutpoint $s$ such that splitting the feature space into the regions $X_j < s$ and $X_j \ge s$ leads to the greatest possible reduction in RSS.
 We consider all features and all possible values of the cutpoint s for each of the features, and then choose the feature and cutpoint such that the resulting tree has the lowest RSS.
