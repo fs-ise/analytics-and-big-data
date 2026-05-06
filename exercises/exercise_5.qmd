@@ -31,7 +31,7 @@ The risk team wants to understand these groups better.
 They are especially interested in whether default risk follows the same logic in both categories, or whether the predictors and model quality differ substantially.
 
 In this notebook, you first focus on **early-career urban borrowers** and build a logistic regression model to predict default.
-Afterwards, you compare the results with self-employed platform workers.
+Afterward, you compare the results with self-employed platform workers.
 
 LendWise is interested in questions such as:
 
@@ -172,7 +172,7 @@ Therefore, the interpretation below focuses on magnitude and direction, not stat
 Variables with positive coefficients increase default risk.  
 In this model, the strongest positive effects are:
 
-- `credit_utilization` (1.16) → strongest increase in default risk
+- `credit_utilization` (1.16) → the strongest increase in default risk
 - `missed_payments_12m` (1.06) → substantial increase in default risk
 :::
 :::
@@ -193,9 +193,11 @@ In this model:
 
 ::: {.sol}
 ::: {.callout-tip title="Solution"}
-Among the predictors, `credit_utilization` has the largest coefficient in absolute terms, followed closely by `missed_payments_12m`. This suggests that both variables are strongly associated with default risk in this model.
+Among the predictors, `credit_utilization` has the largest coefficient in absolute terms, followed closely by `missed_payments_12m`.
+This suggests that both variables are strongly associated with default risk in this model.
 
-However, this comparison should be interpreted with caution. Because the predictors are measured on different scales (e.g., proportions, counts, income levels), the magnitude of coefficients is not directly comparable.
+However, this comparison should be interpreted with caution.
+Because the predictors are measured on different scales (e.g., proportions, counts, income levels), the magnitude of coefficients is not directly comparable.
 A more rigorous comparison would require standardized variables or an analysis based on meaningful unit changes (e.g., odds ratios).
 :::
 :::

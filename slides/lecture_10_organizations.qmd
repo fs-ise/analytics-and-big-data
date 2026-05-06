@@ -4,7 +4,10 @@ subtitle: "Analytics in organizations"
 section_label: "Deployment"
 session: "Session 10"
 date: "2026-05-11"
+nocite: |
+    @KunzSpohrerHeinzl2025,@OesterreichAntonTeuteberg2022
 ---
+
 
 ## {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
@@ -20,6 +23,40 @@ date: "2026-05-11"
 -->
 
 # TODO {data-stack-name="TODO"}
+
+
+# Level: Industry (TBD)
+
+Competing on analytics
+?
+https://ide.mit.edu/sites/default/files/publications/2011.12_Brynjolfsson_Hitt_Kim_Strength%20in%20Numbers_302.pdf
+
+# Level: Organization
+
+OesterreichAntonTeuteberg2022
+
+TBD: prepare/anticipate the connection from north-star KPI to quantitative metrics and analytical models?
+
+
+# Level: Regulation
+
+TBD. but students should have an overview here
+
+
+# Level: Process
+
+KunzSpohrerHeinzl2025
+
+
+# Level: Human-AI interaction (?)
+
+Human: Strich/JAIS
+AI: XAI
+
+
+
+Note: algorithmic management -> part of the group-work session (one example)
+
 
 ## Survey: Session 10 {data-state="hide-menubar"}
 

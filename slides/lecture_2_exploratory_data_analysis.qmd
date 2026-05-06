@@ -96,7 +96,7 @@ Examples:
 
 ## Quantitative: Interval scale
 
-- A numeric measureable attribute in the form of integer or real values.
+- A numeric measurable attribute in the form of integer or real values.
   The distance between the numbers or units on this scale is equal over all levels of the scale.
   Values of the interval scale have no natural “zero” point.
 - Invariant under a linear transformation 𝑎𝑥 + 𝑏, 𝑎 > 0, 𝑏 ≥ 0
@@ -145,7 +145,8 @@ Be able to **explain the scales and give examples of operations that are appropr
 
 ## Data quality and preparation
 
-In business analytics, we rarely work with carefully curated datasets. Instead, data often comes from **multiple systems, processes, and teams**, where it is primarily created for **operational purposes rather than analysis**.
+In business analytics, we rarely work with carefully curated datasets.
+Instead, data often comes from **multiple systems, processes, and teams**, where it is primarily created for **operational purposes rather than analysis**.
 Because these data sources are not always standardized or under the analyst’s control, quality issues are common:
 
 - **Missing values** (e.g., incomplete historical market data)
@@ -1322,7 +1323,7 @@ Ward is often used with Euclidean distance.
 
 ⚠ Clustering algorithms will **always produce groups**, even when no meaningful structure exists.
 
-Therefore clusters must be **evaluated**.
+Therefore, clusters must be **evaluated**.
 
 Common evaluation approaches include:
 
@@ -1404,7 +1405,7 @@ Clustering often produces **insights that guide later modeling**.
 
 - **Identify structure**
   - segmentation (elbow method/silhouette score))
-  - hierarchical clustering (dendogram)
+  - hierarchical clustering (dendrogram)
 
 {{< iconify fluent-mdl2:insights >}}   EDA is **not the final analysis**, but a **foundation** for model building, decision-making, and hypothesis generation.
 

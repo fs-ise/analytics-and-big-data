@@ -109,9 +109,9 @@ print(coef_df)
 
 ## Overall model performance
 
-whether predictions are accurate enough for decisions
--> depends on nr. of cases and their significance (e.g., large samples: estimating age based on names)
+Whether predictions are accurate enough for decisions
 
+-> depends on nr. of cases and their significance (e.g., large samples: estimating age based on names)
 
 
 ## Categorical predictors

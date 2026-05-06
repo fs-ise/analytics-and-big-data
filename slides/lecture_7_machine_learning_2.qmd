@@ -85,7 +85,7 @@ At the same time, the MSE on a test set becomes extremely large as the number of
 ![](../images/high-dimensionality.png){height=400 fig-align=center}
 
 In contrast, methods like ridge regression are particularly useful for performing regression in the high-dimensional setting.
-Essentially, these approaches avoid overfitting by using a less flexible fitting approach than least squares.
+Essentially, these approaches avoid overfitting by using a less flexible fitting approach than the least squares.
 
 ::: aside
 Source: @James2013, pp.240
@@ -506,7 +506,7 @@ This continues until:
 - nodes are pure, or  
 - no attributes remain
 
-As solution we, obtain the following tree:
+As a solution we, obtain the following tree:
 
 ![](../images/slides_243.png){height=220px fig-align=center}
 

@@ -1195,7 +1195,7 @@ X = scaler.fit_transform(X)
 X
 ```
 
-Before running a clustering algorithm, lets's view the data in a scatterplot:
+Before running a clustering algorithm, let's view the data in a scatterplot:
 
 ```{python}
 #| eval: false

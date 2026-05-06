@@ -130,4 +130,4 @@ Highlight that dense representations allow us to determine semantic similarity b
 
 TODO
 
-- Reduce imdb dataset to 1500 or 2000 ? (faster computations of the dense vectors)
+- Reduce the IMDB dataset to 1500 or 2000 ? (faster computations of the dense vectors)
