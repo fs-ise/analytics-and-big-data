@@ -108,7 +108,8 @@ digraph CRISPDM {
 
 ::: {.column width="60%"}
 
-Housing markets represent one of the largest asset classes in most economies. Residential real estate accounts for a substantial share of household wealth, and even small pricing errors can translate into large financial consequences.
+Housing markets represent one of the largest asset classes in most economies.
+Residential real estate accounts for a substantial share of household wealth, and even small pricing errors can translate into large financial consequences.
 
 Understanding what drives house prices is therefore relevant for:
 
@@ -912,7 +913,7 @@ Emphasize that model evaluation is not just “how well did it fit the training 
 Regression coefficients tell us how the predicted outcome changes when a predictor changes, **holding the other predictors constant**.
 
 <!--
-    TODO: include an example of a regression table with significace (p-value/stars/confidence intervals)?
+    TODO: include an example of a regression table with significance (p-value/stars/confidence intervals)?
 -->
 
 For a coefficient $\beta_j$:

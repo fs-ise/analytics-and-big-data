@@ -45,7 +45,7 @@ Key trends of improvement:
 
 - Maturing: from descriptive to predictive and prescriptive (reducing ambiguity and the need for human involvement in business decisions)
 - Pervasive: extending to different areas (e.g., understanding customers with A/B testing), departments (logistics, financial, ...) with specific disciplines refining more specialized models (forecasting, supply chain, scheduling, queueing, ...)
-- Standardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRIPS-DM) -> intensifies competition
+- Standardized: algorithms and processes are shared and standardized across companies and industries (e.g., ML/LLM; analytics software/environments, governance models like CRISP-DM) -> intensifies competition
 
 CRISP-DM: most widely used analytics model (https://www.forbes.com/sites/metabrown/2015/07/29/what-it-needs-to-know-about-the-data-mining-process/#2065f3a3515f)
 
@@ -93,13 +93,13 @@ Introduce system (badges) - similar to https://eduki.com/de/material/306565/schi
 **check classrooms before! - can it be attached to the desks?**
 
 
-"simple" amazon question: you could say yes, but you will get no points for it. All exam questions are about selecting the appropriate concepts from the lecture and applying them to the case. Explain: signals the need for a rationale
+"simple" Amazon question: you could say yes, but you will get no points for it. All exam questions are about selecting the appropriate concepts from the lecture and applying them to the case. Explain: signals the need for a rationale
 
 - yes: 0 points
 - no - it is about data/computation/algorithms/processes. 2 points
 - yes, but its only one part of the equation. It is enabled by large data collection about customers, the computational resources in cloud centers like AWS, new algorithms such as Deep learning, and analytical processes like CRISP-DM and mature prescriptive capabilities. - 5 points.
 
-TODO: explicitly address the question why we select Python/Jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
+TODO: explicitly address the question of why we select Python/Jupyter (give an overview of the landscape), argue that Python is challenging (not a low/no-code platform), very popular (supports many analytical use cases), and allows you to quickly learn other tools
 
 -> LLMs are language models: they are good at handling language (not necessarily at handling data) - so if we use a _programming_ language to analyze data, LLMs can help us. More than they could help us operate a GUI.
 -> LLMs are not directly trained with user-GUI interactions (workflows are weakly documented and harder to analyze/version/control)
