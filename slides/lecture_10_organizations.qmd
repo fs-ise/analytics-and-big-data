@@ -22,40 +22,176 @@ nocite: |
 - **Design** an end-to-end analytics solution aligned with a business problem and governance constraints.
 -->
 
-# TODO {data-stack-name="TODO"}
+# Level: Industry {data-stack-name="Industry"}
+
+## Does the deployment of analytics pay off?
+
+The Effect of Big Data and Analytics on Firm Performance: An Econometric Analysis Considering Industry Characteristics
 
 
-# Level: Industry (TBD)
+@MullerFayBrocke2018
 
-Competing on analytics
-?
-https://ide.mit.edu/sites/default/files/publications/2011.12_Brynjolfsson_Hitt_Kim_Strength%20in%20Numbers_302.pdf
+- objective measures (specifically: TODO)
+- 800 companies
 
-# Level: Organization
+$$
+\begin{aligned}
+\log(Sales) =\;& \beta_0 + \beta_1 \log(Labor) + \beta_2 \log(Capital) + \beta_3 \log(Materials) \\
+&+ \beta_4 BDA + Controls + \varepsilon
+\end{aligned}
+$$
 
-OesterreichAntonTeuteberg2022
+<!--
+    $$
+    \begin{aligned}
+    \log(Sales) =\;& \beta_0 + \beta_1 \log(Labor) + \beta_2 \log(Capital) + \beta_3 \log(Materials) + \beta_4 BDA \\
+    &+ \beta_5 ITI + \beta_6 COMP + \beta_7 BDA \times ITI + \beta_8 BDA \times COMP \\
+    &+ Controls + \varepsilon
+    \end{aligned}
+    $$
+-->
+
+## Findings
+
+
+::: {style="font-size: 0.75em;"}
+
+|                         | OLS<br>(1) | FE<br>(2) |
+|-------------------------|:----------:|:---------:|
+| log(Capital)            | 0.090***<br>(0.015) | 0.127***<br>(0.029) |
+| log(Labor)              | 0.296***<br>(0.024) | 0.472***<br>(0.043) |
+| log(Materials)          | 0.667***<br>(0.023) | 0.442***<br>(0.035) |
+| BDA                     | 0.041**<br>(0.020)  | 0.038*<br>(0.021)   |
+| Industry dummies?       | Yes      | Yes      |
+| Year dummies?           | Yes      | Yes      |
+| IT Asset dummies?       | Yes      | Yes      |
+| Observations            | 5,698    | 5,698    |
+| $R^2$                   | 0.977    | 0.791    |
+| Adjusted $R^2$          | 0.977    | 0.755    |
+
+:::
+
+Note: highlight:
+
+- methods (OLS + fixed effects/causality)
+- differences between industries (context matters)
+
+TODO: why is R^2 so high?!?
+
+"Competing on analytics"
+
+# Level: Organization {data-stack-name="Organization"}
+
+## Under which conditions could we expect higher performance?
+
+@OesterreichAntonTeuteberg2022
+
+![](../images/OesterreichAntonTeuteberg2022_model.svg){width=50% fig-align=center .searchable-svg }
+
+
+
+
+
+
+
+TODO: details (literature review, 125 studies, ...)
 
 TBD: prepare/anticipate the connection from north-star KPI to quantitative metrics and analytical models?
 
 
-# Level: Regulation
+## Meta-analysis results
+
+TODO: check table!
+
+<br>
+
+::: {style="font-size: 0.75em;"}
+
+| Independent variable | n | N | Estimated effect | 95% CI | Heterogeneity |
+|----------|---:|---:|------:|---:|-------------|
+| BA technical resources | 91 | 39,246 | 0.452 | 0.409–0.493 | Q = 1920.153**, df = 90, I² = 95.31% |
+| BA human resources | 42 | 9,219 | 0.494 | 0.444–0.541 | Q = 379.967**, df = 41, I² = 89.21% |
+| BA management capabilities | 69 | 16,074 | 0.477 | 0.433–0.519 | Q = 861.169**, df = 68, I² = 92.10% |
+| Data quality | 14 | 3,088 | 0.434 | 0.328–0.528 | Q = 142.257**, df = 13, I² = 90.86% |
+| Organizational culture | 18 | 3,698 | 0.472 | 0.391–0.546 | Q = 153.939**, df = 17, I² = 88.96% |
+| External pressure | 17 | 3,644 | 0.165 | 0.036–0.288 | Q = 248.937**, df = 16, I² = 93.57% |
+:::
+
+::: {.notes}
+IV = independent variable; n = number of studies; N = sample size; k = number of correlations; Est. eff. = estimated summary effect size; CI = 95% confidence interval; PI = 80% prediction interval; significance: ** p < .01, * p < .05, not significant (n.s.) for p > .05; $\tau^2$ = between-study variance; I<sup>2</sup> = proportion of variance attributed to between-study variance; <sup>†</sup> indicates the number of missing studies necessary for each identified study to nullify the effect, calculated as fail-safe N divided by n; DF = degree of freedom.
+:::
+
+
+# Level: Process  {data-stack-name="Learning"}
+
+## TODO
+
+@KunzSpohrerHeinzl2025
+
+
+## Value Creation Paths from BA
+
+
+{{< include KunzSpohrerHeinzl2025_paths.qmd >}}
+
+
+
+Note: maybe add explanations on the following slide?!
+
+TODO:
+
+- cover canonical information processing path, decision augmentation vs. automation
+- cover knowledge accumulation path, transfer, feedback
+
+TODO: summarize each value creation path (autonomy, dynamism, opacity)
+
+TODO: prepare connection from key-KPI/north-star to the use of analytics in different processes (learning system)
+
+## Changes (ML)
+
+{{< include KunzSpohrerHeinzl2025_paths_change.qmd >}}
+
+
+
+# Level: Human-AI interaction  {data-stack-name="Humans"}
+
+## Skills and adoption (perception??)
+
+## Human-AI collaboration
+
+Autonomy vs. 
+
+Collaboration modality (ghostwriter vs. sounding board) interact with  expertise and determine quality of creative knowledge work ([[ChenChan2024]]): using [[LLM]]s for ghostwriting is detrimental to experts, as a sounding board, it helps non-experts.
+
+When delegating tasks (such as classification), humans may be less effective than AI (see [[FugenerGrahlGuptaEtAl2022]])
+
+Understanding the [[Jagged Technological Frontier]] is challenging
+-> maybe, humans are no longer in a position to decide (in some cases)
+
+Proactive agents lead to a higher loss of users' competence-based self-esteem and reduce system satisfaction (compared to reactive agents) ([[DiebelGoutierAdamEtAl2025]])
+
+Roles interactions: algorithms in their multiple roles as supervisors/evaluators/peers create role conflict and role ambiguity, which prompts humans to react (specific tasks or cognitive reactions), feeding into the *computational feedback learning loop* and/or the *(broken) human feedback loop*  [[TarafdarPageMarabelli2023]]
+
+Human: Strich/JAIS -> "safeguarding against human intervention" (loan agents cannot overrule the AI decision, preventing aself-interest to affect their decisions)
+
+## Boundaries
 
 TBD. but students should have an overview here
 
+XAI (with illustrations, as a legal requirement)
 
-# Level: Process
+TBD: situational overrides (emergencies?)
 
-KunzSpohrerHeinzl2025
-
-
-# Level: Human-AI interaction (?)
-
-Human: Strich/JAIS
-AI: XAI
+<!--
+    Note: algorithmic management -> part of the group-work session (one example)
+-->
 
 
 
-Note: algorithmic management -> part of the group-work session (one example)
+## Summary {data-state="hide-menubar"}
+
+
+- TODO
 
 
 ## Survey: Session 10 {data-state="hide-menubar"}
@@ -77,6 +213,5 @@ Note: Responses may be analyzed and published in anonymized form.
 
 Please complete the survey before you leave today — thank you 🙏
 :::
-
 
 # References {data-state="hide-menubar"}
