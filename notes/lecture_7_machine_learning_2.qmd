@@ -177,7 +177,7 @@ See also: https://www.mathstat.dal.ca/~aarms2014/StatLearn/docs/09%20_annotated.
 Small M&A teams are **successful**, large teams **unsuccessful**.
 
 A simple baseline would place the threshold halfway between the **class means**.
-The maximal margin classifier instead places the threshold halfway between the **closest opposing cases** and maximizes the distance to both classes.
+The maximal margin classifier instead places the threshold halfway between **the closest opposing cases** and maximizes the distance to both classes.
 
 ```{python}
 #| label: fig-maximal-margin-1d

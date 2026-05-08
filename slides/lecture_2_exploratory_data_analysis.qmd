@@ -62,7 +62,7 @@ Quantitative description objects
 
 Examples:
 
-- Hair color = {black, blond, brown, grey, red, white, …}
+- Hair color = {black, blond, brown, gray, red, white, …}
 - Postal codes = {96047, 96048, …}
 
 . . . 

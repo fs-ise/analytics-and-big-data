@@ -941,7 +941,7 @@ digraph learning_flow {
 
     Note: only Microsoft is cached.
     -> TODO: test whether pip-install through devcontainer setup works.
-    -> Microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
+    -> Microsoft does not seem to be stashed... -> reverting to Jupyter/scipy-notebook
 -->
 
 :::

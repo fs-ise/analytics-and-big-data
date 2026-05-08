@@ -25,7 +25,7 @@ In this notebook, we cover:
 > **The Jupyter Notebook is available in the Codespace (repository) here:**  
 > [https://github.com/fs-ise/analytics-and-big-data-notebooks](https://github.com/fs-ise/analytics-and-big-data-notebooks)
 >
-> For the *pandas* library, refer to [this cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
+> For the `pandas` library, refer to [this cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
 
 {{< pagebreak >}}
 
@@ -173,7 +173,7 @@ market_data_log_df.head()
 
 <br><br><br><br>
 
-4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+4. **(Optional challenge)**: Implement the transformation in Python (`pandas`)
 
 ```{python}
 import pandas as pd
@@ -276,7 +276,7 @@ market_data_df = pd.read_csv("data/market_data_log.csv")
 
 ---
 
-### 4. (Optional challenge): Implement the transformation in Python (pandas)
+### 4. (Optional challenge): Implement the transformation in Python (`pandas`)
 
 ```{python}
 import pandas as pd
@@ -549,7 +549,7 @@ sales_data_df.head()
 
 <br><br><br>
 
-4. **(Optional challenge)**: Implement the transformation in Python (pandas)
+4. **(Optional challenge)**: Implement the transformation in Python (`pandas`)
 
 ```{python}
 import pandas as pd
@@ -590,7 +590,7 @@ market_data_df = pd.read_csv("data/market_data_log.csv")
 - Reshape (wide → long): Convert all monthly/channel columns into two columns
 - Split the combined column (Month, Channel)
 
-### 4. (Optional challenge): Implement the transformation in Python (pandas)
+### 4. (Optional challenge): Implement the transformation in Python (`pandas`)
 
 
 ```{python}
@@ -890,7 +890,7 @@ customer_df.describe()
 
 ---
 
-### 4. *(Optional challenge)* Implement in Python (pandas)
+### 4. *(Optional challenge)* Implement in Python (`pandas`)
 
 * Implement the data preparation steps in Python.
 * Run the code after each step and inspect the results.
@@ -976,7 +976,7 @@ customer_df.describe()
 
 ---
 
-### 4. *(Optional challenge)* Implement in Python (pandas)
+### 4. *(Optional challenge)* Implement in Python (`pandas`)
 
 ```{python}
 import pandas as pd
@@ -1256,7 +1256,7 @@ plt.show()
 ### 4. Create grouped box plots
 
 * Generate a box plot, grouped according to the clusters, to compare differences in `revenue`.
-* Try to complete the task relying only on the [pandas documentation for box plots](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html).
+* Try to complete the task relying only on the [documentation for box plots in pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.boxplot.html).
 
 ```{python}
 import matplotlib.pyplot as plt

@@ -872,7 +872,8 @@ $$ R^2 = 1 - \frac{RSS}{TSS} $$
 * Measures the **share of variance in the target variable explained by the model**
 * Example: **($R^2$ = 0.56)** means the model explains **56% of the variation in house prices**
 * Values range from **0 to 1**, with **higher $R^2$** generally indicating a better fit
-* But a high $R^2$ **does not automatically mean** the model is useful in practice. $R^2$ says little about:
+* But a high $R^2$ **does not automatically mean** the model is useful in practice.
+  The $R^2$ says little about:
 
   * whether predictions are accurate enough for decisions
   * whether the model generalizes to new data
@@ -1272,7 +1273,7 @@ Saving a model makes it possible to reuse it in applications, dashboards, script
 
 ::: notes
 You may mention that `joblib` is commonly used for scikit-learn objects.
-Also useful to note that deployment requires the same variable names and preprocessing steps as in training.
+Also, it is useful to note that deployment requires the same variable names and preprocessing steps as in training.
 :::
 
 ---

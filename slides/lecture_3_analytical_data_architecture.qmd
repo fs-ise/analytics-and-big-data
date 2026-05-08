@@ -94,7 +94,7 @@ The term Data Warehouse was coined by @Inmon1995, who defined it as follows:
 <br>
 
 
-> **"A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision making process."**
+> **"A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision-making process."**
 
 <br>
 
@@ -213,8 +213,8 @@ Comparison: Data warehouse and data mart
 |                    | Data mart            | Data warehouse        |
 |--------------------|----------------------|-----------------------|
 | Application        | Division/Department  | Company               |
-| Data design        | Optimized            | Generalistic          |
-| Data volume        | Gigabyte scale       | Terabytescale         |
+| Data design        | Optimized            | Generalist            |
+| Data volume        | Gigabyte scale       | Terabyte scale        |
 | Origin             | Task oriented        | Data model oriented   |
 | Requirements       | Specific             | Versatile             |
 
@@ -605,7 +605,7 @@ In the following example, three dimensions are displayed:
 - **OLAP systems** enable interactive, multidimensional analysis:
   operations such as **slice, dice, drill-down, and roll-up** support flexible exploration of aggregated data.
 
-- Overall, analytical data architecture transforms **operational data into structured, queryable information** to support reporting, dashboards, and decision-making.
+- Overall, analytical data architecture transforms **operational data into structured information that can be efficiently queried** to support reporting, dashboards, and decision-making.
 
 
 
