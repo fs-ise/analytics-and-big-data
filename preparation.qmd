@@ -165,7 +165,7 @@ TODO: Exercise session: divide class (one part does the setup/exercise, the othe
 
 ## TBD:
 
-- [ ] Test exercise sheets: [GitHub JupyterLab](https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning?utm_source=chatgpt.com#opening-your-codespace-in-jupyterlab) with pre-installation of pandas etc. and PDF generation
+- [ ] Test exercise sheets: [GitHub JupyterLab](https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning#opening-your-codespace-in-jupyterlab) with pre-installation of pandas etc. and PDF generation
 TBD: exercise sheets in a separate repository?
 - [ ] Excerpts for teaching hub
 - [ ] Exercise sheets: solutions?!
