@@ -312,6 +312,134 @@ $$L(\beta) = \prod_{i=1}^n p_i^{y_i} (1 - p_i)^{1 - y_i}$$
 No need to memorize the formula. Understand the idea.
 :::
 
+
+## Logistic regression animation
+
+This Quarto file simulates binary outcome data, fits a logistic regression model using gradient descent, and animates the fitted probability curve as the coefficients are learned.
+
+Install the required Python packages if needed:
+
+```bash
+pip install numpy matplotlib pillow
+```
+
+```{python}
+#| label: setup
+#| include: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
+```
+
+```{python}
+#| label: simulate-data
+
+np.random.seed(42)
+
+def logistic(z):
+    return 1 / (1 + np.exp(-z))
+
+n = 120
+x = np.linspace(-6, 6, n)
+
+beta0_true = -0.5
+beta1_true = 1.2
+
+p_true = logistic(beta0_true + beta1_true * x)
+y = np.random.binomial(1, p_true)
+
+print("First 10 observations:")
+for xi, yi in zip(x[:10], y[:10]):
+    print(f"x = {xi: .2f}, y = {yi}")
+```
+
+```{python}
+#| label: fit-model
+
+# Design matrix with intercept and x
+X = np.column_stack([np.ones(n), x])
+
+# Gradient descent for logistic regression
+beta = np.array([0.0, 0.0])
+learning_rate = 0.05
+iterations = 500
+
+beta_history = []
+
+for i in range(iterations):
+    p = logistic(X @ beta)
+    gradient = X.T @ (p - y) / n
+    beta -= learning_rate * gradient
+
+    if i % 5 == 0:
+        beta_history.append(beta.copy())
+
+beta_hat = beta
+beta_history = np.array(beta_history)
+
+print(f"Estimated intercept: {beta_hat[0]:.3f}")
+print(f"Estimated slope:     {beta_hat[1]:.3f}")
+```
+
+```{python}
+#| label: fig-logistic-animation
+#| fig-cap: "Animated logistic regression curve fitted to simulated binary data."
+
+x_grid = np.linspace(x.min(), x.max(), 300)
+X_grid = np.column_stack([np.ones(len(x_grid)), x_grid])
+
+fig, ax = plt.subplots(figsize=(7, 4.5))
+
+ax.scatter(x, y, alpha=0.6, s=30, label="Observed binary outcome")
+
+line, = ax.plot([], [], linewidth=3, label="Current fitted curve")
+text = ax.text(0.03, 0.93, "", transform=ax.transAxes)
+
+ax.set_xlim(x.min() - 0.5, x.max() + 0.5)
+ax.set_ylim(-0.08, 1.08)
+ax.set_xlabel("x")
+ax.set_ylabel("Pr(y = 1)")
+ax.set_title("Logistic regression: learning the probability curve")
+ax.legend(loc="lower right")
+
+def init():
+    line.set_data([], [])
+    text.set_text("")
+    return line, text
+
+def update(frame):
+    beta_t = beta_history[frame]
+    p_t = logistic(X_grid @ beta_t)
+
+    line.set_data(x_grid, p_t)
+    text.set_text(
+        f"iteration = {frame * 5}\n"
+        f"β₀ = {beta_t[0]:.2f}, β₁ = {beta_t[1]:.2f}"
+    )
+
+    return line, text
+
+animation = FuncAnimation(
+    fig,
+    update,
+    frames=len(beta_history),
+    init_func=init,
+    blit=True,
+    interval=80,
+)
+
+animation.save(
+    "logistic-regression-python-animation.gif",
+    writer=PillowWriter(fps=20),
+)
+
+plt.close(fig)
+```
+
+![Animated logistic regression curve](logistic-regression-python-animation.gif)
+
+
 ## Logistic regression in Python
 
 We estimate the model using the sklearn library:
