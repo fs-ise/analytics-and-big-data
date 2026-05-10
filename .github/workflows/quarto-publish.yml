@@ -36,24 +36,22 @@ jobs:
         run: |
           npm install -g decktape
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.11'
 
-      - name: Install Python deps
+      - name: Install Python deps with uv
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install jupyter ipykernel matplotlib plotly scikit-learn pandas papermill statsmodels
-        # pip install -r requirements.txt
+          uv sync --group dev
 
       - name: Register Jupyter kernel
         run: |
-          python -m ipykernel install --user --name quarto-env --display-name "Python (quarto-env)"
+          uv run python -m ipykernel install --user --name quarto-env --display-name "Python (quarto-env)"
 
       - name: Render site
         run: |
-          make all
+          uv run make all
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2

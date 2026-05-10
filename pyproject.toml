@@ -1,0 +1,24 @@
+[project]
+name = "analytics-and-big-data"
+version = "0.1.0"
+description = "Course materials for analytics and big data"
+requires-python = ">=3.11"
+dependencies = [
+  "bokeh",
+  "bokeh-sampledata",
+  "geopandas",
+  "jupyter-cache",
+  "matplotlib",
+  "pandas",
+  "sentence-transformers",
+]
+
+[dependency-groups]
+dev = [
+  "ipykernel",
+  "jupyter",
+  "papermill",
+  "plotly",
+  "scikit-learn",
+  "statsmodels",
+]
