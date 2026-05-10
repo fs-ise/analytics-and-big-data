@@ -6,36 +6,125 @@ session: "Session 11"
 date: "2026-05-11"
 ---
 
-## {data-menu-title="Learning objectives" data-state="hide-menubar"}
+## Agenda {data-menu-title="Learning objectives" data-state="hide-menubar"}
 
 <br><br><br><br><br>
 
-::: {.learning-objectives}
-- **Summarize** how learnings integrate across the semester.
-- **Resolve** remaining questions for exam preparation.
+- Synthesis and reflection
+- Course evaluations
+- Test exam
+- Q&A
+
+# Synthesis and reflection {data-stack-name="Synthesis"}
+
+## Synthesis
+
+![](../images/course_overview.png){width=60% fig-align=center}
+
+
+## Reflection
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<br>
+![](../images/course_overview.png){width=100% fig-align=center}
 :::
 
-# TODO {data-stack-name="TODO"}
+::: {.column width="50%"  style="font-size: 0.75em;"}
+<br><br><br><br><br>
+Based on the overview figure, reflect on the course as a whole:
+
+1. **Where did you learn the most?**  
+   Which part of the course overview represents the largest learning gain for you?
+
+2. **What was most interesting?**  
+   Which topic, method, or application would you like to explore further?
+
+3. **What did you already know?**  
+   Which concepts, tools, or perspectives were familiar to you before the course?
+
+4. **Where do you still feel uncertain?**  
+   Which part of the overview would you find hardest to explain to someone else?
+
+5. **Where do you see the biggest gaps in the contents?**  
+   Which topics should be extended, deepened, or added in a future version of the course?
+:::
+
+::::
 
 
-## Survey: Session 11 {data-state="hide-menubar"}
 
-<br><br>
+# Course Evaluations {data-stack-name="Evaluations"}
 
-::: {style="display:flex; justify-content:center;"}
+## Course Evaluations {#eval-slide}
 
-{{< qrcode "{{< var sessions.session_11.survey_url >}}" width=400 height=400 >}}
+Your feedback helps improve the course, materials, and learning experience.
+
+- Please take **10 minutes** to complete the evaluation.
+- Your feedback is **anonymous**. Please be specific, honest, and constructive.
+
+**Where to find the evaluation**
+
+- In the **email link** you received
+- In **Canvas** as a pop-up
+- In the Canvas course menu: **Course Evaluation**
+
+**Thank you for taking the time to participate!**
+
+# Test exam {data-stack-name="Exam"}
+
+## Test exam
+
+![](../images/test_exam.png){width=30% fig-align=center}
+
+Available for download [here](https://raw.githubusercontent.com/fs-ise/analytics-and-big-data/refs/heads/main/assets/test_exam.pdf).
+
+# Q&A {data-stack-name="Q&A"}
+
+## Questions
+
+**Anonymous 2320d** (2026-05-04, 4:41pm)
+
+- How will the exam be structured? Free text and multiple choice? 
+- How will the points be distributed?
+- Will the exam mainly focus on the key take aways from the slides and the key concepts? Is edge knowledge from the slides required?
+
+
+## Good luck with the exam! {data-state="hide-menubar"}
+
+<br>
+
+**You are well prepared if you can explain the main ideas, connect them across sessions, and apply them to concrete examples.**
+
+<br>
+
+::: {.columns}
+
+::: {.column width="50%"}
+**Before the exam**
+
+- Revisit the course overview
+- Review key concepts and takeaways
+- Practice with the test exam
+- Focus on understanding, not memorization
+:::
+
+::: {.column width="50%"}
+**Stay in touch**
+
+- Interested in a thesis topic?  
+  [Bachelor and master theses](TODO)
+
+- Questions after the course?  
+  [Contact / office hours](TODO)
+
+- Course materials  
+  [Canvas course page](TODO)
+:::
 
 :::
 
-<br><br>
+<br>
 
-[{{< var sessions.session_11.survey_url >}}]({{< var sessions.session_11.survey_url >}})
-
-::: aside
-Note: Responses may be analyzed and published in anonymized form.
-
-Please complete the survey before you leave today — thank you 🙏
-:::
-
-# References {data-state="hide-menubar"}
+**Good luck — and thank you for participating in the course!**
