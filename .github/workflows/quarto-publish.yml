@@ -43,7 +43,7 @@ jobs:
 
       - name: Install Python deps with uv
         run: |
-          uv sync --group dev
+          uv sync
 
       - name: Register Jupyter kernel
         run: |
