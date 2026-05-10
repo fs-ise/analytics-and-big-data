@@ -223,17 +223,6 @@
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
   <style>
-  div.callout-objective.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-objective.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-    content: '🎯';
-    background-image: none;
-  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -243,6 +232,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-objective.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-objective.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+    content: '🎯';
     background-image: none;
   }
   div.callout-confidential.callout {
@@ -280,7 +280,7 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 4: Regression I <p></p>
+  <p></p> Session 4: Regression 1 <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
     <p class="date">(2026-03-30)</p>
@@ -543,7 +543,7 @@ This makes it well suited for **regression analysis**.
 <section id="load-the-data" class="slide level2">
 <h2>Load the data</h2>
 <p>As a first step, we retrieve the dataset and load it into our Python environment for analysis.</p>
-<div id="24936945" class="cell" data-execution_count="1">
+<div id="293fbe3d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>USAhousing <span class="op">=</span> pd.read_csv(<span class="st">'../exercises/data/ames.csv'</span>)</span>
@@ -948,30 +948,30 @@ TODO: check and refine: when do we use the \hat and epsilon?
 -->
 <p>Model formula: <span class="math display">\[price = \beta_0 + \beta_1*squarefoot\]</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="379" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 378;"><span id="cb2-379"><a></a>n <span class="op">=</span> <span class="dv">40</span></span>
-<span id="cb2-380"><a></a></span>
-<span id="cb2-381"><a></a>mulberry32 <span class="op">=</span> (a) <span class="kw">=&gt;</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb2-382"><a></a>  a <span class="op">|=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">=</span> a <span class="op">+</span> <span class="bn">0x6D2B79F5</span> <span class="op">|</span> <span class="dv">0</span></span>
-<span id="cb2-383"><a></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(a <span class="op">^</span> a <span class="op">&gt;&gt;&gt;</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">1</span> <span class="op">|</span> a)</span>
-<span id="cb2-384"><a></a>  t <span class="op">=</span> t <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">61</span> <span class="op">|</span> t) <span class="op">^</span> t</span>
-<span id="cb2-385"><a></a>  <span class="cf">return</span> ((t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">14</span>) <span class="op">&gt;&gt;&gt;</span> <span class="dv">0</span>) <span class="op">/</span> <span class="dv">4294967296</span></span>
-<span id="cb2-386"><a></a>}</span>
-<span id="cb2-387"><a></a>rand <span class="op">=</span> <span class="fu">mulberry32</span>(<span class="dv">12345</span>)</span>
-<span id="cb2-388"><a></a></span>
-<span id="cb2-389"><a></a>data <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb2-390"><a></a>  <span class="kw">const</span> squarefoot <span class="op">=</span> <span class="dv">500</span> <span class="op">+</span> <span class="fu">rand</span>() <span class="op">*</span> <span class="dv">3000</span></span>
-<span id="cb2-391"><a></a>  <span class="kw">const</span> noise <span class="op">=</span> (<span class="fu">rand</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">100000</span></span>
-<span id="cb2-392"><a></a>  <span class="kw">const</span> price <span class="op">=</span> <span class="dv">50000</span> <span class="op">+</span> squarefoot <span class="op">*</span> <span class="dv">180</span> <span class="op">+</span> noise</span>
-<span id="cb2-393"><a></a>  <span class="cf">return</span> {squarefoot<span class="op">,</span> price}</span>
-<span id="cb2-394"><a></a>})</span>
-<span id="cb2-395"><a></a></span>
-<span id="cb2-396"><a></a>xmin <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">squarefoot</span>))</span>
-<span id="cb2-397"><a></a>xmax <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">squarefoot</span>))</span>
-<span id="cb2-398"><a></a></span>
-<span id="cb2-399"><a></a>fitLine <span class="op">=</span> [</span>
-<span id="cb2-400"><a></a>  { <span class="dt">squarefoot</span><span class="op">:</span> xmin<span class="op">,</span> <span class="dt">price</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmin }<span class="op">,</span></span>
-<span id="cb2-401"><a></a>  { <span class="dt">squarefoot</span><span class="op">:</span> xmax<span class="op">,</span> <span class="dt">price</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmax }</span>
-<span id="cb2-402"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="380" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 379;"><span id="cb2-380"><a></a>n <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb2-381"><a></a></span>
+<span id="cb2-382"><a></a>mulberry32 <span class="op">=</span> (a) <span class="kw">=&gt;</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-383"><a></a>  a <span class="op">|=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">=</span> a <span class="op">+</span> <span class="bn">0x6D2B79F5</span> <span class="op">|</span> <span class="dv">0</span></span>
+<span id="cb2-384"><a></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(a <span class="op">^</span> a <span class="op">&gt;&gt;&gt;</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">1</span> <span class="op">|</span> a)</span>
+<span id="cb2-385"><a></a>  t <span class="op">=</span> t <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">imul</span>(t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">61</span> <span class="op">|</span> t) <span class="op">^</span> t</span>
+<span id="cb2-386"><a></a>  <span class="cf">return</span> ((t <span class="op">^</span> t <span class="op">&gt;&gt;&gt;</span> <span class="dv">14</span>) <span class="op">&gt;&gt;&gt;</span> <span class="dv">0</span>) <span class="op">/</span> <span class="dv">4294967296</span></span>
+<span id="cb2-387"><a></a>}</span>
+<span id="cb2-388"><a></a>rand <span class="op">=</span> <span class="fu">mulberry32</span>(<span class="dv">12345</span>)</span>
+<span id="cb2-389"><a></a></span>
+<span id="cb2-390"><a></a>data <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n}<span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-391"><a></a>  <span class="kw">const</span> squarefoot <span class="op">=</span> <span class="dv">500</span> <span class="op">+</span> <span class="fu">rand</span>() <span class="op">*</span> <span class="dv">3000</span></span>
+<span id="cb2-392"><a></a>  <span class="kw">const</span> noise <span class="op">=</span> (<span class="fu">rand</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">100000</span></span>
+<span id="cb2-393"><a></a>  <span class="kw">const</span> price <span class="op">=</span> <span class="dv">50000</span> <span class="op">+</span> squarefoot <span class="op">*</span> <span class="dv">180</span> <span class="op">+</span> noise</span>
+<span id="cb2-394"><a></a>  <span class="cf">return</span> {squarefoot<span class="op">,</span> price}</span>
+<span id="cb2-395"><a></a>})</span>
+<span id="cb2-396"><a></a></span>
+<span id="cb2-397"><a></a>xmin <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">squarefoot</span>))</span>
+<span id="cb2-398"><a></a>xmax <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">squarefoot</span>))</span>
+<span id="cb2-399"><a></a></span>
+<span id="cb2-400"><a></a>fitLine <span class="op">=</span> [</span>
+<span id="cb2-401"><a></a>  { <span class="dt">squarefoot</span><span class="op">:</span> xmin<span class="op">,</span> <span class="dt">price</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmin }<span class="op">,</span></span>
+<span id="cb2-402"><a></a>  { <span class="dt">squarefoot</span><span class="op">:</span> xmax<span class="op">,</span> <span class="dt">price</span><span class="op">:</span> beta0 <span class="op">+</span> beta1 <span class="op">*</span> xmax }</span>
+<span id="cb2-403"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -1026,10 +1026,10 @@ TODO: check and refine: when do we use the \hat and epsilon?
 <div class="column" style="width:30%;">
 <p><strong>Data</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="411" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 410;"><span id="cb3-411"><a></a>Inputs<span class="op">.</span><span class="fu">table</span>(data<span class="op">,</span> {</span>
-<span id="cb3-412"><a></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"squarefoot"</span><span class="op">,</span> <span class="st">"price"</span>]<span class="op">,</span></span>
-<span id="cb3-413"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">420</span></span>
-<span id="cb3-414"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="412" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 411;"><span id="cb3-412"><a></a>Inputs<span class="op">.</span><span class="fu">table</span>(data<span class="op">,</span> {</span>
+<span id="cb3-413"><a></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"squarefoot"</span><span class="op">,</span> <span class="st">"price"</span>]<span class="op">,</span></span>
+<span id="cb3-414"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">420</span></span>
+<span id="cb3-415"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
@@ -1039,24 +1039,24 @@ TODO: check and refine: when do we use the \hat and epsilon?
 </div><div class="column fragment" style="width:70%;">
 <p><strong>Visualization</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="425" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 424;"><span id="cb4-425"><a></a>viewof combinedSliders <span class="op">=</span> {</span>
-<span id="cb4-426"><a></a>  <span class="kw">const</span> b0 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">300000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">50000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₀ (base price)"</span>})</span>
-<span id="cb4-427"><a></a>  <span class="kw">const</span> b1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">400</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">180</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₁ (price per sq ft)"</span>})</span>
-<span id="cb4-428"><a></a>  <span class="kw">const</span> div <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="display:flex; gap:2rem; align-items:center;"&gt;</span><span class="sc">${</span>b0<span class="sc">}${</span>b1<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
-<span id="cb4-429"><a></a>  div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
-<span id="cb4-430"><a></a>  b0<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb4-431"><a></a>    div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
-<span id="cb4-432"><a></a>    div<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span>))</span>
-<span id="cb4-433"><a></a>  })</span>
-<span id="cb4-434"><a></a>  b1<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb4-435"><a></a>    div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
-<span id="cb4-436"><a></a>    div<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span>))</span>
-<span id="cb4-437"><a></a>  })</span>
-<span id="cb4-438"><a></a>  <span class="cf">return</span> div</span>
-<span id="cb4-439"><a></a>}</span>
-<span id="cb4-440"><a></a></span>
-<span id="cb4-441"><a></a>beta0 <span class="op">=</span> combinedSliders<span class="op">.</span><span class="at">beta0</span></span>
-<span id="cb4-442"><a></a>beta1 <span class="op">=</span> combinedSliders<span class="op">.</span><span class="at">beta1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="426" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 425;"><span id="cb4-426"><a></a>viewof combinedSliders <span class="op">=</span> {</span>
+<span id="cb4-427"><a></a>  <span class="kw">const</span> b0 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">300000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">50000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₀ (base price)"</span>})</span>
+<span id="cb4-428"><a></a>  <span class="kw">const</span> b1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">400</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">180</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"β₁ (price per sq ft)"</span>})</span>
+<span id="cb4-429"><a></a>  <span class="kw">const</span> div <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="display:flex; gap:2rem; align-items:center;"&gt;</span><span class="sc">${</span>b0<span class="sc">}${</span>b1<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
+<span id="cb4-430"><a></a>  div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
+<span id="cb4-431"><a></a>  b0<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb4-432"><a></a>    div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
+<span id="cb4-433"><a></a>    div<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span>))</span>
+<span id="cb4-434"><a></a>  })</span>
+<span id="cb4-435"><a></a>  b1<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb4-436"><a></a>    div<span class="op">.</span><span class="at">value</span> <span class="op">=</span> {<span class="dt">beta0</span><span class="op">:</span> b0<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="dt">beta1</span><span class="op">:</span> b1<span class="op">.</span><span class="at">value</span>}</span>
+<span id="cb4-437"><a></a>    div<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span>))</span>
+<span id="cb4-438"><a></a>  })</span>
+<span id="cb4-439"><a></a>  <span class="cf">return</span> div</span>
+<span id="cb4-440"><a></a>}</span>
+<span id="cb4-441"><a></a></span>
+<span id="cb4-442"><a></a>beta0 <span class="op">=</span> combinedSliders<span class="op">.</span><span class="at">beta0</span></span>
+<span id="cb4-443"><a></a>beta1 <span class="op">=</span> combinedSliders<span class="op">.</span><span class="at">beta1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -1080,20 +1080,20 @@ TODO: check and refine: when do we use the \hat and epsilon?
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="445" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 444;"><span id="cb5-445"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb5-446"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">480</span><span class="op">,</span></span>
-<span id="cb5-447"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
-<span id="cb5-448"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb5-449"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"squarefoot"</span> }<span class="op">,</span></span>
-<span id="cb5-450"><a></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb5-451"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"price ($)"</span><span class="op">,</span></span>
-<span id="cb5-452"><a></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">price</span>)) <span class="op">*</span> <span class="fl">1.1</span>]</span>
-<span id="cb5-453"><a></a>  }<span class="op">,</span></span>
-<span id="cb5-454"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb5-455"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
-<span id="cb5-456"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(fitLine<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})</span>
-<span id="cb5-457"><a></a>  ]</span>
-<span id="cb5-458"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="446" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 445;"><span id="cb5-446"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-447"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">480</span><span class="op">,</span></span>
+<span id="cb5-448"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb5-449"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb5-450"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"squarefoot"</span> }<span class="op">,</span></span>
+<span id="cb5-451"><a></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb5-452"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"price ($)"</span><span class="op">,</span></span>
+<span id="cb5-453"><a></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">price</span>)) <span class="op">*</span> <span class="fl">1.1</span>]</span>
+<span id="cb5-454"><a></a>  }<span class="op">,</span></span>
+<span id="cb5-455"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-456"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
+<span id="cb5-457"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(fitLine<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})</span>
+<span id="cb5-458"><a></a>  ]</span>
+<span id="cb5-459"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
@@ -1106,19 +1106,19 @@ TODO: check and refine: when do we use the \hat and epsilon?
 <h2>Interpreting the regression model</h2>
 <div class="highlight_must_learn">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="472" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 471;"><span id="cb6-472"><a></a>exampleData <span class="op">=</span> [</span>
-<span id="cb6-473"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span>  <span class="dt">price</span><span class="op">:</span> <span class="dv">196000</span>}<span class="op">,</span></span>
-<span id="cb6-474"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1200</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">272000</span>}<span class="op">,</span></span>
-<span id="cb6-475"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1500</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">322000</span>}<span class="op">,</span></span>
-<span id="cb6-476"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1900</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">394000</span>}<span class="op">,</span></span>
-<span id="cb6-477"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2300</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">466000</span>}<span class="op">,</span></span>
-<span id="cb6-478"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2700</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">538000</span>}<span class="op">,</span></span>
-<span id="cb6-479"><a></a>]</span>
-<span id="cb6-480"><a></a></span>
-<span id="cb6-481"><a></a>exampleFit <span class="op">=</span> [</span>
-<span id="cb6-482"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span>  <span class="dt">price</span><span class="op">:</span> <span class="dv">50000</span> <span class="op">+</span> <span class="dv">180</span> <span class="op">*</span> <span class="dv">800</span>}<span class="op">,</span></span>
-<span id="cb6-483"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2700</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">50000</span> <span class="op">+</span> <span class="dv">180</span> <span class="op">*</span> <span class="dv">2700</span>}</span>
-<span id="cb6-484"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="473" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 472;"><span id="cb6-473"><a></a>exampleData <span class="op">=</span> [</span>
+<span id="cb6-474"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span>  <span class="dt">price</span><span class="op">:</span> <span class="dv">196000</span>}<span class="op">,</span></span>
+<span id="cb6-475"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1200</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">272000</span>}<span class="op">,</span></span>
+<span id="cb6-476"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1500</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">322000</span>}<span class="op">,</span></span>
+<span id="cb6-477"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1900</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">394000</span>}<span class="op">,</span></span>
+<span id="cb6-478"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2300</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">466000</span>}<span class="op">,</span></span>
+<span id="cb6-479"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2700</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">538000</span>}<span class="op">,</span></span>
+<span id="cb6-480"><a></a>]</span>
+<span id="cb6-481"><a></a></span>
+<span id="cb6-482"><a></a>exampleFit <span class="op">=</span> [</span>
+<span id="cb6-483"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span>  <span class="dt">price</span><span class="op">:</span> <span class="dv">50000</span> <span class="op">+</span> <span class="dv">180</span> <span class="op">*</span> <span class="dv">800</span>}<span class="op">,</span></span>
+<span id="cb6-484"><a></a>  {<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">2700</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">50000</span> <span class="op">+</span> <span class="dv">180</span> <span class="op">*</span> <span class="dv">2700</span>}</span>
+<span id="cb6-485"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -1161,37 +1161,37 @@ each additional square foot is associated with <strong>+$180</strong> in predict
 </blockquote>
 <p><span class="math display">\[\hat{price} = 50{,}000 + 180 \times 1{,}500 = \$322{,}000\]</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="519" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 518;"><span id="cb7-519"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb7-520"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">320</span><span class="op">,</span></span>
-<span id="cb7-521"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
-<span id="cb7-522"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb7-523"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">600</span><span class="op">,</span> <span class="dv">2900</span>] }<span class="op">,</span></span>
-<span id="cb7-524"><a></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"price ($)"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">100000</span><span class="op">,</span> <span class="dv">550000</span>] }<span class="op">,</span></span>
-<span id="cb7-525"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb7-526"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(exampleData<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#334155"</span>})<span class="op">,</span></span>
-<span id="cb7-527"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(exampleFit<span class="op">,</span>  {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">2.5</span>})<span class="op">,</span></span>
-<span id="cb7-528"><a></a></span>
-<span id="cb7-529"><a></a>    <span class="co">// vertical dashed line at x = 1500</span></span>
-<span id="cb7-530"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">1500</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"6,4"</span>})<span class="op">,</span></span>
-<span id="cb7-531"><a></a>    <span class="co">// horizontal dashed line at y = 322000</span></span>
-<span id="cb7-532"><a></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">322000</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"6,4"</span>})<span class="op">,</span></span>
-<span id="cb7-533"><a></a></span>
-<span id="cb7-534"><a></a>    <span class="co">// annotation dot at prediction point</span></span>
-<span id="cb7-535"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>([{<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1500</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">322000</span>}]<span class="op">,</span> {</span>
-<span id="cb7-536"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span></span>
-<span id="cb7-537"><a></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
-<span id="cb7-538"><a></a>    })<span class="op">,</span></span>
-<span id="cb7-539"><a></a></span>
-<span id="cb7-540"><a></a>    <span class="co">// label</span></span>
-<span id="cb7-541"><a></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1560</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">335000</span>}]<span class="op">,</span> {</span>
-<span id="cb7-542"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span></span>
-<span id="cb7-543"><a></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"$322,000"</span>]<span class="op">,</span></span>
-<span id="cb7-544"><a></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span></span>
-<span id="cb7-545"><a></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">13</span><span class="op">,</span></span>
-<span id="cb7-546"><a></a>      <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span></span>
-<span id="cb7-547"><a></a>    })</span>
-<span id="cb7-548"><a></a>  ]</span>
-<span id="cb7-549"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="520" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 519;"><span id="cb7-520"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb7-521"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">320</span><span class="op">,</span></span>
+<span id="cb7-522"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb7-523"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb7-524"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">600</span><span class="op">,</span> <span class="dv">2900</span>] }<span class="op">,</span></span>
+<span id="cb7-525"><a></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"price ($)"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">100000</span><span class="op">,</span> <span class="dv">550000</span>] }<span class="op">,</span></span>
+<span id="cb7-526"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb7-527"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(exampleData<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#334155"</span>})<span class="op">,</span></span>
+<span id="cb7-528"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>(exampleFit<span class="op">,</span>  {<span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"crimson"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">2.5</span>})<span class="op">,</span></span>
+<span id="cb7-529"><a></a></span>
+<span id="cb7-530"><a></a>    <span class="co">// vertical dashed line at x = 1500</span></span>
+<span id="cb7-531"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">1500</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"6,4"</span>})<span class="op">,</span></span>
+<span id="cb7-532"><a></a>    <span class="co">// horizontal dashed line at y = 322000</span></span>
+<span id="cb7-533"><a></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">322000</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"6,4"</span>})<span class="op">,</span></span>
+<span id="cb7-534"><a></a></span>
+<span id="cb7-535"><a></a>    <span class="co">// annotation dot at prediction point</span></span>
+<span id="cb7-536"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>([{<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1500</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">322000</span>}]<span class="op">,</span> {</span>
+<span id="cb7-537"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span></span>
+<span id="cb7-538"><a></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb7-539"><a></a>    })<span class="op">,</span></span>
+<span id="cb7-540"><a></a></span>
+<span id="cb7-541"><a></a>    <span class="co">// label</span></span>
+<span id="cb7-542"><a></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="dt">squarefoot</span><span class="op">:</span> <span class="dv">1560</span><span class="op">,</span> <span class="dt">price</span><span class="op">:</span> <span class="dv">335000</span>}]<span class="op">,</span> {</span>
+<span id="cb7-543"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"squarefoot"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span></span>
+<span id="cb7-544"><a></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"$322,000"</span>]<span class="op">,</span></span>
+<span id="cb7-545"><a></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#f59e0b"</span><span class="op">,</span></span>
+<span id="cb7-546"><a></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">13</span><span class="op">,</span></span>
+<span id="cb7-547"><a></a>      <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span></span>
+<span id="cb7-548"><a></a>    })</span>
+<span id="cb7-549"><a></a>  ]</span>
+<span id="cb7-550"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="expression">
 
@@ -1504,7 +1504,7 @@ This convention helps distinguish clearly between inputs and learned outputs —
 </section>
 <section id="model-assumptions" class="slide level2">
 <h2>Model assumptions</h2>
-<p>Regression models rely the following <strong>assumptions</strong>:</p>
+<p>Regression models rely on the following <strong>assumptions</strong>:</p>
 <ul>
 <li>Linear relationship between predictors and outcome</li>
 <li>Independent observations</li>
@@ -1584,7 +1584,7 @@ This convention helps distinguish clearly between inputs and learned outputs —
 <li><p>Measures the <strong>share of variance in the target variable explained by the model</strong></p></li>
 <li><p>Example: <strong>(<span class="math inline">\(R^2\)</span> = 0.56)</strong> means the model explains <strong>56% of the variation in house prices</strong></p></li>
 <li><p>Values range from <strong>0 to 1</strong>, with <strong>higher <span class="math inline">\(R^2\)</span></strong> generally indicating a better fit</p></li>
-<li><p>But a high <span class="math inline">\(R^2\)</span> <strong>does not automatically mean</strong> the model is useful in practice. <span class="math inline">\(R^2\)</span> says little about:</p>
+<li><p>But a high <span class="math inline">\(R^2\)</span> <strong>does not automatically mean</strong> the model is useful in practice. The <span class="math inline">\(R^2\)</span> says little about:</p>
 <ul>
 <li>whether predictions are accurate enough for decisions</li>
 <li>whether the model generalizes to new data</li>
@@ -1624,7 +1624,7 @@ This convention helps distinguish clearly between inputs and learned outputs —
 <div class="highlight_must_learn">
 <p>Regression coefficients tell us how the predicted outcome changes when a predictor changes, <strong>holding the other predictors constant</strong>.</p>
 <!--
-    TODO: include an example of a regression table with significace (p-value/stars/confidence intervals)?
+    TODO: include an example of a regression table with significance (p-value/stars/confidence intervals)?
 -->
 <p>For a coefficient <span class="math inline">\(\beta_j\)</span>:</p>
 <ul>
@@ -1981,7 +1981,7 @@ TBD: fix (.. . is displayed on the slide?!)
 </div>
 </div>
 <aside class="notes">
-<p>You may mention that joblib is commonly used for scikit-learn objects. Also useful to note that deployment requires the same variable names and preprocessing steps as in training.</p>
+<p>You may mention that <code>joblib</code> is commonly used for scikit-learn objects. Also, it is useful to note that deployment requires the same variable names and preprocessing steps as in training.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

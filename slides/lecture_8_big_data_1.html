@@ -33,6 +33,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -151,17 +217,6 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -171,6 +226,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -184,15 +250,15 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -208,7 +274,7 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 8: Big data I <p></p>
+  <p></p> Session 8: Big data 1 <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
     <p class="date">(2026-05-04)</p>
@@ -220,11 +286,10 @@
 <div class="learning-objectives">
 <ul>
 <li><strong>Explain</strong> the characteristics of big data and their implications for analytics workflows.</li>
-<li><strong>Assess</strong> key challenges of big data, including scalability, heterogeneity, and data quality.</li>
-<li><strong>Outline</strong> distributed data architectures and their role in large-scale analytics.</li>
+<li><strong>Compare</strong> data warehouse, data lake, and logical data warehouse architectures.</li>
+<li><strong>Describe</strong> the text analytics pipeline from preprocessing to representation and modeling.</li>
 </ul>
 </div>
-<p>TODO: Explain how big data environments reshape model development, validation, and deployment. This creates continuity with: Generalization problem, Overfitting, Model evaluation</p>
 </section>
 <section>
 <section id="big-data" class="title-slide slide level1 center" data-stack-name="Big data">
@@ -238,57 +303,23 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
     > The basic idea behind the phrase 'Big Data' is that everything we do is increasingly leaving a digital trace (or data), which we (and others) can use and analyze.  
     > -- Bernard Marr
 
-    > Big Data is the frontier of a firm’s ability to store, process, and access (SPA) all the data it needs to operate effectively, make decisions, reduce risks, and serve customers.  
+    > Big data is the frontier of a firm’s ability to store, process, and access (SPA) all the data it needs to operate effectively, make decisions, reduce risks, and serve customers.  
     > -- Forrester
 
-    > Big Data is not about the size of the data, it's about the value within the data.  
+    > Big data is not about the size of the data, it's about the value within the data.  
     > -- David Wellman
 -->
 </section>
 <section id="vs-of-big-data" class="slide level2">
-<h2>4V’s of Big Data</h2>
+<h2>4V’s of big data</h2>
+<p>Big data matters when the <strong>properties of the data</strong> change what managers can decide, automate, or compete on.</p>
 <div class="highlight_must_learn">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_61.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/big_data_v.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
-
-<aside><div>
-<p>— Source: www.cs.kent.edu/~jin/BigData/Lecture1.pptx</p>
-</div></aside></section>
-<section id="big-data-changes-the-managerial-problem" class="slide level2">
-<h2>Big data changes the managerial problem</h2>
-<blockquote>
-<p>Big data matters when the <strong>properties of the data</strong> change what managers can decide, automate, or compete on.</p>
-</blockquote>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>V</th>
-<th>Business dilemma</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Volume</strong></td>
-<td>Too many operational combinations to optimize manually</td>
-</tr>
-<tr class="even">
-<td><strong>Velocity</strong></td>
-<td>Decisions must be made before the moment passes</td>
-</tr>
-<tr class="odd">
-<td><strong>Variety</strong></td>
-<td>Many data worlds must be integrated</td>
-</tr>
-<tr class="even">
-<td><strong>Veracity</strong></td>
-<td>Data may look precise but still be false</td>
-</tr>
-</tbody>
-</table>
 <aside class="notes">
 <p>Rationale and key points to cover:</p>
 <p>This opening slide should shift the students away from the generic definition of big data as “lots of data.” The key teaching message is that each V corresponds to a different managerial dilemma.</p>
@@ -484,59 +515,15 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
           display:block!important;
       }</style></aside>
 </section>
-<section id="todo-too-simple-but-maybe-integrate-in-the-end-of-the-first-section-key-takeaway" class="slide level2">
-<h2>TODO: too simple, but maybe integrate in the “end of the first section” (Key takeaway)</h2>
-<p>Big data is not one problem.</p>
-<p>It creates <strong>four different managerial dilemmas</strong>:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>V</th>
-<th>Core challenge</th>
-<th>Business response</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Volume</td>
-<td>Too many combinations</td>
-<td>Optimize</td>
-</tr>
-<tr class="even">
-<td>Velocity</td>
-<td>Too little time</td>
-<td>Decide instantly</td>
-</tr>
-<tr class="odd">
-<td>Variety</td>
-<td>Too many data worlds</td>
-<td>Integrate</td>
-</tr>
-<tr class="even">
-<td>Veracity</td>
-<td>Too little trust</td>
-<td>Validate</td>
-</tr>
-</tbody>
-</table>
-<aside class="notes">
-<p>Rationale and key points to cover:</p>
-<p>Use this closing slide to consolidate the examples.</p>
-<p>The most important message is that each V changes the managerial problem in a different way. Volume creates optimization challenges. Velocity creates real-time decision challenges. Variety creates integration and coordination challenges. Veracity creates trust and validation challenges.</p>
-<p>A useful closing question for students:</p>
-<p>“Which of these four dilemmas is most difficult to solve technologically, and which is most difficult to solve organizationally?”</p>
-<p>This helps transition from technical analytics to organizational capability. Firms do not compete simply by owning data. They compete by building decision systems, routines, governance structures, and analytical capabilities that turn data properties into better business outcomes.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="turning-big-data-into-value" class="slide level2">
+<h2>Turning big data into value</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/slides_86_new.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+
 <!--
 
     ## Volume (Scale)
@@ -598,11 +585,11 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 
     Sensor Data
 
-    We are increasingly surrounded by sensors that collect and share data. Take your smart phone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelerometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.
+    We are increasingly surrounded by sensors that collect and share data. Take your smartphone, it contains a global positioning sensor to track exactly where you are every second of the day, it includes an accelerometer to track the speed and direction at which you are travelling. We now have sensors in many devices and products.
 
     The Internet of Things Data
 
-    We now have smart TVs that are able to collect and process data, we have smart watches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.
+    We now have smart TVs that are able to collect and process data, we have smartwatches, smart fridges, and smart alarms. The Internet of Things, or Internet of Everything connects these devices so that e.g. the traffic sensors on the road send data to your alarm clock which will wake you up earlier than planned because the blocked road means you have to leave earlier to make your 9am meeting.
 
     ::: aside
     — Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the
@@ -675,10 +662,10 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
     Retailers are able to optimize their stock based on predictive models generated from social media data, web search trends, weather forecasts...
 
     - Improving Health
-    Use the data from smart watches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …
+    Use the data from smartwatches, wearable devices, Google Trends, health research, electronic medical record to diagnose disease, predict epidemics, …
 
     - Improving Security and Law Enforcement
-    Use big data analytics to predict criminal activity, foil terrorist plots, detect cyber attacks, and detect fraudulent credit card transactions.
+    Use big data analytics to predict criminal activity, foil terrorist plots, detect cyberattacks, and detect fraudulent credit card transactions.
 
     - Improving and Optimizing Cities and Countries (Smart Cities)
     Optimize traffic flows based on real time traffic information, social media and weather data. A bus would wait for a delayed train and traffic signals predict traffic volumes.
@@ -688,30 +675,18 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
     :::
 
 -->
-</section>
-<section id="turning-big-data-into-value" class="slide level2">
-<h2>Turning Big Data into Value</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/slides_86_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-
 <aside><div>
 <p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
 </div></aside></section></section>
+<section>
 <section id="architecture" class="title-slide slide level1 center" data-stack-name="Architecture">
 <h1>Architecture</h1>
-
-</section>
-
-<section>
-<section id="todo-data-lake-vs-data-warehouse-as-alternative-architectures-clarify-the-difference" class="title-slide slide level1 center">
-<h1>TODO: data lake vs data warehouse as alternative architectures? clarify the difference!</h1>
-
+<!--
+## TODO: data lake vs data warehouse as alternative architectures? clarify the difference!
+-->
 </section>
 <section id="limitations-of-the-data-warehouse-approach" class="slide level2">
-<h2>Limitations of the Data Warehouse Approach</h2>
+<h2>Limitations of the data warehouse approach</h2>
 <p>Traditional DWH solutions are designed to provide a single point of truth. Important aspects are:</p>
 <ul>
 <li>Merge and unify data from multiple data sources</li>
@@ -729,7 +704,7 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 </ul>
 </section>
 <section id="the-four-layers-of-big-data-i" class="slide level2">
-<h2>The Four Layers of Big Data (I)</h2>
+<h2>The four layers of big data (I)</h2>
 <p>Data Source Layer</p>
 <p>This is where the data arrives at the organization. It includes everything from sales records, customer database, feedback, social media channels, marketing list, email archives etc.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -742,10 +717,10 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
 </div></aside></section>
 <section id="identify-and-prioritize-data-sources" class="slide level2">
-<h2>Identify and Prioritize Data Sources</h2>
+<h2>Identify and prioritize data sources</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_88_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_88_new.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 
@@ -753,7 +728,7 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: <span class="citation" data-cites="Schmarzo2016">Schmarzo (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>, p.&nbsp;49</p>
 </div></aside></section>
 <section id="the-four-layers-of-big-data-ii" class="slide level2">
-<h2>The Four Layers of Big Data (II)</h2>
+<h2>The four layers of big data (II)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_89_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
@@ -764,7 +739,7 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
 </div></aside></section>
 <section id="the-four-layers-of-big-data-iii" class="slide level2">
-<h2>The Four Layers of Big Data (III)</h2>
+<h2>The four layers of big data (III)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_90_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
@@ -775,7 +750,7 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
 </div></aside></section>
 <section id="the-four-layers-of-big-data-iv" class="slide level2">
-<h2>The Four Layers of Big Data (IV)</h2>
+<h2>The four layers of big data (IV)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../images/slides_91_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
@@ -786,7 +761,7 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: http://de.slideshare.net/BernardMarr/140228-big-data-slide-share/3-The_basic_idea_behind_the</p>
 </div></aside></section>
 <section id="from-data-warehouse-to-data-lake" class="slide level2">
-<h2>From Data Warehouse to Data Lake</h2>
+<h2>From data warehouse to data lake</h2>
 <p>Instead of recording millions of transactions, today’s organizations are recording billions of interactions. Companies are capturing more and more data that can open business opportunities and unlock new sources of value for organizations.</p>
 <p>Companies are not able to store this data in data warehouses because it is of high volume, mostly raw and often not structured. As consequence, data lakes have emerged as an alternative approach. The intent is to capture enterprise data and load it in its raw form into a centralized, large, and inexpensive storage system.</p>
 <p>In shifting from data warehouses to data lakes, it became important to decouple data movement from data transformation. Data movement (the “E” and “L” of ETL) is an operational task. Data transformation (the “T” of ETL) is a content-based, analytic-facing task that requires an understanding both of the data and how it’s to be used.</p>
@@ -796,7 +771,7 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: Trifacta: EOL for</p>
 </div></aside></section>
 <section id="the-data-lake" class="slide level2">
-<h2>The Data Lake</h2>
+<h2>The data lake</h2>
 <p>A data lake is a method of storing data within a system in its natural format, that facilitates the collocation of data in various schemata and structural forms. The idea of data lake is to have a single store of all data in the enterprise ranging from raw data to transformed data which is used for various tasks including reporting, visualization, analytics and machine learning.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -808,15 +783,15 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <p>— Source: https://www.pmone.com/fileadmin/user_upload/pics/other/Data_lake.jpg</p>
 </div></aside></section>
 <section id="modern-data-analytics-architecture" class="slide level2">
-<h2>Modern Data Analytics Architecture</h2>
+<h2>Modern data analytics architecture</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/slides_94_new.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/slides_94_new.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
 </section>
 <section id="logical-data-warehouse" class="slide level2">
-<h2>Logical Data Warehouse</h2>
+<h2>Logical data warehouse</h2>
 <p>A “logical data warehouse” provides analytical company data without first physically moving it to a physical data warehouse.</p>
 <p>As in a classic data warehouse, uniform views are provided for analysis purposes.</p>
 <p>While the data in the classic data warehouse comes from a “well-defined” physically uniform database, the “logical data warehouse” pulls data together from the data lake at the time of the query.</p>
@@ -833,119 +808,633 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 <section>
 <section id="text-analytics" class="title-slide slide level1 center" data-stack-name="Text analytics">
 <h1>Text analytics</h1>
-<p>TODO: structure: see “Text representation pipeline” note (obsidian)</p>
-<p>https://github.com/iam-salma/NLP-Bootcamp-with-python</p>
+
 </section>
-<section id="paradigm-1-sparse-representations-classical-nlp" class="level3">
-<h3>Paradigm 1: Sparse Representations (Classical NLP)</h3>
+<section id="text-analytics-1" class="slide level2">
+<h2>Text analytics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The vast majority of global data is stored in unstructured formats. For example:</p>
 <ul>
-<li><p>Core challenge: <em>How do we turn text into analyzable data?</em></p></li>
-<li><p>Basic pipeline:</p>
-<ul>
-<li>preprocessing (tokenization, cleaning)</li>
-<li>feature engineering (Bag-of-Words, TF-IDF)</li>
-</ul></li>
-<li><p>Output: <strong>sparse feature vectors → ML models</strong></p></li>
-<li><p>Use case: classification (e.g., sentiment analysis)</p></li>
-<li><p>Key idea: <em>text → structured matrix → prediction</em></p></li>
+<li>emails and internal communication</li>
+<li>customer support tickets</li>
+<li>meeting notes and reports</li>
+<li>product reviews and social media posts</li>
+<li>annual reports and corporate filings</li>
+<li>contracts and legal documents</li>
+<li>job descriptions and résumés</li>
+<li>scientific and market research reports</li>
+<li>CRM notes and sales reports</li>
+<li>helpdesk and incident reports</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Text analytics</strong> combines methods from natural language processing, machine learning, information retrieval, and statistics to systematically analyze large volumes of textual data and derive actionable insights.</p>
+<p><img data-src="../images/text_analytics.png" style="width:70.0%"></p>
+</div></div>
+
+<aside><div>
+<p><em>Text mining</em> is often viewed as a subset of the broader field of text analytics, emphasizing the discovery of previously unknown patterns in textual data. Here, we use the broader term <em>text analytics</em>.</p>
+</div></aside></section>
+<section id="application-areas" class="slide level2">
+<h2>Application areas</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/text_analytics_applications.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+</figure>
+</div>
 </section>
-<section id="paradigm-2-dense-representations-embeddings" class="level3">
-<h3>Paradigm 2: Dense Representations (Embeddings)</h3>
+<section id="text-preprocessing" class="slide level2">
+<h2>Text preprocessing</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Typical sources of <strong>noise</strong></p>
 <ul>
-<li><p>Motivation: capture <strong>semantic meaning</strong></p></li>
-<li><p>Introduce embeddings (e.g., BERT)</p></li>
-<li><p>Output: <strong>dense vectors → ML / clustering / similarity</strong></p></li>
-<li><p>Use cases:</p>
-<ul>
-<li>semantic search</li>
-<li>clustering documents</li>
-<li>regression/classification</li>
-</ul></li>
-<li><p>Key shift: <em>better features, same analytics logic</em></p></li>
+<li>punctuation, HTML tags, URLs, emojis</li>
+<li>inconsistent casing and formatting</li>
+<li>very frequent but low-information words (<strong>stopwords</strong>)</li>
+<li>morphological variants (<em>user</em>, <em>users</em>, <em>using</em>)</li>
 </ul>
+<p>Preprocessing options <em>(choose what fits the analytical approach)</em></p>
+<ol type="1">
+<li><strong>Text cleanup</strong><br>
+remove punctuation / HTML / special characters</li>
+<li><strong>Tokenization</strong><br>
+split text into words or <em>n</em>-grams</li>
+<li><strong>Stopword removal</strong><br>
+remove frequent low-information words</li>
+<li><strong>Stemming / lemmatization</strong><br>
+reduce related word forms to a common base</li>
+<li><strong>Advanced linguistic processing</strong><br>
+POS tagging, parsing, word sense disambiguation, synonym / pronoun normalization</li>
+</ol>
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 15.5%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 16.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+<!--
+
+![](../images/text_analytics_pipeline.png)
+-->
 </section>
-<section id="paradigm-3-ai-assisted-analytics-llms-systems" class="level3">
-<h3>Paradigm 3: AI-Assisted Analytics (LLMs &amp; Systems)</h3>
-<ul>
-<li><p>Embeddings as foundation for systems:</p>
-<ul>
-<li>retrieval (finding relevant documents)</li>
-<li>similarity-based analytics</li>
-</ul></li>
-<li><p>Extend to LLM-based workflows (e.g., GPT-4):</p>
-<ul>
-<li>direct classification via prompting</li>
-<li>information extraction</li>
-<li>summarization</li>
-</ul></li>
-<li><p>Concept: <strong>Retrieval-Augmented Generation (RAG)</strong></p>
-<ul>
-<li>embeddings → retrieve relevant data</li>
-<li>LLM → analyze / generate output</li>
-</ul></li>
-<li><p>Key shift: <em>model integrates feature extraction + prediction</em></p></li>
-</ul>
+<section id="text-processing-examples" class="slide level2">
+<h2>Text processing: Examples</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Stopword removal:</p>
+<div id="82de3165" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>documents <span class="op">=</span> [<span class="st">"Jupiter is the largest gas planet."</span>]</span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a>vectorizer <span class="op">=</span> CountVectorizer(stop_words<span class="op">=</span><span class="st">"english"</span>)</span>
+<span id="cb1-6"><a></a>matrix <span class="op">=</span> vectorizer.fit_transform(documents)</span>
+<span id="cb1-7"><a></a><span class="bu">print</span>(vectorizer.get_feature_names_out())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['gas' 'jupiter' 'largest' 'planet']</code></pre>
+</div>
+</div>
+<!--
+Stemming:
+
+```python
+from nltk.stem.porter import PorterStemmer
+
+stemmer = PorterStemmer()
+tokens = ["Jupiter", "is", "the", "largest", "gas", "planet"]
+
+stems = []
+for item in tokens:
+    stems.append(stemmer.stem(item))
+
+stems
+```
+-->
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 15.5%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 16.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
 </section>
-<section id="comparison-analytical-perspective" class="level3">
-<h3>5. Comparison &amp; Analytical Perspective</h3>
+<section id="feature-generation-sparse-representations-classical-nlp" class="slide level2">
+<h2>Feature generation: Sparse representations (classical NLP)</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>A document is treated as a <strong>bag of words</strong> or terms.</p>
 <ul>
-<li>Three ways to turn text into insights:</li>
+<li>each word or term becomes a <strong>feature</strong></li>
+<li>word order is ignored</li>
+<li>each document is represented as a <strong>vector</strong></li>
+<li>the result is a structured <strong>document-term matrix</strong></li>
 </ul>
+<p><strong>Key idea</strong>: Text is transformed into numerical features that can be used by classical machine learning models.</p>
+<p><br> <strong>Ways to create vectors</strong></p>
+<div class="smaller">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Approach</th>
-<th>Representation</th>
-<th>Role in Analytics</th>
+<th>Technique</th>
+<th>Feature value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Sparse</td>
-<td>TF-IDF</td>
-<td>baseline, interpretable</td>
+<td><strong>Binary term occurrence</strong></td>
+<td>term appears: yes / no</td>
 </tr>
 <tr class="even">
-<td>Dense</td>
-<td>embeddings</td>
-<td>semantic features</td>
+<td><strong>Term occurrence</strong></td>
+<td>number of times a term appears</td>
 </tr>
 <tr class="odd">
-<td>LLM-based</td>
-<td>implicit</td>
-<td>flexible, system-level analytics</td>
+<td><strong>Term frequency</strong></td>
+<td>occurrences divided by document length</td>
+</tr>
+<tr class="even">
+<td><strong>TF-IDF</strong></td>
+<td>frequency weighted by how distinctive the term is</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Emphasize: <strong>choice depends on task, cost, and requirements</strong></li>
-</ul>
+</div>
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
 </section>
-<section id="takeaway-the-future-of-text-analytics" class="level3">
-<h3>6. Takeaway: The Future of Text Analytics</h3>
+<section id="feature-generation-tf-idf-example" class="slide level2">
+<h2>Feature generation: TF-IDF example</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>TF-IDF (term frequency-inverse document frequency) measures how important a term is to a document relative to a corpus</p>
 <ul>
-<li><p>Text is no longer “unstructured” → it’s <strong>transformable data</strong></p></li>
-<li><p>Evolution:</p>
+<li><span class="math inline">\(tf\)</span> (term frequency): how often a term appears in a document</li>
+<li><span class="math inline">\(idf\)</span> (inverse document frequency): how rare a term is across the corpus</li>
+</ul>
+<p><span class="math display">\[idf_i = log(\frac{N}{df_i})\]</span></p>
+<p>with <span class="math inline">\(N\)</span>: total number of documents<br>
+<span class="math inline">\(df_i\)</span>: the number of documents in which <span class="math inline">\(t_i\)</span> appears.</p>
+<p>TF-IDF weight:</p>
+<p><span class="math display">\[w_{ij} = tf_{ij} \times idf_i\]</span></p>
 <ul>
-<li>manual features → learned representations → AI-assisted analysis</li>
+<li>Gives more weight to rare words</li>
+<li>Gives less weight to common words (domain-specific stopwords)</li>
+</ul>
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="feature-generation-dense-representations-embeddings" class="slide level2">
+<h2>Feature generation: Dense representations (embeddings)</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<div class="highlight_must_learn">
+<ul>
+<li>Words are represented as <strong>dense vectors</strong> of real numbers, e.g., <strong>50–300 values per word</strong></li>
+<li>Dense vectors capture semantic meaning, i.e., similar words get <strong>similar vector representations</strong></li>
+<li>Well-known methods: <strong>Word2Vec</strong>, <strong>GloVe</strong>, <strong>fastText</strong>, <strong>BERT</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/sparse_dense_vectors.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+<!--
+  - better at handling **synonyms** and related terms than bag-of-words
+
+* Motivation: capture **semantic meaning**
+
+* Introduce embeddings (e.g., BERT)
+
+* Output: **dense vectors → ML / clustering / similarity**
+
+* Use cases:
+
+  * semantic search
+  * clustering documents
+  * regression/classification
+
+* Key shift: *better features, same analytics logic*
+-->
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="feature-generation-dense-representations-embeddings-1" class="slide level2">
+<h2>Feature generation: Dense representations (embeddings)</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>The <code>sentence_transformers</code> library offers pre-trained models for dense vectors:</p>
+<p><br></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> sentence_transformers <span class="im">import</span> SentenceTransformer</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>model <span class="op">=</span> SentenceTransformer(<span class="st">"all-MiniLM-L6-v2"</span>)</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a>text <span class="op">=</span> <span class="st">"Customer reviews mention fast delivery and helpful support."</span></span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a>dense_vector <span class="op">=</span> model.encode(text)</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a><span class="bu">print</span>(<span class="bu">type</span>(dense_vector))</span>
+<span id="cb3-10"><a></a><span class="bu">print</span>(dense_vector.shape)</span>
+<span id="cb3-11"><a></a><span class="bu">print</span>(dense_vector[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>&lt;class ‘numpy.ndarray’&gt;<br>
+(384,)<br>
+[-0.042 0.018 0.067 …]</p>
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="feature-generation-transformer-based-analytics" class="slide level2">
+<h2>Feature generation: Transformer-based analytics</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Transformer models combine dense vectors with positional encoding:</p>
+<p><img data-src="../images/text_analytics_transformers.png"></p>
+<!--
+TODO: semantic vectors + positional encoding?! (no stopword removal?)
+
+* Embeddings as foundation for systems:
+
+  * retrieval (finding relevant documents)
+  * similarity-based analytics
+
+* Extend to LLM-based workflows (e.g., GPT-4):
+
+  * direct classification via prompting
+  * information extraction
+  * summarization
+
+* Concept: **Retrieval-Augmented Generation (RAG)**
+
+  * embeddings → retrieve relevant data
+  * LLM → analyze / generate output
+
+* Key shift: *model integrates feature extraction + prediction*
+-->
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 30.5%;
+width: 73%;
+height: 14.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 32.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="feature-selection" class="slide level2">
+<h2>Feature selection</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>In one-hot encoded documents, or in large corpora, feature selection can help to facilitate computation and avoid overfitting. Two major feature selection approaches in the context of text analytics are:</p>
+<p><strong>Pruning methods</strong>: removing words that are too infrequent or to frequent, based on absolute or percental thresholds.</p>
+<p><strong>Token filtering based on part-of-speech (POS)</strong>: sometimes, the analyses focus on particular classes of words. For example:</p>
+<ul>
+<li>For <strong>sentiment analysis</strong>, adjectives often carry evaluative meaning
+<ul>
+<li><em>good</em>, <em>bad</em>, <em>great</em></li>
 </ul></li>
-<li><p>Role of analytics:</p>
+<li>For <strong>clustering</strong>, nouns often define the topic or object
 <ul>
-<li>selecting representations</li>
-<li>designing pipelines/systems</li>
-<li>evaluating outcomes</li>
+<li><em>red cars</em> and <em>blue cars</em> are about cars<br>
+</li>
+<li><em>red trousers</em> and <em>blue trousers</em> are about trousers</li>
 </ul></li>
 </ul>
 <!--
+Pruning (p.28): approaches
+particularly relevant for sparse vectors (dense vectors already offer a compressed representation)
+-->
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 46.5%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 48.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="text-analytics-clustering" class="slide level2">
+<h2>Text analytics: Clustering</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p><strong>Typical goal:</strong> find groups of documents that are similar to each other</p>
+<ul>
+<li>Start with a set of documents</li>
+<li>Represent each document as a vector
+<ul>
+<li>sparse vectors: Bag-of-Words, TF-IDF</li>
+<li>dense vectors: embeddings</li>
+</ul></li>
+<li>Compare documents using a <strong>similarity measure</strong></li>
+<li>Use a clustering algorithm to group similar documents</li>
+</ul>
+<p><strong>Similarity measures for text data</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Representation</th>
+<th>Typical similarity measure</th>
+<th>Useful for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bag-of-Words / TF-IDF</td>
+<td><strong>Cosine similarity</strong></td>
+<td>comparing word-use patterns</td>
+</tr>
+<tr class="even">
+<td>Sets of words</td>
+<td><strong>Jaccard similarity</strong></td>
+<td>overlap between vocabularies</td>
+</tr>
+<tr class="odd">
+<td>Dense embeddings</td>
+<td><strong>Cosine similarity</strong> / <strong>Euclidean distance</strong></td>
+<td>semantic similarity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--
+Jaccard (p.31, ...) for sparse vectors (distance-based clustering)
+Dense (semantic) vectors: k-means
+-->
+</div><div class="column" style="width:20%;">
+<div style="position: relative; width: 100%;">
+<p><img src="../images/text_analytics_pipeline.png" style="width:100%; opacity:0.92;"></p>
+<!-- subtle highlight -->
+<div style="
+position: absolute;
+left: 12%;
+top: 62%;
+width: 73%;
+height: 13.5%;
+border: 3px solid #5aa469;
+border-radius: 18px;
+background: rgba(90,164,105,0.05);
+box-shadow: 0 0 10px rgba(90,164,105,0.12);
+">
+
+</div>
+<!-- arrow -->
+<div style="
+position:absolute;
+left: 2%;
+top: 63.5%;
+font-size: 1.5em;
+color:#5aa469;
+font-weight:bold;
+line-height:1;
+">
+<p>➜</p>
+</div>
+</div>
+</div></div>
+
+<!--
+## Classification
+
+TODO (sentiment??)
+
+## Regression
+
+TODO (?)^
+
 ## **One-line narrative**
 
 > “We move from manually structuring text for models → to learning representations → to using AI systems that directly turn language into insights.”
+
+## TODO Deployment
+
+Cover ML Ops pipelines, scaling (parallel architectures)
 -->
-</section>
-<section id="todo-deployment" class="slide level2">
-<h2>TODO Deployment</h2>
-<p>Cover ML Ops pipelines, scaling (parallel architectures)</p>
+<aside><div>
+<p>Besides clustering, text-based features can also be used for classification or regression.</p>
+</div></aside></section>
+<section id="summary" class="slide level2" data-state="hide-menubar">
+<h2>Summary</h2>
+<ul>
+<li><p>Big data is not just “more data”; it changes analytics through <strong>volume</strong>, <strong>velocity</strong>, <strong>variety</strong>, and <strong>veracity</strong>. Each dimension creates a different managerial challenge: scaling decisions, acting in real time, integrating heterogeneous data, and deciding whether data can be trusted.</p></li>
+<li><p>Big data architectures extend traditional data warehouses by separating <strong>data storage</strong>, <strong>data movement</strong>, and <strong>data transformation</strong>. Data warehouses emphasize structured, governed “single truth,” while data lakes store raw heterogeneous data; logical data warehouses provide virtual, query-time integration.</p></li>
+<li><p>Text analytics turns unstructured text into analyzable data through a pipeline of <strong>preprocessing</strong>, <strong>feature generation</strong>, <strong>feature selection</strong>, and <strong>modeling</strong>. Classical approaches rely on sparse document-term matrices such as Bag-of-Words and TF-IDF.</p></li>
+<li><p>Dense embeddings and Transformer-based models shift text analytics from manually engineered features toward <strong>semantic representations</strong> and integrated AI workflows. These representations support retrieval, similarity analysis, clustering, classification, summarization, information extraction, and RAG-based systems.</p></li>
+</ul>
 </section>
 <section id="survey-session-8" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 8</h2>
@@ -974,6 +1463,9 @@ TODO: highlight the Big-Data Vs with specific examples. illustrate the data vivi
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-ManningSchutze1999" class="csl-entry" role="listitem">
+Manning, C., &amp; Schutze, H. (1999). <em>Foundations of statistical natural language processing</em>. MIT press. <a href="https://web.stanford.edu/~jurafsky/slp3/">https://web.stanford.edu/~jurafsky/slp3/</a>
+</div>
 <div id="ref-Schmarzo2016" class="csl-entry" role="listitem">
 Schmarzo, B. (2016). <em>Big data MBA</em>. Wiley. <a href="https://doi.org/10.1002/9781119238881">https://doi.org/10.1002/9781119238881</a>
 </div>

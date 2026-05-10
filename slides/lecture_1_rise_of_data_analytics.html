@@ -152,17 +152,6 @@
     }
   </style>
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -172,6 +161,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -234,7 +234,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br></p>
-<div id="219ec637" class="cell" data-execution_count="1">
+<div id="6a0f472b" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -292,10 +292,10 @@
 <h2>Data production</h2>
 <p><strong>Enterprise and transactional data</strong><br>
 Enterprise systems such as ERP, CRM, and supply chain platforms generate large volumes of structured data through everyday business transactions.</p>
-<p><strong>eCommerce</strong><br>
+<p><strong>E-commerce</strong><br>
 Every search, click, purchase, and review creates behavioral and transactional data used for recommendations and personalized marketing.</p>
 <p><strong>Social media and user-generated content</strong><br>
-Platforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live streaming.</p>
+Platforms such as TikTok, YouTube, and Instagram generate enormous data volumes through uploads, interactions, and live-streaming.</p>
 <p><strong>IoT and smart devices</strong><br>
 Connected devices—from wearables to industrial sensors—continuously produce real-time data across interconnected systems.</p>
 <p><strong>Digital transactions</strong><br>
@@ -433,13 +433,37 @@ This also applies to the data production areas.</p>
 </figure>
 </div>
 </div></div>
+<!--
+    ## AlphaGo
+
+    > Go is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.
+
+    > The core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.
+
+    > A newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.
+
+    ::: {.notes}
+
+    Chess 2^64 legal positions, Go 2^120!!!
+
+    :::
+
+    ## Libratus
+
+    > An artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.
+
+    > Poker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.
+
+    > “We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy.
+
+-->
 <aside><ol class="aside-footnotes"><li id="fn1"><p>AI systems are based on algorithms; in the following, we use the broader term AI when referring to such algorithm-based systems.</p></li><li id="fn2"><p>Hassabis and colleagues were awarded the 2024 Nobel Prize in Chemistry, in part for the development of AlphaFold.</p></li></ol></aside></section>
 <section id="jagged-frontier-of-ai" class="slide level2">
 <h2>Jagged frontier of AI</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><br><br></p>
-<div id="ce220b4e" class="cell" data-execution_count="2">
+<div id="5cd073e5" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -527,8 +551,6 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
       ::: {.notes}
 
       Which one is Explanation, which Prediction?
-
-      counterfactual : den Tatsachen widersprechend
 
       :::
 
@@ -663,7 +685,7 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
 </div></aside></section>
 <section id="analytical-models" class="slide level2">
 <h2>Analytical models</h2>
-<p>There is a a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes. While these fields often focus on methodological development, business analytics emphasizes applying these approaches to support understanding and decision-making in organizational contexts.</p>
+<p>There is a broad repertoire of models and methods from multiple disciplines, each with its own assumptions, data preparation steps, and modeling processes. While these fields often focus on methodological development, business analytics emphasizes applying these approaches to support understanding and decision-making in organizational contexts.</p>
 <p><br></p>
 <table class="caption-top">
 <colgroup>
@@ -1249,9 +1271,9 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
     BUT: VSCode seems to be the better supported/more popular and reliable version...
     Note: pin the image version (to enable caching and prevent re-loading)
 
-    Note: only microsoft is cached.
+    Note: only Microsoft is cached.
     -> TODO: test whether pip-install through devcontainer setup works.
-    -> microsoft does not seem to be stashed... -> reverting to jupyter/scipy-notebook
+    -> Microsoft does not seem to be stashed... -> reverting to Jupyter/scipy-notebook
 -->
 </section>
 <section id="group-1-read-competing-on-analytics" class="slide level2" data-state="hide-menubar">
@@ -1259,7 +1281,7 @@ https://www.youtube.com/watch?v=d95J8yzvjbQ
 <p>Read the <em>Competing on Analytics</em> paper by <span class="citation" data-cites="Davenport2006">Davenport (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span>. Prepare to discuss the following questions:</p>
 <ol type="1">
 <li><p><strong>What does it mean for a company to “compete on analytics”?</strong><br>
-How is this different from simply using data or reports in decision making?</p></li>
+How is this different from simply using data or reports in decision-making?</p></li>
 <li><p><strong>What organizational capabilities are required to compete on analytics?</strong><br>
 Consider aspects such as leadership, culture, people, and technology.</p></li>
 <li><p><strong>Which companies or industries today seem to compete on analytics?</strong><br>

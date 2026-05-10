@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 6: Machine learning I – Analytics &amp; Big Data</title>
+<title>Notes: Session 6: Machine learning 1 – Analytics &amp; Big Data</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,6 +72,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -81,17 +92,6 @@ div.callout-objective.callout-style-default > .callout-header {
 div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
   content: '🎯';
-  background-image: none;
-}
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
   background-image: none;
 }
 div.callout-confidential.callout {
@@ -105,19 +105,48 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
   content: '🔒';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -191,7 +220,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 6: Machine learning I</h1>
+<h1 class="title">Notes: Session 6: Machine learning 1</h1>
 </div>
 
 
@@ -262,7 +291,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Note: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)</p>
-<p>TODO: suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudo code”, “are there any errors (e.g., switched code blocks)?”)</p>
+<p>TODO: suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudocode”, “are there any errors (e.g., switched code blocks)?”)</p>
 <p>Nice introduction: https://kuleshov-group.github.io/aml-website (careful: copyright!)</p>
 <p>Lecture: https://harvard-iacs.github.io/2019-CS109A/lectures/lecture7/presentation/Lecture7_ModeLSelectionRegularization.pdf</p>
 <p>https://github.com/kuleshov/cornell-cs5785-2025-applied-ml/blob/main/lecture-notes/lecture2-supervised-learning.ipynb</p>
@@ -277,15 +306,38 @@ Note
 </section>
 <section id="supervised-ml" class="level2">
 <h2 class="anchored" data-anchor-id="supervised-ml">Supervised ML</h2>
-<p>Add illustration like https://blog.infocruncher.com/2023/02/17/ml-training/ - Classical programming: rules + data -&gt; answers - Supervised ML: data + answers -&gt; rules</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/programming_vs_ml.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+<ul>
+<li>Start by sketching the two process boxes</li>
+<li>Illustrate what “classical programming” means: manually codifying all conditions and special cases to make the prediction</li>
+<li>Ask students what the input/output is</li>
+<li>Highlight for machine learning: at training time, to make predictions, we will use the rules in the sense of classical programming</li>
+</ul>
+<p>Reminder: In the earlier lectures, we already saw appropriate evaluation measures (confusion matrix, F1, … for classification, <span class="math inline">\(R^2\)</span> for regression)</p>
+<p>Highlight: The <em>objective function</em> typically includes a <em>loss function</em> (e.g., RSS in OLS) that quantifies how well or poorly the model fits the observed data. (May also include regularization terms)</p>
 </section>
 <section id="bias-variance-tradeoff" class="level2">
 <h2 class="anchored" data-anchor-id="bias-variance-tradeoff">Bias-Variance tradeoff</h2>
 <p>Variance: draw many training datasets from the population, train the model on each one, analyze fluctuation in predictions</p>
 </section>
+<section id="generalization-problem" class="level2">
+<h2 class="anchored" data-anchor-id="generalization-problem">Generalization Problem</h2>
+<p><strong>Question</strong> (go back to the supervised-ML slide showing “Dataset + Learning algorithm (model class + objective + optimizer) → predictive model”): How can we improve <em>generalization</em> (performance on unseen data)?</p>
+<ul>
+<li>Use train/test splits (or cross-validation) to evaluate generalization performance</li>
+<li>Control model complexity through regularization by modifying the objective/loss function (e.g., penalizing too many features or overly complex nonlinear relationships)</li>
+</ul>
+<p>Emphasize the objective-function connection mathematically:</p>
+<p><span class="math display">\[\min_{\theta}; \text{Loss}(\theta) + \lambda \cdot \text{Complexity}(\theta)\]</span></p>
+<p>That equation often helps students understand that regularization literally changes the optimization target.</p>
+</section>
 <section id="trainingtest-data" class="level2">
 <h2 class="anchored" data-anchor-id="trainingtest-data">Training/Test data</h2>
-<p>Highlight: tabular data (features in rows). Only for deep learning, unstructured data can be used as an input (learns pattersn automatically)</p>
+<p>Highlight: tabular data (features in rows). Only for deep learning, unstructured data can be used as an input (learns patterns automatically)</p>
 </section>
 <section id="problems-with-fixed-training-and-test-samples" class="level2">
 <h2 class="anchored" data-anchor-id="problems-with-fixed-training-and-test-samples">Problems with fixed training and test samples</h2>
@@ -298,6 +350,23 @@ Note
 </ul>
 <p>Problem: the test data does not remain “unseen”</p>
 <p>“Endogenization of the test data” means that the test set—supposed to be an external, independent benchmark—becomes internally involved in the model-building process.</p>
+</section>
+<section id="selection-bias" class="level2">
+<h2 class="anchored" data-anchor-id="selection-bias">Selection bias</h2>
+<blockquote class="blockquote">
+<p><strong>Model-selection bias</strong> occurs when a model appears better simply because many hyperparameter configurations were tried and the best-performing one was selected.</p>
+</blockquote>
+<p>Grid search and cross-validation reduce the risk of selecting a hyperparameter setting that only performs well on a single accidental split of the data.</p>
+<ul>
+<li><strong>Grid search</strong> explores different hyperparameter configurations systematically.</li>
+<li><strong>Cross-validation</strong> evaluates each configuration robustly across multiple train/validation splits.</li>
+</ul>
+<p>Key point:</p>
+<ul>
+<li>Grid search performs <strong>model selection</strong>.</li>
+<li>Cross-validation provides a more reliable estimate of <strong>generalization performance</strong> during that selection process.</li>
+<li>A final untouched test set helps address remaining model-selection bias.</li>
+</ul>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>

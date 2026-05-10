@@ -106,9 +106,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
 div.callout-objective.callout {
   border-left-color: #0d6efd;
@@ -121,15 +118,15 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-confidential.callout {
@@ -143,15 +140,15 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
   content: '🔒';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-self-service.callout {
+  border-left-color: #198754;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -225,7 +222,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -246,36 +243,6 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </header>
 
 
-<div class="column-page">
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {'gantt': {'axisFormat': '%Y-%m-%d'}}}%%
-gantt
-    title Big Data &amp; Analytics — Prep plan (everything done before teaching)
-    dateFormat YYYY-MM-DD
-    axisFormat %Y-%m-%d
-    excludes weekends
-
-    section Milestones
-    First teaching day (Sessions 1–2) :milestone, teach, 2026-03-23, 0d
-
-    section Week 1
-    Foundations (Session 1) :found, 2026-03-02, 2d
-    Structured Data (Sessions 2–7) :struct, after found, 3d
-
-    section Week 2
-    Big Data (Sessions 8–9) :big, 2026-03-09, 3d
-    Organizations (Sessions 10–11) :org, after big, 2d
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-important callout-titled" title="Materials">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -286,29 +253,15 @@ gantt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>See <strong>/home/gerit/workspace/projects/bda/nextcloud</strong> (lecture_x)</p>
+<p>See <a href="./home/gerit/workspace/projects/bda/nextcloud">Nextcloud</a> (lecture_x)</p>
 </div>
 </div>
-<section id="preparation-overview" class="level2">
-<h2 class="anchored" data-anchor-id="preparation-overview">Preparation overview</h2>
-<ul class="task-list">
-<li><p><label><input type="checkbox" checked="">Select contents for each session</label></p></li>
-<li><p><label><input type="checkbox" checked="">Find contents: Exploratory data analysis</label></p></li>
-<li><p><label><input type="checkbox" checked="">Find contents: Regression I</label></p></li>
-<li><p><label><input type="checkbox" checked="">Find contents: Regression II</label></p></li>
-<li><p><label><input type="checkbox" checked="">Find contents: Machine learning I</label></p></li>
-<li><p><label><input type="checkbox" checked="">Find contents: Machine learning II</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Big data I</label></p></li>
-<li><p><label><input type="checkbox">Find contents: Big data II</label></p></li>
-<li><p><label><input type="checkbox" checked="">Check: Jupyter Exercise setup: export of jupyter notebooks</label></p></li>
-<li><p><label><input type="checkbox">Check: Jupyter Exercise setup: running jupyter notebooks (GitHub?)</label></p></li>
-</ul>
 <p>Generally: generation of PDFs: local only?</p>
 <ul>
 <li>Include “must-learn” markers: <code>&lt;!-- _class: must_learn --&gt;</code></li>
 </ul>
-<p>Plan to record timing (data in the repository) and data from google surveys - <strong>TODO: session/exercise structure should be reflected in each survey</strong> -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration</p>
-<p>TODO: html notebook creation (via make exercises) appears to be overriden by the quarto render (e.g., html assignemnts are slides not jupyter notebooks on the overview page)</p>
+<p>Plan to record timing (data in the repository) and data from Google surveys - <strong>TODO: session/exercise structure should be reflected in each survey</strong> -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration</p>
+<p>TODO: HTML notebook creation (via make exercises) appears to be overridden by the quarto render (e.g., HTML assignments are slides not Jupyter notebooks on the overview page)</p>
 <p>Consistently include “vocabulary” sections at the end (like in regression 1)</p>
 <section id="session-0-course-logistics" class="level3">
 <h3 class="anchored" data-anchor-id="session-0-course-logistics">Session 0 — Course logistics</h3>
@@ -358,8 +311,8 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-4-regression-i" class="level3">
-<h3 class="anchored" data-anchor-id="session-4-regression-i">Session 4 — Regression I</h3>
+<section id="session-4-regression-1" class="level3">
+<h3 class="anchored" data-anchor-id="session-4-regression-1">Session 4 — Regression 1</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
@@ -371,8 +324,8 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-5-regression-ii" class="level3">
-<h3 class="anchored" data-anchor-id="session-5-regression-ii">Session 5 — Regression II</h3>
+<section id="session-5-regression-2" class="level3">
+<h3 class="anchored" data-anchor-id="session-5-regression-2">Session 5 — Regression 2</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
@@ -384,8 +337,8 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-6-machine-learning-i" class="level3">
-<h3 class="anchored" data-anchor-id="session-6-machine-learning-i">Session 6 — Machine learning I</h3>
+<section id="session-6-machine-learning-1" class="level3">
+<h3 class="anchored" data-anchor-id="session-6-machine-learning-1">Session 6 — Machine learning 1</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
@@ -397,8 +350,8 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-7-machine-learning-ii" class="level3">
-<h3 class="anchored" data-anchor-id="session-7-machine-learning-ii">Session 7 — Machine learning II</h3>
+<section id="session-7-machine-learning-2" class="level3">
+<h3 class="anchored" data-anchor-id="session-7-machine-learning-2">Session 7 — Machine learning 2</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
@@ -410,8 +363,8 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-8-big-data-i" class="level3">
-<h3 class="anchored" data-anchor-id="session-8-big-data-i">Session 8 — Big Data I</h3>
+<section id="session-8-big-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="session-8-big-data-1">Session 8 — Big data 1</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
@@ -423,8 +376,8 @@ gantt
 </ul>
 <hr>
 </section>
-<section id="session-9-big-data-ii" class="level3">
-<h3 class="anchored" data-anchor-id="session-9-big-data-ii">Session 9 — Big Data II</h3>
+<section id="session-9-big-data-2" class="level3">
+<h3 class="anchored" data-anchor-id="session-9-big-data-2">Session 9 — Big data 2</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" checked="">Learning objectives set</label></li>
 <li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
@@ -460,7 +413,6 @@ gantt
 </ul>
 <hr>
 </section>
-</section>
 <section id="cross-cutting-tasks" class="level2">
 <h2 class="anchored" data-anchor-id="cross-cutting-tasks">Cross-cutting tasks</h2>
 <ul class="task-list">
@@ -483,7 +435,7 @@ gantt
 <section id="tbd" class="level2">
 <h2 class="anchored" data-anchor-id="tbd">TBD:</h2>
 <ul class="task-list">
-<li><p><label><input type="checkbox">Test exercise sheets: <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning?utm_source=chatgpt.com#opening-your-codespace-in-jupyterlab">GitHub jupyterlab</a> with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?</label></p></li>
+<li><p><label><input type="checkbox">Test exercise sheets: <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning#opening-your-codespace-in-jupyterlab">GitHub JupyterLab</a> with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?</label></p></li>
 <li><p><label><input type="checkbox">Excerpts for teaching hub</label></p></li>
 <li><p><label><input type="checkbox">Exercise sheets: solutions?!</label></p></li>
 <li><p><label><input type="checkbox">Update requirements (exam):</label></p>
@@ -504,18 +456,16 @@ gantt
 <p>Exercise sheets:</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox">Specify exercise goals and state typical exam questions</label></p></li>
-<li><p><label><input type="checkbox">Identify suitable exercise materials (rossbach, hopf, prester)</label></p></li>
+<li><p><label><input type="checkbox">Identify suitable exercise materials (Rossbach, Hopf, Prester)</label></p></li>
 <li><p><label><input type="checkbox">Prepare and test-run</label></p></li>
 <li><p><label><input type="checkbox">Setup teaching-notes</label></p></li>
 <li><p><label><input type="checkbox">Split Data Analytics with Python.pdf and -&gt; jnb</label></p></li>
 </ul>
 <p>https://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)</p>
 <p>Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI</p>
-<p>inspiration for model choice/test/exam questions:</p>
-<p>Use Cases Quiz: <img src="../images/slides_210.png" class="img-fluid"></p>
 </section>
-<section id="notes-quartorevealjs" class="level2">
-<h2 class="anchored" data-anchor-id="notes-quartorevealjs">Notes (Quarto/revealjs)</h2>
+<section id="notes-quartoreveal-js" class="level2">
+<h2 class="anchored" data-anchor-id="notes-quartoreveal-js">Notes (Quarto/reveal js)</h2>
 <p>Hide slide in PDF export:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>::: {.content-hidden when-profile="pdf"}</span>

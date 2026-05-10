@@ -72,17 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -92,6 +81,17 @@ div.callout-objective.callout-style-default > .callout-header {
 div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
   content: '🎯';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 div.callout-resource.callout {
@@ -208,28 +208,165 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
-<div class="learning-objectives">
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>In this exercise, you will analyze how analytics contributes to strategic objectives in a real company. Your task is to identify where analytics enters concrete business processes, which decisions it supports, what data and systems are needed, and how the organization learns from outcomes.</p>
+<p>You will develop an <strong>Analytics-Enabled Strategy Map</strong> for one selected company.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>After completing this exercise, you should be able to:</p>
+<ol type="1">
+<li>Connect a strategic objective to a North Star metric and related KPIs.</li>
+<li>Identify business processes in which analytics creates value.</li>
+<li>Explain which decisions are supported by analytics.</li>
+<li>Describe the data sources and systems needed for analytics-enabled work.</li>
+<li>Reflect on learning loops, governance mechanisms, and regulatory or ethical boundaries.</li>
+</ol>
+</section>
+<section id="step-1-select-your-case" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-select-your-case">Step 1: Select your case</h2>
+<p>Select <strong>one</strong> company from the following list:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Case</th>
+<th>Industry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Netflix</td>
+<td>Streaming / entertainment</td>
+</tr>
+<tr class="even">
+<td>Meta</td>
+<td>Social media / digital platforms</td>
+</tr>
+<tr class="odd">
+<td>X / Twitter</td>
+<td>Social media / digital platforms</td>
+</tr>
+<tr class="even">
+<td>Siemens</td>
+<td>Manufacturing / industrial technology</td>
+</tr>
+<tr class="odd">
+<td>Capital One</td>
+<td>Banking / financial technology</td>
+</tr>
+</tbody>
+</table>
+<p>You may propose another case, but it must have enough public material to analyze strategy, processes, analytics, data, systems, and governance.</p>
+</section>
+<section id="step-2-familiarize-yourself-with-the-company" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-familiarize-yourself-with-the-company">Step 2: Familiarize yourself with the company</h2>
+<p>Start by building a basic understanding of the company:</p>
 <ul>
-<li>Analyze how data analytics creates strategic value within a given organizational context.</li>
-<li>Identify ethical and legal risks in analytics initiatives and propose mitigation strategies.</li>
+<li>What is the company’s business model?</li>
+<li>Who are its main customers or users?</li>
+<li>What are its main products, services, or platforms?</li>
+<li>What strategic objective seems especially important for the company?</li>
+<li>What could be a plausible North Star metric or key performance indicator?</li>
 </ul>
-</div>
+<p>Do not assume that the official North Star metric is publicly available. If necessary, infer a plausible metric and justify your reasoning.</p>
+</section>
+<section id="step-3-conduct-complementary-web-research" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-conduct-complementary-web-research">Step 3: Conduct complementary web research</h2>
+<p>Use public materials such as annual reports, investor presentations, engineering blogs, research blogs, transparency reports, product documentation, regulatory documents, high-quality journalism, or academic case studies.</p>
+<p>Use at least <strong>three credible sources</strong>. These can be company sources, external sources, or a combination of both.</p>
+<p>For each source, ask:</p>
+<ul>
+<li>What strategic objective does this source reveal?</li>
+<li>Which business processes are described?</li>
+<li>Which decisions are supported by analytics?</li>
+<li>Which data sources or systems are mentioned?</li>
+<li>Are there signs of experimentation, feedback, monitoring, governance, or regulation?</li>
+</ul>
+</section>
+<section id="step-4-build-an-analytics-enabled-strategy-map" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-build-an-analytics-enabled-strategy-map">Step 4: Build an Analytics-Enabled Strategy Map</h2>
+<p>Fill out the following table for your selected case.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Guiding question</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Strategic objective / North Star metric</td>
+<td>What does the company want to achieve, and what overarching metric could indicate success?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Operational KPIs</td>
+<td>Which more specific KPIs help track progress toward the strategic objective?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Business process</td>
+<td>In which process is value created?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Decision point</td>
+<td>What decision must improve?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Data sources</td>
+<td>What data is used to support this decision?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Systems / applications</td>
+<td>Which systems, platforms, or tools are needed?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Action</td>
+<td>What changes in practice because of analytics?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Outcome</td>
+<td>What business, user, or operational outcome is expected?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Feedback / learning</td>
+<td>How does the company learn from results?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Governance / boundaries</td>
+<td>What legal, ethical, technical, or organizational limits matter?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Notes
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO; this could be based on a case study</p>
+<p>Focus on <strong>specific analytics-enabled decisions</strong>, not broad statements such as “the company uses AI.” The goal is to understand how analytics connects strategic objectives to concrete processes, decisions, actions, and outcomes.</p>
+<p>Some information may not be publicly available. In such cases, make a careful, evidence-based inference and clearly indicate where you are interpreting rather than reporting.</p>
 </div>
 </div>
-<section id="exam-prep" class="level2">
-<h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
-<p>TODO : include specific questions/tasks that could be included in the exam.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Session 10 survey">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

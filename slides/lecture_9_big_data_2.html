@@ -7,7 +7,8 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
@@ -33,7 +34,93 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -153,17 +240,6 @@
     content: '🔗';
     background-image: none;
   }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -173,6 +249,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   </style>
@@ -188,176 +275,54 @@
 <section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
   <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 9: Big data II <p></p>
+  <p></p> Session 9: Big data 2 <p></p>
 
     <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
     <p class="date">(2026-05-04)</p>
 
 </section>
-<section class="slide level2">
-
-<p>https://jose.theoj.org/papers/10.21105/jose.00042</p>
-</section>
 <section id="section" class="slide level2" data-menu-title="Learning objectives" data-state="hide-menubar">
 <h2></h2>
-<p><br><br><br><br><br></p>
+<p><br><br><br></p>
 <div class="learning-objectives">
-<p><strong>Tentatively</strong></p>
 <ul>
-<li><strong>Explain</strong> the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).</li>
-<li><strong>Acquire and preprocess</strong> large-scale or unstructured data using APIs and appropriate tools in Python.</li>
-<li><strong>Apply</strong> large language models or other scalable methods to extract, classify, or summarize unstructured data.</li>
-<li><strong>Evaluate</strong> the reliability, bias, and limitations of API- and LLM-based analytics workflows.</li>
+<li><strong>Explain and interpret</strong> the core ideas and mathematical operations underlying artificial neural networks</li>
+<li><strong>Distinguish</strong> between major neural network architectures (MLP, CNN, RNN, TM) and identify the types of data for which they are most appropriate.</li>
+<li><strong>Understand</strong> the design and training process of neural networks, including architecture selection and optimization.</li>
 </ul>
 </div>
-<p>good MIT intro: https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L1.pdf</p>
-<p>https://aaubs.github.io/ds23/en/m3/01_intro-to-traditional-dl/</p>
-<p>Maybe: https://github.com/microsoft/ai-for-beginners</p>
-<p>Check: https://playground.tensorflow.org/</p>
-<p>TODO: must address these questisons: - To what extent do neural networks reduce the need for manual feature engineering? - Distinguish “Recurrent Neural Networks, Convolutional Neural Networks, Feedforward Neural Networks”</p>
 </section>
-<section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
-<h1>TODO</h1>
-<p>TBD: broad group work and presentations? (-&gt; TBD: how to make that relevant/documented for the exam??)</p>
-</section>
-
 <section>
-<section id="neural-networks" class="title-slide slide level1 center" data-stack-name="Neural Networks">
-<h1>Neural Networks</h1>
-<p>TODO: The “simple calculation example” in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and “cost nudges”). Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.</p>
-</section>
-<section id="functionality-of-human-neurons" class="slide level2">
-<h2>Functionality of Human Neurons</h2>
-<p><img data-src="../images/slides_251.png"></p>
-<p><img data-src="../images/slides_252.png"></p>
-<blockquote>
-<p><strong>A Look into the Nervous System</strong></p>
-</blockquote>
-<blockquote>
-<p><strong>Design of a Neuron</strong></p>
-</blockquote>
-</section>
-<section id="an-easy-example-i" class="slide level2">
-<h2>An Easy Example (I)</h2>
-<blockquote>
-<p><strong>f(x) = Activation function</strong></p>
-</blockquote>
-<blockquote>
-<p>e.g.</p>
-</blockquote>
-<blockquote>
-<p>where t = Stimulus threshold</p>
-</blockquote>
-</section>
-<section id="an-easy-example-ii" class="slide level2">
-<h2>An Easy Example (II)</h2>
-<blockquote>
-<p><strong>f(x) = Activation function</strong></p>
-</blockquote>
-<blockquote>
-<p>e.g.</p>
-</blockquote>
-<blockquote>
-<p>where t = Stimulus threshold</p>
-</blockquote>
-</section>
-<section id="functionality-of-a-neuron" class="slide level2">
-<h2>Functionality of a Neuron</h2>
-<p><img data-src="../images/slides_253.jpg"></p>
-<blockquote>
-<p>For the case of n inputs, we can rewrite the neuron’s function to</p>
-</blockquote>
-<blockquote>
-<p>with b = -t. b is known as the perceptron’s bias. The result of this function would then be fed into an activation function to produce a labeling.</p>
-</blockquote>
-<p><img data-src="../images/slides_254.png"></p>
-<blockquote>
-<p>This results in a linear classifier. Finally, we have to pick a line that best separates the labeled data. The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them. After each sample, the weights w are adjusted in such a way so as to minimize the output error, defined for example as accuracy or MSE.</p>
-</blockquote>
+<section id="foundations" class="title-slide slide level1 center" data-stack-name="Foundations">
+<h1>Foundations</h1>
 
-<aside><div>
-<p>— Source: http://www.toptal.com/machine-learning/an-introduction-to-deep-learning-from-perceptrons-to-deep-networks</p>
-</div></aside></section>
-<section id="the-multilayer-perceptron" class="slide level2">
-<h2>The Multilayer Perceptron</h2>
-<blockquote>
-<p>The single perceptron approach has a major drawback: it can only learn linear functions. To address this problem, we’ll need to use a multilayer perceptron, also known as feedforward neural network. Here, we add layers between the input and the output layer, so-called hidden layers. The hidden layer is where the network stores its internal abstract representation of the training data.</p>
-</blockquote>
-<blockquote>
-<p><strong>Input Neurons</strong>: receive signals from the outer world.</p>
-</blockquote>
-<blockquote>
-<p><strong>Hidden Neurons</strong>: have an internal representation of the outer world.</p>
-</blockquote>
-<blockquote>
-<p><strong>Output Neurons</strong>: pass signals to the outer world.</p>
-</blockquote>
 </section>
-<section id="types-of-activation-functions" class="slide level2">
-<h2>Types of Activation Functions</h2>
-<blockquote>
-<p>A linear composition of linear functions is still just a linear function, so most neural networks use non-linear activation functions:</p>
-</blockquote>
+<section id="from-biological-neurons-to-artificial-neural-networks" class="slide level2">
+<h2>From biological neurons to artificial neural networks</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/neuron.jpeg" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
+</figure>
+</div>
+<!--
+https://pressbooks.cuny.edu/sensationandperception/chapter/how-neurons-work/
+
+TODO: replace illustration with something similar: https://iabac.org/blog/what-are-artificial-neural-networks
+-->
+<p><strong>Key milestones</strong></p>
 <ul>
-<li>tangens</li>
-<li>hyperbolicus</li>
-<li>logistic function (sigmoid)</li>
+<li><strong>1943</strong> (Warren McCulloch &amp; Walter Pitts) — Mathematical model of artificial neurons</li>
+<li><strong>1958</strong> (Frank Rosenblatt) — Development of the <em>Perceptron</em></li>
+<li><strong>2010s</strong> (Geoffrey Hinton, Yann LeCun &amp; Yoshua Bengio) — Revival of modern deep learning</li>
+<li><strong>2020s</strong> (GPT models, OpenAI) — Emergence and widespread adoption of large language models (LLMs) and multimodal AI systems</li>
 </ul>
-</section>
-<section id="design-of-a-multilayer-perceptron" class="slide level2">
-<h2>Design of a Multilayer Perceptron</h2>
-<p><img data-src="../images/slides_319.png"></p>
-
-<p><img data-src="../images/slides_320.png"></p>
-
-<aside><div>
-<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div><div>
-<p>— Source: http://www.sclgsummit.org/uploads/presentation/8934b2d0be055a2261f5d0320f5b59bb.pdf</p>
-</div></aside></section></section>
-<section>
-<section id="from-analytics-to-autonomous-action" class="title-slide slide level1 center">
-<h1>From analytics to (autonomous) action</h1>
-<p>Focusing more and more on systems that act autonomously (e..g, reinforcement, …)</p>
-</section>
-<section id="reinforcement-learning" class="slide level2">
-<h2>Reinforcement Learning</h2>
-<blockquote>
-<p>The solution to many of the problems in our lives cannot be automated. This is not because current computers are too slow, but simply because it is too difficult for humans to determine what the program should do.</p>
-</blockquote>
-<blockquote>
-<p>Supervised learning is a general method for training an approximator. However, supervised learning requires sample input-output pairs from the domain to be learned.</p>
-</blockquote>
-<blockquote>
-<p>For example, we might not know the best way to program a computer to recognize an infrared picture of a tank, but we do have a large collection of infrared pictures, and we do know whether each picture contains a tank or not. Supervised learning could look at all the examples with answers, and learn how to recognize tanks in general.</p>
-</blockquote>
-<blockquote>
-<p>Unfortunately, there are many situations where we don’t know the correct answers that supervised learning requires. For example, in a self-driving car, the question would be the set of all sensor readings at a given time, and the answer would be how the controls should react during the next millisecond.</p>
-</blockquote>
-<blockquote>
-<p>For these cases there exist a different approach known as reinforcement learning.</p>
-</blockquote>
-</section>
-<section id="reinforcement-learning-1" class="slide level2">
-<h2>Reinforcement Learning</h2>
-<p><img data-src="../images/slides_211.jpg"></p>
-<blockquote>
-<p>The agent learns how to achieve a given goal by trial-and-error interactions with its environment by maximizing a reward.</p>
-</blockquote>
-</section>
-<section id="alphago" class="slide level2">
-<h2>AlphaGo</h2>
-<blockquote>
-<p>Go is one of the hardest games in the world for AI because of the huge number of different game scenarios and moves. The number of potential legal board positions is greater than the number of atoms in the universe.</p>
-</blockquote>
-<blockquote>
-<p>The core of AlphaGo is a deep neural network. It was initially trained to learn playing by using a database of around 30 million recorded historical moves. After the training, the system was cloned and it was trained further playing large numbers of games against other instances of itself, using reinforcement learning to improve its play. During this training AlphaGo learned new strategies which were never played by humans.</p>
-</blockquote>
-<blockquote>
-<p>A newer version named AlphaGo Zero skips the step of being trained and learns to play simply by playing games against itself, starting from completely random play.</p>
-</blockquote>
 <aside class="notes">
-<p>Chess 2^64 legal positions, Go 2^120!!!</p>
+<p>Highlight: multimodal AI (big-data) is closely connected to neural networks</p>
+<p>Inputs correspond to dendrites, outputs to axons</p>
+<p>The foundations of neural networks were developed 80 years ago. Why did we have to wait for the AI breakthroughs for so long?</p>
+<p>-&gt; AI-Winters: 1974-1980, 1987-1993</p>
+<p>-&gt; availability of computing power and data (next slide)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -370,64 +335,703 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="libratus" class="slide level2">
-<h2>Libratus</h2>
-<blockquote>
-<p>An artificial intelligence called Libratus has beaten four of the world’s best poker players in a grueling 20-day tournament in January 2017.</p>
-</blockquote>
-<blockquote>
-<p>Poker is more difficult because it’s a game with imperfect information. With chess and Go, each player can see the entire board, but with poker, players don’t get to see each other’s hands. Furthermore, the AI is required to bluff and correctly interpret misleading information in order to win.</p>
-</blockquote>
-<blockquote>
-<p>“We didn’t tell Libratus how to play poker. We gave it the rules of poker and said ‘learn on your own’.” The AI started playing randomly but over the course of playing trillions of hands was able to refine its approach and arrive at a winning strategy.</p>
-</blockquote>
+<section id="performance-of-machine-learning-and-neural-networks" class="slide level2">
+<h2>Performance of machine learning and neural networks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br><br> <img data-src="../images/neural_networks_performance_comparison_data.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Key drivers of recent progress in neural networks</strong></p>
+<ul>
+<li><p>Availability of large-scale datasets</p></li>
+<li><p>Increasing computational power (especially GPUs/TPUs)</p></li>
+<li><p>Advances in algorithms and neural network architectures</p></li>
+<li><p>Specialization of neural networks:</p>
+<ul>
+<li>Convolutional Neural Networks (CNNs) for image and video recognition</li>
+<li>Recurrent Neural Networks (RNNs) for sequential and time-series data</li>
+<li>Transformers for language processing and generative AI</li>
+<li>Graph Neural Networks (GNNs) for network and relational data</li>
+<li>Diffusion Models for image and media generation</li>
+</ul></li>
+</ul>
+</div></div>
+
+<aside class="notes">
+<p>TPU: Tensor processing unit (for matrix and tensor operations in AI)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>In small-data regimes, experiments are needed to identify algorithms that perform best for a given dataset.</p>
+</div></aside></section>
+<section id="the-perceptron" class="slide level2">
+<h2>The perceptron</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A perceptron is one of the earliest forms of neural networks. A <strong>classical perceptron</strong> is characterized by:</p>
+<p><span class="math display">\[z = w^T x + b\]</span></p>
+<p>followed by a <strong>threshold activation</strong>:</p>
+<p><span class="math display">\[\hat{y} =
+\begin{cases}
+1 &amp; \text{if } w^T x + b &gt; 0 \\
+0 &amp; \text{otherwise}
+\end{cases}\]</span></p>
+<ul>
+<li>This corresponds to a linear classifier</li>
+<li>The training of the perceptron consists of feeding it multiple training samples and calculating the output for each of them</li>
+<li>After each sample, the weights <span class="math inline">\(w\)</span> are adjusted to minimize a loss function, which quantifies the difference between the predicted and true outputs</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br><br> <img data-src="../images/neural_network_perceptron_linear_classifier.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</div></div>
 </section>
-<section id="types-of-artificial-intelligence" class="slide level2">
-<h2>Types of Artificial Intelligence</h2>
-<blockquote>
-<p><strong>Discriminative AI</strong> is designed to differentiate and classify input, but not to create new content. Examples include image or speech recognition, credit scoring or stock price prediction.</p>
-</blockquote>
-<blockquote>
-<p><strong>Generative AI</strong> is able to generate new content based on existing information and user specifications. This includes texts, images, videos, program code, etc. The generated content can often hardly be distinguished from human-generated content. As things stand at present, however, they are pure recombinations of learned knowledge.</p>
-</blockquote>
-<blockquote>
-<p>Well-known examples of generative AI are language models for generating text, such as GPT-3 or GPT-4, and the chatbot ChatGPT based on them, or image generators such as Stable Diffusion and DALL-E.</p>
-</blockquote>
+<section id="from-perceptron-to-deep-neural-networks" class="slide level2">
+<h2>From perceptron to deep neural networks</h2>
+<div class="highlight_must_learn">
+<div class="columns">
+<div class="column" style="width:47%;">
+<p>Limitation of a single perceptron: It cannot build abstract intermediate representations and can only learn linear decision boundaries.</p>
+<p>Solution: Multilayer neural networks combine:</p>
+<ul>
+<li><strong>Multiple hidden layers</strong>, which enable increasingly abstract representations</li>
+<li><strong>Activation functions</strong>, which make nonlinear learning possible</li>
+</ul>
+<p>Layers:</p>
+<ul>
+<li>Input neurons: raw data (e.g., images, audio, video)</li>
+<li>Hidden neurons: the weights and biases store abstract representations learned from the data (e.g., edges, parts of an image)</li>
+<li>Output neuron: prediction (e.g., one neuron for binary, multiple for multi-class)</li>
+</ul>
+<p>Note: the number of layers and neurons is specified ex-ante and does not change in the training process.</p>
+</div><div class="column" style="width:53%;">
+<p><br><br> <img data-src="../images/neural_network_layers.png"></p>
+</div></div>
+</div>
+<div class="learning_note fragment">
+<p>🎥 Grant Anderson (3Blue1Brown) provides a series of instructive<br>
+animated explanations, including one on <a href="https://www.youtube.com/watch?v=aircAruvnKk">Neural Networks</a>.</p>
+</div>
 </section>
-<section id="chatgpt" class="slide level2">
-<h2>ChatGPT</h2>
-<blockquote>
-<p>ChatGPT is a generative AI that produces human-like text and communicates with humans.</p>
-</blockquote>
-<blockquote>
-<p>The “GPT” in ChatGPT comes from the language model of the same name, which was extended for ChatGPT with various components for communication and quality assurance.</p>
-</blockquote>
-<blockquote>
-<p>GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.</p>
-</blockquote>
+<section id="functionality-of-a-neuron" class="slide level2">
+<h2>Functionality of a neuron</h2>
+<p><br></p>
+<div class="highlight_must_learn">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/neural_network_neuron.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>In a classical perceptron, the activation is typically binary (0 or 1), representing whether the neuron “fires.”<br>
+In modern neural networks, activations are usually continuous-valued scalars determined by the activation function.</p>
+</div></aside></section>
+<section id="types-of-activation-functions" class="slide level2">
+<h2>Types of activation functions</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/neural_networks_comparison_sigmoid_relu.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+
+<aside class="notes">
+<p>Advantage of Sigmoid activation: smooth, supports gradient descent Note: in the case of Sigmoid activation, the NN is basically a network of logistic regressions ReLU: for efficient computation</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>ReLU: Rectified Linear Unit.</p>
+</div></aside></section>
+<section id="training-of-a-multilayer-perceptron" class="slide level2">
+<h2>Training of a multilayer perceptron</h2>
+<ul>
+<li>Weights are initialized with carefully selected random values</li>
+<li>For each training item, the predicted output is calculated (“forward pass”)</li>
+</ul>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/neural_network_design.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+<!--
+## Forward pass
+
+TODO: illustrate the use of training data for forward pass (aside: random? initial weights, training sample i)
+-->
 </section>
-<section id="chatgpt---approach" class="slide level2">
-<h2>ChatGPT - Approach</h2>
+<section id="loss-function" class="slide level2">
+<h2>Loss function</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br><br><br> <img data-src="../images/neural_network_loss_function.png"></p>
+</div><div class="column" style="width:50%;">
+<p>The network’s prediction error is measured with a <strong>loss function</strong>.</p>
+<p>For one training example <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[E_i = \frac{1}{2} \sum_{j=1}^{m} (o_{ij} - t_{ij})^2\]</span></p>
+<p>This is the squared error loss across all <strong>output neurons <span class="math inline">\(j\)</span></strong>.</p>
+<p>Across all <span class="math inline">\(h\)</span> training examples, the total loss is:</p>
+<p><span class="math display">\[E = \sum_{i=1}^{h} E_i\]</span></p>
+<p>Backpropagation adjusts the weights to reduce this total loss.</p>
+</div></div>
+<aside class="notes">
+<p>The <span class="math inline">\(1/2\)</span> makes the math cleaner for the derivatives.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="backpropagation" class="slide level2">
+<h2>Backpropagation</h2>
+<!--
+**TODO: Cost function, Learning: gradient descent + back propagation (see slides PR)**
+
+The Backpropagation algorithm is used for calculating the weights.
+In a training phase, the weights are iteratively calculated using training data sets in such a way that the difference between the calculated and the expected (true) results is minimized.
+Because the simultaneous calculation of all weights is not possible, they must be found via a learning process.
+The backpropagation algorithm looks for the minimum of the cost function in weight space using the method of gradient descent.
+-->
+<div class="highlight_must_learn">
+<p>Backpropagation calculates the gradients of the loss function with respect to the network’s weights. These gradients are then used by an optimizer, to iteratively update the weights and reduce the difference between predicted and true outputs.</p>
+<p><br></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a>initialize weights and biases</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>repeat until stopping criterion is met:</span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a><span class="in">    total_error = 0</span></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="in">    for each training example:</span></span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="in">        pass input forward through all layers</span></span>
+<span id="cb1-10"><a></a><span class="in">        compare predicted output with target value</span></span>
+<span id="cb1-11"><a></a><span class="in">        add error to total_error</span></span>
+<span id="cb1-12"><a></a><span class="in">        propagate error backward through all layers</span></span>
+<span id="cb1-13"><a></a><span class="in">        update weights and biases</span></span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a><span class="in">    check whether total_error is small enough</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><br></p>
+</div>
+<!--
+
+The procedure in principle:
+
+1. Define the initial weights
+2. Put the training set into the input layer
+3. Calculate the result (value of the output layer) via successive processing one layer after the other
+4. Compare the output values and target values and calculate the difference
+5. Iterate steps (2) to (4) for every training set
+6. Calculate the total error. Adjust the weights beginning with the output layer towards the input layer (backpropagation)
+7. Iterate steps (2) to (6) until the total error reaches the defined error-level or the number of maximum iterations is reached.
+-->
+</section>
+<section id="using-the-loss-function-to-adjust-weights" class="slide level2">
+<h2>Using the loss function to adjust weights</h2>
+<p>The loss function <span class="math inline">\(E\)</span> has to be minimized. Because it depends on the output neurons <span class="math inline">\(o_j\)</span>, it automatically depends on their weights to the precedent layer(s):</p>
+<p><span class="math display">\[o_j=f(s(x)_j) \text{    with    } s(x)_j =\sum_k^n w_{jk}\cdot x_k\]</span></p>
+<p>Thus, the weights have to be found where <span class="math inline">\(E\)</span> is minimal.</p>
+<p><br></p>
+<p>Examples of the loss function with <strong>two weights</strong> (simplified):</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/neuronal_networks_gradient_illustration.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section id="gradient-descent" class="slide level2">
+<h2>Gradient descent</h2>
+<p>To minimize the loss function <span class="math inline">\(E\)</span> the backpropagation algorithm uses the method of gradient descent. This method searches those weights, where the vector containing the partial first derivatives of the loss function <span class="math inline">\(\nabla E\)</span> (gradient) is equal to the zero vector (minimum):</p>
+<p><span class="math display">\[
+\nabla E =
+\left(
+\frac{\partial E}{\partial w_1},
+\frac{\partial E}{\partial w_2},
+\ldots,
+\frac{\partial E}{\partial w_m}
+\right)
+\]</span></p>
+<p>To adjust the weight <span class="math inline">\(w_{ij}\)</span>, which connects neuron <span class="math inline">\(i\)</span> to neuron <span class="math inline">\(j\)</span>, gradient descent updates the weight in the negative gradient direction:</p>
+<p><span class="math display">\[
+\Delta w_{ij}
+= -a \cdot \frac{\partial E}{\partial w_{ij}}
+\]</span></p>
+<p><span class="math display">\[
+\Delta w_{ij}
+= -a \cdot \sum_{j=1}^{m}
+(o_{ij} - t_{ij}) \cdot (-x_i)
+= a \cdot \sum_{j=1}^{m}
+(o_{ij} - t_{ij}) \cdot x_i
+\]</span></p>
+<p>where <span class="math inline">\(a\)</span> represents the predefined learning rate. The adjusted weight is then computed as:</p>
+<p><span class="math display">\[
+w_{ij}^{\text{new}}
+=
+w_{ij}^{\text{old}}
++
+\Delta w_{ij}
+\]</span></p>
+<div class="fragment">
 <blockquote>
-<p>ChatGPT generates its response word by word via a sequence of probabilities, with each new word depending on the previous ones.</p>
+<p>Because neural networks have many parameters, each update changes the model in many dimensions at once. The learning rate therefore has to be chosen carefully: large steps can destabilize training, while very small steps can make learning inefficient.</p>
 </blockquote>
-<p><img data-src="../images/slides_216.png"></p>
-<blockquote>
-<p>The most probable word is not always selected; instead, randomization takes place. This means that different variants can be created for the same task.</p>
-</blockquote>
-<p><img data-src="../images/slides_217.png"></p>
+<!--
+TODO: cover example of backpropagation? http://hmkcode.github.io/ai/backpropagation-step-by-step
+-->
+</div>
+</section></section>
+<section>
+<section id="specialized-nns" class="title-slide slide level1 center" data-stack-name="Specialized NNs">
+<h1>Specialized NNs</h1>
+<!--
+> GPT is based on a huge neural network that essentially represents the language model. While the first GPT-3 has 175 billion parameters, the newer GPT-4 already has 1 trillion parameters. Compared to GPT-3, GPT-4 is therefore more intelligent, can deal with more extensive questions and conversations and makes fewer factual errors.
+-->
 </section>
-<section id="chatgpt---semantic-spaces-i" class="slide level2">
-<h2>ChatGPT - Semantic Spaces (I)</h2>
-<p><img data-src="../images/slides_218.png"></p>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<div class="highlight_must_learn">
+<div class="columns">
+<div class="column" style="width:75%;">
+<p>Basic neural networks are often introduced as <strong>fully connected feed-forward networks</strong>. Specialized architectures go beyond this and differ in the following design choices:</p>
+<br>
+<div class="smaller">
+<!--
+| Design choice | What changes? | Examples |
+|---|--------|----------|
+| **Input structure assumed** | tabular, spatial, sequential, relational, generative/noise-to-data | images, text, time series, graphs, generated media |
+| **Neuron / unit type** | dense units, recurrent cells, gates, attention heads, generator/discriminator modules | MLP, LSTM/GRU, Transformer, GAN |
+| **Layer operation** | matrix multiplication, convolution, recurrence, attention, adversarial training | fully connected, conv, RNN, self-attention |
+| **Connectivity pattern** | all-to-all, local windows, temporal loops, token-to-token comparison | dense layers, moving filters, hidden states, attention |
+-->
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design choice</th>
+<th>How architectures differ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Input structure assumed</strong></td>
+<td>Different architectures are built for different data structures, such as tabular data (MLPs), spatial data and images (CNNs), sequence data (RNNs or Transformers), relational data (graph neural networks), or ; generative tasks (GANs).</td>
+</tr>
+<tr class="even">
+<td><strong>Neuron / unit type</strong></td>
+<td>The basic unit may be a dense neuron, recurrent cell, gated LSTM/GRU cell, attention head, or a generator/discriminator module.</td>
+</tr>
+<tr class="odd">
+<td><strong>Layer operation</strong></td>
+<td>Layers may perform matrix multiplication, convolution with moving filters, recurrent state updates, self-attention, or adversarial generator/discriminator training.</td>
+</tr>
+<tr class="even">
+<td><strong>Connectivity pattern</strong></td>
+<td>Information may flow through all-to-all dense connections, local sliding windows, temporal loops with hidden states, or token-to-token attention.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><strong>Focus in this section</strong>: We use <strong>CNNs</strong>, <strong>RNNs</strong>, and <strong>Transformers</strong> as key examples because they show three central architectural ideas:</p>
+<ul>
+<li><strong>Convolution through moving filters</strong></li>
+<li><strong>Memory through recurrence</strong>, and</li>
+<li><strong>Attention</strong>.</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/inception_resnet_v2_network.png"></p>
+<figcaption>Example architecture: Inception-ResNet-v2</figcaption>
+</figure>
+</div>
+</div></div>
+</div>
+<aside class="notes">
+<p>This slide should not present CNNs, RNNs, and Transformers as three isolated summaries. The teaching point is that specialized neural networks encode assumptions about data structure. CNNs reuse local filters over spatial data; RNNs reuse recurrent cells over time; Transformers compare tokens through attention. GANs are useful as an additional example because their specialization is not mainly a layer type, but a training setup with two networks: generator and discriminator.</p>
+<p>Inception-ResNet-v2: coders basically build DAGs in code and generate the architecture charts as an overview.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="chatgpt---semantic-spaces-ii" class="slide level2">
-<h2>ChatGPT - Semantic Spaces (II)</h2>
-<p><img data-src="../images/slides_176_new.png"></p>
+<section id="convolutional-neural-networks-cnn" class="slide level2">
+<h2>Convolutional neural networks (CNN)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/convolutional_network_principles.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Convolution layers: effectively multiply the number of input neurons, e.g., a 28x28x1 grayscale image with 32 filters leads to 28x28x32=25,088 activations.</p>
+<p>TBD: similar to SVM: kernels facilitate learning in higher-dimensional transformations.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="chatgpt---evaluation-component" class="slide level2">
-<h2>ChatGPT - Evaluation Component</h2>
-<p><img data-src="../images/slides_220.png"></p>
+<section id="recurrent-neural-networks-rnn" class="slide level2">
+<h2>Recurrent neural networks (RNN)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/recurrent_neural_network.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</section>
+<section id="transformers" class="slide level2">
+<h2>Transformers</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/transformer_architecture.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="design-and-training-of-neural-networks" class="title-slide slide level1 center" data-stack-name="Design and training">
+<h1>Design and training of neural networks</h1>
+
+</section>
+<section id="modeling-choose-the-architecture-and-training-setup" class="slide level2">
+<h2>Modeling: choose the architecture and training setup</h2>
+<div class="highlight_must_learn">
+<p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> <strong>Best-practice logic</strong> Start with choices that are mostly determined by the <strong>data structure</strong> and the <strong>prediction task</strong>.<br>
+Then tune the parts that require experimentation.</p>
+<p><strong>Architecture family</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Data structure</th>
+<th>Typical model</th>
+<th>Inductive bias</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>📊 Tabular data</td>
+<td>MLP</td>
+<td>fully connected</td>
+</tr>
+<tr class="even">
+<td>📷 Images</td>
+<td>CNN</td>
+<td>local / spatial</td>
+</tr>
+<tr class="odd">
+<td>🎧 Audio</td>
+<td>CNN / RNN / Transformer</td>
+<td>local, sequential, attention</td>
+</tr>
+<tr class="even">
+<td>⏱️ Time series</td>
+<td>RNN / Transformer</td>
+<td>temporal order</td>
+</tr>
+<tr class="odd">
+<td>📝 Text / language</td>
+<td>Transformer</td>
+<td>global attention</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><strong>Output layer and loss function</strong></p>
+<div class="smaller">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 33%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prediction task</th>
+<th style="text-align: right;">Output layer</th>
+<th style="text-align: center;">Output activation</th>
+<th>Loss function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regression</td>
+<td style="text-align: right;">1 neuron</td>
+<td style="text-align: center;">Linear</td>
+<td>MSE</td>
+</tr>
+<tr class="even">
+<td>Binary classification</td>
+<td style="text-align: right;">1 neuron</td>
+<td style="text-align: center;">Sigmoid</td>
+<td>Binary cross-entropy</td>
+</tr>
+<tr class="odd">
+<td>Multi-class classification</td>
+<td style="text-align: right;">One neuron per class</td>
+<td style="text-align: center;">Softmax</td>
+<td>Categorical cross-entropy</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Rule of thumb:</strong> data structure determines the architecture; prediction task determines the output layer and loss.</p>
+</div>
+</div>
+</section>
+<section id="training-setup-choices" class="slide level2">
+<h2>Training setup choices</h2>
+<div class="highlight_must_learn">
+<p>Besides the selection of the model type, output layer, and loss function (see previous slide), these choices are usually standardized:</p>
+<ul>
+<li><strong>Adam</strong> is a strong default optimizer</li>
+<li>Hidden layers usually start with <strong>ReLU</strong></li>
+</ul>
+<p>These choices require <strong>more experimentation</strong> to tune complexity and parameters:</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="design-card">
+<ol type="1">
+<li>Network structure<br>
+<em>How much can the model represent?</em></li>
+</ol>
+<p><strong>Depth</strong><br>
+number of layers</p>
+<ul>
+<li>shallow → simple patterns</li>
+<li>deep → complex abstractions</li>
+</ul>
+<p><strong>Width</strong><br>
+neurons per layer</p>
+<p>Typical starts:<br>
+<code>32</code>, <code>64</code>, <code>128</code>, <code>256</code></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="design-card">
+<ol start="2" type="1">
+<li>Learning rate <span class="math inline">\(\eta\)</span><br>
+<em>How large are the update steps?</em></li>
+</ol>
+<p><span class="math display">\[
+w := w - \eta \nabla_w J
+\]</span></p>
+<ul>
+<li>too high → unstable</li>
+<li>too low → slow</li>
+</ul>
+<p>Typical range:<br>
+<span class="math inline">\(10^{-3}\)</span> to <span class="math inline">\(10^{-4}\)</span></p>
+<p><br><br></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="design-card">
+<ol start="3" type="1">
+<li>Regularization<br>
+<em>How do we reduce overfitting?</em></li>
+</ol>
+<ul>
+<li><strong>Dropout</strong><br>
+randomly disables units</li>
+<li><strong>Weight decay</strong><br>
+penalizes large weights</li>
+<li><strong>Early stopping</strong><br>
+stops before overfitting <br><br><br><br></li>
+</ul>
+</div>
+</div></div>
+</div>
+<aside class="notes">
+<p>Optimizer: updates weights (similar to <span class="math inline">\(w^{new} = w^{old} - a \cdot \frac{\partial E}{\partial w}\)</span>, but more advanced: using information from previous gradients).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="note-neural-networks-and-feature-engineering" class="slide level2">
+<h2>Note: Neural networks and feature engineering</h2>
+<div class="highlight_must_learn">
+<p>Traditional machine learning often relies strongly on <strong>manual feature engineering</strong>: humans design useful input variables before training the model. Neural networks can reduce this need because hidden layers learn <strong>intermediate representations</strong> from data. However, feature engineering does not disappear. We still need to decide:</p>
+<ul>
+<li>which data are provided as input</li>
+<li>how inputs are encoded and normalized</li>
+<li>whether domain-specific variables or transformations are added</li>
+</ul>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/neural_networks_features.png" class="quarto-figure quarto-figure-center" style="width:55.0%"></p>
+</figure>
+</div>
+</section>
+<section id="python-code-example" class="slide level2">
+<h2>Python code example</h2>
+<p>The <code>sklearn</code> library provides basic feedforward networks, including <code>MLPClassifier</code> and <code>MLPRegressor</code>. It does not offer CNNs, RNNs, or other advanced neural networks.</p>
+<p><br></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPClassifier</span>
+<span id="cb2-2"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_classification</span>
+<span id="cb2-3"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y)</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a>model <span class="op">=</span> MLPClassifier(</span>
+<span id="cb2-8"><a></a>    hidden_layer_sizes<span class="op">=</span>(<span class="dv">32</span>, <span class="dv">16</span>),  <span class="co"># architecture (depth + width)</span></span>
+<span id="cb2-9"><a></a>    activation<span class="op">=</span><span class="st">"relu"</span>,            <span class="co"># hidden activation</span></span>
+<span id="cb2-10"><a></a>    solver<span class="op">=</span><span class="st">"adam"</span>,                <span class="co"># optimizer</span></span>
+<span id="cb2-11"><a></a>    learning_rate_init<span class="op">=</span><span class="fl">0.001</span>,     <span class="co"># learning rate</span></span>
+<span id="cb2-12"><a></a>    alpha<span class="op">=</span><span class="fl">0.0001</span>,                 <span class="co"># L2 regularization (weight decay)</span></span>
+<span id="cb2-13"><a></a>    max_iter<span class="op">=</span><span class="dv">200</span></span>
+<span id="cb2-14"><a></a>)</span>
+<span id="cb2-15"><a></a>model.fit(X_train, y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pytorch-i" class="slide level2">
+<h2>PyTorch (I)</h2>
+<p>For advanced neural networks and production environments, <code>pytorch</code> and <code>tensorflow</code> are suitable libraries.</p>
+<div class="tall-code-box">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> torch</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>X <span class="op">=</span> torch.randn(<span class="dv">100</span>, <span class="dv">10</span>)</span>
+<span id="cb3-4"><a></a>y <span class="op">=</span> torch.<span class="bu">sum</span>(X, dim<span class="op">=</span><span class="dv">1</span>, keepdim<span class="op">=</span><span class="va">True</span>)  <span class="co"># simple target</span></span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a><span class="co"># </span><span class="al">TODO</span><span class="co">: specify MLP</span></span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a>model <span class="op">=</span> MLP(</span>
+<span id="cb3-9"><a></a>    input_dim<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb3-10"><a></a>    hidden_layers<span class="op">=</span>[<span class="dv">32</span>, <span class="dv">16</span>],   <span class="co"># try: [8], [64, 64], [128, 64, 32]</span></span>
+<span id="cb3-11"><a></a>    output_dim<span class="op">=</span><span class="dv">1</span>              <span class="co"># regression</span></span>
+<span id="cb3-12"><a></a>)</span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a><span class="co"># Training setup</span></span>
+<span id="cb3-15"><a></a>criterion <span class="op">=</span> nn.MSELoss()   <span class="co"># regression</span></span>
+<span id="cb3-16"><a></a>learning_rate <span class="op">=</span> <span class="fl">1e-3</span>       <span class="co"># try: 1e-1, 1e-4</span></span>
+<span id="cb3-17"><a></a>optimizer <span class="op">=</span> torch.optim.Adam(model.parameters(), lr<span class="op">=</span>learning_rate)</span>
+<span id="cb3-18"><a></a></span>
+<span id="cb3-19"><a></a><span class="co"># Training loop</span></span>
+<span id="cb3-20"><a></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb3-21"><a></a></span>
+<span id="cb3-22"><a></a>    predictions <span class="op">=</span> model(X)  <span class="co"># Forward pass</span></span>
+<span id="cb3-23"><a></a>    loss <span class="op">=</span> criterion(predictions, y)</span>
+<span id="cb3-24"><a></a></span>
+<span id="cb3-25"><a></a>    <span class="co"># Backpropagation</span></span>
+<span id="cb3-26"><a></a>    optimizer.zero_grad()</span>
+<span id="cb3-27"><a></a>    loss.backward()</span>
+<span id="cb3-28"><a></a>    optimizer.step()</span>
+<span id="cb3-29"><a></a></span>
+<span id="cb3-30"><a></a>    <span class="bu">print</span>(<span class="ss">f"Epoch </span><span class="sc">{</span>epoch<span class="sc">}</span><span class="ss">, Loss: </span><span class="sc">{</span>loss<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<aside class="notes">
+<p>The architecture (whether it is a CNN/RNN/Transformer/… is not specified as a parameter, but implied by the design of layers).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pytorch-ii" class="slide level2">
+<h2>PyTorch (II)</h2>
+<div class="tall-code-box">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a><span class="co"># Specify MLP</span></span>
+<span id="cb4-4"><a></a><span class="kw">class</span> MLP(nn.Module):</span>
+<span id="cb4-5"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, input_dim, hidden_layers, output_dim):</span>
+<span id="cb4-6"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a>        layers <span class="op">=</span> []</span>
+<span id="cb4-9"><a></a>        prev_dim <span class="op">=</span> input_dim</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a>        <span class="co"># Depth and width</span></span>
+<span id="cb4-12"><a></a>        <span class="cf">for</span> h <span class="kw">in</span> hidden_layers:</span>
+<span id="cb4-13"><a></a>            layers.append(nn.Linear(prev_dim, h))</span>
+<span id="cb4-14"><a></a>            layers.append(nn.ReLU())</span>
+<span id="cb4-15"><a></a>            prev_dim <span class="op">=</span> h</span>
+<span id="cb4-16"><a></a></span>
+<span id="cb4-17"><a></a>        layers.append(nn.Linear(prev_dim, output_dim))</span>
+<span id="cb4-18"><a></a></span>
+<span id="cb4-19"><a></a>        <span class="va">self</span>.model <span class="op">=</span> nn.Sequential(<span class="op">*</span>layers)</span>
+<span id="cb4-20"><a></a></span>
+<span id="cb4-21"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb4-22"><a></a>        <span class="cf">return</span> <span class="va">self</span>.model(x)</span>
+<span id="cb4-23"><a></a></span>
+<span id="cb4-24"><a></a><span class="co"># ...</span></span>
+<span id="cb4-25"><a></a>model <span class="op">=</span> MLP(</span>
+<span id="cb4-26"><a></a>    input_dim<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb4-27"><a></a>    hidden_layers<span class="op">=</span>[<span class="dv">32</span>, <span class="dv">16</span>],</span>
+<span id="cb4-28"><a></a>    output_dim<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb4-29"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<aside><div>
+<p>See <a href="https://docs.pytorch.org/docs/2.11/generated/torch.nn.Module.html">torch.nn.Module</a> for inherited methods.</p>
+</div></aside></section>
+<section id="summary" class="slide level2" data-state="hide-menubar">
+<h2>Summary</h2>
+<ul>
+<li><p>Neural networks transform inputs into outputs through <strong>weighted connections</strong>, <strong>biases</strong>, and <strong>activation functions</strong>.<br>
+A single perceptron can only learn <strong>linear decision boundaries</strong>; multilayer networks with nonlinear activations can model more complex patterns.</p></li>
+<li><p>Training consists of a <strong>forward pass</strong>, loss calculation, <strong>backpropagation</strong>, and parameter updates via an optimizer such as gradient descent or Adam.</p></li>
+<li><p>Different neural network architectures encode different assumptions about data:<br>
+<strong>MLPs</strong> for tabular data, <strong>CNNs</strong> for spatial data, <strong>RNNs</strong> for sequences, and <strong>Transformers</strong> for attention-based language tasks.</p></li>
+<li><p>Designing neural networks means choosing the architecture, output layer, loss function, learning rate, optimizer, and regularization strategy, then iteratively evaluating and adjusting these choices.</p></li>
+</ul>
 </section>
 <section id="survey-session-9" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 9</h2>
@@ -451,10 +1055,15 @@
 <p>Note: Responses may be analyzed and published in anonymized form.</p>
 <p>Please complete the survey before you leave today — thank you 🙏</p>
 </div></aside></section></section>
-<section id="references" class="title-slide slide level1 center" data-state="hide-menubar">
+<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
 <h1>References</h1>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-ZhangEtAl2023" class="csl-entry" role="listitem">
+Zhang, A., Lipton, Z. C., Li, M., &amp; Smola, A. J. (2023). <em>Dive into deep learning</em>. Cambridge University Press.
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

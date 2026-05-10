@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 7: Machine learning II – Analytics &amp; Big Data</title>
+<title>Notes: Session 7: Machine learning 2 – Analytics &amp; Big Data</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -220,7 +220,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 7: Machine learning II</h1>
+<h1 class="title">Notes: Session 7: Machine learning 2</h1>
 </div>
 
 
@@ -272,20 +272,6 @@ TODO: check regression trees carefully<br>
 TODO: prepare explanation and visualization of SVMs (on the slides)</p>
 </div>
 </div>
-<section id="supervised-ml" class="level2">
-<h2 class="anchored" data-anchor-id="supervised-ml">Supervised ML</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/programming_vs_ml.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
-</figure>
-</div>
-<ul>
-<li>Start by sketching the two process boxes</li>
-<li>Illustrate what “classical programming” means: manually codifying all conditions and special cases to make the prediction</li>
-<li>Ask students what the input/output is</li>
-<li>Highlight for machine learning: at training time, to make predictions, we will use the rules in the sense of classical programming</li>
-</ul>
-</section>
 <section id="decision-trees" class="level2">
 <h2 class="anchored" data-anchor-id="decision-trees">Decision trees</h2>
 <p>https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8</p>
@@ -385,7 +371,7 @@ plt.show()
 </section>
 <section id="python-illustration-entropy-vs.-number-of-classes" class="level4">
 <h4 class="anchored" data-anchor-id="python-illustration-entropy-vs.-number-of-classes">4) Python Illustration (Entropy vs.&nbsp;Number of Classes)</h4>
-<div id="eca1a16a" class="cell" data-execution_count="2">
+<div id="10b4ced4" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -418,7 +404,7 @@ See also: https://www.mathstat.dal.ca/~aarms2014/StatLearn/docs/09%20_annotated.
 <section id="maximal-margin-classifier" class="level2">
 <h2 class="anchored" data-anchor-id="maximal-margin-classifier">Maximal margin classifier</h2>
 <p>Small M&amp;A teams are <strong>successful</strong>, large teams <strong>unsuccessful</strong>.</p>
-<p>A simple baseline would place the threshold halfway between the <strong>class means</strong>. The maximal margin classifier instead places the threshold halfway between the <strong>closest opposing cases</strong> and maximizes the distance to both classes.</p>
+<p>A simple baseline would place the threshold halfway between the <strong>class means</strong>. The maximal margin classifier instead places the threshold halfway between <strong>the closest opposing cases</strong> and maximizes the distance to both classes.</p>
 <div id="cell-fig-maximal-margin-1d" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-maximal-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">

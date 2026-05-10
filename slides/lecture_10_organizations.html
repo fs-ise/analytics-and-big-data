@@ -33,7 +33,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="../assets/frankfurt.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -142,17 +162,6 @@
     content: '🛠️';
     background-image: none;
   }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -175,6 +184,17 @@
     content: '🔗';
     background-image: none;
   }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
+    background-image: none;
+  }
   </style>
 </head>
 <body class="quarto-light">
@@ -194,20 +214,6 @@
     <p class="date">(2026-05-11)</p>
 
 </section>
-<section class="slide level2">
-
-<p>Deployment -&gt; AI for generating and understanding analytical code. https://www.datacamp.com/de/tutorial/one-hot-encoding-python-tutorial - see “AI explain code” https://www.datacamp.com/datalab https://www.datacamp.com/datalab/ai</p>
-<pre><code>https://pyoneer.ai/
-
--&gt; connect to AGI debates (jagged frontier...), which unlocks generation, but places new burdens on validation and testing
-
-
-Reliability: monitoring/ensuring that the data input remains stable/in-line with the model (e.g., one-hot encoded variables with the specific levels for regression)
-
-
-Fairness: https://developers.google.com/machine-learning/crash-course/fairness
-https://rodneybrooks.com/rodney-brooks-three-laws-of-artificial-intelligence</code></pre>
-</section>
 <section id="section" class="slide level2" data-menu-title="Learning objectives" data-state="hide-menubar">
 <h2></h2>
 <p><br><br><br><br><br></p>
@@ -222,9 +228,707 @@ https://rodneybrooks.com/rodney-brooks-three-laws-of-artificial-intelligence</co
 -->
 </section>
 <section>
-<section id="todo" class="title-slide slide level1 center" data-stack-name="TODO">
-<h1>TODO</h1>
+<section id="level-industry" class="title-slide slide level1 center" data-stack-name="Industry">
+<h1>Level: Industry</h1>
 
+</section>
+<section id="does-the-deployment-of-analytics-pay-off" class="slide level2">
+<h2>Does the deployment of analytics pay off?</h2>
+<p>The Effect of Big Data and Analytics on Firm Performance: An Econometric Analysis Considering Industry Characteristics</p>
+<p><span class="citation" data-cites="MullerFayBrocke2018">Müller et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></p>
+<ul>
+<li>objective measures (specifically: TODO)</li>
+<li>800 companies</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\log(Sales) =\;&amp; \beta_0 + \beta_1 \log(Labor) + \beta_2 \log(Capital) + \beta_3 \log(Materials) \\
+&amp;+ \beta_4 BDA + Controls + \varepsilon
+\end{aligned}
+\]</span></p>
+<!--
+    $$
+    \begin{aligned}
+    \log(Sales) =\;& \beta_0 + \beta_1 \log(Labor) + \beta_2 \log(Capital) + \beta_3 \log(Materials) + \beta_4 BDA \\
+    &+ \beta_5 ITI + \beta_6 COMP + \beta_7 BDA \times ITI + \beta_8 BDA \times COMP \\
+    &+ Controls + \varepsilon
+    \end{aligned}
+    $$
+-->
+</section>
+<section id="findings" class="slide level2">
+<h2>Findings</h2>
+<div style="font-size: 0.75em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">OLS<br>(1)</th>
+<th style="text-align: center;">FE<br>(2)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>log(Capital)</td>
+<td style="text-align: center;">0.090***<br>(0.015)</td>
+<td style="text-align: center;">0.127***<br>(0.029)</td>
+</tr>
+<tr class="even">
+<td>log(Labor)</td>
+<td style="text-align: center;">0.296***<br>(0.024)</td>
+<td style="text-align: center;">0.472***<br>(0.043)</td>
+</tr>
+<tr class="odd">
+<td>log(Materials)</td>
+<td style="text-align: center;">0.667***<br>(0.023)</td>
+<td style="text-align: center;">0.442***<br>(0.035)</td>
+</tr>
+<tr class="even">
+<td>BDA</td>
+<td style="text-align: center;">0.041**<br>(0.020)</td>
+<td style="text-align: center;">0.038*<br>(0.021)</td>
+</tr>
+<tr class="odd">
+<td>Industry dummies?</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td>Year dummies?</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td>IT Asset dummies?</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td>Observations</td>
+<td style="text-align: center;">5,698</td>
+<td style="text-align: center;">5,698</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R^2\)</span></td>
+<td style="text-align: center;">0.977</td>
+<td style="text-align: center;">0.791</td>
+</tr>
+<tr class="even">
+<td>Adjusted <span class="math inline">\(R^2\)</span></td>
+<td style="text-align: center;">0.977</td>
+<td style="text-align: center;">0.755</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note: highlight:</p>
+<ul>
+<li>methods (OLS + fixed effects/causality)</li>
+<li>differences between industries (context matters)</li>
+</ul>
+<p>TODO: why is R^2 so high?!?</p>
+<p>“Competing on analytics”</p>
+</section></section>
+<section>
+<section id="level-organization" class="title-slide slide level1 center" data-stack-name="Organization">
+<h1>Level: Organization</h1>
+
+</section>
+<section id="under-which-conditions-could-we-expect-higher-performance" class="slide level2">
+<h2>Under which conditions could we expect higher performance?</h2>
+<p><span class="citation" data-cites="OesterreichAntonTeuteberg2022">Oesterreich et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/OesterreichAntonTeuteberg2022_model.svg" class="searchable-svg quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<p>TODO: details (literature review, 125 studies, …)</p>
+<p>TBD: prepare/anticipate the connection from north-star KPI to quantitative metrics and analytical models?</p>
+</section>
+<section id="meta-analysis-results" class="slide level2">
+<h2>Meta-analysis results</h2>
+<p>TODO: check table!</p>
+<p><br></p>
+<div style="font-size: 0.75em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Independent variable</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Estimated effect</th>
+<th style="text-align: right;">95% CI</th>
+<th>Heterogeneity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BA technical resources</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">39,246</td>
+<td style="text-align: right;">0.452</td>
+<td style="text-align: right;">0.409–0.493</td>
+<td>Q = 1920.153**, df = 90, I² = 95.31%</td>
+</tr>
+<tr class="even">
+<td>BA human resources</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">9,219</td>
+<td style="text-align: right;">0.494</td>
+<td style="text-align: right;">0.444–0.541</td>
+<td>Q = 379.967**, df = 41, I² = 89.21%</td>
+</tr>
+<tr class="odd">
+<td>BA management capabilities</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">16,074</td>
+<td style="text-align: right;">0.477</td>
+<td style="text-align: right;">0.433–0.519</td>
+<td>Q = 861.169**, df = 68, I² = 92.10%</td>
+</tr>
+<tr class="even">
+<td>Data quality</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">3,088</td>
+<td style="text-align: right;">0.434</td>
+<td style="text-align: right;">0.328–0.528</td>
+<td>Q = 142.257**, df = 13, I² = 90.86%</td>
+</tr>
+<tr class="odd">
+<td>Organizational culture</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">3,698</td>
+<td style="text-align: right;">0.472</td>
+<td style="text-align: right;">0.391–0.546</td>
+<td>Q = 153.939**, df = 17, I² = 88.96%</td>
+</tr>
+<tr class="even">
+<td>External pressure</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">3,644</td>
+<td style="text-align: right;">0.165</td>
+<td style="text-align: right;">0.036–0.288</td>
+<td>Q = 248.937**, df = 16, I² = 93.57%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="notes">
+<p>IV = independent variable; n = number of studies; N = sample size; k = number of correlations; Est. eff. = estimated summary effect size; CI = 95% confidence interval; PI = 80% prediction interval; significance: ** p &lt; .01, * p &lt; .05, not significant (n.s.) for p &gt; .05; <span class="math inline">\(\tau^2\)</span> = between-study variance; I<sup>2</sup> = proportion of variance attributed to between-study variance; <sup>†</sup> indicates the number of missing studies necessary for each identified study to nullify the effect, calculated as fail-safe N divided by n; DF = degree of freedom.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="level-process" class="title-slide slide level1 center" data-stack-name="Learning">
+<h1>Level: Process</h1>
+
+</section>
+<section id="todo" class="slide level2">
+<h2>TODO</h2>
+<p><span class="citation" data-cites="KunzSpohrerHeinzl2025">Kunz et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></p>
+</section>
+<section id="value-creation-paths-from-ba" class="slide level2">
+<h2>Value Creation Paths from BA</h2>
+<div class="diagram-container">
+  <style>
+    .diagram-container svg {
+      width: 100%;
+      height: 560px;
+      overflow: visible;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      fill: white;
+      stroke: black;
+      stroke-width: 1.8;
+    }
+
+    .group-box {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+      stroke-dasharray: 10 6;
+    }
+
+    .arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+      marker-end: url(#arrow);
+    }
+
+    .thin-arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 1.8;
+      marker-end: url(#arrowSmall);
+    }
+
+    .connector {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+    }
+
+    .label-bg {
+      fill: white;
+    }
+
+    .main-label {
+      font-size: 20px;
+    }
+
+    .small-label {
+      font-size: 16px;
+    }
+
+    .tiny-label {
+      font-size: 14px;
+    }
+
+    .reveal .diagram-container svg .fragment {
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .reveal .diagram-container svg .fragment.visible {
+      opacity: 1;
+    }
+  </style>
+
+  <svg viewbox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" aria-label="Business analytics diagram">
+    <defs>
+      <!-- Smaller arrowheads -->
+      <marker id="arrow" viewbox="0 0 10 10" markerwidth="6" markerheight="6" refx="10" refy="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"></path>
+      </marker>
+
+      <marker id="arrowSmall" viewbox="0 0 10 10" markerwidth="5" markerheight="5" refx="10" refy="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"></path>
+      </marker>
+    </defs>
+
+    <!-- Main boxes -->
+    <rect class="box" x="40" y="245" width="110" height="55"></rect>
+    <text x="95" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Data</text>
+
+    <rect class="box" x="190" y="185" width="135" height="165"></rect>
+    <text x="257.5" y="230" text-anchor="middle" class="main-label">
+      <tspan x="257.5" dy="0">Business</tspan>
+      <tspan x="257.5" dy="24">Analytics</tspan>
+      <tspan x="257.5" dy="24">system</tspan>
+    </text>
+
+    <rect class="box" x="380" y="245" width="125" height="55"></rect>
+    <text x="442.5" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Information</text>
+
+    <rect class="box" x="550" y="245" width="125" height="55"></rect>
+    <text x="612.5" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Knowledge</text>
+
+    <rect class="box" x="735" y="245" width="110" height="55"></rect>
+    <text x="790" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Decision</text>
+
+    <rect class="box" x="895" y="245" width="110" height="55"></rect>
+    <text x="950" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Action</text>
+
+    <rect class="box" x="1060" y="245" width="110" height="55"></rect>
+    <text x="1115" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Value</text>
+
+    <!-- Main flow arrows -->
+    <line class="arrow" x1="150" y1="272" x2="190" y2="272"></line>
+    <line class="arrow" x1="325" y1="272" x2="380" y2="272"></line>
+    <line class="arrow" x1="505" y1="272" x2="550" y2="272"></line>
+    <line class="arrow" x1="675" y1="272" x2="735" y2="272"></line>
+    <line class="arrow" x1="845" y1="272" x2="895" y2="272"></line>
+    <line class="arrow" x1="1005" y1="272" x2="1060" y2="272"></line>
+
+    <!-- Stage 1: supported / other processes -->
+    <g class="fragment" data-fragment-index="1">
+      <rect class="group-box" x="705" y="90" width="335" height="230"></rect>
+      <rect class="label-bg" x="730" y="78" width="145" height="22"></rect>
+      <text x="735" y="94" class="small-label">Other processes</text>
+
+      <rect class="group-box" x="720" y="120" width="310" height="195"></rect>
+      <rect class="label-bg" x="745" y="108" width="150" height="22"></rect>
+      <text x="750" y="124" class="small-label">Supported process</text>
+
+      <!-- Interrelated decisions/actions -->
+      <rect class="box" x="730" y="160" width="120" height="50"></rect>
+      <text x="790" y="178" text-anchor="middle" class="tiny-label">
+        <tspan x="790" dy="0">Interrelated</tspan>
+        <tspan x="790" dy="16">decisions</tspan>
+      </text>
+
+      <rect class="box" x="890" y="160" width="120" height="50"></rect>
+      <text x="950" y="178" text-anchor="middle" class="tiny-label">
+        <tspan x="950" dy="0">Interrelated</tspan>
+        <tspan x="950" dy="16">actions</tspan>
+      </text>
+
+      <!-- Internal links -->
+      <line class="thin-arrow" x1="850" y1="185" x2="890" y2="185"></line>
+      <line class="thin-arrow" x1="790" y1="210" x2="790" y2="245"></line>
+      <line class="thin-arrow" x1="950" y1="210" x2="950" y2="245"></line>
+
+      <!-- Cross links -->
+      <line class="thin-arrow" x1="850" y1="210" x2="950" y2="245"></line>
+      <line class="thin-arrow" x1="890" y1="210" x2="790" y2="245"></line>
+    </g>
+
+    <!-- Stage 2: decision automation path -->
+    <g class="fragment" data-fragment-index="2">
+      <path class="arrow" d="M442.5,300 V350 H950 V300"></path>
+      <text x="700" y="378" text-anchor="middle" class="small-label">
+        Decision automation path
+      </text>
+    </g>
+
+    <!-- Stage 3: knowledge transfer path -->
+    <g class="fragment" data-fragment-index="3">
+      <rect class="label-bg" x="600" y="42" width="190" height="22"></rect>
+      <text x="605" y="58" class="small-label">Knowledge transfer path</text>
+
+      <!-- Path goes up from knowledge, then across, then down to the process boxes -->
+      <path class="connector" d="M612.5,245 V70 H935"></path>
+
+      <!-- Downward arrows into the process boxes -->
+      <path class="arrow" d="M865,70 V90"></path>
+      <path class="arrow" d="M935,70 V120"></path>
+    </g>
+
+    <!-- Stage 4: feedback path -->
+    <g class="fragment" data-fragment-index="4">
+      <rect class="label-bg" x="340" y="0" width="120" height="22"></rect>
+      <text x="345" y="16" class="small-label">Feedback path</text>
+
+      <!-- Main feedback connector starts slightly left of the knowledge-transfer path -->
+      <path class="connector" d="M585,245 V28 H95"></path>
+
+      <!-- Downward connections to Data and Business Analytics system -->
+      <path class="arrow" d="M95,28 V245"></path>
+      <path class="arrow" d="M257.5,28 V185"></path>
+
+      <!-- Clean connection from Other processes into the feedback path -->
+      <path class="connector" d="M980,90 V28 H585"></path>
+    </g>
+  </svg>
+</div>
+<p>Note: maybe add explanations on the following slide?!</p>
+<p>TODO:</p>
+<ul>
+<li>cover canonical information processing path, decision augmentation vs.&nbsp;automation</li>
+<li>cover knowledge accumulation path, transfer, feedback</li>
+</ul>
+<p>TODO: summarize each value creation path (autonomy, dynamism, opacity)</p>
+<p>TODO: prepare connection from key-KPI/north-star to the use of analytics in different processes (learning system)</p>
+</section>
+<section id="changes-ml" class="slide level2">
+<h2>Changes (ML)</h2>
+<div class="diagram-container">
+  <style>
+    .diagram-container svg {
+      width: 100%;
+      height: 560px;
+      overflow: visible;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      fill: white;
+      stroke: black;
+      stroke-width: 1.8;
+    }
+
+    .group-box {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+      stroke-dasharray: 10 6;
+    }
+
+    .arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+      marker-end: url(#arrow);
+    }
+
+    .thin-arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 1.8;
+      marker-end: url(#arrowSmall);
+    }
+
+    .connector {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+    }
+
+    .highlight-arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 4.4;
+      marker-end: url(#arrowBold);
+    }
+
+    .highlight-thin-arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 3.8;
+      marker-end: url(#arrowBold);
+    }
+
+    .highlight-connector {
+      fill: none;
+      stroke: black;
+      stroke-width: 4.4;
+    }
+
+    .erase-line {
+      fill: none;
+      stroke: white;
+      stroke-width: 5.8;
+    }
+
+    .negative-arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+      stroke-dasharray: 8 6;
+      marker-end: url(#arrow);
+    }
+
+    .negative-connector {
+      fill: none;
+      stroke: black;
+      stroke-width: 2.2;
+      stroke-dasharray: 8 6;
+    }
+
+    .label-bg {
+      fill: white;
+    }
+
+    .main-label {
+      font-size: 20px;
+    }
+
+    .small-label {
+      font-size: 16px;
+    }
+
+    .tiny-label {
+      font-size: 14px;
+    }
+
+    .sign-label {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .reveal .diagram-container svg .fragment {
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .reveal .diagram-container svg .fragment.visible {
+      opacity: 1;
+    }
+  </style>
+
+  <svg viewbox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" aria-label="Business analytics diagram">
+    <defs>
+      <marker id="arrow" viewbox="0 0 10 10" markerwidth="6" markerheight="6" refx="10" refy="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"></path>
+      </marker>
+
+      <marker id="arrowSmall" viewbox="0 0 10 10" markerwidth="5" markerheight="5" refx="10" refy="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"></path>
+      </marker>
+
+      <marker id="arrowBold" viewbox="0 0 10 10" markerwidth="7" markerheight="7" refx="10" refy="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"></path>
+      </marker>
+    </defs>
+
+    <!-- Main boxes -->
+    <rect class="box" x="40" y="245" width="110" height="55"></rect>
+    <text x="95" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Data</text>
+
+    <rect class="box" x="190" y="185" width="135" height="165"></rect>
+    <text x="257.5" y="230" text-anchor="middle" class="main-label">
+      <tspan x="257.5" dy="0">Business</tspan>
+      <tspan x="257.5" dy="24">Analytics</tspan>
+      <tspan x="257.5" dy="24">system</tspan>
+    </text>
+
+    <rect class="box" x="380" y="245" width="125" height="55"></rect>
+    <text x="442.5" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Information</text>
+
+    <rect class="box" x="550" y="245" width="125" height="55"></rect>
+    <text x="612.5" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Knowledge</text>
+
+    <rect class="box" x="735" y="245" width="110" height="55"></rect>
+    <text x="790" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Decision</text>
+
+    <rect class="box" x="895" y="245" width="110" height="55"></rect>
+    <text x="950" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Action</text>
+
+    <rect class="box" x="1060" y="245" width="110" height="55"></rect>
+    <text x="1115" y="272" text-anchor="middle" dominant-baseline="middle" class="main-label">Value</text>
+
+    <!-- Main flow arrows -->
+    <line class="arrow" x1="150" y1="272" x2="190" y2="272"></line>
+    <line class="arrow" x1="325" y1="272" x2="380" y2="272"></line>
+    <line class="arrow" x1="505" y1="272" x2="550" y2="272"></line>
+    <line class="arrow" x1="675" y1="272" x2="735" y2="272"></line>
+    <line class="arrow" x1="845" y1="272" x2="895" y2="272"></line>
+    <line class="arrow" x1="1005" y1="272" x2="1060" y2="272"></line>
+
+    <!-- Processes -->
+    <rect class="group-box" x="705" y="90" width="335" height="230"></rect>
+    <rect class="label-bg" x="730" y="78" width="145" height="22"></rect>
+    <text x="735" y="94" class="small-label">Other processes</text>
+
+    <rect class="group-box" x="720" y="120" width="310" height="195"></rect>
+    <rect class="label-bg" x="745" y="108" width="150" height="22"></rect>
+    <text x="750" y="124" class="small-label">Supported process</text>
+
+    <!-- Interrelated decisions/actions -->
+    <rect class="box" x="730" y="160" width="120" height="50"></rect>
+    <text x="790" y="178" text-anchor="middle" class="tiny-label">
+      <tspan x="790" dy="0">Interrelated</tspan>
+      <tspan x="790" dy="16">decisions</tspan>
+    </text>
+
+    <rect class="box" x="890" y="160" width="120" height="50"></rect>
+    <text x="950" y="178" text-anchor="middle" class="tiny-label">
+      <tspan x="950" dy="0">Interrelated</tspan>
+      <tspan x="950" dy="16">actions</tspan>
+    </text>
+
+    <!-- Internal links -->
+    <line class="thin-arrow" x1="850" y1="185" x2="890" y2="185"></line>
+    <line class="thin-arrow" x1="790" y1="210" x2="790" y2="245"></line>
+    <line class="thin-arrow" x1="950" y1="210" x2="950" y2="245"></line>
+
+    <!-- Cross links -->
+    <line class="thin-arrow" x1="850" y1="210" x2="950" y2="245"></line>
+    <line class="thin-arrow" x1="890" y1="210" x2="790" y2="245"></line>
+
+    <!-- Base decision automation path -->
+    <path class="arrow" d="M442.5,300 V350 H950 V300"></path>
+    <text x="700" y="378" text-anchor="middle" class="small-label">
+      Decision automation path
+    </text>
+
+    <!-- Base knowledge transfer path -->
+    <rect class="label-bg" x="600" y="42" width="190" height="22"></rect>
+    <text x="605" y="58" class="small-label">Knowledge transfer path</text>
+    <path class="connector" d="M612.5,245 V70 H935"></path>
+    <path class="arrow" d="M865,70 V90"></path>
+    <path class="arrow" d="M935,70 V120"></path>
+
+    <!-- Base feedback path -->
+    <rect class="label-bg" x="340" y="0" width="120" height="22"></rect>
+    <text x="345" y="16" class="small-label">Feedback path</text>
+    <path class="connector" d="M585,245 V28 H95"></path>
+    <path class="arrow" d="M95,28 V245"></path>
+    <path class="arrow" d="M257.5,28 V185"></path>
+    <path class="connector" d="M980,90 V28 H585"></path>
+
+    <!-- Animation 1: emphasize positive paths -->
+    <g class="fragment" data-fragment-index="1">
+      <!-- Bold decision automation path -->
+      <path class="highlight-arrow" d="M442.5,300 V350 H950 V300"></path>
+      <text x="845" y="378" class="sign-label">+</text>
+
+      <!-- Bold feedback path -->
+      <path class="highlight-connector" d="M585,245 V28 H95"></path>
+      <path class="highlight-arrow" d="M95,28 V245"></path>
+      <path class="highlight-arrow" d="M257.5,28 V185"></path>
+      <path class="highlight-connector" d="M980,90 V28 H585"></path>
+      <text x="470" y="16" class="sign-label">+</text>
+    </g>
+
+    <!-- Animation 2: emphasize negative/dashed paths -->
+    <g class="fragment" data-fragment-index="2">
+      <!-- Information -> Knowledge -->
+      <line class="erase-line" x1="505" y1="272" x2="550" y2="272"></line>
+      <line class="negative-arrow" x1="505" y1="272" x2="550" y2="272"></line>
+      <text x="527.5" y="235" text-anchor="middle" class="sign-label">−</text>
+
+      <!-- Knowledge -> Decision -->
+      <line class="erase-line" x1="675" y1="272" x2="735" y2="272"></line>
+      <line class="negative-arrow" x1="675" y1="272" x2="735" y2="272"></line>
+      <text x="705" y="235" text-anchor="middle" class="sign-label">−</text>
+
+      <!-- Knowledge transfer path -->
+      <path class="erase-line" d="M612.5,245 V70 H935"></path>
+      <path class="erase-line" d="M865,70 V90"></path>
+      <path class="erase-line" d="M935,70 V120"></path>
+
+      <path class="negative-connector" d="M612.5,245 V70 H935"></path>
+      <path class="negative-arrow" d="M865,70 V90"></path>
+      <path class="negative-arrow" d="M935,70 V120"></path>
+
+      <text x="800" y="58" class="sign-label">−</text>
+    </g>
+  </svg>
+</div>
+</section></section>
+<section>
+<section id="level-human-ai-interaction" class="title-slide slide level1 center" data-stack-name="Humans">
+<h1>Level: Human-AI interaction</h1>
+
+</section>
+<section id="skills-and-adoption-perception" class="slide level2">
+<h2>Skills and adoption (perception??)</h2>
+</section>
+<section id="human-ai-collaboration" class="slide level2">
+<h2>Human-AI collaboration</h2>
+<p>Autonomy vs.&nbsp;</p>
+<p>Collaboration modality (ghostwriter vs.&nbsp;sounding board) interact with expertise and determine quality of creative knowledge work ([[ChenChan2024]]): using [[LLM]]s for ghostwriting is detrimental to experts, as a sounding board, it helps non-experts.</p>
+<p>When delegating tasks (such as classification), humans may be less effective than AI (see [[FugenerGrahlGuptaEtAl2022]])</p>
+<p>Understanding the [[Jagged Technological Frontier]] is challenging -&gt; maybe, humans are no longer in a position to decide (in some cases)</p>
+<p>Proactive agents lead to a higher loss of users’ competence-based self-esteem and reduce system satisfaction (compared to reactive agents) ([[DiebelGoutierAdamEtAl2025]])</p>
+<p>Roles interactions: algorithms in their multiple roles as supervisors/evaluators/peers create role conflict and role ambiguity, which prompts humans to react (specific tasks or cognitive reactions), feeding into the <em>computational feedback learning loop</em> and/or the <em>(broken) human feedback loop</em> [[TarafdarPageMarabelli2023]]</p>
+<p>Human: Strich/JAIS -&gt; “safeguarding against human intervention” (loan agents cannot overrule the AI decision, preventing aself-interest to affect their decisions)</p>
+</section>
+<section id="boundaries" class="slide level2">
+<h2>Boundaries</h2>
+<p>TBD. but students should have an overview here</p>
+<p>XAI (with illustrations, as a legal requirement)</p>
+<p>TBD: situational overrides (emergencies?)</p>
+<!--
+    Note: algorithmic management -> part of the group-work session (one example)
+-->
+</section>
+<section id="summary" class="slide level2" data-state="hide-menubar">
+<h2>Summary</h2>
+<ul>
+<li>TODO</li>
+</ul>
 </section>
 <section id="survey-session-10" class="slide level2" data-state="hide-menubar">
 <h2>Survey: Session 10</h2>
@@ -248,10 +952,21 @@ https://rodneybrooks.com/rodney-brooks-three-laws-of-artificial-intelligence</co
 <p>Note: Responses may be analyzed and published in anonymized form.</p>
 <p>Please complete the survey before you leave today — thank you 🙏</p>
 </div></aside></section></section>
-<section id="references" class="title-slide slide level1 center" data-state="hide-menubar">
+<section id="references" class="title-slide slide level1 smaller scrollable" data-state="hide-menubar">
 <h1>References</h1>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-KunzSpohrerHeinzl2025" class="csl-entry" role="listitem">
+Kunz, P. C., Spohrer, K., &amp; Heinzl, A. (2025). Process-level value creation from business analytics: A theoretical literature review of value creation paths and changes induced by machine learning. <em>The Journal of Strategic Information Systems</em>, <em>34</em>(2), 101902. <a href="https://doi.org/10.1016/j.jsis.2025.101902">https://doi.org/10.1016/j.jsis.2025.101902</a>
+</div>
+<div id="ref-MullerFayBrocke2018" class="csl-entry" role="listitem">
+Müller, O., Fay, M., &amp; Vom Brocke, J. (2018). The effect of big data and analytics on firm performance: An econometric analysis considering industry characteristics. <em>Journal of Management Information Systems</em>, <em>35</em>(2), 488–509. <a href="https://doi.org/10.1080/07421222.2018.1451955">https://doi.org/10.1080/07421222.2018.1451955</a>
+</div>
+<div id="ref-OesterreichAntonTeuteberg2022" class="csl-entry" role="listitem">
+Oesterreich, T. D., Anton, E., &amp; Teuteberg, F. (2022). What translates big data into business value? A meta-analysis of the impacts of business analytics on firm performance. <em>Information &amp; Management</em>, <em>59</em>(6), 103685. <a href="https://doi.org/10.1016/j.im.2022.103685">https://doi.org/10.1016/j.im.2022.103685</a>
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

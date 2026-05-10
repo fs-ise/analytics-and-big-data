@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise 8: Big data</title>
+<title>Exercise 8: Big data and text analytics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,10 +23,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="exercise_8_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="exercise_8_files/libs/clipboard/clipboard.min.js"></script>
 <script src="exercise_8_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="exercise_8_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="exercise_8_files/libs/quarto-html/popper.min.js"></script>
@@ -37,6 +72,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="exercise_8_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="exercise_8_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="exercise_8_files/libs/bootstrap/bootstrap-7f8d28353e1b7aed8a50cdb71f958a5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -49,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exercise 8: Big data</h1>
+<h1 class="title">Exercise 8: Big data and text analytics</h1>
 </div>
 
 
@@ -66,25 +104,651 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="learning-objectives">
-<p>TBD: traditional case study (with questions)?</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="case-understanding-movie-reviews" class="level1">
+<h1>Case: Understanding movie reviews</h1>
+<p>You are a data analyst working for <strong>ReviewSense</strong>, a fictional analytics team that supports a streaming platform. The platform collects many user reviews for movies and series. Management wants to understand whether text analytics can help to classify reviews as positive or negative and to identify semantically similar reviews.</p>
+<p>We use a small public sample of the <strong>IMDB movie review sentiment dataset</strong>. The dataset contains movie reviews with binary sentiment labels. For this exercise, the course repository should contain a prepared subset (<a href="https://github.com/fs-ise/analytics-and-big-data/raw/refs/heads/main/exercises/data/imdb_reviews_sample.csv">data/imdb_reviews_sample.csv</a>) with the following columns:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>review</code></td>
+<td>review text</td>
+<td>text</td>
+</tr>
+<tr class="even">
+<td><code>sentiment</code></td>
+<td>sentiment label: <code>positive</code> or <code>negative</code></td>
+<td>categorical</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Dataset note">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Dataset note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO</p>
+<p>Use a local course copy of the IMDB sample rather than downloading the full dataset during class. This makes the exercise more reliable and keeps the focus on representation, similarity, visualization, and prediction. A small sample of 1,000–3,000 reviews is sufficient for this exercise.</p>
 </div>
 </div>
-<section id="exam-prep" class="level2">
-<h2 class="anchored" data-anchor-id="exam-prep">Exam prep</h2>
-<p>TODO : include specific questions/tasks that could be included in the exam.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="part-1-case-and-dataset" class="level1">
+<h1>Part 1: Case and dataset <a id="part-1" href=""></a></h1>
+<section id="task-1.1-load-and-inspect-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.1-load-and-inspect-the-dataset">Task 1.1 — Load and inspect the dataset</h2>
+<div id="1aacb8c0" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/imdb_reviews_sample.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df.head()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"sentiment"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>sentiment
+negative    2532
+positive    2468
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.2-prepare-text-labels-and-a-train-test-split" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.2-prepare-text-labels-and-a-train-test-split">Task 1.2 — Prepare text, labels, and a train-test split</h2>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<div id="2154a5a9" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">"review"</span>, <span class="st">"sentiment"</span>]).copy()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Many IMDB review exports contain HTML line breaks such as &lt;br /&gt;.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># This light cleaning keeps the task simple but removes a common artifact.</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"clean_review"</span>] <span class="op">=</span> (</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">"review"</span>]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">str</span>.replace(<span class="vs">r"&lt;br</span><span class="dv">\s</span><span class="op">*</span><span class="vs">/</span><span class="op">?</span><span class="vs">&gt;"</span>, <span class="st">" "</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">str</span>.replace(<span class="vs">r"</span><span class="dv">\s</span><span class="op">+</span><span class="vs">"</span>, <span class="st">" "</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">str</span>.strip()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"label"</span>] <span class="op">=</span> df[<span class="st">"sentiment"</span>].<span class="bu">map</span>({<span class="st">"negative"</span>: <span class="dv">0</span>, <span class="st">"positive"</span>: <span class="dv">1</span>})</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[<span class="st">"clean_review"</span>]</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"label"</span>]</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    X,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    y,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    random_state<span class="op">=</span><span class="dv">42</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    stratify<span class="op">=</span>y,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train.shape, X_test.shape)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_train.value_counts(normalize<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_test.value_counts(normalize<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(3750,) (1250,)
+label
+0    0.5064
+1    0.4936
+Name: proportion, dtype: float64
+label
+0    0.5064
+1    0.4936
+Name: proportion, dtype: float64</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-2-sparse-text-representations" class="level1">
+<h1>Part 2: Sparse text representations <a id="part-2" href=""></a></h1>
+<section id="task-2.1-create-bag-of-words-and-tf-idf-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="task-2.1-create-bag-of-words-and-tf-idf-matrices">Task 2.1 — Create Bag-of-Words and TF-IDF matrices</h2>
+</section>
+<section id="solution-1" class="level2">
+<h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
+<div id="bc7dd69d" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer, TfidfVectorizer</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>count_vectorizer <span class="op">=</span> CountVectorizer(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    stop_words<span class="op">=</span><span class="st">"english"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">5000</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>X_train_bow <span class="op">=</span> count_vectorizer.fit_transform(X_train)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>X_test_bow <span class="op">=</span> count_vectorizer.transform(X_test)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>tfidf_vectorizer <span class="op">=</span> TfidfVectorizer(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    stop_words<span class="op">=</span><span class="st">"english"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">5000</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    min_df<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>X_train_tfidf <span class="op">=</span> tfidf_vectorizer.fit_transform(X_train)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>X_test_tfidf <span class="op">=</span> tfidf_vectorizer.transform(X_test)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>sparsity <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> (X_train_tfidf.nnz <span class="op">/</span> (X_train_tfidf.shape[<span class="dv">0</span>] <span class="op">*</span> X_train_tfidf.shape[<span class="dv">1</span>]))</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bag-of-Words shape:"</span>, X_train_bow.shape)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"TF-IDF shape:"</span>, X_train_tfidf.shape)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"TF-IDF sparsity:"</span>, <span class="bu">round</span>(sparsity, <span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bag-of-Words shape: (3750, 5000)
+TF-IDF shape: (3750, 5000)
+TF-IDF sparsity: 0.9854</code></pre>
+</div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>The number of rows corresponds to the number of training reviews.</li>
+<li>The number of columns corresponds to the vocabulary retained by the vectorizer.</li>
+<li>A high sparsity value means that most document-feature combinations are zero. This is typical for classical text representations.</li>
+</ul>
+</section>
+<section id="task-2.2-inspect-sparse-features-for-one-review" class="level2">
+<h2 class="anchored" data-anchor-id="task-2.2-inspect-sparse-features-for-one-review">Task 2.2 — Inspect sparse features for one review</h2>
+</section>
+<section id="solution-2" class="level2">
+<h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
+<div id="ba7d8142" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>review_id <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>feature_names <span class="op">=</span> np.array(tfidf_vectorizer.get_feature_names_out())</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> X_train_tfidf[review_id].toarray().ravel()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>top_positions <span class="op">=</span> row.argsort()[::<span class="op">-</span><span class="dv">1</span>][:<span class="dv">15</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>top_features <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"feature"</span>: feature_names[top_positions],</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tfidf"</span>: row[top_positions],</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>display(X_train.iloc[review_id])</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>display(top_features)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<pre><code>'Worst Movie I Have Ever Seen! 90 Minutes of excruciating film-making. All the ingredients to make this movie a true work of CRAP. Bad acting, bad directing, bad storytelling, bad makeup, bad dialogue, bad effects, and bad reasoning behind certain actions taken by the characters. It also threw in a terrible naked shot of a dumb blond, and a breast shot of a stupid Asian girl, and both attempts were just scary, since these girls are ugly. Some good horror movies came out of the 80s, but this could never be considered one of them. Kevin Tenney also committed one of the greatest sins in storytelling: he introduced characters at the end of the movie (an Old Man and Old Woman). I would vote for it below a 1 out of 10 but the voting system doesn\'t work that way apparently. Right from the title sequence I knew it would suck and I would return my DVD but Best Buy doesn\'t refund DVDs, or consumable products as they call it, or so my receipt says. I have "The Dunwich Horror" and that was truly god-awful, but I still feel that "Night of the Demons" (an obvious Evil Dead RIP-OFF) was far worse than "Dunwich Horror." This is just like "The Howling," how in the hell could sequels get milked out of this anorexic cow??? Save your money and get the "Texas Chainsaw Massacre" (just don\'t get any of its sequels though) or "The Evil Dead" or "Dawn of the Dead." "Night of the Demons" is a very, very, very bad investment. Every second of it was just maddening, excruciating pain for the audience, because the whole movie all-around was horrible! Do yourself a favor, DON\'T SEE IT! You\'ll be saving some brain cells.'</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">feature</th>
+<th data-quarto-table-cell-role="th">tfidf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>bad</td>
+<td>0.318879</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>evil dead</td>
+<td>0.217983</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>storytelling</td>
+<td>0.197931</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>demons</td>
+<td>0.197931</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>dead</td>
+<td>0.190483</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>sequels</td>
+<td>0.188522</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>horror</td>
+<td>0.168756</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>evil</td>
+<td>0.132952</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>night</td>
+<td>0.121025</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>shot</td>
+<td>0.120767</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>just</td>
+<td>0.120738</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>blond</td>
+<td>0.110300</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>breast</td>
+<td>0.106651</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>chainsaw</td>
+<td>0.105596</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>ingredients</td>
+<td>0.105596</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>A good answer should recognize that TF-IDF features are interpretable because they correspond to words or short phrases. However, they mainly show lexical signals. They do not fully capture context, irony, negation, or meaning beyond word occurrence.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-2.3-find-similar-reviews-using-tf-idf" class="level2">
+<h2 class="anchored" data-anchor-id="task-2.3-find-similar-reviews-using-tf-idf">Task 2.3 — Find similar reviews using TF-IDF</h2>
+</section>
+<section id="solution-3" class="level2">
+<h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
+<div id="adf1c76b" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>similarities <span class="op">=</span> cosine_similarity(X_train_tfidf[query_id], X_train_tfidf).ravel()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>top_ids <span class="op">=</span> similarities.argsort()[::<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>:<span class="dv">6</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>similar_reviews_tfidf <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"similarity"</span>: similarities[top_ids],</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sentiment"</span>: y_train.iloc[top_ids].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">"negative"</span>, <span class="dv">1</span>: <span class="st">"positive"</span>}).values,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: X_train.iloc[top_ids].values,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query review:"</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train.iloc[query_id])</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query sentiment:"</span>, <span class="st">"positive"</span> <span class="cf">if</span> y_train.iloc[query_id] <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="st">"negative"</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>display(similar_reviews_tfidf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Query review:
+Worst Movie I Have Ever Seen! 90 Minutes of excruciating film-making. All the ingredients to make this movie a true work of CRAP. Bad acting, bad directing, bad storytelling, bad makeup, bad dialogue, bad effects, and bad reasoning behind certain actions taken by the characters. It also threw in a terrible naked shot of a dumb blond, and a breast shot of a stupid Asian girl, and both attempts were just scary, since these girls are ugly. Some good horror movies came out of the 80s, but this could never be considered one of them. Kevin Tenney also committed one of the greatest sins in storytelling: he introduced characters at the end of the movie (an Old Man and Old Woman). I would vote for it below a 1 out of 10 but the voting system doesn't work that way apparently. Right from the title sequence I knew it would suck and I would return my DVD but Best Buy doesn't refund DVDs, or consumable products as they call it, or so my receipt says. I have "The Dunwich Horror" and that was truly god-awful, but I still feel that "Night of the Demons" (an obvious Evil Dead RIP-OFF) was far worse than "Dunwich Horror." This is just like "The Howling," how in the hell could sequels get milked out of this anorexic cow??? Save your money and get the "Texas Chainsaw Massacre" (just don't get any of its sequels though) or "The Evil Dead" or "Dawn of the Dead." "Night of the Demons" is a very, very, very bad investment. Every second of it was just maddening, excruciating pain for the audience, because the whole movie all-around was horrible! Do yourself a favor, DON'T SEE IT! You'll be saving some brain cells.
+Query sentiment: negative</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">similarity</th>
+<th data-quarto-table-cell-role="th">sentiment</th>
+<th data-quarto-table-cell-role="th">review</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>0.262307</td>
+<td>positive</td>
+<td>The 80's is largely considered the decade in w...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>0.211370</td>
+<td>negative</td>
+<td>Why is it that Canada can turn out decent to g...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>0.207395</td>
+<td>negative</td>
+<td>Avoid this crap at all costs. Bad script, bad ...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>0.202169</td>
+<td>positive</td>
+<td>most of the bad reviews on this website blame ...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>0.202030</td>
+<td>negative</td>
+<td>This movie has to be one of the most boring an...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>TF-IDF similarity is often driven by shared words and phrases.</li>
+<li>Retrieved reviews may be similar in topic or wording, but not necessarily in deeper meaning.</li>
+<li>Sparse similarity can be useful, but it is limited when two texts express similar ideas with different words.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-3-dense-representations" class="level1">
+<h1>Part 3: Dense representations <a id="part-3" href=""></a></h1>
+<section id="task-3.1-create-sentence-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-3.1-create-sentence-embeddings">Task 3.1 — Create sentence embeddings</h2>
+</section>
+<section id="solution-4" class="level2">
+<h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
+<div id="cd2556e5" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sentence_transformers <span class="im">import</span> SentenceTransformer</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>embedding_model <span class="op">=</span> SentenceTransformer(<span class="st">"all-MiniLM-L6-v2"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>X_train_emb <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    X_train.tolist(),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    show_progress_bar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>X_test_emb <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    X_test.tolist(),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    show_progress_bar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training embeddings:"</span>, X_train_emb.shape)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Test embeddings:"</span>, X_test_emb.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>With <code>all-MiniLM-L6-v2</code>, each review is represented by a 384-dimensional vector.</li>
+<li>The representation is dense because most values are non-zero.</li>
+<li>The dimensions are learned features rather than directly named words, so they are less transparent than TF-IDF columns.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-3.2-find-similar-reviews-using-dense-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-3.2-find-similar-reviews-using-dense-embeddings">Task 3.2 — Find similar reviews using dense embeddings</h2>
+</section>
+<section id="solution-5" class="level2">
+<h2 class="anchored" data-anchor-id="solution-5">Solution</h2>
+<div id="25d2b734" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>similarities_dense <span class="op">=</span> cosine_similarity(</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    X_train_emb[query_id].reshape(<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    X_train_emb,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>).ravel()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>top_ids_dense <span class="op">=</span> similarities_dense.argsort()[::<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>:<span class="dv">6</span>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>similar_reviews_dense <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"similarity"</span>: similarities_dense[top_ids_dense],</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sentiment"</span>: y_train.iloc[top_ids_dense].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">"negative"</span>, <span class="dv">1</span>: <span class="st">"positive"</span>}).values,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: X_train.iloc[top_ids_dense].values,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query review:"</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train.iloc[query_id])</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Query sentiment:"</span>, <span class="st">"positive"</span> <span class="cf">if</span> y_train.iloc[query_id] <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="st">"negative"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>display(similar_reviews_dense)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<p>Dense embeddings often retrieve reviews that are similar in overall meaning even if they do not share many exact words. However, dense similarity is not identical to sentiment similarity. Two reviews can be semantically close because they discuss similar topics, genres, actors, or plot elements, while still expressing different evaluations.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-3.3-visualize-dense-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-3.3-visualize-dense-embeddings">Task 3.3 — Visualize dense embeddings</h2>
+</section>
+<section id="solution-6" class="level2">
+<h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
+<div id="f8b19ae2" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>sample_size <span class="op">=</span> <span class="bu">min</span>(<span class="dv">500</span>, <span class="bu">len</span>(df))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>sample_df <span class="op">=</span> df.sample(n<span class="op">=</span>sample_size, random_state<span class="op">=</span><span class="dv">42</span>).copy()</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>sample_embeddings <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    sample_df[<span class="st">"review"</span>].tolist(),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    show_progress_bar<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> pca.fit_transform(sample_embeddings)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>sample_df[<span class="st">"dim_1"</span>] <span class="op">=</span> coords[:, <span class="dv">0</span>]</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>sample_df[<span class="st">"dim_2"</span>] <span class="op">=</span> coords[:, <span class="dv">1</span>]</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    sample_df[<span class="st">"dim_1"</span>],</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    sample_df[<span class="st">"dim_2"</span>],</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>sample_df[<span class="st">"label"</span>],</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.65</span>,</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"PCA dimension 1"</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"PCA dimension 2"</span>)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Dense review embeddings reduced to two dimensions"</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>There may be some separation, but do not expect a perfect positive/negative split.</li>
+<li>The plot may reveal topic-based or style-based neighborhoods as well as sentiment-related patterns.</li>
+<li>PCA compresses hundreds of dimensions into two dimensions, so the plot is only a simplified view of the embedding space.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-4-classification" class="level1">
+<h1>Part 4: Classification <a id="part-4" href=""></a></h1>
+<section id="task-4.1-train-a-classifier-on-tf-idf-features" class="level2">
+<h2 class="anchored" data-anchor-id="task-4.1-train-a-classifier-on-tf-idf-features">Task 4.1 — Train a classifier on TF-IDF features</h2>
+</section>
+<section id="solution-7" class="level2">
+<h2 class="anchored" data-anchor-id="solution-7">Solution</h2>
+<div id="997e7d47" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>tfidf_clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>tfidf_clf.fit(X_train_tfidf, y_train)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>y_pred_tfidf <span class="op">=</span> tfidf_clf.predict(X_test_tfidf)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>tfidf_train_time <span class="op">=</span> time.time() <span class="op">-</span> start_time</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>tfidf_accuracy <span class="op">=</span> accuracy_score(y_test, y_pred_tfidf)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accuracy:"</span>, <span class="bu">round</span>(tfidf_accuracy, <span class="dv">3</span>))</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training time:"</span>, <span class="bu">round</span>(tfidf_train_time, <span class="dv">3</span>), <span class="st">"seconds"</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred_tfidf, target_names<span class="op">=</span>[<span class="st">"negative"</span>, <span class="st">"positive"</span>]))</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_test, y_pred_tfidf))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A good interpretation should note that TF-IDF combined with logistic regression is often a strong baseline for sentiment classification. It is relatively interpretable because features correspond to words or phrases, and coefficients can be inspected.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-4.2-train-a-classifier-on-dense-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="task-4.2-train-a-classifier-on-dense-embeddings">Task 4.2 — Train a classifier on dense embeddings</h2>
+</section>
+<section id="solution-8" class="level2">
+<h2 class="anchored" data-anchor-id="solution-8">Solution</h2>
+<div id="f518a08e" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dense_clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>dense_clf.fit(X_train_emb, y_train)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>y_pred_dense <span class="op">=</span> dense_clf.predict(X_test_emb)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>dense_train_time <span class="op">=</span> time.time() <span class="op">-</span> start_time</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>dense_accuracy <span class="op">=</span> accuracy_score(y_test, y_pred_dense)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accuracy:"</span>, <span class="bu">round</span>(dense_accuracy, <span class="dv">3</span>))</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training time:"</span>, <span class="bu">round</span>(dense_train_time, <span class="dv">3</span>), <span class="st">"seconds"</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred_dense, target_names<span class="op">=</span>[<span class="st">"negative"</span>, <span class="st">"positive"</span>]))</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_test, y_pred_dense))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<p>The dense model may perform better, worse, or similarly depending on the dataset size, model, and preprocessing. Generic pretrained embeddings are useful because they encode semantic information, but TF-IDF can be very competitive for supervised sentiment classification. The important learning outcome is not that dense vectors always win, but that they represent texts differently.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="task-4.3-compare-sparse-and-dense-models" class="level2">
+<h2 class="anchored" data-anchor-id="task-4.3-compare-sparse-and-dense-models">Task 4.3 — Compare sparse and dense models</h2>
+</section>
+<section id="solution-9" class="level2">
+<h2 class="anchored" data-anchor-id="solution-9">Solution</h2>
+<div id="4853da8c" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"representation"</span>: [<span class="st">"TF-IDF"</span>, <span class="st">"Dense embeddings"</span>],</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"accuracy"</span>: [tfidf_accuracy, dense_accuracy],</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"training_time_seconds"</span>: [tfidf_train_time, dense_train_time],</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A possible interpretation:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>TF-IDF + logistic regression</th>
+<th>Dense embeddings + logistic regression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Accuracy</td>
+<td>Often strong for sentiment</td>
+<td>Often strong, but not automatically better</td>
+</tr>
+<tr class="even">
+<td>Training time</td>
+<td>Usually fast</td>
+<td>Embedding creation may be slower</td>
+</tr>
+<tr class="odd">
+<td>Feature interpretability</td>
+<td>High</td>
+<td>Lower</td>
+</tr>
+<tr class="even">
+<td>Captures exact words</td>
+<td>Yes</td>
+<td>Less directly</td>
+</tr>
+<tr class="odd">
+<td>Captures semantic similarity</td>
+<td>Limited</td>
+<td>Stronger</td>
+</tr>
+</tbody>
+</table>
+<p>The comparison should emphasize trade-offs rather than a single winner.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="part-5-edge-cases-and-reflection" class="level1">
+<h1>Part 5: Edge cases and reflection <a id="part-5" href=""></a></h1>
+<section id="solution-10" class="level2">
+<h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
+<div id="358c9d2c" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>edge_cases <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"review"</span>: [</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"This movie was sick in the best possible way."</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"This movie made me sick."</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Not bad at all."</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"A masterpiece? Not really."</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The acting was fine, but the story went nowhere."</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"I expected more."</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The plot was unpredictable and surprisingly moving."</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"I would not say it is a bad movie."</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"expected_sentiment"</span>: [</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">"positive"</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">"negative"</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">"positive"</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">"negative"</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">"negative"</span>,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"negative"</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">"positive"</span>,</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"positive_or_ambiguous"</span>,</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>label_map <span class="op">=</span> {<span class="dv">0</span>: <span class="st">"negative"</span>, <span class="dv">1</span>: <span class="st">"positive"</span>}</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>edge_tfidf <span class="op">=</span> tfidf_vectorizer.transform(edge_cases[<span class="st">"review"</span>])</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>edge_cases[<span class="st">"tfidf_prediction"</span>] <span class="op">=</span> pd.Series(tfidf_clf.predict(edge_tfidf)).<span class="bu">map</span>(label_map)</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>edge_emb <span class="op">=</span> embedding_model.encode(</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>    edge_cases[<span class="st">"review"</span>].tolist(),</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    normalize_embeddings<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>edge_cases[<span class="st">"dense_prediction"</span>] <span class="op">=</span> pd.Series(dense_clf.predict(edge_emb)).<span class="bu">map</span>(label_map)</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>edge_cases</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Expected interpretation:</p>
+<ul>
+<li>Negation, irony, slang, and understatement can be difficult.</li>
+<li>TF-IDF may rely heavily on visible sentiment words such as <code>bad</code>, <code>sick</code>, or <code>masterpiece</code>.</li>
+<li>Dense embeddings may better capture some paraphrases, but they can also fail when the sentence is short, ironic, or context-dependent.</li>
+<li>The synthetic examples are useful for qualitative failure analysis, not for measuring general performance.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Session 8 survey">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -98,6 +762,7 @@ Note
 <p>Before you wrap up, please complete the Session 8 survey here: <a href="https://forms.gle/hNuAD8UZvC8KYo4a8" target="_blank">https://forms.gle/hNuAD8UZvC8KYo4a8</a>. Thank you 🙏</p>
 </div>
 </div>
+</section>
 </section>
 
 </main>

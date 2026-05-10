@@ -72,17 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -114,6 +103,17 @@ div.callout-self-service.callout-style-default > .callout-header {
 div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
   content: '🛠️';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 </style>
@@ -221,7 +221,7 @@ Note
 <p>The following extracts the primary learning objectives from the lecture slides. Exercises typically mirror these objectives (covering practical implementation, illustrative cases, or specific exam prep/questions). Objectives that are covered in the exercises exclusively are highlighted.</p>
 </div>
 </div>
-<div id="bde78ccb" class="cell" data-message="false" data-execution_count="1">
+<div id="0ddbc10a" class="cell" data-message="false" data-execution_count="1">
 <section id="the-rise-of-analytics" class="level2">
 <h2 class="anchored" data-anchor-id="the-rise-of-analytics">The rise of analytics</h2>
 <ul>
@@ -246,16 +246,16 @@ Note
 <li><strong>Design</strong> fact and dimension schemata from business questions and operational data.</li>
 </ul>
 </section>
-<section id="regression-i" class="level2">
-<h2 class="anchored" data-anchor-id="regression-i">Regression I</h2>
+<section id="regression-1" class="level2">
+<h2 class="anchored" data-anchor-id="regression-1">Regression 1</h2>
 <ul>
 <li><strong>Explain</strong> the stages of a model-based analytics workflow using linear regression as an example.</li>
 <li><strong>Interpret</strong> linear regression models, including coefficients, OLS estimation, and model evaluation.</li>
 <li><strong>Describe</strong> how regression models are implemented in Python.</li>
 </ul>
 </section>
-<section id="regression-ii" class="level2">
-<h2 class="anchored" data-anchor-id="regression-ii">Regression II</h2>
+<section id="regression-2" class="level2">
+<h2 class="anchored" data-anchor-id="regression-2">Regression 2</h2>
 <ul>
 <li><strong>Explain</strong> how business problems can be formulated as binary classification tasks and modeled using logistic regression.</li>
 <li><strong>Understand</strong> how logistic regression uses a linear predictor and sigmoid function to produce probabilities, apply thresholds, and interpret log-odds and coefficients.</li>
@@ -263,36 +263,27 @@ Note
 <li><strong>Apply</strong> model predictions to decision-making by selecting appropriate thresholds based on business costs and expected value.</li>
 </ul>
 </section>
-<section id="machine-learning-i" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-i">Machine learning I</h2>
+<section id="machine-learning-1" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-1">Machine learning 1</h2>
 <ul>
 <li><strong>Distinguish</strong> between supervised and unsupervised machine learning approaches and explain the generalization problem in supervised machine learning.</li>
 <li><strong>Describe</strong> the workflow of supervised machine learning, including feature engineering, train–test splitting, model training, cross-validation, and evaluation.</li>
 <li><strong>Connect</strong> conceptual machine learning procedures to Python implementations, including preprocessing, model training, and evaluation using scikit-learn. (<em>see exercise</em>)</li>
 </ul>
 </section>
-<section id="machine-learning-ii" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-ii">Machine learning II</h2>
+<section id="machine-learning-2" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-2">Machine learning 2</h2>
 <ul>
 <li><strong>Explain</strong> the core mechanics of selected algorithms, including regularization in linear models, distance-based prediction (k-NN), recursive partitioning (decision trees), ensemble learning (random forests), and margin maximization (SVMs).</li>
 <li><strong>Select and justify</strong> an appropriate modeling approach for a given predictive task, considering data characteristics, performance metrics, and the trade-off between interpretability and predictive power.</li>
 </ul>
 </section>
-<section id="big-data-i" class="level2">
-<h2 class="anchored" data-anchor-id="big-data-i">Big data I</h2>
+<section id="big-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="big-data-1">Big data 1</h2>
 <ul>
 <li><strong>Explain</strong> the characteristics of big data and their implications for analytics workflows.</li>
-<li><strong>Assess</strong> key challenges of big data, including scalability, heterogeneity, and data quality.</li>
-<li><strong>Outline</strong> distributed data architectures and their role in large-scale analytics.</li>
-</ul>
-</section>
-<section id="big-data-ii" class="level2">
-<h2 class="anchored" data-anchor-id="big-data-ii">Big data II</h2>
-<ul>
-<li><strong>Explain</strong> the characteristics and challenges of unstructured data sources (e.g., text, social media, spatial data).</li>
-<li><strong>Acquire and preprocess</strong> large-scale or unstructured data using APIs and appropriate tools in Python.</li>
-<li><strong>Apply</strong> large language models or other scalable methods to extract, classify, or summarize unstructured data.</li>
-<li><strong>Evaluate</strong> the reliability, bias, and limitations of API- and LLM-based analytics workflows.</li>
+<li><strong>Compare</strong> data warehouse, data lake, and logical data warehouse architectures.</li>
+<li><strong>Describe</strong> the text analytics pipeline from preprocessing to representation and modeling.</li>
 </ul>
 </section>
 <section id="analytics-in-organizations" class="level2">

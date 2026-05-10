@@ -129,17 +129,6 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-confidential.callout {
   border-left-color: #dc3545;
 }
@@ -149,6 +138,17 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -257,7 +257,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </section>
 <section id="exercises-setup-for-jupyter-notebooks" class="level2">
 <h2 class="anchored" data-anchor-id="exercises-setup-for-jupyter-notebooks">Exercises: Setup for Jupyter notebooks</h2>
-<p>Installation of JupyterLab in venv:</p>
+<p>Installation of JupyterLab in <code>venv</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install python3 python3-pip python3-virtualenv</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv ~/venvs/jupyterlab</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/venvs/jupyterlab/bin/activate</span>
@@ -277,7 +277,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <li>The focus is on <strong>dataset examples from a business-context</strong>. To ensure a good fit, we aim to avoid typical example datasets from the areas of medicine, climate, or political and societal phenomena. Instead, we rely on business and finance example, and create synthetic dataset to illustrate realistic business analytics applications. There are a number of important skills for which public datasets (typically used in statistics or data science courses) are unsuitable. For instance, data preparation, integration and cleansing is often particularly challenging in business data, compared to cleanly controlled survey data. Similarly, examples like recommender systems show why it can be reasonable to focus solely on prediction, putting less emphasis on typical concerns raised by statistical inference (interpretation of coefficients, or generalization). In addition, business data raises particular upstream considerations, e.g., related to the typical data sources and features that should be accessed and incorporated or even data that should be recorded in the first place, and downstream deployment considerations, e.g., related to compliant use of employee analytics, or bias in algorithmic decision systems.</li>
 <li>The focus is on <strong>coding analytical notebooks</strong>. Reasons: advanced analytics, transferability to graphical tools, rich context, and LLM support.</li>
 </ul>
-<p>TBD: If analytical decisions should support particular actions, a typical task may be related to handling identifiers: removing them for the model training, but adding them again when predictions were made? -&gt; e.g., logistic regression and default prediction? TBD: Prepare for “cognitive translation” (between Python code, formulas, different outputs, conceptual procedures like OLS/Max.Likelihood)</p>
+<p>TBD: If analytical decisions should support particular actions, a typical task may be related to handling identifiers: removing them for the model training, but adding them again when predictions were made? -&gt; e.g., logistic regression and default prediction? TBD: Prepare for “cognitive translation” (between Python code, formulas, different outputs, conceptual procedures like OLS/Max. Likelihood)</p>
 <p>Recommendations for building computational notebooks in Jupyter: https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007007</p>
 <p>Table illustrating case examples and insights (specific to <em>business analytics</em>, and in line with the whole CRISP-DM process):</p>
 <table class="caption-top table">
@@ -348,8 +348,8 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <li><a href="https://github.com/kuleshov/cornell-cs5785-2025-applied-ml">Materials</a></li>
 <li><a href="https://www.youtube.com/playlist?list=PL2UML_KCiC0UlY7iCQDSiGDMovaupqc83">lecture videos</a></li>
 <li><a href="https://courses.cs.washington.edu/courses/cse446/26sp/schedule/">University of Washington: Machine Learning</a> (contents gradually revealed)</li>
-<li><a href="https://inria.github.io/scikit-learn-mooc/index.html">scikit learn course</a> (??)</li>
-<li><a href="https://github.com/microsoft/ML-For-Beginners?tab=readme-ov-file">Microsoft: ML for begnners</a> (??)</li>
+<li><a href="https://inria.github.io/scikit-learn-mooc/index.html">scikit-learn course</a> (??)</li>
+<li><a href="https://github.com/microsoft/ML-For-Beginners?tab=readme-ov-file">Microsoft: ML for beginners</a> (??)</li>
 </ul>
 </section>
 <section id="books" class="level2">
@@ -361,7 +361,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <section id="students-setup-for-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="students-setup-for-exercises">Students: Setup for exercises</h2>
 <ul>
-<li>Students: TBD (GitHub/jupyter notebooks)</li>
+<li>Students: TBD (GitHub/Jupyter notebooks)</li>
 </ul>
 
 

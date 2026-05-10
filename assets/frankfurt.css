@@ -282,3 +282,84 @@ body,
   font-size: 0.9em;   /* increase as needed (1.3–1.6 works well) */
   line-height: 1.4;
 }
+
+
+.design-card {
+  border: 2px solid #ddd;
+  border-radius: 14px;
+  padding: 1.1em;
+  height: 100%;
+  background: #fafafa;
+}
+
+.design-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.35em;
+}
+
+.warning-box {
+  border-left: 5px solid #c0392b;
+  padding: 0.5em 0.8em;
+  background: #fff3f3;
+  margin-top: 0.8em;
+}
+
+.highlight-box {
+  border-left: 5px solid #2c7a7b;
+  padding: 0.5em 0.8em;
+  background: #eefafa;
+  margin-top: 0.8em;
+}
+
+.stretch-cards {
+  align-items: stretch;
+}
+
+.stretch-cards > .column {
+  display: flex;
+}
+
+.stretch-cards .design-card {
+  flex: 1;
+  height: auto;
+}
+
+.reveal .tall-code-box div.sourceCode {
+  max-height: 62vh !important;
+}
+
+.reveal .tall-code-box pre.sourceCode {
+  max-height: 62vh !important;
+  overflow-y: auto !important;
+}
+
+.reveal .tall-code-box pre.sourceCode code {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  display: block;
+  font-size: 0.75em;
+  line-height: 1.25;
+}
+
+.searchable-svg svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: Arial, sans-serif;
+}
+
+.searchable-svg svg text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  fill: #111;
+}
+
+.searchable-svg svg .group-title,
+.searchable-svg svg .heading,
+.searchable-svg svg .title {
+  font-size: 18px;
+  font-weight: 700;
+}

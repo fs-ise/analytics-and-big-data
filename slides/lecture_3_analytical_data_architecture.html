@@ -221,17 +221,6 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -252,6 +241,17 @@
   div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
     content: '🔒';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -420,7 +420,7 @@
 <p>The term Data Warehouse was coined by <span class="citation" data-cites="Inmon1995">Inmon (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, who defined it as follows:</p>
 <p><br></p>
 <blockquote>
-<p><strong>“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision making process.”</strong></p>
+<p><strong>“A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision-making process.”</strong></p>
 </blockquote>
 <p><br></p>
 <p>He defined the terms in the sentence as follows:</p>
@@ -535,12 +535,12 @@
 <tr class="even">
 <td>Data design</td>
 <td>Optimized</td>
-<td>Generalistic</td>
+<td>Generalist</td>
 </tr>
 <tr class="odd">
 <td>Data volume</td>
 <td>Gigabyte scale</td>
-<td>Terabytescale</td>
+<td>Terabyte scale</td>
 </tr>
 <tr class="even">
 <td>Origin</td>
@@ -1048,7 +1048,7 @@ It is <strong>subject-oriented, integrated, time-variant, and non-volatile</stro
 <li>Common schemata: <strong>star</strong> (simple, fast), <strong>snowflake</strong> (normalized), <strong>galaxy</strong> (multiple fact tables)</li>
 </ul></li>
 <li><p><strong>OLAP systems</strong> enable interactive, multidimensional analysis: operations such as <strong>slice, dice, drill-down, and roll-up</strong> support flexible exploration of aggregated data.</p></li>
-<li><p>Overall, analytical data architecture transforms <strong>operational data into structured, queryable information</strong> to support reporting, dashboards, and decision-making.</p></li>
+<li><p>Overall, analytical data architecture transforms <strong>operational data into structured information that can be efficiently queried</strong> to support reporting, dashboards, and decision-making.</p></li>
 </ul>
 </section>
 <section id="survey-session-3" class="slide level2" data-state="hide-menubar">

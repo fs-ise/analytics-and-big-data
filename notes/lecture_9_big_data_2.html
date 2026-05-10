@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes: Session 9: Big Data II – Analytics &amp; Big Data</title>
+<title>Notes: Session 9: Big data 2 – Analytics &amp; Big Data</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,28 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -114,6 +92,28 @@ div.callout-self-service.callout-style-default > .callout-header {
 div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
   content: '🛠️';
+  background-image: none;
+}
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 </style>
@@ -191,7 +191,7 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes: Session 9: Big Data II</h1>
+<h1 class="title">Notes: Session 9: Big data 2</h1>
 </div>
 
 
@@ -208,6 +208,7 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
+<p>2026-05-04: 80 min</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -237,11 +238,41 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>TODO</p>
+<ul>
+<li>Clarify explanations of RNN and transformers</li>
+<li>Extend: example of backpropagation (in class - Note: when using the <a href="http://hmkcode.github.io/ai/backpropagation-step-by-step">http://hmkcode.github.io/ai/backpropagation-step-by-step</a> example - fix typos!)</li>
+<li>Fix inconsistent notation (learning rate: a and )</li>
+<li>Glossary (inductive bias, …)
+<ul>
+<li>The inductive bias of a neural network is the set of assumptions built into the model that shape what kinds of patterns it is likely to learn from data.</li>
+</ul></li>
+</ul>
 <p>Neural Networks: https://www.youtube.com/watch?v=aircAruvnKk https://www.youtube.com/watch?v=IHZwWFHWa-w https://www.youtube.com/watch?v=Ilg3gGewQ5U</p>
+<p>Good MIT intro: https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L1.pdf</p>
+<p>https://aaubs.github.io/ds23/en/m3/01_intro-to-traditional-dl/</p>
+<p>Maybe: https://github.com/microsoft/ai-for-beginners</p>
+<p>Check: https://playground.tensorflow.org/</p>
+<p>TODO: p.&nbsp;29: binary logistic regression as a 1-layer network: https://web.stanford.edu/~jurafsky/slp3/slides/nn25aug.pdf</p>
+<p>Calculate backpropagation: - Berkeley https://inst.eecs.berkeley.edu/~cs188/archive/fa24/assets/discussions/disc11-examprep-sols.pdf - Stanford https://cs230.stanford.edu/winter2020/section3_exercises.pdf - https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/</p>
+<p>https://www.ismll.uni-hildesheim.de/lehre/ml-19w/exercises/tutorial07.pdf</p>
+<p>TODO: The “simple calculation example” in the ABD slides (PR) is useful to show the actual math. The neural networks videos (https://www.youtube.com/watch?v=aircAruvnKk) explain the effect more clearly (of gradient vector and “cost nudges”). Ideally, students should have a solid intuition, seen the math, and know when (not) to use neural networks.</p>
 <p>Comprehensive resource (formal specification and implementation): https://d2l.ai/index.html</p>
+<p>Interactive js visualization of NNs: https://github.com/hmkcode/netflow.js</p>
+<p>Insight from https://developers.google.com/machine-learning/crash-course/neural-networks/interactive-exercises -&gt; even if all inputs are 0, the output can be non-zero. (due to biases)</p>
 <p>TBD/whether and where to cover: Acquire and preprocess large-scale or unstructured data using APIs and appropriate tools in Python. Apply large language models or other scalable methods to extract, classify, or summarize unstructured data. TBD: API Keys?!</p>
 </div>
 </div>
+<p><img src="../images/neural_networks_focus.png" class="img-fluid"></p>
+<section id="introductory-comments" class="level2">
+<h2 class="anchored" data-anchor-id="introductory-comments">Introductory comments</h2>
+<p>NN : very inspiring class of models and algorithms, which model how nature solves particular problems. NN: brain, but also: genetic algorithms, or ant algorithms for search problems.</p>
+<p>Maybe start with something like: https://web.stanford.edu/~jurafsky/slp3/slides/nn25aug.pdf</p>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>2026-05-04: 80 min</p>
+<p>Explanation: https://www.youtube.com/watch?v=ru9dXF04iSE&amp;t=10s -&gt; tasks/learnings are not clearly evident/articulated</p>
+</section>
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
 <p>TODO: ask for areas where additional practice material would be helpful; questions for the exam (prepare for next session)</p>

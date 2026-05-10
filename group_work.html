@@ -110,28 +110,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -152,6 +130,28 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 </style>
@@ -263,12 +263,12 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <ul>
 <li>The target group size is 4 participants.</li>
 <li>We will form groups during class sessions.</li>
-<li>If you are not present, you must send me an email so that I can assign you to a group.</li>
+<li>If you are not present, you must email me so that I can assign you to a group.</li>
 <li>We will select two groups with 5 participants using a fair and transparent procedure. Groups with 5 participants are expected to submit a more comprehensive case (+25%).</li>
 <li>Once your group is formed, you should create or join your group in the <a href="https://frankfurtschool.instructure.com/courses/19780/assignments/197163">Canvas assignment</a>.</li>
 </ul>
 <!--
-- If you have formed a group, please **send me an email** with the names and email addresses of all group members.
+- If you have formed a group, please **email me** with the names and email addresses of all group members.
 - Groups of 4 will be **automatically accepted**.
 - If you are not yet in a group, you can still participate: the **allocation of remaining students will take place during a session** (not after the deadline).
 - If the total number of students does not divide evenly into groups of 4, some groups may have **3 or 5 members**, determined in a **fair and transparent way**.
@@ -439,7 +439,7 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 <li>Includes explanations in Markdown</li>
 <li>Is fully executable and reproducible</li>
 </ul></li>
-<li><p><strong>Report (max 15 pages)</strong></p>
+<li><p><strong>Report (max 15 pages; including title page and references)</strong></p>
 <p><strong>Section 1: Case package</strong></p>
 <ul>
 <li>Business context and motivation</li>
@@ -537,7 +537,7 @@ TBD: share repository/directory and be prepared to answer questions on the analy
 <section id="template" class="level3">
 <h3 class="anchored" data-anchor-id="template">Template</h3>
 <ul>
-<li><a href="assets/report_template.docx">Report template</a></li>
+<li><a href="https://github.com/fs-ise/analytics-and-big-data/raw/refs/heads/main/assets/report_template.docx">Report template</a></li>
 </ul>
 <!--
 https://monroeuniversity.libguides.com/APA
