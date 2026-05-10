@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-1.1-load-and-inspect-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="task-1.1-load-and-inspect-the-dataset">Task 1.1 — Load and inspect the dataset</h2>
 <p>Load the dataset and inspect the first rows. Also run statistics on the <code>sentiment</code> column. Then answer the questions below.</p>
-<div id="bf5c1d00" class="cell" data-execution_count="1">
+<div id="dbfebff0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the prepared IMDB sample</span></span>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-1.2-prepare-text-labels-and-a-train-test-split" class="level2">
 <h2 class="anchored" data-anchor-id="task-1.2-prepare-text-labels-and-a-train-test-split">Task 1.2 — Prepare text, labels, and a train-test split</h2>
 <p>Create a lightly cleaned text column (use regex replacement to remove html <code>&lt;br&gt;</code> tags, and multiple spaces), create a numeric target variable, and split the data into training and test data.</p>
-<div id="7f62798e" class="cell" data-execution_count="3">
+<div id="2b2c25ab" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Light text cleaning</span></span>
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-2.1-create-bag-of-words-and-tf-idf-matrices" class="level2">
 <h2 class="anchored" data-anchor-id="task-2.1-create-bag-of-words-and-tf-idf-matrices">Task 2.1 — Create Bag-of-Words and TF-IDF matrices</h2>
 <p>Create a Bag-of-Words matrix and a TF-IDF matrix. Inspect the matrix shapes and calculate the sparsity of the TF-IDF matrix.</p>
-<div id="607c820b" class="cell" data-execution_count="5">
+<div id="58ef0e32" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer, TfidfVectorizer</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Bag-of-Words features</span></span>
@@ -267,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-2.2-inspect-sparse-features-for-one-review" class="level2">
 <h2 class="anchored" data-anchor-id="task-2.2-inspect-sparse-features-for-one-review">Task 2.2 — Inspect sparse features for one review</h2>
 <p>Select one review from the training data and inspect the highest TF-IDF features.</p>
-<div id="afb56ca2" class="cell" data-execution_count="7">
+<div id="a6f231f0" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select one review</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># review_id = 0</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -290,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-2.3-find-similar-reviews-using-tf-idf" class="level2">
 <h2 class="anchored" data-anchor-id="task-2.3-find-similar-reviews-using-tf-idf">Task 2.3 — Find similar reviews using TF-IDF</h2>
 <p>Use cosine similarity to find the reviews most similar to a selected query review.</p>
-<div id="4f75662b" class="cell" data-execution_count="9">
+<div id="832d8f1a" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose a query review from the training data</span></span>
@@ -322,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-3.1-create-sentence-embeddings" class="level2">
 <h2 class="anchored" data-anchor-id="task-3.1-create-sentence-embeddings">Task 3.1 — Create sentence embeddings</h2>
 <p>Create dense embeddings for the training and test reviews. Use a small and efficient sentence-transformer model.</p>
-<div id="3fcbdc2d" class="cell" data-execution_count="11">
+<div id="173d6df5" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If needed, install once in the Codespace terminal:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pip install sentence-transformers</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -350,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-3.2-find-similar-reviews-using-dense-embeddings" class="level2">
 <h2 class="anchored" data-anchor-id="task-3.2-find-similar-reviews-using-dense-embeddings">Task 3.2 — Find similar reviews using dense embeddings</h2>
 <p>Repeat the similarity search from Task 2.3, but now use dense embeddings.</p>
-<div id="2052ca7b" class="cell" data-execution_count="13">
+<div id="094385ba" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># query_id = 0</span></span>
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="task-3.3-visualize-dense-embeddings">Task 3.3 — Visualize dense embeddings</h2>
 <p>Reduce the dense embeddings to two dimensions and create a scatter plot. Color the points by sentiment.</p>
 <p>Use a sample if the dataset is large.</p>
-<div id="844582d0" class="cell" data-execution_count="15">
+<div id="6ea458d3" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -405,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-4.1-train-a-classifier-on-tf-idf-features" class="level2">
 <h2 class="anchored" data-anchor-id="task-4.1-train-a-classifier-on-tf-idf-features">Task 4.1 — Train a classifier on TF-IDF features</h2>
 <p>Train a logistic regression model using TF-IDF features. Report accuracy, the classification report, and training time.</p>
-<div id="458fe8a5" class="cell" data-execution_count="17">
+<div id="0e77b927" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -437,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-4.2-train-a-classifier-on-dense-embeddings" class="level2">
 <h2 class="anchored" data-anchor-id="task-4.2-train-a-classifier-on-dense-embeddings">Task 4.2 — Train a classifier on dense embeddings</h2>
 <p>Train the same type of classifier using dense embeddings. Report the same metrics.</p>
-<div id="807e52e8" class="cell" data-execution_count="19">
+<div id="0bc6f4a6" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start timer</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -462,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-4.3-compare-sparse-and-dense-models" class="level2">
 <h2 class="anchored" data-anchor-id="task-4.3-compare-sparse-and-dense-models">Task 4.3 — Compare sparse and dense models</h2>
 <p>Create a small comparison table.</p>
-<div id="e6171076" class="cell" data-execution_count="21">
+<div id="c63f59ec" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># results = pd.DataFrame(...)</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -516,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Part 5: Edge cases and reflection <a id="part-5" href=""></a></h1>
 <p>We now test how the models behave on short, manually created edge cases. These cases are not meant to be a representative dataset. They are a stress test that helps us discuss robustness, ambiguity, and generalization.</p>
 <p>Create a small synthetic test set with ambiguous or difficult examples. Apply both models and compare predictions.</p>
-<div id="e1521221" class="cell" data-execution_count="23">
+<div id="9042c662" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>edge_cases <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: [</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"This movie was sick in the best possible way."</span>,</span>

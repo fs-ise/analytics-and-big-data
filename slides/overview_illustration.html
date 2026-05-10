@@ -10,8 +10,7 @@
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
-  <meta name="dcterms.date" content="2026-05-11">
-  <title>Analytics &amp; Big Data</title>
+  <title>Analytics &amp; Big Data – overview_illustration</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -130,6 +129,17 @@
     }
   </style>
   <style>
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -139,17 +149,6 @@
   div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
     content: '🔒';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
     background-image: none;
   }
   div.callout-objective.callout {
@@ -163,15 +162,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -184,32 +183,9 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="title-slide slide level1 center" data-state="hide-menubar">
-  <h1>Analytics &amp; Big Data</h1>
 
-  <p></p> Session 11: Integration and exam preparation <p></p>
+<section class="slide level2">
 
-    <p class="author">Prof.&nbsp;Dr.&nbsp;Gerit Wagner</p>
-    <p class="date">(2026-05-11)</p>
-
-</section>
-<section id="agenda" class="slide level2" data-menu-title="Learning objectives" data-state="hide-menubar">
-<h2>Agenda</h2>
-<p><br><br><br><br><br></p>
-<ul>
-<li>Synthesis and reflection</li>
-<li>Course evaluations</li>
-<li>Test exam</li>
-<li>Q&amp;A</li>
-</ul>
-</section>
-<section>
-<section id="synthesis-and-reflection" class="title-slide slide level1 center" data-stack-name="Synthesis">
-<h1>Synthesis and reflection</h1>
-
-</section>
-<section id="synthesis" class="slide level2">
-<h2>Synthesis</h2>
 <div class="course-overview-diagram">
 <style>
   .course-overview-diagram svg {
@@ -293,106 +269,9 @@
 <circle class="fragment" data-fragment-index="5" cx="414" cy="398" r="6.2" fill="#ff111c"></circle><circle class="fragment" data-fragment-index="3" cx="973" cy="398" r="6.2" fill="#0b851a"></circle><circle class="fragment" data-fragment-index="3" cx="984" cy="602" r="6.2" fill="#0b851a"></circle><circle class="fragment" data-fragment-index="4" cx="620" cy="742" r="6.2" fill="#ff7413"></circle><circle class="fragment" data-fragment-index="4" cx="418" cy="642" r="6.2" fill="#ff7413"></circle><circle class="fragment" data-fragment-index="4" cx="700" cy="771" r="6.2" fill="#7a2cff"></circle><circle class="fragment" data-fragment-index="4" cx="772" cy="742" r="6.2" fill="#0e8fa0"></circle>
 </svg>
 </div>
-</section>
-<section id="reflection" class="slide level2">
-<h2>Reflection</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br> <img data-src="../images/course_overview.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
-</div><div class="column" style="font-size: 0.75em;">
-<p><br><br><br><br><br> Based on the overview figure, reflect on the course as a whole:</p>
-<ol type="1">
-<li><p><strong>Where did you learn the most?</strong><br>
-Which part of the course overview represents the largest learning gain for you?</p></li>
-<li><p><strong>What was most interesting?</strong><br>
-Which topic, method, or application would you like to explore further?</p></li>
-<li><p><strong>What did you already know?</strong><br>
-Which concepts, tools, or perspectives were familiar to you before the course?</p></li>
-<li><p><strong>Where do you still feel uncertain?</strong><br>
-Which part of the overview would you find hardest to explain to someone else?</p></li>
-<li><p><strong>Where do you see the biggest gaps in the contents?</strong><br>
-Which topics should be extended, deepened, or added in a future version of the course?</p></li>
-</ol>
-</div></div>
-</section></section>
-<section>
-<section id="course-evaluations" class="title-slide slide level1 center" data-stack-name="Evaluations">
-<h1>Course evaluations</h1>
-
-</section>
-<section id="eval-slide" class="slide level2">
-<h2>Course evaluations</h2>
-<p>Your feedback helps improve the course, materials, and learning experience.</p>
-<ul>
-<li>Please take <strong>10 minutes</strong> to complete the evaluation.</li>
-<li>Your feedback is <strong>anonymous</strong>. Please be specific, honest, and constructive.</li>
-</ul>
-<p><strong>Where to find the evaluation</strong></p>
-<ul>
-<li>In the <strong>email link</strong> you received</li>
-<li>In <strong>Canvas</strong> as a pop-up</li>
-<li>In the Canvas course menu: <strong>Course Evaluation</strong></li>
-</ul>
-<p><strong>Thank you for taking the time to participate!</strong></p>
-</section></section>
-<section>
-<section id="test-exam" class="title-slide slide level1 center" data-stack-name="Exam">
-<h1>Test exam</h1>
-
-</section>
-<section id="test-exam-1" class="slide level2">
-<h2>Test exam</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/test_exam.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
-</figure>
-</div>
-<p>Available for download <a href="https://raw.githubusercontent.com/fs-ise/analytics-and-big-data/refs/heads/main/assets/test_exam.pdf">here</a>.</p>
-</section></section>
-<section>
-<section id="qa" class="title-slide slide level1 center" data-stack-name="Q&amp;A">
-<h1>Q&amp;A</h1>
-
-</section>
-<section id="questions" class="slide level2">
-<h2>Questions</h2>
-<p><strong>Anonymous 2320d</strong> (2026-05-04, 4:41pm)</p>
-<ul>
-<li>How will the exam be structured? Free text and multiple choice?</li>
-<li>How will the points be distributed?</li>
-<li>Will the exam mainly focus on the key take aways from the slides and the key concepts? Is edge knowledge from the slides required?</li>
-</ul>
-</section>
-<section id="good-luck-with-the-exam" class="slide level2" data-state="hide-menubar">
-<h2>Good luck with the exam!</h2>
-<p><br></p>
-<p><strong>You are well prepared if you can explain the main ideas, connect them across sessions, and apply them to concrete examples.</strong></p>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Before the exam</strong></p>
-<ul>
-<li>Revisit the course overview</li>
-<li>Review key concepts and takeaways</li>
-<li>Practice with the test exam</li>
-<li>Focus on understanding, not memorization</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Stay in touch</strong></p>
-<ul>
-<li><p>Interested in a thesis topic?<br>
-<a href="TODO">Bachelor and master theses</a></p></li>
-<li><p>Questions after the course?<br>
-<a href="TODO">Contact / office hours</a></p></li>
-<li><p>Course materials<br>
-<a href="TODO">Canvas course page</a></p></li>
-</ul>
-</div></div>
-<p><br></p>
-<p><strong>Good luck — and thank you for participating in the course!</strong></p>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
