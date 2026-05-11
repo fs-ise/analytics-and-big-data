@@ -337,6 +337,8 @@ This slide connects the maturity-model idea to responsible analytics. Analytics 
 
 Analytics creates value only within legitimate organizational, ethical, and legal boundaries.
 
+<br>
+
 ::: columns
 ::: {.column width="50%"}
 **Possible boundaries**
@@ -362,11 +364,9 @@ Analytics creates value only within legitimate organizational, ethical, and lega
 :::
 :::
 
-::: callout-tip
-A useful deployment rule: define **red lines**, **review zones**, and **routine-use zones** before the system goes live.
-:::
-
 ::: notes
+A useful deployment rule: define **red lines**, **review zones**, and **routine-use zones** before the system goes live.
+
 This slide should slow down the “more analytics is always better” assumption. It also prepares the transition to explainability and human oversight: if boundaries exist, someone must be able to recognize when they are being crossed.
 
 See "Move fast and break things" mentality
@@ -533,9 +533,10 @@ TBD: situational overrides (emergencies?)
 :::
 
 ::: {.column width="40%"}
-<br><br>
-
 **Feature importance**
+
+Mostly static analysis of the trained model and data; often post-hoc, though some models provide importance intrinsically.
+Usually provides a global view: which variables matter most across the model or dataset.
 :::
 
 ::::
@@ -549,9 +550,11 @@ TBD: situational overrides (emergencies?)
 :::
 
 ::: {.column width="40%"}
-<br><br>
+<br>
 
 **Counterfactual explanations**
+
+Post-hoc explanation based on minimal feature changes that would alter the prediction.
 :::
 
 ::::
@@ -565,9 +568,11 @@ TBD: situational overrides (emergencies?)
 :::
 
 ::: {.column width="40%"}
-<br><br>
+<br>
 
 **Interactive explanation**
+
+Post-hoc, user-driven exploration combining static explanations with what-if changes to input features.
 :::
 
 ::::
