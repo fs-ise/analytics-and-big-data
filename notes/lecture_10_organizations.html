@@ -72,15 +72,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
 }
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-objective.callout {
@@ -94,15 +94,15 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
 }
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -208,7 +208,14 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
+<p>2026-05-12: 85 min</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 37%">
+<col style="width: 46%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Time (min)</th>
@@ -219,42 +226,78 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </thead>
 <tbody>
 <tr class="odd">
-<td>0–90</td>
-<td>90</td>
-<td>TODO</td>
+<td>0–5</td>
+<td>5</td>
+<td>Introduction</td>
 <td></td>
+</tr>
+<tr class="even">
+<td>5–20</td>
+<td>15</td>
+<td>Industry-level perspectives</td>
+<td>Müller et al.&nbsp;2018; Oesterreich et al.&nbsp;2022</td>
+</tr>
+<tr class="odd">
+<td>20–50</td>
+<td>30</td>
+<td>Organizational perspectives</td>
+<td>Kunz et al.&nbsp;2025; TDWI Analytics Maturity Model</td>
+</tr>
+<tr class="even">
+<td>50–80</td>
+<td>30</td>
+<td>Responsible deployment and explainability</td>
+<td>NIST AI RMF; GDPR; EU AI Act</td>
+</tr>
+<tr class="odd">
+<td>80–90</td>
+<td>10</td>
+<td>People perspective</td>
+<td>BCG AI Radar 2025; outlook discussion</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO</p>
+<section id="how-machine-learning-changes-value-creation" class="level3">
+<h3 class="anchored" data-anchor-id="how-machine-learning-changes-value-creation">How machine learning changes value creation</h3>
+<p>What would you expect, how could ML affect the value creation process?</p>
+</section>
+<section id="people" class="level3">
+<h3 class="anchored" data-anchor-id="people">People</h3>
+<p>TODO: Last slide: discussion prompt on the evolving role of people in analytics.</p>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>2026-05-12: 75 min (with two groups)</p>
+<p>LO: contextualize the use of analytics in organizations, with respect to the organizational strategy, the value creation process, the specific analytical questions, …</p>
+<p>TODO: include examples like ride hailing (Uber), Airbnb, or marketplaces like Amazon/ebay</p>
+<p>TODO: add instructions on how to share results (e-mail/teams)</p>
+<p>KPI/alignment framework: The strategy map approach seems to be a relatively good fit: Peppard, J., Ward, J., &amp; Daniel, E. (2007). Managing the realization of business benefits from IT investments. MIS Quarterly Executive, 6(1), 1-11. - https://oro.open.ac.uk/11227/2/Peppard-Ward-Daniel_BMc_edits_JW230307.pdf https://en.wikipedia.org/wiki/Strategy_map</p>
+<p>Provide specific materials as a starting point, such as the <a href="https://medium.com/developersglobal/top-20-tech-blogs-every-developer-should-follow-598ff45b477d">Medium engineering blogs</a> - such as Netflix, LinkedIn, (select: data analytics and firm specific)</p>
+<p>Examples:</p>
+<ul>
+<li><a href="https://netflixtechblog.com/artwork-personalization-c589f074ad76">Netflix: Thumbnail personalization</a></li>
+<li><a href="https://airbnb.tech/">Airbnb.tech</a></li>
+<li><a href="https://www.uber.com/de/en/blog/engineering/">Uber engineering</a></li>
+<li><a href="https://engineering.atspotify.com/">Spotify engineering</a></li>
+<li><a href="https://www.linkedin.com/blog/engineering">LinkedIn engineering blog</a></li>
+<li><a href="https://engineering.fb.com/">Engineering at Meta</a></li>
+<li><a href="https://careersatdoordash.com/career-areas/engineering/">DoorDash engineering</a></li>
+<li><a href="https://shopify.engineering/">Shopify engineering blog</a></li>
+</ul>
+<p>Note: removed Capital One from the list of examples (the example would focus primarily on lending decisions, which were already covered before in the lecture)</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="additional-materials" class="level2">
+<h2 class="anchored" data-anchor-id="additional-materials">Additional materials</h2>
 <p>Ethics/Fairness: https://developers.google.com/machine-learning/crash-course/fairness</p>
 <p>https://github.com/cs124/labs/blob/main/Lab2_LogisticRegression_Solutions.md#ethics-discussion</p>
-<p>Cover XAI (decision trees, etc.)</p>
 <p>Deployment -&gt; AI for generating and understanding analytical code. https://www.datacamp.com/de/tutorial/one-hot-encoding-python-tutorial - see “AI explain code” https://www.datacamp.com/datalab https://www.datacamp.com/datalab/ai</p>
-<pre><code>https://pyoneer.ai/
-
--&gt; connect to AGI debates (jagged frontier...), which unlocks generation, but places new burdens on validation and testing
-
-
-Reliability: monitoring/ensuring that the data input remains stable/in-line with the model (e.g., one-hot encoded variables with the specific levels for regression)
+<p>-&gt; connect to AGI debates (jagged frontier…), which unlocks generation, but places new burdens on validation and testing</p>
+<p>Reliability: monitoring/ensuring that the data input remains stable/in-line with the model (e.g., one-hot encoded variables with the specific levels for regression)</p>
+<p>Fairness: https://developers.google.com/machine-learning/crash-course/fairness https://rodneybrooks.com/rodney-brooks-three-laws-of-artificial-intelligence</p>
 
 
-Fairness: https://developers.google.com/machine-learning/crash-course/fairness
-https://rodneybrooks.com/rodney-brooks-three-laws-of-artificial-intelligence</code></pre>
-</div>
-</div>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

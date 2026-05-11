@@ -107,17 +107,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -127,17 +116,6 @@ div.callout-objective.callout-style-default > .callout-header {
 div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
   content: '🎯';
-  background-image: none;
-}
-div.callout-resource.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-resource.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
   background-image: none;
 }
 div.callout-self-service.callout {
@@ -151,8 +129,59 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
   content: '🛠️';
   background-image: none;
 }
+div.callout-resource.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-resource.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
+  background-image: none;
+}
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -283,12 +312,21 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 </div>
 <section id="part-1-backpropagation-step-by-step" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-backpropagation-step-by-step">Part 1: Backpropagation step by step <a id="part-1"></a></h2>
+<div class="direction">
 <p>Go to <a href="http://hmkcode.github.io/ai/backpropagation-step-by-step">http://hmkcode.github.io/ai/backpropagation-step-by-step</a> and study the backpropagation algorithm in one iteration.</p>
 <p>Note that for simplification, the example uses no activation function.</p>
-<div style="page-break-after: always;"></div>
+</div>
 </section>
+<section id="solution" class="level2 sol">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<p>See <a href="http://hmkcode.github.io/ai/backpropagation-step-by-step">http://hmkcode.github.io/ai/backpropagation-step-by-step</a>.</p>
+</section>
+<div class="direction">
+<div style="page-break-after: always;"></div>
+</div>
 <section id="part-2-interactive-neural-networks" class="level2">
 <h2 class="anchored" data-anchor-id="part-2-interactive-neural-networks">Part 2: Interactive neural networks <a id="part-2"></a></h2>
+<div class="direction">
 <p>Go to the <a href="https://playground.tensorflow.org/">Tensorflow Playground</a> and experiment with classification problems. Your goal is to achieve a low test loss with the simplest possible model.</p>
 <p>In the TensorFlow Playground, select each of the following datasets on the left-hand side:</p>
 <ol type="1">
@@ -319,10 +357,66 @@ div.callout-self-service.callout-style-default .callout-icon::before, div.callou
 <li>why the dataset required a simpler or more complex neural network design</li>
 <li>how the architecture affected the model’s ability to capture the non-linear pattern</li>
 </ul>
-<div style="page-break-after: always;"></div>
+</div>
 </section>
+<section id="solution-1" class="level2 sol">
+<h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
+<p>There is not one single correct solution for this task. The TensorFlow Playground uses random initialization, and the final test loss can vary slightly across runs. The goal is therefore not to reproduce one exact value, but to find a model that is as simple as possible while still capturing the structure of the dataset.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th style="text-align: right;">Input features</th>
+<th style="text-align: right;">Hidden layers</th>
+<th style="text-align: right;">Neurons per layer</th>
+<th>Activation function</th>
+<th style="text-align: right;">Example final test loss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Two clusters</td>
+<td style="text-align: right;"><span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">none</td>
+<td>Linear output only</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td>Circle</td>
+<td style="text-align: right;"><span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(x_1^2\)</span>, <span class="math inline">\(x_2^2\)</span></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3–4</td>
+<td>Tanh or ReLU</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td>Spiral</td>
+<td style="text-align: right;"><span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">3–4</td>
+<td style="text-align: right;">6–8 each</td>
+<td>ReLU</td>
+<td style="text-align: right;">approx. 0.03–0.10</td>
+</tr>
+</tbody>
+</table>
+<p>For the <strong>two-clusters dataset</strong>, the classes are almost linearly separable. This means that the model does not need hidden layers. A simple linear classifier using <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> can already draw an appropriate decision boundary. Adding more layers or many neurons may still work, but it is unnecessary and makes the model more complex than needed.</p>
+<p>For the <strong>circle dataset</strong>, a small non-linear model already works well. The pattern cannot be separated by a straight line, so a model without hidden layers is usually not sufficient when only <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are used. Adding squared input features such as <span class="math inline">\(x_1^2\)</span> and <span class="math inline">\(x_2^2\)</span> makes the circular structure easier to learn. With these features, one hidden layer with only a few neurons is often enough.</p>
+<p>For the <strong>spiral dataset</strong>, the decision boundary is much more complex. The classes are intertwined in a curved, non-linear pattern, so a simple linear model or a very small hidden layer cannot capture the structure well. Several hidden layers with multiple neurons are usually needed. The ReLU activation function works particularly well because it allowed the network to combine several local linear boundaries into a more flexible non-linear decision surface.</p>
+<p>Overall, the experiments show that the required network architecture depends strongly on the complexity of the dataset. Simple, linearly separable patterns can be learned with very small models, while strongly non-linear patterns require additional hidden layers, more neurons, and suitable activation functions. The aim is not to maximize model size, but to choose the smallest architecture that captures the relevant pattern with low test loss.</p>
+</section>
+<div style="page-break-after: always;"></div>
 <section id="part-3-code-understanding-pytorch-model-objects" class="level2">
 <h2 class="anchored" data-anchor-id="part-3-code-understanding-pytorch-model-objects">Part 3: Code understanding — PyTorch model objects <a id="part-3"></a></h2>
+<div class="direction">
 <p>In <code>sklearn</code>, we often specify the model through parameters such as strings or tuples:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>MLPClassifier(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    hidden_layer_sizes<span class="op">=</span>(<span class="dv">32</span>, <span class="dv">16</span>),</span>
@@ -373,9 +467,10 @@ Output: 1 value</code></pre>
 <li>How many trainable <code>Linear</code> layers does it have?</li>
 <li>What would change if <code>hidden_layers=[32, 16, 8]</code>?</li>
 </ol>
+</div>
 </section>
-<section id="expected-solution-sketch" class="level2 sol">
-<h2 class="anchored" data-anchor-id="expected-solution-sketch">Expected solution sketch</h2>
+<section id="solution-2" class="level2 sol">
+<h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
 <p>Task 1:</p>
 <pre class="text"><code>Input: 10 features
 Linear: 10 -&gt; 8
@@ -388,6 +483,7 @@ Output: 1 value</code></pre>
 <div style="page-break-after: always;"></div>
 <section id="part-4-use-cases-quiz-novastream" class="level2">
 <h2 class="anchored" data-anchor-id="part-4-use-cases-quiz-novastream">Part 4: Use Cases Quiz — NovaStream <a id="part-4"></a></h2>
+<div class="direction">
 <p><strong>Background</strong></p>
 <p><em>NovaStream</em> is a rapidly growing digital streaming startup offering movies, series, podcasts, music, and livestream content through a subscription-based platform. Due to strong recent growth, the company plans to scale its operations, improve personalization, optimize infrastructure usage, and strengthen platform security.</p>
 <p>Management believes that data-driven and AI-supported decision-making will be critical for future growth. As a result, the company faces a variety of analytical questions that must be addressed using suitable analytical modeling approaches.</p>
@@ -516,23 +612,10 @@ Output: 1 value</code></pre>
 </tbody>
 </table>
 </section>
+</div>
 </section>
-<div class="sol">
-<section id="optional-reflection-questions" class="level1">
-<h1>Optional Reflection Questions</h1>
-<ol type="1">
-<li>Which of the use cases involve supervised learning?</li>
-<li>Which use cases involve sequential or temporal data?</li>
-<li>Which use cases are especially suitable for deep learning approaches?</li>
-<li>In which cases might feature engineering still be beneficial?</li>
-<li>Which use cases could raise ethical, legal, or privacy concerns?</li>
-<li>Which tasks require labeled training data and which do not?</li>
-<li>Which challenge tasks are not purely prediction problems?</li>
-<li>Where might optimization or decision models be more suitable than predictive models?</li>
-</ol>
-</section>
-<section id="instructor-notes-example-solution-area" class="level1">
-<h1>Instructor Notes / Example Solution Area</h1>
+<section id="solution-3" class="level2 sol">
+<h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 1%">
@@ -610,7 +693,6 @@ Output: 1 value</code></pre>
 </tbody>
 </table>
 </section>
-</div>
 <div class="direction">
 <div style="page-break-after: always;"></div>
 <section id="wrap-up" class="level1">
@@ -647,8 +729,6 @@ Output: 1 value</code></pre>
 </tbody>
 </table>
 <p>In the last sessions, we covered a range of models for tabular and unstructured data in regression, classification, and prediction tasks. At the same time, other problems may require different models, such as time-series forecasting or route optimization.</p>
-</section>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Session 9 survey">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -661,6 +741,8 @@ Output: 1 value</code></pre>
 <div class="callout-body-container callout-body">
 <p>Before you wrap up, please complete the Session 9 survey here: <a href="https://forms.gle/1vsCsqc3SzWfSX1f6" target="_blank">https://forms.gle/1vsCsqc3SzWfSX1f6</a>. Thank you 🙏</p>
 </div>
+</div>
+</section>
 </div>
 
 

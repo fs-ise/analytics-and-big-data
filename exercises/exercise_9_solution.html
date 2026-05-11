@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -73,6 +38,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="exercise_9_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="exercise_9_files/libs/bootstrap/bootstrap-7f8d28353e1b7aed8a50cdb71f958a5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -103,99 +97,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="part-1-backpropagation-step-by-step" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-backpropagation-step-by-step">Part 1: Backpropagation step by step <a id="part-1" href=""></a></h2>
-<p>Go to <a href="http://hmkcode.github.io/ai/backpropagation-step-by-step">http://hmkcode.github.io/ai/backpropagation-step-by-step</a> and study the backpropagation algorithm in one iteration.</p>
-<p>Note that for simplification, the example uses no activation function.</p>
-<div style="page-break-after: always;"></div>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<p>See <a href="http://hmkcode.github.io/ai/backpropagation-step-by-step">http://hmkcode.github.io/ai/backpropagation-step-by-step</a>.</p>
 </section>
 <section id="part-2-interactive-neural-networks" class="level2">
 <h2 class="anchored" data-anchor-id="part-2-interactive-neural-networks">Part 2: Interactive neural networks <a id="part-2" href=""></a></h2>
-<p>Go to the <a href="https://playground.tensorflow.org/">Tensorflow Playground</a> and experiment with classification problems. Your goal is to achieve a low test loss with the simplest possible model.</p>
-<p>In the TensorFlow Playground, select each of the following datasets on the left-hand side:</p>
-<ol type="1">
-<li>circle dataset</li>
-<li>two-clusters dataset</li>
-<li>spiral dataset</li>
-</ol>
-<p>For each dataset, modify the neural network design by changing:</p>
-<ul>
-<li>number of hidden layers</li>
-<li>number of neurons per layer</li>
-<li>activation function</li>
-<li>input features, where useful</li>
-</ul>
-<p>Your goal is to find a neural network design that predicts the selected dataset pattern accurately, as indicated by a low test loss.</p>
-<p>Do not simply add as many neurons and layers as possible. Instead, try to find a minimal setup that works well.</p>
-<p>For each dataset, document:</p>
-<ul>
-<li>selected input features</li>
-<li>number of hidden layers</li>
-<li>number of neurons per layer</li>
-<li>activation function</li>
-<li>final test loss</li>
-</ul>
-<p>Briefly explain:</p>
-<ul>
-<li>which settings worked well</li>
-<li>why the dataset required a simpler or more complex neural network design</li>
-<li>how the architecture affected the model’s ability to capture the non-linear pattern</li>
-</ul>
+</section>
+<section id="solution-1" class="level2">
+<h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
+<p>There is not one single correct solution for this task. The TensorFlow Playground uses random initialization, and the final test loss can vary slightly across runs. The goal is therefore not to reproduce one exact value, but to find a model that is as simple as possible while still capturing the structure of the dataset.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th style="text-align: right;">Input features</th>
+<th style="text-align: right;">Hidden layers</th>
+<th style="text-align: right;">Neurons per layer</th>
+<th>Activation function</th>
+<th style="text-align: right;">Example final test loss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Two clusters</td>
+<td style="text-align: right;"><span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">none</td>
+<td>Linear output only</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td>Circle</td>
+<td style="text-align: right;"><span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(x_1^2\)</span>, <span class="math inline">\(x_2^2\)</span></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3–4</td>
+<td>Tanh or ReLU</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td>Spiral</td>
+<td style="text-align: right;"><span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">3–4</td>
+<td style="text-align: right;">6–8 each</td>
+<td>ReLU</td>
+<td style="text-align: right;">approx. 0.03–0.10</td>
+</tr>
+</tbody>
+</table>
+<p>For the <strong>two-clusters dataset</strong>, the classes are almost linearly separable. This means that the model does not need hidden layers. A simple linear classifier using <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> can already draw an appropriate decision boundary. Adding more layers or many neurons may still work, but it is unnecessary and makes the model more complex than needed.</p>
+<p>For the <strong>circle dataset</strong>, a small non-linear model already works well. The pattern cannot be separated by a straight line, so a model without hidden layers is usually not sufficient when only <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are used. Adding squared input features such as <span class="math inline">\(x_1^2\)</span> and <span class="math inline">\(x_2^2\)</span> makes the circular structure easier to learn. With these features, one hidden layer with only a few neurons is often enough.</p>
+<p>For the <strong>spiral dataset</strong>, the decision boundary is much more complex. The classes are intertwined in a curved, non-linear pattern, so a simple linear model or a very small hidden layer cannot capture the structure well. Several hidden layers with multiple neurons are usually needed. The ReLU activation function works particularly well because it allowed the network to combine several local linear boundaries into a more flexible non-linear decision surface.</p>
+<p>Overall, the experiments show that the required network architecture depends strongly on the complexity of the dataset. Simple, linearly separable patterns can be learned with very small models, while strongly non-linear patterns require additional hidden layers, more neurons, and suitable activation functions. The aim is not to maximize model size, but to choose the smallest architecture that captures the relevant pattern with low test loss.</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="part-3-code-understanding-pytorch-model-objects" class="level2">
 <h2 class="anchored" data-anchor-id="part-3-code-understanding-pytorch-model-objects">Part 3: Code understanding — PyTorch model objects <a id="part-3" href=""></a></h2>
-<p>In <code>sklearn</code>, we often specify the model through parameters such as strings or tuples:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>MLPClassifier(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    hidden_layer_sizes<span class="op">=</span>(<span class="dv">32</span>, <span class="dv">16</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    activation<span class="op">=</span><span class="st">"relu"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    solver<span class="op">=</span><span class="st">"adam"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In PyTorch, we usually define a model as an object. The model inherits functionality from <code>nn.Module</code>. Inspect the following model:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MLP(nn.Module):</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, input_dim, hidden_layers, output_dim):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        layers <span class="op">=</span> []</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        prev_dim <span class="op">=</span> input_dim</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> h <span class="kw">in</span> hidden_layers:</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            layers.append(nn.Linear(prev_dim, h))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            layers.append(nn.ReLU())</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            prev_dim <span class="op">=</span> h</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        layers.append(nn.Linear(prev_dim, output_dim))</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model <span class="op">=</span> nn.Sequential(<span class="op">*</span>layers)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.model(x)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> MLP(</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    input_dim<span class="op">=</span><span class="dv">10</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    hidden_layers<span class="op">=</span>[<span class="dv">8</span>, <span class="dv">4</span>],</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    output_dim<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div style="page-break-after: always;"></div>
-<p>Write down the sequence of layers created by this model.</p>
-<p>Use this format:</p>
-<pre class="text"><code>Input: 10 features
-Linear: 10 -&gt; ...
-ReLU
-Linear: ... -&gt; ...
-ReLU
-Linear: ... -&gt; 1
-Output: 1 value</code></pre>
-<p>Then answer briefly:</p>
-<ol type="1">
-<li>How many hidden layers does the model have?</li>
-<li>How many trainable <code>Linear</code> layers does it have?</li>
-<li>What would change if <code>hidden_layers=[32, 16, 8]</code>?</li>
-</ol>
 </section>
-<section id="expected-solution-sketch" class="level2">
-<h2 class="anchored" data-anchor-id="expected-solution-sketch">Expected solution sketch</h2>
+<section id="solution-2" class="level2">
+<h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
 <p>Task 1:</p>
 <pre class="text"><code>Input: 10 features
 Linear: 10 -&gt; 8
@@ -208,150 +177,9 @@ Output: 1 value</code></pre>
 </section>
 <section id="part-4-use-cases-quiz-novastream" class="level2">
 <h2 class="anchored" data-anchor-id="part-4-use-cases-quiz-novastream">Part 4: Use Cases Quiz — NovaStream <a id="part-4" href=""></a></h2>
-<p><strong>Background</strong></p>
-<p><em>NovaStream</em> is a rapidly growing digital streaming startup offering movies, series, podcasts, music, and livestream content through a subscription-based platform. Due to strong recent growth, the company plans to scale its operations, improve personalization, optimize infrastructure usage, and strengthen platform security.</p>
-<p>Management believes that data-driven and AI-supported decision-making will be critical for future growth. As a result, the company faces a variety of analytical questions that must be addressed using suitable analytical modeling approaches.</p>
-<section id="task" class="level3">
-<h3 class="anchored" data-anchor-id="task">Task</h3>
-<p>For each use case below:</p>
-<ul>
-<li><p>Select a suitable analytical modeling approach covered in the lectures.</p></li>
-<li><p>Justify your choice with reference to:</p>
-<ul>
-<li>the nature of the available input data,</li>
-<li>the expected targets or outputs,</li>
-<li>and the suitability of the selected analytical model for the task.</li>
-</ul></li>
-</ul>
-<p>Briefly explain why your chosen approach is appropriate compared to possible alternatives.</p>
-<p>Some use cases may not fit perfectly into the standard analytical models discussed in class. In such cases, explain the limitations of standard approaches and discuss which additional analytical or optimization methods may be more appropriate.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 38%">
-<col style="width: 56%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Use Case</th>
-<th>Recommendation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>NovaStream wants to identify subscribers who are likely to cancel their subscription within the next 30 days. Available data includes viewing behavior, subscription history, customer support interactions, app usage patterns, and payment information. Early identification would allow the company to proactively offer incentives and reduce customer churn.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>To improve user engagement, NovaStream wants to recommend movies, series, podcasts, and songs that individual users are likely to consume next. The platform collects information about viewing history, ratings, watch duration, search queries, and similarities between users.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>NovaStream plans to expand internationally and wants to automatically generate subtitles for livestreams and recorded content in multiple languages. The company wants the generated subtitles to adapt well to conversational language and different speaking styles.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>The startup has noticed suspicious activity involving accounts that appear to be shared simultaneously across many devices and geographic regions. NovaStream wants to automatically detect unusual behavior patterns that may indicate fraudulent usage or unauthorized account sharing.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>To accelerate growth, NovaStream plans to dynamically adjust subscription prices and promotional discounts depending on customer demand, competitor actions, viewing behavior, and seasonal effects. The company wants to continuously optimize pricing decisions over time.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 38%">
-<col style="width: 56%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Use Case</th>
-<th>Recommendation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>6</td>
-<td>Users can upload custom cover images for podcasts and playlists. NovaStream wants to automatically classify uploaded images into categories such as sports, entertainment, education, politics, or technology in order to improve search and content discovery.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>NovaStream is introducing a same-day merchandise delivery service for selected cities. The company wants to determine optimal delivery routes for drivers while minimizing transportation costs and ensuring that promised delivery times are met despite changing traffic conditions.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>NovaStream wants to predict which song, video, or podcast episode a user is most likely to consume next based on recent interaction sequences, time of day, device usage, and historical consumption patterns.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>Product managers want to understand which combinations of movies, series, podcasts, or songs are frequently consumed together in order to improve homepage design, bundled recommendations, and promotional campaigns.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>During livestream events, NovaStream offers real-time chat functionality. To maintain a safe platform environment, the company wants to automatically detect toxic, hateful, or abusive chat messages as they are posted.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 38%">
-<col style="width: 56%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Use Case</th>
-<th>Recommendation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>11</td>
-<td>The marketing department wants to identify groups of customers with similar viewing and listening behavior in order to design more targeted campaigns and personalized subscription offers. The company does not currently have predefined customer categories.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>Due to rapid growth, NovaStream’s infrastructure team must better predict future server demand and bandwidth consumption in order to avoid outages during peak usage periods while also minimizing unnecessary cloud costs. Historical usage data across days, weeks, and special events is available.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 </section>
-</section>
-<section id="optional-reflection-questions" class="level1">
-<h1>Optional Reflection Questions</h1>
-<ol type="1">
-<li>Which of the use cases involve supervised learning?</li>
-<li>Which use cases involve sequential or temporal data?</li>
-<li>Which use cases are especially suitable for deep learning approaches?</li>
-<li>In which cases might feature engineering still be beneficial?</li>
-<li>Which use cases could raise ethical, legal, or privacy concerns?</li>
-<li>Which tasks require labeled training data and which do not?</li>
-<li>Which challenge tasks are not purely prediction problems?</li>
-<li>Where might optimization or decision models be more suitable than predictive models?</li>
-</ol>
-</section>
-<section id="instructor-notes-example-solution-area" class="level1">
-<h1>Instructor Notes / Example Solution Area</h1>
+<section id="solution-3" class="level2">
+<h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 1%">
@@ -428,19 +256,6 @@ Output: 1 value</code></pre>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-tip callout-titled" title="Session 9 survey">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Session 9 survey
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before you wrap up, please complete the Session 9 survey here: <a href="https://forms.gle/1vsCsqc3SzWfSX1f6" target="_blank">https://forms.gle/1vsCsqc3SzWfSX1f6</a>. Thank you 🙏</p>
-</div>
-</div>
 </section>
 
 </main>
