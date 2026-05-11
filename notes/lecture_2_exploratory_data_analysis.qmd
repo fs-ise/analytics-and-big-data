@@ -55,7 +55,7 @@ Observational unit: **Quarterly sales per region** (implicitly: across years)
 
 **Key learning**: Data structures for analytics may tolerate redundancies!
 -> Illustrate this on the whiteboard: ERD/ERM: different rationale (ACID): preventing inconsistent states in operational databases
--> analytical data: often extracted (copied), will not be changed by operational systems. may not even be persisted (just used in-memory for the analysis)
+-> analytical data: often extracted (copied), will not be changed by operational systems. May not even be persisted (just used in-memory for the analysis)
 -> in *tidy data*, there is no need for assigning unique IDs. Duplicates are a concern, but unique IDs are not enough to conclude that there are not duplicates.
 
 {{< pagebreak >}}

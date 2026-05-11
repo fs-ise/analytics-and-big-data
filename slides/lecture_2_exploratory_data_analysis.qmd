@@ -1083,7 +1083,7 @@ labels = kmeans.fit_predict(X)
 
 {{< iconify fluent-mdl2:insights >}}  `KMeans(...)` + `fit_predict(X)` runs the iterative algorithm we saw earlier:
 
-- initialize centroids, assign points to nearest centroid, update centroids (repeat until convergence)  
+- initialize centroids, assign points to the nearest centroid, update centroids (repeat until convergence)  
 
 It returns an array of cluster labels (corresponding to each observation).
 . . .
@@ -1208,7 +1208,7 @@ There are two types of hierarchical cluster methods:
 - **Agglomerative hierarchical clustering** is a bottom-up clustering method. It starts with every single data object in a single cluster.
   Then, in each iteration, it agglomerates (merges) the closest pair of clusters by satisfying some similarity criteria, until all the data is in one cluster.
 - **Divisive hierarchical clustering** is a top-down clustering method.
-  It works in a similar way to agglomerative clustering but in the opposite direction.
+  It works similarly to agglomerative clustering but in the opposite direction.
   This method starts with a single cluster containing all data objects, and then successively splits resulting clusters until only clusters of individual data objects remain.
 
 <!-- https://www.bioinformaticscrashcourse.com/9.1_Clustering.html -->
@@ -1219,7 +1219,7 @@ A dendrogram is a tree diagram frequently used to illustrate the arrangement of 
 The y-axis represents the value of this distance metric (e.g. Euclidean distance) between the clusters.
 
 In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object.
-Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly smaller in length.
+Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly shorter.
 
 This allows us to explore clusters at **multiple levels of granularity**.
 

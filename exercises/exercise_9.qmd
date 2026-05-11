@@ -21,13 +21,30 @@ In this notebook, we cover:
 
 ## Part 1: Backpropagation step by step <a id="part-1"></a>
 
+::: {.direction}
+
 Go to [http://hmkcode.github.io/ai/backpropagation-step-by-step](http://hmkcode.github.io/ai/backpropagation-step-by-step) and study the backpropagation algorithm in one iteration.
 
 Note that for simplification, the example uses no activation function.
 
+:::
+
+
+::: {.sol}
+
+## Solution
+
+See [http://hmkcode.github.io/ai/backpropagation-step-by-step](http://hmkcode.github.io/ai/backpropagation-step-by-step).
+
+:::
+
+::: {.direction}
 {{< pagebreak >}}
+:::
 
 ## Part 2: Interactive neural networks <a id="part-2"></a>
+
+::: {.direction}
 
 Go to the [Tensorflow Playground](https://playground.tensorflow.org/) and experiment with classification problems.
 Your goal is to achieve a low test loss with the simplest possible model.
@@ -64,10 +81,46 @@ Briefly explain:
 - why the dataset required a simpler or more complex neural network design
 - how the architecture affected the model’s ability to capture the non-linear pattern
 
+:::
+
+::: {.sol}
+
+## Solution
+
+There is not one single correct solution for this task.
+The TensorFlow Playground uses random initialization, and the final test loss can vary slightly across runs.
+The goal is therefore not to reproduce one exact value, but to find a model that is as simple as possible while still capturing the structure of the dataset.
+
+| Dataset | Input features | Hidden layers | Neurons per layer | Activation function | Example final test loss |
+|---|---:|---:|---:|---|---:|
+| Two clusters | $x_1$, $x_2$ | 0 | none | Linear output only | 0.00 |
+| Circle | $x_1$, $x_2$, $x_1^2$, $x_2^2$ | 1 | 3–4 | Tanh or ReLU | 0.00 |
+| Spiral | $x_1$, $x_2$ |3–4 | 6–8 each | ReLU | approx. 0.03–0.10 |
+
+For the **two-clusters dataset**, the classes are almost linearly separable.
+This means that the model does not need hidden layers.
+A simple linear classifier using $x_1$ and $x_2$ can already draw an appropriate decision boundary.
+Adding more layers or many neurons may still work, but it is unnecessary and makes the model more complex than needed.
+
+For the **circle dataset**, a small non-linear model already works well.
+The pattern cannot be separated by a straight line, so a model without hidden layers is usually not sufficient when only $x_1$ and $x_2$ are used.
+Adding squared input features such as $x_1^2$ and $x_2^2$ makes the circular structure easier to learn. With these features, one hidden layer with only a few neurons is often enough.
+
+For the **spiral dataset**, the decision boundary is much more complex.
+The classes are intertwined in a curved, non-linear pattern, so a simple linear model or a very small hidden layer cannot capture the structure well.
+Several hidden layers with multiple neurons are usually needed.
+The ReLU activation function works particularly well because it allowed the network to combine several local linear boundaries into a more flexible non-linear decision surface.
+
+Overall, the experiments show that the required network architecture depends strongly on the complexity of the dataset.
+Simple, linearly separable patterns can be learned with very small models, while strongly non-linear patterns require additional hidden layers, more neurons, and suitable activation functions.
+The aim is not to maximize model size, but to choose the smallest architecture that captures the relevant pattern with low test loss.
+:::
 
 {{< pagebreak >}}
 
 ## Part 3: Code understanding — PyTorch model objects <a id="part-3"></a>
+
+::: {.direction}
 
 In `sklearn`, we often specify the model through parameters such as strings or tuples:
 
@@ -134,10 +187,11 @@ Then answer briefly:
 2. How many trainable `Linear` layers does it have?
 3. What would change if `hidden_layers=[32, 16, 8]`?
 
+:::
 
 ::: {.sol}
 
-## Expected solution sketch
+## Solution
 
 Task 1:
 
@@ -156,6 +210,8 @@ Output: 1 value
 {{< pagebreak >}}
 
 ## Part 4: Use Cases Quiz — NovaStream <a id="part-4"></a>
+
+::: {.direction}
 
 **Background**
 
@@ -204,21 +260,11 @@ Some use cases may not fit perfectly into the standard analytical models discuss
 | 11                | The marketing department wants to identify groups of customers with similar viewing and listening behavior in order to design more targeted campaigns and personalized subscription offers. The company does not currently have predefined customer categories.                                                                                                   |                                       |
 | 12                | Due to rapid growth, NovaStream’s infrastructure team must better predict future server demand and bandwidth consumption in order to avoid outages during peak usage periods while also minimizing unnecessary cloud costs. Historical usage data across days, weeks, and special events is available.                                                            |                                       |
 
+:::
+
 ::: {.sol}
 
-# Optional Reflection Questions
-
-1. Which of the use cases involve supervised learning?
-2. Which use cases involve sequential or temporal data?
-3. Which use cases are especially suitable for deep learning approaches?
-4. In which cases might feature engineering still be beneficial?
-5. Which use cases could raise ethical, legal, or privacy concerns?
-6. Which tasks require labeled training data and which do not?
-7. Which challenge tasks are not purely prediction problems?
-8. Where might optimization or decision models be more suitable than predictive models?
-
-
-# Instructor Notes / Example Solution Area
+## Solution
 
 | #  | Summary Statement                                       | Likely Suitable Approaches                                              |
 | -- | ------------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -237,7 +283,6 @@ Some use cases may not fit perfectly into the standard analytical models discuss
 
 :::
 
-
 ::: {.direction}
 {{< pagebreak >}}
 
@@ -255,8 +300,8 @@ In this exercise, we explored how neural networks learn and how analytical model
 In the last sessions, we covered a range of models for tabular and unstructured data in regression, classification, and prediction tasks.
 At the same time, other problems may require different models, such as time-series forecasting or route optimization.
 
-:::
-
 ::: {.callout-tip title="Session 9 survey"}
 Before you wrap up, please complete the Session 9 survey here: [{{< var sessions.session_9.survey_url >}}]({{< var sessions.session_9.survey_url >}}){target="_blank"}. Thank you 🙏
+:::
+
 :::

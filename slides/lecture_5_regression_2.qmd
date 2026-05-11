@@ -124,7 +124,8 @@ On whiteboard: draw previous versions (continuous -> continuous; categorical -> 
 - good (simple; geographical) explanation:  https://www.youtube.com/watch?v=yIYKR4sgzI8
 - TODO : include illustrations from video, min 2.17 and 3.20
 
-Our natural expectation would be *decreasing marginal effects* - if customers are reasonably annoyed by waiting times, they will quit. There is no linear change with every additional hour they wait.
+Our natural expectation would be *decreasing marginal effects* - if customers are reasonably annoyed by waiting times, they will quit.
+There is no linear change with every additional hour they wait.
 
 On slides: Draw regression line and illustrate the cutoff threshold when the `y=0.5` cuts the regression line.
 
@@ -178,7 +179,7 @@ TODO: mention threshold approach to
 Ideally, our model should predict the **probability** of $y_i=1$.
 This would allow us to apply a threshold for classification, but it would also give us more information (how likely an observation belongs to the *positive class*).
 
-This means we need a model that produces predicted probabilities between 0 and 1:
+It means we need a model that produces predicted probabilities between 0 and 1:
 
 . . . 
 

@@ -62,7 +62,8 @@ Cobb–Douglas-style production function
 log-linear model (not a logistic regression)  
 Fixed effects: each firm has its own intercept (addressing omitted variable bias)
 
-The study follows the IT business value tradition and uses a Cobb–Douglas production function. BDA is operationalized as ownership of live BDA assets, not as a self-reported perception of analytics maturity.
+The study follows the IT business value tradition and uses a Cobb–Douglas production function.
+BDA is operationalized as ownership of live BDA assets, not as a self-reported perception of analytics maturity.
 
 It is challenging to isolate the effects of analytics from those of AI or IT more broadly.
 :::
@@ -186,7 +187,11 @@ The paper complements Müller et al. (2018): rather than focusing on objective B
 
 
 ::: {.notes}
-IV = independent variable; n = number of studies; N = sample size; k = number of correlations; Est. eff. = estimated summary effect size; CI = 95% confidence interval; PI = 80% prediction interval; significance: ** p < .01, * p < .05, not significant (n.s.) for p > .05; $\tau^2$ = between-study variance; I<sup>2</sup> = proportion of variance attributed to between-study variance; <sup>†</sup> indicates the number of missing studies necessary for each identified study to nullify the effect, calculated as fail-safe N divided by n; DF = degree of freedom.
+IV = independent variable; n = number of studies; N = sample size; k = number of correlations;
+Est. eff. = estimated summary effect size; CI = 95% confidence interval;
+PI = 80% prediction interval; significance: ** p < .01, * p < .05, not significant (n.s.) for p > .05; $\tau^2$ = between-study variance;
+I<sup>2</sup> = proportion of variance attributed to between-study variance;
+<sup>†</sup> indicates the number of missing studies necessary for each identified study to nullify the effect, calculated as fail-safe N divided by n; DF = degree of freedom.
 :::
 
 # Organizational perspectives {data-stack-name="Organizations"}
@@ -229,9 +234,11 @@ This theoretical literature review examines **how business analytics creates val
 - RQ 1: How does business analytics create value for organizations?
 - RQ 2: How does machine learning change value creation from business analytics?
 
-This slide shifts from variance-based explanations of performance differences to a process perspective: analytics creates value through sequences linking data, information, knowledge, decisions, actions, and process-level outcomes.
+This slide shifts from variance-based explanations of performance differences to a process perspective:
+analytics creates value through sequences linking data, information, knowledge, decisions, actions, and process-level outcomes.
 
-Kunz, Spohrer, and Heinzl identify six process-level value creation paths. They also argue that ML changes BA value creation through autonomy, dynamism, and opacity, which strengthens decision automation and feedback loops while complicating knowledge creation and transfer.
+Kunz, Spohrer, and Heinzl identify six process-level value creation paths.
+They also argue that ML changes BA value creation through autonomy, dynamism, and opacity, which strengthens decision automation and feedback loops while complicating knowledge creation and transfer.
 :::
 
 ## Value creation paths
@@ -241,22 +248,27 @@ Kunz, Spohrer, and Heinzl identify six process-level value creation paths. They 
 ::: notes
 
 * **Ia. Canonical information processing path**
-  The emergency department dashboard shows waiting times, patient acuity, bed availability, and historical bottlenecks. The shift lead interprets these data, updates their understanding of the situation, decides to reassign nurses, and acts accordingly.
+  The emergency department dashboard shows waiting times, patient acuity, bed availability, and historical bottlenecks.
+  The shift lead interprets these data, updates their understanding of the situation, decides to reassign nurses, and acts accordingly.
 
 * **Ib. Decision augmentation path**
-  A prediction model flags that a patient is likely to deteriorate within two hours. The physician does not fully understand the model’s reasoning but uses the risk score as an additional input alongside clinical judgment.
+  A prediction model flags that a patient is likely to deteriorate within two hours.
+  The physician does not fully understand the model’s reasoning but uses the risk score as an additional input alongside clinical judgment.
 
 * **Ic. Decision automation path**
   When predicted waiting-room congestion exceeds a threshold, the system automatically sends low-acuity patients to a partner urgent-care clinic and updates appointment slots without human approval.
 
 * **IIa. Knowledge accumulation path**
-  Over months, the hospital learns that congestion is not mainly caused by emergency arrivals but by delayed discharges from specific wards after 3 p.m. This accumulated insight leads to redesigning discharge routines.
+  Over months, the hospital learns that congestion is not mainly caused by emergency arrivals but by delayed discharges from specific wards after 3 p.m.
+  This accumulated insight leads to redesigning discharge routines.
 
 * **IIb. Knowledge transfer path**
-  Insights from the emergency department are shared with radiology, inpatient wards, and hospital management. Radiology adjusts staffing because ED bottlenecks often follow imaging delays; wards change discharge planning.
+  Insights from the emergency department are shared with radiology, inpatient wards, and hospital management.
+  Radiology adjusts staffing because ED bottlenecks often follow imaging delays; wards change discharge planning.
 
 * **IIc. Feedback path**
-  Clinicians notice that the deterioration-risk model overpredicts risk for elderly patients with certain chronic conditions. They report this, the data science team revises features and retrains the model, and future alerts become more relevant.
+  Clinicians notice that the deterioration-risk model overpredicts risk for elderly patients with certain chronic conditions.
+  They report this, the data science team revises features and retrains the model, and future alerts become more relevant.
 
 :::
 
@@ -304,7 +316,9 @@ Based on @Halper2020
 :::
 
 ::: notes
-TDWI emphasizes that analytics maturity is not only about techniques or software; it includes organizational processes, culture, resources, data management, and governance. For our purposes, the model is useful because it makes the analytics portfolio assessable across several dimensions and maturity stages. The strategic alignment question is central: are analytics initiatives connected to overall organizational goals, and are they supported by leadership, funding, roles, and governance?
+TDWI emphasizes that analytics maturity is not only about techniques or software; it includes organizational processes, culture, resources, data management, and governance.
+For our purposes, the model is useful because it makes the analytics portfolio assessable across several dimensions and maturity stages.
+The strategic alignment question is central: are analytics initiatives connected to overall organizational goals, and are they supported by leadership, funding, roles, and governance?
 :::
 
 <!--
@@ -358,23 +372,29 @@ Advanced analytics increasingly becomes part of **AI systems** when it informs, 
 
 . . . 
 
-The *GDPR* (Art. 15 and 22) and the *AI Act* (Art. 27 and 86) require organizations to support responsible use of consequential automated decisions: affected persons need meaningful information, human intervention and contestability, while deployers of high-risk AI systems need transparency, oversight, logging, and fundamental-rights assessments.
+The *GDPR* (Art. 15 and 22) and the *AI Act* (Art. 27 and 86) require organizations to support responsible use of consequential automated decisions:
+affected persons need meaningful information, human intervention and contestability, while deployers of high-risk AI systems need transparency, oversight, logging, and fundamental-rights assessments.
 
 ::: notes
-This slide connects the maturity-model idea to responsible analytics. Analytics deployment is not only about technical maturity or portfolio maturity. It also requires risk-management maturity. NIST is useful because it gives students a vocabulary that travels across analytics, machine learning, and AI governance.
+This slide connects the maturity-model idea to responsible analytics. Analytics deployment is not only about technical maturity or portfolio maturity.
+It also requires risk-management maturity. NIST is useful because it gives students a vocabulary that travels across analytics, machine learning, and AI governance.
 
 
 
 - **GDPR Art. 15 and Art. 22: automated decision-making**  
-  Data subjects can receive meaningful information about the logic involved in relevant automated decision-making, including significance and envisaged consequences. In specified cases, safeguards include human intervention, expressing one’s view, and contesting the decision.
+  Data subjects can receive meaningful information about the logic involved in relevant automated decision-making, including significance and envisaged consequences.
+  In specified cases, safeguards include human intervention, expressing one’s view, and contesting the decision.
 
 - **AI Act Art. 13: transparency and instructions for use**  
   High-risk AI systems must provide information that helps deployers interpret outputs and use the system appropriately, including intended purpose, performance limits, risks, human oversight measures, and logging mechanisms.
 
 - **AI Act Art. 27 and Art. 86: fundamental-rights assessment and explanation**  
-  For certain high-risk AI uses, deployers must assess fundamental-rights impacts before deployment. Affected persons may also have a right to clear and meaningful explanations of the role of the AI system in relevant individual decisions.
+  For certain high-risk AI uses, deployers must assess fundamental-rights impacts before deployment.
+  Affected persons may also have a right to clear and meaningful explanations of the role of the AI system in relevant individual decisions.
 
-Also: **GDPR: processing of personal data**: Personal data may only be processed with a lawful basis, such as contract necessity, legal obligation, legitimate interest, or valid consent. In employment settings, consent is often problematic because of the power imbalance. GDPR also requires purpose limitation, data minimization, transparency, retention limits, and accountability.
+Also: **GDPR: processing of personal data**: Personal data may only be processed with a lawful basis, such as contract necessity, legal obligation, legitimate interest, or valid consent.
+In employment settings, consent is often problematic because of the power imbalance.
+GDPR also requires purpose limitation, data minimization, transparency, retention limits, and accountability.
 :::
 
 ## Boundaries: what should not be optimized?
@@ -411,7 +431,8 @@ Analytics creates value only within legitimate organizational, ethical, and lega
 ::: notes
 A useful deployment rule: define **red lines**, **review zones**, and **routine-use zones** before the system goes live.
 
-This slide should slow down the “more analytics is always better” assumption. It also prepares the transition to explainability and human oversight: if boundaries exist, someone must be able to recognize when they are being crossed.
+This slide should slow down the “more analytics is always better” assumption. It also prepares the transition to explainability and human oversight:
+if boundaries exist, someone must be able to recognize when they are being crossed.
 
 See "Move fast and break things" mentality
 :::
@@ -444,11 +465,15 @@ This raises practical questions:
 
 
 ::: notes
-Start by slowing down the assumption that “more predictive performance is always better.” The black-box issue is not simply that the model is mathematically complex; it is that the model may influence decisions about work, credit, health, or other consequential domains, while users and affected persons cannot easily assess whether the output is appropriate.
+Start by slowing down the assumption that “more predictive performance is always better.”
+The black-box issue is not simply that the model is mathematically complex;
+it is that the model may influence decisions about work, credit, health, or other consequential domains, while users and affected persons cannot easily assess whether the output is appropriate.
 
-Use the motor/car prompt here: we do not need to understand combustion physics to drive a car, but we do need indicators, warnings, maintenance rules, legal accountability, and emergency controls. Likewise, XAI supports responsible use, not total technical understanding by every user.
+Use the motor/car prompt here: we do not need to understand combustion physics to drive a car, but we do need indicators, warnings, maintenance rules, legal accountability, and emergency controls. 
+Likewise, XAI supports responsible use, not total technical understanding by every user.
 
-The IUI XAI lecture presents the black-box pipeline, explanation interface, local/global interpretability, intrinsic/post-hoc interpretability, and the notional interpretability–accuracy trade-off. Gunning’s XAI work similarly frames the problem as enabling users to understand, appropriately trust, and manage AI systems.
+The IUI XAI lecture presents the black-box pipeline, explanation interface, local/global interpretability, intrinsic/post-hoc interpretability, and the notional interpretability–accuracy trade-off. 
+Gunning’s XAI work similarly frames the problem as enabling users to understand, appropriately trust, and manage AI systems.
 
 Sources: https://iui-lecture.org/files/IUI-2021-01-21-slides/IUI_Explainable_AI.pdf ; Gunning (DARPA XAI); Gunning et al. (2019).
 
@@ -512,9 +537,13 @@ WARNING: An explanation is useful only if it supports meaningful action: better 
 ::: notes
 Emphasize that XAI is a socio-technical control. A technically elegant explanation may still fail if the recipient cannot understand it, cannot act on it, or has no authority to intervene.
 
-Regulatory anchor: GDPR Article 15 includes access to “meaningful information about the logic involved” in automated decision-making in relevant cases; GDPR Article 22 limits solely automated decisions with legal or similarly significant effects and requires safeguards such as human intervention, expression of one’s point of view, and contesting the decision in specified cases. The EU AI Act requires transparency for high-risk AI systems so deployers can interpret outputs and use the system appropriately, includes human oversight requirements, and Article 86 provides a right to clear and meaningful explanations for affected persons in specified high-risk AI cases.
+Regulatory anchor: GDPR Article 15 includes access to “meaningful information about the logic involved” in automated decision-making in relevant cases;
+GDPR Article 22 limits solely automated decisions with legal or similarly significant effects and requires safeguards such as human intervention, expression of one’s point of view, and contesting the decision in specified cases.
+The EU AI Act requires transparency for high-risk AI systems so deployers can interpret outputs and use the system appropriately, includes human oversight requirements, and Article 86 provides a right to clear and meaningful explanations for affected persons in specified high-risk AI cases.
 
-Examples: Reuters reported that Amazon abandoned an experimental internal recruiting tool after it showed bias against women. In credit, adverse-action requirements illustrate the practical need for specific reasons rather than generic model outputs. In health care, Obermeyer et al. showed that an algorithm using cost as a proxy for health need produced racial bias because costs reflected unequal access and spending, not only medical need.
+Examples: Reuters reported that Amazon abandoned an experimental internal recruiting tool after it showed bias against women.
+In credit, adverse-action requirements illustrate the practical need for specific reasons rather than generic model outputs.
+In health care, Obermeyer et al. showed that an algorithm using cost as a proxy for health need produced racial bias because costs reflected unequal access and spending, not only medical need.
 
 Possible prompt: “Which stakeholder needs which explanation in each example: the applicant/patient, frontline professional, manager, auditor, or engineer?”
 :::
@@ -534,11 +563,16 @@ Based on @Speith2022
 ::: notes
 This slide should provide a map of the main XAI design space, not a technical deep dive. Keep the distinction between explanation families and explanation goals clear.
 
-Feature importance can be global or local. It is intuitive for students, but it can be misleading if interpreted causally. Model-specific examples include coefficients in regression or split criteria in trees; post-hoc examples include LIME/SHAP-style methods that approximate local model behavior. Counterfactuals are attractive because they are action-oriented: they tell an affected person what would have to change for a different outcome. Interactive tools are useful for learning and governance because they allow users to probe thresholds, edge cases, and sensitivity.
+Feature importance can be global or local. It is intuitive for students, but it can be misleading if interpreted causally.
+Model-specific examples include coefficients in regression or split criteria in trees; post-hoc examples include LIME/SHAP-style methods that approximate local model behavior.
+Counterfactuals are attractive because they are action-oriented: they tell an affected person what would have to change for a different outcome.
+Interactive tools are useful for learning and governance because they allow users to probe thresholds, edge cases, and sensitivity.
 
-In class, ask students which explanation is useful for which stakeholder: an engineer may want debugging information; an applicant may want reasons and recourse; a manager may need limits and oversight rules; an auditor may need logs and evidence.
+In class, ask students which explanation is useful for which stakeholder: an engineer may want debugging information; an applicant may want reasons and recourse;
+a manager may need limits and oversight rules; an auditor may need logs and evidence.
 
-Sources: Ribeiro, Singh & Guestrin (2016) on LIME; Wachter, Mittelstadt & Russell (2017/2018) on counterfactual explanations; IUI XAI lecture on local/global and intrinsic/post-hoc interpretability.
+Sources: Ribeiro, Singh & Guestrin (2016) on LIME; Wachter, Mittelstadt & Russell (2017/2018) on counterfactual explanations;
+IUI XAI lecture on local/global and intrinsic/post-hoc interpretability.
 :::
 
 <!--
@@ -655,7 +689,8 @@ AI is expected to reshape work more than eliminate workers.
 
 
 ::: {.fragment}
-Analytics and AI deployment is a **people-and-process transformation**: executives expect value to come from humans and AI working **side by side**, with human oversight remaining central.
+Analytics and AI deployment is a **people-and-process transformation**:
+executives expect value to come from humans and AI working **side by side**, with human oversight remaining central.
 :::
 
 <!--
@@ -671,9 +706,13 @@ Based on @ApothekerDurantonLukicEtAl2025
 :::
 
 ::: notes
-The slide should counter the simplistic “AI replaces people” narrative. The BCG evidence suggests that the central challenge is not only model performance or infrastructure, but organizational change: workflow redesign, incentives, culture, hiring AI talent, and upskilling the existing workforce.
+The slide should counter the simplistic “AI replaces people” narrative.
+The BCG evidence suggests that the central challenge is not only model performance or infrastructure, but organizational change:
+workflow redesign, incentives, culture, hiring AI talent, and upskilling the existing workforce.
 
-Relevant survey evidence: BCG reports the 10-20-70 principle, with 70% of value creation attributed to people and processes. It also reports that executives see talent and AI as complementary: 64% describe AI and humans as working side by side, 22% see AI taking the lead with humans retaining oversight, and 14% prioritize human talent while using AI only when necessary. On workforce change, only 7% expect fewer FTEs due to AI automation, while 68% expect productivity and upskilling of the existing workforce, 17% expect restructuring with new roles, and 8% expect more FTEs.
+Relevant survey evidence: BCG reports the 10-20-70 principle, with 70% of value creation attributed to people and processes.
+It also reports that executives see talent and AI as complementary: 64% describe AI and humans as working side by side, 22% see AI taking the lead with humans retaining oversight, and 14% prioritize human talent while using AI only when necessary.
+On workforce change, only 7% expect fewer FTEs due to AI automation, while 68% expect productivity and upskilling of the existing workforce, 17% expect restructuring with new roles, and 8% expect more FTEs.
 :::
 
 
@@ -758,13 +797,18 @@ Relevant survey evidence: BCG reports the 10-20-70 principle, with 70% of value 
 -->
 
 ::: notes
-Use the upper part to emphasize that analytics adoption depends on human capabilities and organizational acceptance. Skills include technical competence, but also communication, critical thinking, and a mindset of responsible experimentation.
+Use the upper part to emphasize that analytics adoption depends on human capabilities and organizational acceptance.
+Skills include technical competence, but also communication, critical thinking, and a mindset of responsible experimentation.
 
-The “adoption tensions” label is deliberately broad. It covers resistance, professional identity, role changes, autonomy concerns, and gaming behavior. This avoids framing resistance as irrational: people may resist because analytics changes status, accountability, incentives, and what counts as expertise.
+The “adoption tensions” label is deliberately broad. It covers resistance, professional identity, role changes, autonomy concerns, and gaming behavior.
+This avoids framing resistance as irrational: people may resist because analytics changes status, accountability, incentives, and what counts as expertise.
 
-After the fragment, shift to the future perspective. The point is that “human judgment” is not one stable thing. In some contexts, humans may be removed from the operational decision process. In others, humans become more powerful because analytics extends their capabilities. In still others, the main challenge is uncertainty: humans cannot easily know when AI is strong or weak because performance follows a jagged frontier.
+After the fragment, shift to the future perspective. The point is that “human judgment” is not one stable thing.
+In some contexts, humans may be removed from the operational decision process. In others, humans become more powerful because analytics extends their capabilities.
+In still others, the main challenge is uncertainty: humans cannot easily know when AI is strong or weak because performance follows a jagged frontier.
 
-The core takeaway for students: the question is not simply whether humans should remain in the loop. The harder question is which human role is appropriate for which task, under which conditions, and with which safeguards.
+The core takeaway for students: the question is not simply whether humans should remain in the loop.
+The harder question is which human role is appropriate for which task, under which conditions, and with which safeguards.
 :::
 
 

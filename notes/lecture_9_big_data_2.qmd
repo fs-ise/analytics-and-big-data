@@ -80,6 +80,17 @@ Explanation: https://www.youtube.com/watch?v=ru9dXF04iSE&t=10s
 -> tasks/learnings are not clearly evident/articulated 
 
 
+## Part 4: Optional Reflection Questions
+
+1. Which of the use cases involve supervised learning?
+2. Which use cases involve sequential or temporal data?
+3. Which use cases are especially suitable for deep learning approaches?
+4. In which cases might feature engineering still be beneficial?
+5. Which use cases could raise ethical, legal, or privacy concerns?
+6. Which tasks require labeled training data and which do not?
+7. Which challenge tasks are not purely prediction problems?
+8. Where might optimization or decision models be more suitable than predictive models?
+
 ## Survey
 
 TODO: ask for areas where additional practice material would be helpful; questions for the exam (prepare for next session)
