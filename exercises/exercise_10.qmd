@@ -1,13 +1,13 @@
 ---
-title: "Exercise 10: Governance of data analytics"
+title: "Exercise 10: Analytics in organizations"
 ---
 
-## Purpose
-
-In this exercise, you will analyze how analytics contributes to strategic objectives in a real company.
+In this exercise, you will analyze how analytics contributes to strategic objectives in organizations.
 Your task is to identify where analytics enters concrete business processes, which decisions it supports, what data and systems are needed, and how the organization learns from outcomes.
 
 You will develop an **Analytics-Enabled Strategy Map** for one selected company.
+
+<!--
 
 ## Learning objectives
 
@@ -18,6 +18,7 @@ After completing this exercise, you should be able to:
 3. Explain which decisions are supported by analytics.
 4. Describe the data sources and systems needed for analytics-enabled work.
 5. Reflect on learning loops, governance mechanisms, and regulatory or ethical boundaries.
+-->
 
 ## Step 1: Select your case
 
@@ -31,7 +32,9 @@ Select **one** company from the following list:
 | Siemens | Manufacturing / industrial technology |
 | Capital One | Banking / financial technology |
 
+<!--
 You may propose another case, but it must have enough public material to analyze strategy, processes, analytics, data, systems, and governance.
+-->
 
 ## Step 2: Familiarize yourself with the company
 

@@ -22,7 +22,6 @@ date: "2026-05-11"
 {{< include overview_illustration.qmd >}}
 
 
-
 ## Reflection
 
 :::: {.columns}
@@ -35,7 +34,7 @@ date: "2026-05-11"
 
 ::: {.column width="50%"  style="font-size: 0.75em;"}
 <br><br><br><br><br>
-Based on the overview figure, reflect on the course as a whole:
+**Based on the overview figure, reflect on the course as a whole:**
 
 1. **Where did you learn the most?**  
    Which part of the course overview represents the largest learning gain for you?
@@ -113,14 +112,15 @@ Available for download [here](https://raw.githubusercontent.com/fs-ise/analytics
 ::: {.column width="50%"}
 **Stay in touch**
 
+- Course materials  
+  [Canvas course page](https://frankfurtschool.instructure.com/courses/19780)
+
 - Interested in a thesis topic?  
-  [Bachelor and master theses](TODO)
+  Bachelor and master theses (see SuSy)
 
 - Questions after the course?  
-  [Contact / office hours](TODO)
+  Send me an email or book a meeting
 
-- Course materials  
-  [Canvas course page](TODO)
 :::
 
 :::
@@ -128,3 +128,5 @@ Available for download [here](https://raw.githubusercontent.com/fs-ise/analytics
 <br>
 
 **Good luck — and thank you for participating in the course!**
+
+![](../images/good_luck.png){width=200px fig-align=center}
