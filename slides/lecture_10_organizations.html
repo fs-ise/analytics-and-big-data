@@ -151,6 +151,17 @@
     }
   </style>
   <style>
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
+    background-image: none;
+  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -182,17 +193,6 @@
   div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
     content: '🔒';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -251,9 +251,8 @@
 <ul>
 <li>Outcome: <span class="math inline">\(\log(Sales)\)</span></li>
 <li>Inputs: labor, capital, materials</li>
-<li>IT controls: ERP, CRM, SCM</li>
-<li>Industry and year controls</li>
-<li>Industry moderators: IT intensity and competition</li>
+<li>Controls: General IT, industry, and year</li>
+<li>Moderators: IT intensity and competition</li>
 </ul>
 </div></div>
 <p><br></p>
@@ -264,6 +263,9 @@
 \end{aligned}
 \]</span></p>
 <aside class="notes">
+<p>Cobb–Douglas-style production function<br>
+log-linear model (not a logistic regression)<br>
+Fixed effects: each firm has its own intercept (addressing omitted variable bias)</p>
 <p>The study follows the IT business value tradition and uses a Cobb–Douglas production function. BDA is operationalized as ownership of live BDA assets, not as a self-reported perception of analytics maturity.</p>
 <p>It is challenging to isolate the effects of analytics from those of AI or IT more broadly.</p>
 <style type="text/css">
@@ -543,6 +545,7 @@ Note: highlight:
 </ul>
 </div></div>
 <p><br></p>
+<div class="fragment">
 <div id="ba-process-diagram-ksh2025" class="ba-process-diagram-ksh2025">
   <style>
     #ba-process-diagram-ksh2025 {
@@ -639,6 +642,7 @@ Note: highlight:
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section>
 <section id="value-creation-paths" class="slide level2">
 <h2>Value creation paths</h2>
@@ -827,6 +831,26 @@ Note: highlight:
     </g>
   </svg>
 </div>
+<aside class="notes">
+<ul>
+<li><p><strong>Ia. Canonical information processing path</strong> The emergency department dashboard shows waiting times, patient acuity, bed availability, and historical bottlenecks. The shift lead interprets these data, updates their understanding of the situation, decides to reassign nurses, and acts accordingly.</p></li>
+<li><p><strong>Ib. Decision augmentation path</strong> A prediction model flags that a patient is likely to deteriorate within two hours. The physician does not fully understand the model’s reasoning but uses the risk score as an additional input alongside clinical judgment.</p></li>
+<li><p><strong>Ic. Decision automation path</strong> When predicted waiting-room congestion exceeds a threshold, the system automatically sends low-acuity patients to a partner urgent-care clinic and updates appointment slots without human approval.</p></li>
+<li><p><strong>IIa. Knowledge accumulation path</strong> Over months, the hospital learns that congestion is not mainly caused by emergency arrivals but by delayed discharges from specific wards after 3 p.m. This accumulated insight leads to redesigning discharge routines.</p></li>
+<li><p><strong>IIb. Knowledge transfer path</strong> Insights from the emergency department are shared with radiology, inpatient wards, and hospital management. Radiology adjusts staffing because ED bottlenecks often follow imaging delays; wards change discharge planning.</p></li>
+<li><p><strong>IIc. Feedback path</strong> Clinicians notice that the deterioration-risk model overpredicts risk for elderly patients with certain chronic conditions. They report this, the data science team revises features and retrains the model, and future alerts become more relevant.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!--
 Note: maybe add explanations on the following slide?!
 
