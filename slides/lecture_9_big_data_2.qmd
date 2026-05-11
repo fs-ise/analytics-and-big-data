@@ -701,7 +701,7 @@ model = MLP(
 :::
 
 ::: aside
-See [torch.nn.Module](https://docs.pytorch.org/docs/2.11/generated/torch.nn.Module.html) for inherited methods.
+See the torch [Module](https://docs.pytorch.org/docs/2.11/generated/torch.nn.Module.html) for inherited methods.
 :::
 
 ## Summary {data-state="hide-menubar"}
