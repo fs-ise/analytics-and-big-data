@@ -110,26 +110,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <style>
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
-div.callout-objective.callout {
+div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
-div.callout-objective.callout-style-default > .callout-header {
+div.callout-resource.callout-style-default > .callout-header {
   background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
+div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+  content: '🔗';
   background-image: none;
 }
 div.callout-confidential.callout {
@@ -143,15 +132,26 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
   content: '🔒';
   background-image: none;
 }
-div.callout-resource.callout {
+div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
-div.callout-resource.callout-style-default > .callout-header {
+div.callout-objective.callout-style-default > .callout-header {
   background-color: rgba(13, 110, 253, 0.13);
 }
-div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-  content: '🔗';
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -344,7 +344,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <h2 class="anchored" data-anchor-id="task-1.1-load-and-inspect-the-dataset">Task 1.1 — Load and inspect the dataset</h2>
 <div class="direction">
 <p>Load the dataset and inspect the first rows. Also run statistics on the <code>sentiment</code> column. Then answer the questions below.</p>
-<div id="4f53de74" class="cell" data-execution_count="1">
+<div id="d3fdb201" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the prepared IMDB sample</span></span>
@@ -355,7 +355,7 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 </div>
 </div>
 <div class="sol">
-<div id="60d46fc2" class="cell" data-execution_count="2">
+<div id="31e4462f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/imdb_reviews_sample.csv"</span>)</span>
@@ -375,7 +375,7 @@ Name: count, dtype: int64</code></pre>
 <h2 class="anchored" data-anchor-id="task-1.2-prepare-text-labels-and-a-train-test-split">Task 1.2 — Prepare text, labels, and a train-test split</h2>
 <div class="direction">
 <p>Create a lightly cleaned text column (use regex replacement to remove html <code>&lt;br&gt;</code> tags, and multiple spaces), create a numeric target variable, and split the data into training and test data.</p>
-<div id="9b456825" class="cell" data-execution_count="3">
+<div id="3541acc2" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Light text cleaning</span></span>
@@ -395,7 +395,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="solution" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<div id="ff98688e" class="cell" data-execution_count="4">
+<div id="cee7f831" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">"review"</span>, <span class="st">"sentiment"</span>]).copy()</span>
@@ -454,7 +454,7 @@ Name: proportion, dtype: float64</code></pre>
 <h2 class="anchored" data-anchor-id="task-2.1-create-bag-of-words-and-tf-idf-matrices">Task 2.1 — Create Bag-of-Words and TF-IDF matrices</h2>
 <div class="direction">
 <p>Create a Bag-of-Words matrix and a TF-IDF matrix. Inspect the matrix shapes and calculate the sparsity of the TF-IDF matrix.</p>
-<div id="36fcd721" class="cell" data-execution_count="5">
+<div id="6a032c2e" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer, TfidfVectorizer</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Bag-of-Words features</span></span>
@@ -481,7 +481,7 @@ Name: proportion, dtype: float64</code></pre>
 </section>
 <section id="solution-1" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
-<div id="d144cea6" class="cell" data-execution_count="6">
+<div id="d9059d88" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer, TfidfVectorizer</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>count_vectorizer <span class="op">=</span> CountVectorizer(</span>
@@ -522,7 +522,7 @@ TF-IDF sparsity: 0.9854</code></pre>
 <h2 class="anchored" data-anchor-id="task-2.2-inspect-sparse-features-for-one-review">Task 2.2 — Inspect sparse features for one review</h2>
 <div class="direction">
 <p>Select one review from the training data and inspect the highest TF-IDF features.</p>
-<div id="a7a7fbeb" class="cell" data-execution_count="7">
+<div id="fad6907a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select one review</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># review_id = 0</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -544,7 +544,7 @@ TF-IDF sparsity: 0.9854</code></pre>
 </section>
 <section id="solution-2" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<div id="13c449b9" class="cell" data-execution_count="8">
+<div id="f52863a9" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>review_id <span class="op">=</span> <span class="dv">0</span></span>
@@ -579,77 +579,77 @@ TF-IDF sparsity: 0.9854</code></pre>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
 <td>bad</td>
-<td>0.318879</td>
+<td>0.320837</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
 <td>evil dead</td>
-<td>0.217983</td>
+<td>0.219321</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>storytelling</td>
-<td>0.197931</td>
+<td>demons</td>
+<td>0.199146</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>demons</td>
-<td>0.197931</td>
+<td>storytelling</td>
+<td>0.199146</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
 <td>dead</td>
-<td>0.190483</td>
+<td>0.191652</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">5</th>
 <td>sequels</td>
-<td>0.188522</td>
+<td>0.189679</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">6</th>
 <td>horror</td>
-<td>0.168756</td>
+<td>0.169793</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">7</th>
 <td>evil</td>
-<td>0.132952</td>
+<td>0.133768</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">8</th>
 <td>night</td>
-<td>0.121025</td>
+<td>0.121768</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">9</th>
 <td>shot</td>
-<td>0.120767</td>
+<td>0.121508</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">10</th>
 <td>just</td>
-<td>0.120738</td>
+<td>0.121480</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">11</th>
-<td>blond</td>
-<td>0.110300</td>
+<td>breast</td>
+<td>0.107306</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">12</th>
-<td>breast</td>
-<td>0.106651</td>
+<td>ingredients</td>
+<td>0.106244</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">13</th>
 <td>chainsaw</td>
-<td>0.105596</td>
+<td>0.106244</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">14</th>
-<td>ingredients</td>
-<td>0.105596</td>
+<td>threw</td>
+<td>0.105247</td>
 </tr>
 </tbody>
 </table>
@@ -664,7 +664,7 @@ TF-IDF sparsity: 0.9854</code></pre>
 <h2 class="anchored" data-anchor-id="task-2.3-find-similar-reviews-using-tf-idf">Task 2.3 — Find similar reviews using TF-IDF</h2>
 <div class="direction">
 <p>Use cosine similarity to find the reviews most similar to a selected query review.</p>
-<div id="f125c2b0" class="cell" data-execution_count="9">
+<div id="0f1bff5b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose a query review from the training data</span></span>
@@ -690,7 +690,7 @@ TF-IDF sparsity: 0.9854</code></pre>
 </section>
 <section id="solution-3" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
-<div id="3ccc13cc" class="cell" data-execution_count="10">
+<div id="3fa851e2" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
@@ -730,31 +730,31 @@ Query sentiment: negative</code></pre>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
-<td>0.262307</td>
+<td>0.264828</td>
 <td>positive</td>
 <td>The 80's is largely considered the decade in w...</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>0.211370</td>
+<td>0.212667</td>
 <td>negative</td>
 <td>Why is it that Canada can turn out decent to g...</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>0.207395</td>
+<td>0.208668</td>
 <td>negative</td>
 <td>Avoid this crap at all costs. Bad script, bad ...</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>0.202169</td>
+<td>0.204473</td>
 <td>positive</td>
 <td>most of the bad reviews on this website blame ...</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>0.202030</td>
+<td>0.203270</td>
 <td>negative</td>
 <td>This movie has to be one of the most boring an...</td>
 </tr>
@@ -783,7 +783,7 @@ Query sentiment: negative</code></pre>
 <h2 class="anchored" data-anchor-id="task-3.1-create-sentence-embeddings">Task 3.1 — Create sentence embeddings</h2>
 <div class="direction">
 <p>Create dense embeddings for the training and test reviews. Use a small and efficient sentence-transformer model.</p>
-<div id="3d6aab3d" class="cell" data-execution_count="11">
+<div id="1844cdb4" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If needed, install once in the Codespace terminal:</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pip install sentence-transformers</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -810,7 +810,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-4" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
-<div id="679318ce" class="cell" data-execution_count="12">
+<div id="4e9a377e" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sentence_transformers <span class="im">import</span> SentenceTransformer</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>embedding_model <span class="op">=</span> SentenceTransformer(<span class="st">"all-MiniLM-L6-v2"</span>)</span>
@@ -841,7 +841,7 @@ Query sentiment: negative</code></pre>
 <h2 class="anchored" data-anchor-id="task-3.2-find-similar-reviews-using-dense-embeddings">Task 3.2 — Find similar reviews using dense embeddings</h2>
 <div class="direction">
 <p>Repeat the similarity search from Task 2.3, but now use dense embeddings.</p>
-<div id="c22534a9" class="cell" data-execution_count="13">
+<div id="39bd0f82" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># query_id = 0</span></span>
@@ -860,7 +860,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-5" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-5">Solution</h2>
-<div id="aee4e0d0" class="cell" data-execution_count="14">
+<div id="f9636f64" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
@@ -892,7 +892,7 @@ Query sentiment: negative</code></pre>
 <div class="direction">
 <p>Reduce the dense embeddings to two dimensions and create a scatter plot. Color the points by sentiment.</p>
 <p>Use a sample if the dataset is large.</p>
-<div id="570e0e9e" class="cell" data-execution_count="15">
+<div id="429a9e00" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -921,7 +921,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-6" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
-<div id="69337c64" class="cell" data-execution_count="16">
+<div id="d8cddd3a" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -970,7 +970,7 @@ Query sentiment: negative</code></pre>
 <h2 class="anchored" data-anchor-id="task-4.1-train-a-classifier-on-tf-idf-features">Task 4.1 — Train a classifier on TF-IDF features</h2>
 <div class="direction">
 <p>Train a logistic regression model using TF-IDF features. Report accuracy, the classification report, and training time.</p>
-<div id="8420bc6d" class="cell" data-execution_count="17">
+<div id="aa2623e1" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -1001,7 +1001,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-7" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-7">Solution</h2>
-<div id="6f0ae1dd" class="cell" data-execution_count="18">
+<div id="76ab6d23" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -1028,7 +1028,7 @@ Query sentiment: negative</code></pre>
 <h2 class="anchored" data-anchor-id="task-4.2-train-a-classifier-on-dense-embeddings">Task 4.2 — Train a classifier on dense embeddings</h2>
 <div class="direction">
 <p>Train the same type of classifier using dense embeddings. Report the same metrics.</p>
-<div id="3a13a3ca" class="cell" data-execution_count="19">
+<div id="00cfad2b" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start timer</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1052,7 +1052,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-8" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-8">Solution</h2>
-<div id="b9aef79b" class="cell" data-execution_count="20">
+<div id="fa02083c" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>dense_clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
@@ -1076,7 +1076,7 @@ Query sentiment: negative</code></pre>
 <h2 class="anchored" data-anchor-id="task-4.3-compare-sparse-and-dense-models">Task 4.3 — Compare sparse and dense models</h2>
 <div class="direction">
 <p>Create a small comparison table.</p>
-<div id="e72c154a" class="cell" data-execution_count="21">
+<div id="5b358250" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># results = pd.DataFrame(...)</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1127,7 +1127,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-9" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-9">Solution</h2>
-<div id="f45ede91" class="cell" data-execution_count="22">
+<div id="43e0f100" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    {</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"representation"</span>: [<span class="st">"TF-IDF"</span>, <span class="st">"Dense embeddings"</span>],</span>
@@ -1189,7 +1189,7 @@ Query sentiment: negative</code></pre>
 <div class="direction">
 <p>We now test how the models behave on short, manually created edge cases. These cases are not meant to be a representative dataset. They are a stress test that helps us discuss robustness, ambiguity, and generalization.</p>
 <p>Create a small synthetic test set with ambiguous or difficult examples. Apply both models and compare predictions.</p>
-<div id="ed3c92c1" class="cell" data-execution_count="23">
+<div id="a12f86bf" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>edge_cases <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"review"</span>: [</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"This movie was sick in the best possible way."</span>,</span>
@@ -1232,7 +1232,7 @@ Query sentiment: negative</code></pre>
 </div>
 <section id="solution-10" class="level2 sol">
 <h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
-<div id="df0c7b46" class="cell" data-execution_count="24">
+<div id="ad064690" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>edge_cases <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    {</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"review"</span>: [</span>
