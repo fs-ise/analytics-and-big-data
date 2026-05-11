@@ -162,14 +162,14 @@
     <g class="fragment" data-fragment-index="2">
       <path class="arrow" d="M442.5,300 V350 H950 V300"></path>
       <text x="700" y="378" text-anchor="middle" class="small-label">
-        Decision automation path
+        Decision augmentation and automation
       </text>
     </g>
 
     <!-- Stage 3: knowledge transfer path -->
     <g class="fragment" data-fragment-index="3">
       <rect class="label-bg" x="600" y="42" width="190" height="22"></rect>
-      <text x="605" y="58" class="small-label">Knowledge transfer path</text>
+      <text x="605" y="58" class="small-label">Knowledge accumulation and transfer</text>
 
       <!-- Path goes up from knowledge, then across, then down to the process boxes -->
       <path class="connector" d="M612.5,245 V70 H935"></path>
@@ -182,7 +182,7 @@
     <!-- Stage 4: feedback path -->
     <g class="fragment" data-fragment-index="4">
       <rect class="label-bg" x="340" y="0" width="120" height="22"></rect>
-      <text x="345" y="16" class="small-label">Feedback path</text>
+      <text x="345" y="16" class="small-label">Feedback</text>
 
       <!-- Main feedback connector starts slightly left of the knowledge-transfer path -->
       <path class="connector" d="M585,245 V28 H95"></path>

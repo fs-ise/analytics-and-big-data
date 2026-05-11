@@ -363,3 +363,33 @@ body,
   font-size: 18px;
   font-weight: 700;
 }
+
+
+.reveal .slides section#eval-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal .slides section#eval-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/evaluations.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.reveal .slides section#eval-slide > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eval-card {
+  background: rgba(255, 255, 255, 0.86);
+  padding: 1.2em 1.4em;
+  border-radius: 0.6em;
+  max-width: 820px;
+}
