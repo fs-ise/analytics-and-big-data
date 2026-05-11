@@ -151,17 +151,6 @@
     content: '🔒';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -171,6 +160,17 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -232,13 +232,6 @@
       fill: none;
       stroke: black;
       stroke-width: 4.4;
-      marker-end: url(#arrowBold);
-    }
-
-    .highlight-thin-arrow {
-      fill: none;
-      stroke: black;
-      stroke-width: 3.8;
       marker-end: url(#arrowBold);
     }
 
@@ -383,31 +376,32 @@
     <!-- Base decision automation path -->
     <path class="arrow" d="M442.5,300 V350 H950 V300"></path>
     <text x="700" y="378" text-anchor="middle" class="small-label">
-      Decision automation path
+      Decision augmentation and automation
     </text>
 
     <!-- Base knowledge transfer path -->
     <rect class="label-bg" x="600" y="42" width="190" height="22"></rect>
-    <text x="605" y="58" class="small-label">Knowledge transfer path</text>
+    <text x="605" y="58" class="small-label">Knowledge accumulation and transfer</text>
     <path class="connector" d="M612.5,245 V70 H935"></path>
     <path class="arrow" d="M865,70 V90"></path>
     <path class="arrow" d="M935,70 V120"></path>
 
     <!-- Base feedback path -->
     <rect class="label-bg" x="340" y="0" width="120" height="22"></rect>
-    <text x="345" y="16" class="small-label">Feedback path</text>
+    <text x="345" y="16" class="small-label">Feedback</text>
     <path class="connector" d="M585,245 V28 H95"></path>
     <path class="arrow" d="M95,28 V245"></path>
     <path class="arrow" d="M257.5,28 V185"></path>
     <path class="connector" d="M980,90 V28 H585"></path>
 
-    <!-- Animation 1: emphasize positive paths -->
+    <!-- Fragment 1: Autonomy -->
     <g class="fragment" data-fragment-index="1">
-      <!-- Bold decision automation path -->
       <path class="highlight-arrow" d="M442.5,300 V350 H950 V300"></path>
       <text x="845" y="378" class="sign-label">+</text>
+    </g>
 
-      <!-- Bold feedback path -->
+    <!-- Fragment 2: Dynamism -->
+    <g class="fragment" data-fragment-index="2">
       <path class="highlight-connector" d="M585,245 V28 H95"></path>
       <path class="highlight-arrow" d="M95,28 V245"></path>
       <path class="highlight-arrow" d="M257.5,28 V185"></path>
@@ -415,19 +409,19 @@
       <text x="470" y="16" class="sign-label">+</text>
     </g>
 
-    <!-- Animation 2: emphasize negative/dashed paths -->
-    <g class="fragment" data-fragment-index="2">
-      <!-- Information -> Knowledge -->
+    <!-- Fragment 3: Opacity -->
+    <g class="fragment" data-fragment-index="3">
+      <!-- weaken Information -> Knowledge -->
       <line class="erase-line" x1="505" y1="272" x2="550" y2="272"></line>
       <line class="negative-arrow" x1="505" y1="272" x2="550" y2="272"></line>
       <text x="527.5" y="235" text-anchor="middle" class="sign-label">−</text>
 
-      <!-- Knowledge -> Decision -->
+      <!-- weaken Knowledge -> Decision -->
       <line class="erase-line" x1="675" y1="272" x2="735" y2="272"></line>
       <line class="negative-arrow" x1="675" y1="272" x2="735" y2="272"></line>
       <text x="705" y="235" text-anchor="middle" class="sign-label">−</text>
 
-      <!-- Knowledge transfer path -->
+      <!-- weaken knowledge transfer path -->
       <path class="erase-line" d="M612.5,245 V70 H935"></path>
       <path class="erase-line" d="M865,70 V90"></path>
       <path class="erase-line" d="M935,70 V120"></path>

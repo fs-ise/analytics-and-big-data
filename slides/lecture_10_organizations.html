@@ -151,17 +151,6 @@
     }
   </style>
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -182,6 +171,17 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-confidential.callout {
@@ -228,43 +228,67 @@
 -->
 </section>
 <section>
-<section id="level-industry" class="title-slide slide level1 center" data-stack-name="Industry">
-<h1>Level: Industry</h1>
+<section id="industry-level-perspectives" class="title-slide slide level1 center" data-stack-name="Industry">
+<h1>Industry-level perspectives</h1>
 
 </section>
 <section id="does-the-deployment-of-analytics-pay-off" class="slide level2">
 <h2>Does the deployment of analytics pay off?</h2>
-<p>The Effect of Big Data and Analytics on Firm Performance: An Econometric Analysis Considering Industry Characteristics</p>
-<p><span class="citation" data-cites="MullerFayBrocke2018">Müller et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></p>
+<p><strong><span class="citation" data-cites="MullerFayBrocke2018">Müller et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>: The Effect of Big Data and Analytics on Firm Performance</strong></p>
+<p>The study examines whether firms with live <strong>big data and analytics (BDA) assets</strong> show higher productivity than comparable firms without such assets.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Empirical setting</strong></p>
 <ul>
-<li>objective measures (specifically: TODO)</li>
-<li>800 companies</li>
+<li>814 publicly traded firms</li>
+<li>2008–2014 panel data</li>
+<li>5,698 firm-year observations</li>
+<li>Objective data on live BDA assets</li>
+<li>Financial data from Compustat</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Outcome and controls</strong></p>
+<ul>
+<li>Outcome: <span class="math inline">\(\log(Sales)\)</span></li>
+<li>Inputs: labor, capital, materials</li>
+<li>IT controls: ERP, CRM, SCM</li>
+<li>Industry and year controls</li>
+<li>Industry moderators: IT intensity and competition</li>
+</ul>
+</div></div>
+<p><br></p>
 <p><span class="math display">\[
 \begin{aligned}
 \log(Sales) =\;&amp; \beta_0 + \beta_1 \log(Labor) + \beta_2 \log(Capital) + \beta_3 \log(Materials) \\
 &amp;+ \beta_4 BDA + Controls + \varepsilon
 \end{aligned}
 \]</span></p>
-<!--
-    $$
-    \begin{aligned}
-    \log(Sales) =\;& \beta_0 + \beta_1 \log(Labor) + \beta_2 \log(Capital) + \beta_3 \log(Materials) + \beta_4 BDA \\
-    &+ \beta_5 ITI + \beta_6 COMP + \beta_7 BDA \times ITI + \beta_8 BDA \times COMP \\
-    &+ Controls + \varepsilon
-    \end{aligned}
-    $$
--->
+<aside class="notes">
+<p>The study follows the IT business value tradition and uses a Cobb–Douglas production function. BDA is operationalized as ownership of live BDA assets, not as a self-reported perception of analytics maturity.</p>
+<p>It is challenging to isolate the effects of analytics from those of AI or IT more broadly.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="findings" class="slide level2">
 <h2>Findings</h2>
-<div style="font-size: 0.75em;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 0.85em;">
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: center;">OLS<br>(1)</th>
-<th style="text-align: center;">FE<br>(2)</th>
+<th style="text-align: center;">OLS</th>
+<th style="text-align: center;">FE</th>
 </tr>
 </thead>
 <tbody>
@@ -321,43 +345,86 @@
 </tbody>
 </table>
 </div>
-<p>Note: highlight:</p>
+</div><div class="column fragment" style="width:50%;">
+<p><strong>Key findings and implications</strong></p>
 <ul>
-<li>methods (OLS + fixed effects/causality)</li>
-<li>differences between industries (context matters)</li>
+<li><strong>Analytics assets alone are insufficient:</strong> value depends on complementary resources such as data infrastructure, enterprise systems, and analytical skills.</li>
+<li><strong>Industry conditions matter:</strong> IT-intensive and highly competitive industries show clearer productivity effects.</li>
+<li><strong>Causality remains difficult:</strong> observational firm-level data can reduce, but not fully eliminate, concerns about reverse causality and omitted variables.</li>
 </ul>
-<p>TODO: why is R^2 so high?!?</p>
-<p>“Competing on analytics”</p>
-</section></section>
-<section>
-<section id="level-organization" class="title-slide slide level1 center" data-stack-name="Organization">
-<h1>Level: Organization</h1>
+<p>At the industry level, analytics deployment should be understood as part of a broader configuration of digital capabilities, competitive pressure, and organizational capacity to turn data into decisions.</p>
+</div></div>
+<aside class="notes">
+<p>The high <span class="math inline">\(R^2\)</span> is expected because <span class="math inline">\(\log(Sales)\)</span> is modeled with major production inputs, especially <span class="math inline">\(\log(Materials)\)</span>, <span class="math inline">\(\log(Labor)\)</span>, and <span class="math inline">\(\log(Capital)\)</span>, plus industry/year controls. It should not be interpreted as “BDA explains 97.7% of sales.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+Note: highlight:
 
+- methods (OLS + fixed effects/causality)
+- differences between industries (context matters)
+"Competing on analytics"
+-->
 </section>
-<section id="under-which-conditions-could-we-expect-higher-performance" class="slide level2">
-<h2>Under which conditions could we expect higher performance?</h2>
-<p><span class="citation" data-cites="OesterreichAntonTeuteberg2022">Oesterreich et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p>
+<section id="a-meta-analysis" class="slide level2">
+<h2>A meta-analysis</h2>
+<p><strong><span class="citation" data-cites="OesterreichAntonTeuteberg2022">Oesterreich et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>: What translates big data into business value?</strong></p>
+<p>This meta-analysis examines how differences in <strong>business analytics (BA) resources, capabilities, and contextual factors</strong> are associated with differences in firm performance.</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Empirical setting</strong></p>
+<ul>
+<li>125 firm-level studies</li>
+<li>123 articles</li>
+<li>2012–2021 research period</li>
+<li>26 countries, four continents</li>
+<li>358 effect sizes</li>
+<li>Quantitative synthesis through meta-analysis</li>
+</ul>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/OesterreichAntonTeuteberg2022_model.svg" class="searchable-svg quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../images/OesterreichAntonTeuteberg2022_model.svg" class="searchable-svg quarto-figure quarto-figure-center" style="width:90.0%"></p>
 </figure>
 </div>
-<p>TODO: details (literature review, 125 studies, …)</p>
-<p>TBD: prepare/anticipate the connection from north-star KPI to quantitative metrics and analytical models?</p>
+</div></div>
+<aside class="notes">
+<p>This is a variance perspective because the study explains variation in firm performance through variation in organizational resources, capabilities, and contextual conditions.</p>
+<p>The paper complements Müller et al.&nbsp;(2018): rather than focusing on objective BDA assets and productivity in one panel dataset, it synthesizes many firm-level studies and asks which BA-related factors matter most across the literature.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="meta-analysis-results" class="slide level2">
 <h2>Meta-analysis results</h2>
-<p>TODO: check table!</p>
 <p><br></p>
 <div style="font-size: 0.75em;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 9%">
-<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -366,7 +433,7 @@
 <th style="text-align: right;">N</th>
 <th style="text-align: right;">Estimated effect</th>
 <th style="text-align: right;">95% CI</th>
-<th>Heterogeneity</th>
+<th style="text-align: right;">Heterogeneity</th>
 </tr>
 </thead>
 <tbody>
@@ -376,7 +443,7 @@
 <td style="text-align: right;">39,246</td>
 <td style="text-align: right;">0.452</td>
 <td style="text-align: right;">0.409–0.493</td>
-<td>Q = 1920.153**, df = 90, I² = 95.31%</td>
+<td style="text-align: right;">Q = 1920.153**, df = 90, I² = 95.31%</td>
 </tr>
 <tr class="even">
 <td>BA human resources</td>
@@ -384,7 +451,7 @@
 <td style="text-align: right;">9,219</td>
 <td style="text-align: right;">0.494</td>
 <td style="text-align: right;">0.444–0.541</td>
-<td>Q = 379.967**, df = 41, I² = 89.21%</td>
+<td style="text-align: right;">Q = 379.967**, df = 41, I² = 89.21%</td>
 </tr>
 <tr class="odd">
 <td>BA management capabilities</td>
@@ -392,7 +459,7 @@
 <td style="text-align: right;">16,074</td>
 <td style="text-align: right;">0.477</td>
 <td style="text-align: right;">0.433–0.519</td>
-<td>Q = 861.169**, df = 68, I² = 92.10%</td>
+<td style="text-align: right;">Q = 861.169**, df = 68, I² = 92.10%</td>
 </tr>
 <tr class="even">
 <td>Data quality</td>
@@ -400,7 +467,7 @@
 <td style="text-align: right;">3,088</td>
 <td style="text-align: right;">0.434</td>
 <td style="text-align: right;">0.328–0.528</td>
-<td>Q = 142.257**, df = 13, I² = 90.86%</td>
+<td style="text-align: right;">Q = 142.257**, df = 13, I² = 90.86%</td>
 </tr>
 <tr class="odd">
 <td>Organizational culture</td>
@@ -408,7 +475,7 @@
 <td style="text-align: right;">3,698</td>
 <td style="text-align: right;">0.472</td>
 <td style="text-align: right;">0.391–0.546</td>
-<td>Q = 153.939**, df = 17, I² = 88.96%</td>
+<td style="text-align: right;">Q = 153.939**, df = 17, I² = 88.96%</td>
 </tr>
 <tr class="even">
 <td>External pressure</td>
@@ -416,11 +483,21 @@
 <td style="text-align: right;">3,644</td>
 <td style="text-align: right;">0.165</td>
 <td style="text-align: right;">0.036–0.288</td>
-<td>Q = 248.937**, df = 16, I² = 93.57%</td>
+<td style="text-align: right;">Q = 248.937**, df = 16, I² = 93.57%</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Key findings and implications</strong></p>
+<ul>
+<li>BA is positively associated with firm performance across studies.</li>
+<li>The strongest effects are linked to <strong>human resources</strong>, <strong>management capabilities</strong>, and <strong>organizational culture</strong>.</li>
+<li>Technical resources and data quality matter, but they do not explain value creation alone.</li>
+<li>External pressure shows a smaller effect.</li>
+<li>High heterogeneity indicates that BA value creation remains context-dependent.</li>
+</ul>
 <aside class="notes">
 <p>IV = independent variable; n = number of studies; N = sample size; k = number of correlations; Est. eff. = estimated summary effect size; CI = 95% confidence interval; PI = 80% prediction interval; significance: ** p &lt; .01, * p &lt; .05, not significant (n.s.) for p &gt; .05; <span class="math inline">\(\tau^2\)</span> = between-study variance; I<sup>2</sup> = proportion of variance attributed to between-study variance; <sup>†</sup> indicates the number of missing studies necessary for each identified study to nullify the effect, calculated as fail-safe N divided by n; DF = degree of freedom.</p>
 <style type="text/css">
@@ -434,18 +511,137 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section></section>
 <section>
-<section id="level-process" class="title-slide slide level1 center" data-stack-name="Learning">
-<h1>Level: Process</h1>
+<section id="organizational-perspectives" class="title-slide slide level1 center" data-stack-name="Organizations">
+<h1>Organizational perspectives</h1>
 
 </section>
-<section id="todo" class="slide level2">
-<h2>TODO</h2>
-<p><span class="citation" data-cites="KunzSpohrerHeinzl2025">Kunz et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></p>
+<section id="a-process-perspective" class="slide level2">
+<h2>A process perspective</h2>
+<p><strong><span class="citation" data-cites="KunzSpohrerHeinzl2025">Kunz et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span>: Process-level value creation from business analytics</strong></p>
+<p>This theoretical literature review examines <strong>how business analytics creates value in organizational processes</strong> and how <strong>machine learning changes these value-creation paths</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Research focus</strong></p>
+<ul>
+<li>Process-level value creation</li>
+<li>Business analytics systems in use</li>
+<li>Organizational decision-making</li>
+<li>Knowledge creation and use</li>
+<li>Effects of ML-based analytics</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Method and evidence base</strong></p>
+<ul>
+<li>Theoretical literature review</li>
+<li>Emergent theory building</li>
+<li>176 articles synthesized</li>
+<li>Information Value Chain as sensitizing lens</li>
+<li>Six value-creation paths identified</li>
+</ul>
+</div></div>
+<p><br></p>
+<div id="ba-process-diagram-ksh2025" class="ba-process-diagram-ksh2025">
+  <style>
+    #ba-process-diagram-ksh2025 {
+      text-align: center;
+    }
+
+    #ba-process-diagram-ksh2025 svg {
+      width: 92%;
+      height: auto;
+      max-height: 235px;
+      overflow: visible;
+      font-family: Arial, sans-serif;
+    }
+
+    #ba-process-diagram-ksh2025 .ba-process-diagram-ksh2025__box {
+      fill: white;
+      stroke: black;
+      stroke-width: 1.6;
+    }
+
+    #ba-process-diagram-ksh2025 .ba-process-diagram-ksh2025__arrow {
+      fill: none;
+      stroke: black;
+      stroke-width: 2;
+      marker-end: url(#ba-process-diagram-ksh2025-arrow);
+    }
+
+    #ba-process-diagram-ksh2025 .ba-process-diagram-ksh2025__label {
+      font-size: 18px;
+    }
+  </style>
+
+  <svg viewbox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ba-process-diagram-ksh2025-title">
+    <title id="ba-process-diagram-ksh2025-title">
+      Business analytics value creation process
+    </title>
+
+    <defs>
+      <marker id="ba-process-diagram-ksh2025-arrow" viewbox="0 0 10 10" markerwidth="6" markerheight="6" refx="10" refy="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"></path>
+      </marker>
+    </defs>
+
+    <!-- Main boxes -->
+    <rect class="ba-process-diagram-ksh2025__box" x="40" y="100" width="110" height="55"></rect>
+    <text x="95" y="127" text-anchor="middle" dominant-baseline="middle" class="ba-process-diagram-ksh2025__label">Data</text>
+
+    <rect class="ba-process-diagram-ksh2025__box" x="190" y="45" width="135" height="165"></rect>
+    <text x="257.5" y="90" text-anchor="middle" class="ba-process-diagram-ksh2025__label">
+      <tspan x="257.5" dy="0">Business</tspan>
+      <tspan x="257.5" dy="24">Analytics</tspan>
+      <tspan x="257.5" dy="24">system</tspan>
+    </text>
+
+    <rect class="ba-process-diagram-ksh2025__box" x="380" y="100" width="125" height="55"></rect>
+    <text x="442.5" y="127" text-anchor="middle" dominant-baseline="middle" class="ba-process-diagram-ksh2025__label">Information</text>
+
+    <rect class="ba-process-diagram-ksh2025__box" x="550" y="100" width="125" height="55"></rect>
+    <text x="612.5" y="127" text-anchor="middle" dominant-baseline="middle" class="ba-process-diagram-ksh2025__label">Knowledge</text>
+
+    <rect class="ba-process-diagram-ksh2025__box" x="735" y="100" width="110" height="55"></rect>
+    <text x="790" y="127" text-anchor="middle" dominant-baseline="middle" class="ba-process-diagram-ksh2025__label">Decision</text>
+
+    <rect class="ba-process-diagram-ksh2025__box" x="895" y="100" width="110" height="55"></rect>
+    <text x="950" y="127" text-anchor="middle" dominant-baseline="middle" class="ba-process-diagram-ksh2025__label">Action</text>
+
+    <rect class="ba-process-diagram-ksh2025__box" x="1060" y="100" width="110" height="55"></rect>
+    <text x="1115" y="127" text-anchor="middle" dominant-baseline="middle" class="ba-process-diagram-ksh2025__label">Value</text>
+
+    <!-- Main flow arrows -->
+    <line class="ba-process-diagram-ksh2025__arrow" x1="150" y1="127" x2="190" y2="127"></line>
+    <line class="ba-process-diagram-ksh2025__arrow" x1="325" y1="127" x2="380" y2="127"></line>
+    <line class="ba-process-diagram-ksh2025__arrow" x1="505" y1="127" x2="550" y2="127"></line>
+    <line class="ba-process-diagram-ksh2025__arrow" x1="675" y1="127" x2="735" y2="127"></line>
+    <line class="ba-process-diagram-ksh2025__arrow" x1="845" y1="127" x2="895" y2="127"></line>
+    <line class="ba-process-diagram-ksh2025__arrow" x1="1005" y1="127" x2="1060" y2="127"></line>
+  </svg>
+</div>
+<aside class="notes">
+<ul>
+<li>RQ 1: How does business analytics create value for organizations?</li>
+<li>RQ 2: How does machine learning change value creation from business analytics?</li>
+</ul>
+<p>This slide shifts from variance-based explanations of performance differences to a process perspective: analytics creates value through sequences linking data, information, knowledge, decisions, actions, and process-level outcomes.</p>
+<p>Kunz, Spohrer, and Heinzl identify six process-level value creation paths. They also argue that ML changes BA value creation through autonomy, dynamism, and opacity, which strengthens decision automation and feedback loops while complicating knowledge creation and transfer.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="value-creation-paths-from-ba" class="slide level2">
-<h2>Value Creation Paths from BA</h2>
+<section id="value-creation-paths" class="slide level2">
+<h2>Value creation paths</h2>
 <div class="diagram-container">
   <style>
     .diagram-container svg {
@@ -597,14 +793,14 @@
     <g class="fragment" data-fragment-index="2">
       <path class="arrow" d="M442.5,300 V350 H950 V300"></path>
       <text x="700" y="378" text-anchor="middle" class="small-label">
-        Decision automation path
+        Decision augmentation and automation
       </text>
     </g>
 
     <!-- Stage 3: knowledge transfer path -->
     <g class="fragment" data-fragment-index="3">
       <rect class="label-bg" x="600" y="42" width="190" height="22"></rect>
-      <text x="605" y="58" class="small-label">Knowledge transfer path</text>
+      <text x="605" y="58" class="small-label">Knowledge accumulation and transfer</text>
 
       <!-- Path goes up from knowledge, then across, then down to the process boxes -->
       <path class="connector" d="M612.5,245 V70 H935"></path>
@@ -617,7 +813,7 @@
     <!-- Stage 4: feedback path -->
     <g class="fragment" data-fragment-index="4">
       <rect class="label-bg" x="340" y="0" width="120" height="22"></rect>
-      <text x="345" y="16" class="small-label">Feedback path</text>
+      <text x="345" y="16" class="small-label">Feedback</text>
 
       <!-- Main feedback connector starts slightly left of the knowledge-transfer path -->
       <path class="connector" d="M585,245 V28 H95"></path>
@@ -631,17 +827,18 @@
     </g>
   </svg>
 </div>
-<p>Note: maybe add explanations on the following slide?!</p>
-<p>TODO:</p>
-<ul>
-<li>cover canonical information processing path, decision augmentation vs.&nbsp;automation</li>
-<li>cover knowledge accumulation path, transfer, feedback</li>
-</ul>
-<p>TODO: summarize each value creation path (autonomy, dynamism, opacity)</p>
-<p>TODO: prepare connection from key-KPI/north-star to the use of analytics in different processes (learning system)</p>
+<!--
+Note: maybe add explanations on the following slide?!
+
+TODO:
+- cover canonical information processing path, decision augmentation vs. automation
+- cover knowledge accumulation path, transfer, feedback
+
+TODO: prepare connection from key-KPI/north-star to the use of analytics in different processes (learning system)
+-->
 </section>
-<section id="changes-ml" class="slide level2">
-<h2>Changes (ML)</h2>
+<section id="how-machine-learning-changes-value-creation" class="slide level2">
+<h2>How machine learning changes value creation</h2>
 <div class="diagram-container">
   <style>
     .diagram-container svg {
@@ -688,13 +885,6 @@
       fill: none;
       stroke: black;
       stroke-width: 4.4;
-      marker-end: url(#arrowBold);
-    }
-
-    .highlight-thin-arrow {
-      fill: none;
-      stroke: black;
-      stroke-width: 3.8;
       marker-end: url(#arrowBold);
     }
 
@@ -839,31 +1029,32 @@
     <!-- Base decision automation path -->
     <path class="arrow" d="M442.5,300 V350 H950 V300"></path>
     <text x="700" y="378" text-anchor="middle" class="small-label">
-      Decision automation path
+      Decision augmentation and automation
     </text>
 
     <!-- Base knowledge transfer path -->
     <rect class="label-bg" x="600" y="42" width="190" height="22"></rect>
-    <text x="605" y="58" class="small-label">Knowledge transfer path</text>
+    <text x="605" y="58" class="small-label">Knowledge accumulation and transfer</text>
     <path class="connector" d="M612.5,245 V70 H935"></path>
     <path class="arrow" d="M865,70 V90"></path>
     <path class="arrow" d="M935,70 V120"></path>
 
     <!-- Base feedback path -->
     <rect class="label-bg" x="340" y="0" width="120" height="22"></rect>
-    <text x="345" y="16" class="small-label">Feedback path</text>
+    <text x="345" y="16" class="small-label">Feedback</text>
     <path class="connector" d="M585,245 V28 H95"></path>
     <path class="arrow" d="M95,28 V245"></path>
     <path class="arrow" d="M257.5,28 V185"></path>
     <path class="connector" d="M980,90 V28 H585"></path>
 
-    <!-- Animation 1: emphasize positive paths -->
+    <!-- Fragment 1: Autonomy -->
     <g class="fragment" data-fragment-index="1">
-      <!-- Bold decision automation path -->
       <path class="highlight-arrow" d="M442.5,300 V350 H950 V300"></path>
       <text x="845" y="378" class="sign-label">+</text>
+    </g>
 
-      <!-- Bold feedback path -->
+    <!-- Fragment 2: Dynamism -->
+    <g class="fragment" data-fragment-index="2">
       <path class="highlight-connector" d="M585,245 V28 H95"></path>
       <path class="highlight-arrow" d="M95,28 V245"></path>
       <path class="highlight-arrow" d="M257.5,28 V185"></path>
@@ -871,19 +1062,19 @@
       <text x="470" y="16" class="sign-label">+</text>
     </g>
 
-    <!-- Animation 2: emphasize negative/dashed paths -->
-    <g class="fragment" data-fragment-index="2">
-      <!-- Information -> Knowledge -->
+    <!-- Fragment 3: Opacity -->
+    <g class="fragment" data-fragment-index="3">
+      <!-- weaken Information -> Knowledge -->
       <line class="erase-line" x1="505" y1="272" x2="550" y2="272"></line>
       <line class="negative-arrow" x1="505" y1="272" x2="550" y2="272"></line>
       <text x="527.5" y="235" text-anchor="middle" class="sign-label">−</text>
 
-      <!-- Knowledge -> Decision -->
+      <!-- weaken Knowledge -> Decision -->
       <line class="erase-line" x1="675" y1="272" x2="735" y2="272"></line>
       <line class="negative-arrow" x1="675" y1="272" x2="735" y2="272"></line>
       <text x="705" y="235" text-anchor="middle" class="sign-label">−</text>
 
-      <!-- Knowledge transfer path -->
+      <!-- weaken knowledge transfer path -->
       <path class="erase-line" d="M612.5,245 V70 H935"></path>
       <path class="erase-line" d="M865,70 V90"></path>
       <path class="erase-line" d="M935,70 V120"></path>
@@ -896,38 +1087,668 @@
     </g>
   </svg>
 </div>
+<ul>
+<li class="fragment" data-fragment-index="1">
+<strong>Autonomy</strong> leads to a stronger reliance on analytical information for decision-making and action
+</li>
+<li class="fragment" data-fragment-index="2">
+<strong>Dynamism</strong> involves knowledge and data-driven feedback to improve the ground truth or the analytical system
+</li>
+<li class="fragment" data-fragment-index="3">
+<strong>Opacity</strong> refers to the inscrutability of machine learning models, which restricts human understanding and process improvement
+</li>
+</ul>
+</section>
+<section id="towards-a-mature-analytics-portfolio" class="slide level2">
+<h2>Towards a mature analytics portfolio</h2>
+<p>The <strong>TDWI Analytics Maturity Model</strong> offers a diagnostic framework for assessing analytics capabilities across organization, resources, data infrastructure, analytics, and governance.</p>
+<p>The model classifies analytics maturity into five stages:</p>
+<ul>
+<li><strong>Nascent → Early → Established → Mature → Advanced/Visionary</strong></li>
+</ul>
+<p>TDWI’s model supports a structured assessment of where an organization’s analytics portfolio currently stands and where further development may be needed.</p>
+<div class="searchable-svg" style="width:90%; margin-left:auto; margin-right:auto;">
+<svg xmlns="http://www.w3.org/2000/svg" width="877" height="239" viewbox="0 0 877 239" role="img" aria-labelledby="title desc">
+  <title id="title">Data and analytics maturity model</title>
+  <desc id="desc">Five colored maturity areas with bullet points: organizational, resource, data infrastructure, analytics, and governance maturity.</desc>
+
+  <!-- Font styles are applied inline to avoid class-name collisions with Quarto/reveal.js CSS. -->
+
+  <!-- Column 1 -->
+  <g transform="translate(28 16)">
+    <rect width="159" height="44" fill="#E3192B"></rect>
+    <rect y="44" width="159" height="165" fill="#F7CCD2"></rect>
+    <text text-anchor="middle" x="79.5" y="17" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 15px; fill: #000000;">
+      <tspan x="79.5">Organizational</tspan>
+      <tspan x="79.5" dy="17">Maturity</tspan>
+    </text>
+    <text x="28" y="77" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 14px; fill: #111111;">
+      <tspan x="28" dy="0">• Leadership</tspan>
+      <tspan x="28" dy="22">• Culture</tspan>
+      <tspan x="28" dy="22">• Impact</tspan>
+      <tspan x="28" dy="22">• Strategy</tspan>
+    </text>
+  </g>
+
+  <!-- Column 2 -->
+  <g transform="translate(195 16)">
+    <rect width="159" height="44" fill="#FF9700"></rect>
+    <rect y="44" width="159" height="165" fill="#FFE9CC"></rect>
+    <text text-anchor="middle" x="79.5" y="17" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 15px; fill: #000000;">
+      <tspan x="79.5">Resource</tspan>
+      <tspan x="79.5" dy="17">Maturity</tspan>
+    </text>
+    <text x="14" y="77" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 14px; fill: #111111;">
+      <tspan x="14" dy="0">• Funding</tspan>
+      <tspan x="14" dy="22">• Talent/skills</tspan>
+      <tspan x="14" dy="22">• Roles/</tspan>
+      <tspan x="28" dy="17">responsibilities</tspan>
+      <tspan x="14" dy="22">• Training</tspan>
+    </text>
+  </g>
+
+  <!-- Column 3 -->
+  <g transform="translate(362 16)">
+    <rect width="159" height="44" fill="#A3633B"></rect>
+    <rect y="44" width="159" height="165" fill="#E7D8D2"></rect>
+    <text text-anchor="middle" x="79.5" y="17" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 15px; fill: #000000;">
+      <tspan x="79.5">Data Infrastructure</tspan>
+      <tspan x="79.5" dy="17">Maturity</tspan>
+    </text>
+    <text x="11" y="77" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 14px; fill: #111111;">
+      <tspan x="11" dy="0">• Diversity, volume,</tspan>
+      <tspan x="25" dy="17">and speed</tspan>
+      <tspan x="11" dy="22">• Data access</tspan>
+      <tspan x="11" dy="22">• Data integration and</tspan>
+      <tspan x="25" dy="17">management</tspan>
+      <tspan x="11" dy="22">• Data architecture</tspan>
+    </text>
+  </g>
+
+  <!-- Column 4 -->
+  <g transform="translate(529 16)">
+    <rect width="159" height="44" fill="#55C51E"></rect>
+    <rect y="44" width="159" height="165" fill="#DFF1D5"></rect>
+    <text text-anchor="middle" x="79.5" y="17" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 15px; fill: #000000;">
+      <tspan x="79.5">Analytics</tspan>
+      <tspan x="79.5" dy="17">Maturity</tspan>
+    </text>
+    <text x="11" y="77" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 14px; fill: #111111;">
+      <tspan x="11" dy="0">• Scope of</tspan>
+      <tspan x="25" dy="17">capabilities</tspan>
+      <tspan x="11" dy="22">• Automation/</tspan>
+      <tspan x="25" dy="17">augmented</tspan>
+      <tspan x="11" dy="22">• Deployment and</tspan>
+      <tspan x="25" dy="17">delivery approaches</tspan>
+      <tspan x="11" dy="22">• Innovation</tspan>
+    </text>
+  </g>
+
+  <!-- Column 5 -->
+  <g transform="translate(696 16)">
+    <rect width="159" height="44" fill="#00B953"></rect>
+    <rect y="44" width="159" height="165" fill="#CBECD9"></rect>
+    <text text-anchor="middle" x="79.5" y="17" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 15px; fill: #000000;">
+      <tspan x="79.5">Governance</tspan>
+      <tspan x="79.5" dy="17">Maturity</tspan>
+    </text>
+    <text x="11" y="76" style="font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 14px; fill: #111111;">
+      <tspan x="11" dy="0">• Data governance</tspan>
+      <tspan x="25" dy="15">processes and</tspan>
+      <tspan x="25" dy="15">tooling</tspan>
+      <tspan x="11" dy="19">• Model governance</tspan>
+      <tspan x="25" dy="15">processes and</tspan>
+      <tspan x="25" dy="15">tooling</tspan>
+      <tspan x="11" dy="19">• Governance roles</tspan>
+      <tspan x="11" dy="19">• Security/privacy</tspan>
+    </text>
+  </g>
+</svg>
+
+</div>
+
+<aside class="notes">
+<p>TDWI emphasizes that analytics maturity is not only about techniques or software; it includes organizational processes, culture, resources, data management, and governance. For our purposes, the model is useful because it makes the analytics portfolio assessable across several dimensions and maturity stages. The strategic alignment question is central: are analytics initiatives connected to overall organizational goals, and are they supported by leadership, funding, roles, and governance?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+Managing analytics requires organizations to coordinate a portfolio of capabilities, including **reporting, dashboards, self-service analytics, ML/AI, and operational analytics**.
+
+A central implication is that analytics maturity depends on the alignment between analytics initiatives, organizational strategy, decision-making processes, roles, funding, and governance.
+
+
+**Manage analytics as a portfolio — not as isolated tools.**
+
+    ## Deployment of analytics
+
+    ![](../images/tdwi_analytics_maturity_model.svg){width=50% fig-align=center .searchable-svg }
+
+    Maturity (Analytics portfolio)
+
+    https://go.tdwi.org/rs/626-EMC-557/images/TDWI_Analytics-Maturity-Model-Assessment-Guide_2020.pdf
+-->
+<aside><div>
+<p>Based on <span class="citation" data-cites="Halper2020">Halper (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div></aside></section>
+<section id="responsible-deployment-analytics-and-ai-risk-management" class="slide level2">
+<h2>Responsible deployment: Analytics and AI risk management</h2>
+<p>Advanced analytics increasingly becomes part of <strong>AI systems</strong> when it informs, recommends, or automates consequential decisions.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>NIST AI Risk Management Framework</strong></p>
+<ul>
+<li><strong>Govern</strong>: roles, policies, accountability</li>
+<li><strong>Map</strong>: context, stakeholders, intended use</li>
+<li><strong>Measure</strong>: performance, bias, robustness, risks</li>
+<li><strong>Manage</strong>: mitigation, monitoring, incident response</li>
+</ul>
+<p><strong>Deployment questions</strong></p>
+<ul>
+<li>Who is affected?</li>
+<li>What decision is supported or automated?</li>
+<li>What can go wrong?</li>
+<li>Who is accountable?</li>
+<li>How do we know when to stop or intervene?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/NIST_AIRMF.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+</div></div>
+<aside class="notes">
+<p>This slide connects the maturity-model idea to responsible analytics. Analytics deployment is not only about technical maturity or portfolio maturity. It also requires risk-management maturity. NIST is useful because it gives students a vocabulary that travels across analytics, machine learning, and AI governance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="boundaries-what-should-not-be-optimized" class="slide level2">
+<h2>Boundaries: what should not be optimized?</h2>
+<p>Analytics creates value only within legitimate organizational, ethical, and legal boundaries.</p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Possible boundaries</strong></p>
+<ul>
+<li>Privacy and purpose limitation</li>
+<li>Non-discrimination and fairness</li>
+<li>Safety and reliability</li>
+<li>Human autonomy and dignity</li>
+<li>Legal compliance</li>
+<li>Organizational values</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Examples</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Use case</th>
+<th>Boundary question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Employee analytics</td>
+<td>Does this become surveillance?</td>
+</tr>
+<tr class="even">
+<td>Credit scoring</td>
+<td>Who is disadvantaged?</td>
+</tr>
+<tr class="odd">
+<td>Medical triage</td>
+<td>What happens in edge cases?</td>
+</tr>
+<tr class="even">
+<td>Dynamic pricing</td>
+<td>When is personalization exploitative?</td>
+</tr>
+<tr class="odd">
+<td>Fraud detection</td>
+<td>How are false positives handled?</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<aside class="notes">
+<p>A useful deployment rule: define <strong>red lines</strong>, <strong>review zones</strong>, and <strong>routine-use zones</strong> before the system goes live.</p>
+<p>This slide should slow down the “more analytics is always better” assumption. It also prepares the transition to explainability and human oversight: if boundaries exist, someone must be able to recognize when they are being crossed.</p>
+<p>See “Move fast and break things” mentality</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-black-box-of-modern-analytics" class="slide level2">
+<h2>The black box of modern analytics</h2>
+<p>Modern analytics systems transform data into predictions without exposing a decision logic that people can easily inspect.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/black_box_example.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+<div class="fragment">
+<p>This raises practical questions:</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>Why this prediction?</li>
+<li>Why not another prediction?</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<ul>
+<li>When does the system fail?</li>
+<li>Who can contest or override it?</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>Start by slowing down the assumption that “more predictive performance is always better.” The black-box issue is not simply that the model is mathematically complex; it is that the model may influence decisions about work, credit, health, or other consequential domains, while users and affected persons cannot easily assess whether the output is appropriate.</p>
+<p>Use the motor/car prompt here: we do not need to understand combustion physics to drive a car, but we do need indicators, warnings, maintenance rules, legal accountability, and emergency controls. Likewise, XAI supports responsible use, not total technical understanding by every user.</p>
+<p>The IUI XAI lecture presents the black-box pipeline, explanation interface, local/global interpretability, intrinsic/post-hoc interpretability, and the notional interpretability–accuracy trade-off. Gunning’s XAI work similarly frames the problem as enabling users to understand, appropriately trust, and manage AI systems.</p>
+<p>Sources: https://iui-lecture.org/files/IUI-2021-01-21-slides/IUI_Explainable_AI.pdf ; Gunning (DARPA XAI); Gunning et al.&nbsp;(2019).</p>
+<p>The black-box problem “[…] stems from the mismatch between mathematical optimization in high-dimensionality characteristic of machine learning and the demands of human-scale reasoning and styles of semantic interpretation.” <span class="citation" data-cites="Burrell2016">Burrell (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="the-need-for-interpretability" class="slide level2">
+<h2>The need for interpretability</h2>
+<p><br><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/tradeoff_interpretability_explainability.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Interpretability is needed for different purposes</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Context</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trust</td>
+<td>know when to rely on the output</td>
+</tr>
+<tr class="even">
+<td>Engineering</td>
+<td>debug errors, bias, and brittle behavior</td>
+</tr>
+<tr class="odd">
+<td>Governance</td>
+<td>assign responsibility and define oversight</td>
+</tr>
+<tr class="even">
+<td>Recourse</td>
+<td>understand, challenge, or improve an outcome</td>
+</tr>
+<tr class="odd">
+<td>Regulation</td>
+<td>document compliance and enable auditability</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+
+<!--
+  **Examples for discussion**
+
+  **Hiring:** a recruiting model may learn historical bias from past hiring data rather than job-relevant competence.
+
+  **Credit scoring:** applicants need specific, understandable reasons for adverse decisions, not just “the algorithm said no.”
+
+  **Health risk:** a model can optimize a proxy, such as past cost, while missing underlying need or unequal access to care.
+
+
+TIP: Ask: **Explainability for whom, for which decision, and with what possible action?**
+WARNING: An explanation is useful only if it supports meaningful action: better use, better design, better oversight, or a credible path to contest and recourse.
+
+**Key tension:** predictive performance and explainability are often in tension, but not always. Treat this as a design trade-off, not as a law of nature.
+
+
+-->
+<aside class="notes">
+<p>Emphasize that XAI is a socio-technical control. A technically elegant explanation may still fail if the recipient cannot understand it, cannot act on it, or has no authority to intervene.</p>
+<p>Regulatory anchor: GDPR Article 15 includes access to “meaningful information about the logic involved” in automated decision-making in relevant cases; GDPR Article 22 limits solely automated decisions with legal or similarly significant effects and requires safeguards such as human intervention, expression of one’s point of view, and contesting the decision in specified cases. The EU AI Act requires transparency for high-risk AI systems so deployers can interpret outputs and use the system appropriately, includes human oversight requirements, and Article 86 provides a right to clear and meaningful explanations for affected persons in specified high-risk AI cases.</p>
+<p>Examples: Reuters reported that Amazon abandoned an experimental internal recruiting tool after it showed bias against women. In credit, adverse-action requirements illustrate the practical need for specific reasons rather than generic model outputs. In health care, Obermeyer et al.&nbsp;showed that an algorithm using cost as a proxy for health need produced racial bias because costs reflected unequal access and spending, not only medical need.</p>
+<p>Possible prompt: “Which stakeholder needs which explanation in each example: the applicant/patient, frontline professional, manager, auditor, or engineer?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Based on <span class="citation" data-cites="ChamolaEtAl2023">Chamola et al. (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span></p>
+</div></aside></section>
+<section id="explainability-methods" class="slide level2">
+<h2>Explainability methods</h2>
+<p><strong>Explainability methods</strong> aim to make AI-based systems, their reasoning processes, or their outputs understandable, either by designing models that are explainable from the outset or by generating explanations for already-trained, potentially opaque models.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/explainability_methods_taxonomy_Speith2022.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+
+<aside class="notes">
+<p>This slide should provide a map of the main XAI design space, not a technical deep dive. Keep the distinction between explanation families and explanation goals clear.</p>
+<p>Feature importance can be global or local. It is intuitive for students, but it can be misleading if interpreted causally. Model-specific examples include coefficients in regression or split criteria in trees; post-hoc examples include LIME/SHAP-style methods that approximate local model behavior. Counterfactuals are attractive because they are action-oriented: they tell an affected person what would have to change for a different outcome. Interactive tools are useful for learning and governance because they allow users to probe thresholds, edge cases, and sensitivity.</p>
+<p>In class, ask students which explanation is useful for which stakeholder: an engineer may want debugging information; an applicant may want reasons and recourse; a manager may need limits and oversight rules; an auditor may need logs and evidence.</p>
+<p>Sources: Ribeiro, Singh &amp; Guestrin (2016) on LIME; Wachter, Mittelstadt &amp; Russell (2017/2018) on counterfactual explanations; IUI XAI lecture on local/global and intrinsic/post-hoc interpretability.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+Discussion prompts:
+- There has always been proprietary, non-interpretable knowledge. What is different now?
+- We do not need to understand how a motor works to drive a car. why do we need to understand ML models now?
+
+A useful framing: XAI is not only about “seeing inside” a model; it is about giving the right people enough understanding to **trust, contest, improve, or govern** the system.
+
+## Responsible deployment
+
+AI risk management framework by NIST: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf
+https://airc.nist.gov/airmf-resources/playbook/
+
+Argue: advanced analytics may be increasingly integrated in "AI Systems"
+
+
+**Boundaries**
+
+TBD. but students should have an overview here
+
+XAI (with illustrations, as a legal requirement)
+
+TBD: situational overrides (emergencies?)
+
+## TBD: repeat CRISP-DM (plus MLOps and data management infrastructure?)
+-->
+<aside><div>
+<p>Based on <span class="citation" data-cites="Speith2022">Speith (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p>
+</div></aside></section>
+<section id="explainability-methods-examples" class="slide level2">
+<h2>Explainability methods: Examples</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/explainability_methods_feature_importance.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p><strong>Feature importance</strong></p>
+<p>Mostly static analysis of the trained model and data; often post-hoc, though some models provide importance intrinsically. Usually provides a global view: which variables matter most across the model or dataset.</p>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/explainability_methods_counterfactual_explanation.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<p><strong>Counterfactual explanations</strong></p>
+<p>Post-hoc explanation based on minimal feature changes that would alter the prediction.</p>
+</div></div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/explainability_methods_interactive.png" class="quarto-figure quarto-figure-center" style="width:63.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<p><strong>Interactive explanation</strong></p>
+<p>Post-hoc, user-driven exploration combining static explanations with what-if changes to input features.</p>
+</div></div>
+</div>
 </section></section>
 <section>
-<section id="level-human-ai-interaction" class="title-slide slide level1 center" data-stack-name="Humans">
-<h1>Level: Human-AI interaction</h1>
+<section id="people-perspectives" class="title-slide slide level1 center" data-stack-name="People">
+<h1>People perspectives</h1>
 
 </section>
-<section id="skills-and-adoption-perception" class="slide level2">
-<h2>Skills and adoption (perception??)</h2>
-</section>
-<section id="human-ai-collaboration" class="slide level2">
-<h2>Human-AI collaboration</h2>
-<p>Autonomy vs.&nbsp;</p>
-<p>Collaboration modality (ghostwriter vs.&nbsp;sounding board) interact with expertise and determine quality of creative knowledge work ([[ChenChan2024]]): using [[LLM]]s for ghostwriting is detrimental to experts, as a sounding board, it helps non-experts.</p>
-<p>When delegating tasks (such as classification), humans may be less effective than AI (see [[FugenerGrahlGuptaEtAl2022]])</p>
-<p>Understanding the [[Jagged Technological Frontier]] is challenging -&gt; maybe, humans are no longer in a position to decide (in some cases)</p>
-<p>Proactive agents lead to a higher loss of users’ competence-based self-esteem and reduce system satisfaction (compared to reactive agents) ([[DiebelGoutierAdamEtAl2025]])</p>
-<p>Roles interactions: algorithms in their multiple roles as supervisors/evaluators/peers create role conflict and role ambiguity, which prompts humans to react (specific tasks or cognitive reactions), feeding into the <em>computational feedback learning loop</em> and/or the <em>(broken) human feedback loop</em> [[TarafdarPageMarabelli2023]]</p>
-<p>Human: Strich/JAIS -&gt; “safeguarding against human intervention” (loan agents cannot overrule the AI decision, preventing aself-interest to affect their decisions)</p>
-</section>
-<section id="boundaries" class="slide level2">
-<h2>Boundaries</h2>
-<p>TBD. but students should have an overview here</p>
-<p>XAI (with illustrations, as a legal requirement)</p>
-<p>TBD: situational overrides (emergencies?)</p>
+<section id="human-resources-for-analytics" class="slide level2">
+<h2>Human resources for analytics</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><strong>BCG AI Radar 2025 survey</strong></p>
+<ul>
+<li><strong>1,803 C-level executives</strong></li>
+<li>Across markets, industries, roles, and company sizes</li>
+</ul>
+<p><strong>Main finding:</strong><br>
+AI is expected to reshape work more than eliminate workers.</p>
+<ul>
+<li>Only <strong>7%</strong> expect fewer FTEs due to automation</li>
+<li><strong>17%</strong> expect workforce restructuring with new roles</li>
+<li><strong>68%</strong> expect more productivity and upskilling of the existing workforce</li>
+<li><strong>8%</strong> expect more FTEs and new skills</li>
+</ul>
+</div><div class="column" style="width:58%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/people_bcg.png" class="quarto-figure quarto-figure-center" style="width:95.0%"></p>
+</figure>
+</div>
+</div></div>
+<div class="fragment">
+<p>Analytics and AI deployment is a <strong>people-and-process transformation</strong>: executives expect value to come from humans and AI working <strong>side by side</strong>, with human oversight remaining central.</p>
+</div>
 <!--
+  **Key message**
+
+  - **10%** algorithms
+  - **20%** technology
+  - **70%** people and processes
+-->
+
+<aside class="notes">
+<p>The slide should counter the simplistic “AI replaces people” narrative. The BCG evidence suggests that the central challenge is not only model performance or infrastructure, but organizational change: workflow redesign, incentives, culture, hiring AI talent, and upskilling the existing workforce.</p>
+<p>Relevant survey evidence: BCG reports the 10-20-70 principle, with 70% of value creation attributed to people and processes. It also reports that executives see talent and AI as complementary: 64% describe AI and humans as working side by side, 22% see AI taking the lead with humans retaining oversight, and 14% prioritize human talent while using AI only when necessary. On workforce change, only 7% expect fewer FTEs due to AI automation, while 68% expect productivity and upskilling of the existing workforce, 17% expect restructuring with new roles, and 8% expect more FTEs.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Based on <span class="citation" data-cites="ApothekerDurantonLukicEtAl2025">Apotheker et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></p>
+</div></aside></section>
+<section id="possible-human-futures-in-analytics-and-ai" class="slide level2">
+<h2>Possible human futures in analytics and AI</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/people_paths.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+</figure>
+</div>
+<!--
+  :::: {.columns}
+
+  ::: {.column width="48%"}
+
+  **Skills for analytics use**
+
+  People need more than tool access.
+
+  - **Hard skills:** data literacy, model intuition, prompt/use-case competence
+  - **Soft skills:** critical questioning, communication, collaboration
+  - **Mindset:** experimentation, learning orientation, responsible skepticism
+
+  :::
+
+  ::: {.column width="52%"}
+
+  **Adoption tensions**
+
+  Analytics changes roles, authority, and professional identity.
+
+  - Resistance when autonomy or expertise feels threatened
+  - Role uncertainty: “What is my contribution now?”
+  - Gaming or bypassing systems when incentives conflict
+  - Overtrust or undertrust in analytical recommendations
+
+  :::
+
+  ::::
+
+  . . .
+
+  ::: {.callout-note appearance="simple"}
+  The future human role is not fixed: analytics may **replace**, **augment**, or **confuse** human judgment depending on the task, system design, and governance.
+  :::
+
+  :::: {.columns}
+
+  ::: {.column width="33%"}
+
+  **Automated delegation**
+
+  In highly automated settings, humans may have limited insight into opaque models and limited capacity to intervene.
+
+  In some structured tasks, AI may even be better at deciding whether a human or an algorithm should make the final judgment.
+
+  :::
+
+  ::: {.column width="33%"}
+
+  **Augmented professionals**
+
+  People who work effectively with analytics and AI may gain a labor-market advantage.
+
+  The relevant divide may shift from “humans vs. AI” to **AI-augmented workers vs. non-users**.
+
+  :::
+
+  ::: {.column width="33%"}
+
+  **Jagged frontier**
+
+  AI performance is difficult to anticipate.
+
+  For seemingly similar tasks, systems may perform impressively well in one case and surprisingly poorly in another.
+
+  :::
+
+  ::::
+
+  ::: aside
+  Based on @FugenerGrahlGuptaEtAl2022; @ChenChan2024; “jagged technological frontier” discussion.
+  :::
+-->
+<aside class="notes">
+<p>Use the upper part to emphasize that analytics adoption depends on human capabilities and organizational acceptance. Skills include technical competence, but also communication, critical thinking, and a mindset of responsible experimentation.</p>
+<p>The “adoption tensions” label is deliberately broad. It covers resistance, professional identity, role changes, autonomy concerns, and gaming behavior. This avoids framing resistance as irrational: people may resist because analytics changes status, accountability, incentives, and what counts as expertise.</p>
+<p>After the fragment, shift to the future perspective. The point is that “human judgment” is not one stable thing. In some contexts, humans may be removed from the operational decision process. In others, humans become more powerful because analytics extends their capabilities. In still others, the main challenge is uncertainty: humans cannot easily know when AI is strong or weak because performance follows a jagged frontier.</p>
+<p>The core takeaway for students: the question is not simply whether humans should remain in the loop. The harder question is which human role is appropriate for which task, under which conditions, and with which safeguards.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--
+
+    ## Skills and adoption
+
+    Humans require adequate skills and acceptance (mindset?? hard skills, soft skills, professional identity)
+
+    Human: Strich/JAIS -> "safeguarding against human intervention" (loan agents cannot overrule the AI decision, preventing aself-interest to affect their decisions)
+
+    ## Human judgment and oversight
+
+    Humans are responsible but imperfect
+
+    Collaboration modality (ghostwriter vs. sounding board) interact with  expertise and determine quality of creative knowledge work ([[ChenChan2024]]): using [[LLM]]s for ghostwriting is detrimental to experts, as a sounding board, it helps non-experts.
+
+    When delegating tasks (such as classification), humans may be less effective than AI (see [[FugenerGrahlGuptaEtAl2022]])
+
+    Proactive agents lead to a higher loss of users' competence-based self-esteem and reduce system satisfaction (compared to reactive agents) ([[DiebelGoutierAdamEtAl2025]])
+
+    Understanding the [[Jagged Technological Frontier]] is challenging
+    -> maybe, humans are no longer in a position to decide (in some cases)
+
+
+
     Note: algorithmic management -> part of the group-work session (one example)
 -->
 </section>
 <section id="summary" class="slide level2" data-state="hide-menubar">
 <h2>Summary</h2>
 <ul>
-<li>TODO</li>
+<li><p>Analytics can improve organizational performance, but its value depends on <strong>context</strong>, complementary resources, and how analytics is embedded in organizational processes.</p></li>
+<li><p>Value creation requires an analytics portfolio that combines <strong>data infrastructure</strong>, <strong>technical and human resources</strong>, <strong>management capabilities</strong>, and governance aligned with strategy.</p></li>
+<li><p>Responsible deployment means asking not only “Can we optimize this?” but also “Should we?” — defining ethical, legal, and organizational boundaries before systems go live.</p></li>
+<li><p>As analytics becomes more autonomous, dynamic, and opaque, organizations need interpretability, risk management, and oversight mechanisms that allow people to <strong>understand, contest, and intervene</strong>.</p></li>
+<li><p>The human role is changing rather than disappearing: analytics and AI create value when people have the skills, mindset, and organizational conditions to work effectively with them.</p></li>
 </ul>
 </section>
 <section id="survey-session-10" class="slide level2" data-state="hide-menubar">
@@ -957,6 +1778,18 @@
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-ApothekerDurantonLukicEtAl2025" class="csl-entry" role="listitem">
+Apotheker, J., Duranton, S., Lukic, V., Bellefonds, N. de, Iyer, S., Bouffault, O., &amp; Laubier, R. de. (2025). From potential to profit: Closing the AI impact gap: BCG AI radar. <em>Boston Consulting Group</em>. <a href="https://www.bcg.com/publications/2025/closing-the-ai-impact-gap">https://www.bcg.com/publications/2025/closing-the-ai-impact-gap</a>
+</div>
+<div id="ref-Burrell2016" class="csl-entry" role="listitem">
+Burrell, J. (2016). How the machine <span>“thinks”</span>: Understanding opacity in machine learning algorithms. <em>Big Data &amp; Society</em>, <em>3</em>(1), 2053951715622512. <a href="https://doi.org/10.1177/205395171562251">https://doi.org/10.1177/205395171562251</a>
+</div>
+<div id="ref-ChamolaEtAl2023" class="csl-entry" role="listitem">
+Chamola, V., Hassija, V., Sulthana, A. R., Ghosh, D., Dhingra, D., &amp; Sikdar, B. (2023). A review of trustworthy and explainable artificial intelligence (XAI). <em>IEEE Access</em>, <em>11</em>, 78994–79015. <a href="https://doi.org/10.1109/ACCESS.2023.3294569">https://doi.org/10.1109/ACCESS.2023.3294569</a>
+</div>
+<div id="ref-Halper2020" class="csl-entry" role="listitem">
+Halper, F. (2020). <em><span>TDWI Analytics Maturity Model Assessment Guide</span></em>. <span>TDWI Research</span>. <a href="https://go.tdwi.org/rs/626-EMC-557/images/TDWI_Analytics-Maturity-Model-Assessment-Guide_2020.pdf">https://go.tdwi.org/rs/626-EMC-557/images/TDWI_Analytics-Maturity-Model-Assessment-Guide_2020.pdf</a>
+</div>
 <div id="ref-KunzSpohrerHeinzl2025" class="csl-entry" role="listitem">
 Kunz, P. C., Spohrer, K., &amp; Heinzl, A. (2025). Process-level value creation from business analytics: A theoretical literature review of value creation paths and changes induced by machine learning. <em>The Journal of Strategic Information Systems</em>, <em>34</em>(2), 101902. <a href="https://doi.org/10.1016/j.jsis.2025.101902">https://doi.org/10.1016/j.jsis.2025.101902</a>
 </div>
@@ -965,6 +1798,9 @@ Müller, O., Fay, M., &amp; Vom Brocke, J. (2018). The effect of big data and an
 </div>
 <div id="ref-OesterreichAntonTeuteberg2022" class="csl-entry" role="listitem">
 Oesterreich, T. D., Anton, E., &amp; Teuteberg, F. (2022). What translates big data into business value? A meta-analysis of the impacts of business analytics on firm performance. <em>Information &amp; Management</em>, <em>59</em>(6), 103685. <a href="https://doi.org/10.1016/j.im.2022.103685">https://doi.org/10.1016/j.im.2022.103685</a>
+</div>
+<div id="ref-Speith2022" class="csl-entry" role="listitem">
+Speith, T. (2022). A review of taxonomies of explainable artificial intelligence (XAI) methods. <em>Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency</em>, 2239–2250. <a href="https://doi.org/10.1145/3531146.3534639">https://doi.org/10.1145/3531146.3534639</a>
 </div>
 </div>
 </section>

@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Part 1: Case and dataset <a id="part-1" href=""></a></h1>
 <section id="task-1.1-load-and-inspect-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="task-1.1-load-and-inspect-the-dataset">Task 1.1 — Load and inspect the dataset</h2>
-<div id="c68a7e90" class="cell" data-execution_count="2">
+<div id="76bf81c5" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/imdb_reviews_sample.csv"</span>)</span>
@@ -173,7 +173,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<div id="baa5e135" class="cell" data-execution_count="4">
+<div id="04e81870" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">"review"</span>, <span class="st">"sentiment"</span>]).copy()</span>
@@ -225,7 +225,7 @@ Name: proportion, dtype: float64</code></pre>
 </section>
 <section id="solution-1" class="level2">
 <h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
-<div id="f937bbac" class="cell" data-execution_count="6">
+<div id="0554b60e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer, TfidfVectorizer</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>count_vectorizer <span class="op">=</span> CountVectorizer(</span>
@@ -267,7 +267,7 @@ TF-IDF sparsity: 0.9854</code></pre>
 </section>
 <section id="solution-2" class="level2">
 <h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<div id="f08a1321" class="cell" data-execution_count="8">
+<div id="70d32460" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>review_id <span class="op">=</span> <span class="dv">0</span></span>
@@ -388,7 +388,7 @@ TF-IDF sparsity: 0.9854</code></pre>
 </section>
 <section id="solution-3" class="level2">
 <h2 class="anchored" data-anchor-id="solution-3">Solution</h2>
-<div id="106f411f" class="cell" data-execution_count="10">
+<div id="6a64bb2e" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
@@ -478,7 +478,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
-<div id="5087bb6f" class="cell" data-execution_count="12">
+<div id="d0c51a75" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sentence_transformers <span class="im">import</span> SentenceTransformer</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>embedding_model <span class="op">=</span> SentenceTransformer(<span class="st">"all-MiniLM-L6-v2"</span>)</span>
@@ -510,7 +510,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-5" class="level2">
 <h2 class="anchored" data-anchor-id="solution-5">Solution</h2>
-<div id="43cb49bd" class="cell" data-execution_count="14">
+<div id="5ab44daa" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_similarity</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>query_id <span class="op">=</span> <span class="dv">0</span></span>
@@ -542,7 +542,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-6" class="level2">
 <h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
-<div id="c1121308" class="cell" data-execution_count="16">
+<div id="cac7ac82" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -589,7 +589,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-7" class="level2">
 <h2 class="anchored" data-anchor-id="solution-7">Solution</h2>
-<div id="485cf78b" class="cell" data-execution_count="18">
+<div id="b3e3217c" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -617,7 +617,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-8" class="level2">
 <h2 class="anchored" data-anchor-id="solution-8">Solution</h2>
-<div id="de0776ee" class="cell" data-execution_count="20">
+<div id="b0784230" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dense_clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)</span>
@@ -642,7 +642,7 @@ Query sentiment: negative</code></pre>
 </section>
 <section id="solution-9" class="level2">
 <h2 class="anchored" data-anchor-id="solution-9">Solution</h2>
-<div id="3f29a758" class="cell" data-execution_count="22">
+<div id="f60dcfb7" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    {</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"representation"</span>: [<span class="st">"TF-IDF"</span>, <span class="st">"Dense embeddings"</span>],</span>
@@ -703,7 +703,7 @@ Query sentiment: negative</code></pre>
 <h1>Part 5: Edge cases and reflection <a id="part-5" href=""></a></h1>
 <section id="solution-10" class="level2">
 <h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
-<div id="f807a8d3" class="cell" data-execution_count="24">
+<div id="87495f1d" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>edge_cases <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    {</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"review"</span>: [</span>
