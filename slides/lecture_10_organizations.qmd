@@ -43,9 +43,8 @@ The study examines whether firms with live **big data and analytics (BDA) assets
 
 - Outcome: $\log(Sales)$
 - Inputs: labor, capital, materials
-- IT controls: ERP, CRM, SCM
-- Industry and year controls
-- Industry moderators: IT intensity and competition
+- Controls: General IT, industry, and year
+- Moderators: IT intensity and competition
 :::
 :::
 
@@ -59,6 +58,10 @@ $$
 $$
 
 ::: notes
+Cobb–Douglas-style production function  
+log-linear model (not a logistic regression)  
+Fixed effects: each firm has its own intercept (addressing omitted variable bias)
+
 The study follows the IT business value tradition and uses a Cobb–Douglas production function. BDA is operationalized as ownership of live BDA assets, not as a self-reported perception of analytics maturity.
 
 It is challenging to isolate the effects of analytics from those of AI or IT more broadly.
@@ -218,6 +221,7 @@ This theoretical literature review examines **how business analytics creates val
 
 <br>
 
+. . . 
 
 {{< include KunzSpohrerHeinzl2025_process.qmd >}}
 
@@ -233,6 +237,29 @@ Kunz, Spohrer, and Heinzl identify six process-level value creation paths. They 
 ## Value creation paths
 
 {{< include KunzSpohrerHeinzl2025_paths.qmd >}}
+
+::: notes
+
+* **Ia. Canonical information processing path**
+  The emergency department dashboard shows waiting times, patient acuity, bed availability, and historical bottlenecks. The shift lead interprets these data, updates their understanding of the situation, decides to reassign nurses, and acts accordingly.
+
+* **Ib. Decision augmentation path**
+  A prediction model flags that a patient is likely to deteriorate within two hours. The physician does not fully understand the model’s reasoning but uses the risk score as an additional input alongside clinical judgment.
+
+* **Ic. Decision automation path**
+  When predicted waiting-room congestion exceeds a threshold, the system automatically sends low-acuity patients to a partner urgent-care clinic and updates appointment slots without human approval.
+
+* **IIa. Knowledge accumulation path**
+  Over months, the hospital learns that congestion is not mainly caused by emergency arrivals but by delayed discharges from specific wards after 3 p.m. This accumulated insight leads to redesigning discharge routines.
+
+* **IIb. Knowledge transfer path**
+  Insights from the emergency department are shared with radiology, inpatient wards, and hospital management. Radiology adjusts staffing because ED bottlenecks often follow imaging delays; wards change discharge planning.
+
+* **IIc. Feedback path**
+  Clinicians notice that the deterioration-risk model overpredicts risk for elderly patients with certain chronic conditions. They report this, the data science team revises features and retrains the model, and future alerts become more relevant.
+
+:::
+
 
 <!--
 Note: maybe add explanations on the following slide?!
