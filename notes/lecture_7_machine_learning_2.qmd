@@ -9,71 +9,15 @@ format: html
 |------------|----------|-------|----------------------|
 | 0–90       |       90 |  TODO |                      |
 
-::: callout-note
 
-Lectures
-https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
 
-TODO: better prepare the explanation of decision trees (entropy, information gain) (see https://www.cs.cmu.edu/~aarti/Class/10315_Fall20/recs/DecisionTreesBoostingExampleProblem.pdf)  
-TODO: check regression trees carefully  
-TODO: prepare explanation and visualization of SVMs (on the slides)
+TODO: 
 
-:::
+- Better prepare the explanation of decision trees (entropy, information gain) (see https://www.cs.cmu.edu/~aarti/Class/10315_Fall20/recs/DecisionTreesBoostingExampleProblem.pdf)  
+- Check regression trees carefully  
+- Prepare explanation and visualization of SVMs (on the slides)
 
 ## Decision trees
-
-https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8
-
-TODO: check statement and plot!!
-
-<!--
-Information gain rewards purity—even if it comes from splitting into many small groups. Gain ratio corrects this by penalizing overly fragmented splits.
-
-```{python}
-#| label: fig-gain-ratio-fragmentation
-#| fig-cap: "Information Gain vs Gain Ratio under increasing fragmentation"
-import numpy as np
-import matplotlib.pyplot as plt
-
-
-def entropy(probs):
-    return -np.sum([p * np.log2(p) for p in probs if p > 0])
-
-
-groups = range(2, 11)
-
-info_gain = []
-split_info = []
-gain_ratio = []
-
-parent_entropy = 1.0  # fixed for illustration
-
-for m in groups:
-    # assume equal-sized groups
-    probs = [1 / m] * m
-    si = entropy(probs)  # split information
-
-    # assume groups become purer as m increases (toy assumption)
-    child_entropy = 1 / m  # smaller with more splits
-
-    ig = parent_entropy - child_entropy
-
-    info_gain.append(ig)
-    split_info.append(si)
-    gain_ratio.append(ig / si)
-
-plt.figure(figsize=(7, 4))
-plt.plot(groups, info_gain, marker="o", label="Information Gain")
-plt.plot(groups, gain_ratio, marker="o", label="Gain Ratio")
-
-plt.xlabel("Number of groups (fragmentation)")
-plt.ylabel("Value")
-plt.title("Gain Ratio penalizes overly fragmented splits")
-plt.legend()
-plt.grid()
-plt.show()
-```
--->
 
 ### ID3 algorithm (entropy)
 
@@ -373,3 +317,11 @@ must be exactly the same as for the training data. Thus, it is necessary, to kee
 <!--
 https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
 -->
+
+{{< pagebreak >}}
+
+## Materials
+
+Lectures: https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf
+
+https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8
