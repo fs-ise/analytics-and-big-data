@@ -72,17 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-objective.callout {
-  border-left-color: #0d6efd;
-}
-div.callout-objective.callout-style-default > .callout-header {
-  background-color: rgba(13, 110, 253, 0.13);
-}
-div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
-  content: '🎯';
-  background-image: none;
-}
 div.callout-self-service.callout {
   border-left-color: #198754;
 }
@@ -114,6 +103,17 @@ div.callout-confidential.callout-style-default > .callout-header {
 div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
   content: '🔒';
+  background-image: none;
+}
+div.callout-objective.callout {
+  border-left-color: #0d6efd;
+}
+div.callout-objective.callout-style-default > .callout-header {
+  background-color: rgba(13, 110, 253, 0.13);
+}
+div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
+  content: '🎯';
   background-image: none;
 }
 </style>
@@ -280,32 +280,17 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)</p>
-<p>TODO: suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudocode”, “are there any errors (e.g., switched code blocks)?”)</p>
-<p>Nice introduction: https://kuleshov-group.github.io/aml-website (careful: copyright!)</p>
-<p>Lecture: https://harvard-iacs.github.io/2019-CS109A/lectures/lecture7/presentation/Lecture7_ModeLSelectionRegularization.pdf</p>
-<p>https://github.com/kuleshov/cornell-cs5785-2025-applied-ml/blob/main/lecture-notes/lecture2-supervised-learning.ipynb</p>
-<p>https://jose.theoj.org/papers/10.21105/jose.00239 -&gt; slides not useful for ABD -&gt; Exercises: penguin dataset, but maybe useful as an inspiration. https://github.com/Cambridge-ICCS/practical-ml-with-pytorch/tree/main/exercises</p>
-<p>https://www.3blue1brown.com/topics/neural-networks -&gt; instructive animations on neural networks etc.</p>
-<p>https://www.youtube.com/watch?v=jGwO_UgTS7I -&gt; Andrew Ng lecture (TODO) https://cs229.stanford.edu/</p>
-</div>
-</div>
-<section id="todo-group-work-topics" class="level2">
-<h2 class="anchored" data-anchor-id="todo-group-work-topics">TODO: Group work topics</h2>
+<p>TODO:</p>
+<ul>
+<li>Suggest code reading/understanding exercises (e.g., “what are the next steps of the procedure?”, “annotate what is done in the code blocks”, “give pseudocode”, “are there any errors (e.g., switched code blocks)?”)</li>
+</ul>
+<section id="group-work-topics" class="level2">
+<h2 class="anchored" data-anchor-id="group-work-topics">Group work topics</h2>
 <p>Check which topics were selected by groups, identify potential overlap and guide topic selection.</p>
 </section>
 <section id="supervised-ml" class="level2">
 <h2 class="anchored" data-anchor-id="supervised-ml">Supervised ML</h2>
+<p>Note: moved unsupervised ML (clustering) to EDA (mention here only as an example of unsupervised ML)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/programming_vs_ml.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
@@ -372,6 +357,20 @@ Note
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <p>2026-04-20: 75 min (<code>Data Analytics with Python.pdf</code> : partitioning (p.20) and cross-validation (p.41).)</p>
 <p>Note: this exercise should be a focused work-through-a-full-cross-validation effort. Announce that we will treat ML algorithms as black boxes for now (except for using their specific hyperparameters). They all have to be implemented according to the same workflow.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<ul>
+<li><p>Nice introduction: https://kuleshov-group.github.io/aml-website (careful: copyright!)</p></li>
+<li><p>Lecture: https://harvard-iacs.github.io/2019-CS109A/lectures/lecture7/presentation/Lecture7_ModeLSelectionRegularization.pdf</p></li>
+<li><p>https://github.com/kuleshov/cornell-cs5785-2025-applied-ml/blob/main/lecture-notes/lecture2-supervised-learning.ipynb</p></li>
+<li><p>https://jose.theoj.org/papers/10.21105/jose.00239 -&gt; slides not useful for ABD -&gt; Exercises: penguin dataset, but maybe useful as an inspiration.</p></li>
+<li><p>https://github.com/Cambridge-ICCS/practical-ml-with-pytorch/tree/main/exercises</p></li>
+<li><p>instructive animations on neural networks etc.: https://www.3blue1brown.com/topics/neural-networks</p></li>
+<li><p>Andrew Ng lecture: https://www.youtube.com/watch?v=jGwO_UgTS7I</p></li>
+<li><p>https://cs229.stanford.edu/</p></li>
+</ul>
 <!--
 
 https://learningds.org/ch/16/ms_intro.html

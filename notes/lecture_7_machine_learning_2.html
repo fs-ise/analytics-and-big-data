@@ -256,80 +256,16 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Lectures https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf</p>
-<p>TODO: better prepare the explanation of decision trees (entropy, information gain) (see https://www.cs.cmu.edu/~aarti/Class/10315_Fall20/recs/DecisionTreesBoostingExampleProblem.pdf)<br>
-TODO: check regression trees carefully<br>
-TODO: prepare explanation and visualization of SVMs (on the slides)</p>
-</div>
-</div>
+<p>TODO:</p>
+<ul>
+<li>Better prepare the explanation of decision trees (entropy, information gain) (see https://www.cs.cmu.edu/~aarti/Class/10315_Fall20/recs/DecisionTreesBoostingExampleProblem.pdf)<br>
+</li>
+<li>Check regression trees carefully<br>
+</li>
+<li>Prepare explanation and visualization of SVMs (on the slides)</li>
+</ul>
 <section id="decision-trees" class="level2">
 <h2 class="anchored" data-anchor-id="decision-trees">Decision trees</h2>
-<p>https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8</p>
-<p>TODO: check statement and plot!!</p>
-<!--
-Information gain rewards purity—even if it comes from splitting into many small groups. Gain ratio corrects this by penalizing overly fragmented splits.
-
-::: {#cell-fig-gain-ratio-fragmentation .cell execution_count=1}
-``` {.python .cell-code}
-import numpy as np
-import matplotlib.pyplot as plt
-
-
-def entropy(probs):
-    return -np.sum([p * np.log2(p) for p in probs if p > 0])
-
-
-groups = range(2, 11)
-
-info_gain = []
-split_info = []
-gain_ratio = []
-
-parent_entropy = 1.0  # fixed for illustration
-
-for m in groups:
-    # assume equal-sized groups
-    probs = [1 / m] * m
-    si = entropy(probs)  # split information
-
-    # assume groups become purer as m increases (toy assumption)
-    child_entropy = 1 / m  # smaller with more splits
-
-    ig = parent_entropy - child_entropy
-
-    info_gain.append(ig)
-    split_info.append(si)
-    gain_ratio.append(ig / si)
-
-plt.figure(figsize=(7, 4))
-plt.plot(groups, info_gain, marker="o", label="Information Gain")
-plt.plot(groups, gain_ratio, marker="o", label="Gain Ratio")
-
-plt.xlabel("Number of groups (fragmentation)")
-plt.ylabel("Value")
-plt.title("Gain Ratio penalizes overly fragmented splits")
-plt.legend()
-plt.grid()
-plt.show()
-```
-
-::: {.cell-output .cell-output-display}
-![Information Gain vs Gain Ratio under increasing fragmentation](lecture_7_machine_learning_2_files/figure-html/fig-gain-ratio-fragmentation-output-1.png){#fig-gain-ratio-fragmentation width=589 height=376}
-:::
-:::
-
-
--->
 <section id="id3-algorithm-entropy" class="level3">
 <h3 class="anchored" data-anchor-id="id3-algorithm-entropy">ID3 algorithm (entropy)</h3>
 <section id="intuition-and-definition" class="level4">
@@ -371,11 +307,11 @@ plt.show()
 </section>
 <section id="python-illustration-entropy-vs.-number-of-classes" class="level4">
 <h4 class="anchored" data-anchor-id="python-illustration-entropy-vs.-number-of-classes">4) Python Illustration (Entropy vs.&nbsp;Number of Classes)</h4>
-<div id="55add9f7" class="cell" data-execution_count="2">
+<div id="544a40a1" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="lecture_7_machine_learning_2_files/figure-html/cell-3-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="589" height="449"></p>
+<p><img src="lecture_7_machine_learning_2_files/figure-html/cell-2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="589" height="449"></p>
 </figure>
 </div>
 </div>
@@ -405,7 +341,7 @@ See also: https://www.mathstat.dal.ca/~aarms2014/StatLearn/docs/09%20_annotated.
 <h2 class="anchored" data-anchor-id="maximal-margin-classifier">Maximal margin classifier</h2>
 <p>Small M&amp;A teams are <strong>successful</strong>, large teams <strong>unsuccessful</strong>.</p>
 <p>A simple baseline would place the threshold halfway between the <strong>class means</strong>. The maximal margin classifier instead places the threshold halfway between <strong>the closest opposing cases</strong> and maximizes the distance to both classes.</p>
-<div id="cell-fig-maximal-margin-1d" class="cell" data-execution_count="3">
+<div id="cell-fig-maximal-margin-1d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-maximal-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -429,7 +365,7 @@ Figure&nbsp;1: A naive midpoint between class means versus the maximal-margin th
 <li>one relatively large team is successful</li>
 </ul>
 <p>The support vector classifier keeps a central boundary, but also allows some points to lie <strong>inside the margin</strong> or even on the <strong>wrong side of the boundary</strong>.</p>
-<div id="cell-fig-soft-margin-1d" class="cell" data-execution_count="4">
+<div id="cell-fig-soft-margin-1d" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-soft-margin-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -453,7 +389,7 @@ Figure&nbsp;2: Soft-margin classifier: margin bands, an in-margin point, and a m
 <li>mid-sized → successful (“sweet spot”)</li>
 <li>large → unsuccessful</li>
 </ul>
-<div id="cell-fig-nonlinear-1d" class="cell" data-execution_count="5">
+<div id="cell-fig-nonlinear-1d" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-nonlinear-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -469,7 +405,7 @@ Figure&nbsp;3: Nonlinear pattern: only mid-sized M&amp;A teams are successful
 </div>
 <p>Note: linear separation no longer possible.</p>
 <p>Transformation (Quadratic transformation)</p>
-<div id="cell-fig-kernel-2d" class="cell" data-execution_count="6">
+<div id="cell-fig-kernel-2d" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div id="fig-kernel-2d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -500,8 +436,14 @@ Figure&nbsp;4: Quadratic transformation enables linear separation
 <!--
 https://harvard-iacs.github.io/2019-CS109A/labs/lab9/notebook/
 -->
+<div style="page-break-after: always;"></div>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<p>Lectures: https://harvard-iacs.github.io/2019-CS109A/lectures/lecture15/presentation/Lecture15_Decision_Trees.pdf</p>
+<p>https://medium.com/data-science/entropy-how-decision-trees-make-decisions-2946b9c18c8</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

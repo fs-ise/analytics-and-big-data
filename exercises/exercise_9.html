@@ -118,6 +118,17 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
 div.callout-self-service.callout {
   border-left-color: #198754;
 }
@@ -138,17 +149,6 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
   background-image: none;
 }
 </style>
@@ -410,7 +410,7 @@ window.Quarto = {
 </table>
 <p>For the <strong>two-clusters dataset</strong>, the classes are almost linearly separable. This means that the model does not need hidden layers. A simple linear classifier using <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> can already draw an appropriate decision boundary. Adding more layers or many neurons may still work, but it is unnecessary and makes the model more complex than needed.</p>
 <p>For the <strong>circle dataset</strong>, a small non-linear model already works well. The pattern cannot be separated by a straight line, so a model without hidden layers is usually not sufficient when only <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are used. Adding squared input features such as <span class="math inline">\(x_1^2\)</span> and <span class="math inline">\(x_2^2\)</span> makes the circular structure easier to learn. With these features, one hidden layer with only a few neurons is often enough.</p>
-<p>For the <strong>spiral dataset</strong>, the decision boundary is much more complex. The classes are intertwined in a curved, non-linear pattern, so a simple linear model or a very small hidden layer cannot capture the structure well. Several hidden layers with multiple neurons are usually needed. The ReLU activation function works particularly well because it allowed the network to combine several local linear boundaries into a more flexible non-linear decision surface.</p>
+<p>For the <strong>spiral dataset</strong>, the decision boundary is much more complex. The classes are intertwined in a curved, non-linear pattern, so a simple linear model or a very small hidden layer cannot capture the structure well. Several hidden layers with multiple neurons are usually needed (e.g., all features, one layer with 7 neurons, one layer with 5 neurons). The ReLU activation function works particularly well because it allowed the network to combine several local linear boundaries into a more flexible non-linear decision surface.</p>
 <p>Overall, the experiments show that the required network architecture depends strongly on the complexity of the dataset. Simple, linearly separable patterns can be learned with very small models, while strongly non-linear patterns require additional hidden layers, more neurons, and suitable activation functions. The aim is not to maximize model size, but to choose the smallest architecture that captures the relevant pattern with low test loss.</p>
 </section>
 <div style="page-break-after: always;"></div>

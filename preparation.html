@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -107,17 +72,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
 div.callout-objective.callout {
   border-left-color: #0d6efd;
 }
@@ -149,6 +103,17 @@ div.callout-resource.callout-style-default > .callout-header {
 div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
   content: '🔗';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
   background-image: none;
 }
 </style>
@@ -256,224 +221,26 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
 <p>See <a href="./home/gerit/workspace/projects/bda/nextcloud">Nextcloud</a> (lecture_x)</p>
 </div>
 </div>
-<p>Generally: generation of PDFs: local only?</p>
-<ul>
-<li>Include “must-learn” markers: <code>&lt;!-- _class: must_learn --&gt;</code></li>
-</ul>
-<p>Plan to record timing (data in the repository) and data from Google surveys - <strong>TODO: session/exercise structure should be reflected in each survey</strong> -&gt; run separate surveys for the lecture/exercise to use the timestamps for the duration</p>
-<p>TODO: HTML notebook creation (via make exercises) appears to be overridden by the quarto render (e.g., HTML assignments are slides not Jupyter notebooks on the overview page)</p>
-<p>Consistently include “vocabulary” sections at the end (like in regression 1)</p>
-<section id="session-0-course-logistics" class="level3">
-<h3 class="anchored" data-anchor-id="session-0-course-logistics">Session 0 — Course logistics</h3>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
 <ul class="task-list">
-<li><label><input type="checkbox" checked="">Slides polished</label></li>
-<li><label><input type="checkbox" checked="">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-1-the-rise-of-analytics" class="level3">
-<h3 class="anchored" data-anchor-id="session-1-the-rise-of-analytics">Session 1 — The rise of analytics</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<p>TODO: Exercise session: divide class (one part does the setup/exercise, the other reads the paper, then switch)</p>
-<hr>
-</section>
-<section id="session-2-exploratory-data-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="session-2-exploratory-data-analysis">Session 2 — Exploratory data analysis</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-3-analytical-data-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="session-3-analytical-data-architecture">Session 3 — Analytical data architecture</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-4-regression-1" class="level3">
-<h3 class="anchored" data-anchor-id="session-4-regression-1">Session 4 — Regression 1</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-5-regression-2" class="level3">
-<h3 class="anchored" data-anchor-id="session-5-regression-2">Session 5 — Regression 2</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-6-machine-learning-1" class="level3">
-<h3 class="anchored" data-anchor-id="session-6-machine-learning-1">Session 6 — Machine learning 1</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-7-machine-learning-2" class="level3">
-<h3 class="anchored" data-anchor-id="session-7-machine-learning-2">Session 7 — Machine learning 2</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-8-big-data-1" class="level3">
-<h3 class="anchored" data-anchor-id="session-8-big-data-1">Session 8 — Big data 1</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox" checked="">Lecture contents selected</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-9-big-data-2" class="level3">
-<h3 class="anchored" data-anchor-id="session-9-big-data-2">Session 9 — Big data 2</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-10-governance-of-data-analytics" class="level3">
-<h3 class="anchored" data-anchor-id="session-10-governance-of-data-analytics">Session 10 — Governance of data analytics</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox">Lecture contents selected ⚠️</label></li>
-<li><label><input type="checkbox">Exercise contents selected</label></li>
-<li><label><input type="checkbox">Lecture polished</label></li>
-<li><label><input type="checkbox">Exercise polished</label></li>
-<li><label><input type="checkbox">Exercise tested</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="session-11-recap-exam-preparation-qa" class="level3">
-<h3 class="anchored" data-anchor-id="session-11-recap-exam-preparation-qa">Session 11 — Recap, exam preparation, Q&amp;A</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Learning objectives set</label></li>
-<li><label><input type="checkbox">Recap structure defined</label></li>
-<li><label><input type="checkbox">Exam-relevant topics consolidated</label></li>
-<li><label><input type="checkbox">Slides polished</label></li>
-<li><label><input type="checkbox">Teaching notes prepared</label></li>
-</ul>
-<hr>
-</section>
-<section id="cross-cutting-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="cross-cutting-tasks">Cross-cutting tasks</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Group work</label></li>
-<li><label><input type="checkbox">We may prepare the <a href="all_lectures.pdf">handout</a> generated based on all slides.</label></li>
-<li><label><input type="checkbox">Exams: <a href="https://github.com/fs-ise/big-data-analytics-exams">fs-ise/big-data-analytics-exams</a></label></li>
-<li><label><input type="checkbox">Create first-slide background illustrations for all sessions (consistent design)</label></li>
+<li><label><input type="checkbox">Include “must-learn” markers: <code>&lt;!-- _class: must_learn --&gt;</code></label></li>
+<li><label><input type="checkbox">Consistently include “vocabulary” sections at the end (like in regression 1)</label></li>
+<li><label><input type="checkbox">Create first-slide background illustrations for all sessions (consistent design) - see https://github.com/fs-ise/analytics-and-big-data/pull/2</label></li>
 <li><label><input type="checkbox">Align learning objectives in individual sessions with the <a href="#learning-objectives">overall overview</a></label></li>
-<li><label><input type="checkbox">Link checker set up (slides / notes / exercises)</label></li>
-<li><label><input type="checkbox">Exercises run end-to-end (Dataset availability verified)</label></li>
-<li><label><input type="checkbox">Group exercises tested</label></li>
-<li><label><input type="checkbox">Test exam prepared</label></li>
+<li><label><input type="checkbox">Link checker and spellchecker set up (slides / notes / exercises)</label></li>
 <li><label><input type="checkbox">Consistency of terminology across sessions</label></li>
-<li><label><input type="checkbox" checked="">Learning objectives aligned with exam scope</label></li>
-<li><label><input type="checkbox">Optional: handout / combined PDF prepared</label></li>
+<li><label><input type="checkbox">We may prepare the <a href="all_lectures.pdf">handout</a> generated based on all slides.</label></li>
 <li><label><input type="checkbox">Syllabus updated</label></li>
 <li><label><input type="checkbox">License, code of conduct, contributing, …</label></li>
-</ul>
-</section>
-<section id="tbd" class="level2">
-<h2 class="anchored" data-anchor-id="tbd">TBD:</h2>
-<ul class="task-list">
-<li><p><label><input type="checkbox">Test exercise sheets: <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning#opening-your-codespace-in-jupyterlab">GitHub JupyterLab</a> with pre-installation of pandas etc. and PDF generation TBD: exercise sheets in a separate repository?</label></p></li>
-<li><p><label><input type="checkbox">Excerpts for teaching hub</label></p></li>
-<li><p><label><input type="checkbox">Exercise sheets: solutions?!</label></p></li>
-<li><p><label><input type="checkbox">Update requirements (exam):</label></p>
+<li><label><input type="checkbox">Test exercise sheets: <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/getting-started-with-github-codespaces-for-machine-learning#opening-your-codespace-in-jupyterlab">GitHub JupyterLab</a> with pre-installation of pandas etc. and PDF generation</label></li>
+<li><label><input type="checkbox">Update requirements (exam):</label>
 <ul>
 <li>show and read code for the analysis</li>
-<li>include code reading and interpretation, maybe even pseudo-code writing in the exam (and exercises)</li>
+<li>include code reading and interpretation, maybe even pseudo code writing in the exam (and exercises)</li>
 <li>surveys during the lecture: vote for “additional exercise/more difficult exercise”</li>
 </ul></li>
 </ul>
-<p>Work through the different parts (easier to identify materials for a part instead of comparing multiple lectures for multiple topics)</p>
-<p>Slides:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">start with teaching notes and schedule. Setup teaching-notes</label></li>
-<li><label><input type="checkbox">screen and include relevant materials (e.g., Hopf, Prester; identify gaps)</label></li>
-<li><label><input type="checkbox">specify learning goals</label></li>
-<li><label><input type="checkbox">Prepare and test-run</label></li>
-</ul>
-<p>Exercise sheets:</p>
-<ul class="task-list">
-<li><p><label><input type="checkbox">Specify exercise goals and state typical exam questions</label></p></li>
-<li><p><label><input type="checkbox">Identify suitable exercise materials (Rossbach, Hopf, Prester)</label></p></li>
-<li><p><label><input type="checkbox">Prepare and test-run</label></p></li>
-<li><p><label><input type="checkbox">Setup teaching-notes</label></p></li>
-<li><p><label><input type="checkbox">Split Data Analytics with Python.pdf and -&gt; jnb</label></p></li>
-</ul>
-<p>https://www.coursera.org/learn/data-analysis-with-python - python, exploratory data analysis -&gt; accessible (good examples?!)</p>
-<p>Switch to font Inter (Google: https://fonts.google.com/specimen/Inter) - similar to official Sergoe UI</p>
-</section>
-<section id="notes-quartoreveal-js" class="level2">
-<h2 class="anchored" data-anchor-id="notes-quartoreveal-js">Notes (Quarto/reveal js)</h2>
-<p>Hide slide in PDF export:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>::: {.content-hidden when-profile="pdf"}</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## temp</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
