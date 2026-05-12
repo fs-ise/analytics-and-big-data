@@ -108,7 +108,7 @@ Adding squared input features such as $x_1^2$ and $x_2^2$ makes the circular str
 
 For the **spiral dataset**, the decision boundary is much more complex.
 The classes are intertwined in a curved, non-linear pattern, so a simple linear model or a very small hidden layer cannot capture the structure well.
-Several hidden layers with multiple neurons are usually needed.
+Several hidden layers with multiple neurons are usually needed (e.g., all features, one layer with 7 neurons, one layer with 5 neurons).
 The ReLU activation function works particularly well because it allowed the network to combine several local linear boundaries into a more flexible non-linear decision surface.
 
 Overall, the experiments show that the required network architecture depends strongly on the complexity of the dataset.
