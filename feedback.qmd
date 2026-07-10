@@ -1,0 +1,54 @@
+---
+title: "Feedback and improvements"
+---
+
+We continuously improve this course based on:
+
+- Student feedback during and after sessions,
+- Formal course evaluations,
+- Instructor and teaching-assistant observations,
+- Technical problems and errors,
+- Reflections after each course iteration.
+
+## Provide feedback
+
+Feedback is welcome throughout the course.
+
+- [Report a problem or suggest an improvement](...)
+- [Provide anonymous feedback](...)
+
+## Improvement process
+
+Actionable feedback is documented as a GitHub issue.
+Issues are reviewed during and after the course and linked to the
+corresponding changes in teaching materials.
+
+- [Open improvement issues](...)
+- [Completed improvements](...)
+
+## Log
+
+### Feedback and notes
+
+- Set limitations for notebook (e.g., for a senior manager who has analytical expertise but knows little about the specific project. Should be 5 pages max and well-structured/explained)
+- Use illustrations (image) where appropriate (e.g., to display processes or complex decisions)
+- For each analysis/illustration, add an interpretation afterward
+- Avoid unnecessary code (especially code that does not produce output or contribute to the analyses)
+- Avoid unnecessary warnings/errors
+
+Exam prep:
+
+- Minimal responses. e.g.,
+
+  - Tidy data: structure, but also handling missing data, duplicates, ... (not wrong but not part of tidy data)
+  - Three OLAP operations: just name three (instead of trying to name all and introducing mistakes)
+
+- Use specific terminology:
+
+  - Not: An NN works by consuming information and building abstract representation and then building knowledge to make more accurate decisions.
+  - Better: The architecture of an NN consists of interconnected Neurons, organized in multiple layers: input, hidden, output. A neuron processes information based on weights, which are multiplied with the input ....
+
+Lecture:
+
+- Clarify that tidy data structure is expected by many Python and R tools (ML models)
+- Clarify that snowflake, ... schemata belong to the context of OLAP

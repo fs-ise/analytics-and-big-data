@@ -9,6 +9,7 @@ See [Nextcloud](/home/gerit/workspace/projects/bda/nextcloud) (lecture_x)
 
 ## Tasks
 
+- [ ] Develop exercises 6 and 7
 - [ ] Include "must-learn" markers: ``<!-- _class: must_learn -->``
 - [ ] Consistently include "vocabulary" sections at the end (like in regression 1)
 - [ ] Create first-slide background illustrations for all sessions (consistent design) - see https://github.com/fs-ise/analytics-and-big-data/pull/2
