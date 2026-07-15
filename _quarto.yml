@@ -12,13 +12,14 @@ execute:
   freeze: auto
 
 website:
+  favicon: assets/favicon.ico
   title: "Analytics & Big Data"
   site-url: https://fs-ise.github.io/analytics-and-big-data/
   repo-url: https://github.com/fs-ise/analytics-and-big-data
   repo-actions: [edit, issue]
   sidebar:
-    logo: assets/fs_logo_blue.svg
-    logo-alt: "Frankfurt School logo"
+    logo: assets/big-data-analytics-logo.png
+    logo-alt: "Analytics & Big Data"
     style: docked
     search: true
     contents:
