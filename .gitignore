@@ -19,3 +19,4 @@ slides/cache/
 exercises/.jupyter_cache/
 
 *_files/
+scripts/__pycache__/

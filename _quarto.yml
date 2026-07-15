@@ -12,39 +12,37 @@ execute:
   freeze: auto
 
 website:
-
+  title: "Analytics & Big Data"
   site-url: https://fs-ise.github.io/analytics-and-big-data/
   repo-url: https://github.com/fs-ise/analytics-and-big-data
   repo-actions: [edit, issue]
-  navbar:
-    right:
-      - text: "Overview"
+  sidebar:
+    logo: assets/fs_logo_blue.svg
+    logo-alt: "Frankfurt School logo"
+    style: docked
+    search: true
+    contents:
+      - text: Home
         href: index.qmd
-      - text: "Group work"
-        href: group_work.qmd
-      - text: "Syllabus"
+      - text: Syllabus
         href: syllabus.qmd
-      - text: "Teaching notes"
+      - text: Group work
+        href: group_work.qmd
+      - text: Teaching notes
         href: teaching_notes.qmd
-      - text: "⚠️ Preparation"
+      - text: Preparation
         href: preparation.qmd
-      - text: "Evaluations"
+      - text: Evaluations
         href: evaluations.qmd
-      - text: "News"
+      - text: News
         href: news.qmd
-      - text: '{{< iconify hugeicons:github-01 title="GitHub" label="GitHub" >}}'
-        href: "{{< meta repository.url >}}"
-        target: _blank
-        rel: noopener noreferrer
-      - text: '{{< iconify hugeicons:add-circle title="Issues" label="Issues" >}}'
-        href: "{{< meta repository.url >}}/issues"
-        target: _blank
-        rel: noopener noreferrer
 
 format:
   html:
     toc: false
     number-sections: false
+    css: assets/styles.css
+    include-after-body: assets/repo-actions-bottom.html
 
 bibliography: references.bib
 csl: assets/apa.csl
