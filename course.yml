@@ -6,10 +6,7 @@ course:
   level: Bachelor
   language: English
   credits: 6
-  description: This module introduces students to modern data analytics across descriptive,
-    predictive, and prescriptive approaches, combining conceptual foundations with
-    hands-on practice in Python from data preparation and exploratory analysis to
-    analytical modeling, decision support, and governance.
+  description: This module introduces students to modern data analytics across descriptive, predictive, and prescriptive approaches, combining conceptual foundations with hands-on practice in Python from data preparation and exploratory analysis to analytical modeling, decision support, and governance.
 repository:
   organization: fs-ise
   name: analytics-and-big-data
@@ -34,23 +31,14 @@ group_work:
   submission_date: '2026-05-30'
   submission_url: https://frankfurtschool.instructure.com/courses/19780/assignments/197163
 events:
-- session_id: session-00
+- session_id: session-01-lecture
+  event_id: abd-2026-suse-session-01-lecture
   type: lecture
   date: '2026-03-23'
   section_label: Introduction
-  title: Course logistics
-  materials:
-  - type: slides
-    path: slides/lecture_0_orga.html
-    source: slides/lecture_0_orga.qmd
-  - type: notes
-    path: notes/lecture_0_orga.html
-    source: notes/lecture_0_orga.qmd
-- session_id: session-01
-  type: lecture
-  date: '2026-03-23'
-  section_label: Introduction
-  title: The rise of analytics
+  location: Room tbc BSc
+  start: 09:30
+  end: '11:00'
   materials:
   - type: slides
     path: slides/lecture_1_rise_of_data_analytics.html
@@ -58,6 +46,15 @@ events:
   - type: notes
     path: notes/lecture_1_rise_of_data_analytics.html
     source: notes/lecture_1_rise_of_data_analytics.qmd
+- session_id: session-01-exercise
+  event_id: abd-2026-suse-session-01-exercise
+  type: exercise
+  date: '2026-03-23'
+  section_label: Introduction
+  location: Room tbc BSc
+  start: '11:15'
+  end: '12:45'
+  materials:
   - type: assignment
     path: exercises/exercise_1_assign.html
     source: exercises/exercise_1.qmd
@@ -70,11 +67,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_1_solution.ipynb
     source: exercises/exercise_1.qmd
-- session_id: session-02
+- session_id: session-02-lecture
+  event_id: abd-2026-suse-session-02-lecture
   type: lecture
   date: '2026-03-23'
   section_label: Data foundations
-  title: Data preparation and exploration
+  location: Room tbc BSc
+  start: '14:00'
+  end: '15:30'
   materials:
   - type: slides
     path: slides/lecture_2_exploratory_data_analysis.html
@@ -82,6 +82,15 @@ events:
   - type: notes
     path: notes/lecture_2_exploratory_data_analysis.html
     source: notes/lecture_2_exploratory_data_analysis.qmd
+- session_id: session-02-exercise
+  event_id: abd-2026-suse-session-02-exercise
+  type: exercise
+  date: '2026-03-23'
+  section_label: Data foundations
+  location: Room tbc BSc
+  start: '15:45'
+  end: '17:15'
+  materials:
   - type: assignment
     path: exercises/exercise_2_assign.html
     source: exercises/exercise_2.qmd
@@ -94,11 +103,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_2_solution.ipynb
     source: exercises/exercise_2.qmd
-- session_id: session-03
+- session_id: session-03-lecture
+  event_id: abd-2026-suse-session-03-lecture
   type: lecture
   date: '2026-03-30'
   section_label: Data foundations
-  title: Analytical data architecture
+  location: Room tbc BSc
+  start: 09:30
+  end: '11:00'
   materials:
   - type: slides
     path: slides/lecture_3_analytical_data_architecture.html
@@ -106,6 +118,15 @@ events:
   - type: notes
     path: notes/lecture_3_analytical_data_architecture.html
     source: notes/lecture_3_analytical_data_architecture.qmd
+- session_id: session-03-exercise
+  event_id: abd-2026-suse-session-03-exercise
+  type: exercise
+  date: '2026-03-30'
+  section_label: Data foundations
+  location: Room tbc BSc
+  start: '11:15'
+  end: '12:45'
+  materials:
   - type: assignment
     path: exercises/exercise_3_assign.html
     source: exercises/exercise_3.qmd
@@ -118,11 +139,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_3_solution.ipynb
     source: exercises/exercise_3.qmd
-- session_id: session-04
+- session_id: session-04-lecture
+  event_id: abd-2026-suse-session-04-lecture
   type: lecture
   date: '2026-03-30'
   section_label: Analytical modeling
-  title: Regression 1
+  location: Room tbc BSc
+  start: '14:00'
+  end: '15:30'
   materials:
   - type: slides
     path: slides/lecture_4_regression_1.html
@@ -130,6 +154,15 @@ events:
   - type: notes
     path: notes/lecture_4_regression_1.html
     source: notes/lecture_4_regression_1.qmd
+- session_id: session-04-exercise
+  event_id: abd-2026-suse-session-04-exercise
+  type: exercise
+  date: '2026-03-30'
+  section_label: Analytical modeling
+  location: Room tbc BSc
+  start: '15:45'
+  end: '17:15'
+  materials:
   - type: assignment
     path: exercises/exercise_4_assign.html
     source: exercises/exercise_4.qmd
@@ -142,11 +175,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_4_solution.ipynb
     source: exercises/exercise_4.qmd
-- session_id: session-05
+- session_id: session-05-lecture
+  event_id: abd-2026-suse-session-05-lecture
   type: lecture
   date: '2026-04-14'
   section_label: Analytical modeling
-  title: Regression 2
+  location: Room tbc BSc
+  start: '14:00'
+  end: '15:30'
   materials:
   - type: slides
     path: slides/lecture_5_regression_2.html
@@ -154,6 +190,15 @@ events:
   - type: notes
     path: notes/lecture_5_regression_2.html
     source: notes/lecture_5_regression_2.qmd
+- session_id: session-05-exercise
+  event_id: abd-2026-suse-session-05-exercise
+  type: exercise
+  date: '2026-04-14'
+  section_label: Analytical modeling
+  location: Room tbc BSc
+  start: '15:45'
+  end: '17:15'
+  materials:
   - type: assignment
     path: exercises/exercise_5_assign.html
     source: exercises/exercise_5.qmd
@@ -166,11 +211,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_5_solution.ipynb
     source: exercises/exercise_5.qmd
-- session_id: session-06
+- session_id: session-06-lecture
+  event_id: abd-2026-suse-session-06-lecture
   type: lecture
   date: '2026-04-20'
   section_label: Analytical modeling
-  title: Machine learning 1
+  location: Room tbc BSc
+  start: 09:30
+  end: '11:00'
   materials:
   - type: slides
     path: slides/lecture_6_machine_learning_1.html
@@ -178,6 +226,15 @@ events:
   - type: notes
     path: notes/lecture_6_machine_learning_1.html
     source: notes/lecture_6_machine_learning_1.qmd
+- session_id: session-06-exercise
+  event_id: abd-2026-suse-session-06-exercise
+  type: exercise
+  date: '2026-04-20'
+  section_label: Analytical modeling
+  location: Room tbc BSc
+  start: '11:15'
+  end: '12:45'
+  materials:
   - type: assignment
     path: exercises/exercise_6_assign.html
     source: exercises/exercise_6.qmd
@@ -190,11 +247,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_6_solution.ipynb
     source: exercises/exercise_6.qmd
-- session_id: session-07
+- session_id: session-07-lecture
+  event_id: abd-2026-suse-session-07-lecture
   type: lecture
   date: '2026-04-20'
   section_label: Analytical modeling
-  title: Machine learning 2
+  location: Room tbc BSc
+  start: '14:00'
+  end: '15:30'
   materials:
   - type: slides
     path: slides/lecture_7_machine_learning_2.html
@@ -202,6 +262,15 @@ events:
   - type: notes
     path: notes/lecture_7_machine_learning_2.html
     source: notes/lecture_7_machine_learning_2.qmd
+- session_id: session-07-exercise
+  event_id: abd-2026-suse-session-07-exercise
+  type: exercise
+  date: '2026-04-20'
+  section_label: Analytical modeling
+  location: Room tbc BSc
+  start: '15:45'
+  end: '17:15'
+  materials:
   - type: assignment
     path: exercises/exercise_7_assign.html
     source: exercises/exercise_7.qmd
@@ -214,11 +283,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_7_solution.ipynb
     source: exercises/exercise_7.qmd
-- session_id: session-08
+- session_id: session-08-lecture
+  event_id: abd-2026-suse-session-08-lecture
   type: lecture
   date: '2026-05-04'
   section_label: Analytical modeling
-  title: Big data 1
+  location: Room tbc BSc
+  start: 09:30
+  end: '11:00'
   materials:
   - type: slides
     path: slides/lecture_8_big_data_1.html
@@ -226,6 +298,15 @@ events:
   - type: notes
     path: notes/lecture_8_big_data_1.html
     source: notes/lecture_8_big_data_1.qmd
+- session_id: session-08-exercise
+  event_id: abd-2026-suse-session-08-exercise
+  type: exercise
+  date: '2026-05-04'
+  section_label: Analytical modeling
+  location: Room tbc BSc
+  start: '11:15'
+  end: '12:45'
+  materials:
   - type: assignment
     path: exercises/exercise_8_assign.html
     source: exercises/exercise_8.qmd
@@ -238,11 +319,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_8_solution.ipynb
     source: exercises/exercise_8.qmd
-- session_id: session-09
+- session_id: session-09-lecture
+  event_id: abd-2026-suse-session-09-lecture
   type: lecture
   date: '2026-05-04'
   section_label: Analytical modeling
-  title: Big data 2
+  location: Room tbc BSc
+  start: '14:00'
+  end: '15:30'
   materials:
   - type: slides
     path: slides/lecture_9_big_data_2.html
@@ -250,6 +334,15 @@ events:
   - type: notes
     path: notes/lecture_9_big_data_2.html
     source: notes/lecture_9_big_data_2.qmd
+- session_id: session-09-exercise
+  event_id: abd-2026-suse-session-09-exercise
+  type: exercise
+  date: '2026-05-04'
+  section_label: Analytical modeling
+  location: Room tbc BSc
+  start: '15:45'
+  end: '17:15'
+  materials:
   - type: assignment
     path: exercises/exercise_9_assign.html
     source: exercises/exercise_9.qmd
@@ -262,11 +355,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_9_solution.ipynb
     source: exercises/exercise_9.qmd
-- session_id: session-10
+- session_id: session-10-lecture
+  event_id: abd-2026-suse-session-10-lecture
   type: lecture
   date: '2026-05-11'
   section_label: Deployment
-  title: Analytics in organizations
+  location: Room tbc BSc
+  start: 09:30
+  end: '11:00'
   materials:
   - type: slides
     path: slides/lecture_10_organizations.html
@@ -274,6 +370,15 @@ events:
   - type: notes
     path: notes/lecture_10_organizations.html
     source: notes/lecture_10_organizations.qmd
+- session_id: session-10-exercise
+  event_id: abd-2026-suse-session-10-exercise
+  type: exercise
+  date: '2026-05-11'
+  section_label: Deployment
+  location: Room tbc BSc
+  start: '11:15'
+  end: '12:45'
+  materials:
   - type: assignment
     path: exercises/exercise_10_assign.html
     source: exercises/exercise_10.qmd
@@ -286,11 +391,14 @@ events:
   - type: solution_notebook
     path: exercises/exercise_10_solution.ipynb
     source: exercises/exercise_10.qmd
-- session_id: session-11
+- session_id: session-11-lecture
+  event_id: abd-2026-suse-session-11-lecture
   type: lecture
   date: '2026-05-11'
   section_label: Synthesis
-  title: Integration and exam preparation
+  location: Room tbc BSc
+  start: '14:00'
+  end: '15:30'
   materials:
   - type: slides
     path: slides/lecture_11_synthesis.html
@@ -298,6 +406,15 @@ events:
   - type: notes
     path: notes/lecture_11_synthesis.html
     source: notes/lecture_11_synthesis.qmd
+- session_id: session-11-exercise
+  event_id: abd-2026-suse-session-11-exercise
+  type: exercise
+  date: '2026-05-11'
+  section_label: Synthesis
+  location: Room tbc BSc
+  start: '15:45'
+  end: '17:15'
+  materials:
   - type: assignment
     path: exercises/exercise_11_assign.html
     source: exercises/exercise_11.qmd

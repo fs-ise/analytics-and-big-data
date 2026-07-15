@@ -26,6 +26,9 @@ Online office hours meeting link:
 ```{python}
 #| echo: false
 #| output: asis
-from scripts.session_overview import markdown_table
-print(markdown_table())
+
+import scripts.session_overview as session_overview
+
+print(session_overview.markdown_table())
 ```
+
