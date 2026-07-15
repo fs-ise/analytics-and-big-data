@@ -337,7 +337,7 @@ These notes indicate how the content may be addressed in the exam and how you ca
 ## Literature
 
 - You are expected to take complementary notes and read the recommended literature.
-<!-- - You can contribute directly to the [teaching materials](https://github.com/fs-ise/big-data-analytics) by submitting an issue ♻️ or suggesting edits 🛠️. -->
+<!-- - You can contribute directly to the [teaching materials]({{< meta repository.url >}}) by submitting an issue ♻️ or suggesting edits 🛠️. -->
 - Literature and complementary materials will be listed at the end of each lecture.
 - Reading of complementary materials depends on your interest and ambition.
 

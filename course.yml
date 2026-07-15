@@ -1,0 +1,335 @@
+course:
+  id: abd
+  title: Analytics & Big Data
+  short_title: ABD
+  semester: 2026-SuSe
+  level: Bachelor
+  language: English
+  credits: 6
+  description: This module introduces students to modern data analytics across descriptive,
+    predictive, and prescriptive approaches, combining conceptual foundations with
+    hands-on practice in Python from data preparation and exploratory analysis to
+    analytical modeling, decision support, and governance.
+repository:
+  organization: fs-ise
+  name: analytics-and-big-data
+  url: https://github.com/fs-ise/analytics-and-big-data
+instructor:
+  name: Dr. Gerit Wagner
+  name_no_title: Gerit Wagner
+  url: https://www.frankfurt-school.de/en/research-and-faculty/faculty/faculty-directory/gerit-wagner
+  online_meeting_url: https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB
+  bookings_url: https://outlook.office.com/bookwithme/user/42312b4f18fd4acbb4255b5ce301f5d0%40fs.de?anonymous&ismsaljsauthenabled
+  email: g.wagner@fs.de
+university:
+  name: Frankfurt School of Finance & Management
+schedule:
+  handbook_event_match: Analytics & Big Data
+  timezone: Europe/Berlin
+  source_path: data/events.yaml
+group_work:
+  application_deadline: TODO
+  presentation_date: '2026-05-11'
+  start_date: '2026-04-14'
+  submission_date: '2026-05-30'
+  submission_url: https://frankfurtschool.instructure.com/courses/19780/assignments/197163
+events:
+- session_id: session-00
+  type: lecture
+  date: '2026-03-23'
+  section_label: Introduction
+  title: Course logistics
+  materials:
+  - type: slides
+    path: slides/lecture_0_orga.html
+    source: slides/lecture_0_orga.qmd
+  - type: notes
+    path: notes/lecture_0_orga.html
+    source: notes/lecture_0_orga.qmd
+- session_id: session-01
+  type: lecture
+  date: '2026-03-23'
+  section_label: Introduction
+  title: The rise of analytics
+  materials:
+  - type: slides
+    path: slides/lecture_1_rise_of_data_analytics.html
+    source: slides/lecture_1_rise_of_data_analytics.qmd
+  - type: notes
+    path: notes/lecture_1_rise_of_data_analytics.html
+    source: notes/lecture_1_rise_of_data_analytics.qmd
+  - type: assignment
+    path: exercises/exercise_1_assign.html
+    source: exercises/exercise_1.qmd
+  - type: notebook
+    path: exercises/exercise_1_assign.ipynb
+    source: exercises/exercise_1.qmd
+  - type: solution
+    path: exercises/exercise_1_solution.html
+    source: exercises/exercise_1.qmd
+  - type: solution_notebook
+    path: exercises/exercise_1_solution.ipynb
+    source: exercises/exercise_1.qmd
+- session_id: session-02
+  type: lecture
+  date: '2026-03-23'
+  section_label: Data foundations
+  title: Data preparation and exploration
+  materials:
+  - type: slides
+    path: slides/lecture_2_exploratory_data_analysis.html
+    source: slides/lecture_2_exploratory_data_analysis.qmd
+  - type: notes
+    path: notes/lecture_2_exploratory_data_analysis.html
+    source: notes/lecture_2_exploratory_data_analysis.qmd
+  - type: assignment
+    path: exercises/exercise_2_assign.html
+    source: exercises/exercise_2.qmd
+  - type: notebook
+    path: exercises/exercise_2_assign.ipynb
+    source: exercises/exercise_2.qmd
+  - type: solution
+    path: exercises/exercise_2_solution.html
+    source: exercises/exercise_2.qmd
+  - type: solution_notebook
+    path: exercises/exercise_2_solution.ipynb
+    source: exercises/exercise_2.qmd
+- session_id: session-03
+  type: lecture
+  date: '2026-03-30'
+  section_label: Data foundations
+  title: Analytical data architecture
+  materials:
+  - type: slides
+    path: slides/lecture_3_analytical_data_architecture.html
+    source: slides/lecture_3_analytical_data_architecture.qmd
+  - type: notes
+    path: notes/lecture_3_analytical_data_architecture.html
+    source: notes/lecture_3_analytical_data_architecture.qmd
+  - type: assignment
+    path: exercises/exercise_3_assign.html
+    source: exercises/exercise_3.qmd
+  - type: notebook
+    path: exercises/exercise_3_assign.ipynb
+    source: exercises/exercise_3.qmd
+  - type: solution
+    path: exercises/exercise_3_solution.html
+    source: exercises/exercise_3.qmd
+  - type: solution_notebook
+    path: exercises/exercise_3_solution.ipynb
+    source: exercises/exercise_3.qmd
+- session_id: session-04
+  type: lecture
+  date: '2026-03-30'
+  section_label: Analytical modeling
+  title: Regression 1
+  materials:
+  - type: slides
+    path: slides/lecture_4_regression_1.html
+    source: slides/lecture_4_regression_1.qmd
+  - type: notes
+    path: notes/lecture_4_regression_1.html
+    source: notes/lecture_4_regression_1.qmd
+  - type: assignment
+    path: exercises/exercise_4_assign.html
+    source: exercises/exercise_4.qmd
+  - type: notebook
+    path: exercises/exercise_4_assign.ipynb
+    source: exercises/exercise_4.qmd
+  - type: solution
+    path: exercises/exercise_4_solution.html
+    source: exercises/exercise_4.qmd
+  - type: solution_notebook
+    path: exercises/exercise_4_solution.ipynb
+    source: exercises/exercise_4.qmd
+- session_id: session-05
+  type: lecture
+  date: '2026-04-14'
+  section_label: Analytical modeling
+  title: Regression 2
+  materials:
+  - type: slides
+    path: slides/lecture_5_regression_2.html
+    source: slides/lecture_5_regression_2.qmd
+  - type: notes
+    path: notes/lecture_5_regression_2.html
+    source: notes/lecture_5_regression_2.qmd
+  - type: assignment
+    path: exercises/exercise_5_assign.html
+    source: exercises/exercise_5.qmd
+  - type: notebook
+    path: exercises/exercise_5_assign.ipynb
+    source: exercises/exercise_5.qmd
+  - type: solution
+    path: exercises/exercise_5_solution.html
+    source: exercises/exercise_5.qmd
+  - type: solution_notebook
+    path: exercises/exercise_5_solution.ipynb
+    source: exercises/exercise_5.qmd
+- session_id: session-06
+  type: lecture
+  date: '2026-04-20'
+  section_label: Analytical modeling
+  title: Machine learning 1
+  materials:
+  - type: slides
+    path: slides/lecture_6_machine_learning_1.html
+    source: slides/lecture_6_machine_learning_1.qmd
+  - type: notes
+    path: notes/lecture_6_machine_learning_1.html
+    source: notes/lecture_6_machine_learning_1.qmd
+  - type: assignment
+    path: exercises/exercise_6_assign.html
+    source: exercises/exercise_6.qmd
+  - type: notebook
+    path: exercises/exercise_6_assign.ipynb
+    source: exercises/exercise_6.qmd
+  - type: solution
+    path: exercises/exercise_6_solution.html
+    source: exercises/exercise_6.qmd
+  - type: solution_notebook
+    path: exercises/exercise_6_solution.ipynb
+    source: exercises/exercise_6.qmd
+- session_id: session-07
+  type: lecture
+  date: '2026-04-20'
+  section_label: Analytical modeling
+  title: Machine learning 2
+  materials:
+  - type: slides
+    path: slides/lecture_7_machine_learning_2.html
+    source: slides/lecture_7_machine_learning_2.qmd
+  - type: notes
+    path: notes/lecture_7_machine_learning_2.html
+    source: notes/lecture_7_machine_learning_2.qmd
+  - type: assignment
+    path: exercises/exercise_7_assign.html
+    source: exercises/exercise_7.qmd
+  - type: notebook
+    path: exercises/exercise_7_assign.ipynb
+    source: exercises/exercise_7.qmd
+  - type: solution
+    path: exercises/exercise_7_solution.html
+    source: exercises/exercise_7.qmd
+  - type: solution_notebook
+    path: exercises/exercise_7_solution.ipynb
+    source: exercises/exercise_7.qmd
+- session_id: session-08
+  type: lecture
+  date: '2026-05-04'
+  section_label: Analytical modeling
+  title: Big data 1
+  materials:
+  - type: slides
+    path: slides/lecture_8_big_data_1.html
+    source: slides/lecture_8_big_data_1.qmd
+  - type: notes
+    path: notes/lecture_8_big_data_1.html
+    source: notes/lecture_8_big_data_1.qmd
+  - type: assignment
+    path: exercises/exercise_8_assign.html
+    source: exercises/exercise_8.qmd
+  - type: notebook
+    path: exercises/exercise_8_assign.ipynb
+    source: exercises/exercise_8.qmd
+  - type: solution
+    path: exercises/exercise_8_solution.html
+    source: exercises/exercise_8.qmd
+  - type: solution_notebook
+    path: exercises/exercise_8_solution.ipynb
+    source: exercises/exercise_8.qmd
+- session_id: session-09
+  type: lecture
+  date: '2026-05-04'
+  section_label: Analytical modeling
+  title: Big data 2
+  materials:
+  - type: slides
+    path: slides/lecture_9_big_data_2.html
+    source: slides/lecture_9_big_data_2.qmd
+  - type: notes
+    path: notes/lecture_9_big_data_2.html
+    source: notes/lecture_9_big_data_2.qmd
+  - type: assignment
+    path: exercises/exercise_9_assign.html
+    source: exercises/exercise_9.qmd
+  - type: notebook
+    path: exercises/exercise_9_assign.ipynb
+    source: exercises/exercise_9.qmd
+  - type: solution
+    path: exercises/exercise_9_solution.html
+    source: exercises/exercise_9.qmd
+  - type: solution_notebook
+    path: exercises/exercise_9_solution.ipynb
+    source: exercises/exercise_9.qmd
+- session_id: session-10
+  type: lecture
+  date: '2026-05-11'
+  section_label: Deployment
+  title: Analytics in organizations
+  materials:
+  - type: slides
+    path: slides/lecture_10_organizations.html
+    source: slides/lecture_10_organizations.qmd
+  - type: notes
+    path: notes/lecture_10_organizations.html
+    source: notes/lecture_10_organizations.qmd
+  - type: assignment
+    path: exercises/exercise_10_assign.html
+    source: exercises/exercise_10.qmd
+  - type: notebook
+    path: exercises/exercise_10_assign.ipynb
+    source: exercises/exercise_10.qmd
+  - type: solution
+    path: exercises/exercise_10_solution.html
+    source: exercises/exercise_10.qmd
+  - type: solution_notebook
+    path: exercises/exercise_10_solution.ipynb
+    source: exercises/exercise_10.qmd
+- session_id: session-11
+  type: lecture
+  date: '2026-05-11'
+  section_label: Synthesis
+  title: Integration and exam preparation
+  materials:
+  - type: slides
+    path: slides/lecture_11_synthesis.html
+    source: slides/lecture_11_synthesis.qmd
+  - type: notes
+    path: notes/lecture_11_synthesis.html
+    source: notes/lecture_11_synthesis.qmd
+  - type: assignment
+    path: exercises/exercise_11_assign.html
+    source: exercises/exercise_11.qmd
+  - type: notebook
+    path: exercises/exercise_11_assign.ipynb
+    source: exercises/exercise_11.qmd
+  - type: solution
+    path: exercises/exercise_11_solution.html
+    source: exercises/exercise_11.qmd
+  - type: solution_notebook
+    path: exercises/exercise_11_solution.ipynb
+    source: exercises/exercise_11.qmd
+surveys:
+  session_01:
+    url: https://forms.gle/Jna4dmyEvcw3cjRPA
+  session_02:
+    url: https://forms.gle/XfRmmVbf1yaBwrky9
+  session_03:
+    url: https://forms.gle/dkwMZN4zPT7N3qbx5
+  session_04:
+    url: https://forms.gle/GtBNSMdCTZ92ix549
+  session_05:
+    url: https://forms.gle/mVWw3z7ftFn48gDY6
+  session_06:
+    url: https://forms.gle/AFmpWcopjMtGfNif6
+  session_07:
+    url: https://forms.gle/LghfTrCChfNMLzbJ6
+  session_08:
+    url: https://forms.gle/hNuAD8UZvC8KYo4a8
+  session_09:
+    url: https://forms.gle/1vsCsqc3SzWfSX1f6
+  session_10:
+    url: https://forms.gle/Rhr4C47jsAZJyumN6
+  session_11:
+    url: https://forms.gle/K4wGvwchWkBsQdhc9

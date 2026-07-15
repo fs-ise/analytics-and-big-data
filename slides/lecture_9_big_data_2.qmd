@@ -722,13 +722,13 @@ See the torch [Module](https://docs.pytorch.org/docs/2.11/generated/torch.nn.Mod
 
 ::: {style="display:flex; justify-content:center;"}
 
-{{< qrcode "{{< var sessions.session_9.survey_url >}}" width=400 height=400 >}}
+{{< qrcode "{{< meta surveys.session_09.url >}}" width=400 height=400 >}}
 
 :::
 
 <br><br>
 
-[{{< var sessions.session_9.survey_url >}}]({{< var sessions.session_9.survey_url >}})
+[{{< meta surveys.session_09.url >}}]({{< meta surveys.session_09.url >}})
 
 ::: aside
 Note: Responses may be analyzed and published in anonymized form.

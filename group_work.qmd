@@ -23,7 +23,7 @@ format: html
 - If you are not present, you must email me so that I can assign you to a group.
 - We will select two groups with 5 participants using a fair and transparent procedure.
   Groups with 5 participants are expected to submit a more comprehensive case (+25%).
-- Once your group is formed, you should create or join your group in the [Canvas assignment]({{< var group_work.submission_url >}}).
+- Once your group is formed, you should create or join your group in the [Canvas assignment]({{< meta group_work.submission_url >}}).
 
 <!--
 - If you have formed a group, please **email me** with the names and email addresses of all group members.
@@ -104,8 +104,8 @@ format: html
 
 ::: {.callout-important title="Important dates"}
 
-- Start: **{{< var group_work.start_date >}}**  
-- Deadline: **{{< var group_work.submission_date >}}**
+- Start: **{{< meta group_work.start_date >}}**  
+- Deadline: **{{< meta group_work.submission_date >}}**
 :::
 
 ## Proposed timeline
@@ -252,8 +252,8 @@ TBD: share repository/directory and be prepared to answer questions on the analy
 
 ### Consultation and support
 
-- Book appointments via: [Bookings]({{< var instructor.bookings_url >}})
-- Join meetings via: [Teams]({{< var instructor.online_meeting_url >}})
+- Book appointments via: [Bookings]({{< meta instructor.bookings_url >}})
+- Join meetings via: [Teams]({{< meta instructor.online_meeting_url >}})
 
 **Note:** Availability will be limited from **2026-05-25 to 2026-06-01**. Please plan accordingly.
 
@@ -271,7 +271,7 @@ https://monroeuniversity.libguides.com/APA
 
 Note: Submit the PDF document. Not the Word document. Jupyter notebook should be executed.
 
-Via [Canvas assignment]({{< var group_work.submission_url >}}).
+Via [Canvas assignment]({{< meta group_work.submission_url >}}).
 
 <!--
 ### C. Common Pitfalls Section (very effective pedagogically)

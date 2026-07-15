@@ -4,14 +4,17 @@ project:
   output-dir: _site
   # post-render: "bash scripts/decktape.sh"
 
+metadata-files:
+  - course.yml
+
 execute:
   cache: true
   freeze: auto
 
 website:
 
-  site-url: https://fs-ise.github.io/big-data-analytics/
-  repo-url: https://github.com/fs-ise/big-data-analytics
+  site-url: https://fs-ise.github.io/analytics-and-big-data/
+  repo-url: https://github.com/fs-ise/analytics-and-big-data
   repo-actions: [edit, issue]
   navbar:
     right:
@@ -30,11 +33,11 @@ website:
       - text: "News"
         href: news.qmd
       - text: '{{< iconify hugeicons:github-01 title="GitHub" label="GitHub" >}}'
-        href: "https://github.com/fs-ise/analytics-and-big-data"
+        href: "{{< meta repository.url >}}"
         target: _blank
         rel: noopener noreferrer
       - text: '{{< iconify hugeicons:add-circle title="Issues" label="Issues" >}}'
-        href: https://github.com/fs-ise/analytics-and-big-data/issues
+        href: "{{< meta repository.url >}}/issues"
         target: _blank
         rel: noopener noreferrer
 

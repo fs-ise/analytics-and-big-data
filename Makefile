@@ -1,5 +1,7 @@
 # ---- Config ----
-DOCKER_IMAGE ?= big-data-analytics-decktape
+PYTHON ?= python
+
+DOCKER_IMAGE ?= analytics-and-big-data-decktape
 
 QUARTO ?= quarto
 
@@ -123,3 +125,6 @@ site: exercises site-fast
 
 # One command to build everything (site + slide PDFs)
 all: site pdfs
+.PHONY: sync-events
+sync-events:
+	$(PYTHON) scripts/sync_events.py

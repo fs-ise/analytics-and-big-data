@@ -200,7 +200,7 @@ In class, we will discuss
 - Solutions for Task 1 (*Competing on Analytics*)
 - Solutions for Task 2 (Jupyter Notebooks)
 
-You can share your notebook 🔴 LIVE: [in this meeting]({{< var instructor.online_meeting_url >}}){target="_blank"}.
+You can share your notebook 🔴 LIVE: [in this meeting]({{< meta instructor.online_meeting_url >}}){target="_blank"}.
 
 ## Wrap-up <a id="wrap-up"></a>
 
@@ -220,7 +220,7 @@ Stopping the Codespace preserves the current state of your work and does not con
 :::
 
 ::: {.callout-tip title="Session 1 survey"}
-Before you wrap up, please complete the Session 1 survey here: [{{< var sessions.session_1.survey_url >}}]({{< var sessions.session_1.survey_url >}}){target="_blank"}. Thank you 🙏
+Before you wrap up, please complete the Session 1 survey here: [{{< meta surveys.session_01.url >}}]({{< meta surveys.session_01.url >}}){target="_blank"}. Thank you 🙏
 :::
 
 # References
