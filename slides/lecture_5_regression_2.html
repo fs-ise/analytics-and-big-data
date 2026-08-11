@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-04-14">
@@ -23,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -218,28 +222,6 @@
     }
   </style>
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
-    background-image: none;
-  }
   div.callout-confidential.callout {
     border-left-color: #dc3545;
   }
@@ -251,6 +233,17 @@
     content: '🔒';
     background-image: none;
   }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -260,6 +253,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-self-service.callout {
+    border-left-color: #198754;
+  }
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
+  }
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -332,11 +336,11 @@
         min 3 : https://www.youtube.com/watch?v=4u81xU7BIOc
 -->
 <p>Churn prediction is a <strong>binary classification problem</strong>:</p>
-<div id="f103d200" class="cell" data-execution_count="2">
+<div id="e9c2682d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-2-output-1.png" class="quarto-figure quarto-figure-center" width="799" height="449"></p>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-2-output-1.png" class="quarto-figure quarto-figure-center" width="800" height="451"></p>
 </figure>
 </div>
 </div>
@@ -450,11 +454,11 @@ TODO: mention threshold approach to
 </section>
 <section id="the-sigmoid-function" class="slide level2">
 <h2>The Sigmoid function</h2>
-<div id="3ae49e32" class="cell" data-execution_count="3">
+<div id="85c77a60" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="1259" height="503"></p>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="1259" height="504"></p>
 </figure>
 </div>
 </div>
@@ -515,22 +519,22 @@ TODO: mention threshold approach to
 <section id="logistic-regression-in-python" class="slide level2">
 <h2>Logistic regression in Python</h2>
 <p>We estimate the model using the sklearn library:</p>
-<div id="5fff1676" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-5"><a></a>    <span class="st">"response_time"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>],</span>
-<span id="cb1-6"><a></a>    <span class="st">"churn"</span>:         [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>]</span>
-<span id="cb1-7"><a></a>})</span>
-<span id="cb1-8"><a></a>X <span class="op">=</span> df[[<span class="st">"response_time"</span>]]</span>
-<span id="cb1-9"><a></a>y <span class="op">=</span> df[<span class="st">"churn"</span>]</span>
-<span id="cb1-10"><a></a></span>
-<span id="cb1-11"><a></a>model <span class="op">=</span> LogisticRegression()</span>
-<span id="cb1-12"><a></a>model.fit(X, y)</span>
-<span id="cb1-13"><a></a></span>
-<span id="cb1-14"><a></a><span class="bu">print</span>(<span class="st">"Intercept (β0):"</span>, model.intercept_[<span class="dv">0</span>])</span>
-<span id="cb1-15"><a></a><span class="bu">print</span>(<span class="st">"Slope (β1):"</span>, model.coef_[<span class="dv">0</span>][<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="93e9baa1" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb1-3"><a aria-label="3"></a></span>
+<span id="cb1-4"><a aria-label="4"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-5"><a aria-label="5"></a>    <span class="st">"response_time"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>],</span>
+<span id="cb1-6"><a aria-label="6"></a>    <span class="st">"churn"</span>:         [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb1-7"><a aria-label="7"></a>})</span>
+<span id="cb1-8"><a aria-label="8"></a>X <span class="op">=</span> df[[<span class="st">"response_time"</span>]]</span>
+<span id="cb1-9"><a aria-label="9"></a>y <span class="op">=</span> df[<span class="st">"churn"</span>]</span>
+<span id="cb1-10"><a aria-label="10"></a></span>
+<span id="cb1-11"><a aria-label="11"></a>model <span class="op">=</span> LogisticRegression()</span>
+<span id="cb1-12"><a aria-label="12"></a>model.fit(X, y)</span>
+<span id="cb1-13"><a aria-label="13"></a></span>
+<span id="cb1-14"><a aria-label="14"></a><span class="bu">print</span>(<span class="st">"Intercept (β0):"</span>, model.intercept_[<span class="dv">0</span>])</span>
+<span id="cb1-15"><a aria-label="15"></a><span class="bu">print</span>(<span class="st">"Slope (β1):"</span>, model.coef_[<span class="dv">0</span>][<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Intercept (β0): -6.201807152628621
 Slope (β1): 1.0606214874843112</code></pre>
@@ -604,11 +608,11 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 <p>Comparing predicted vs.&nbsp;actual class labels allows us to evaluate the performance of a classifier like logistic regression.</p>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="e7f52312" class="cell" data-execution_count="6">
+<div id="ecaf1769" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-6-output-1.png" class="quarto-figure quarto-figure-center" width="710" height="490"></p>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-6-output-1.png" class="quarto-figure quarto-figure-center" width="711" height="489"></p>
 </figure>
 </div>
 </div>
@@ -634,11 +638,11 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 <li><strong>True positives (TP):</strong> predicted churn, observed churn</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="f0b7d4d0" class="cell" data-execution_count="7">
+<div id="3190bd39" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-7-output-1.png" class="quarto-figure quarto-figure-center" width="583" height="490"></p>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-7-output-1.png" class="quarto-figure quarto-figure-center" width="584" height="489"></p>
 </figure>
 </div>
 </div>
@@ -647,7 +651,7 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 </section>
 <section id="evaluation-metrics" class="slide level2">
 <h2>Evaluation metrics</h2>
-<div id="6ae93a03" class="cell" data-execution_count="8">
+<div id="3e979fef" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -747,11 +751,11 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 -->
 </div><div class="column" style="width:52%;">
 <p><br><br></p>
-<div id="120c2804" class="cell" data-execution_count="9">
+<div id="29b85756" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-9-output-1.png" class="quarto-figure quarto-figure-center" width="758" height="490"></p>
+<p><img data-src="lecture_5_regression_2_files/figure-revealjs/cell-9-output-1.png" class="quarto-figure quarto-figure-center" width="760" height="489"></p>
 </figure>
 </div>
 </div>
@@ -1562,7 +1566,7 @@ Elkan, C. (2001). The foundations of cost-sensitive learning. <em>International 
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/big-data-analytics\/");
+            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/analytics-and-big-data\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

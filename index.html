@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -33,23 +36,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-244ce1b9ec229af56bb6f90d24b3371d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-86c676de594d8b7ca08df8140d586954.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -72,6 +75,28 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-confidential.callout {
+  border-left-color: #dc3545;
+}
+div.callout-confidential.callout-style-default > .callout-header {
+  background-color: rgba(220, 53, 69, 0.13);
+}
+div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+  content: '🔒';
+  background-image: none;
+}
+div.callout-self-service.callout {
+  border-left-color: #198754;
+}
+div.callout-self-service.callout-style-default > .callout-header {
+  background-color: rgba(25, 135, 84, 0.13);
+}
+div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+  content: '🛠️';
+  background-image: none;
+}
 div.callout-resource.callout {
   border-left-color: #0d6efd;
 }
@@ -94,97 +119,93 @@ div.callout-objective.callout-style-default .callout-icon::before, div.callout-o
   content: '🎯';
   background-image: none;
 }
-div.callout-self-service.callout {
-  border-left-color: #198754;
-}
-div.callout-self-service.callout-style-default > .callout-header {
-  background-color: rgba(25, 135, 84, 0.13);
-}
-div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-  content: '🛠️';
-  background-image: none;
-}
-div.callout-confidential.callout {
-  border-left-color: #dc3545;
-}
-div.callout-confidential.callout-style-default > .callout-header {
-  background-color: rgba(220, 53, 69, 0.13);
-}
-div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-  content: '🔒';
-  background-image: none;
-}
 </style>
 
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Analytics &amp; Big Data</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Overview</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./group_work.html"> 
-<span class="menu-text">Group work</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
-<span class="menu-text">Syllabus</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./teaching_notes.html"> 
-<span class="menu-text">Teaching notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./preparation.html"> 
-<span class="menu-text">⚠️ Preparation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./evaluations.html"> 
-<span class="menu-text">Evaluations</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./news.html"> 
-<span class="menu-text">News</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data" rel="noopener noreferrer" target="_blank"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:github-01" aria-label="GitHub" title="GitHub"></iconify-icon></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/fs-ise/analytics-and-big-data/issues" rel="noopener noreferrer" target="_blank"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:add-circle" aria-label="Issues" title="Issues"></iconify-icon></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./assets/big-data-analytics-logo.png" alt="Analytics &amp; Big Data" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./assets/big-data-analytics-logo.png" alt="Analytics &amp; Big Data" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./group_work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Group work</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evaluations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Evaluations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./news.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">News</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -209,382 +230,226 @@ div.callout-confidential.callout-style-default .callout-icon::before, div.callou
 </header>
 
 
-<p><img src="https://img.shields.io/badge/Current%20course-Summer 2026-green.png" class="img-fluid" alt="Course Status"> <!-- ![Course Status](https://img.shields.io/badge/Upcoming%20course-Summer%20semester%202025-green)<br> --> <a href="syllabus.html"><img src="https://img.shields.io/badge/Level-Bachelor-blue.png" class="img-fluid" alt="Level"></a> <a href="syllabus.html"><img src="https://img.shields.io/badge/Degree%20Program-BBA-blue.png" class="img-fluid" alt="Degree Program"></a> <a href="syllabus.html"><img src="https://img.shields.io/badge/Prerequisites-IntroProgramming-blue.png" class="img-fluid" alt="Prerequisites"></a> <img src="https://img.shields.io/badge/Work%20load-180h%20(6%20ECTS)-blue.png" class="img-fluid" alt="Duration"><br> <a href="syllabus.html"><img src="https://img.shields.io/badge/Language-English-blue.png" class="img-fluid" alt="Language"></a> <a href="syllabus.html"><img src="https://img.shields.io/badge/Format-Sessions%20on--site-blue.png" class="img-fluid" alt="Format"></a> <!-- ![Offered by: Digital Work at Otto-Friedrich-Universität Bamberg](https://img.shields.io/badge/Offered%20by-%20Digital%20Work%20(Otto--Friedrich--Universit%C3%A4t%20Bamberg)-blue)
-[![Evaluations](https://img.shields.io/badge/Rating-★★★★★%20(4.5%20/%205)-yellow)](/evaluations.html) 
-![Completion](https://img.shields.io/badge/Enrollment-29%20students-green) 
-[![Peer-Reviewed Quality](https://img.shields.io/badge/Pedagogical%20Foundations-Peer%20Reviewed-green)](https://fs-ise.github.io/rethink-git-teaching/) 
-[![GitHub stars](https://img.shields.io/github/stars/fs-ise/analytics-and-big-data.svg?style=social&label=Star)](https://github.com/fs-ise/analytics-and-big-data/stargazers) --> <img src="https://img.shields.io/badge/License-CC%20BY%204.0-green.svg" class="img-fluid" alt="License: CC BY 4.0"></p>
+<p><img src="https://img.shields.io/badge/Current%20course-2026-SuSe-green.png" class="img-fluid" alt="Course Status"> <a href="syllabus.html"><img src="https://img.shields.io/badge/Level-Bachelor-blue.png" class="img-fluid" alt="Level"></a> <a href="syllabus.html"><img src="https://img.shields.io/badge/Degree%20Program-BBA-blue.png" class="img-fluid" alt="Degree Program"></a> <a href="syllabus.html"><img src="https://img.shields.io/badge/Prerequisites-IntroProgramming-blue.png" class="img-fluid" alt="Prerequisites"></a> <img src="https://img.shields.io/badge/Work%20load-180h%20(6%20ECTS)-blue.png" class="img-fluid" alt="Duration"><br> <a href="syllabus.html"><img src="https://img.shields.io/badge/Language-English-blue.png" class="img-fluid" alt="Language"></a> <a href="syllabus.html"><img src="https://img.shields.io/badge/Format-Sessions%20on--site-blue.png" class="img-fluid" alt="Format"></a> <img src="https://img.shields.io/badge/License-CC%20BY%204.0-green.svg" class="img-fluid" alt="License: CC BY 4.0"></p>
 <p>Instructor: <a href="https://www.frankfurt-school.de/en/research-and-faculty/faculty/faculty-directory/gerit-wagner">Dr.&nbsp;Gerit Wagner</a>, Frankfurt School of Finance &amp; Management</p>
 <p>Online office hours meeting link:<br>
 <a href="https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB">https://teams.microsoft.com/meet/35117082310591?p=f5NP6xsZSwVGssoMjB</a></p>
 <p><strong>INF60196</strong></p>
 <section id="sessions" class="level2">
 <h2 class="anchored" data-anchor-id="sessions">Sessions</h2>
-<div id="cd235526" class="cell" data-message="false" data-execution_count="1">
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<table class="dataframe session-table table table-sm table-striped small">
+<table class="caption-top table">
 <thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Session
-</th>
-<th>
-Topic
-</th>
-<th>
-Lecture
-</th>
-<th>
-Exercise
-</th>
+<tr class="header">
+<th>Status</th>
+<th>Title</th>
+<th>Date</th>
+<th>Time</th>
+<th>Location</th>
+<th>Materials</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-2026-03-23
-</td>
-<td>
-Session 0
-</td>
-<td>
-Course logistics
-</td>
-<td>
-<a href="slides/lecture_0_orga.html">slides</a>, <a href="notes/lecture_0_orga.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-
-</div>
-</td>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_1_rise_of_data_analytics.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-03-23</td>
+<td>09:30–11:00</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_1_rise_of_data_analytics.html">Slides</a> · <a href="notes/lecture_1_rise_of_data_analytics.html">Notes</a></td>
 </tr>
-<tr>
-<td>
-2026-03-23
-</td>
-<td>
-Session 1
-</td>
-<td>
-The rise of analytics
-</td>
-<td>
-<a href="slides/lecture_1_rise_of_data_analytics.html">slides</a>, <a href="notes/lecture_1_rise_of_data_analytics.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_1_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_1_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_1_assign.html">abd-2026-suse-session-01-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-03-23</td>
+<td>11:15–12:45</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_1_assign.html">Assignment</a> · <a href="exercises/exercise_1_assign.ipynb">Notebook</a> · <a href="exercises/exercise_1_solution.html">Solution</a> · <a href="exercises/exercise_1_solution.ipynb">Solution Notebook</a></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="data-foundations" class="level3">
-<h3 class="anchored" data-anchor-id="data-foundations">Data foundations</h3>
-<table class="dataframe session-table table table-sm table-striped small">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Session
-</th>
-<th>
-Topic
-</th>
-<th>
-Lecture
-</th>
-<th>
-Exercise
-</th>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_2_exploratory_data_analysis.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-03-23</td>
+<td>14:00–15:30</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_2_exploratory_data_analysis.html">Slides</a> · <a href="notes/lecture_2_exploratory_data_analysis.html">Notes</a></td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td>
-2026-03-23
-</td>
-<td>
-Session 2
-</td>
-<td>
-Data preparation and exploration
-</td>
-<td>
-<a href="slides/lecture_2_exploratory_data_analysis.html">slides</a>, <a href="notes/lecture_2_exploratory_data_analysis.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_2_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_2_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_2_assign.html">abd-2026-suse-session-02-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-03-23</td>
+<td>15:45–17:15</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_2_assign.html">Assignment</a> · <a href="exercises/exercise_2_assign.ipynb">Notebook</a> · <a href="exercises/exercise_2_solution.html">Solution</a> · <a href="exercises/exercise_2_solution.ipynb">Solution Notebook</a></td>
 </tr>
-<tr>
-<td>
-2026-03-30
-</td>
-<td>
-Session 3
-</td>
-<td>
-Analytical data architecture
-</td>
-<td>
-<a href="slides/lecture_3_analytical_data_architecture.html">slides</a>, <a href="notes/lecture_3_analytical_data_architecture.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_3_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_3_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_3_analytical_data_architecture.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-03-30</td>
+<td>09:30–11:00</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_3_analytical_data_architecture.html">Slides</a> · <a href="notes/lecture_3_analytical_data_architecture.html">Notes</a></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="analytical-modeling" class="level3">
-<h3 class="anchored" data-anchor-id="analytical-modeling">Analytical modeling</h3>
-<table class="dataframe session-table table table-sm table-striped small">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Session
-</th>
-<th>
-Topic
-</th>
-<th>
-Lecture
-</th>
-<th>
-Exercise
-</th>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_3_assign.html">abd-2026-suse-session-03-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-03-30</td>
+<td>11:15–12:45</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_3_assign.html">Assignment</a> · <a href="exercises/exercise_3_assign.ipynb">Notebook</a> · <a href="exercises/exercise_3_solution.html">Solution</a> · <a href="exercises/exercise_3_solution.ipynb">Solution Notebook</a></td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td>
-2026-03-30
-</td>
-<td>
-Session 4
-</td>
-<td>
-Regression 1
-</td>
-<td>
-<a href="slides/lecture_4_regression_1.html">slides</a>, <a href="notes/lecture_4_regression_1.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_4_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_4_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_4_regression_1.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-03-30</td>
+<td>14:00–15:30</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_4_regression_1.html">Slides</a> · <a href="notes/lecture_4_regression_1.html">Notes</a></td>
 </tr>
-<tr>
-<td>
-2026-04-14
-</td>
-<td>
-Session 5
-</td>
-<td>
-Regression 2
-</td>
-<td>
-<a href="slides/lecture_5_regression_2.html">slides</a>, <a href="notes/lecture_5_regression_2.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_5_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_5_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_4_assign.html">abd-2026-suse-session-04-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-03-30</td>
+<td>15:45–17:15</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_4_assign.html">Assignment</a> · <a href="exercises/exercise_4_assign.ipynb">Notebook</a> · <a href="exercises/exercise_4_solution.html">Solution</a> · <a href="exercises/exercise_4_solution.ipynb">Solution Notebook</a></td>
 </tr>
-<tr>
-<td>
-2026-04-20
-</td>
-<td>
-Session 6
-</td>
-<td>
-Machine learning 1
-</td>
-<td>
-<a href="slides/lecture_6_machine_learning_1.html">slides</a>, <a href="notes/lecture_6_machine_learning_1.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_6_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_6_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_5_regression_2.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-04-14</td>
+<td>14:00–15:30</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_5_regression_2.html">Slides</a> · <a href="notes/lecture_5_regression_2.html">Notes</a></td>
 </tr>
-<tr>
-<td>
-2026-04-20
-</td>
-<td>
-Session 7
-</td>
-<td>
-Machine learning 2
-</td>
-<td>
-<a href="slides/lecture_7_machine_learning_2.html">slides</a>, <a href="notes/lecture_7_machine_learning_2.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_7_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_7_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_5_assign.html">abd-2026-suse-session-05-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-04-14</td>
+<td>15:45–17:15</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_5_assign.html">Assignment</a> · <a href="exercises/exercise_5_assign.ipynb">Notebook</a> · <a href="exercises/exercise_5_solution.html">Solution</a> · <a href="exercises/exercise_5_solution.ipynb">Solution Notebook</a></td>
 </tr>
-<tr>
-<td>
-2026-05-04
-</td>
-<td>
-Session 8
-</td>
-<td>
-Big data 1
-</td>
-<td>
-<a href="slides/lecture_8_big_data_1.html">slides</a>, <a href="notes/lecture_8_big_data_1.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_8_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_8_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_6_machine_learning_1.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-04-20</td>
+<td>09:30–11:00</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_6_machine_learning_1.html">Slides</a> · <a href="notes/lecture_6_machine_learning_1.html">Notes</a></td>
 </tr>
-<tr>
-<td>
-2026-05-04
-</td>
-<td>
-Session 9
-</td>
-<td>
-Big data 2
-</td>
-<td>
-<a href="slides/lecture_9_big_data_2.html">slides</a>, <a href="notes/lecture_9_big_data_2.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_9_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_9_solution.ipynb" download="">solution</a>
-</div>
-</td>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_6_assign.html">abd-2026-suse-session-06-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-04-20</td>
+<td>11:15–12:45</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_6_assign.html">Assignment</a> · <a href="exercises/exercise_6_assign.ipynb">Notebook</a> · <a href="exercises/exercise_6_solution.html">Solution</a> · <a href="exercises/exercise_6_solution.ipynb">Solution Notebook</a></td>
+</tr>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_7_machine_learning_2.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-04-20</td>
+<td>14:00–15:30</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_7_machine_learning_2.html">Slides</a> · <a href="notes/lecture_7_machine_learning_2.html">Notes</a></td>
+</tr>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_7_assign.html">abd-2026-suse-session-07-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-04-20</td>
+<td>15:45–17:15</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_7_assign.html">Assignment</a> · <a href="exercises/exercise_7_assign.ipynb">Notebook</a> · <a href="exercises/exercise_7_solution.html">Solution</a> · <a href="exercises/exercise_7_solution.ipynb">Solution Notebook</a></td>
+</tr>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_8_big_data_1.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-05-04</td>
+<td>09:30–11:00</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_8_big_data_1.html">Slides</a> · <a href="notes/lecture_8_big_data_1.html">Notes</a></td>
+</tr>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_8_assign.html">abd-2026-suse-session-08-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-05-04</td>
+<td>11:15–12:45</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_8_assign.html">Assignment</a> · <a href="exercises/exercise_8_assign.ipynb">Notebook</a> · <a href="exercises/exercise_8_solution.html">Solution</a> · <a href="exercises/exercise_8_solution.ipynb">Solution Notebook</a></td>
+</tr>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_9_big_data_2.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-05-04</td>
+<td>14:00–15:30</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_9_big_data_2.html">Slides</a> · <a href="notes/lecture_9_big_data_2.html">Notes</a></td>
+</tr>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_9_assign.html">abd-2026-suse-session-09-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-05-04</td>
+<td>15:45–17:15</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_9_assign.html">Assignment</a> · <a href="exercises/exercise_9_assign.ipynb">Notebook</a> · <a href="exercises/exercise_9_solution.html">Solution</a> · <a href="exercises/exercise_9_solution.ipynb">Solution Notebook</a></td>
+</tr>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_10_organizations.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-05-11</td>
+<td>09:30–11:00</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_10_organizations.html">Slides</a> · <a href="notes/lecture_10_organizations.html">Notes</a></td>
+</tr>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_10_assign.html">abd-2026-suse-session-10-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-05-11</td>
+<td>11:15–12:45</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_10_assign.html">Assignment</a> · <a href="exercises/exercise_10_assign.ipynb">Notebook</a> · <a href="exercises/exercise_10_solution.html">Solution</a> · <a href="exercises/exercise_10_solution.ipynb">Solution Notebook</a></td>
+</tr>
+<tr class="odd">
+<td>🟢 Completed</td>
+<td><a href="slides/lecture_11_synthesis.html">Analytics &amp; Big Data</a> <span class="event-badge event-badge-lecture">Lecture</span></td>
+<td>2026-05-11</td>
+<td>14:00–15:30</td>
+<td>Room tbc BSc</td>
+<td><a href="slides/lecture_11_synthesis.html">Slides</a> · <a href="notes/lecture_11_synthesis.html">Notes</a></td>
+</tr>
+<tr class="even">
+<td>🟢 Completed</td>
+<td><a href="exercises/exercise_11_assign.html">abd-2026-suse-session-11-exercise</a> <span class="event-badge event-badge-exercise">Exercise</span></td>
+<td>2026-05-11</td>
+<td>15:45–17:15</td>
+<td>Room tbc BSc</td>
+<td><a href="exercises/exercise_11_assign.html">Assignment</a> · <a href="exercises/exercise_11_assign.ipynb">Notebook</a> · <a href="exercises/exercise_11_solution.html">Solution</a> · <a href="exercises/exercise_11_solution.ipynb">Solution Notebook</a></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="deployment" class="level3">
-<h3 class="anchored" data-anchor-id="deployment">Deployment</h3>
-<table class="dataframe session-table table table-sm table-striped small">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Session
-</th>
-<th>
-Topic
-</th>
-<th>
-Lecture
-</th>
-<th>
-Exercise
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-2026-05-11
-</td>
-<td>
-Session 10
-</td>
-<td>
-Analytics in organizations
-</td>
-<td>
-<a href="slides/lecture_10_organizations.html">slides</a>, <a href="notes/lecture_10_organizations.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_10_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_10_solution.ipynb" download="">solution</a>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="synthesis" class="level3">
-<h3 class="anchored" data-anchor-id="synthesis">Synthesis</h3>
-<table class="dataframe session-table table table-sm table-striped small">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Session
-</th>
-<th>
-Topic
-</th>
-<th>
-Lecture
-</th>
-<th>
-Exercise
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-2026-05-11
-</td>
-<td>
-Session 11
-</td>
-<td>
-Integration and exam preparation
-</td>
-<td>
-<a href="slides/lecture_11_synthesis.html">slides</a>, <a href="notes/lecture_11_synthesis.html">notes</a>
-</td>
-<td>
-<div style="line-height:1.6">
-<a href="exercises/exercise_11_assign.ipynb" download="">assignment</a>, <a href="exercises/exercise_11_solution.ipynb" download="">solution</a>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-</div>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const content = document.querySelector('main.content, main');
+  const links = Array.from(document.querySelectorAll('a[href]')).filter((link) => {
+    const href = link.getAttribute('href') || '';
+    return /\/edit\//.test(href) || /\/issues\/(new|choose)/.test(href);
+  });
+
+  if (!content || links.length === 0) return;
+
+  const existing = document.querySelector('.repo-actions-bottom');
+  const actions = existing || document.createElement('nav');
+  actions.className = 'repo-actions-bottom';
+  actions.setAttribute('aria-label', 'Repository actions');
+  links.forEach((link) => actions.appendChild(link));
+  content.appendChild(actions);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -658,7 +523,7 @@ Integration and exam preparation
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/big-data-analytics\/");
+        var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/analytics-and-big-data\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -990,4 +855,4 @@ Integration and exam preparation
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/big-data-analytics/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/big-data-analytics/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/fs-ise/analytics-and-big-data/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/fs-ise/analytics-and-big-data/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

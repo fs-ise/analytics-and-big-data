@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-30">
@@ -22,10 +23,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -221,15 +225,15 @@
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
     background-image: none;
   }
   div.callout-objective.callout {
@@ -243,6 +247,17 @@
     content: '🎯';
     background-image: none;
   }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
+    background-image: none;
+  }
   div.callout-self-service.callout {
     border-left-color: #198754;
   }
@@ -252,17 +267,6 @@
   div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
     content: '🛠️';
-    background-image: none;
-  }
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
-  }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
-  }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
     background-image: none;
   }
   </style>
@@ -715,13 +719,13 @@
 <h2>Queries on the star schema</h2>
 <p><strong>Example:</strong></p>
 <p><strong>In which years were the most cars purchased by female customers in Hesse in the 1st quarter?</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
-<span id="cb1-2"><a></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
-<span id="cb1-3"><a></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> \</span>
-<span id="cb1-4"><a></a>    <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname \</span>
-<span id="cb1-5"><a></a>    <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
-<span id="cb1-6"><a></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
-<span id="cb1-7"><a></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a aria-label="1"></a><span class="kw">select</span> z.<span class="dt">Year</span> <span class="kw">as</span> <span class="dt">Year</span>, <span class="fu">sum</span>(v.Amount) <span class="kw">as</span> Total_Amount</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="kw">from</span> Branch f, Product p, <span class="dt">Time</span> z, Customer k, Sales v</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="kw">where</span> z.Quarter <span class="op">=</span> <span class="dv">1</span> <span class="kw">and</span> k.gender <span class="op">=</span> <span class="st">'f'</span> <span class="kw">and</span> p.Product_type <span class="op">=</span> <span class="st">'Car'</span> <span class="kw">and</span> f.state <span class="op">=</span> <span class="st">'Hesse'</span> \</span>
+<span id="cb1-4"><a aria-label="4"></a>    <span class="kw">and</span> v.<span class="dt">Date</span> <span class="op">=</span> z.<span class="dt">Date</span> <span class="kw">and</span> v.ProductID <span class="op">=</span> p.ProductID <span class="kw">and</span> v.Branch <span class="op">=</span> f.Branchname \</span>
+<span id="cb1-5"><a aria-label="5"></a>    <span class="kw">and</span> v.CustomerID <span class="op">=</span> k.CustomerID</span>
+<span id="cb1-6"><a aria-label="6"></a><span class="kw">group</span> <span class="kw">by</span> z.<span class="dt">Year</span></span>
+<span id="cb1-7"><a aria-label="7"></a><span class="kw">order</span> <span class="kw">by</span> Total_Amount Descending;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <table class="caption-top">
 <thead>
@@ -1375,7 +1379,7 @@ Inmon, W. H. (2005). <em>Building the data warehouse</em>. John wiley &amp; sons
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/big-data-analytics\/");
+            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/analytics-and-big-data\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

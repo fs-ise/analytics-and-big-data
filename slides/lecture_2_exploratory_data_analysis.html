@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-03-23">
@@ -23,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -229,17 +233,6 @@
     content: '🔒';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
-  }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
-  }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
-    background-image: none;
-  }
   div.callout-objective.callout {
     border-left-color: #0d6efd;
   }
@@ -249,6 +242,17 @@
   div.callout-objective .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-objective.callout-style-default .callout-icon::before, div.callout-objective.callout-titled .callout-icon::before {
     content: '🎯';
+    background-image: none;
+  }
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
+  }
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
+  }
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-self-service.callout {
@@ -661,13 +665,13 @@ Be able to <strong>explain the scales and give examples of operations that are a
 </table>
 </div>
 <p>Convert wide → long</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>long_df <span class="op">=</span> df.melt(</span>
-<span id="cb1-2"><a></a>    id_vars<span class="op">=</span>[<span class="st">"Region"</span>, <span class="st">"Year"</span>],</span>
-<span id="cb1-3"><a></a>    var_name<span class="op">=</span><span class="st">"Quarter"</span>,</span>
-<span id="cb1-4"><a></a>    value_name<span class="op">=</span><span class="st">"Sales"</span></span>
-<span id="cb1-5"><a></a>)</span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a>long_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>long_df <span class="op">=</span> df.melt(</span>
+<span id="cb1-2"><a aria-label="2"></a>    id_vars<span class="op">=</span>[<span class="st">"Region"</span>, <span class="st">"Year"</span>],</span>
+<span id="cb1-3"><a aria-label="3"></a>    var_name<span class="op">=</span><span class="st">"Quarter"</span>,</span>
+<span id="cb1-4"><a aria-label="4"></a>    value_name<span class="op">=</span><span class="st">"Sales"</span></span>
+<span id="cb1-5"><a aria-label="5"></a>)</span>
+<span id="cb1-6"><a aria-label="6"></a></span>
+<span id="cb1-7"><a aria-label="7"></a>long_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Result:</p>
 <div class="smaller">
@@ -719,7 +723,7 @@ Be able to <strong>explain the scales and give examples of operations that are a
 <section id="data-structuring-example-continued-1" class="slide level2">
 <h2>Data structuring: Example continued</h2>
 <p>As a last step, we need to clean the <code>Quarter</code> column by removing the <code>"Sales_"</code> prefix:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>long_df[<span class="st">"Quarter"</span>] <span class="op">=</span> long_df[<span class="st">"Quarter"</span>].<span class="bu">str</span>.replace(<span class="st">"Sales_"</span>, <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>long_df[<span class="st">"Quarter"</span>] <span class="op">=</span> long_df[<span class="st">"Quarter"</span>].<span class="bu">str</span>.replace(<span class="st">"Sales_"</span>, <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><br></p>
 <p>Final tidy dataset:</p>
@@ -922,7 +926,7 @@ Be able to <strong>explain the scales and give examples of operations that are a
 </div>
 </div></div>
 <p>For analysis, we can <strong>integrate these datasets</strong> using the shared key <code>Customer_ID</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>integrated_data <span class="op">=</span> customers.merge(sales, on<span class="op">=</span><span class="st">"Customer_ID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>integrated_data <span class="op">=</span> customers.merge(sales, on<span class="op">=</span><span class="st">"Customer_ID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>This creates a combined dataset that links customer information with sales.</p>
 <div class="smaller">
@@ -1171,11 +1175,11 @@ scatter plots<br>clustering
 <li><p>The graph shows the range of observations on the horizontal axis, with a bar showing how many times each value occurred in the data set.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="1bee3032" class="cell" data-execution_count="2">
+<div id="c3017450" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-2-output-1.png" width="825" height="449"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-2-output-1.png" width="825" height="451"></p>
 </figure>
 </div>
 </div>
@@ -1192,11 +1196,11 @@ scatter plots<br>clustering
 <li>Example: On a party, you meet many other students, and you ask what they are studying.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="eb9e5094" class="cell" data-execution_count="3">
+<div id="e643a0fc" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-3-output-1.png" width="941" height="449"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-3-output-1.png" width="945" height="451"></p>
 </figure>
 </div>
 </div>
@@ -1218,11 +1222,11 @@ scatter plots<br>clustering
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="18bbcfa6" class="cell" data-execution_count="4">
+<div id="dfc8f0a9" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-4-output-1.png" width="566" height="566"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-4-output-1.png" width="568" height="566"></p>
 </figure>
 </div>
 </div>
@@ -1241,11 +1245,11 @@ scatter plots<br>clustering
 <li><p>One can – for example – see that there is a higher spread in group 2A compared to the others</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="ab5cf52b" class="cell" data-execution_count="5">
+<div id="6c0eac09" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-5-output-1.png" width="810" height="449"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-5-output-1.png" width="812" height="451"></p>
 </figure>
 </div>
 </div>
@@ -1293,21 +1297,21 @@ But in many cases, we are interested in the interactions between variables.
 {\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}\]</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="e700d7e0" class="cell" data-execution_count="6">
+<div id="742bd8bc" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-6-output-1.png" width="587" height="376"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-6-output-1.png" width="588" height="376"></p>
 </figure>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="c4217f69" class="cell" data-fig-height="1" data-fig-width="4" data-execution_count="7">
+<div id="7f774cb3" class="cell" data-fig-height="1" data-fig-width="4" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-7-output-1.png" width="587" height="376"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-7-output-1.png" width="588" height="376"></p>
 </figure>
 </div>
 </div>
@@ -1516,7 +1520,7 @@ But in many cases, we are interested in the interactions between variables.
 <div class="quarto-layout-panel" data-layout="[25,25,25,25]">
 <div class="quarto-layout-row">
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="c41168f7" class="cell" data-execution_count="9">
+<div id="7128795d" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1527,7 +1531,7 @@ But in many cases, we are interested in the interactions between variables.
 </div>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="ab5f5cda" class="cell" data-execution_count="10">
+<div id="59762dff" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1538,7 +1542,7 @@ But in many cases, we are interested in the interactions between variables.
 </div>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="09d66456" class="cell" data-execution_count="11">
+<div id="77a1115a" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1549,7 +1553,7 @@ But in many cases, we are interested in the interactions between variables.
 </div>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="4a67bece" class="cell" data-execution_count="12">
+<div id="f1d8f1e9" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1562,7 +1566,7 @@ But in many cases, we are interested in the interactions between variables.
 </div>
 <div class="quarto-layout-row">
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="74d72b8b" class="cell" data-execution_count="13">
+<div id="eda6cf4e" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1573,7 +1577,7 @@ But in many cases, we are interested in the interactions between variables.
 </div>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="c9fd5804" class="cell" data-execution_count="14">
+<div id="9e9f5d58" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1584,7 +1588,7 @@ But in many cases, we are interested in the interactions between variables.
 </div>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<div id="e2bad60b" class="cell" data-execution_count="15">
+<div id="2207ad12" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1606,10 +1610,10 @@ But in many cases, we are interested in the interactions between variables.
 <section id="k-means-in-python" class="slide level2">
 <h2>k-means in Python</h2>
 <p>The following runs a k-means clustering analysis in Python: <br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k)</span>
-<span id="cb5-4"><a></a>labels <span class="op">=</span> kmeans.fit_predict(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb5-2"><a aria-label="2"></a></span>
+<span id="cb5-3"><a aria-label="3"></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k)</span>
+<span id="cb5-4"><a aria-label="4"></a>labels <span class="op">=</span> kmeans.fit_predict(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> <code>KMeans(...)</code> + <code>fit_predict(X)</code> runs the iterative algorithm we saw earlier:</p>
 <ul>
@@ -1623,11 +1627,11 @@ But in many cases, we are interested in the interactions between variables.
 <li>columns = features (dimensions)</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>X <span class="op">=</span> [</span>
-<span id="cb6-2"><a></a>    [<span class="fl">1.2</span>, <span class="fl">3.4</span>],</span>
-<span id="cb6-3"><a></a>    [<span class="fl">1.0</span>, <span class="fl">3.0</span>],</span>
-<span id="cb6-4"><a></a>    [<span class="fl">5.5</span>, <span class="fl">8.1</span>],</span>
-<span id="cb6-5"><a></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>X <span class="op">=</span> [</span>
+<span id="cb6-2"><a aria-label="2"></a>    [<span class="fl">1.2</span>, <span class="fl">3.4</span>],</span>
+<span id="cb6-3"><a aria-label="3"></a>    [<span class="fl">1.0</span>, <span class="fl">3.0</span>],</span>
+<span id="cb6-4"><a aria-label="4"></a>    [<span class="fl">5.5</span>, <span class="fl">8.1</span>],</span>
+<span id="cb6-5"><a aria-label="5"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="choosing-the-number-of-clusters" class="slide level2">
@@ -1643,11 +1647,11 @@ But in many cases, we are interested in the interactions between variables.
 </ul>
 <div class="fragment">
 <p><strong>Example metric:</strong> within-cluster variance (inertia)</p>
-<div id="5420a5ff" class="cell" data-execution_count="16">
+<div id="5143ac88" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-16-output-1.png" class="quarto-figure quarto-figure-center" width="461" height="302"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-16-output-1.png" class="quarto-figure quarto-figure-center" width="462" height="303"></p>
 </figure>
 </div>
 </div>
@@ -1685,11 +1689,11 @@ But in many cases, we are interested in the interactions between variables.
 </ul>
 <div class="fragment">
 <p>Choose k that <strong>maximizes the score</strong></p>
-<div id="680ce3d4" class="cell" data-execution_count="17">
+<div id="4093e8d8" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-17-output-1.png" class="quarto-figure quarto-figure-center" width="440" height="302"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-17-output-1.png" class="quarto-figure quarto-figure-center" width="441" height="303"></p>
 </figure>
 </div>
 </div>
@@ -1733,11 +1737,11 @@ But in many cases, we are interested in the interactions between variables.
 <p>A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. The y-axis represents the value of this distance metric (e.g.&nbsp;Euclidean distance) between the clusters.</p>
 <p>In a dendrogram the widths of the horizontal lines give an impression about the dissimilarity of the merging object. Thus, a good cluster number might be at a point from where the width of the following horizontal lines is significantly shorter.</p>
 <p>This allows us to explore clusters at <strong>multiple levels of granularity</strong>.</p>
-<div id="0d947e53" class="cell" data-execution_count="18">
+<div id="062bc390" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-18-output-1.png" class="quarto-figure quarto-figure-center" width="521" height="375"></p>
+<p><img data-src="lecture_2_exploratory_data_analysis_files/figure-revealjs/cell-18-output-1.png" class="quarto-figure quarto-figure-center" width="522" height="375"></p>
 </figure>
 </div>
 </div>
@@ -2267,7 +2271,7 @@ Wickham, H. (2014). Tidy data. <em>Journal of Statistical Software</em>, <em>59<
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/big-data-analytics\/");
+            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/analytics-and-big-data\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

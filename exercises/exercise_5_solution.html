@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -68,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="exercise_5_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="exercise_5_files/libs/quarto-html/anchor.min.js"></script>
 <link href="exercise_5_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="exercise_5_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="exercise_5_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="exercise_5_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="exercise_5_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="exercise_5_files/libs/bootstrap/bootstrap-7f8d28353e1b7aed8a50cdb71f958a5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="exercise_5_files/libs/bootstrap/bootstrap-2b36aa87206fc78aa0a3f561bfe08483.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -104,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="ff50cc9d" class="cell" data-execution_count="1">
+<div id="9b1337a7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/credit_default.csv"</span>)</span>
@@ -191,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<div id="9fd7e7c9" class="cell" data-execution_count="3">
+<div id="ad82f5ac" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_ec_urban <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"early_career_urban"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="task-1.2-estimate-the-model" class="level3">
@@ -202,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="solution-1" class="level2">
 <h2 class="anchored" data-anchor-id="solution-1">Solution</h2>
 <p><em>Note</em>: You will initially encounter a <code>ConvergenceWarning</code>, indicating that the maximum likelihood estimation has not fully converged. To address this, increase the <code>max_iter</code> parameter to give the optimization algorithm sufficient iterations to converge. In practice, scaling predictors can also improve convergence and model stability.</p>
-<div id="b2938bff" class="cell" data-execution_count="5">
+<div id="ecf9fc1f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_ec_urban[<span class="st">"default"</span>]</span>
@@ -225,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="solution-2" class="level2">
 <h2 class="anchored" data-anchor-id="solution-2">Solution</h2>
-<div id="7e6ad80d" class="cell" data-execution_count="6">
+<div id="a82b0e90" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>coef_df <span class="op">=</span> pd.DataFrame({<span class="st">"feature"</span>: X.columns, <span class="st">"coefficient"</span>: model.coef_[<span class="dv">0</span>]})</span>
@@ -367,7 +370,7 @@ In this model:</p>
 <li>Logistic transformation → probability</li>
 <li>Threshold (e.g., 0.5) → class label</li>
 </ol>
-<div id="a145a656" class="cell" data-execution_count="7">
+<div id="49a191b7" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for one observation</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> model.intercept_[<span class="dv">0</span>] <span class="op">+</span> (X.iloc[<span class="dv">0</span>] <span class="op">*</span> model.coef_[<span class="dv">0</span>]).<span class="bu">sum</span>()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -392,7 +395,7 @@ In this model:</p>
 <section id="task-2.1-understanding-outputs" class="level3">
 <h3 class="anchored" data-anchor-id="task-2.1-understanding-outputs">Task 2.1 — Understanding outputs</h3>
 <p>Run the code and answer the following questions:</p>
-<div id="9b53672b" class="cell" data-execution_count="8">
+<div id="35b57e90" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>y_prob[:<span class="dv">5</span>], y_pred[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -404,7 +407,7 @@ In this model:</p>
 </section>
 <section id="solution-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-4">Solution</h2>
-<div id="a13ff9f4" class="cell" data-execution_count="9">
+<div id="1fc170b2" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y_prob <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>y_prob[:<span class="dv">5</span>], y_pred[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -417,7 +420,7 @@ In this model:</p>
 <li><code>y_prob</code>: probabilities for class 1 (default)</li>
 <li><code>y_pred</code>: binary predictions based on threshold (<code>0.5</code> per default)</li>
 </ul>
-<div id="1c7ec8ea" class="cell" data-execution_count="10">
+<div id="917862ac" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.predict_proba(X[:<span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([[0.5322133 , 0.4677867 ],
@@ -443,7 +446,7 @@ In this model:</p>
 <li>Higher threshold → fewer customers flagged as risky</li>
 </ul>
 <p>For top 20% risk:</p>
-<div id="69760c65" class="cell" data-execution_count="14">
+<div id="b0e590e3" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>threshold_risky <span class="op">=</span> np.quantile(y_prob, <span class="fl">0.8</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y_pred_risky20 <span class="op">=</span> (y_prob <span class="op">&gt;=</span> threshold_risky).astype(<span class="bu">int</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>threshold_risky, y_pred_risky20.<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -455,7 +458,7 @@ In this model:</p>
 <li>Flags the top 20% of customers with the highest predicted default probabilities</li>
 </ul>
 <p>For safest 20%:</p>
-<div id="648e9079" class="cell" data-execution_count="15">
+<div id="539667f2" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>threshold_safe <span class="op">=</span> np.quantile(y_prob, <span class="fl">0.2</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>y_pred_safe20 <span class="op">=</span> (y_prob <span class="op">&lt;=</span> threshold_safe).astype(<span class="bu">int</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>threshold_safe, y_pred_safe20.<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -467,7 +470,7 @@ In this model:</p>
 <li>Flags the bottom 20% of customers with the lowest predicted default probabilities</li>
 </ul>
 <p>Low risk customers could be selected as follows:</p>
-<div id="bc062c7e" class="cell" data-execution_count="16">
+<div id="fc13394d" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>safe_customers <span class="op">=</span> df_ec_urban[y_pred_safe20 <span class="op">==</span> <span class="dv">1</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>safe_customers.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -557,7 +560,7 @@ In this model:</p>
 </section>
 <section id="solution-6" class="level2">
 <h2 class="anchored" data-anchor-id="solution-6">Solution</h2>
-<div id="8e38be62" class="cell" data-execution_count="18">
+<div id="fd5cbdd7" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y, y_pred)</span>
@@ -574,7 +577,7 @@ In this model:</p>
 <li>FN: 36</li>
 </ul>
 <p><em>Note: the <code>ravel()</code> function can be helpful to access the individual values:</em></p>
-<div id="046057c8" class="cell" data-execution_count="19">
+<div id="48c6d369" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tn, fp, fn, tp <span class="op">=</span> cm.ravel()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tn, fp, fn, tp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -587,21 +590,21 @@ In this model:</p>
 </section>
 <section id="solution-manually-or-based-on-python" class="level2">
 <h2 class="anchored" data-anchor-id="solution-manually-or-based-on-python">Solution (manually or based on Python)</h2>
-<div id="9dce502a" class="cell" data-execution_count="20">
+<div id="4078c043" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> (tp <span class="op">+</span> tn) <span class="op">/</span> (tp <span class="op">+</span> tn <span class="op">+</span> fp <span class="op">+</span> fn)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>accuracy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>np.float64(0.7150259067357513)</code></pre>
 </div>
 </div>
-<div id="d5f2ef37" class="cell" data-execution_count="21">
+<div id="c001a9a3" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fp)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>precision</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>np.float64(0.6984126984126984)</code></pre>
 </div>
 </div>
-<div id="6b881daf" class="cell" data-execution_count="22">
+<div id="c32e3075" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>recall <span class="op">=</span> tp <span class="op">/</span> (tp <span class="op">+</span> fn)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>recall</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -657,7 +660,7 @@ In this model:</p>
 </section>
 <section id="part-4-roc-curve-and-auc" class="level1">
 <h1>Part 4 — ROC curve and AUC</h1>
-<div id="fc054776" class="cell" data-execution_count="24">
+<div id="d3970773" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -676,7 +679,7 @@ In this model:</p>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="exercise_5_files/figure-html/cell-25-output-1.png" width="589" height="449" class="figure-img"></p>
+<p><img src="exercise_5_files/figure-html/cell-25-output-1.png" width="590" height="451" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -696,7 +699,7 @@ In this model:</p>
 <li>FPR = FP / (FP + TN)</li>
 </ul>
 <p>Values for FPR, TPR at different thresholds:</p>
-<div id="8fe33d9c" class="cell" data-execution_count="25">
+<div id="8e7cc68f" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>roc_df <span class="op">=</span> pd.DataFrame({<span class="st">"threshold"</span>: thresholds, <span class="st">"fpr"</span>: fpr, <span class="st">"tpr"</span>: tpr})</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>roc_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -760,7 +763,7 @@ In this model:</p>
 </section>
 <section id="solution-8" class="level2">
 <h2 class="anchored" data-anchor-id="solution-8">Solution</h2>
-<div id="3bd61938" class="cell" data-execution_count="26">
+<div id="061fd760" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>roc_auc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>0.7982300884955752</code></pre>
@@ -797,7 +800,7 @@ In this model:</p>
 </section>
 <section id="solution-10" class="level2">
 <h2 class="anchored" data-anchor-id="solution-10">Solution</h2>
-<div id="4d114c90" class="cell" data-execution_count="29">
+<div id="720e0892" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df_platform <span class="op">=</span> df[df[<span class="st">"customer_category"</span>] <span class="op">==</span> <span class="st">"platform_worker"</span>]</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>y_platform <span class="op">=</span> df_platform[<span class="st">"default"</span>]</span>
@@ -824,7 +827,7 @@ In this model:</p>
 </section>
 <section id="solution-11" class="level2">
 <h2 class="anchored" data-anchor-id="solution-11">Solution</h2>
-<div id="c1f0ee12" class="cell" data-execution_count="31">
+<div id="d9c36a5a" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>coef_ec_urban <span class="op">=</span> pd.Series(model.coef_[<span class="dv">0</span>], index<span class="op">=</span>X.columns)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>coef_platform <span class="op">=</span> pd.Series(model_platform.coef_[<span class="dv">0</span>], index<span class="op">=</span>X_platform.columns)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -892,7 +895,7 @@ In this model:</p>
 </section>
 <section id="solution-12" class="level2">
 <h2 class="anchored" data-anchor-id="solution-12">Solution</h2>
-<div id="a269623b" class="cell" data-execution_count="33">
+<div id="8746b6a0" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>y_prob_platform <span class="op">=</span> model_platform.predict_proba(X_platform)[:, <span class="dv">1</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>fpr_platform, tpr_platform, _ <span class="op">=</span> roc_curve(y_platform, y_prob_platform)</span>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Gerit Wagner">
   <meta name="dcterms.date" content="2026-04-20">
@@ -22,10 +23,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -162,15 +166,15 @@
     content: '🔒';
     background-image: none;
   }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
+  div.callout-resource.callout {
+    border-left-color: #0d6efd;
   }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
+  div.callout-resource.callout-style-default > .callout-header {
+    background-color: rgba(13, 110, 253, 0.13);
   }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
+  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
+    content: '🔗';
     background-image: none;
   }
   div.callout-objective.callout {
@@ -184,15 +188,15 @@
     content: '🎯';
     background-image: none;
   }
-  div.callout-resource.callout {
-    border-left-color: #0d6efd;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-resource.callout-style-default > .callout-header {
-    background-color: rgba(13, 110, 253, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
-    content: '🔗';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -1115,11 +1119,11 @@ TODO: summarize/structure more clearly
 <p>Margin size is:</p>
 <p><span class="math display">\[\text{margin} = \frac{2}{|w|}\]</span></p>
 <p>So maximizing the margin = minimizing <span class="math inline">\(|w|\)</span>.</p>
-<div id="879a648f" class="cell" data-execution_count="2">
+<div id="5e7c0a07" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-2-output-1.png" class="quarto-figure quarto-figure-center" width="515" height="429"></p>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-2-output-1.png" class="quarto-figure quarto-figure-center" width="515" height="431"></p>
 </figure>
 </div>
 </div>
@@ -1250,11 +1254,11 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-i" class="slide level2">
 <h2>SVR examples (I)</h2>
 <p><br></p>
-<div id="1c2edd06" class="cell" data-execution_count="3">
+<div id="2e181799" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="808" height="449"></p>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="809" height="451"></p>
 </figure>
 </div>
 </div>
@@ -1263,11 +1267,11 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-ii" class="slide level2">
 <h2>SVR examples (II)</h2>
 <p><br></p>
-<div id="b1c23d1f" class="cell" data-execution_count="4">
+<div id="466735df" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-4-output-1.png" class="quarto-figure quarto-figure-center" width="808" height="449"></p>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-4-output-1.png" class="quarto-figure quarto-figure-center" width="809" height="451"></p>
 </figure>
 </div>
 </div>
@@ -1276,11 +1280,11 @@ TBD/careful: Nonlinearity (I) and Nonlinearity (II): slides present examples of 
 <section id="svr-examples-iii" class="slide level2">
 <h2>SVR examples (III)</h2>
 <p><br></p>
-<div id="16091e18" class="cell" data-execution_count="5">
+<div id="b7e041b6" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-5-output-1.png" class="quarto-figure quarto-figure-center" width="808" height="449"></p>
+<p><img data-src="lecture_7_machine_learning_2_files/figure-revealjs/cell-5-output-1.png" class="quarto-figure quarto-figure-center" width="809" height="451"></p>
 </figure>
 </div>
 </div>
@@ -1617,7 +1621,7 @@ James, G. (2013). <em>An introduction to statistical learning with applications 
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/big-data-analytics\/");
+            var filterRegex = new RegExp("https:\/\/fs-ise\.github\.io\/analytics-and-big-data\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
