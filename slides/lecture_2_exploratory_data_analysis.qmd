@@ -712,7 +712,7 @@ data = [group_1A, group_1B, group_2A, group_2B, control]
 labels = ["1A", "1B", "2A", "2B", "control"]
 
 plt.figure()
-plt.boxplot(data, labels=labels)
+plt.boxplot(data, tick_labels=labels)
 plt.axhline(0)
 plt.ylabel("average el. consumption (kWh) per day")
 plt.xlabel("experiment group")
