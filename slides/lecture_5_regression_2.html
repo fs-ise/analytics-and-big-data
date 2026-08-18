@@ -222,15 +222,15 @@
     }
   </style>
   <style>
-  div.callout-confidential.callout {
-    border-left-color: #dc3545;
+  div.callout-self-service.callout {
+    border-left-color: #198754;
   }
-  div.callout-confidential.callout-style-default > .callout-header {
-    background-color: rgba(220, 53, 69, 0.13);
+  div.callout-self-service.callout-style-default > .callout-header {
+    background-color: rgba(25, 135, 84, 0.13);
   }
-  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
-    content: '🔒';
+  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
+    content: '🛠️';
     background-image: none;
   }
   div.callout-objective.callout {
@@ -244,6 +244,17 @@
     content: '🎯';
     background-image: none;
   }
+  div.callout-confidential.callout {
+    border-left-color: #dc3545;
+  }
+  div.callout-confidential.callout-style-default > .callout-header {
+    background-color: rgba(220, 53, 69, 0.13);
+  }
+  div.callout-confidential .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-confidential.callout-style-default .callout-icon::before, div.callout-confidential.callout-titled .callout-icon::before {
+    content: '🔒';
+    background-image: none;
+  }
   div.callout-resource.callout {
     border-left-color: #0d6efd;
   }
@@ -253,17 +264,6 @@
   div.callout-resource .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-resource.callout-style-default .callout-icon::before, div.callout-resource.callout-titled .callout-icon::before {
     content: '🔗';
-    background-image: none;
-  }
-  div.callout-self-service.callout {
-    border-left-color: #198754;
-  }
-  div.callout-self-service.callout-style-default > .callout-header {
-    background-color: rgba(25, 135, 84, 0.13);
-  }
-  div.callout-self-service .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-self-service.callout-style-default .callout-icon::before, div.callout-self-service.callout-titled .callout-icon::before {
-    content: '🛠️';
     background-image: none;
   }
   </style>
@@ -336,7 +336,7 @@
         min 3 : https://www.youtube.com/watch?v=4u81xU7BIOc
 -->
 <p>Churn prediction is a <strong>binary classification problem</strong>:</p>
-<div id="7879d996" class="cell" data-execution_count="2">
+<div id="8063259b" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -345,6 +345,7 @@
 </div>
 </div>
 </div>
+<div class="fragment">
 <p>Possible approach: We could use Linear Regression with a threshold at <code>0.5</code> to classify output:</p>
 <ul>
 <li>If <span class="math inline">\(f(x) &lt; 0.5\)</span>, predict <code>y=0</code></li>
@@ -367,14 +368,15 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section></section>
 <section>
 <section id="logistic-regression" class="title-slide slide level1 center" data-stack-name="Logistic regression">
 <h1>Logistic regression</h1>
 
 </section>
-<section id="classification" class="slide level2">
-<h2>Classification</h2>
+<section id="general-binary-classification-problems" class="slide level2">
+<h2>General binary classification problems</h2>
 <p>Examples:</p>
 <ul>
 <li>Online transactions: Fraudulent (yes/no)?</li>
@@ -403,8 +405,8 @@
 TODO: include an overview of classifiers (see paper notes): rule-based, threshold-based, area-based, GLM - logistic regression: particular link function
 -->
 </section>
-<section id="logistic-regression-model" class="slide level2">
-<h2>Logistic regression model</h2>
+<section id="logistic-regression-models" class="slide level2">
+<h2>Logistic regression models</h2>
 <!--
 TODO: Linear regression typically gives us continuous **scores**, but for our case of binary classification, scores between 0 and 1 are needed. Probabilities would be a score ranging between 0 and 1 (with a "nice" interpretation).
 
@@ -454,7 +456,7 @@ TODO: mention threshold approach to
 </section>
 <section id="the-sigmoid-function" class="slide level2">
 <h2>The Sigmoid function</h2>
-<div id="57ea275f" class="cell" data-execution_count="3">
+<div id="50e86182" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -519,7 +521,7 @@ TODO: mention threshold approach to
 <section id="logistic-regression-in-python" class="slide level2">
 <h2>Logistic regression in Python</h2>
 <p>We estimate the model using the sklearn library:</p>
-<div id="8763fb2a" class="cell" data-execution_count="4">
+<div id="274d5851" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a aria-label="2"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb1-3"><a aria-label="3"></a></span>
@@ -608,7 +610,7 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 <p>Comparing predicted vs.&nbsp;actual class labels allows us to evaluate the performance of a classifier like logistic regression.</p>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="55150f31" class="cell" data-execution_count="6">
+<div id="d40d20c0" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -638,7 +640,7 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 <li><strong>True positives (TP):</strong> predicted churn, observed churn</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="a2469124" class="cell" data-execution_count="7">
+<div id="2204fa61" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -651,7 +653,7 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 </section>
 <section id="evaluation-metrics" class="slide level2">
 <h2>Evaluation metrics</h2>
-<div id="431f99f7" class="cell" data-execution_count="8">
+<div id="eafdf532" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -751,7 +753,7 @@ P(\text{churn}_i=1\mid x)=\frac{1}{1+e^{-(\beta_0+\beta_1 x_i)}}
 -->
 </div><div class="column" style="width:52%;">
 <p><br><br></p>
-<div id="4fbea991" class="cell" data-execution_count="9">
+<div id="30915c01" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -831,7 +833,7 @@ p(x) = P(\text{churn}=1 \mid x)
 <h2>Decision-making under uncertainty</h2>
 <p>We can use the expected value criterion to <strong>translate predictions into decisions</strong> by combining:</p>
 <ul>
-<li><strong>Predicted churn probability</strong> from the model</li>
+<li><strong>Probability of churm</strong> predicted by the model</li>
 <li><strong>Business consequences</strong> of the action</li>
 </ul>
 <div class="fragment">
@@ -1164,7 +1166,7 @@ Decided to skip multi-label prediction
 </ul>
 <div class="fragment">
 <p><br></p>
-<p>Logistic regression is often the first model to try — simple, transparent, and surprisingly effective.</p>
+<p>In many machine learning studies, logistic regression is used as a first baseline model — simple, transparent, and surprisingly effective.</p>
 <p><br></p>
 <p><iconify-icon role="img" inline="" icon="fluent-mdl2:insights" aria-label="Icon insights from fluent-mdl2 Iconify.design set." title="Icon insights from fluent-mdl2 Iconify.design set."></iconify-icon> More complex models are useful only if they improve performance meaningfully</p>
 </div>
