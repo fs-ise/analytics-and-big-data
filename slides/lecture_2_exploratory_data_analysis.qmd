@@ -949,7 +949,7 @@ Steps:
 ```{.python code-line-numbers="false"}
 Randomly assign data points to k clusters
 
-Loop:
+Repeat:
 
     calculate centroids for each cluster
 
@@ -959,7 +959,7 @@ Loop:
         if x is not closest to its current centroid:
             assign x to the nearest centroid
 
-    if no changes in centroids and cluster assignments:
+    if centroids and cluster assignments no longer change:
         break
 ```
 :::
